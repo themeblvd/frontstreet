@@ -1,2 +1,2 @@
-# bootstrap-blvd
-Frontend Framework used in the Theme Blvd WordPress Theme Framework
+# Front Street
+A frontend framework by Theme Blvd
