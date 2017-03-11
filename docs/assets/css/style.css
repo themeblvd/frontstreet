@@ -1,0 +1,32 @@
+body {
+  background: #fff; }
+
+/* =Syntax Highlighter
+-------------------------------------------------------------- */
+div .syntaxhighlighter {
+  background-color: #f5f5f5 !important;
+  border-radius: 2px;
+  margin: 20px 0 30px 0 !important;
+  padding: 16px !important; }
+
+.syntaxhighlighter code {
+  white-space: nowrap !important; }
+
+.syntaxhighlighter table td.code .line {
+  padding-left: 8px !important;
+  font-size: 14px !important;
+  line-height: 22px !important; }
+
+.syntaxhighlighter table td.gutter .line {
+  font-size: 13px !important;
+  line-height: 22px !important;
+  padding-left: 5px !important; }
+
+.syntaxhighlighter table td.code .line.alt1 {
+  background-color: transparent !important; }
+
+.syntaxhighlighter table td.code .line.alt2 {
+  background-color: transparent !important; }
+
+.syntaxhighlighter .toolbar {
+  display: none; }
