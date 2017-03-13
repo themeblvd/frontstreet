@@ -168,7 +168,6 @@ h6, .h6 {
 // Contextual
 //
 
-// Contextual Colors
 .text-muted {
 	color: $clr-text-lighten;
 }
@@ -185,22 +184,6 @@ h6, .h6 {
 @include text-emphasis-variant('.text-warning', $clr-warning-text);
 
 @include text-emphasis-variant('.text-danger', $clr-danger-text);
-
-// Contextual Backgrounds
-.primary, // For Theme Blvd compat.
-.bg-primary {
-	color: #fff;
-}
-
-@include bg-variant('.bg-primary, .primary', $clr-primary-bg); // .primary for Theme Blvd compat.
-
-@include bg-variant('.bg-success', $clr-success-bg);
-
-@include bg-variant('.bg-info', $clr-info-bg);
-
-@include bg-variant('.bg-warning', $clr-warning-bg);
-
-@include bg-variant('.bg-danger', $clr-danger-bg);
 
 //
 // Code

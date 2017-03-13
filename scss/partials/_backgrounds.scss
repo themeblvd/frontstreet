@@ -1,0 +1,28 @@
+/* =Background Colors
+----------------------------------------------- */
+
+//
+// Contextual
+//
+
+@include bg-variant('.primary, .bg-primary', $clr-primary-bg, #fff); // .bg-primary for Theme Blvd compat.
+
+@include bg-variant('.success', $clr-success-bg);
+
+@include bg-variant('.info', $clr-info-bg);
+
+@include bg-variant('.warning', $clr-warning-bg);
+
+@include bg-variant('.danger', $clr-danger-bg);
+
+//
+// Standard Color Library
+//
+
+@include bg-variant('.bg-white', $clr-white);
+
+@include bg-variant('.bg-light', $clr-lightest);
+
+@each $name, $hex in $clr-library {
+	@include bg-variant('.#{$name}', $hex, $clr-text-inv-base);
+}

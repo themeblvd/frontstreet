@@ -22,7 +22,7 @@ $grid-gutters						: 15px;
 
 // Font Families
 
-$font-fam-base						: 'Open Sans', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+$font-fam-base						: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 $font-fam-headings					: $font-fam-base;
 $font-fam-code						: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 
@@ -54,7 +54,8 @@ $font-size-micro					: 10px;
 $font-size-entry-title				: 2.5rem;
 $font-size-mobile					: $font-size-sm;
 $font-size-lead						: $font-size-lg;
-$font-size-small					: $font-size-xs; // <small>
+$font-size-small					: .8rem; // <small>
+$font-size-big						: 1.25rem; // <big>
 $font-size-cite						: $font-size-xxs;
 $font-size-code						: $font-size-sm;
 $font-size-pre						: $font-size-md;
@@ -82,7 +83,7 @@ $font-weight-heading				: 600;
 // Colors
 // ==========================================================================
 
-// General
+// Shading
 
 $clr-white							: #fff;
 $clr-lightest						: #f2f2f2;
@@ -90,7 +91,7 @@ $clr-lighter						: #ddd;
 $clr-light							: #c8c8c8;
 $clr-grey							: #555;
 $clr-light-grey						: #686868;
-$clr-dark							: #252525;
+$clr-dark							: #101010;
 $clr-black							: #000;
 $clr-highlight						: #fec527;
 
@@ -98,13 +99,38 @@ $clr-highlight						: #fec527;
 
 $clr-text-base						: rgba(26, 26, 26, .7);
 $clr-text-lighten					: rgba(26, 26, 26, .4);
-$clr-text-darken					: #252525;
+$clr-text-darken					: $clr-dark;
 
 $clr-text-inv-base					: #fff;
 $clr-text-inv-lighten				: #ccc;
 $clr-text-inv-darken				: #fff;
 
-// States
+// Color Library
+
+$clr-library : (
+	black							: $clr-black,
+	blue							: #00437f,
+	brown							: #6b3c02,
+	dark_blue						: #153f5a,
+	dark_brown						: #572f05,
+	dark_green						: #485a21,
+	green							: #74941f,
+	mauve							: #7b726c,
+	orange							: #ff9624,
+	pearl							: #bca89d,
+	pink							: #de2e81,
+	purple							: #78498e,
+	red								: #a7170c,
+	royal							: #428bca,
+	slate_grey						: #7f8d9c,
+	silver							: #b5b5b5,
+	steel_blue						: #aec3d5,
+	teal							: #008080,
+	yellow							: #ecc11B,
+	wheat							: #b4ad8b
+);
+
+// Contextual
 
 $clr-primary-bg						: #101010;
 $clr-primary-text					: $clr-text-darken;

@@ -3,26 +3,33 @@
 // ==========================================================================
 
 // Box sizing
-@mixin box-sizing($boxmodel) {
-	-webkit-box-sizing: $boxmodel;
-	-moz-box-sizing: $boxmodel;
-	box-sizing: $boxmodel;
+@mixin box-sizing($val) {
+	-webkit-box-sizing: $val;
+	-moz-box-sizing: $val;
+	box-sizing: $val;
+}
+
+// Box Shadow
+@mixin box-shadow($val) {
+	-webkit-box-shadow: $val;
+	-moz-box-shadow: $val;
+	box-shadow: $val;
 }
 
 // Border Radius
-@mixin border-radius($radius) {
-	-webkit-border-radius: $radius;
-	-moz-border-radius: $radius;
-	-ms-border-radius: $radius;
-	border-radius: $radius;
+@mixin border-radius($val) {
+	-webkit-border-radius: $val;
+	-moz-border-radius: $val;
+	-ms-border-radius: $val;
+	border-radius: $val;
 }
 
 // Transform
-@mixin transform($transforms) {
-	-webkit-transform: $transforms;
-	-moz-transform: $transforms;
-	-ms-transform: $transforms;
-	transform: $transforms;
+@mixin transform($val) {
+	-webkit-transform: $val;
+	-moz-transform: $val;
+	-ms-transform: $val;
+	transform: $val;
 }
 
 // ==========================================================================
@@ -132,7 +139,6 @@
 // ==========================================================================
 
 // Contextual Text
-// [converter] $parent hack
 @mixin text-emphasis-variant($parent, $color) {
 	#{$parent} {
 		color: $color;
@@ -144,14 +150,23 @@
 }
 
 // Contextual Backgrounds
-// [converter] $parent hack
-@mixin bg-variant($parent, $color) {
+@mixin bg-variant($parent, $color, $text: null) {
 	#{$parent} {
 		background-color: $color;
+		@if $text != null {
+			color: $text;
+		}
 	}
 	a#{$parent}:hover,
-	a#{$parent}:focus {
+	a#{$parent}:focus,
+	input#{$parent}:hover,
+	input#{$parent}:focus,
+	button#{$parent}:hover,
+	button#{$parent}:focus {
 		background-color: darken($color, 10%);
+		@if $text != null {
+			color: $text;
+		}
 	}
 }
 
@@ -178,13 +193,6 @@
 	&:after {
 		clear: both;
 	}
-}
-
-// Center-align a block level element.
-@mixin center-block() {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
 }
 
 // Hide Text
