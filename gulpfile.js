@@ -137,7 +137,8 @@ gulp.task('render-project-js', function() {
  */
 gulp.task('render-project-plugins', function(cb) {
 
-	// ...
+	copydir.sync('plugins/fontawesome', 'dist/docs/assets/plugins/fontawesome');
+	copydir.sync('plugins/fontawesome', 'dist/frontstreet/plugins/fontawesome');
 
 });
 
