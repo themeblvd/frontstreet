@@ -1,6 +1,7 @@
 var gulp		= require('gulp'),
 	// marky	= require('marky-markdown'),
 	copy 		= require('copy'),
+	copydir 	= require('copy-dir'),
 	escapehtml	= require('escape-html'),
 	concat 		= require('gulp-concat'),
 	watch		= require('gulp-watch'),
@@ -18,7 +19,8 @@ var serve = [
 	'render-docs-js',
 	'render-docs-html',
 	'render-project-css',
-	'render-project-js'
+	'render-project-js',
+	'render-project-plugins'
 ];
 
 /**
@@ -126,6 +128,16 @@ gulp.task('render-project-js', function() {
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(gulp.dest('dist/frontstreet/js'))
 		.pipe(gulp.dest('dist/docs/assets/js'));
+
+});
+
+/**
+ * Copy any third-party plugins we're packaging to
+ * distributed docs and project.
+ */
+gulp.task('render-project-plugins', function(cb) {
+
+	// ...
 
 });
 
