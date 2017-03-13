@@ -20,6 +20,7 @@ var serve = [
 	'render-docs-html',
 	'render-project-css',
 	'render-project-js',
+	'render-project-svg',
 	'render-project-plugins'
 ];
 
@@ -106,11 +107,11 @@ gulp.task('render-project-css', function() {
 	return gulp.src('scss/frontstreet.scss')
 		.pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
 		.pipe(gulp.dest('dist/frontstreet/css'))
-		.pipe(gulp.dest('dist/docs/assets/css'))
+		.pipe(gulp.dest('dist/docs/assets/frontstreet/css'))
 		.pipe(minifycss())
 		.pipe(rename({ suffix: '.min' }))
     	.pipe(gulp.dest('dist/frontstreet/css'))
-		.pipe(gulp.dest('dist/docs/assets/css'));
+		.pipe(gulp.dest('dist/docs/assets/frontstreet/css'));
 
 });
 
@@ -124,10 +125,21 @@ gulp.task('render-project-js', function() {
 	return gulp.src('js/*.js')
 		.pipe(concat('frontstreet.js'))
 		.pipe(gulp.dest('dist/frontstreet/js'))
+		.pipe(gulp.dest('dist/docs/assets/frontstreet/js'))
 		.pipe(minifyjs())
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(gulp.dest('dist/frontstreet/js'))
-		.pipe(gulp.dest('dist/docs/assets/js'));
+		.pipe(gulp.dest('dist/docs/assets/frontstreet/js'));
+
+});
+
+/**
+ * Copy any svg files to distributed docs and project.
+ */
+gulp.task('render-project-svg', function() {
+
+	copydir.sync('svg', 'dist/docs/assets/frontstreet/svg');
+	copydir.sync('svg', 'dist/frontstreet/svg');
 
 });
 
@@ -135,9 +147,9 @@ gulp.task('render-project-js', function() {
  * Copy any third-party plugins we're packaging to
  * distributed docs and project.
  */
-gulp.task('render-project-plugins', function(cb) {
+gulp.task('render-project-plugins', function() {
 
-	copydir.sync('plugins/fontawesome', 'dist/docs/assets/plugins/fontawesome');
+	copydir.sync('plugins/fontawesome', 'dist/docs/assets/frontstreet/plugins/fontawesome');
 	copydir.sync('plugins/fontawesome', 'dist/frontstreet/plugins/fontawesome');
 
 });
