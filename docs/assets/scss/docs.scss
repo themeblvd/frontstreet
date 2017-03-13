@@ -1,5 +1,27 @@
+/* =Layout
+-------------------------------------------------------------- */
+
 body {
-	background: #fff;
+	background: #f8f8f8;
+}
+#main {
+	background-color: #fff;
+	-webkit-box-shadow: 0 0 4px rgba(0,0,0,.05);
+    box-shadow: 0 0 4px rgba(0,0,0,.05);
+	margin: 50px auto;
+	max-width: 960px;
+    padding: 60px 120px;
+}
+
+/* =Examples
+-------------------------------------------------------------- */
+
+.contextual-bg-example {
+	padding: 20px;
+}
+blockquote.alignleft,
+blockquote.alignright {
+	max-width: 300px;
 }
 
 /* =Syntax Highlighter
@@ -13,6 +35,9 @@ div .syntaxhighlighter {
 }
 .syntaxhighlighter code {
 	white-space: nowrap !important;
+}
+.syntaxhighlighter.no-wrap code {
+	white-space: normal !important;
 }
 .syntaxhighlighter table td.code .line {
 	padding-left: 8px !important;
@@ -29,7 +54,4 @@ div .syntaxhighlighter {
 }
 .syntaxhighlighter table td.code .line.alt2 {
 	background-color: transparent !important;
-}
-.syntaxhighlighter .toolbar {
-	display: none;
 }
