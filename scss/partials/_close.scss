@@ -1,0 +1,41 @@
+/* =Close Icons
+----------------------------------------------- */
+
+.close {
+	background: url('../svg/close-dark.svg') center center no-repeat;
+	background-size: (map-get($btn-close, sm) / 2) (map-get($btn-close, sm) / 2);
+	display: inline-block;
+	outline: none !important;
+	opacity: .7;
+	width: map-get($btn-close, sm);
+	height: map-get($btn-close, sm);
+	text-indent: -9999px;
+}
+.close-light {
+	background-image: url('../svg/close-light.svg');
+}
+.close:hover,
+.close:focus {
+	opacity: 1;
+}
+@each $size, $val in $btn-close {
+	.close-#{$size} {
+		background-size: ($val / 2) ($val / 2);
+		width: $val;
+		height: $val;
+	}
+}
+
+// Additional properties for button version
+// iOS requires the button element instead of an anchor tag.
+// If you want the anchor version, it requires `href="#"`.
+// See https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+
+button.close {
+	background-color: transparent !important;
+	border: 0;
+	@include box-shadow(none); // Override possible generic form stylings.
+	padding: 0;
+	cursor: pointer;
+	-webkit-appearance: none;
+}

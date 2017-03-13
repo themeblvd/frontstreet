@@ -168,3 +168,16 @@ $clr-bg-black						: $clr-black;
 $color-bg-body						: $clr-white;
 $clr-bg-hr							: $clr-bg-dark;
 $clr-bg-code						: $clr-lightest;
+
+// ==========================================================================
+// Buttons
+// ==========================================================================
+
+// Close Buttons
+
+$btn-close : (
+	sm								: 20px,
+	md								: 32px,
+	lg								: 44px,
+	xl								: 56px
+);
