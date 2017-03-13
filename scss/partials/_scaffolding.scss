@@ -76,7 +76,7 @@ img {
 	vertical-align: middle;
 }
 .img-circle {
-	border-radius: 50%;
+	@include border-radius(50%);
 }
 
 // Responsive images (ensure images don't scale beyond their parents)
