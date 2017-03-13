@@ -4,6 +4,12 @@
  * Copyright 2017 Jason Bobich
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-body {
-	background: orange;
-}
+
+// Core Variables, Mixins and Functions
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/functions";
+
+// Reset and Dependencies
+@import "partials/normalize";
+@import "partials/print";

@@ -1,0 +1,11 @@
+// ==========================================================================
+// Functions
+// ==========================================================================
+
+@function em($target, $context: $font-size-base) {
+	@return ($target / $context) * 1em;
+}
+
+@function rem($target) {
+	@return ($target / $font-size-base) * 1rem;
+}

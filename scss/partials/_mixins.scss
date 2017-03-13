@@ -1,0 +1,207 @@
+// ==========================================================================
+// Vendor Prefixes
+// ==========================================================================
+
+// Box sizing
+@mixin box-sizing($boxmodel) {
+	-webkit-box-sizing: $boxmodel;
+	-moz-box-sizing: $boxmodel;
+	box-sizing: $boxmodel;
+}
+
+// ==========================================================================
+// Grid
+// ==========================================================================
+
+// Max-Width Media Query
+@mixin max-width($size) {
+	@if $size == 'xl' {
+		@media (max-width: em($breakpoint-xl - 1)) {
+			@content;
+		}
+	}
+	@else if $size == 'lg' {
+		@media (max-width: em($breakpoint-lg - 1)) {
+			@content;
+		}
+	}
+	@else if $size == 'md' {
+		@media (max-width: em($breakpoint-md - 1)) {
+			@content;
+		}
+	}
+	@else if $size == 'sm' {
+		@media (max-width: em($breakpoint-sm - 1)) {
+			@content;
+		}
+	}
+	@else if $size == 'xs' {
+		@media (max-width: em($breakpoint-xs - 1)) {
+			@content;
+		}
+	}
+	@else {
+		@media (max-width: em($size)) {
+			@content;
+		}
+	}
+}
+
+// Min-Width Media Query
+@mixin min-width($size) {
+	@if $size == 'xl' {
+		@media (min-width: em($breakpoint-xl)) {
+			@content;
+		}
+	}
+	@else if $size == 'lg' {
+		@media (min-width: em($breakpoint-lg)) {
+			@content;
+		}
+	}
+	@else if $size == 'md' {
+		@media (min-width: em($breakpoint-md)) {
+			@content;
+		}
+	}
+	@else if $size == 'sm' {
+		@media (min-width: em($breakpoint-sm)) {
+			@content;
+		}
+	}
+	@else if $size == 'xs' {
+		@media (min-width: em($breakpoint-xs)) {
+			@content;
+		}
+	}
+	@else {
+		@media (min-width: em($size)) {
+			@content;
+		}
+	}
+}
+
+// ==========================================================================
+// Typography
+// ==========================================================================
+
+// Colorless links, meant to blend into content.
+// Used with footer links.
+@mixin blend-links() {
+	a {
+		color: inherit;
+		border-bottom: 1px solid rgba($color-text-light, 0.8);
+		padding-bottom: 1px;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			border-color: $color-border-white;
+			color: $color-text-light;
+		}
+	}
+}
+
+// ==========================================================================
+// Lists
+// ==========================================================================
+
+@mixin list-unstyled() {
+	list-style: none;
+	padding-left: 0;
+}
+
+// ==========================================================================
+// Contextual
+// ==========================================================================
+
+// Contextual Text
+// [converter] $parent hack
+@mixin text-emphasis-variant($parent, $color) {
+	#{$parent} {
+		color: $color;
+	}
+	a#{$parent}:hover,
+	a#{$parent}:focus {
+		color: darken($color, 10%);
+	}
+}
+
+// Contextual Backgrounds
+// [converter] $parent hack
+@mixin bg-variant($parent, $color) {
+	#{$parent} {
+		background-color: $color;
+	}
+	a#{$parent}:hover,
+	a#{$parent}:focus {
+		background-color: darken($color, 10%);
+	}
+}
+
+// ==========================================================================
+// Utilities
+// ==========================================================================
+
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    contenteditable attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that are clearfixed.
+// 2. The use of `table` rather than `block` is only necessary if using
+//    `:before` to contain the top-margins of child elements.
+//
+// Source: http://nicolasgallagher.com/micro-clearfix-hack/
+
+@mixin clearfix() {
+	&:before,
+	&:after {
+		content: " "; // 1
+		display: table; // 2
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+// Center-align a block level element.
+@mixin center-block() {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Hide Text
+@mixin text-hide() {
+	background-color: transparent;
+	border: 0;
+	font: 0/0 a;
+	color: transparent;
+	text-shadow: none;
+}
+
+// ==========================================================================
+// Responsive Utilities
+// ==========================================================================
+
+@mixin responsive-visibility($parent) {
+	#{$parent} {
+		display: block !important;
+	}
+	table#{$parent}	{
+		display: table !important;
+	}
+	tr#{$parent} {
+		display: table-row !important;
+	}
+	th#{$parent},
+	td#{$parent} {
+		display: table-cell !important;
+	}
+}
+
+@mixin responsive-invisibility($parent) {
+	#{$parent} {
+		display: none !important;
+	}
+}

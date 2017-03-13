@@ -1,0 +1,144 @@
+// ==========================================================================
+// Breakpoints
+// ==========================================================================
+
+$breakpoints						: xs, sm, md, lg, xl;
+$breakpoint-xs 						: 415px;
+$breakpoint-sm 						: 768px;
+$breakpoint-md 						: 992px;
+$breakpoint-lg						: 1100px;
+$breakpoint-xl 						: 1600px;
+
+// ==========================================================================
+// Grid System
+// ==========================================================================
+
+$grid-columns						: 12; // how can we do this to have 12 and 15?
+$grid-gutters						: 15px;
+
+// ==========================================================================
+// Typography
+// ==========================================================================
+
+// Font Families
+
+$font-fam-base						: 'Open Sans', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+$font-fam-headings					: $font-fam-base;
+$font-fam-code						: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+
+// Typo Spacing
+
+$spacing-paragraph					: 24px;
+$spacing-lead						: $spacing-paragraph;
+$spacing-heading					: $spacing-paragraph;
+$spacing-letter 					: 1px;
+$spacing-list-offset				: 40px;
+$spacing-blockquote					: 40px 30px; // Applied as margin.
+
+// Font Sizes
+
+$font-size-xxxl						: 64px;
+$font-size-xxl						: 40px;
+$font-size-xl						: 24px;
+$font-size-lg						: 20px;
+$font-size-base 					: 16px;
+$font-size-md						: 15px;
+$font-size-sm						: 14px;
+$font-size-xs						: 13px;
+$font-size-xxs						: 12px;
+$font-size-xxxs						: 11px;
+$font-size-micro					: 10px;
+
+// Font Size Usage
+
+$font-size-entry-title				: 2.5rem;
+$font-size-mobile					: $font-size-sm;
+$font-size-lead						: $font-size-lg;
+$font-size-small					: $font-size-xs; // <small>
+$font-size-cite						: $font-size-xxs;
+$font-size-code						: $font-size-sm;
+$font-size-pre						: $font-size-md;
+$font-size-caption					: $font-size-sm;
+
+// Font Line Heights
+
+$font-lh-base 						: 1.6;
+$font-lh-caption					: 1.4;
+$font-lh-cite						: 1.4;
+$font-lh-heading 					: 1.2;
+$font-lh-heading-sm 				: 1.4;
+$font-lh-lead						: 1.4;
+$font-lh-quote						: 1.4;
+$font-lh-header-menu				: 1.25;
+$font-lh-header-menu-dropdown		: 1.4;
+$font-lh-btn 						: 1.42857143;
+
+// Font Weights
+
+$font-weight-base					: 300;
+$font-weight-heading				: 600;
+
+// ==========================================================================
+// Colors
+// ==========================================================================
+
+// General
+
+$clr-white							: #fff;
+$clr-lightest						: #f2f2f2;
+$clr-lighter						: #ddd;
+$clr-light							: #c8c8c8;
+$clr-grey							: #555;
+$clr-light-grey						: #686868;
+$clr-dark							: #252525;
+$clr-black							: #000;
+$clr-highlight						: #fec527;
+
+// Text Colors
+
+$clr-text-base						: rgba(26, 26, 26, .7);
+$clr-text-lighten					: rgba(26, 26, 26, .4);
+$clr-text-darken					: #252525;
+
+$clr-text-inv-base					: #fff;
+$clr-text-inv-lighten				: #ccc;
+$clr-text-inv-darken				: #fff;
+
+// States
+
+$clr-primary-bg						: #101010;
+$clr-primary-text					: $clr-text-darken;
+$clr-primary-border					: #000;
+
+$clr-success-text					: #3c763d;
+$clr-success-bg						: #dff0d8;
+$clr-success-border					: darken(adjust-hue($clr-success-bg, -10), 5%);
+
+$clr-info-text						: #31708f;
+$clr-info-bg						: #d9edf7;
+$clr-info-border					: darken(adjust-hue($clr-info-bg, -10), 7%);
+
+$clr-warning-text					: #8a6d3b;
+$clr-warning-bg						: #fcf8e3;
+$clr-warning-border					: darken(adjust-hue($clr-warning-bg, -10), 5%);
+
+$clr-danger-text					: #a94442;
+$clr-danger-bg						: #f2dede;
+$clr-danger-border					: darken(adjust-hue($clr-danger-bg, -10), 5%);
+
+// Border Colors
+
+$color-border-white					: $clr-white;
+$color-border-light					: $clr-lighter;
+$color-border-dark					: $clr-dark;
+
+// Background Colors
+
+$clr-bg-white						: $clr-white;
+$clr-bg-light						: $clr-lightest;
+$clr-bg-dark						: $clr-dark;
+$clr-bg-black						: $clr-black;
+
+$color-bg-body						: $clr-white;
+$clr-bg-hr							: $clr-bg-dark;
+$clr-bg-code						: $clr-lightest;
