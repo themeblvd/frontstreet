@@ -104,6 +104,7 @@ gulp.task('render-project-css', function() {
 	return gulp.src('scss/frontstreet.scss')
 		.pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
 		.pipe(gulp.dest('dist/frontstreet/css'))
+		.pipe(gulp.dest('dist/docs/assets/css'))
 		.pipe(minifycss())
 		.pipe(rename({ suffix: '.min' }))
     	.pipe(gulp.dest('dist/frontstreet/css'))
