@@ -1,0 +1,67 @@
+/* =Lists
+----------------------------------------------- */
+
+ul,
+ol {
+    margin: 0 0 $spacing-paragraph 0;
+	padding-left: $spacing-list-offset;
+}
+ul {
+    list-style: disc;
+}
+ol {
+    list-style: decimal;
+}
+li > ul,
+li > ol {
+    margin-bottom: 0;
+}
+
+//
+// Description Lists
+//
+
+dt {
+    font-weight: bold;
+}
+dd {
+    margin: 0 1.5em $spacing-paragraph;
+}
+
+//
+// Unstyled Lists
+//
+
+.list-unstyled {
+	@include list-unstyled;
+}
+
+//
+// Inline Lists
+//
+
+.list-inline {
+
+	@include list-unstyled;
+	margin: 0 -5px;
+
+	li {
+		display: inline-block;
+		padding: 0 5px;
+	}
+}
+
+//
+// Icon Lists
+//
+// Note: Requires FontAwesome. Meant to be an
+// extension of fa-ul and fa-li classes.
+//
+
+.list-icon.fa-ul li {
+    line-height: $font-lh-base;
+}
+.list-icon.fa-ul li > .fa-li {
+    top: 50%;
+	@include transform(translate(0, -50%));
+}
