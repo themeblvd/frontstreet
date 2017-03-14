@@ -1,5 +1,6 @@
-/* =Close Icons
------------------------------------------------ */
+
+// Close Icon
+// --------------------------------------------------
 
 .close {
 	background: url('../svg/close-dark.svg') center center no-repeat;
@@ -9,7 +10,7 @@
 	opacity: .7;
 	width: map-get($btn-close, sm);
 	height: map-get($btn-close, sm);
-	text-indent: -9999px;
+	@include hide-text();
 }
 .close-light {
 	background-image: url('../svg/close-light.svg');
