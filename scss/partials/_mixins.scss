@@ -3,6 +3,8 @@
 // ==========================================================================
 
 // Box sizing
+// --------------------------------------------------
+
 @mixin box-sizing($val) {
 	-webkit-box-sizing: $val;
 	-moz-box-sizing: $val;
@@ -10,6 +12,8 @@
 }
 
 // Box Shadow
+// --------------------------------------------------
+
 @mixin box-shadow($val) {
 	-webkit-box-shadow: $val;
 	-moz-box-shadow: $val;
@@ -17,6 +21,8 @@
 }
 
 // Border Radius
+// --------------------------------------------------
+
 @mixin border-radius($val) {
 	-webkit-border-radius: $val;
 	-moz-border-radius: $val;
@@ -25,6 +31,8 @@
 }
 
 // Transform
+// --------------------------------------------------
+
 @mixin transform($val) {
 	-webkit-transform: $val;
 	-moz-transform: $val;
@@ -37,6 +45,8 @@
 // ==========================================================================
 
 // Max-Width Media Query
+// --------------------------------------------------
+
 @mixin max-width($size) {
 	@if $size == 'xl' {
 		@media (max-width: em($breakpoint-xl - 1)) {
@@ -71,6 +81,8 @@
 }
 
 // Min-Width Media Query
+// --------------------------------------------------
+
 @mixin min-width($size) {
 	@if $size == 'xl' {
 		@media (min-width: em($breakpoint-xl)) {
@@ -110,6 +122,8 @@
 
 // Colorless links, meant to blend into content.
 // Used with footer links.
+// --------------------------------------------------
+
 @mixin blend-links() {
 	a {
 		color: inherit;
@@ -129,16 +143,21 @@
 // Lists
 // ==========================================================================
 
+// Unstyled Lists
+// --------------------------------------------------
+
 @mixin list-unstyled() {
 	list-style: none;
 	padding-left: 0;
 }
 
 // ==========================================================================
-// Contextual
+// Colors
 // ==========================================================================
 
 // Contextual Text
+// --------------------------------------------------
+
 @mixin text-emphasis-variant($parent, $color) {
 	#{$parent} {
 		color: $color;
@@ -150,6 +169,8 @@
 }
 
 // Contextual Backgrounds
+// --------------------------------------------------
+
 @mixin bg-variant($parent, $color, $text: null) {
 	#{$parent} {
 		background-color: $color;
@@ -195,37 +216,67 @@
 	}
 }
 
-// Hide Text
-@mixin text-hide() {
-	background-color: transparent;
-	border: 0;
-	font: 0/0 a;
-	color: transparent;
-	text-shadow: none;
+// Center-align block-level element.
+// --------------------------------------------------
+
+@mixin aligncenter() {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-// ==========================================================================
-// Responsive Utilities
-// ==========================================================================
+// Floats
+// --------------------------------------------------
 
-@mixin responsive-visibility($parent) {
+@mixin alignleft() {
+	float: left !important; // @noflip
+	margin: 5px 20px 20px 0; // @noflip
+}
+
+@mixin alignright() {
+	float: right !important; // @noflip
+	margin: 5px 0 20px 20px; // @noflip
+}
+
+// Hide Text
+// --------------------------------------------------
+
+@mixin hide-text() {
+	text-indent: -9999px;
+}
+
+// Hide Element
+// --------------------------------------------------
+
+@mixin hide($parent) {
+	#{$parent} {
+		display: none !important;
+	}
+}
+
+// Show Element
+// --------------------------------------------------
+
+@mixin show($parent) {
 	#{$parent} {
 		display: block !important;
 	}
-	table#{$parent}	{
-		display: table !important;
-	}
-	tr#{$parent} {
-		display: table-row !important;
-	}
-	th#{$parent},
-	td#{$parent} {
-		display: table-cell !important;
+}
+
+// Visible Element
+// --------------------------------------------------
+
+@mixin visible($parent) {
+	#{$parent} {
+		visibility: visible;
 	}
 }
 
-@mixin responsive-invisibility($parent) {
+// Invisible Element
+// --------------------------------------------------
+
+@mixin invisible($parent) {
 	#{$parent} {
-		display: none !important;
+		visibility: hidden;
 	}
 }

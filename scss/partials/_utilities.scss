@@ -1,0 +1,62 @@
+
+// Utilities
+// --------------------------------------------------
+
+//
+// Floats and Alignment
+//
+// Note: We're using alignright and alignleft because
+// this is the standard WordPress convention that we'll
+// be working with when this framework is used there.
+//
+// But we also need pull-right and pull-left for some
+// older Theme Blvd compat. Use alignright and
+// alignleft, instead.
+//
+
+.clearfix {
+	@include clearfix;
+}
+.aligncenter {
+	@include aligncenter;
+}
+.alignleft,
+.pull-left {
+	@include alignleft;
+}
+.alignright,
+.pull-right {
+	@include alignright;
+}
+@include max-width(xs) {
+	.alignright,
+	.alignleft,
+	a img.alignright,
+	a img.alignleft {
+		float: none;
+		margin-right: 0;
+		margin-left: 0;
+	}
+}
+
+//
+// Toggling content
+//
+
+@include hide('.hide');
+
+@include show('.show');
+
+@include invisible('.invisible');
+
+@include visible('.visible');
+
+@include hide('.hidden');
+
+//
+// For Affix plugin
+//
+
+.affix {
+	position: fixed;
+}

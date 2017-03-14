@@ -1,0 +1,23 @@
+
+// Responsive Utilities
+// --------------------------------------------------
+
+@include max-width(xs) {
+	@include hide('.hidden-xs');
+}
+
+@media (min-width: em($breakpoint-xs)) and (max-width: em($breakpoint-sm - 1)) {
+	@include hide('.hidden-sm');
+}
+
+@media (min-width: em($breakpoint-sm)) and (max-width: em($breakpoint-md - 1)) {
+	@include hide('.hidden-md');
+}
+
+@media (min-width: em($breakpoint-md)) and (max-width: em($breakpoint-lg - 1)) {
+	@include hide('.hidden-lg');
+}
+
+@media (min-width: em($breakpoint-lg)) {
+	@include hide('.hidden-xl');
+}
