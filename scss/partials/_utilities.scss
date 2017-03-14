@@ -54,6 +54,14 @@
 @include hide('.hidden');
 
 //
+// Hide text
+//
+
+.text-hide {
+	@include hide-text();
+}
+
+//
 // For Affix plugin
 //
 
