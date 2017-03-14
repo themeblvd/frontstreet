@@ -13,12 +13,36 @@ body {
 
 /* =Examples
 -------------------------------------------------------------- */
-.contextual-bg-example {
-  padding: 20px; }
-
+/* Quotes */
 blockquote.alignleft,
 blockquote.alignright {
   max-width: 300px; }
+
+/* Contextual Background */
+.contextual-bg-example {
+  padding: 20px; }
+
+/* Close Button */
+.close-button-examples {
+  height: 80px;
+  position: relative; }
+
+.close-button-examples .close {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%); }
+
+.close-button-examples .close:nth-child(1) {
+  left: 10px; }
+
+.close-button-examples .close:nth-child(2) {
+  left: 70px; }
+
+.close-button-examples .close:nth-child(3) {
+  left: 125px; }
+
+.close-button-examples .close:nth-child(4) {
+  left: 170px; }
 
 /* =Syntax Highlighter
 -------------------------------------------------------------- */
