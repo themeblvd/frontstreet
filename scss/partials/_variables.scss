@@ -27,15 +27,6 @@ $font-fam-base						: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxy
 $font-fam-headings					: $font-fam-base;
 $font-fam-code						: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 
-// Typo Spacing
-
-$spacing-paragraph					: 24px;
-$spacing-lead						: $spacing-paragraph;
-$spacing-heading					: $spacing-paragraph;
-$spacing-letter 					: 1px;
-$spacing-list-offset				: 40px;
-$spacing-blockquote					: 40px 30px; // Applied as margin.
-
 // Font Sizes
 
 $font-size-xxxl						: 64px;
@@ -292,9 +283,9 @@ $clr-contextual : (
 
 // Border Colors
 
-$color-border-white					: $clr-white;
-$color-border-dark					: $clr-dark;
-$color-border-light					: rgba(200, 200, 200, .4);
+$clr-border-white					: $clr-white;
+$clr-border-dark					: $clr-dark;
+$clr-border-light					: $clr-trans-lighter;
 
 // Background Colors
 
@@ -306,6 +297,27 @@ $clr-bg-black						: $clr-black;
 $color-bg-body						: $clr-white;
 $clr-bg-hr							: $clr-bg-dark;
 $clr-bg-code						: $clr-lightest;
+
+// ==========================================================================
+// Spacing
+// ==========================================================================
+
+// General
+
+$spacing-element					: 24px;
+
+// Margins
+
+$margin-element						: 0 0 $spacing-elem 0;
+$margin-heading						: ($spacing-elem + 10px) 0 $spacing-elem 0;
+$margin-paragraph					: 0 0 $spacing-elem 0;
+$margin-lead						: 0 0 $spacing-elem 0;
+$margin-list						: 0 0 $spacing-elem 0;
+$margin-quote						: 40px 30px;
+
+// Padding
+
+$padding-list						: 0 0 0 40px;
 
 // ==========================================================================
 // Buttons

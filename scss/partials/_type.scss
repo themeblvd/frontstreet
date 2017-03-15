@@ -48,14 +48,14 @@ textarea {
 
 // Paragraphs
 p {
-	margin: 0 0 $spacing-paragraph;
+	margin: $margin-paragraph;
 }
 .lead {
 
 	@include min-width(sm) {
 		font-size: $font-size-lead;
 		line-height: $font-lh-lead;
-		margin-bottom: $spacing-lead;
+		margin: $margin-lead;
 	}
 }
 
@@ -69,18 +69,14 @@ h1, h2, h3, h4, h5, h6,
 	font-family: $font-fam-headings;
 	font-weight: $font-weight-heading;
 	line-height: $font-lh-heading;
-	margin-top: $spacing-heading + 10px;
-    margin-bottom: $spacing-heading;
+	margin: $margin-heading;
 	color: $clr-text-darken;
 	text-transform: none;
-}
-h1:first-child, .h1:first-child,
-h2:first-child, .h2:first-child,
-h3:first-child, .h3:first-child,
-h4:first-child, .h4:first-child,
-h5:first-child, .h5:first-child,
-h6:first-child, .h6:first-child {
-	margin-top: 0;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
 }
 .text-light h1, .text-light .h1,
 .text-light h2, .text-light .h2,
@@ -92,7 +88,7 @@ h6:first-child, .h6:first-child {
 }
 h5, h6,
 .h5, .h6 {
-	letter-spacing: $spacing-letter;
+	letter-spacing: 1px;
 	line-height: $font-lh-heading-sm;
 	margin-top: 0;
     margin-bottom: 1em;
@@ -177,7 +173,7 @@ pre {
     font-family: $font-fam-code;
     font-size: $font-size-pre;
     line-height: $font-lh-base;
-    margin-bottom: $spacing-paragraph;
+    margin: $margin-element;
     max-width: 100%;
     overflow: auto;
     padding: 1em;
@@ -218,7 +214,7 @@ dfn, cite, em, i {
 }
 address {
 	line-height: $font-lh-base;
-    margin: 0 0 $spacing-paragraph;
+    margin: $margin-element;
 }
 pre code {
     background-color: transparent;
@@ -226,7 +222,7 @@ pre code {
     padding: 0;
 }
 abbr, acronym {
-    border-bottom: 1px dotted $color-border-light;
+    border-bottom: 1px dotted $clr-border-light;
     cursor: help;
 }
 
@@ -239,7 +235,16 @@ blockquote {
     font-size: 1.3rem;
     font-style: italic;
     line-height: $font-lh-quote;
-    margin: $spacing-blockquote;
+    margin: $margin-quote;
+
+	&.alignleft,
+	&.pull-left,
+	&.alignright,
+	&.pull-right {
+		margin: $margin-quote;
+		margin-top: $spacing-element;
+		margin-bottom: $spacing-element;
+	}
 
 	p,
 	ul,
@@ -248,14 +253,6 @@ blockquote {
 			margin-bottom: 0;
 		}
 	}
-}
-blockquote.alignleft,
-blockquote.pull-left,
-blockquote.alignright,
-blockquote.pull-right {
-	margin: $spacing-blockquote;
-	margin-top: $spacing-paragraph;
-	margin-bottom: $spacing-paragraph;
 }
 @include max-width(sm) {
 	blockquote,
@@ -274,23 +271,27 @@ blockquote.pull-right
 blockquote.alignright {
 	text-align: right;
 }
-blockquote cite {
-	display: block;
-	font-style: normal;
-	font-weight: bold;
-	margin-top: .8em;
-	text-transform: uppercase;
-}
-blockquote cite,
-blockquote cite:before {
-	color: $clr-text-lighten;
-	font-size: $font-size-cite;
-    line-height: $font-lh-cite;
+blockquote {
+
+	cite {
+		display: block;
+		font-style: normal;
+		font-weight: bold;
+		margin-top: .8em;
+		text-transform: uppercase;
+	}
+	cite,
+	cite:before {
+		color: $clr-text-lighten;
+		font-size: $font-size-cite;
+	    line-height: $font-lh-cite;
+	}
+	cite:before {
+	    content: '\2014 \00A0';
+	}
+
 }
 .text-light blockquote cite,
 .text-light blockquote cite:before {
 	color: $clr-text-inv-lighten;
-}
-blockquote cite:before {
-    content: '\2014 \00A0';
 }
