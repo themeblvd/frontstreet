@@ -17,11 +17,16 @@
 // Core CSS
 @import "partials/scaffolding";
 @import "partials/type";
-@import "partials/backgrounds";
+@import "partials/colors";
 @import "partials/lists";
+// @import "partials/tables";
 
 // Components
+@import "partials/alerts";
+// @import "partials/dividers";
 @import "partials/close";
+
+// Components w/ JavaScript
 
 // Utility classes
 @import "partials/utilities";

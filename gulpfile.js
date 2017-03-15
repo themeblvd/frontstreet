@@ -31,9 +31,9 @@ var serve = [
  */
 gulp.task('compile-docs-scss', function() {
 
-	return gulp.src('docs/assets/scss/docs.scss')
+	return gulp.src('src/docs/assets/scss/docs.scss')
 		.pipe(sass().on('error', sass.logError))
-		.pipe(gulp.dest('docs/assets/css'));
+		.pipe(gulp.dest('src/docs/assets/css'));
 
 });
 
@@ -45,9 +45,9 @@ gulp.task('compile-docs-scss', function() {
 gulp.task('render-docs-css', ['compile-docs-scss'], function() {
 
 	var files = [
-		'docs/assets/css/shCore.css',
-		'docs/assets/css/shThemeDefault.css',
-		'docs/assets/css/docs.css'
+		'src/docs/assets/css/shCore.css',
+		'src/docs/assets/css/shThemeDefault.css',
+		'src/docs/assets/css/docs.css'
 	];
 
 	return gulp.src(files)
@@ -65,10 +65,10 @@ gulp.task('render-docs-css', ['compile-docs-scss'], function() {
 gulp.task('render-docs-js', function() {
 
 	var files = [
-		'docs/assets/js/shCore.js',
-		'docs/assets/js/shBrushXml.js',
-		'docs/assets/js/shBrushCss.js',
-		'docs/assets/js/docs.js'
+		'src/docs/assets/js/shCore.js',
+		'src/docs/assets/js/shBrushXml.js',
+		'src/docs/assets/js/shBrushCss.js',
+		'src/docs/assets/js/docs.js'
 	];
 
 	return gulp.src(files)
@@ -85,7 +85,7 @@ gulp.task('render-docs-js', function() {
  */
 gulp.task('render-docs-html', function() {
 
-	return gulp.src(['docs/pages/*.html'])
+	return gulp.src(['src/docs/pages/*.html'])
 		.pipe(fileinclude({
 			prefix: '@@',
 			basepath: '@file',
@@ -104,7 +104,7 @@ gulp.task('render-docs-html', function() {
  */
 gulp.task('render-project-css', function() {
 
-	return gulp.src('scss/frontstreet.scss')
+	return gulp.src('src/scss/frontstreet.scss')
 		.pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
 		.pipe(gulp.dest('dist/frontstreet/css'))
 		.pipe(gulp.dest('dist/docs/assets/frontstreet/css'))
@@ -122,7 +122,7 @@ gulp.task('render-project-css', function() {
  */
 gulp.task('render-project-js', function() {
 
-	return gulp.src('js/*.js')
+	return gulp.src('src/js/*.js')
 		.pipe(concat('frontstreet.js'))
 		.pipe(gulp.dest('dist/frontstreet/js'))
 		.pipe(gulp.dest('dist/docs/assets/frontstreet/js'))
@@ -138,8 +138,8 @@ gulp.task('render-project-js', function() {
  */
 gulp.task('render-project-svg', function() {
 
-	copydir.sync('svg', 'dist/docs/assets/frontstreet/svg');
-	copydir.sync('svg', 'dist/frontstreet/svg');
+	copydir.sync('src/svg', 'dist/docs/assets/frontstreet/svg');
+	copydir.sync('src/svg', 'dist/frontstreet/svg');
 
 });
 
@@ -161,17 +161,17 @@ gulp.task('watch', function() {
 
 	// Render documentation.
 
-	gulp.watch(['docs/assets/css/*.css', 'docs/assets/scss/*.scss', 'docs/assets/scss/**/*.scss'], ['render-docs-css']);
+	gulp.watch(['src/docs/assets/css/*.css', 'src/docs/assets/scss/*.scss', 'src/docs/assets/scss/**/*.scss'], ['render-docs-css']);
 
-	gulp.watch(['docs/assets/js/*.js'], ['render-docs-js']);
+	gulp.watch(['src/docs/assets/js/*.js'], ['render-docs-js']);
 
-	gulp.watch(['docs/**/*.html'], ['render-docs-html']);
+	gulp.watch(['src/docs/**/*.html'], ['render-docs-html']);
 
 	// Render project.
 
-	gulp.watch(['scss/*.scss', 'scss/**/*.scss'], ['render-project-css']);
+	gulp.watch(['src/scss/*.scss', 'scss/**/*.scss'], ['render-project-css']);
 
-	gulp.watch(['js/*.js'], ['render-project-js']);
+	gulp.watch(['src/js/*.js'], ['render-project-js']);
 
 });
 
@@ -179,5 +179,7 @@ gulp.task('watch', function() {
  * Serve all distrubtion tasks.
  */
 gulp.task('serve', serve, function() {
+
 	return;
+
 });
