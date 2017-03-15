@@ -83,80 +83,217 @@ $font-weight-heading				: 600;
 // Colors
 // ==========================================================================
 
-// Shading
+// Greyscale
 
 $clr-white							: #fff;
-$clr-lightest						: #f2f2f2;
+
+$clr-light							: #ccc;
 $clr-lighter						: #ddd;
-$clr-light							: #c8c8c8;
-$clr-grey							: #555;
-$clr-light-grey						: #686868;
-$clr-dark							: #101010;
+$clr-lightest						: #f8f8f8;
+
+$clr-grey							: #999;
+$clr-greyer							: #666;
+$clr-greyest						: #444;
+
+$clr-dark							: #333;
+$clr-darker							: #1b1b1b;
+$clr-darkest						: #101010;
+
 $clr-black							: #000;
-$clr-highlight						: #fec527;
+
+// Transparent Greyscale
+
+$clr-trans-light 					: rgba(97, 97, 97, .4);     // On white BG ≈ #ccc
+$clr-trans-lighter 					: rgba(176, 176, 176, .4);  // On white BG ≈ #ddd
+$clr-trans-lightest 				: rgba(237, 237, 237, .4);  // On white BG ≈ #f8f8f8
+
+$clr-trans-grey						: rgba(110, 110, 110, .7);  // On white BG ≈ #999
+$clr-trans-greyer					: rgba(50, 50, 50, .7);     // On white BG ≈ #666
+$clr-trans-greyest					: rgba(0, 0, 0, .7);        // On white BG ≈ #444
+
+// Action Colors
+
+$clr-highlight						: #fcf8e3;
 
 // Text Colors
 
-$clr-text-base						: rgba(26, 26, 26, .7);
-$clr-text-lighten					: rgba(26, 26, 26, .4);
+$clr-text-base-fallback				: $clr-greyer;
+$clr-text-base						: $clr-trans-greyer;
+$clr-text-lighten					: $clr-trans-grey;
 $clr-text-darken					: $clr-dark;
 
-$clr-text-inv-base					: #fff;
-$clr-text-inv-lighten				: #ccc;
-$clr-text-inv-darken				: #fff;
+$clr-text-inv-base					: $clr-white;
+$clr-text-inv-lighten				: $clr-light;
+$clr-text-inv-darken				: $clr-white;
+
+// Branding
+
+$clr-branding : (
+	primary : (
+		base						: $clr-dark,
+		contrast					: $clr-text-inv-base
+	),
+	secondary : (
+		base						: #fec527,
+		contrast					: $clr-text-inv-base
+	)
+);
 
 // Color Library
 
 $clr-library : (
-	black							: $clr-black,
-	blue							: #00437f,
-	brown							: #6b3c02,
-	dark_blue						: #153f5a,
-	dark_brown						: #572f05,
-	dark_green						: #485a21,
-	green							: #74941f,
-	mauve							: #7b726c,
-	orange							: #ff9624,
-	pearl							: #bca89d,
-	pink							: #de2e81,
-	purple							: #78498e,
-	red								: #a7170c,
-	royal							: #428bca,
-	slate_grey						: #7f8d9c,
-	silver							: #b5b5b5,
-	steel_blue						: #aec3d5,
-	teal							: #008080,
-	yellow							: #ecc11B,
-	wheat							: #b4ad8b
+	asphalt : (
+		base 						: #34495e,
+		contrast 					: $clr-text-inv-base
+	),
+	blue : (
+		base 						: #00437f,
+		contrast 					: $clr-text-inv-base
+	),
+	black : (
+		base 						: $clr-black,
+		contrast 					: $clr-text-inv-base
+	),
+	brown : (
+		base 						: #825a2c,
+		contrast 					: $clr-text-inv-base
+	),
+	concrete : (
+		base 						: #95a5a6,
+		contrast 					: $clr-text-inv-base
+	),
+	cream : (
+		base 						: #f5d76e,
+		contrast 					: $clr-text-base
+	),
+	crimson : (
+		base 						: #c3272b,
+		contrast 					: $clr-text-inv-base
+	),
+	dark_blue : (
+		base 						: #153f5a,
+		contrast 					: $clr-text-inv-base
+	),
+	dark_brown : (
+		base 						: #572f05,
+		contrast 					: $clr-text-inv-base
+	),
+	dark_green : (
+		base 						: #485a21,
+		contrast 					: $clr-text-inv-base
+	),
+	dark_purple : (
+		base 						: #5d3f6A,
+		contrast 					: $clr-text-inv-base
+	),
+	forest : (
+		base 						: #006442,
+		contrast 					: $clr-text-inv-base
+	),
+	green : (
+		base 						: #26a65b,
+		contrast 					: $clr-text-inv-base
+	),
+	jungle : (
+		base 						: #36b3a8,
+		contrast 					: $clr-text-inv-base
+	),
+	mauve : (
+		base 						: #7b726c,
+		contrast 					: $clr-text-inv-base
+	),
+	orange : (
+		base 						: #ff9624,
+		contrast 					: $clr-text-inv-base
+	),
+	peach : (
+		base 						: #f47983,
+		contrast 					: $clr-text-inv-base
+	),
+	pearl : (
+		base 						: #bca89d,
+		contrast 					: $clr-text-inv-base
+	),
+	pink : (
+		base 						: #de2e81,
+		contrast 					: $clr-text-inv-base
+	),
+	pomegranate : (
+		base 						: #e74c3c,
+		contrast 					: $clr-text-inv-base
+	),
+	purple : (
+		base 						: #78498e,
+		contrast 					: $clr-text-inv-base
+	),
+	red : (
+		base 						: #8f1d21,
+		contrast 					: $clr-text-inv-base
+	),
+	royal : (
+		base 						: #428bca,
+		contrast 					: $clr-text-inv-base
+	),
+	slate_grey : (
+		base 						: #7f8d9c,
+		contrast 					: $clr-text-inv-base
+	),
+	silver : (
+		base 						: #bdc3c7,
+		contrast 					: $clr-text-inv-base
+	),
+	steel_blue : (
+		base 						: #4b77Be,
+		contrast 					: $clr-text-inv-base
+	),
+	teal : (
+		base 						: #008080,
+		contrast 					: $clr-text-inv-base
+	),
+	turquoise : (
+		base 						: #36d7b7,
+		contrast 					: $clr-text-inv-base
+	),
+	yellow : (
+		base 						: #ecc11B,
+		contrast 					: $clr-text-base
+	),
+	wheat : (
+		base 						: #b4ad8b,
+		contrast 					: $clr-text-inv-base
+	),
+	white : (
+		base 						: $clr-white,
+		contrast 					: $clr-text-base
+	)
 );
 
 // Contextual
 
-$clr-primary-bg						: #101010;
-$clr-primary-text					: $clr-text-darken;
-$clr-primary-border					: #000;
-
-$clr-success-text					: #3c763d;
-$clr-success-bg						: #dff0d8;
-$clr-success-border					: darken(adjust-hue($clr-success-bg, -10), 5%);
-
-$clr-info-text						: #31708f;
-$clr-info-bg						: #d9edf7;
-$clr-info-border					: darken(adjust-hue($clr-info-bg, -10), 7%);
-
-$clr-warning-text					: #8a6d3b;
-$clr-warning-bg						: #fcf8e3;
-$clr-warning-border					: darken(adjust-hue($clr-warning-bg, -10), 5%);
-
-$clr-danger-text					: #a94442;
-$clr-danger-bg						: #f2dede;
-$clr-danger-border					: darken(adjust-hue($clr-danger-bg, -10), 5%);
+$clr-contextual : (
+	success : (
+		base						: #dff0d8,
+		contrast					: $clr-text-base
+	),
+	info : (
+		base						: #d9edf7,
+		contrast					: $clr-text-base
+	),
+	warning : (
+		base						: $clr-highlight,
+		contrast					: $clr-text-base
+	),
+	danger : (
+		base						: #f2dede,
+		contrast					: $clr-text-base
+	)
+);
 
 // Border Colors
 
 $color-border-white					: $clr-white;
-$color-border-light					: $clr-lighter;
 $color-border-dark					: $clr-dark;
+$color-border-light					: rgba(200, 200, 200, .4);
 
 // Background Colors
 

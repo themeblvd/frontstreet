@@ -8,7 +8,7 @@
 
 body,
 html {
-	color: #666; // Fallback
+	color: $clr-text-base-fallback;
 	color: $clr-text-base;
 	font-family: $font-fam-base;
 	font-size: $font-size-base;
@@ -23,7 +23,8 @@ button,
 input,
 select,
 textarea {
-    color: $clr-text-base	;
+	color: $clr-text-base-fallback;
+    color: $clr-text-base;
     font-family: $font-fam-base;
     font-weight: $font-weight-base;
     font-size: $font-size-base;
@@ -166,27 +167,6 @@ h6, .h6 {
 }
 
 //
-// Contextual
-//
-
-.text-muted {
-	color: $clr-text-lighten;
-}
-.text-light .text-muted {
-	color: $clr-text-inv-lighten;
-}
-
-@include text-emphasis-variant('.text-primary', $clr-primary-text);
-
-@include text-emphasis-variant('.text-success', $clr-success-text);
-
-@include text-emphasis-variant('.text-info', $clr-info-text);
-
-@include text-emphasis-variant('.text-warning', $clr-warning-text);
-
-@include text-emphasis-variant('.text-danger', $clr-danger-text);
-
-//
 // Code
 //
 
@@ -229,7 +209,7 @@ mark,
 .mark,
 ins,
 .ins {
-	background-color: $clr-warning-bg;
+	background-color: $clr-highlight;
 	padding: .2em;
 	text-decoration: none;
 }

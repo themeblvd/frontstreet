@@ -22,9 +22,32 @@ blockquote.alignright {
 	max-width: 300px;
 }
 
-/* Contextual Background */
-.contextual-bg-example {
-	padding: 20px;
+/* Colors */
+.demo-colors {
+	margin: 0 -1% 24px -1%;
+}
+.demo-colors li {
+	border: 1px solid transparent;
+	float: left;
+	margin: 10px 1%;
+	position: relative;
+	width: 48%;
+	height: 80px;
+}
+.demo-colors li.bg-light,
+.demo-colors li.white {
+	border-color: #ddd;
+}
+.demo-colors code {
+	background-color: rgba(0,0,0,.2);
+	color: #fff;
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+}
+.demo-colors li.bg-light code,
+.demo-colors li.white code {
+	color: #666;
 }
 
 /* Close Button */

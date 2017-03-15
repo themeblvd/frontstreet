@@ -1,0 +1,41 @@
+
+// Colors
+// --------------------------------------------------
+
+//
+// Branding
+//
+
+@each $name, $map in $clr-branding {
+	@include bg-variant('.#{$name}, .bg-#{$name}', map-get($map, base), map-get($map, contrast)); // Include .bg-* for Theme Blvd comapat.
+}
+
+//
+// Standard Color Library
+//
+
+@include bg-variant('.bg-light', $clr-lightest);
+
+@each $name, $map in $clr-library {
+	@include bg-variant('.#{$name}', map-get($map, base), map-get($map, contrast));
+}
+
+//
+// Contextual Background
+//
+
+@each $name, $map in $clr-contextual {
+	@include bg-variant('.#{$name}', map-get($map, base), map-get($map, contrast));
+}
+
+//
+// Contextual Text
+//
+
+@include text-emphasis-variant('.text-muted', $clr-text-lighten);
+
+@include text-emphasis-variant('.text-light .text-muted', $clr-text-inv-lighten);
+
+@each $name, $map in $clr-contextual {
+	@include text-emphasis-variant('.text-#{$name}', darken(adjust-hue(map-get($map, base), -10), 50%));
+}
