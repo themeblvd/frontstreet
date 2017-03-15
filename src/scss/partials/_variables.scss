@@ -308,11 +308,11 @@ $spacing-element					: 24px;
 
 // Margins
 
-$margin-element						: 0 0 $spacing-elem 0;
-$margin-heading						: ($spacing-elem + 10px) 0 $spacing-elem 0;
-$margin-paragraph					: 0 0 $spacing-elem 0;
-$margin-lead						: 0 0 $spacing-elem 0;
-$margin-list						: 0 0 $spacing-elem 0;
+$margin-element						: 0 0 $spacing-element 0;
+$margin-heading						: ($spacing-element + 10px) 0 $spacing-element 0;
+$margin-paragraph					: 0 0 $spacing-element 0;
+$margin-lead						: 0 0 $spacing-element 0;
+$margin-list						: 0 0 $spacing-element 0;
 $margin-quote						: 40px 30px;
 
 // Padding
