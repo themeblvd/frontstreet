@@ -1,18 +1,19 @@
 // ==========================================================================
-// Breakpoints
+// Responsive Breakpoints
 // ==========================================================================
 
 $breakpoints						: xs, sm, md, lg, xl;
-$breakpoint-xs 						: 415px;
+$breakpoint-xs 						: 576px;
 $breakpoint-sm 						: 768px;
 $breakpoint-md 						: 992px;
-$breakpoint-lg						: 1100px;
+$breakpoint-lg						: 1200px;
 $breakpoint-xl 						: 1600px;
 
 // ==========================================================================
 // Grid System
 // ==========================================================================
 
+// @TODO
 $grid-columns						: 12; // how can we do this to have 12 and 15?
 $grid-gutters						: 15px;
 
