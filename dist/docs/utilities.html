@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+
+		<meta charset="UTF-8" />
+		<link rel="profile" href="http://gmpg.org/xfn/11" />
+
+		<title>Utilities</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href='assets/frontstreet/plugins/fontawesome/css/font-awesome.min.css' type='text/css' media='all' />
+		<link rel="stylesheet" href='assets/frontstreet/css/frontstreet.css' type='text/css' media='all' />
+
+		<link rel="stylesheet" href='assets/css/docs.min.css' type='text/css' media='all' />
+
+	</head>
+	<body>
+
+		<div id="wrapper">
+			<div id="container">
+
+				<article id="main">
+
+					<h1 class="entry-title">
+						Utilities
+						
+							<span class="entry-subtitle">Boring Features Meant to Make Life Easier</span>
+						
+					</h1>
+
+
+<!-- CENTER BLOCK -->
+
+<h2 id="center-block">Center Blocks</h2>
+
+<p>Set an element to <code>display: block</code> and center with <code>margin</code>. &mdash; Remember that block-level elements are 100% width of their container, by default. So in most cases for the element to be centered, it will also need a width assigned that is is narrower than its container.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="center-block">...</div>
+</pre>
+
+<!-- FLOATS -->
+
+<h2 id="floats">Floats</h2>
+
+<p>Float an element to the left or right with a class. <code>!important</code> is included to avoid specificity issues.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="alignleft">...</div>
+<div class="alignright">...</div>
+</pre>
+
+<!-- CLEARFIX -->
+
+<h2 id="clearfix">Clear Fix</h2>
+
+<p>Use the <code>clearfix</code> class on a container to clear floated elements within.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false; class-name: no-wrap;">
+<div class="my-element clearfix">
+	<img src="my-tall-pic.jpg" class="alignleft" />
+	<p>Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui. Cras sed lacus tellus, in porttitor tortor. Vivamus auctor mattis nunc, quis mattis justo vulputate at. Nam rhoncus mollis convallis.</p>
+</div>
+</pre>
+
+<!-- DISPLAY -->
+
+<h2 id="display">Toggle Display</h2>
+
+<p>With the following classes you can show or hide an element with the <code>display</code> CSS propery. This means the element will not display and won't take up any space on the page.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="show">...</div>
+<div class="hide">...</div>
+</pre>
+
+<!-- VISIBILITY -->
+
+<h2 id="visibility">Toggle Visibility</h2>
+
+<p>With the following classes you can show or hide an element with the <code>visibility</code> CSS propery. This means that while the element won't be visible, it will still take up the allocated space on the page.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="visible">...</div>
+<div class="invisible">...</div>
+</pre>
+
+<!-- HIDE TEXT -->
+
+<h2 id="text-hide">Image Replacement</h2>
+
+<p>Use the class <code>text-hide</code> to hide text from an element, for the purpose of replacing it with a background image.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<h1 class="site-logo text-hide">My Site</h1>
+</pre>
+
+<!-- SCREEN READER TEXT -->
+
+<h2 id="sr-only">Screen Reader Text</h2>
+
+<p>Hide an element to all devices except screen readers by adding the <code>sr-only</code> class to an element. Combine <code>sr-only</code> with <code>sr-only-focusable</code> to show the element again when it's focused (e.g. by a keyboard-only user). This is necessary for following accessibility best practices.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+</pre>
+
+<!-- RESPONSIVE DISPLAY CLASSES -->
+
+<h2 id="responsive-utilities">Responsive Display</h2>
+
+<p>Combine classes from the table below on your HTML elements, to hide them on certain devices.</p>
+
+<div class="table-responsive">
+	<table class="table table-bordered responsive-utilities">
+		<thead>
+			<tr>
+				<th></th>
+				<th>Extra Small Devices<br><small class="text-transform-none">(0 - 575px)</small></th>
+				<th>Small Devices<br><small class="text-transform-none">(576px - 767px)</small></th>
+				<th>Medium Devices<br><small class="text-transform-none">(768px - 991px)</small></th>
+				<th>Large Devices<br><small class="text-transform-none">(992px - 1199px)</small></th>
+				<th>Extra Large Devices<br><small class="text-transform-none">(&ge;1200px)</small></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row" class="text-transform-none"><code>.hidden-xs</code></th>
+				<td class="is-hidden">Hidden</td>
+				<td class="is-visible">Visible</td>
+				<td class="is-visible">Visible</td>
+				<td class="is-visible">Visible</td>
+				<td class="is-visible">Visible</td>
+			</tr>
+			<tr>
+				<th scope="row" class="text-transform-none"><code>.hidden-sm</code></th>
+				<td class="is-visible">Visible</td>
+				<td class="is-hidden">Hidden</td>
+				<td class="is-visible">Visible</td>
+				<td class="is-visible">Visible</td>
+				<td class="is-visible">Visible</td>
+			</tr>
+			<tr>
+				<th scope="row" class="text-transform-none"><code>.hidden-md</code></th>
+				<td class="is-visible">Visible</td>
+				<td class="is-visible">Visible</td>
+				<td class="is-hidden">Hidden</td>
+				<td class="is-visible">Visible</td>
+				<td class="is-visible">Visible</td>
+			</tr>
+			<tr>
+				<th scope="row" class="text-transform-none"><code>.hidden-lg</code></th>
+				<td class="is-visible">Visible</td>
+				<td class="is-visible">Visible</td>
+				<td class="is-visible">Visible</td>
+				<td class="is-hidden">Hidden</td>
+				<td class="is-visible">Visible</td>
+			</tr>
+			<tr>
+				<th scope="row" class="text-transform-none"><code>.hidden-xl</code></th>
+				<td class="is-visible">Visible</td>
+				<td class="is-visible">Visible</td>
+				<td class="is-visible">Visible</td>
+				<td class="is-visible">Visible</td>
+				<td class="is-hidden">Hidden</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="hidden-sm hidden-md hidden-lg hidden-xl">
+    <p>You'll see me on extra small devices only.</p>
+</div>
+
+<div class="hidden-md hidden-lg hidden-xl">
+    <p>You'll see me on extra small and small devices only.</p>
+</div>
+
+<div class="hidden-xs hidden-sm hidden-md">
+    <p>You'll see me on large and extra large devices only.</p>
+</div>
+
+<div class="hidden-xs hidden-sm hidden-lg hidden-xl">
+    <p>You'll see me on medium devices only.</p>
+</div>
+</pre>
+
+
+				</article><!-- #main (end) -->
+
+			</div><!-- #container (end) -->
+		</div><!-- #wrapper (end) -->
+
+<script type="text/javascript" src="assets/js/frontstreet.min.js"></script>
+<script type="text/javascript" src="assets/js/docs.min.js"></script>
+
+<script type="text/javascript">
+	SyntaxHighlighter.all()
+</script>
+
+
+	</body>
+</html>
+
