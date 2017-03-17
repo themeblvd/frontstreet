@@ -22,10 +22,10 @@
 
 				<article id="main">
 
-					<h1 class="entry-title">
+					<h1 class="heading-lg">
 						Utilities
 						
-							<span class="entry-subtitle">Boring Features Meant to Make Life Easier</span>
+							<small class="text-muted">Boring Features Meant to Make Life Easier</small>
 						
 					</h1>
 
@@ -86,9 +86,31 @@
 <div class="invisible">...</div>
 </pre>
 
-<!-- HIDE TEXT -->
+<!-- TEXT UTILITIES -->
 
-<h2 id="text-hide">Image Replacement</h2>
+<h2 id="text-align">Text Alignment</h2>
+
+<p>Use classes <code>text-left</code>, <code>text-right</code>, <code>text-center</code>, <code>text-justify</code> and <code>text-nowrap</code> to modify text alignment.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false; class-name: no-wrap;">
+<p class="text-left">...</p>
+<p class="text-right">...</p>
+<p class="text-center">...</p>
+<p class="text-justify">...</p>
+<p class="text-nowrap">...</p>
+</pre>
+
+<h2 id="text-transform">Text Transformation</h2>
+
+<p>Use classes <code>text-lowercase</code>, <code>text-uppercase</code> and <code>text-capitalize</code> to transform text.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false; class-name: no-wrap;">
+<p class="text-lowercase">...</p>
+<p class="text-uppercase">...</p>
+<p class="text-capitalize">...</p>
+</pre>
+
+<h3 id="text-hide">Image Replacement</h3>
 
 <p>Use the class <code>text-hide</code> to hide text from an element, for the purpose of replacing it with a background image.</p>
 
@@ -98,7 +120,7 @@
 
 <!-- SCREEN READER TEXT -->
 
-<h2 id="sr-only">Screen Reader Text</h2>
+<h3 id="sr-only">Screen Reader Text</h3>
 
 <p>Hide an element to all devices except screen readers by adding the <code>sr-only</code> class to an element. Combine <code>sr-only</code> with <code>sr-only-focusable</code> to show the element again when it's focused (e.g. by a keyboard-only user). This is necessary for following accessibility best practices.</p>
 
