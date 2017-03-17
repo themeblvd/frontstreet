@@ -12,6 +12,12 @@ body {
 	max-width: 960px;
     padding: 60px 120px;
 }
+@media (max-width: 767px) {
+	#main {
+		margin: 0;
+		padding: 40px;
+	}
+}
 
 /* =Examples
 -------------------------------------------------------------- */
@@ -24,7 +30,7 @@ blockquote.alignright {
 
 /* Colors */
 .demo-colors {
-	margin: 0 -1% 24px -1%;
+	margin: 0 -1% 30px -1%;
 }
 .demo-colors li {
 	border: 1px solid transparent;
@@ -48,6 +54,29 @@ blockquote.alignright {
 .demo-colors li.bg-light code,
 .demo-colors li.white code {
 	color: #666;
+}
+
+/* Borders */
+.demo-borders {
+	margin-bottom: 30px;
+}
+.demo-borders li {
+	margin: 10px 0;
+	position: relative;
+	height: 100px;
+}
+.demo-borders code {
+	background-color: #f8f8f8;
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+}
+.demo-borders span {
+	font-size: 12px;
+	font-weight: bold;
+	position: absolute;
+	top: 10px;
+	right: 10px;
 }
 
 /* Close Button */
@@ -77,7 +106,7 @@ blockquote.alignright {
 -------------------------------------------------------------- */
 
 div .syntaxhighlighter {
-	background-color: #f5f5f5 !important;
+	background-color: #f8f8f8 !important;
 	border-radius: 2px;
 	margin: 20px 0 30px 0 !important;
 	padding: 16px !important;

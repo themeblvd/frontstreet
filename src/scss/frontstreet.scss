@@ -17,9 +17,15 @@
 // Core CSS
 @import "partials/scaffolding";
 @import "partials/type";
-@import "partials/colors";
 @import "partials/lists";
 // @import "partials/tables";
+
+// Utilities
+@import "partials/utilities";
+@import "partials/responsive-utilities";
+
+// Colors
+@import "partials/colors";
 
 // Components
 @import "partials/alerts";
@@ -27,7 +33,3 @@
 @import "partials/close";
 
 // Components w/ JavaScript
-
-// Utility classes
-@import "partials/utilities";
-@import "partials/responsive-utilities";

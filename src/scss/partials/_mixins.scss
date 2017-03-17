@@ -155,7 +155,7 @@
 // Colors
 // ==========================================================================
 
-// Contextual Text
+// Text
 // --------------------------------------------------
 
 @mixin text-emphasis-variant($parent, $color) {
@@ -168,12 +168,17 @@
 	}
 }
 
-// Contextual Backgrounds
+// Backgrounds
 // --------------------------------------------------
 
 @mixin bg-variant($parent, $color, $text: null) {
 	#{$parent} {
 		background-color: $color;
+		@if $parent == info or $parent == success or $parent == warning or $parent == danger {
+			border-color: darken(adjust-hue($color, -10), 50%);
+		} @else {
+			border-color: darken($color, 15%);
+		}
 		@if $text != null {
 			color: $text;
 		}
