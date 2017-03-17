@@ -21,7 +21,143 @@ $grid-gutters						: 15px;
 // Typography
 // ==========================================================================
 
-// @TODO
+// Font Families
+
+$font-fam-base						: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$font-fam-headings					: $font-fam-base;
+$font-fam-code						: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+
+// Font Sizes
+
+$font-size-xxxl						: 64px;
+$font-size-xxl						: 40px;
+$font-size-xl						: 24px;
+$font-size-lg						: 20px;
+$font-size-base 					: 16px;
+$font-size-md						: 15px;
+$font-size-sm						: 14px;
+$font-size-xs						: 13px;
+$font-size-xxs						: 12px;
+$font-size-xxxs						: 11px;
+$font-size-micro					: 10px;
+
+// Font Size Usage
+
+$font-size-headings : (
+	h1 : (
+		base						: 2.5rem,
+		mobile						: 28px
+	),
+	h2 : (
+		base						: 2rem,
+		mobile						: 22px
+	),
+	h3 : (
+		base						: 1.75rem,
+		mobile						: 20px
+	),
+	h4 : (
+		base						: 1.5rem,
+		mobile						: 18px
+	),
+	h5 : (
+		base						: 1.25rem,
+		mobile						: 17px
+	),
+	h6 : (
+		base						: 1rem,
+		mobile						: $font-size-base
+	)
+);
+
+$font-size-headings-bigger : (
+	lg : (
+		base						: 3rem,
+		mobile						: 28px // Match mobile <h1>.
+	),
+	xl : (
+		base						: 4rem,
+		mobile						: 30px
+	),
+	xxl : (
+		base						: 5rem,
+		mobile						: 32px
+	),
+	xxxl : (
+		base						: 6rem,
+		mobile						: 34px
+	)
+);
+
+$font-size-headings-smaller : (
+	sm : (
+		base						: $font-size-base,
+		mobile						: $font-size-base
+	),
+	xs : (
+		base						: $font-size-md,
+		mobile						: $font-size-md
+	),
+	xxs : (
+		base						: $font-size-sm,
+		mobile						: $font-size-sm
+	),
+	xxxs : (
+		base						: $font-size-xs,
+		mobile						: $font-size-xs
+	)
+);
+
+$font-size-subtitle					: .45em;
+$font-size-subtitle-sm				: $font-size-xxs;
+
+$font-size-lead						: $font-size-lg;
+$font-size-small					: .8em;
+$font-size-big						: 1.25em;
+$font-size-cite						: $font-size-xxs;
+$font-size-code						: $font-size-sm;
+$font-size-pre						: $font-size-md;
+$font-size-caption					: $font-size-sm;
+$font-size-quote					: 1.3rem;
+
+// Font Line Heights
+
+$font-lh-base 						: 1.6;
+$font-lh-caption					: 1.4;
+$font-lh-cite						: 1.4;
+$font-lh-heading 					: 1.2;
+$font-lh-heading-sm 				: 1.4;
+$font-lh-lead						: 1.4;
+$font-lh-quote						: 1.4;
+$font-lh-header-menu				: 1.25;
+$font-lh-header-menu-dropdown		: 1.4;
+$font-lh-btn 						: 1.42857143;
+
+// Font Style
+
+$font-style-quote					: italic;
+$font-style-address					: normal;
+
+// Font Weights
+
+$font-weight-base					: 300;
+$font-weight-heading				: 700;
+$font-weight-heading-lg				: 700;
+$font-weight-heading-sm				: 700;
+
+// Text Transform
+$font-transform-heading				: none;
+$font-transform-heading-lg			: none;
+$font-transform-heading-sm			: uppercase;
+$font-transform-subtitles			: none;
+$font-transform-quote				: none;
+
+// Letter Spacing
+
+$font-ls-heading					: 0;
+$font-ls-heading-lg					: 1px;
+$font-ls-heading-sm					: 1px;
+$font-ls-subtitles					: 0;
 
 // ==========================================================================
 // Colors
@@ -297,6 +433,8 @@ $spacing-element					: 24px;
 
 $margin-element						: 0 0 $spacing-element 0;
 $margin-heading						: ($spacing-element + 10px) 0 $spacing-element 0;
+$margin-heading-lg					: 0 0 $spacing-element 0;
+$margin-heading-sm					: 0 0 $spacing-element 0;
 $margin-paragraph					: 0 0 $spacing-element 0;
 $margin-lead						: 0 0 $spacing-element 0;
 $margin-list						: 0 0 $spacing-element 0;

@@ -30,15 +30,6 @@ textarea {
     font-size: $font-size-base;
     line-height: $font-lh-base;
 }
-@include max-width(sm) {
-    body,
-    button,
-    input,
-    select,
-    textarea {
-        font-size: $font-size-mobile;
-    }
-}
 .text-light button,
 .text-light input,
 .text-light select,
@@ -65,13 +56,14 @@ p {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-	font-weight: bold;
+	color: $clr-text-darken;
+	font-weight: $font-weight-heading;
 	font-family: $font-fam-headings;
 	font-weight: $font-weight-heading;
+	letter-spacing: $font-ls-heading;
 	line-height: $font-lh-heading;
 	margin: $margin-heading;
-	color: $clr-text-darken;
-	text-transform: none;
+	text-transform: $font-transform-heading;
 
 	&:first-child {
 		margin-top: 0;
@@ -86,80 +78,85 @@ h1, h2, h3, h4, h5, h6,
 .text-light h6, .text-light .h6 {
 	color: $clr-text-inv-darken;
 }
-h5, h6,
-.h5, .h6 {
-	letter-spacing: 1px;
-	line-height: $font-lh-heading-sm;
-	margin-top: 0;
-    margin-bottom: 1em;
-	text-transform: uppercase;
+@each $tag, $map in $font-size-headings {
+	#{$tag}, .#{$tag} {
+		font-size: map-get($map, base);
+	}
 }
-h1, .h1 {
-	font-size: $font-size-entry-title;
-}
-h2, .h2 {
-	font-size: 1.93rem;
-}
-h3, .h3 {
-	font-size: 1.42rem;
-}
-h4, .h4 {
-	font-size: 1.14rem;
-}
-h5, .h5 {
-	font-size: 1rem;
-}
-h6, .h6 {
-	font-size: .85rem;
-}
-
-//
-// Page Heading
-//
-
-.entry-title {
-	font-size: $font-size-entry-title; // Match to <h1>
-
-	.entry-subtitle {
-		color: $clr-text-lighten;
-		display: block;
-    	font-size: .45em;
-    	margin: .6em 0 0 .1em;
+@include max-width(sm) {
+	@each $tag, $map in $font-size-headings {
+		#{$tag}, .#{$tag} {
+			font-size: map-get($map, mobile);
+		}
 	}
 }
 
 //
-// Alignment
+// Subtitles
 //
 
-.text-left {
-	text-align: left;
+h1 small, .h1 small,
+h2 small, .h2 small,
+h3 small, .h3 small,
+h4 small, .h4 small,
+h5 small, .h5 small,
+h6 small, .h6 small {
+	display: block;
+	font-size: .45em;
+	letter-spacing: $font-ls-subtitles;
+	margin: .6em 0 0 .1em;
+	text-transform: $font-transform-subtitles;
 }
-.text-right {
-	text-align: right;
-}
-.text-center {
-	text-align: center;
-}
-.text-justify {
-	text-align: justify;
-}
-.text-nowrap {
-	white-space: nowrap;
+h3 small, .h3 small,
+h4 small, .h4 small,
+h5 small, .h5 small,
+h6 small, .h6 small {
+	font-size: $font-size-subtitle-sm;
 }
 
 //
-// Transformation
+// Bigger Headings
 //
 
-.text-lowercase {
-	text-transform: lowercase;
+.heading-lg,
+.heading-xl,
+.heading-xxl,
+.heading-xxxl {
+	font-weight: $font-weight-heading-lg;
+	letter-spacing: $font-ls-heading-lg;
+	margin: $margin-heading-lg;
+	text-transform: $font-transform-heading-sm;
 }
-.text-uppercase {
-	text-transform: uppercase;
+@each $tag, $map in $font-size-headings-bigger {
+	.heading-#{$tag} {
+		font-size: map-get($map, base);
+	}
 }
-.text-capitalize {
-	text-transform: capitalize;
+@include max-width(sm) {
+	@each $tag, $map in $font-size-headings-bigger {
+		.heading-#{$tag} {
+			font-size: map-get($map, mobile);
+		}
+	}
+}
+
+//
+// Smaller Headings
+//
+
+.heading-sm,
+.heading-xs,
+.heading-xxs,
+.heading-xxxs {
+	font-weight: $font-weight-heading-sm;
+	letter-spacing: $font-ls-heading-sm;
+	margin: $margin-heading-sm;
+	text-transform: $font-transform-heading-sm;
+}
+@each $tag, $map in $font-size-headings-smaller {
+	.heading-#{$tag} {
+		font-size: map-get($map, base);
+	}
 }
 
 //
@@ -181,12 +178,34 @@ pre {
 code, kbd, tt, var {
     font-family: $font-fam-code;
     font-size: $font-size-code;
+	font-weight: bold;
 }
 code {
     background-color: $clr-bg-code;
     @include border-radius(1px);
 	color: $clr-text-base;
+	font-size: 90%;
 	padding: 0.125em 0.25em;
+}
+pre code {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+kbd {
+	padding: 2px 4px;
+	font-size: 90%;
+	color: $clr-text-inv-base;
+	background-color: $clr-bg-kbd;
+	@include border-radius(2px);
+	box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+
+	kbd {
+		padding: 0;
+		font-size: 100%;
+		font-weight: bold;
+		box-shadow: none;
+	}
 }
 
 //
@@ -213,13 +232,9 @@ dfn, cite, em, i {
     font-style: italic;
 }
 address {
+	font-style: $font-style-address;
 	line-height: $font-lh-base;
     margin: $margin-element;
-}
-pre code {
-    background-color: transparent;
-    border: none;
-    padding: 0;
 }
 abbr, acronym {
     border-bottom: 1px dotted $clr-border-light;
@@ -232,10 +247,11 @@ abbr, acronym {
 
 blockquote {
     color: $clr-text-darken;
-    font-size: 1.3rem;
-    font-style: italic;
+    font-size: $font-size-quote;
+    font-style: $font-style-quote;
     line-height: $font-lh-quote;
     margin: $margin-quote;
+	text-transform: $font-transform-quote;
 
 	&.alignleft,
 	&.pull-left,
