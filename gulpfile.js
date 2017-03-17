@@ -169,7 +169,7 @@ gulp.task('watch', function() {
 
 	// Render project.
 
-	gulp.watch(['src/scss/*.scss', 'scss/**/*.scss'], ['render-project-css']);
+	gulp.watch(['src/scss/*.scss', 'src/scss/**/*.scss'], ['render-project-css']);
 
 	gulp.watch(['src/js/*.js'], ['render-project-js']);
 
