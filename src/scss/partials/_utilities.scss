@@ -54,7 +54,7 @@
 @include hide('.hidden');
 
 //
-// Hide text
+// Hide Text
 //
 
 .text-hide {
@@ -62,9 +62,45 @@
 }
 
 //
-// For Affix plugin
+// Text Alignment
 //
 
-.affix {
-	position: fixed;
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+.text-center {
+	text-align: center;
+}
+.text-justify {
+	text-align: justify;
+}
+.text-nowrap {
+	white-space: nowrap;
+}
+
+//
+// Text Transformation
+//
+
+.text-lowercase {
+	text-transform: lowercase;
+}
+.text-uppercase {
+	text-transform: uppercase;
+}
+.text-capitalize {
+	text-transform: capitalize;
+}
+
+//
+// Borders
+//
+
+@each $name, $map in $border-utils {
+	.border-#{$name} {
+		border: map-get($map, width) map-get($map, style) map-get($map, color);
+	}
 }
