@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+
+		<meta charset="UTF-8" />
+		<link rel="profile" href="http://gmpg.org/xfn/11" />
+
+		<title>Tables</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href='assets/frontstreet/plugins/fontawesome/css/font-awesome.min.css' type='text/css' media='all' />
+		<link rel="stylesheet" href='assets/frontstreet/css/frontstreet.css' type='text/css' media='all' />
+
+		<link rel="stylesheet" href='assets/css/docs.min.css' type='text/css' media='all' />
+
+	</head>
+	<body>
+
+		<div id="wrapper">
+			<div id="container">
+
+				<article id="main">
+
+					<h1 class="heading-lg">
+						Tables
+						
+					</h1>
+
+
+<h2 id="basic">Basic Table</h2>
+
+<p>Here's an example of a basic table, with no classes added.</p>
+
+<table>
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Team</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>87</td>
+			<td>Sydney</td>
+			<td>Crosby</td>
+			<td>Penguins</td>
+		</tr>
+		<tr>
+			<td>97</td>
+			<td>Connor</td>
+			<td>McDavid</td>
+			<td>Oilers</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>Alex</td>
+			<td>Ovechkin</td>
+			<td>Capitals</td>
+		</tr>
+		<tr>
+			<td>91</td>
+			<td>John</td>
+			<td>Tavares</td>
+			<td>Islanders</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>Brent</td>
+			<td>Burns</td>
+			<td>Sharks</td>
+		</tr>
+	</tbody>
+</table>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<table>
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Team</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>87</td>
+			<td>Sydney</td>
+			<td>Crosby</td>
+			<td>Penguins</td>
+		</tr>
+		<!-- And so on... -->
+	</tbody>
+</table>
+</pre>
+
+<p>And for a nice touch add the <a href="type.html#headings-smaller">small heading classes</a> to your heading cells.</p>
+
+<table>
+	<thead>
+		<tr>
+			<th class="heading-xs">#</th>
+			<th class="heading-xs">First Name</th>
+			<th class="heading-xs">Last Name</th>
+			<th class="heading-xs">Team</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>87</td>
+			<td>Sydney</td>
+			<td>Crosby</td>
+			<td>Penguins</td>
+		</tr>
+		<tr>
+			<td>97</td>
+			<td>Connor</td>
+			<td>McDavid</td>
+			<td>Oilers</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>Alex</td>
+			<td>Ovechkin</td>
+			<td>Capitals</td>
+		</tr>
+		<tr>
+			<td>91</td>
+			<td>John</td>
+			<td>Tavares</td>
+			<td>Islanders</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>Brent</td>
+			<td>Burns</td>
+			<td>Sharks</td>
+		</tr>
+	</tbody>
+</table>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<table>
+	<thead>
+		<tr>
+			<th class="heading-xs">#</th>
+			<th class="heading-xs">First Name</th>
+			<th class="heading-xs">Last Name</th>
+			<th class="heading-xs">Team</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- And so on... -->
+	</tbody>
+</table>
+</pre>
+
+<h2 id="striped">Striped Tables</h2>
+
+<p>Use the class <code>table-striped</code> to add zebra-striping to any table row within the <code>&lt;tbody&gt;</code>.</p>
+
+<table class="table-striped">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Team</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>87</td>
+			<td>Sydney</td>
+			<td>Crosby</td>
+			<td>Penguins</td>
+		</tr>
+		<tr>
+			<td>97</td>
+			<td>Connor</td>
+			<td>McDavid</td>
+			<td>Oilers</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>Alex</td>
+			<td>Ovechkin</td>
+			<td>Capitals</td>
+		</tr>
+		<tr>
+			<td>91</td>
+			<td>John</td>
+			<td>Tavares</td>
+			<td>Islanders</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>Brent</td>
+			<td>Burns</td>
+			<td>Sharks</td>
+		</tr>
+	</tbody>
+</table>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<table class="table-striped">
+	<!-- And so on... -->
+</table>
+</pre>
+
+<h2 id="bordered">Bordered Tables</h2>
+
+<p>Add the class <code>table-bordered</code> for borders on all sides of the table and cells.</p>
+
+<table class="table-bordered">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Team</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>87</td>
+			<td>Sydney</td>
+			<td>Crosby</td>
+			<td>Penguins</td>
+		</tr>
+		<tr>
+			<td>97</td>
+			<td>Connor</td>
+			<td>McDavid</td>
+			<td>Oilers</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>Alex</td>
+			<td>Ovechkin</td>
+			<td>Capitals</td>
+		</tr>
+		<tr>
+			<td>91</td>
+			<td>John</td>
+			<td>Tavares</td>
+			<td>Islanders</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>Brent</td>
+			<td>Burns</td>
+			<td>Sharks</td>
+		</tr>
+	</tbody>
+</table>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<table class="table-bordered">
+	<!-- And so on... -->
+</table>
+</pre>
+
+<h2 id="hover">Hover Rows</h2>
+
+<p>Add the class <code>table-hover</code> to enable a hover state on table rows within a <code>&lt;tbody&gt;</code>.</p>
+
+<table class="table-hover">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Team</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>87</td>
+			<td>Sydney</td>
+			<td>Crosby</td>
+			<td>Penguins</td>
+		</tr>
+		<tr>
+			<td>97</td>
+			<td>Connor</td>
+			<td>McDavid</td>
+			<td>Oilers</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>Alex</td>
+			<td>Ovechkin</td>
+			<td>Capitals</td>
+		</tr>
+		<tr>
+			<td>91</td>
+			<td>John</td>
+			<td>Tavares</td>
+			<td>Islanders</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>Brent</td>
+			<td>Burns</td>
+			<td>Sharks</td>
+		</tr>
+	</tbody>
+</table>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<table class="table-hover">
+	<!-- And so on... -->
+</table>
+</pre>
+
+<h2 id="condensed">Condensed Tables</h2>
+
+<p>For a more tight and compact look, add the class <code>table-condensed</code>.</p>
+
+<table class="table-condensed">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Team</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>87</td>
+			<td>Sydney</td>
+			<td>Crosby</td>
+			<td>Penguins</td>
+		</tr>
+		<tr>
+			<td>97</td>
+			<td>Connor</td>
+			<td>McDavid</td>
+			<td>Oilers</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>Alex</td>
+			<td>Ovechkin</td>
+			<td>Capitals</td>
+		</tr>
+		<tr>
+			<td>91</td>
+			<td>John</td>
+			<td>Tavares</td>
+			<td>Islanders</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>Brent</td>
+			<td>Burns</td>
+			<td>Sharks</td>
+		</tr>
+	</tbody>
+</table>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<table class="table-condensed">
+	<!-- And so on... -->
+</table>
+</pre>
+
+<p>And again, for a nice touch combine this with the <a href="type.html#headings-smaller">small heading classes</a>.</p>
+
+<table class="table-condensed">
+	<thead>
+		<tr>
+			<th class="heading-xxxs">#</th>
+			<th class="heading-xxxs">First Name</th>
+			<th class="heading-xxxs">Last Name</th>
+			<th class="heading-xxxs">Team</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>87</td>
+			<td>Sydney</td>
+			<td>Crosby</td>
+			<td>Penguins</td>
+		</tr>
+		<tr>
+			<td>97</td>
+			<td>Connor</td>
+			<td>McDavid</td>
+			<td>Oilers</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>Alex</td>
+			<td>Ovechkin</td>
+			<td>Capitals</td>
+		</tr>
+		<tr>
+			<td>91</td>
+			<td>John</td>
+			<td>Tavares</td>
+			<td>Islanders</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>Brent</td>
+			<td>Burns</td>
+			<td>Sharks</td>
+		</tr>
+	</tbody>
+</table>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<table class="table-condensed">
+	<thead>
+		<tr>
+			<th class="heading-xxxs">#</th>
+			<th class="heading-xxxs">First Name</th>
+			<th class="heading-xxxs">Last Name</th>
+			<th class="heading-xxxs">Team</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- And so on... -->
+	</tbody>
+</table>
+</pre>
+
+<h2 id="contextual">Contextual Classes</h2>
+
+<p>You can add any of the <a href="colors.html#contextual-colors">contextual classes</a> to your table rows or cells.</p>
+
+<table>
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Team</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="active">
+			<td>87</td>
+			<td>Sydney</td>
+			<td>Crosby</td>
+			<td>Penguins</td>
+		</tr>
+		<tr class="success">
+			<td>97</td>
+			<td>Connor</td>
+			<td>McDavid</td>
+			<td>Oilers</td>
+		</tr>
+		<tr class="info">
+			<td>8</td>
+			<td>Alex</td>
+			<td>Ovechkin</td>
+			<td>Capitals</td>
+		</tr>
+		<tr class="warning">
+			<td>91</td>
+			<td>John</td>
+			<td>Tavares</td>
+			<td>Islanders</td>
+		</tr>
+		<tr class="danger">
+			<td>8</td>
+			<td>Brent</td>
+			<td>Burns</td>
+			<td>Sharks</td>
+		</tr>
+	</tbody>
+</table>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<table>
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Team</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="active">
+			<td>87</td>
+			<td>Sydney</td>
+			<td>Crosby</td>
+			<td>Penguins</td>
+		</tr>
+		<tr class="success">
+			<td>97</td>
+			<td>Connor</td>
+			<td>McDavid</td>
+			<td>Oilers</td>
+		</tr>
+		<tr class="info">
+			<td>8</td>
+			<td>Alex</td>
+			<td>Ovechkin</td>
+			<td>Capitals</td>
+		</tr>
+		<tr class="warning">
+			<td>91</td>
+			<td>John</td>
+			<td>Tavares</td>
+			<td>Islanders</td>
+		</tr>
+		<tr class="danger">
+			<td>8</td>
+			<td>Brent</td>
+			<td>Burns</td>
+			<td>Sharks</td>
+		</tr>
+	</tbody>
+</table>
+</pre>
+
+<h2 id="color-library">Color Library</h2>
+
+<p>Similarly to how you can use contextual color classes, you can also use any class from the <a href="colors.html#color-library">color library</a>.</p>
+
+<table>
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Team</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="asphalt">
+			<td>87</td>
+			<td>Sydney</td>
+			<td>Crosby</td>
+			<td>Penguins</td>
+		</tr>
+		<tr class="blue">
+			<td>97</td>
+			<td>Connor</td>
+			<td>McDavid</td>
+			<td>Oilers</td>
+		</tr>
+		<tr class="brown">
+			<td>8</td>
+			<td>Alex</td>
+			<td>Ovechkin</td>
+			<td>Capitals</td>
+		</tr>
+		<tr class="crimson">
+			<td>91</td>
+			<td>John</td>
+			<td>Tavares</td>
+			<td>Islanders</td>
+		</tr>
+		<tr class="dark_blue">
+			<td>8</td>
+			<td>Brent</td>
+			<td>Burns</td>
+			<td>Sharks</td>
+		</tr>
+	</tbody>
+</table>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<table>
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Team</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="asphalt">
+			<td>87</td>
+			<td>Sydney</td>
+			<td>Crosby</td>
+			<td>Penguins</td>
+		</tr>
+		<tr class="blue">
+			<td>97</td>
+			<td>Connor</td>
+			<td>McDavid</td>
+			<td>Oilers</td>
+		</tr>
+		<tr class="brown">
+			<td>8</td>
+			<td>Alex</td>
+			<td>Ovechkin</td>
+			<td>Capitals</td>
+		</tr>
+		<tr class="crimson">
+			<td>91</td>
+			<td>John</td>
+			<td>Tavares</td>
+			<td>Islanders</td>
+		</tr>
+		<tr class="dark_blue">
+			<td>8</td>
+			<td>Brent</td>
+			<td>Burns</td>
+			<td>Sharks</td>
+		</tr>
+	</tbody>
+</table>
+</pre>
+
+<h2 id="responsive">Responsive Tables</h2>
+
+<p>One crucial thing missing from all of the table examples above is the responsiveness. Of course we want our tables to display nicely on mobile devices. So to create responsive tables, wrap any <code>&lt;table&gt;</code> in <code>.table-responsive</code> to make them scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, you will not see any difference in these tables.</p>
+
+<div class="table-responsive">
+	<table>
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Team</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>87</td>
+				<td>Sydney</td>
+				<td>Crosby</td>
+				<td>Penguins</td>
+			</tr>
+			<tr>
+				<td>97</td>
+				<td>Connor</td>
+				<td>McDavid</td>
+				<td>Oilers</td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td>Alex</td>
+				<td>Ovechkin</td>
+				<td>Capitals</td>
+			</tr>
+			<tr>
+				<td>91</td>
+				<td>John</td>
+				<td>Tavares</td>
+				<td>Islanders</td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td>Brent</td>
+				<td>Burns</td>
+				<td>Sharks</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="table-responsive">
+	<table>
+		<!-- And so on... -->
+	</table>
+</div>
+</pre>
+
+
+				</article><!-- #main (end) -->
+
+			</div><!-- #container (end) -->
+		</div><!-- #wrapper (end) -->
+
+<script type="text/javascript" src="assets/js/frontstreet.min.js"></script>
+<script type="text/javascript" src="assets/js/docs.min.js"></script>
+
+<script type="text/javascript">
+	SyntaxHighlighter.all()
+</script>
+
+
+	</body>
+</html>
+
