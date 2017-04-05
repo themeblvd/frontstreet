@@ -1,0 +1,242 @@
+
+// Tables
+// --------------------------------------------------
+
+//
+// Reset
+//
+
+table {
+	background-color: $table-bg;
+}
+caption {
+	padding-top: $table-cell-padding;
+	padding-bottom: $table-cell-padding;
+	color: $clr-text-lighten;
+	text-align: left;
+}
+th {
+	text-align: left;
+}
+
+//
+// Base Table
+//
+
+table {
+	width: 100%;
+	max-width: 100%;
+	margin: $margin-table;
+	background-color: $table-bg; // Reset for nesting within parents with `background-color`.
+
+	th {
+		color: $clr-text-darken;
+		font-weight: bold;
+	}
+
+	th,
+	td {
+		padding: $table-cell-padding;
+		vertical-align: top;
+		border-top: $table-border-width solid $table-border-color;
+	}
+
+	thead th {
+		vertical-align: bottom;
+		border-bottom: (2 * $table-border-width) solid $table-border-color;
+	}
+
+	tbody + tbody {
+		border-top: (2 * $table-border-width) solid $table-border-color;
+	}
+
+	table {
+		background-color: $clr-bg-body;
+	}
+}
+
+
+//
+// Condensed Table
+//
+// Note: .table-condensed for backwards compat.
+//
+
+.table-sm,
+.table-condensed {
+
+	font-size: $table-sm-font-size;
+
+	th,
+	td {
+		padding: $table-sm-cell-padding;
+	}
+}
+
+
+//
+// Bordered Table
+//
+// Add borders all around the table and between all
+// the columns.
+//
+
+.table-bordered {
+	border: $table-border-width solid $table-border-color;
+
+	th,
+	td {
+		border: $table-border-width solid $table-border-color;
+	}
+
+	thead {
+		th,
+		td {
+			border-bottom-width: (2 * $table-border-width);
+		}
+	}
+}
+
+//
+// Zebra-Striped Table
+//
+// Default zebra-stripe styles (alternating gray and
+// transparent backgrounds).
+//
+
+.table-striped {
+	tbody tr:nth-of-type(odd) {
+		background-color: $table-bg-accent;
+	}
+}
+
+//
+// Hover effect
+//
+// Placed here since it has to come after the potential
+// zebra striping.
+//
+
+.table-hover {
+	tbody tr {
+		&:hover {
+			background-color: $table-bg-hover;
+		}
+	}
+}
+
+
+//
+// Table Backgrounds
+//
+// Exact selectors below required to override `.table-striped` and prevent
+// inheritance to nested tables.
+//
+
+@include table-row-variant(active, $table-bg-active);
+
+@each $name, $map in $clr-contextual {
+	@include table-row-variant(#{$name}, map-get($map, base));
+}
+
+//
+// Inverted Tables
+//
+// Same table markup, but inverted color scheme: dark background and
+// light text.
+//
+
+.thead-inverse,
+.thead-default {
+	th {
+		color: $table-inv-color;
+		background-color: $table-inv-bg;
+	}
+}
+.table-inverse {
+	color: $table-inv-color;
+	background-color: $table-inv-bg;
+
+	th,
+	td,
+	thead th {
+		border-color: $clr-bg-body;
+	}
+
+	&.table-bordered {
+		border: 0;
+	}
+}
+
+
+//
+// Responsive Tables
+//
+// Wrap table like:
+// <div class="table-responsive"><table>...</table></div>
+//
+
+.table-responsive {
+	overflow-x: auto;
+	min-height: 0.01%; // Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837)
+
+	@include max-width(sm) {
+		width: 100%;
+		// margin-bottom: ($line-height-computed * 0.75);
+		overflow-y: hidden;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+		border: 1px solid $table-border-color;
+
+		// Tighten up spacing
+		> table {
+			margin-bottom: 0;
+
+			// Ensure the content doesn't wrap
+			> thead,
+			> tbody,
+			> tfoot {
+				> tr {
+					> th,
+					> td {
+						white-space: nowrap;
+					}
+				}
+			}
+		}
+
+		// Special overrides for the bordered tables
+		> .table-bordered {
+			border: 0;
+
+			// Nuke the appropriate borders so that the parent can handle them
+			> thead,
+			> tbody,
+			> tfoot {
+				> tr {
+					> th:first-child,
+					> td:first-child {
+						border-left: 0;
+					}
+					> th:last-child,
+					> td:last-child {
+						border-right: 0;
+					}
+				}
+			}
+
+			// Only nuke the last row's bottom-border in `tbody` and `tfoot` since
+			// chances are there will be only one `tr` in a `thead` and that would
+			// remove the border altogether.
+			> tbody,
+			> tfoot {
+				> tr:last-child {
+					> th,
+					> td {
+						border-bottom: 0;
+					}
+				}
+			}
+
+		}
+	}
+}

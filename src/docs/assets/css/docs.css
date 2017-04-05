@@ -94,6 +94,16 @@ blockquote.alignright {
 .close-button-examples .close:nth-child(4) {
   left: 170px; }
 
+/* =Tables
+-------------------------------------------------------------- */
+.responsive-utilities td.is-visible {
+  color: #468847;
+  background-color: #dff0d8 !important; }
+
+.responsive-utilities td.is-hidden {
+  color: #ccc;
+  background-color: #f9f9f9 !important; }
+
 /* =Syntax Highlighter
 -------------------------------------------------------------- */
 div .syntaxhighlighter {
