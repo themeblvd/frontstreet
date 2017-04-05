@@ -2,7 +2,7 @@
 ----------------------------------------------- */
 
 hr {
-	background-color: rgba($clr-bg-hr, 0.1);
+	background-color: $clr-bg-hr;
     border: 0;
     height: 1px;
     margin: (round( $font-size-base * $font-lh-base ) ) 0;
