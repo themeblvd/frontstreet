@@ -1,3 +1,39 @@
 
 // Alerts
 // --------------------------------------------------
+
+.alert {
+	border-left: 10px solid transparent;
+	font-size: $font-size-alert;
+	margin: $margin-alert;
+	padding: $padding-alert;
+
+	// Provide class for links that match alerts
+	a {
+		color: inherit;
+		font-weight: bold;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+
+	// Improve alignment and spacing of inner content
+	> p,
+	> ul {
+		margin-bottom: 0;
+	}
+
+	> p + p {
+		margin-top: 5px;
+	}
+}
+
+//
+// Backwards Compat
+//
+
+@each $name, $map in $clr-contextual {
+	@include bg-variant('.alert-#{$name}', map-get($map, base), map-get($map, contrast));
+}

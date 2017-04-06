@@ -119,6 +119,7 @@ $font-size-code						: $font-size-sm;
 $font-size-pre						: $font-size-md;
 $font-size-caption					: $font-size-sm;
 $font-size-quote					: 1.3rem;
+$font-size-alert					: 0.9375rem;
 
 // Font Line Heights
 
@@ -205,6 +206,11 @@ $clr-text-darken					: $clr-dark;
 $clr-text-inv-base					: $clr-white;
 $clr-text-inv-lighten				: $clr-light;
 $clr-text-inv-darken				: $clr-white;
+
+// Links
+
+$clr-link							: #428bca;
+$clr-link-hover						: #2a6496;
 
 // Branding
 
@@ -353,19 +359,19 @@ $clr-library : (
 $clr-contextual : (
 	success : (
 		base						: #dff0d8,
-		contrast					: $clr-text-base
+		contrast					: #3c763d
 	),
 	info : (
 		base						: #d9edf7,
-		contrast					: $clr-text-base
+		contrast					: #31708f
 	),
 	warning : (
 		base						: $clr-highlight,
-		contrast					: $clr-text-base
+		contrast					: #8a6d3b
 	),
 	danger : (
 		base						: #f2dede,
-		contrast					: $clr-text-base
+		contrast					: #a94442
 	),
 	active : (
 		base						: $clr-lightest,
@@ -444,10 +450,12 @@ $margin-lead						: 0 0 $spacing-element 0;
 $margin-list						: 0 0 $spacing-element 0;
 $margin-quote						: 40px 30px;
 $margin-table						: 0 0 $spacing-element 0;
+$margin-alert						: 0 0 $spacing-element 0;
 
 // Padding
 
 $padding-list						: 0 0 0 40px;
+$padding-alert						: 15px;
 
 // ==========================================================================
 // Buttons

@@ -34,10 +34,30 @@ textarea {
 .text-light input,
 .text-light select,
 .text-light textarea {
-	color: $clr-text-inv-base;
+	color: rgba($clr-text-inv-base, 0.8);
 }
 
+//
+// Links
+//
+
+a {
+	color: $clr-link;
+	text-decoration: none;
+}
+a:hover,
+a:active,
+a:focus {
+	color: $clr-link-hover;
+}
+.text-light {
+	@include blend-links();
+}
+
+//
 // Paragraphs
+//
+
 p {
 	margin: $margin-paragraph;
 }

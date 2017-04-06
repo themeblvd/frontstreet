@@ -127,14 +127,14 @@
 @mixin blend-links() {
 	a {
 		color: inherit;
-		border-bottom: 1px solid rgba($color-text-light, 0.8);
+		border-bottom: 1px solid rgba($clr-text-inv-base, 0.8);
 		padding-bottom: 1px;
 		text-decoration: none;
 
 		&:hover,
 		&:focus {
-			border-color: $clr-border-white;
-			color: $color-text-light;
+			border-color: $clr-text-inv-base;
+			color: $clr-text-inv-base;
 		}
 	}
 }
