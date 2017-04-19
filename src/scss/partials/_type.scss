@@ -60,6 +60,7 @@ a:focus {
 
 p {
 	margin: $margin-paragraph;
+	@include margin-vert-flush
 }
 .lead {
 
@@ -67,6 +68,7 @@ p {
 		font-size: $font-size-lead;
 		line-height: $font-lh-lead;
 		margin: $margin-lead;
+		@include margin-vert-flush
 	}
 }
 
@@ -84,11 +86,7 @@ h1, h2, h3, h4, h5, h6,
 	line-height: $font-lh-heading;
 	margin: $margin-heading;
 	text-transform: $font-transform-heading;
-
-	&:first-child {
-		margin-top: 0;
-	}
-
+	@include margin-vert-flush;
 }
 .text-light h1, .text-light .h1,
 .text-light h2, .text-light .h2,
@@ -146,6 +144,7 @@ h6 small, .h6 small {
 	letter-spacing: $font-ls-heading-lg;
 	margin: $margin-heading-lg;
 	text-transform: $font-transform-heading-sm;
+	@include margin-vert-flush;
 }
 @each $tag, $map in $font-size-headings-bigger {
 	.heading-#{$tag} {
@@ -172,6 +171,7 @@ h6 small, .h6 small {
 	letter-spacing: $font-ls-heading-sm;
 	margin: $margin-heading-sm;
 	text-transform: $font-transform-heading-sm;
+	@include margin-vert-flush;
 }
 @each $tag, $map in $font-size-headings-smaller {
 	.heading-#{$tag} {
@@ -194,6 +194,7 @@ pre {
     max-width: 100%;
     overflow: auto;
     padding: 1em;
+	@include margin-vert-flush;
 }
 code, kbd, tt, var {
     font-family: $font-fam-code;
@@ -255,6 +256,7 @@ address {
 	font-style: $font-style-address;
 	line-height: $font-lh-base;
     margin: $margin-element;
+	@include margin-vert-flush;
 }
 abbr, acronym {
     border-bottom: 1px dotted $clr-border-light;
@@ -273,6 +275,8 @@ blockquote {
     margin: $margin-quote;
 	text-transform: $font-transform-quote;
 
+	@include margin-vert-flush;
+
 	&.alignleft,
 	&.pull-left,
 	&.alignright,
@@ -280,14 +284,6 @@ blockquote {
 		margin: $margin-quote;
 		margin-top: $spacing-element;
 		margin-bottom: $spacing-element;
-	}
-
-	p,
-	ul,
-	ol {
-		&:last-child {
-			margin-bottom: 0;
-		}
 	}
 }
 @include max-width(sm) {
@@ -302,6 +298,10 @@ blockquote {
 }
 .text-light blockquote {
 	color: $clr-text-inv-darken;
+}
+blockquote.pull-left
+blockquote.alignleft {
+	text-align: left;
 }
 blockquote.pull-right
 blockquote.alignright {

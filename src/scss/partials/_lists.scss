@@ -6,6 +6,7 @@ ul,
 ol {
     margin: $margin-list;
 	padding: $padding-list;
+	@include margin-vert-flush;
 }
 ul {
     list-style: disc;
@@ -28,6 +29,7 @@ dt {
 dd {
 	margin: $margin-list;
 	margin-left: 1.5em;
+	@include margin-vert-flush;
 }
 
 //

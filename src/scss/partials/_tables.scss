@@ -29,6 +29,8 @@ table {
 	margin: $margin-table;
 	background-color: $table-bg; // Reset for nesting within parents with `background-color`.
 
+	@include margin-vert-flush;
+
 	th {
 		color: $clr-text-darken;
 		font-weight: bold;

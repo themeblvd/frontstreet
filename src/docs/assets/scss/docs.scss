@@ -22,6 +22,18 @@ body {
 /* =Examples
 -------------------------------------------------------------- */
 
+/* Grids */
+.row-example {
+	font-size: 14px;
+	// margin-top: 40px;
+	// margin-bottom: 24px;
+}
+.row-example code {
+	background: #eee;
+	display: block;
+	padding: 10px;
+}
+
 /* Quotes */
 blockquote.alignleft,
 blockquote.alignright {
@@ -112,6 +124,9 @@ blockquote.alignright {
 .responsive-utilities td.is-hidden {
     color: #ccc;
     background-color: #f9f9f9 !important;
+}
+.table-grid-overview {
+	font-size: 12px;
 }
 
 /* =Syntax Highlighter

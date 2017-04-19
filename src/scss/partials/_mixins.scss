@@ -2,8 +2,9 @@
 // Vendor Prefixes
 // ==========================================================================
 
+//
 // Box sizing
-// --------------------------------------------------
+//
 
 @mixin box-sizing($val) {
 	-webkit-box-sizing: $val;
@@ -11,8 +12,9 @@
 	box-sizing: $val;
 }
 
+//
 // Box Shadow
-// --------------------------------------------------
+//
 
 @mixin box-shadow($val) {
 	-webkit-box-shadow: $val;
@@ -20,8 +22,9 @@
 	box-shadow: $val;
 }
 
+//
 // Border Radius
-// --------------------------------------------------
+//
 
 @mixin border-radius($val) {
 	-webkit-border-radius: $val;
@@ -30,8 +33,9 @@
 	border-radius: $val;
 }
 
+//
 // Transform
-// --------------------------------------------------
+//
 
 @mixin transform($val) {
 	-webkit-transform: $val;
@@ -41,11 +45,12 @@
 }
 
 // ==========================================================================
-// Grid
+// Breakpoints
 // ==========================================================================
 
+//
 // Max-Width Media Query
-// --------------------------------------------------
+//
 
 @mixin max-width($size) {
 	@if $size == 'xl' {
@@ -80,8 +85,9 @@
 	}
 }
 
+//
 // Min-Width Media Query
-// --------------------------------------------------
+//
 
 @mixin min-width($size) {
 	@if $size == 'xl' {
@@ -117,12 +123,208 @@
 }
 
 // ==========================================================================
+// Grid
+// ==========================================================================
+
+//
+// Rows
+//
+
+@mixin make-row($gutter: $grid-gutters) {
+	margin-left:  ceil(($gutter / -2));
+	margin-right: floor(($gutter / -2));
+	@include clearfix;
+}
+
+//
+// Rows w/Equal Height Columns
+//
+
+@mixin make-equal-height-grid($breakpoint) {
+	@include min-width($breakpoint) {
+		.container-#{$breakpoint}-height {
+		    display: table;
+		    padding-left: 0;
+		    padding-right: 0;
+		    width: 100%;
+		}
+		.row-#{$breakpoint}-height {
+		    display: table-row;
+		}
+		.col-#{$breakpoint}-height {
+		    display: table-cell;
+		    float: none;
+		}
+	}
+}
+
+//
+// All columns, all viewports
+//
+
+@mixin make-grid-columns($columns, $i: 1, $list: "") {
+	@for $i from 1 through $columns {
+
+		$num: "#{$i}";
+
+		@if $columns == 10 {
+			$num: "0#{$i}0";
+		}
+
+		$list: "#{$list}, .col-xs-#{$num}, .col-sm-#{$num}, .col-md-#{$num}, .col-lg-#{$num}";
+
+	}
+	#{$list} {
+		position: relative;
+		min-height: 1px; // Prevent columns from collapsing when empty
+		padding-left: ceil(($grid-gutters / 2));
+		padding-right: floor(($grid-gutters / 2));
+	}
+}
+
+//
+// Column class floating
+//
+
+@mixin float-grid-columns($columns, $class, $i: 1, $list: "") {
+
+	@for $i from 1 through $columns {
+
+		$num: "#{$i}";
+
+		@if $columns == 10 {
+			$num: "0#{$i}0";
+		}
+
+		$list: "#{$list}, .col-#{$class}-#{$num}";
+
+	}
+	#{$list} {
+		float: left;
+	}
+}
+
+//
+// Determine individual column properties
+//
+
+@mixin calc-grid-column($columns, $index, $num, $class, $type) {
+	@if ($type == width) and ($index > 0) {
+		.col-#{$class}-#{$num} {
+			width: percentage(($index / $columns));
+		}
+	}
+	@if ($type == push) and ($index > 0) {
+		.col-#{$class}-push-#{$num} {
+			left: percentage(($index / $columns));
+		}
+	}
+	@if ($type == push) and ($index == 0) {
+		.col-#{$class}-push-0 {
+			left: auto;
+		}
+	}
+	@if ($type == pull) and ($index > 0) {
+		.col-#{$class}-pull-#{$num} {
+			right: percentage(($index / $columns));
+		}
+	}
+	@if ($type == pull) and ($index == 0) {
+		.col-#{$class}-pull-0 {
+			right: auto;
+		}
+	}
+}
+
+//
+// Column properties
+//
+
+@mixin loop-grid-columns($columns, $class, $type) {
+	@for $i from 0 through $columns {
+
+		$num: "#{$i}";
+
+		@if $columns == 10 {
+			$num: "0#{$i}0";
+		}
+
+		@include calc-grid-column($columns, $i, $num, $class, $type);
+
+	}
+}
+
+//
+// Column classes for specific viewports
+//
+
+@mixin make-grid($columns, $class) {
+	@include float-grid-columns($columns, $class);
+	@include loop-grid-columns($columns, $class, width);
+	@include loop-grid-columns($columns, $class, pull);
+	@include loop-grid-columns($columns, $class, push);
+}
+
+//
+// Flush columns
+//
+
+@mixin make-flush-columns($columns, $type) {
+	@each $breakpoint in $breakpoints {
+		@if $breakpoint != xl { // skip xl
+
+			$has-bg: "";
+			$non-bg: "";
+
+			@for $i from 1 through $columns {
+
+				$num: "#{$i}";
+
+				@if $columns == 10 {
+					$num: "0#{$i}0";
+				}
+
+				@if $type == start {
+					$has-bg: "#{$has-bg}, .row-flush-start:not(.row-flush-end) .col-#{$breakpoint}-#{$num}.has-bg";
+					$non-bg: "#{$non-bg}, .row-flush-start:not(.row-flush-end) .col-#{$breakpoint}-#{$num}:not(.has-bg)";
+				} @else  {
+					$has-bg: "#{$has-bg}, .row-flush-end:not(.row-flush-start) .col-#{$breakpoint}-#{$num}.has-bg";
+					$non-bg: "#{$non-bg}, .row-flush-end:not(.row-flush-start) .col-#{$breakpoint}-#{$num}:not(.has-bg)";
+				}
+
+			}
+
+			@include max-width($breakpoint) {
+
+				#{$has-bg} {
+					@if $type == start {
+						margin-right: $grid-gutters / 2;
+					} @else {
+						margin-left: $grid-gutters / 2;
+					}
+				}
+				#{$non-bg} {
+					@if $type == start {
+						padding-left: 0;
+					} @else {
+						padding-right: 0;
+					}
+				}
+
+			}
+
+		}
+	}
+}
+
+// ==========================================================================
 // Typography
 // ==========================================================================
 
+//
 // Colorless links, meant to blend into content.
 // Used with footer links.
-// --------------------------------------------------
+//
 
 @mixin blend-links() {
 	a {
@@ -140,11 +342,32 @@
 }
 
 // ==========================================================================
+// Spacing
+// ==========================================================================
+
+
+//
+// Elements vertically spaced within a document should
+// sit flush against the top and bottom of their
+// outter containers.
+//
+
+@mixin margin-vert-flush {
+	&:first-child {
+		margin-top: 0;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+// ==========================================================================
 // Lists
 // ==========================================================================
 
+//
 // Unstyled Lists
-// --------------------------------------------------
+//
 
 @mixin list-unstyled() {
 	list-style: none;
@@ -156,7 +379,7 @@
 // ==========================================================================
 
 // Text
-// --------------------------------------------------
+//
 
 @mixin text-emphasis-variant($parent, $color) {
 	#{$parent} {
@@ -169,7 +392,7 @@
 }
 
 // Backgrounds
-// --------------------------------------------------
+//
 
 @mixin bg-variant($parent, $color, $text: null) {
 	#{$parent} {
@@ -180,6 +403,16 @@
 			border-color: darken($color, 15%);
 		}
 		@if $text != null {
+			color: $text;
+		}
+	}
+	@if $text != null and $text != $clr-text-base {
+		#{$parent} h1,
+		#{$parent} h2,
+		#{$parent} h3,
+		#{$parent} h4,
+		#{$parent} h5,
+		#{$parent} h6 {
 			color: $text;
 		}
 	}
@@ -222,7 +455,7 @@
 }
 
 // Center-align block-level element.
-// --------------------------------------------------
+//
 
 @mixin aligncenter() {
 	display: block;
@@ -231,7 +464,7 @@
 }
 
 // Floats
-// --------------------------------------------------
+//
 
 @mixin alignleft() {
 	float: left !important; // @noflip
@@ -244,14 +477,14 @@
 }
 
 // Hide Text
-// --------------------------------------------------
+//
 
 @mixin hide-text() {
 	text-indent: -9999px;
 }
 
 // Hide Element
-// --------------------------------------------------
+//
 
 @mixin hide($parent) {
 	#{$parent} {
@@ -260,7 +493,7 @@
 }
 
 // Show Element
-// --------------------------------------------------
+//
 
 @mixin show($parent) {
 	#{$parent} {
@@ -269,7 +502,7 @@
 }
 
 // Visible Element
-// --------------------------------------------------
+//
 
 @mixin visible($parent) {
 	#{$parent} {
@@ -278,7 +511,7 @@
 }
 
 // Invisible Element
-// --------------------------------------------------
+//
 
 @mixin invisible($parent) {
 	#{$parent} {
@@ -291,7 +524,7 @@
 // ==========================================================================
 
 // Table Row Backgrounds
-// --------------------------------------------------
+//
 
 @mixin table-row-variant($state, $background) {
 	// Exact selectors below required to override `.table-striped` and prevent

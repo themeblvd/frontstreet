@@ -1,0 +1,946 @@
+@@include('../layout/header.html', {
+	 "title": "Grids"
+})
+
+<p>Throughout this article, we'll build on the pieces you'll put together to create the columns classes used in your grids.</p>
+
+<h2 id="usage">General Usage</h2>
+
+<p>A basic grid is setup by first creating a wrapping element with class <code>row</code>. Next, your column classes will then get used on the elements immediately within. Each column must have the class <code>col</code> followed by a class to determine its <a href="#widths" title="Clumn Widths">width</a> and <a href="#responsiveness" title="Grid Responsiveness">responsive breakpoint</a> like <code>col-md-6</code>, for example.</p>
+
+<p>Below is a basic example of a single row of three, equal-width columns, utilizing the 12-column grid system.</p>
+
+<div class="row row-example">
+	<div class="col col-md-4">
+		<h6>Column #1</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+	<div class="col col-md-4">
+		<h6>Column #2</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+	<div class="col col-md-4">
+		<h6>Column #3</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row">
+	<div class="col col-md-4">
+		<h6>Column #1</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+	<div class="col col-md-4">
+		<h6>Column #2</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+	<div class="col col-md-4">
+		<h6>Column #3</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+</div>
+</pre>
+
+<p>For multiple rows of columns, the <code>row</code> class will clear the previous set.</p>
+
+<div class="row row-example">
+	<div class="col col-md-4">
+		<h6>Column #1</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+	<div class="col col-md-4">
+		<h6>Column #2</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+	<div class="col col-md-4">
+		<h6>Column #3</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+</div>
+
+<div class="row row-example">
+	<div class="col col-md-6">
+		<h6>Column #5</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+	</div>
+	<div class="col col-md-6">
+		<h6>Column #6</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row">
+	<div class="col col-md-4">
+		<h6>Column #1</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+	<div class="col col-md-4">
+		<h6>Column #2</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+	<div class="col col-md-4">
+		<h6>Column #3</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col col-md-6">
+		<h6>Column #5</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+	</div>
+	<div class="col col-md-6">
+		<h6>Column #6</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+	</div>
+</div>
+</pre>
+
+<h2 id="responsiveness">Responsiveness</h2>
+
+<p>When setting up any grid, it's important to decide what viewport you want those columns to collapse at (i.e. stack). To do this, you'll pick either <code>xs</code>, <code>sm</code>, <code>md</code>, or <code>lg</code>, to use within your grid classes.</p>
+
+<div class="table-responsive">
+	<table class="table-bordered table-condensed">
+		<tr>
+			<td width="25%"><code>.col-xs-*</code></td>
+			<td rowspan="4">Classes containing <code>xs</code> will collapse and begin to stack when viewport is less than 576px. This will generally include smaller mobile devices.</td>
+		</tr>
+		<tr>
+			<td width="25%"><code>.col-xs-pull-*</code></td>
+		</tr>
+		<tr>
+			<td width="25%"><code>.col-xs-push-*</code></td>
+		</tr>
+		<tr>
+			<td width="25%"><code>.col-xs-height</code></td>
+		</tr>
+	</table>
+</div>
+
+<div class="table-responsive">
+	<table class="table-bordered table-condensed">
+		<tr>
+			<td width="25%"><code>.col-sm-*</code></td>
+			<td rowspan="4">Classes containing <code>sm</code> will collapse and begin to stack when viewport is less than 768px. This will generally include slightly larger mobile devices (or those in the landscape orientation) and smaller mobile devices.</td>
+		</tr>
+		<tr>
+			<td width="25%"><code>.col-sm-pull-*</code></td>
+		</tr>
+		<tr>
+			<td width="25%"><code>.col-sm-push-*</code></td>
+		</tr>
+		<tr>
+			<td width="25%"><code>.col-sm-height</code></td>
+		</tr>
+	</table>
+</div>
+
+<div class="table-responsive">
+	<table class="table-bordered table-condensed">
+		<tr>
+			<td width="25%"><code>.col-md-*</code></td>
+			<td rowspan="4">Classes containing <code>md</code> will collapse and begin to stack when viewport is less than 992px. This will generally include tablets (in portrait orientation) and any mobile device smaller than that.</td>
+		</tr>
+		<tr>
+			<td width="25%"><code>.col-md-pull-*</code></td>
+		</tr>
+		<tr>
+			<td width="25%"><code>.col-md-push-*</code></td>
+		</tr>
+		<tr>
+			<td width="25%"><code>.col-md-height</code></td>
+		</tr>
+	</table>
+</div>
+
+<div class="table-responsive">
+	<table class="table-bordered table-condensed">
+		<tr>
+			<td width="25%"><code>.col-lg-*</code></td>
+			<td rowspan="4">Classes containing <code>lg</code> will collapse and begin to stack when viewport is less than 1200px. This will generally include smaller desktop computers, and all tablets and mobile devices.</td>
+		</tr>
+		<tr>
+			<td width="25%"><code>.col-lg-pull-*</code></td>
+		</tr>
+		<tr>
+			<td width="25%"><code>.col-lg-push-*</code></td>
+		</tr>
+		<tr>
+			<td width="25%"><code>.col-lg-height</code></td>
+		</tr>
+	</table>
+</div>
+
+<h2 id="widths">Column Widths</h2>
+
+<p>Something fairly unique to Front Street is that we provide a 10-column grid system that can be used throughout your website in conjunction with the standard 12-column grid system. Our goal with this is to give you more flexbility in your column widths.</p>
+
+<h3 id="12-col">12-Column Grid</h3>
+
+<p>When grouping classes in a 12-column grid system, you want to make sure the integers all add up to <code>12</code>. Below are some basic examples, but there are many other combinations you could come up with.</p>
+
+<div class="row row-example">
+	<div class="col col-xs-2"><code>.col-*-2</code></div>
+	<div class="col col-xs-2"><code>.col-*-2</code></div>
+	<div class="col col-xs-2"><code>.col-*-2</code></div>
+	<div class="col col-xs-2"><code>.col-*-2</code></div>
+	<div class="col col-xs-2"><code>.col-*-2</code></div>
+	<div class="col col-xs-2"><code>.col-*-2</code></div>
+</div>
+
+<p><var>2</var> + <var>2</var> + <var>2</var> + <var>2</var> + <var>2</var> + <var>2</var> = <var>12</var></p>
+
+<div class="row row-example">
+	<div class="col col-xs-3"><code>.col-*-3</code></div>
+	<div class="col col-xs-3"><code>.col-*-3</code></div>
+	<div class="col col-xs-3"><code>.col-*-3</code></div>
+	<div class="col col-xs-3"><code>.col-*-3</code></div>
+</div>
+
+<p><var>3</var> + <var>3</var> + <var>3</var> + <var>3</var> = <var>12</var></p>
+
+<div class="row row-example">
+	<div class="col col-xs-4"><code>.col-*-4</code></div>
+	<div class="col col-xs-4"><code>.col-*-4</code></div>
+	<div class="col col-xs-4"><code>.col-*-4</code></div>
+</div>
+
+<p><var>4</var> + <var>4</var> + <var>4</var> = <var>12</var></p>
+
+<div class="row row-example">
+	<div class="col col-xs-6"><code>.col-*-6</code></div>
+	<div class="col col-xs-6"><code>.col-*-6</code></div>
+</div>
+
+<p><var>6</var> + <var>6</var> = <var>12</var></p>
+
+<div class="row row-example">
+	<div class="col col-xs-4"><code>.col-*-4</code></div>
+	<div class="col col-xs-8"><code>.col-*-8</code></div>
+</div>
+
+<p><var>4</var> + <var>8</var> = <var>12</var></p>
+
+<div class="row row-example">
+	<div class="col col-xs-6"><code>.col-*-6</code></div>
+	<div class="col col-xs-2"><code>.col-*-2</code></div>
+	<div class="col col-xs-2"><code>.col-*-2</code></div>
+	<div class="col col-xs-2"><code>.col-*-2</code></div>
+</div>
+
+<p><var>6</var> + <var>2</var> + <var>2</var> + <var>2</var> = <var>12</var></p>
+
+<div class="alert alert-info">
+	<p><strong>Note:</strong> In the above examples, all asterixis (*) would need to be replaced with a <a href="#responsiveness" title="Grid Responsiveness">responsive breakpoint</a> &mdash; <code>xs</code>, <code>sm</code>, <code>md</code>, or <code>lg</code>.</p>
+</div>
+
+<h3 id="10-col">10-Column Grid</h3>
+
+<p>In most cases, you'll probably be utilizing the 12-column grid; however, one really common dilemma the 10-column grid solves is when you need five equal-width columns, which is not possible in a 12-column grid.</p>
+
+<p>To separate this 10-column grid system, the column integers used in the classes are formatted like <code>010</code>, <code>020</code>, <code>030</code>, <code>040</code>, etc. However, conceptually everything is still the same; you'll want the integers to add up to <code>10</code>. Below are a few examples.</p>
+
+<div class="row row-example">
+	<div class="col col-xs-020"><code>.col-*-020</code></div>
+	<div class="col col-xs-020"><code>.col-*-020</code></div>
+	<div class="col col-xs-020"><code>.col-*-020</code></div>
+	<div class="col col-xs-020"><code>.col-*-020</code></div>
+	<div class="col col-xs-020"><code>.col-*-020</code></div>
+</div>
+
+<p><var>2</var> + <var>2</var> + <var>2</var> + <var>2</var> + <var>2</var> = <var>10</var></p>
+
+<div class="row row-example">
+	<div class="col col-xs-020"><code>.col-*-010</code></div>
+	<div class="col col-xs-020"><code>.col-*-020</code></div>
+	<div class="col col-xs-060"><code>.col-*-070</code></div>
+</div>
+
+<p><var>2</var> + <var>2</var> + <var>7</var> = <var>10</var></p>
+
+<div class="row row-example">
+	<div class="col col-xs-060"><code>.col-*-060</code></div>
+	<div class="col col-xs-040"><code>.col-*-040</code></div>
+</div>
+
+<p><var>6</var> + <var>4</var> = <var>10</var></p>
+
+<div class="alert alert-info">
+	<p><strong>Note:</strong> In the above examples, all asterixis (*) would need to be replaced with a <a href="#responsiveness" title="Grid Responsiveness">responsive breakpoint</a> &mdash; <code>xs</code>, <code>sm</code>, <code>md</code>, or <code>lg</code>.</p>
+</div>
+
+<h3 id="widths-overview">Column Width Overview</h3>
+
+<p>Combining everything from above, here's an overview of all the possible column width classes. In picking your column classes you generally want to make sure all columns of a row add up to 100% and that they use the same <a href="#responsiveness" title="Grid Responsiveness">responsive breakpoint</a>.</p>
+
+<div class="table-responsive">
+	<table class="table-bordered table-condensed table-grid-overview">
+		<tr>
+			<th>Fraction</th>
+			<th>Percentage</th>
+			<th>Collapse @576px</th>
+			<th>Collapse @767px</th>
+			<th>Collapse @991px</th>
+			<th>Collapse @1199px</th>
+		</tr>
+		<tr>
+			<td>1/12</td>
+			<td>8.33%</td>
+			<td><code>.col-xs-1</code></td>
+			<td><code>.col-sm-1</code></td>
+			<td><code>.col-md-1</code></td>
+			<td><code>.col-lg-1</code></td>
+		</tr>
+		<tr>
+			<td>1/10</td>
+			<td>10%</td>
+			<td><code>.col-xs-010</code></td>
+			<td><code>.col-sm-010</code></td>
+			<td><code>.col-md-010</code></td>
+			<td><code>.col-lg-010</code></td>
+		</tr>
+		<tr>
+			<td>1/6</td>
+			<td>16.66%</td>
+			<td><code>.col-xs-2</code></td>
+			<td><code>.col-sm-2</code></td>
+			<td><code>.col-md-2</code></td>
+			<td><code>.col-lg-2</code></td>
+		</tr>
+		<tr>
+			<td>1/5</td>
+			<td>20%</td>
+			<td><code>.col-xs-020</code></td>
+			<td><code>.col-sm-020</code></td>
+			<td><code>.col-md-020</code></td>
+			<td><code>.col-lg-020</code></td>
+		</tr>
+		<tr>
+			<td>1/4</td>
+			<td>25%</td>
+			<td><code>.col-xs-3</td>
+			<td><code>.col-sm-3</td>
+			<td><code>.col-md-3</td>
+			<td><code>.col-lg-3</td>
+		</tr>
+		<tr>
+			<td>3/10</td>
+			<td>30%</td>
+			<td><code>.col-xs-030</code></td>
+			<td><code>.col-sm-030</code></td>
+			<td><code>.col-md-030</code></td>
+			<td><code>.col-lg-030</code></td>
+		</tr>
+		<tr>
+			<td>1/3</td>
+			<td>33.33%</td>
+			<td><code>.col-xs-4</code></td>
+			<td><code>.col-sm-4</code></td>
+			<td><code>.col-md-4</code></td>
+			<td><code>.col-lg-4</code></td>
+		</tr>
+		<tr>
+			<td>2/5</td>
+			<td>40%</td>
+			<td><code>.col-xs-040</code></td>
+			<td><code>.col-sm-040</code></td>
+			<td><code>.col-md-040</code></td>
+			<td><code>.col-lg-040</code></td>
+		</tr>
+		<tr>
+			<td>5/12</td>
+			<td>41.66%</td>
+			<td><code>.col-xs-5</code></td>
+			<td><code>.col-sm-5</code></td>
+			<td><code>.col-md-5</code></td>
+			<td><code>.col-lg-5</code></td>
+		</tr>
+		<tr>
+			<td>1/2</td>
+			<td>50%</td>
+			<td><code>.col-xs-6</code></td>
+			<td><code>.col-sm-6</code></td>
+			<td><code>.col-md-6</code></td>
+			<td><code>.col-lg-6</code></td>
+		</tr>
+		<tr>
+			<td>7/12</td>
+			<td>58.33%</td>
+			<td><code>.col-xs-7</code></td>
+			<td><code>.col-sm-7</code></td>
+			<td><code>.col-md-7</code></td>
+			<td><code>.col-lg-7</code></td>
+		</tr>
+		<tr>
+			<td>3/5</td>
+			<td>60%</td>
+			<td><code>.col-xs-060</code></td>
+			<td><code>.col-sm-060</code></td>
+			<td><code>.col-md-060</code></td>
+			<td><code>.col-lg-060</code></td>
+		</tr>
+		<tr>
+			<td>2/3</td>
+			<td>66.66%</td>
+			<td><code>.col-xs-8</code></td>
+			<td><code>.col-sm-8</code></td>
+			<td><code>.col-md-8</code></td>
+			<td><code>.col-lg-8</code></td>
+		</tr>
+		<tr>
+			<td>7/10</td>
+			<td>70%</td>
+			<td><code>.col-xs-070</code></td>
+			<td><code>.col-sm-070</code></td>
+			<td><code>.col-md-070</code></td>
+			<td><code>.col-lg-070</code></td>
+		</tr>
+		<tr>
+			<td>3/4</td>
+			<td>75%</td>
+			<td><code>.col-xs-9</code></td>
+			<td><code>.col-sm-9</code></td>
+			<td><code>.col-md-9</code></td>
+			<td><code>.col-lg-9</code></td>
+		</tr>
+		<tr>
+			<td>4/5</td>
+			<td>80%</td>
+			<td><code>.col-xs-080</code></td>
+			<td><code>.col-sm-080</code></td>
+			<td><code>.col-md-080</code></td>
+			<td><code>.col-lg-080</code></td>
+		</tr>
+		<tr>
+			<td>5/6</td>
+			<td>83.33%</td>
+			<td><code>.col-xs-10</code></td>
+			<td><code>.col-sm-10</code></td>
+			<td><code>.col-md-10</code></td>
+			<td><code>.col-lg-10</code></td>
+		</tr>
+		<tr>
+			<td>9/10</td>
+			<td>90%</td>
+			<td><code>.col-xs-090</code></td>
+			<td><code>.col-sm-090</code></td>
+			<td><code>.col-md-090</code></td>
+			<td><code>.col-lg-090</code></td>
+		</tr>
+		<tr>
+			<td>11/12</td>
+			<td>91.66%</td>
+			<td><code>.col-xs-11</code></td>
+			<td><code>.col-sm-11</code></td>
+			<td><code>.col-md-11</code></td>
+			<td><code>.col-lg-11</code></td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>100%</td>
+			<td><code>.col-xs-0100</code>/td>
+			<td><code>.col-sm-0100</code>/td>
+			<td><code>.col-md-0100</code>/td>
+			<td><code>.col-lg-0100</code>/td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>100%</td>
+			<td><code>.col-xs-12</code></td>
+			<td><code>.col-sm-12</code></td>
+			<td><code>.col-md-12</code></td>
+			<td><code>.col-lg-12</code></td>
+		</tr>
+	</table>
+</div>
+
+<h2 id="nested">Nested Columns</h2>
+
+<p>You can also nest rows of columns within columns. Here's an example.</p>
+
+<div class="row row-example">
+	<div class="col col-md-6">
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+
+		<div class="row">
+			<div class="col col-md-6">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+			</div>
+			<div class="col col-md-6">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="col col-md-6">
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+
+		<p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id. Donec sodales ultrices leo, vel tempor libero. Donec maximus faucibus scelerisque.</p>
+
+		<p>Maecenas pharetra augue risus, eu pretium arcu rhoncus eget.</p>
+
+	</div>
+
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row">
+	<div class="col col-md-6">
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+
+		<div class="row">
+			<div class="col col-md-6">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+			</div>
+			<div class="col col-md-6">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="col col-md-6">
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+
+		<p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id. Donec sodales ultrices leo, vel tempor libero. Donec maximus faucibus scelerisque.</p>
+
+		<p>Maecenas pharetra augue risus, eu pretium arcu rhoncus eget.</p>
+
+	</div>
+
+</div>
+</pre>
+
+<h2 id="has-bg">Columns With Backgrounds</h2>
+
+<p>If you're giving entire columns background colors, you can utilize the class <code>has-bg</code> on the columns to make them look a little nicer. You can also utilize the classes <code>row-flush-start</code> and <code>row-flush-end</code> on the rows to make sure thse background columns to hang outside of the container. &mdash; This is probably a bit confusing; so let's work through this with some eaxmples.</p>
+
+<h3>The Problem</h3>
+
+<p>Consider the following example. &mdash; We're adding classes from the <a href="colors.html#color-library" title="Color Library Classes">color library</a> to give columns in a grid some background colors, but we are <em>not</em> using our helping classes.</p>
+
+<div class="row row-example">
+	<div class="col col-md-4 green">
+		<h6>Column #1</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+	<div class="col col-md-4 forest">
+		<h6>Column #2</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+	<div class="col col-md-4 jungle">
+		<h6>Column #3</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row">
+	<div class="col col-md-4 green">
+		<h6>Column #1</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+	<div class="col col-md-4 forest">
+		<h6>Column #2</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+	<div class="col col-md-4 jungle">
+		<h6>Column #3</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+</div>
+</pre>
+
+<h3>The Solution</h3>
+
+<p>You can see from the above example, that things are not quite looking right. There are two issues that stick out.</p>
+
+<ol>
+	<li><strong>Column Padding:</strong> Because a column now has a background color that's different from its container, it needs a little more room to breathe. So use class <code>has-bg</code> to add some extra padding.</li>
+	<li><strong>Column Overhang:</strong> And because the first and last columns now have a background color different from their container, they appear to hang outside of that container. So on our wrapping row, we can add class <code>row-flush-start</code> to fix the first column and <code>row-flush-end</code> to fix the last column.</li>
+</ol>
+
+<p>And so here's an example of the same setup, with adding our helper classes to the rows and columns.</p>
+
+<div class="row row-example row-flush-start row-flush-end">
+	<div class="col col-md-4 has-bg green">
+		<h6>Column #1</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+	<div class="col col-md-4 has-bg forest">
+		<h6>Column #2</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+	<div class="col col-md-4 has-bg jungle">
+		<h6>Column #3</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row row-flush-start row-flush-end">
+	<div class="col col-md-4 has-bg green">
+		<h6>Column #1</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+	<div class="col col-md-4 has-bg forest">
+		<h6>Column #2</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+	<div class="col col-md-4 has-bg jungle">
+		<h6>Column #3</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+</div>
+</pre>
+
+<p><em>Can I mix and match?</em> &mdash; Sure! Not every column in a row needs a background color. Below is an example where we just want the right column to have a background color. So only the right column will need the <code>has-bg</code> helper class. And since we now only need to worry about the last column hanging outside the container, we <em>only</em> need to add the class <code>row-flush-end</code> to our row.</p>
+
+<div class="row row-example row-flush-end">
+	<div class="col col-md-8">
+		<h6>Column #1</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		<p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id. Donec sodales ultrices leo, vel tempor libero. Donec maximus faucibus scelerisque.</p>
+	</div>
+	<div class="col col-md-4 has-bg green">
+		<h6>Column #2</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row row-flush-end">
+	<div class="col col-md-8">
+		<h6>Column #1</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		<p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id. Donec sodales ultrices leo, vel tempor libero. Donec maximus faucibus scelerisque.</p>
+	</div>
+	<div class="col col-md-4 has-bg green">
+		<h6>Column #2</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+</div>
+</pre>
+
+<h2 id="equal-height">Equal-Height Columns</h2>
+
+<p>When you start getting into more complicated setups with <a href="#has-bg" title="Collumns With Backgrounds">background colors being added to columns</a>, being the perfectionist that you are, you may find yourself wanting those columns to be the same height, no matter the content within.</p>
+
+<h3>The Problem</h3>
+
+<p>Consider the following example. &mdash; We've got two columns with background colors applied, which have different amounts of content.</p>
+
+<div class="row row-example row-flush-start row-flush-end">
+	<div class="col col-md-8 has-bg forest">
+		<h6>Column #1</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque arcu et accumsan pulvinar. Quisque gravida quam a est consequat, non pulvinar ante dictum.</p>
+		<p>Etiam et metus non nunc tincidunt dignissim. Vivamus non quam in felis vestibulum elementum placerat a nulla. In sapien ante, posuere id facilisis ut, molestie vitae dui. Pellentesque ac diam sed lectus convallis tincidunt. Vestibulum risus neque, commodo quis maximus vel.</p>
+		<p>Nulla tristique purus mi, faucibus interdum felis varius in. Etiam consectetur, leo ac imperdiet interdum, libero enim viverra orci.</p>
+	</div>
+	<div class="col col-md-4 has-bg green">
+		<h6>Column #2</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row row-flush-start row-flush-end">
+	<div class="col col-md-8 has-bg forest">
+		<h6>Column #1</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque arcu et accumsan pulvinar. Quisque gravida quam a est consequat, non pulvinar ante dictum.</p>
+		<p>Etiam et metus non nunc tincidunt dignissim. Vivamus non quam in felis vestibulum elementum placerat a nulla. In sapien ante, posuere id facilisis ut, molestie vitae dui. Pellentesque ac diam sed lectus convallis tincidunt. Vestibulum risus neque, commodo quis maximus vel.</p>
+		<p>Nulla tristique purus mi, faucibus interdum felis varius in. Etiam consectetur, leo ac imperdiet interdum, libero enim viverra orci.</p>
+	</div>
+	<div class="col col-md-4 has-bg green">
+		<h6>Column #2</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+</div>
+</pre>
+
+<h3>The Solution</h3>
+
+<p>Now the above example doesn't look terrible, but often in a scenario like this, it might look nicer if the columns were the same height. To accomplish this, we need to add helper classes to the wrapping row and inner columns.</p>
+
+<ol>
+<li><strong>Row:</strong> To the row, we'll add a class <code>row-*-height</code>, and in place of the asterix, we'll use the matching <a href="#responsiveness" title="Grid Responsiveness">responsive breakpoint</a> used in the columns.</li>
+<li><strong>Columns:</strong> To the columns, we'll add a class <code>col-*-height</code>, and again in place of the asterix, we'll use the matching <a href="#responsiveness" title="Grid Responsiveness">responsive breakpoint</a>.</li>
+</ol>
+
+<div class="row row-example row-md-height row-flush-start row-flush-end">
+	<div class="col col-md-8 col-md-height has-bg forest">
+		<h6>Column #1</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque arcu et accumsan pulvinar. Quisque gravida quam a est consequat, non pulvinar ante dictum.</p>
+		<p>Etiam et metus non nunc tincidunt dignissim. Vivamus non quam in felis vestibulum elementum placerat a nulla. In sapien ante, posuere id facilisis ut, molestie vitae dui. Pellentesque ac diam sed lectus convallis tincidunt. Vestibulum risus neque, commodo quis maximus vel.</p>
+		<p>Nulla tristique purus mi, faucibus interdum felis varius in. Etiam consectetur, leo ac imperdiet interdum, libero enim viverra orci.</p>
+	</div>
+	<div class="col col-md-4 col-md-height has-bg green">
+		<h6>Column #2</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row row-md-height row-flush-start row-flush-end">
+	<div class="col col-md-8 col-md-height has-bg forest">
+		<h6>Column #1</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque arcu et accumsan pulvinar. Quisque gravida quam a est consequat, non pulvinar ante dictum.</p>
+		<p>Etiam et metus non nunc tincidunt dignissim. Vivamus non quam in felis vestibulum elementum placerat a nulla. In sapien ante, posuere id facilisis ut, molestie vitae dui. Pellentesque ac diam sed lectus convallis tincidunt. Vestibulum risus neque, commodo quis maximus vel.</p>
+		<p>Nulla tristique purus mi, faucibus interdum felis varius in. Etiam consectetur, leo ac imperdiet interdum, libero enim viverra orci.</p>
+	</div>
+	<div class="col col-md-4 col-md-height has-bg green">
+		<h6>Column #2</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	</div>
+</div>
+</pre>
+
+<h2 id="ordering">Column Ordering</h2>
+
+<p>By adding <code>push</code> and <code>pull</code> column classes you can shift them from their original position. The <code>push</code> classes will push columns to the right, while <code>pull</code> classes will pull columns to the left. This can be really useful, for example, when you want columns to display in a different order when stacked on mobile, than when displayed on desktops.</p>
+
+<p>Consider the following example. &mdash; We've got two columns, each with the class <code>col-md-6</code>, which float them and sets them to 50% width. Next, on the first column we add the class <code>col-md-push-6</code>, which will then <em>push</em> it over to the right by 50%. And finally, we add class <code>col-md-pull-6</code> to the last column to <em>pull</em> it to the left by 50%. The final result is that we've swapped the order of the two columns on desktops, but when displayed on tablets and mobile devices, they'll display in the natural order.</p>
+
+<div class="row row-example">
+	<div class="col col-md-6 col-md-push-6">
+		<h6>Column #1</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+	</div>
+	<div class="col col-md-6 col-md-pull-6">
+		<h6>Column #2</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row">
+	<div class="col col-md-6 col-md-push-6">
+		<h6>Column #1</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+	</div>
+	<div class="col col-md-6 col-md-pull-6">
+		<h6>Column #2</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+	</div>
+</div>
+</pre>
+
+<p>A really common dilemma this helps to solve is with setting up the primary sidebar layout of your website. &mdash; Let's say you have a sidebar positioned to the left of your content. When your columns stack on mobile, you'd want your site's primary content to display <em>before</em> the sidebar, right? So in thie scenario, you'd need to setup the natural order with content first and sidebar second, but then you'd add <code>push</code> and <code>pull</code> classes to rearrange the display order on desktops.</p>
+
+<div class="row row-example">
+	<div class="col col-md-8 col-md-push-4">
+		<h6>Primary Content</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+	</div>
+	<div class="col col-md-4 col-md-pull-8">
+		<h6>Left Sidebar</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row">
+	<div class="col col-md-8 col-md-push-4">
+		<h6>Primary Content</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+	</div>
+	<div class="col col-md-4 col-md-pull-8">
+		<h6>Left Sidebar</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	</div>
+</div>
+</pre>
+
+<p>By looking at the code for the above example, you can see it starts to get a little more complicated than our first example because both columns are not equal in width. The primary content column is 8/12 wide and the sidebar column is 4/12. This means that we must <em>push</em> the primary content over to the right the distance of the sidebar column, and <em>pull</em> the sidebar column over to the left the distance of the primary content column.</p>
+
+<p>Now, in combining everything from above, here's an overview of all the possible column ordering classes.</p>
+
+<div class="table-responsive">
+	<table class="table-bordered table-condensed table-grid-overview">
+		<tr>
+			<th colspan="2">Push/Pull Distance</th>
+			<th>Collapse @576px</th>
+			<th>Collapse @767px</th>
+			<th>Collapse @991px</th>
+			<th>Collapse @1199px</th>
+		</tr>
+		<tr>
+			<td>1/12</td>
+			<td>8.33%</td>
+			<td><code>.col-xs-push-1</code><br><code>.col-xs-pull-1</code></td>
+			<td><code>.col-sm-push-1</code><br><code>.col-sm-pull-1</code></td>
+			<td><code>.col-md-push-1</code><br><code>.col-md-pull-1</code></td>
+			<td><code>.col-lg-push-1</code><br><code>.col-lg-pull-1</code></td>
+		</tr>
+		<tr>
+			<td>1/10</td>
+			<td>10%</td>
+			<td><code>.col-xs-push-010</code><br><code>.col-xs-pull-010</code></td>
+			<td><code>.col-sm-push-010</code><br><code>.col-sm-pull-010</code></td>
+			<td><code>.col-ms-push-010</code><br><code>.col-ms-pull-010</code></td>
+			<td><code>.col-lg-push-010</code><br><code>.col-lg-pull-010</code></td>
+		</tr>
+		<tr>
+			<td>1/6</td>
+			<td>16.66%</td>
+			<td><code>.col-xs-push-2</code><br><code>.col-xs-pull-2</code></td>
+			<td><code>.col-sm-push-2</code><br><code>.col-sm-pull-2</code></td>
+			<td><code>.col-md-push-2</code><br><code>.col-md-pull-2</code></td>
+			<td><code>.col-lg-push-2</code><br><code>.col-lg-pull-2</code></td>
+		</tr>
+		<tr>
+			<td>1/5</td>
+			<td>20%</td>
+			<td><code>.col-xs-push-020</code><br><code>.col-xs-pull-020</code></td>
+			<td><code>.col-sm-push-020</code><br><code>.col-sm-pull-020</code></td>
+			<td><code>.col-md-push-020</code><br><code>.col-md-pull-020</code></td>
+			<td><code>.col-lg-push-020</code><br><code>.col-lg-pull-020</code></td>
+		</tr>
+		<tr>
+			<td>1/4</td>
+			<td>25%</td>
+			<td><code>.col-xs-push-3</code><br><code>.col-xs-pull-3</code></td>
+			<td><code>.col-sm-push-3</code><br><code>.col-sm-pull-3</code></td>
+			<td><code>.col-md-push-3</code><br><code>.col-md-pull-3</code></td>
+			<td><code>.col-lg-push-3</code><br><code>.col-lg-pull-3</code></td>
+		</tr>
+		<tr>
+			<td>3/10</td>
+			<td>30%</td>
+			<td><code>.col-xs-push-030</code><br><code>.col-xs-pull-030</code></td>
+			<td><code>.col-sm-push-030</code><br><code>.col-sm-pull-030</code></td>
+			<td><code>.col-md-push-030</code><br><code>.col-md-pull-030</code></td>
+			<td><code>.col-lg-push-030</code><br><code>.col-lg-pull-030</code></td>
+		</tr>
+		<tr>
+			<td>1/3</td>
+			<td>33.33%</td>
+			<td><code>.col-xs-push-4</code><br><code>.col-xs-pull-4</code></td>
+			<td><code>.col-sm-push-4</code><br><code>.col-sm-pull-4</code></td>
+			<td><code>.col-md-push-4</code><br><code>.col-md-pull-4</code></td>
+			<td><code>.col-lg-push-4</code><br><code>.col-lg-pull-4</code></td>
+		</tr>
+		<tr>
+			<td>2/5</td>
+			<td>40%</td>
+			<td><code>.col-xs-push-040</code><br><code>.col-xs-pull-040</code></td>
+			<td><code>.col-sm-push-040</code><br><code>.col-sm-pull-040</code></td>
+			<td><code>.col-md-push-040</code><br><code>.col-md-pull-040</code></td>
+			<td><code>.col-lg-push-040</code><br><code>.col-lg-pull-040</code></td>
+		</tr>
+		<tr>
+			<td>5/12</td>
+			<td>41.66%</td>
+			<td><code>.col-xs-push-5</code><br><code>.col-xs-pull-5</code></td>
+			<td><code>.col-sm-push-5</code><br><code>.col-sm-pull-5</code></td>
+			<td><code>.col-md-push-5</code><br><code>.col-md-pull-5</code></td>
+			<td><code>.col-lg-push-5</code><br><code>.col-lg-pull-5</code></td>
+		</tr>
+		<tr>
+			<td>1/2</td>
+			<td>50%</td>
+			<td><code>.col-xs-push-6</code><br><code>.col-xs-pull-6</code></td>
+			<td><code>.col-sm-push-6</code><br><code>.col-sm-pull-6</code></td>
+			<td><code>.col-md-push-6</code><br><code>.col-md-pull-6</code></td>
+			<td><code>.col-lg-push-6</code><br><code>.col-lg-pull-6</code></td>
+		</tr>
+		<tr>
+			<td>7/12</td>
+			<td>58.33%</td>
+			<td><code>.col-xs-push-7</code><br><code>.col-xs-pull-7</code></td>
+			<td><code>.col-sm-push-7</code><br><code>.col-sm-pull-7</code></td>
+			<td><code>.col-md-push-7</code><br><code>.col-md-pull-7</code></td>
+			<td><code>.col-lg-push-7</code><br><code>.col-lg-pull-7</code></td>
+		</tr>
+		<tr>
+			<td>3/5</td>
+			<td>60%</td>
+			<td><code>.col-xs-push-060</code><br><code>.col-xs-pull-060</code></td>
+			<td><code>.col-sm-push-060</code><br><code>.col-sm-pull-060</code></td>
+			<td><code>.col-md-push-060</code><br><code>.col-md-pull-060</code></td>
+			<td><code>.col-lg-push-060</code><br><code>.col-lg-pull-060</code></td>
+		</tr>
+		<tr>
+			<td>2/3</td>
+			<td>66.66%</td>
+			<td><code>.col-xs-push-8</code><br><code>.col-xs-pull-8</code></td>
+			<td><code>.col-sm-push-8</code><br><code>.col-sm-pull-8</code></td>
+			<td><code>.col-md-push-8</code><br><code>.col-md-pull-8</code></td>
+			<td><code>.col-lg-push-8</code><br><code>.col-lg-pull-8</code></td>
+		</tr>
+		<tr>
+			<td>7/10</td>
+			<td>70%</td>
+			<td><code>.col-xs-push-070</code><br><code>.col-xs-pull-070</code></td>
+			<td><code>.col-sm-push-070</code><br><code>.col-sm-pull-070</code></td>
+			<td><code>.col-md-push-070</code><br><code>.col-md-pull-070</code></td>
+			<td><code>.col-lg-push-070</code><br><code>.col-lg-pull-070</code></td>
+		</tr>
+		<tr>
+			<td>3/4</td>
+			<td>75%</td>
+			<td><code>.col-xs-push-9</code><br><code>.col-xs-pull-9</code></td>
+			<td><code>.col-sm-push-9</code><br><code>.col-sm-pull-9</code></td>
+			<td><code>.col-md-push-9</code><br><code>.col-md-pull-9</code></td>
+			<td><code>.col-lg-push-9</code><br><code>.col-lg-pull-9</code></td>
+		</tr>
+		<tr>
+			<td>4/5</td>
+			<td>80%</td>
+			<td><code>.col-xs-push-080</code><br><code>.col-xs-pull-080</code></td>
+			<td><code>.col-sm-push-080</code><br><code>.col-sm-pull-080</code></td>
+			<td><code>.col-md-push-080</code><br><code>.col-md-pull-080</code></td>
+			<td><code>.col-lg-push-080</code><br><code>.col-lg-pull-080</code></td>
+		</tr>
+		<tr>
+			<td>5/6</td>
+			<td>83.33%</td>
+			<td><code>.col-xs-push-10</code><br><code>.col-xs-pull-10</code></td>
+			<td><code>.col-sm-push-10</code><br><code>.col-sm-pull-10</code></td>
+			<td><code>.col-md-push-10</code><br><code>.col-md-pull-10</code></td>
+			<td><code>.col-lg-push-10</code><br><code>.col-lg-pull-10</code></td>
+		</tr>
+		<tr>
+			<td>9/10</td>
+			<td>90%</td>
+			<td><code>.col-xs-push-090</code><br><code>.col-xs-pull-090</code></td>
+			<td><code>.col-sm-push-090</code><br><code>.col-sm-pull-090</code></td>
+			<td><code>.col-md-push-090</code><br><code>.col-md-pull-090</code></td>
+			<td><code>.col-lg-push-090</code><br><code>.col-lg-pull-090</code></td>
+		</tr>
+		<tr>
+			<td>11/12</td>
+			<td>91.66%</td>
+			<td><code>.col-xs-push-11</code><br><code>.col-xs-pull-11</code></td>
+			<td><code>.col-sm-push-11</code><br><code>.col-sm-pull-11</code></td>
+			<td><code>.col-md-push-11</code><br><code>.col-md-pull-11</code></td>
+			<td><code>.col-lg-push-11</code><br><code>.col-lg-pull-11</code></td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>100%</td>
+			<td><code>.col-xs-push-0100</code><br><code>.col-xs-pull-0100</code></td>
+			<td><code>.col-sm-push-0100</code><br><code>.col-sm-pull-0100</code></td>
+			<td><code>.col-md-push-0100</code><br><code>.col-md-pull-0100</code></td>
+			<td><code>.col-lg-push-0100</code><br><code>.col-lg-pull-0100</code></td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>100%</td>
+			<td><code>.col-xs-push-12</code><br><code>.col-xs-pull-12</code></td>
+			<td><code>.col-sm-push-12</code><br><code>.col-sm-pull-12</code></td>
+			<td><code>.col-md-push-12</code><br><code>.col-md-pull-12</code></td>
+			<td><code>.col-lg-push-12</code><br><code>.col-lg-pull-12</code></td>
+		</tr>
+	</table>
+</div>
+
+@@include('../layout/footer.html')

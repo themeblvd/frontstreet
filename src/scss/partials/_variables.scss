@@ -13,9 +13,8 @@ $breakpoint-xl 						: 1600px;
 // Grid System
 // ==========================================================================
 
-// @TODO
-$grid-columns						: 12; // how can we do this to have 12 and 15?
-$grid-gutters						: 15px;
+
+$grid-gutters						: 30px;
 
 // ==========================================================================
 // Typography
@@ -442,6 +441,7 @@ $spacing-element					: 24px;
 // Margins
 
 $margin-element						: 0 0 $spacing-element 0;
+$margin-column						: 0 0 $spacing-element 0;
 $margin-heading						: ($spacing-element + 10px) 0 $spacing-element 0;
 $margin-heading-lg					: 0 0 $spacing-element 0;
 $margin-heading-sm					: 0 0 $spacing-element 0;
