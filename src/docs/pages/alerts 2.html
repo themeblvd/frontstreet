@@ -1,36 +1,8 @@
-<!DOCTYPE html>
-<html lang="en-US">
-	<head>
-
-		<meta charset="UTF-8" />
-		<link rel="profile" href="http://gmpg.org/xfn/11" />
-
-		<title>Alerts</title>
-
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-		<link rel="stylesheet" href='assets/frontstreet/plugins/fontawesome/css/font-awesome.min.css' type='text/css' media='all' />
-		<link rel="stylesheet" href='assets/frontstreet/css/frontstreet.css' type='text/css' media='all' />
-
-		<link rel="stylesheet" href='assets/css/docs.min.css' type='text/css' media='all' />
-
-	</head>
-	<body>
-
-		<div id="wrapper">
-			<div id="container">
-
-				<article id="main">
-
-					<h1 class="heading-lg">
-						Alerts
-						
-					</h1>
-
+@@include('../layout/header.html', {
+	 "title": "Alerts"
+})
 
 <p>Alerts can be used to provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages. For an alert, combine the class <code>alert</code> with a <a href="colors.html#contextual-colors">contextual color</a> class or a <a href="colors.html#color-library">color library</a> class.</p>
-
-<!-- CONTEXTUAL COLORS -->
 
 <h2 id="contextual-colors">Contextual Colors</h2>
 
@@ -73,8 +45,6 @@
 	<strong>Oh snap!</strong> Change a few things up and try submitting again.
 </div>
 </pre>
-
-<!-- COLOR LIBRARY -->
 
 <h2 id="color-library">Color Library</h2>
 
@@ -120,8 +90,6 @@
 </div>
 </pre>
 
-<!-- LINKS IN ALERTS -->
-
 <h2 id="links">Links in Alerts</h2>
 
 <div class="alert success">
@@ -164,20 +132,4 @@
 </div>
 </pre>
 
-
-				</article><!-- #main (end) -->
-
-			</div><!-- #container (end) -->
-		</div><!-- #wrapper (end) -->
-
-<script type="text/javascript" src="assets/js/frontstreet.min.js"></script>
-<script type="text/javascript" src="assets/js/docs.min.js"></script>
-
-<script type="text/javascript">
-	SyntaxHighlighter.all()
-</script>
-
-
-	</body>
-</html>
-
+@@include('../layout/footer.html')

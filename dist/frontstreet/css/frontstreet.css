@@ -1923,6 +1923,11 @@ blockquote.alignleft, blockquote.pull-left, blockquote.alignright, blockquote.pu
   color: #fff;
 }
 
+blockquote.pull-left
+blockquote.alignleft {
+  text-align: left;
+}
+
 blockquote.pull-right
 blockquote.alignright {
   text-align: right;
