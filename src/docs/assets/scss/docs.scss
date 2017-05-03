@@ -91,27 +91,53 @@ blockquote.alignright {
 	right: 10px;
 }
 
-/* Close Button */
-.close-button-examples {
+/* Close/Menu Toggle Button */
+.close-button-examples,
+.menu-button-examples,
+.menu-button-examples-2 {
+	margin-bottom: 24px;
 	height: 80px;
 	position: relative;
 }
-.close-button-examples .close {
+.close-button-examples .close,
+.menu-button-examples .menu-toggle,
+.menu-button-examples-2 .menu-toggle {
 	position: absolute;
 	top: 50%;
 	transform: translate(0, -50%);
 }
-.close-button-examples .close:nth-child(1) {
+.close-button-examples .close:nth-child(1),
+.menu-button-examples .menu-toggle:nth-child(1) {
 	left: 10px;
 }
-.close-button-examples .close:nth-child(2) {
+.close-button-examples .close:nth-child(2),
+.menu-button-examples .menu-toggle:nth-child(2) {
 	left: 70px;
 }
-.close-button-examples .close:nth-child(3) {
+.close-button-examples .close:nth-child(3),
+.menu-button-examples .menu-toggle:nth-child(3){
 	left: 125px;
 }
-.close-button-examples .close:nth-child(4) {
+.close-button-examples .close:nth-child(4),
+.menu-button-examples .menu-toggle:nth-child(4) {
 	left: 170px;
+}
+.menu-button-examples-2 .menu-toggle:nth-child(1) {
+	left: 10px;
+}
+.menu-button-examples-2 .menu-toggle:nth-child(2) {
+	left: 180px;
+}
+.menu-button-examples-2 .menu-toggle:nth-child(3) {
+	left: 310px;
+}
+.menu-button-examples-2 .menu-toggle:nth-child(4) {
+	left: 410px;
+}
+
+/* Navigation */
+nav {
+	margin-bottom: 24px;
 }
 
 /* =Tables
