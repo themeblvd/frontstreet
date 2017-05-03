@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+
+		<meta charset="UTF-8" />
+		<link rel="profile" href="http://gmpg.org/xfn/11" />
+
+		<title>Navigation</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href='assets/frontstreet/plugins/fontawesome/css/font-awesome.min.css' type='text/css' media='all' />
+		<link rel="stylesheet" href='assets/frontstreet/css/frontstreet.css' type='text/css' media='all' />
+
+		<link rel="stylesheet" href='assets/css/docs.min.css' type='text/css' media='all' />
+
+	</head>
+	<body>
+
+		<div id="wrapper">
+			<div id="container">
+
+				<article id="main">
+
+					<h1 class="heading-lg">
+						Navigation
+						
+					</h1>
+
+
+<!-- NAVBAR -->
+
+<p>Because the navigation of a website can be such an integral part of its unique design, we've done our best to keep top-level menu styling as simple as possible, for easy CSS extending.</p>
+
+<p>However, one of the most notable features of our navigation menus is the support for dropdown (or "fly-out") menus, which are always triggered with a <em>hover</em> state. This is done with custom styling and JavaScript from the Front Street framework. When building the navigational elements discussed in this article, you can add support for our dropdown script by simply adding the class <code>fs-menu</code>.</p>
+
+<p>And for any of the navigation bars, if you'd like to utilize Front Street for coloring them, use any of the <a href="colors.html" title="Color Classes" target="_blank">color classes</a> to set a background color and classes <code>text-light</code> and <code>text-dark</code> to adjust the text.</p>
+
+<h2 id="navbar">Primary Navigation</h2>
+
+<p>For a basic navigation bar, create an unordered list of links with class <code>navbar</code>. You can also nest additional second-level and third-level unordered lists within for submenus. And for all levels, make sure to add class <code>menu-btn</code> to any link <code>&lt;a&gt;</code> tags.</p>
+
+<h3 id="navbar-vert">Vertical Primary Navigation</h3>
+
+<p>By default, the <code>.navbar</code> element is inherently vertical and will fill the width of its current container.</p>
+
+<p>In the following example, we've got an unordered list with with class <code>navbar</code> added. For coloring, the classes <code>bg-light</code> and <code>text-dark</code> have been added. Also, an example of a second-level and third-level menu has been nested within.</p>
+
+<ul class="navbar bg-light text-dark">
+	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
+	<li>
+		<a href="#" class="menu-btn" title="About">About</a>
+		<ul>
+			<li><a href="#" class="menu-btn" title="Philosophy">Philosophy</a></li>
+			<li><a href="#" class="menu-btn" title="Brand">Brand</a></li>
+			<li><a href="#" class="menu-btn" title="History">History</a></li>
+			<li>
+				<a href="#" class="menu-btn" title="Team">Team</a>
+				<ul>
+					<li><a href="#" class="menu-btn" title="Bob">Bob</a></li>
+					<li><a href="#" class="menu-btn" title="Joe">Joe</a></li>
+					<li><a href="#" class="menu-btn" title="Tom">Tom</a></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+</ul>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;ul class="navbar bg-light text-dark"&gt;
+	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
+	<li>
+		<a href="#" class="menu-btn" title="About">About</a>
+		<ul>
+			<li><a href="#" class="menu-btn" title="Philosophy">Philosophy</a></li>
+			<li><a href="#" class="menu-btn" title="Brand">Brand</a></li>
+			<li><a href="#" class="menu-btn" title="History">History</a></li>
+			<li>
+				<a href="#" class="menu-btn" title="Team">Team</a>
+				<ul>
+					<li><a href="#" class="menu-btn" title="Bob">Bob</a></li>
+					<li><a href="#" class="menu-btn" title="Joe">Joe</a></li>
+					<li><a href="#" class="menu-btn" title="Tom">Tom</a></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+&lt;/ul&gt;
+</pre>
+
+<p>And next, we've altered the markup from above to include the <code>primary</code> branding background color class and <code>text-light</code> to lighten the text.</p>
+
+<ul class="navbar primary text-light">
+	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
+	<li>
+		<a href="#" class="menu-btn" title="About">About</a>
+		<ul>
+			<li><a href="#" class="menu-btn" title="Philosophy">Philosophy</a></li>
+			<li><a href="#" class="menu-btn" title="Brand">Brand</a></li>
+			<li><a href="#" class="menu-btn" title="History">History</a></li>
+			<li>
+				<a href="#" class="menu-btn" title="Team">Team</a>
+				<ul>
+					<li><a href="#" class="menu-btn" title="Bob">Bob</a></li>
+					<li><a href="#" class="menu-btn" title="Joe">Joe</a></li>
+					<li><a href="#" class="menu-btn" title="Tom">Tom</a></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+</ul>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;ul class="navbar primary text-light"&gt;
+	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
+	<li>
+		<a href="#" class="menu-btn" title="About">About</a>
+		<ul>
+			<li><a href="#" class="menu-btn" title="Philosophy">Philosophy</a></li>
+			<li><a href="#" class="menu-btn" title="Brand">Brand</a></li>
+			<li><a href="#" class="menu-btn" title="History">History</a></li>
+			<li>
+				<a href="#" class="menu-btn" title="Team">Team</a>
+				<ul>
+					<li><a href="#" class="menu-btn" title="Bob">Bob</a></li>
+					<li><a href="#" class="menu-btn" title="Joe">Joe</a></li>
+					<li><a href="#" class="menu-btn" title="Tom">Tom</a></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+&lt;/ul&gt;
+</pre>
+
+<h4 class="heading-sm">Dropdown Menus</h4>
+
+<p>And to present those second-level and third-level menus as dropdown (or "fly-out") menus, add the class <code>fs-menu</code> to the <code>.navbar</code> element. &mdash; And for fun, this time we've added the classes <code>red</code> and <code>text-light</code> for coloring.</p>
+
+<ul class="navbar fs-menu red text-light">
+	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
+	<li>
+		<a href="#" class="menu-btn" title="About">About</a>
+		<ul>
+			<li><a href="#" class="menu-btn" title="Philosophy">Philosophy</a></li>
+			<li><a href="#" class="menu-btn" title="Brand">Brand</a></li>
+			<li><a href="#" class="menu-btn" title="History">History</a></li>
+			<li>
+				<a href="#" class="menu-btn" title="Team">Team</a>
+				<ul>
+					<li><a href="#" class="menu-btn" title="Bob">Bob</a></li>
+					<li><a href="#" class="menu-btn" title="Joe">Joe</a></li>
+					<li><a href="#" class="menu-btn" title="Tom">Tom</a></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+</ul>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;ul class="navbar fs-menu red text-light"&gt;
+	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
+	<li>
+		<a href="#" class="menu-btn" title="About">About</a>
+		<ul>
+			<li><a href="#" class="menu-btn" title="Philosophy">Philosophy</a></li>
+			<li><a href="#" class="menu-btn" title="Brand">Brand</a></li>
+			<li><a href="#" class="menu-btn" title="History">History</a></li>
+			<li>
+				<a href="#" class="menu-btn" title="Team">Team</a>
+				<ul>
+					<li><a href="#" class="menu-btn" title="Bob">Bob</a></li>
+					<li><a href="#" class="menu-btn" title="Joe">Joe</a></li>
+					<li><a href="#" class="menu-btn" title="Tom">Tom</a></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+&lt;/ul&gt;
+</pre>
+
+<p>And an additional feature available when working with a <code>.fs-menu</code> element is that you can use these <a href="colors.html" title="Color Classes" target="_blank">color classes</a> on the second-level and third-level submenus, as well; so you'll see we've expanded on the previous example to include classes <code>crimson</code> and <code>text-light</code> to the submenus.</p>
+
+<ul class="navbar fs-menu red text-light">
+	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
+	<li>
+		<a href="#" class="menu-btn" title="About">About</a>
+		<ul class="crimson text-light">
+			<li><a href="#" class="menu-btn" title="Philosophy">Philosophy</a></li>
+			<li><a href="#" class="menu-btn" title="Brand">Brand</a></li>
+			<li><a href="#" class="menu-btn" title="History">History</a></li>
+			<li>
+				<a href="#" class="menu-btn" title="Team">Team</a>
+				<ul class="crimson text-light">
+					<li><a href="#" class="menu-btn" title="Bob">Bob</a></li>
+					<li><a href="#" class="menu-btn" title="Joe">Joe</a></li>
+					<li><a href="#" class="menu-btn" title="Tom">Tom</a></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+</ul>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;ul class="navbar fs-menu red text-light"&gt;
+	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
+	<li>
+		<a href="#" class="menu-btn" title="About">About</a>
+		<ul class="crimson text-light">
+			<li><a href="#" class="menu-btn" title="Philosophy">Philosophy</a></li>
+			<li><a href="#" class="menu-btn" title="Brand">Brand</a></li>
+			<li><a href="#" class="menu-btn" title="History">History</a></li>
+			<li>
+				<a href="#" class="menu-btn" title="Team">Team</a>
+				<ul class="crimson text-light">
+					<li><a href="#" class="menu-btn" title="Bob">Bob</a></li>
+					<li><a href="#" class="menu-btn" title="Joe">Joe</a></li>
+					<li><a href="#" class="menu-btn" title="Tom">Tom</a></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+&lt;/ul&gt;
+</pre>
+
+<h3 id="navbar-horz">Horizontal Primary Navigation</h3>
+
+<p>Because the <code>.navbar</code> element is inherently vertical with stacked buttons, we need to add an additional class to align the buttons in a horizontal bar. You can use classes <code>navbar-horz</code>, <code>navbar-horz-xs</code>, <code>navbar-horz-sm</code>, <code>navbar-horz-md</code>, or <code>navbar-horz-lg</code> (see <a href="#responsiveness" title="Navbar Responsiveness">responsiveness</a> below for more on which class you'd use).</p>
+
+<ul class="navbar navbar-horz bg-light text-dark">
+	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
+	<li><a href="#" class="menu-btn" title="About">About</a></li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+</ul>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;ul class="navbar navbar-horz bg-light text-dark"&gt;
+	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
+	<li><a href="#" class="menu-btn" title="About">About</a></li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+&lt;/ul&gt;
+</pre>
+
+<p>And again, we can use whichever <a href="colors.html" title="Color Classes" target="_blank">color classes</a> we want. This next example is the same as above, but with classes <code>primary</code> and <code>text-light</code> used.</p>
+
+<ul class="navbar navbar-horz-sm primary text-light">
+	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
+	<li><a href="#" class="menu-btn" title="About">About</a></li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+</ul>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;ul class="navbar navbar-horz-sm primary text-light"&gt;
+	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
+	<li><a href="#" class="menu-btn" title="About">About</a></li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+&lt;/ul&gt;
+</pre>
+
+<h4 class="heading-sm">Dropdown Menus</h4>
+
+<p>When working with a horizontal <code>.navbar</code>, you'll need to also add the <code>fs-menu</code> class to include any second-level and third-level submenus. And this will present them as dropdown (or "fly-out") menus. &mdash; And for fun, this time we've added the classes <code>royal</code> and <code>text-light</code> for coloring.</p>
+
+<p>And when working with a horizontal <code>.navbar</code> with submenus, you must add <a href="colors.html" title="Color Classes" target="_blank">color classes</a> to the nested submenus. You'll notice in the following example we've added classes <code>dark_blue</code> and <code>text-light</code> to those nested unordered lists.</p>
+
+<ul class="navbar navbar-horz fs-menu royal text-light">
+	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
+	<li>
+		<a href="#" class="menu-btn no-click" title="About">About</a>
+		<ul class="dark_blue text-light">
+			<li><a href="#" class="menu-btn" title="Philosophy">Philosophy</a></li>
+			<li><a href="#" class="menu-btn" title="Brand">Brand</a></li>
+			<li><a href="#" class="menu-btn" title="History">History</a></li>
+			<li>
+				<a href="#" class="menu-btn" title="Team">Team</a>
+				<ul class="dark_blue text-light">
+					<li><a href="#" class="menu-btn" title="Bob">Bob</a></li>
+					<li><a href="#" class="menu-btn" title="Joe">Joe</a></li>
+					<li><a href="#" class="menu-btn" title="Tom">Tom</a></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+</ul>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;ul class="navbar navbar-horz fs-menu royal text-light"&gt;
+	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
+	<li>
+		<a href="#" class="menu-btn no-click" title="About">About</a>
+		<ul class="dark_blue text-light">
+			<li><a href="#" class="menu-btn" title="Philosophy">Philosophy</a></li>
+			<li><a href="#" class="menu-btn" title="Brand">Brand</a></li>
+			<li><a href="#" class="menu-btn" title="History">History</a></li>
+			<li>
+				<a href="#" class="menu-btn" title="Team">Team</a>
+				<ul class="dark_blue text-light">
+					<li><a href="#" class="menu-btn" title="Bob">Bob</a></li>
+					<li><a href="#" class="menu-btn" title="Joe">Joe</a></li>
+					<li><a href="#" class="menu-btn" title="Tom">Tom</a></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+&lt;/ul&gt;
+</pre>
+
+<div class="alert info">
+	<p><strong>Note:</strong> If you don't want a menu link to be clickable by the user, you can add the class <code>no-click</code>. You'll see this used in the example above to make the top-level "About" menu item not clickable.</p>
+</div>
+
+<!-- SUB NAVIVATION -->
+
+<h2 id="subnav">Secondary Navigation</h2>
+
+<p>For a basic secondary navigation bar with a slightly altered look from the primary navigation bar, create an unordered list of links with class <code>subnav</code>. You can also nest additional second-level and third-level unordered lists within for submenus. And for all levels, make sure to add class <code>menu-btn</code> to any link <code>&lt;a&gt;</code> tags.</p>
+
+<h3 id="subnav-vert">Vertical Secondary Navigation</h3>
+
+<p>By default, the <code>.subnav</code> element is inherently vertical and will fill the width of its current container.</p>
+
+<p>In the following example, we've got an unordered list with with class <code>subnav</code> added. For coloring, the classes <code>bg-light</code> and <code>text-dark</code> have been added. Also, an example of a second-level and third-level menu has been nested within.</p>
+
+<ul class="subnav bg-light text-dark">
+	<li>
+		<a href="#" class="menu-btn" title="About">About</a>
+		<ul>
+			<li><a href="#" class="menu-btn" title="Philosophy">Philosophy</a></li>
+			<li><a href="#" class="menu-btn" title="Brand">Brand</a></li>
+			<li><a href="#" class="menu-btn" title="Team">Team</a></li>
+			<li><a href="#" class="menu-btn" title="History">History</a></li>
+		</ul>
+	</li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+</ul>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;ul class="subnav bg-light text-dark"&gt;
+	<li>
+		<a href="#" class="menu-btn" title="About">About</a>
+		<ul>
+			<li><a href="#" class="menu-btn" title="Philosophy">Philosophy</a></li>
+			<li><a href="#" class="menu-btn" title="Brand">Brand</a></li>
+			<li><a href="#" class="menu-btn" title="Team">Team</a></li>
+			<li><a href="#" class="menu-btn" title="History">History</a></li>
+		</ul>
+	</li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+&lt;/ul&gt;
+</pre>
+
+<p>And again, we can use whichever <a href="colors.html" title="Color Classes" target="_blank">color classes</a> we want. This next example is the same as above, but with classes <code>primary</code> and <code>text-light</code> used.</p>
+
+<ul class="subnav primary text-light">
+	<li>
+		<a href="#" class="menu-btn" title="About">About</a>
+		<ul>
+			<li><a href="#" class="menu-btn" title="Philosophy">Philosophy</a></li>
+			<li><a href="#" class="menu-btn" title="Brand">Brand</a></li>
+			<li><a href="#" class="menu-btn" title="Team">Team</a></li>
+			<li><a href="#" class="menu-btn" title="History">History</a></li>
+		</ul>
+	</li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+</ul>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;ul class="subnav primary text-light"&gt;
+	<li>
+		<a href="#" class="menu-btn" title="About">About</a>
+		<ul>
+			<li><a href="#" class="menu-btn" title="Philosophy">Philosophy</a></li>
+			<li><a href="#" class="menu-btn" title="Brand">Brand</a></li>
+			<li><a href="#" class="menu-btn" title="Team">Team</a></li>
+			<li><a href="#" class="menu-btn" title="History">History</a></li>
+		</ul>
+	</li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+&lt;/ul&gt;
+</pre>
+
+<h4 class="heading-sm">Dropdown Menus</h4>
+
+<p>If you'd like submenus to have the dropdown (or "fly-out") effect, you can add class <code>fs-menu</code>. &mdash; And to mix things up, we've adjusted the color classes from the previous example, as well.</p>
+
+<ul class="subnav fs-menu jungle text-light">
+	<li>
+		<a href="#" class="menu-btn" title="About">About</a>
+		<ul>
+			<li><a href="#" class="menu-btn" title="Philosophy">Philosophy</a></li>
+			<li><a href="#" class="menu-btn" title="Brand">Brand</a></li>
+			<li><a href="#" class="menu-btn" title="Team">Team</a></li>
+			<li><a href="#" class="menu-btn" title="History">History</a></li>
+		</ul>
+	</li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+</ul>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;ul class="subnav fs-menu jungle text-light"&gt;
+	<li>
+		<a href="#" class="menu-btn" title="About">About</a>
+		<ul>
+			<li><a href="#" class="menu-btn" title="Philosophy">Philosophy</a></li>
+			<li><a href="#" class="menu-btn" title="Brand">Brand</a></li>
+			<li><a href="#" class="menu-btn" title="Team">Team</a></li>
+			<li><a href="#" class="menu-btn" title="History">History</a></li>
+		</ul>
+	</li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+&lt;/ul&gt;
+</pre>
+
+<p>And an additional feature available when working with a <code>.fs-menu</code> element is that you can use these <a href="colors.html" title="Color Classes" target="_blank">color classes</a> on the second-level and third-level submenus, as well; so you'll see we've expanded on the previous example to include classes <code>black</code> and <code>text-light</code> to the submenu.</p>
+
+<ul class="subnav fs-menu jungle text-light">
+	<li>
+		<a href="#" class="menu-btn" title="About">About</a>
+		<ul class="black text-light">
+			<li><a href="#" class="menu-btn" title="Philosophy">Philosophy</a></li>
+			<li><a href="#" class="menu-btn" title="Brand">Brand</a></li>
+			<li><a href="#" class="menu-btn" title="Team">Team</a></li>
+			<li><a href="#" class="menu-btn" title="History">History</a></li>
+		</ul>
+	</li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+</ul>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;ul class="subnav fs-menu jungle text-light"&gt;
+	<li>
+		<a href="#" class="menu-btn" title="About">About</a>
+		<ul class="black text-light">
+			<li><a href="#" class="menu-btn" title="Philosophy">Philosophy</a></li>
+			<li><a href="#" class="menu-btn" title="Brand">Brand</a></li>
+			<li><a href="#" class="menu-btn" title="Team">Team</a></li>
+			<li><a href="#" class="menu-btn" title="History">History</a></li>
+		</ul>
+	</li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+&lt;/ul&gt;
+</pre>
+
+<h3 id="subnav-horz">Horizontal Secondary Navigation</h3>
+
+<p>Because the <code>.subnav</code> element is inherently vertical with stacked buttons, we need to add an additional class to align the buttons in a horizontal bar. You can use classes <code>subnav-horz</code>, <code>subnav-horz-xs</code>, <code>subnav-horz-sm</code>, <code>subnav-horz-md</code>, or <code>subnav-horz-lg</code> (see <a href="#responsiveness" title="Navbar Responsiveness">responsiveness</a> below for more on which class you'd use).</p>
+
+<ul class="subnav subnav-horz bg-light text-dark">
+	<li><a href="#" class="menu-btn" title="About">About</a></li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+</ul>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;ul class="subnav subnav-horz bg-light text-dark"&gt;
+	<li><a href="#" class="menu-btn" title="About">About</a></li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+&lt;/ul&gt;
+</pre>
+
+<p>And again, we can use whichever <a href="colors.html" title="Color Classes" target="_blank">color classes</a> we want. This next example is the same as above, but with classes <code>primary</code> and <code>text-light</code> used.</p>
+
+<ul class="subnav subnav-horz primary text-light">
+	<li><a href="#" class="menu-btn" title="About">About</a></li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+</ul>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;ul class="subnav subnav-horz primary text-light"&gt;
+	<li><a href="#" class="menu-btn" title="About">About</a></li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+&lt;/ul&gt;
+</pre>
+
+<h4 class="heading-sm">Dropdown Menus</h4>
+
+<p>When working with a horizontal <code>.subnav</code>, you'll need to also add the <code>fs-menu</code> class to include any second-level and third-level submenus. And this will present them as dropdown (or "fly-out") menus. &mdash; And for fun, this time we've added the classes <code>dark_purple</code> and <code>text-light</code> for coloring.</p>
+
+<p>And when working with a horizontal <code>.subnav</code> with submenus, you must add <a href="colors.html" title="Color Classes" target="_blank">color classes</a> to the nested submenus. You'll notice in the following example we've added classes <code>pink</code> and <code>text-light</code> to that nested unordered list.</p>
+
+<ul class="subnav subnav-horz fs-menu dark_purple text-light">
+	<li>
+		<a href="#" class="menu-btn" title="About">About</a>
+		<ul class="pink text-light">
+			<li><a href="#" class="menu-btn" title="Philosophy">Philosophy</a></li>
+			<li><a href="#" class="menu-btn" title="Brand">Brand</a></li>
+			<li><a href="#" class="menu-btn" title="Team">Team</a></li>
+			<li><a href="#" class="menu-btn" title="History">History</a></li>
+		</ul>
+	</li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+</ul>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;ul class="subnav subnav-horz fs-menu dark_purple text-light"&gt;
+	<li>
+		<a href="#" class="menu-btn" title="About">About</a>
+		<ul class="pink text-light">
+			<li><a href="#" class="menu-btn" title="Philosophy">Philosophy</a></li>
+			<li><a href="#" class="menu-btn" title="Brand">Brand</a></li>
+			<li><a href="#" class="menu-btn" title="Team">Team</a></li>
+			<li><a href="#" class="menu-btn" title="History">History</a></li>
+		</ul>
+	</li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+&lt;/ul&gt;
+</pre>
+<!-- RESPONSIVENESS -->
+
+<h2 id="responsiveness">Responsiveness</h2>
+
+<p>From above, you know that to make your <code>.navbar</code> and <code>.subnav</code> menus display horizontally, you can add the classe <code>navbar-horz</code> and <code>subnav-horz</code>. However, this doesn't account for any responsiveness.</p>
+
+<p>So instead, to make your menus responsive, you can utilize one of the <code>navbar-horz-*</code> or <code>subnav-horz-*</code> classes to specify a stacking point. This works similarly to the <a href="grid.html#responsiveness">grid system and determining your stacking point</a> there.</p>
+
+<div class="table-responsive">
+	<table class="table-bordered table-condensed">
+		<tr>
+			<td width="25%"><code>.navbar-horz</code></td>
+			<td rowspan="2">Classes containing no breakpoint will never stack. This is not recommended in most cases and especially not recommended if your menu includes submenus.</td>
+		</tr>
+		<tr>
+			<td width="25%"><code>.subnav-horz</code></td>
+		</tr>
+	</table>
+</div>
+
+<div class="table-responsive">
+	<table class="table-bordered table-condensed">
+		<tr>
+			<td width="25%"><code>.navbar-horz-xs</code></td>
+			<td rowspan="2">Classes containing <code>xs</code> will collapse and begin to stack when viewport is less than 576px. This will generally include smaller mobile devices.</td>
+		</tr>
+		<tr>
+			<td width="25%"><code>.subnav-horz-xs</code></td>
+		</tr>
+	</table>
+</div>
+
+<div class="table-responsive">
+	<table class="table-bordered table-condensed">
+		<tr>
+			<td width="25%"><code>.navbar-horz-sm</code></td>
+			<td rowspan="2">Classes containing <code>sm</code> will collapse and begin to stack when viewport is less than 768px. This will generally include slightly larger mobile devices (or those in the landscape orientation) and smaller mobile devices.</td>
+		</tr>
+		<tr>
+			<td width="25%"><code>.subnav-horz-sm</code></td>
+		</tr>
+	</table>
+</div>
+
+<div class="table-responsive">
+	<table class="table-bordered table-condensed">
+		<tr>
+			<td width="25%"><code>.navbar-horz-md</code></td>
+			<td rowspan="2">Classes containing <code>md</code> will collapse and begin to stack when viewport is less than 992px. This will generally include tablets (in portrait orientation) and any mobile device smaller than that.</td>
+		</tr>
+		<tr>
+			<td width="25%"><code>.subnav-horz-md</code></td>
+		</tr>
+	</table>
+</div>
+
+<div class="table-responsive">
+	<table class="table-bordered table-condensed">
+		<tr>
+			<td width="25%"><code>.navbar-horz-lg</code></td>
+			<td rowspan="2">Classes containing <code>lg</code> will collapse and begin to stack when viewport is less than 1200px. This will generally include smaller desktop computers, and all tablets and mobile devices.</td>
+		</tr>
+		<tr>
+			<td width="25%"><code>.subnav-horz-lg</code></td>
+		</tr>
+	</table>
+</div>
+
+<p>In the following example, we've got a <code>.navbar</code> element as we've discussed above, but now the class <code>navbar-horz-md</code> has been used <em>instead</em> of <code>navbar-horz</code>. And so this means the menu will stack when the viewport is less than 992px.</p>
+
+<ul class="navbar navbar-horz-md fs-menu primary text-light">
+	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
+	<li class="no-click">
+		<a href="#" class="menu-btn" title="About">About</a>
+		<ul class="black text-light">
+			<li><a href="#" class="menu-btn" title="Philosophy">Philosophy</a></li>
+			<li><a href="#" class="menu-btn" title="Brand">Brand</a></li>
+			<li><a href="#" class="menu-btn" title="History">History</a></li>
+			<li>
+				<a href="#" class="menu-btn" title="Team">Team</a>
+				<ul class="black text-light">
+					<li><a href="#" class="menu-btn" title="Bob">Bob</a></li>
+					<li><a href="#" class="menu-btn" title="Joe">Joe</a></li>
+					<li><a href="#" class="menu-btn" title="Tom">Tom</a></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+</ul>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;ul class="navbar navbar-horz-md fs-menu primary text-light"&gt;
+	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
+	<li class="no-click">
+		<a href="#" class="menu-btn" title="About">About</a>
+		<ul class="black text-light">
+			<li><a href="#" class="menu-btn" title="Philosophy">Philosophy</a></li>
+			<li><a href="#" class="menu-btn" title="Brand">Brand</a></li>
+			<li><a href="#" class="menu-btn" title="History">History</a></li>
+			<li>
+				<a href="#" class="menu-btn" title="Team">Team</a>
+				<ul class="black text-light">
+					<li><a href="#" class="menu-btn" title="Bob">Bob</a></li>
+					<li><a href="#" class="menu-btn" title="Joe">Joe</a></li>
+					<li><a href="#" class="menu-btn" title="Tom">Tom</a></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+&lt;/ul&gt;
+</pre>
+
+<p>And in this example, the class <code>subnav-horz-sm</code> has been used with the <code>.subnav</code> element. This means it will stack when the viewport is less than 768px.</p>
+
+<ul class="subnav subnav-horz-sm fs-menu bg-light text-dark">
+	<li>
+		<a href="#" class="menu-btn" title="About">About</a>
+		<ul class="white text-dark">
+			<li><a href="#" class="menu-btn" title="Philosophy">Philosophy</a></li>
+			<li><a href="#" class="menu-btn" title="Brand">Brand</a></li>
+			<li><a href="#" class="menu-btn" title="Team">Team</a></li>
+			<li><a href="#" class="menu-btn" title="History">History</a></li>
+		</ul>
+	</li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+</ul>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;ul class="subnav subnav-horz-sm fs-menu bg-light text-dark"&gt;
+	<li>
+		<a href="#" class="menu-btn" title="About">About</a>
+		<ul class="white text-dark">
+			<li><a href="#" class="menu-btn" title="Philosophy">Philosophy</a></li>
+			<li><a href="#" class="menu-btn" title="Brand">Brand</a></li>
+			<li><a href="#" class="menu-btn" title="Team">Team</a></li>
+			<li><a href="#" class="menu-btn" title="History">History</a></li>
+		</ul>
+	</li>
+	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
+	<li><a href="#" class="menu-btn" title="News">News</a></li>
+	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
+&lt;/ul&gt;
+</pre>
+
+
+				</article><!-- #main (end) -->
+
+			</div><!-- #container (end) -->
+		</div><!-- #wrapper (end) -->
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="assets/frontstreet/js/frontstreet.min.js"></script>
+<script type="text/javascript" src="assets/js/docs.min.js"></script>
+
+<script type="text/javascript">
+	SyntaxHighlighter.all()
+</script>
+
+
+	</body>
+</html>
+
