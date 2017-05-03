@@ -68,6 +68,7 @@ gulp.task('render-docs-js', function() {
 		'src/docs/assets/js/shCore.js',
 		'src/docs/assets/js/shBrushXml.js',
 		'src/docs/assets/js/shBrushCss.js',
+		'src/docs/assets/js/shBrushJScript.js',
 		'src/docs/assets/js/docs.js'
 	];
 
@@ -122,7 +123,12 @@ gulp.task('render-project-css', function() {
  */
 gulp.task('render-project-js', function() {
 
-	return gulp.src('src/js/*.js')
+	var files = [
+		'src/js/init.js',
+		'src/js/menu.js'
+	];
+
+	return gulp.src(files)
 		.pipe(concat('frontstreet.js'))
 		.pipe(gulp.dest('dist/frontstreet/js'))
 		.pipe(gulp.dest('dist/docs/assets/frontstreet/js'))
