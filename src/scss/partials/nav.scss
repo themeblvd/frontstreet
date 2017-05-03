@@ -1,0 +1,261 @@
+
+// Navigation
+// --------------------------------------------------
+
+//
+// General Properties
+//
+
+.navbar,
+.subnav {
+
+	@include list-unstyled;
+	@include clearfix;
+
+	ul {
+		@include list-unstyled;
+	}
+}
+.menu-btn {
+	display: block;
+	line-height: 1;
+	position: relative;
+	@include transition($btn-transition);
+}
+.navbar-horz > li,
+.subnav-horz > li {
+	float: left;
+}
+@each $breakpoint in $breakpoints {
+	@if $breakpoint != xl { // skip xl
+		@include min-width($breakpoint) {
+			.navbar-horz-#{$breakpoint} > li,
+			.subnav-horz-#{$breakpoint} > li {
+				float: left;
+			}
+		}
+	}
+}
+
+//
+// Navbar
+//
+
+.navbar {
+
+	.menu-btn {
+		border: none;
+	}
+
+	// Level 1
+	> li > .menu-btn {
+    	font-size: $font-size-navbar-btn;
+		font-weight: $font-weight-navbar-btn;
+		letter-spacing: $font-ls-navbar-btn;
+    	padding: em(18px, $font-size-navbar-btn) em(20px, $font-size-navbar-btn);
+		text-transform: $font-transform-navbar-btn;
+	}
+	&.text-dark > li > .menu-btn {
+
+		color: $clr-text-darken;
+
+		&:hover,
+		&:focus {
+			background-color: rgba($clr-light, .3);
+		}
+	}
+	&.text-light > li > .menu-btn {
+
+		color: $clr-text-inv-darken;
+
+		&:hover,
+		&:focus {
+			background-color: rgba($clr-black, .3);
+		}
+	}
+
+}
+
+//
+// Subnav
+//
+
+.subnav {
+
+	padding: $padding-subnav;
+
+	.menu-btn {
+		border: none;
+	}
+	&.text-dark .menu-btn {
+
+		color: rgba($clr-text-darken, .8);
+
+		&:hover,
+		&:focus {
+			color: $clr-text-darken;
+		}
+	}
+	&.text-light .menu-btn {
+
+		color: rgba($clr-text-inv-darken, .8);
+
+		&:hover,
+		&:focus {
+			color: $clr-text-inv-darken;
+		}
+	}
+
+	// Level 1
+	> li > .menu-btn {
+		font-weight: $font-weight-subnav-btn;
+    	font-size: $font-size-subnav-btn;
+		letter-spacing: $font-ls-subnav-btn;
+    	padding: em(10px, $font-size-subnav-btn) em(16px, $font-size-subnav-btn);
+		text-transform: $font-transform-subnav-btn;
+	}
+
+	// Level 2 flyouts
+	&.fs-menu > li > ul {
+		margin-top: $padding-subnav;
+	}
+
+}
+
+//
+// Sub-levels
+//
+
+.navbar,
+.subnav {
+
+	// Level 2+
+	ul {
+		font-size: $font-size-dropdown;
+		padding-left: 10px;
+	}
+	ul .menu-btn {
+		padding: .75em $flyout-horz-spacing;
+	}
+	&.text-dark ul .menu-btn {
+
+		color: $clr-text-base;
+
+		&:hover,
+		&:focus {
+			color: $clr-text-darken;
+		}
+	}
+	&.text-light ul .menu-btn {
+
+		color: rgba($clr-text-inv-darken, .8);
+
+		&:hover,
+		&:focus {
+			color: $clr-text-inv-darken;
+		}
+	}
+
+	// Level 3
+	ul ul {
+		padding-left: 20px;
+	}
+
+}
+
+//
+// Dropdown Menus
+//
+
+.fs-menu {
+
+	li,
+	.menu-btn {
+	    position: relative;
+	}
+
+	// Drop indicator icons
+	li.menu-item-has-children > .menu-btn {
+		padding-right: 2.5em;
+	}
+	li.menu-item-has-children > .menu-btn:after {
+		content: "\f107";
+		font-family: "FontAwesome";
+		position: absolute;
+		top: 50%;
+		right: 1em;
+		text-align: center;
+		@include transform( translate(0, -50%) );
+		width: 1em;
+		height: 1em;
+	}
+
+	// Flyout menu
+	ul {
+		display: none;
+		max-width: 100%;
+		min-width: $flyout-width;
+		padding: $flyout-vert-spacing 0;
+		position: static;
+		top: 100%;
+		left: 0;
+		z-index: 999;
+	}
+	ul.reverse {
+		left: initial;
+		right: 0;
+	}
+	ul ul {
+		top: 0;
+		left: 100%;
+	}
+	ul.reverse ul {
+		left: inherit;
+		right: 100%;
+	}
+	ul.text-dark > li > .menu-btn {
+
+		color: $clr-text-base;
+
+		&:hover,
+		&:focus {
+			color: $clr-text-darken;
+		}
+
+	}
+	ul.text-light > li > .menu-btn {
+
+		color: rgba($clr-text-inv-darken, .8);
+
+		&:hover,
+		&:focus {
+			color: $clr-text-inv-darken;
+		}
+
+	}
+
+	// Display drop menus (no-js fallback)
+	li:hover ul {
+		display: block;
+	}
+}
+.fs-menu.navbar-horz,
+.fs-menu.subnav-horz {
+	@include dropdown();
+}
+@each $breakpoint in $breakpoints {
+	@if $breakpoint != xl { // skip xl
+		@include min-width($breakpoint) {
+			.fs-menu.navbar-horz-#{$breakpoint},
+			.fs-menu.subnav-horz-#{$breakpoint} {
+				@include dropdown();
+			}
+		}
+	}
+}
+
+//
+// Mega Menus
+//
+
+// ... @TODO
