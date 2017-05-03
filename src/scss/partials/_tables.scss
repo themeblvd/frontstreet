@@ -180,6 +180,7 @@ table {
 
 .table-responsive {
 	overflow-x: auto;
+	margin: $margin-table;
 	min-height: 0.01%; // Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837)
 
 	@include max-width(sm) {
