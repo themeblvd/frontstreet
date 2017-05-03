@@ -7,7 +7,8 @@
 //
 
 @each $name, $map in $clr-branding {
-	@include bg-variant('.#{$name}, .bg-#{$name}', map-get($map, base), map-get($map, contrast)); // Include .bg-* for Theme Blvd comapat.
+	@include bg-variant('.#{$name}', map-get($map, base), map-get($map, contrast));
+	@include bg-variant('.bg-#{$name}', map-get($map, base), map-get($map, contrast)); // Include .bg-* for Theme Blvd compat.
 }
 
 //
