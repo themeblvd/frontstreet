@@ -1,0 +1,100 @@
+
+// Button Groups
+// --------------------------------------------------
+
+.btn-group {
+
+	display: inline-block;
+	list-style: none;
+	margin: $margin-btn-group;
+	padding: 0;
+
+	> .btn,
+	> li {
+		float: left;
+		margin: $margin-btn-group-btn;
+		position: relative;
+	}
+
+}
+.btn-group:not(.btn-group-justified) {
+	@include clearfix;
+}
+
+//
+// Button Group Blocks
+//
+
+.btn-group-block {
+	display: block;
+	margin: $margin-btn-group-block;
+	width: 100%;
+}
+
+//
+// Tight Button Groups
+//
+
+.btn-group-tight {
+
+	margin-right: 0;
+	margin-left: 0;
+
+	> .btn,
+	> li {
+		margin: 0;
+	}
+}
+
+//
+// Justified Button Groups
+//
+
+.btn-group-justified {
+
+	border-collapse: separate;
+	border-spacing: 2px;
+	display: table;
+	margin: $margin-element;
+	padding: 0;
+	table-layout: fixed;
+	width: 100%;
+
+	&.btn-group-tight {
+		border-spacing: 0;
+	}
+	> li {
+		display: table-cell;
+		float: none;
+		width: 1%;
+	}
+	> li > .btn {
+		margin: 0;
+		width: 100%;
+	}
+}
+
+//
+// Button Group Sizing
+//
+
+@each $size, $map in $btn-sizes {
+	.btn-group-#{$size} .btn {
+		@each $prop, $val in $map {
+			#{$prop}: #{$val};
+		}
+	}
+}
+
+//
+// Pagination
+//
+
+.pagination {
+	display: block;
+	margin: $margin-btn-group-block;
+	width: 100%;
+}
+.pagination .btn {
+	padding: 6px 12px;
+}

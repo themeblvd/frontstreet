@@ -12,8 +12,11 @@
 	height: map-get($btn-close, sm);
 	@include hide-text();
 }
+.text-light .close,
 .close-light {
 	background-image: url('../svg/close-light.svg');
+	border: none;
+	padding: 0;
 }
 .close:hover,
 .close:focus {

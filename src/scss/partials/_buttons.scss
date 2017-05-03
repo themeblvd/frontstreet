@@ -1,3 +1,136 @@
 
 // Buttons
 // --------------------------------------------------
+
+.btn,
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+
+	background-color: $clr-bg-btn;
+	border: $btn-border-width solid transparent;
+	color: $clr-text-darken;
+	cursor: pointer;
+	display: inline-block;
+	font-size: $font-size-btn;
+	font-weight: $font-weight-btn;
+	letter-spacing: $font-ls-btn;
+	line-height: $font-lh-btn;
+	margin-bottom: 0; // For input.btn
+	padding: $padding-btn;
+	text-align: center;
+	text-transform: $font-transform-btn;
+	touch-action: manipulation;
+	@include transition($btn-transition);
+	vertical-align: middle;
+	white-space: nowrap;
+	@include user-select(none);
+
+	&,
+	&:active,
+	&.active {
+		&:focus,
+		&.focus {
+			@include tab-focus;
+		}
+	}
+
+	&:hover,
+	&:focus,
+	&.focus {
+		background-color: darken($clr-bg-btn, 2%);
+		color: $clr-text-base;
+		text-decoration: none;
+	}
+
+	&:active,
+	&.active {
+		outline: 0;
+	}
+
+	&.active {
+		border-color: transparent;
+	}
+
+}
+
+//
+// Button Sizes
+//
+
+@each $size, $map in $btn-sizes {
+	.btn-#{$size} {
+		@each $prop, $val in $map {
+			#{$prop}: #{$val};
+		}
+	}
+}
+
+
+//
+// Default color
+//
+
+@include button-variant('default', $clr-text-darken, $clr-bg-btn, darken($clr-bg-btn, 2%) );
+
+@include button-variant('light', $clr-text-darken, darken($clr-bg-light, 2%), darken(darken($clr-bg-light, 2%), 2%) );
+
+//
+// Branding Colors
+//
+
+@each $clr, $map in $clr-branding {
+	@include button-variant($clr, map-get($map, contrast), map-get($map, base) );
+}
+
+//
+// Contextual Colors
+//
+
+@each $clr, $map in $clr-contextual {
+	@include button-variant($clr, map-get($map, contrast), map-get($map, base) );
+}
+
+//
+// Color Library
+//
+
+@each $clr, $map in $clr-library {
+	@include button-variant($clr, map-get($map, contrast), map-get($map, base) );
+}
+
+//
+// Block button
+//
+
+.btn-block {
+	display: block;
+	width: 100%;
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+	margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	&.btn-block {
+		width: 100%;
+	}
+}
+
+//
+// Buttons w/Icons
+//
+
+.btn > .fa.before {
+	margin-right: 0.8em;
+}
+.btn > .fa.after {
+	margin-left: 0.8em;
+}

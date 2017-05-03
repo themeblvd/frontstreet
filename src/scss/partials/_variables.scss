@@ -13,7 +13,6 @@ $breakpoint-xl 						: 1600px;
 // Grid System
 // ==========================================================================
 
-
 $grid-gutters						: 30px;
 
 // ==========================================================================
@@ -119,6 +118,10 @@ $font-size-pre						: $font-size-md;
 $font-size-caption					: $font-size-sm;
 $font-size-quote					: 1.3rem;
 $font-size-alert					: 0.9375rem;
+$font-size-btn						: $font-size-xxxs;
+$font-size-navbar-btn				: $font-size-sm;
+$font-size-subnav-btn				: $font-size-btn;
+$font-size-dropdown					: $font-size-xs;
 
 // Font Line Heights
 
@@ -131,7 +134,7 @@ $font-lh-lead						: 1.4;
 $font-lh-quote						: 1.4;
 $font-lh-header-menu				: 1.25;
 $font-lh-header-menu-dropdown		: 1.4;
-$font-lh-btn 						: 1.42857143;
+$font-lh-btn 						: 1.4;
 
 // Font Style
 
@@ -144,13 +147,20 @@ $font-weight-base					: 300;
 $font-weight-heading				: 700;
 $font-weight-heading-lg				: 700;
 $font-weight-heading-sm				: 700;
+$font-weight-btn					: 500;
+$font-weight-navbar-btn				: $font-weight-base;
+$font-weight-subnav-btn				: $font-weight-btn;
 
 // Text Transform
+
 $font-transform-heading				: none;
 $font-transform-heading-lg			: none;
 $font-transform-heading-sm			: uppercase;
 $font-transform-subtitles			: none;
 $font-transform-quote				: none;
+$font-transform-btn					: uppercase;
+$font-transform-navbar-btn			: none;
+$font-transform-subnav-btn			: $font-transform-btn;
 
 // Letter Spacing
 
@@ -158,6 +168,9 @@ $font-ls-heading					: 0;
 $font-ls-heading-lg					: 1px;
 $font-ls-heading-sm					: 1px;
 $font-ls-subtitles					: 0;
+$font-ls-btn						: .12em;
+$font-ls-navbar-btn					: 0;
+$font-ls-subnav-btn					: $font-ls-btn;
 
 // ==========================================================================
 // Colors
@@ -371,10 +384,6 @@ $clr-contextual : (
 	danger : (
 		base						: #f2dede,
 		contrast					: #a94442
-	),
-	active : (
-		base						: $clr-lightest,
-		contrast					: $clr-text-base
 	)
 );
 
@@ -395,6 +404,7 @@ $clr-bg-body						: $clr-white;
 $clr-bg-hr							: rgba($clr-bg-dark, 0.1);
 $clr-bg-code						: $clr-lightest;
 $clr-bg-kbd							: $clr-bg-dark;
+$clr-bg-btn							: darken($clr-bg-light, 2%);
 
 // ==========================================================================
 // Utilities
@@ -451,15 +461,59 @@ $margin-list						: 0 0 $spacing-element 0;
 $margin-quote						: 40px 30px;
 $margin-table						: 0 0 $spacing-element 0;
 $margin-alert						: 0 0 $spacing-element 0;
+$margin-btn-group					: 0 -1px;
+$margin-btn-group-block				: 0 -1px $spacing-element -1px;
+$margin-btn-group-btn				: 0 1px;
+$margin-pagination					: 0 0 $spacing-element 0;
 
 // Padding
 
 $padding-list						: 0 0 0 40px;
 $padding-alert						: 15px;
+$padding-btn						: 12px 20px;
+$padding-subnav						: 12px;
 
 // ==========================================================================
 // Buttons
 // ==========================================================================
+
+$btn-transition						: background-color 0.2s ease-out;
+$btn-border-width					: 2px; // Transparent on standard .btn
+
+// Button Sizes
+
+$btn-sizes : (
+	xs : (
+		font-size					: 10px,
+		letter-spacing 				: $font-ls-btn,
+		padding						: 6px 10px
+	),
+	sm : (
+		font-size					: 10px,
+		letter-spacing 				: $font-ls-btn,
+		padding						: 9px 15px
+	),
+	lg : (
+		font-size					: 12px,
+		letter-spacing 				: $font-ls-btn,
+		padding						: 18px 30px
+	),
+	xl : (
+		font-size					: 14px,
+		letter-spacing 				: $font-ls-btn,
+		padding						: 20px 40px
+	),
+	xxl : (
+		font-size					: 15px,
+		letter-spacing 				: $font-ls-btn,
+		padding						: 22px 50px
+	),
+	xxxl : (
+		font-size					: 16px,
+		letter-spacing 				: $font-ls-btn,
+		padding						: 28px 64px
+	)
+);
 
 // Close Buttons
 
@@ -495,3 +549,11 @@ $table-border-color					: $clr-lighter;
 
 $table-sm-cell-padding				: .5rem;
 $table-sm-font-size					: $font-size-sm;
+
+// ==========================================================================
+// Menus
+// ==========================================================================
+
+$flyout-vert-spacing				: .85em;
+$flyout-horz-spacing				: 1.5em;
+$flyout-width						: 200px;

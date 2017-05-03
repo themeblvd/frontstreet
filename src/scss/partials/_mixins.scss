@@ -44,6 +44,45 @@
 	transform: $val;
 }
 
+//
+// Transition
+//
+
+@mixin transition($val) {
+	-webkit-transition: $val;
+	-moz-transition: $val;
+	-ms-transition: $val;
+	transform: $val;
+}
+
+//
+// User select
+// For selecting text on the page.
+//
+
+@mixin user-select($val) {
+	-webkit-user-select: $val;
+	-moz-user-select: $val;
+	-ms-user-select: $val; // IE10+
+	user-select: $val;
+}
+
+// ==========================================================================
+// Browser Hacks & Fixes
+// ==========================================================================
+
+//
+// WebKit-style focus
+//
+
+@mixin tab-focus() {
+	// WebKit-specific. Other browsers will keep their default outline style.
+	// (Initially tried to also force default via `outline: initial`,
+	// but that seems to erroneously remove the outline in Firefox altogether.)
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+}
+
 // ==========================================================================
 // Breakpoints
 // ==========================================================================
@@ -378,6 +417,7 @@
 // Colors
 // ==========================================================================
 
+//
 // Text
 //
 
@@ -391,6 +431,7 @@
 	}
 }
 
+//
 // Backgrounds
 //
 
@@ -416,14 +457,66 @@
 			color: $text;
 		}
 	}
-	a#{$parent}:hover,
-	a#{$parent}:focus,
-	input#{$parent}:hover,
-	input#{$parent}:focus,
-	button#{$parent}:hover,
-	button#{$parent}:focus {
-		background-color: darken($color, 10%);
-		@if $text != null {
+}
+
+//
+// Buttons
+//
+
+@mixin button-variant($color, $text, $bg, $bg-hover: null) {
+	.btn.btn-#{$color},
+	.button.btn-#{$color},
+	button.btn-#{$color},
+	input[type="submit"].btn-#{$color},
+	input[type="reset"].btn-#{$color},
+	input[type="button"].btn-#{$color},
+	.fancy-select.btn-#{$color} {
+
+		background-color: $bg;
+		color: $text;
+
+		&:hover,
+		&:focus,
+		&.focus {
+			@if $bg-hover != null {
+				background-color: $bg-hover;
+			} @else {
+				background-color: darken($bg, 10%);
+			}
+		}
+
+		&:active,
+		&.active {
+			@if $bg-hover != null {
+				background-color: darken($bg-hover, 5%);
+			} @else {
+				background-color: darken($bg, 15%);
+			}
+		}
+	}
+	.btn.btn-#{$color}.btn-trans,
+	.button.btn-#{$color}.btn-trans,
+	button.btn-#{$color}.btn-trans,
+	input[type="submit"].btn-#{$color}.btn-trans,
+	input[type="reset"].btn-#{$color}.btn-trans,
+	input[type="button"].btn-#{$color}.btn-trans,
+	.fancy-select.btn-#{$color}.btn-trans {
+
+		background-color: transparent;
+		border-color: $bg;
+
+		@if $color == white {
+			color: $bg;
+		} @elseif $text != #fff or $color == info or $color == success or $color == warning or $color == danger {
+			color: $text;
+		} @else {
+			color: $bg;
+		}
+
+		&:hover,
+		&:focus,
+		&.focus {
+			background-color: $bg;
 			color: $text;
 		}
 	}
@@ -454,6 +547,7 @@
 	}
 }
 
+//
 // Center-align block-level element.
 //
 
@@ -463,6 +557,7 @@
 	margin-right: auto;
 }
 
+//
 // Floats
 //
 
@@ -476,6 +571,7 @@
 	margin: 5px 0 20px 20px; // @noflip
 }
 
+//
 // Hide Text
 //
 
@@ -483,6 +579,7 @@
 	text-indent: -9999px;
 }
 
+//
 // Hide Element
 //
 
@@ -492,6 +589,7 @@
 	}
 }
 
+//
 // Show Element
 //
 
@@ -552,5 +650,25 @@
 				}
 			}
 		}
+	}
+}
+
+// ==========================================================================
+// Navigation
+// ==========================================================================
+
+@mixin dropdown {
+	ul {
+		@include box-shadow( 0 2px 5px rgba($clr-black, .05) );
+		position: absolute;
+	}
+	ul li.menu-item-has-children > .menu-btn:after {
+		content: "\f105";
+	}
+	ul.reverse li.menu-item-has-children > .menu-btn:after {
+		content: "\f104";
+	}
+	ul ul {
+		padding-left: 0;
 	}
 }
