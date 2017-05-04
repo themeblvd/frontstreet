@@ -273,6 +273,11 @@
 			right: auto;
 		}
 	}
+	@if ($type == offset) {
+		.col-#{$class}-offset-#{$num} {
+			margin-left: percentage(($index / $columns));
+		}
+	}
 }
 
 //
@@ -302,6 +307,7 @@
 	@include loop-grid-columns($columns, $class, width);
 	@include loop-grid-columns($columns, $class, pull);
 	@include loop-grid-columns($columns, $class, push);
+	@include loop-grid-columns($columns, $class, offset);
 }
 
 //
