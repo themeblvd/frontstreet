@@ -62,16 +62,12 @@
 .menu-toggle.collapse {
 	.hamburger:before {
 		top: 50%;
-		-ms-transform: rotate(45deg);
-		-webkit-transform: rotate(45deg);
-		transform: rotate(45deg);
+		@include transform(rotate(45deg));
 	}
 	.hamburger span {
 		margin-top: 0;
 		top: 50%;
-		-ms-transform: rotate(-45deg);
-		-webkit-transform: rotate(-45deg);
-		transform: rotate(-45deg);
+		@include transform(rotate(-45deg));
 	}
 	.hamburger:after {
 		opacity: 0;
@@ -146,6 +142,10 @@
 	.text-before {
 		font-size: 10px; // Match height of hamburger
 	}
+	&.collapse .hamburger:before,
+	&.collapse .hamburger span {
+		top: 4px;
+	}
 }
 .text-light .menu-toggle-md,
 .menu-toggle-md {
@@ -164,6 +164,10 @@
 	.text-after,
 	.text-before {
 		font-size: 14px; // Match height of hamburger
+	}
+	&.collapse .hamburger:before,
+	&.collapse .hamburger span {
+		top: 6px;
 	}
 }
 .text-light .menu-toggle-lg,
@@ -187,6 +191,10 @@
 	.text-before {
 		font-size: 20px; // Match height of hamburger
 	}
+	&.collapse .hamburger:before,
+	&.collapse .hamburger span {
+		top: 8px;
+	}
 }
 .text-light .menu-toggle-xl,
 .menu-toggle-xl {
@@ -208,5 +216,9 @@
 	.text-after,
 	.text-before {
 		font-size: 26px; // Match height of hamburger
+	}
+	&.collapse .hamburger:before,
+	&.collapse .hamburger span {
+		top: 11px;
 	}
 }
