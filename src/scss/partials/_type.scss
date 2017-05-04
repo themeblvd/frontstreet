@@ -180,6 +180,31 @@ h6 small, .h6 small {
 }
 
 //
+// Heading Underline
+//
+
+.heading-underline {
+
+    border-bottom: 2px solid $clr-trans-lightest;
+    padding-bottom: .8em;
+    position: relative;
+
+	&:before {
+		content: "";
+		background: map-deep-get($clr-branding, secondary, base);
+		position: absolute;
+		bottom: -2px;
+		left: 0;
+		width: 75px;
+		height: 2px;
+		z-index: 2;
+	}
+}
+.text-light .heading-underline {
+	border-bottom-color: $clr-darkest;
+}
+
+//
 // Code
 //
 

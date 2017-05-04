@@ -2065,6 +2065,27 @@ h6 small, .h6 small {
   font-size: 13px;
 }
 
+.heading-underline {
+  border-bottom: 2px solid rgba(237, 237, 237, 0.4);
+  padding-bottom: .8em;
+  position: relative;
+}
+
+.heading-underline:before {
+  content: "";
+  background: #fec527;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 75px;
+  height: 2px;
+  z-index: 2;
+}
+
+.text-light .heading-underline {
+  border-bottom-color: #101010;
+}
+
 pre {
   background-color: #f8f8f8;
   border: none;

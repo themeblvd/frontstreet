@@ -9,3 +9,10 @@
 @function rem($target) {
 	@return ($target / $font-size-base) * 1rem;
 }
+
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
