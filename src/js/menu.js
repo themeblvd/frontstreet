@@ -43,18 +43,15 @@
 			});
 		});
 
-		// ... @TODO add touch device support
-		// var ios = /^(?![\w\W]*Windows Phone)[\w\W]*(iPhone|iPad|iPod)/i.test(navigator.userAgent);
+		// Touch support
+		var ios = /^(?![\w\W]*Windows Phone)[\w\W]*(iPhone|iPad|iPod)/i.test(navigator.userAgent);
 
-		// if (ios) {
-		// 	// tap anywhere on iOS to unfocus a submenu
-		// 	$('html').css('cursor', 'pointer').on('click', $.noop);
-		// 	alert('ios?');
-		// }
+		if ( ios ) {
+			// tap anywhere on iOS to unfocus a submenu
+			$('html').css('cursor', 'pointer').on('click', $.noop);
+		}
 
 	}
-
-	Menu.VERSION = '1.0.0';
 
 	Menu.DEFAULTS = {
 		delay	: 500,
