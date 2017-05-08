@@ -170,8 +170,9 @@
 //
 
 @mixin make-row($gutter: $grid-gutters) {
-	margin-left:  ceil(($gutter / -2));
 	margin-right: floor(($gutter / -2));
+	margin-bottom: $margin-column;
+	margin-left:  ceil(($gutter / -2));
 	@include clearfix;
 }
 
@@ -240,6 +241,7 @@
 	}
 	#{$list} {
 		float: left;
+		margin-bottom: 0;
 	}
 }
 
@@ -462,6 +464,9 @@
 		#{$parent} h6 {
 			color: $text;
 		}
+	}
+	#{$parent}.mobile-navbar ul {
+		background-color: $color;
 	}
 }
 

@@ -21,8 +21,10 @@
 //
 
 .col {
-	margin: $margin-column;
-	// @include margin-vert-flush;
+	margin-bottom: $margin-column;
+}
+.col:last-child {
+	margin-bottom: 0;
 }
 
 //
