@@ -8,6 +8,17 @@ if (typeof jQuery === 'undefined') {
 	throw new Error('Front Street\'s JavaScript requires jQuery');
 }
 
+var FrontStreet = {
+	doComponent: function(component) {
+
+		if ( typeof frontstreet_config[component] !== 'undefined' && ( frontstreet_config[component] === false || frontstreet_config[component] === 'false' ) ) {
+			return false;
+		}
+
+		return true;
+	}
+};
+
 +function ($) {
 
 	'use strict';

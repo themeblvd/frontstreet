@@ -9,6 +9,10 @@
 
 	'use strict';
 
+	if ( ! FrontStreet.doComponent('menu') ) {
+		return;
+	}
+
 	// MENU CLASS DEFINITION
 	// ======================
 
@@ -146,7 +150,7 @@
 		return this;
 	}
 
-	// SELF TRIGGER
+	// SELF-INVOKING
 	// =============
 
 	$(document).ready(function(){

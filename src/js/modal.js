@@ -10,6 +10,10 @@
 +function ($) {
   'use strict';
 
+  if ( ! FrontStreet.doComponent('modal') ) {
+	  return;
+  }
+
   // MODAL CLASS DEFINITION
   // ======================
 

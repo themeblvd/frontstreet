@@ -9,6 +9,10 @@
 
 	'use strict';
 
+	if ( ! FrontStreet.doComponent('mobile-menu') ) {
+		return;
+	}
+
 	// MOBILE MENU CLASS DEFINITION
 	// ============================
 
