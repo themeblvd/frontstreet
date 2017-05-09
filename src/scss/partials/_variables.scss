@@ -121,6 +121,7 @@ $font-size-alert					: 0.9375rem;
 $font-size-btn						: $font-size-xxxs;
 $font-size-navbar-btn				: $font-size-sm;
 $font-size-subnav-btn				: $font-size-btn;
+$font-size-mobile-navbar-btn		: $font-size-sm;
 $font-size-dropdown					: $font-size-xs;
 
 // Font Line Heights
@@ -150,6 +151,7 @@ $font-weight-heading-sm				: 700;
 $font-weight-btn					: 500;
 $font-weight-navbar-btn				: $font-weight-base;
 $font-weight-subnav-btn				: $font-weight-btn;
+$font-weight-mobile-navbar-btn		: $font-weight-navbar-btn;
 
 // Text Transform
 
@@ -161,6 +163,7 @@ $font-transform-quote				: none;
 $font-transform-btn					: uppercase;
 $font-transform-navbar-btn			: none;
 $font-transform-subnav-btn			: $font-transform-btn;
+$font-transform-mobile-navbar-btn	: $font-transform-navbar-btn;
 
 // Letter Spacing
 
@@ -171,6 +174,7 @@ $font-ls-subtitles					: 0;
 $font-ls-btn						: .12em;
 $font-ls-navbar-btn					: 0;
 $font-ls-subnav-btn					: $font-ls-btn;
+$font-ls-mobile-navbar-btn			: $font-ls-navbar-btn;
 
 // ==========================================================================
 // Colors
@@ -451,7 +455,7 @@ $spacing-element					: 24px;
 // Margins
 
 $margin-element						: 0 0 $spacing-element 0;
-$margin-column						: 0 0 $spacing-element 0;
+$margin-column						: $spacing-element;
 $margin-heading						: ($spacing-element + 10px) 0 $spacing-element 0;
 $margin-heading-lg					: 0 0 $spacing-element 0;
 $margin-heading-sm					: 0 0 $spacing-element 0;

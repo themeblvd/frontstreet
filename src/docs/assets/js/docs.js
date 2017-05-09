@@ -1,5 +1,7 @@
 jQuery(document).ready(function($){
 
+	// Menu Toggle examples
+
 	$('.menu-toggle').on('click', function(){
 
 		var $el = $(this);
@@ -22,6 +24,8 @@ jQuery(document).ready(function($){
 
 	});
 
+	// Moble Menu examples
 
+	$('.mobile-navbar').FrontStreetMobileMenu();
 
 });

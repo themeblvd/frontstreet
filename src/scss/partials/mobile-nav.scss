@@ -1,0 +1,79 @@
+
+// Mobile (only) Navigation
+// --------------------------------------------------
+
+.mobile-navbar {
+
+	overflow: hidden;
+	position: relative;
+
+	@include list-unstyled;
+
+ 	.menu-btn {
+		border: none;
+		font-size: $font-size-mobile-navbar-btn;
+		font-weight: $font-weight-mobile-navbar-btn;
+		letter-spacing: $font-ls-mobile-navbar-btn;
+		padding: em(18px, $font-size-mobile-navbar-btn) em(20px, $font-size-mobile-navbar-btn);
+		text-transform: $font-transform-mobile-navbar-btn;
+	}
+	&.text-dark .menu-btn {
+
+		color: $clr-text-darken;
+
+		&:hover,
+		&:focus {
+			background-color: rgba($clr-light, .3);
+		}
+	}
+	&.text-light .menu-btn {
+
+		color: $clr-text-inv-darken;
+
+		&:hover,
+		&:focus {
+			background-color: rgba($clr-black, .3);
+		}
+	}
+
+	// Sub-level indicator icons
+	li.menu-item-has-children > .menu-btn {
+		padding-right: 2.5em;
+	}
+	li.menu-item-has-children > .menu-btn:after {
+		content: "\f105"; // RTL: f104
+		font-family: "FontAwesome";
+		position: absolute;
+		top: 50%;
+		right: 1em;
+		text-align: center;
+		@include transform( translate(0, -50%) );
+		-webkit-transition: -webkit-transform .2s cubic-bezier(0.04,.78,.35,.92), top .2s ease-in-out;
+		transition: transform .2s cubic-bezier(0.04,.78,.35,.92), top .2s ease-in-out;
+		width: 1em;
+		height: 1em;
+	}
+
+	// Back buttons
+	.menu-btn.back:after {
+		content: "\f104"; // RTL: f105
+		font-family: "FontAwesome";
+	}
+
+	// Sub-levels
+	ul {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 100%;
+		width: 100%;
+		@include transform( translate3D(0, 0, 0) );
+		transition: transform .4s ease-in-out; // Transition effect only supported in modern browsers
+		z-index: 1;
+		@include list-unstyled;
+	}
+	ul.on {
+		@include transform( translate3D(-100%, 0, 0) );
+	}
+
+}
