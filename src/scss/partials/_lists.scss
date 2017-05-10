@@ -66,6 +66,12 @@ dd {
     line-height: $font-lh-base;
 }
 .list-icon.fa-ul li > .fa-li {
-    top: 50%;
+	top: 50%;
+	@if $direction == 'rtl' {
+		right: (-30em / strip-unit($font-size-base));
+	} @else  {
+		left: (-30em / strip-unit($font-size-base));
+	}
+	width: 30em / strip-unit($font-size-base);
 	@include transform(translate(0, -50%));
 }

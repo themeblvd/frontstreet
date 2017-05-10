@@ -17,6 +17,12 @@ html {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+@if $direction == 'rtl' {
+	body {
+		direction: rtl;
+		unicode-bidi: embed;
+	}
+}
 html,
 body,
 button,
@@ -194,7 +200,11 @@ h6 small, .h6 small {
 		background: map-deep-get($clr-branding, secondary, base);
 		position: absolute;
 		bottom: -2px;
-		left: 0;
+		@if $direction == 'rtl' {
+			right: 0;
+		} @else {
+			left: 0;
+		}
 		width: 75px;
 		height: 2px;
 		z-index: 2;

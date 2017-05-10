@@ -24,14 +24,22 @@
 }
 .navbar-horz > li,
 .subnav-horz > li {
-	float: left;
+	@if $direction == 'rtl' {
+		float: right;
+	} @else {
+		float: left;
+	}
 }
 @each $breakpoint in $breakpoints {
 	@if $breakpoint != xl { // skip xl
 		@include min-width($breakpoint) {
 			.navbar-horz-#{$breakpoint} > li,
 			.subnav-horz-#{$breakpoint} > li {
-				float: left;
+				@if $direction == 'rtl' {
+					float: right;
+				} @else {
+					float: left;
+				}
 			}
 		}
 	}
@@ -176,14 +184,22 @@
 
 	// Drop indicator icons
 	li.menu-item-has-children > .menu-btn {
-		padding-right: 2.5em;
+		@if $direction == 'rtl' {
+			padding-left: 2.5em;
+		} @else {
+			padding-right: 2.5em;
+		}
 	}
 	li.menu-item-has-children > .menu-btn:after {
 		content: "\f107";
 		font-family: "FontAwesome";
 		position: absolute;
 		top: 50%;
-		right: 1em;
+		@if $direction == 'rtl' {
+			left: 1em;
+		} @else {
+			right: 1em;
+		}
 		text-align: center;
 		@include transform( translate(0, -50%) );
 		width: 1em;
@@ -198,20 +214,38 @@
 		padding: $flyout-vert-spacing 0;
 		position: static;
 		top: 100%;
-		left: 0;
+		@if $direction == 'rtl' {
+			right: 0;
+		} @else {
+			left: 0;
+		}
 		z-index: 999;
 	}
 	ul.reverse {
-		left: initial;
-		right: 0;
+		@if $direction == 'rtl' {
+			left: 0;
+			right: initial;
+		} @else {
+			left: initial;
+			right: 0;
+		}
 	}
 	ul ul {
 		top: 0;
-		left: 100%;
+		@if $direction == 'rtl' {
+			right: 100%;
+		} @else {
+			left: 100%;
+		}
 	}
 	ul.reverse ul {
-		left: inherit;
-		right: 100%;
+		@if $direction == 'rtl' {
+			left: 100%;
+			right: initial;
+		} @else {
+			left: inherit;
+			right: 100%;
+		}
 	}
 	ul.text-dark > li > .menu-btn {
 

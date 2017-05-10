@@ -10,10 +10,18 @@
 	@include make-row;
 }
 .row-flush-start {
-	margin-left: 0;
+	@if $direction == 'rtl' {
+		margin-right: 0;
+	} @else {
+		margin-left: 0;
+	}
 }
 .row-flush-end {
-	margin-right: 0;
+	@if $direction == 'rtl' {
+		margin-left: 0;
+	} @else {
+		margin-right: 0;
+	}
 }
 
 //

@@ -9,14 +9,18 @@
 table {
 	background-color: $table-bg;
 }
+caption,
+th {
+	@if $direction == 'rtl' {
+		text-align: right;
+	} @else {
+		text-align: left;
+	}
+}
 caption {
 	padding-top: $table-cell-padding;
 	padding-bottom: $table-cell-padding;
 	color: $clr-text-lighten;
-	text-align: left;
-}
-th {
-	text-align: left;
 }
 
 //
@@ -90,7 +94,6 @@ table {
 	td {
 		border: $table-border-width solid $table-border-color;
 	}
-
 	thead {
 		th,
 		td {

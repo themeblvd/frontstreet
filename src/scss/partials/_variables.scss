@@ -472,7 +472,7 @@ $margin-pagination					: 0 0 $spacing-element 0;
 
 // Padding
 
-$padding-list						: 0 0 0 40px;
+$padding-list						: if($direction == 'rtl', 0 40px 0 0, 0 0 0 40px);
 $padding-alert						: 15px;
 $padding-btn						: 12px 20px;
 $padding-subnav						: 12px;

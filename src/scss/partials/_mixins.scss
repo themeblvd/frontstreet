@@ -240,7 +240,11 @@
 
 	}
 	#{$list} {
-		float: left;
+		@if $direction == 'rtl' {
+			float: right;
+		} @else {
+			float: left;
+		}
 		margin-bottom: 0;
 	}
 }
@@ -257,27 +261,47 @@
 	}
 	@if ($type == push) and ($index > 0) {
 		.col-#{$class}-push-#{$num} {
-			left: percentage(($index / $columns));
+			@if $direction == 'rtl' {
+				right: percentage(($index / $columns));
+			} @else  {
+				left: percentage(($index / $columns));
+			}
 		}
 	}
 	@if ($type == push) and ($index == 0) {
 		.col-#{$class}-push-0 {
-			left: auto;
+			@if $direction == 'rtl' {
+				right: auto;
+			} @else  {
+				left: auto;
+			}
 		}
 	}
 	@if ($type == pull) and ($index > 0) {
 		.col-#{$class}-pull-#{$num} {
-			right: percentage(($index / $columns));
+			@if $direction == 'rtl' {
+				left: percentage(($index / $columns));
+			} @else  {
+				right: percentage(($index / $columns));
+			}
 		}
 	}
 	@if ($type == pull) and ($index == 0) {
 		.col-#{$class}-pull-0 {
-			right: auto;
+			@if $direction == 'rtl' {
+				left: auto;
+			} @else {
+				right: auto;
+			}
 		}
 	}
 	@if ($type == offset) {
 		.col-#{$class}-offset-#{$num} {
-			margin-left: percentage(($index / $columns));
+			@if $direction == 'rtl' {
+				margin-right: percentage(($index / $columns));
+			} @else {
+				margin-left: percentage(($index / $columns));
+			}
 		}
 	}
 }
@@ -344,17 +368,41 @@
 			@include max-width($breakpoint) {
 
 				#{$has-bg} {
-					@if $type == start {
-						margin-right: $grid-gutters / 2;
+					@if $type == 'start' {
+
+						@if $direction == 'rtl' {
+							margin-left: $grid-gutters / 2;
+						} @else {
+							margin-right: $grid-gutters / 2;
+						}
+
 					} @else {
-						margin-left: $grid-gutters / 2;
+
+						@if $direction == 'rtl' {
+							margin-right: $grid-gutters / 2;
+						} @else {
+							margin-left: $grid-gutters / 2;
+						}
+
 					}
 				}
 				#{$non-bg} {
-					@if $type == start {
-						padding-left: 0;
+					@if $type == 'start' {
+
+						@if $direction == 'rtl' {
+							padding-right: 0;
+						} @else {
+							padding-left: 0;
+						}
+
 					} @else {
-						padding-right: 0;
+
+						@if $direction == 'rtl' {
+							padding-left: 0;
+						} @else {
+							padding-right: 0;
+						}
+
 					}
 				}
 
@@ -418,7 +466,11 @@
 
 @mixin list-unstyled() {
 	list-style: none;
-	padding-left: 0;
+	@if $direction == 'rtl' {
+		padding-right: 0;
+	} @else {
+		padding-left: 0;
+	}
 }
 
 // ==========================================================================
@@ -674,12 +726,20 @@
 		position: absolute;
 	}
 	ul li.menu-item-has-children > .menu-btn:after {
-		content: "\f105";
+		@if $direction == 'rtl' {
+			content: "\f104";
+		} @else {
+			content: "\f105";
+		}
 	}
 	ul.reverse li.menu-item-has-children > .menu-btn:after {
-		content: "\f104";
+		@if $direction == 'rtl' {
+			content: "\f105";
+		} @else {
+			content: "\f104";
+		}
 	}
 	ul ul {
-		padding-left: 0;
+		@include list-unstyled;
 	}
 }
