@@ -105,7 +105,14 @@ gulp.task('render-docs-html', function() {
  */
 gulp.task('render-project-css', function() {
 
-	return gulp.src('src/scss/frontstreet.scss')
+	var files = [
+		'src/scss/frontstreet.scss',
+		'src/scss/frontstreet-dark.scss',
+		'src/scss/frontstreet-rtl.scss',
+		'src/scss/frontstreet-dark.scss'
+	];
+
+	return gulp.src(files)
 		.pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
 		.pipe(gulp.dest('dist/frontstreet/css'))
 		.pipe(gulp.dest('dist/docs/assets/frontstreet/css'))
