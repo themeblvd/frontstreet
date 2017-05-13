@@ -405,6 +405,7 @@ $clr-bg-dark						: $clr-dark;
 $clr-bg-black						: $clr-black;
 
 $clr-bg-body						: $clr-white;
+$clr-bg-inv-body					: $clr-darkest;
 $clr-bg-hr							: rgba($clr-bg-dark, 0.1);
 $clr-bg-code						: $clr-lightest;
 $clr-bg-kbd							: $clr-bg-dark;
@@ -535,19 +536,17 @@ $btn-close : (
 $table-cell-padding					: .75rem;
 
 $table-bg							: transparent;
-
 $table-inv-bg						: $clr-bg-dark;
-$table-inv-color					: $clr-text-inv-base;
 
 $table-bg-accent					: rgba($clr-black, .025);
-$table-bg-hover						: rgba($clr-black, .05);
+$table-bg-inv-accent				: rgba($clr-black, .2);
+$table-bg-hover						: $table-bg-accent;
+$table-bg-inv-hover					: $table-bg-inv-accent;
 $table-bg-active					: $clr-light;
-
-$table-head-bg						: $clr-lightest;
-$table-head-color					: $clr-text-darken;
 
 $table-border-width					: 1px;
 $table-border-color					: $clr-lighter;
+$table-border-inv-color				: $clr-darkest;
 
 // Condensed Tables
 

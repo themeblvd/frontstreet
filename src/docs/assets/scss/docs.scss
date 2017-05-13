@@ -3,9 +3,11 @@
 
 body {
 	background: #f8f8f8;
+	// background: #101010;
 }
 #main {
 	background-color: #fff;
+	// background-color: #333;
 	-webkit-box-shadow: 0 0 4px rgba(0,0,0,.05);
   	box-shadow: 0 0 4px rgba(0,0,0,.05);
 	margin: 50px auto;
@@ -138,6 +140,18 @@ blockquote.alignright {
 /* Navigation */
 nav {
 	margin-bottom: 24px;
+}
+
+/* Text Color Helpers */
+.demo-text-color {
+	background: #333;
+	padding: 30px;
+}
+.demo-text-color .demo-text-color {
+	background: #fff;
+}
+.demo-text-color .demo-text-color .demo-text-color {
+	background: #333;
 }
 
 /* =Tables

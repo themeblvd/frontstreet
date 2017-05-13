@@ -36,28 +36,24 @@ table {
 	@include margin-vert-flush;
 
 	th {
-		color: $clr-text-darken;
+		color: if($style == 'inverse', $clr-text-inv-darken, $clr-text-darken);
 		font-weight: bold;
 	}
-
 	th,
 	td {
 		padding: $table-cell-padding;
 		vertical-align: top;
-		border-top: $table-border-width solid $table-border-color;
+		border-top: $table-border-width solid if($style == 'inverse', $table-border-inv-color, $table-border-color);
 	}
-
 	thead th {
 		vertical-align: bottom;
-		border-bottom: (2 * $table-border-width) solid $table-border-color;
+		border-bottom: (2 * $table-border-width) solid if($style == 'inverse', $table-border-inv-color, $table-border-color);
 	}
-
 	tbody + tbody {
-		border-top: (2 * $table-border-width) solid $table-border-color;
+		border-top: (2 * $table-border-width) solid if($style == 'inverse', $table-border-inv-color, $table-border-color);
 	}
-
 	table {
-		background-color: $clr-bg-body;
+		background-color: if($style == 'inverse', $clr-bg-inv-body, $clr-bg-body);
 	}
 }
 
@@ -88,11 +84,11 @@ table {
 //
 
 .table-bordered {
-	border: $table-border-width solid $table-border-color;
+	border: $table-border-width solid if($style == 'inverse', $table-border-inv-color, $table-border-color);
 
 	th,
 	td {
-		border: $table-border-width solid $table-border-color;
+		border: $table-border-width solid if($style == 'inverse', $table-border-inv-color, $table-border-color);
 	}
 	thead {
 		th,
@@ -111,7 +107,7 @@ table {
 
 .table-striped {
 	tbody tr:nth-of-type(odd) {
-		background-color: $table-bg-accent;
+		background-color: if($style == 'inverse', $table-bg-inv-accent, $table-bg-accent);
 	}
 }
 
@@ -125,7 +121,7 @@ table {
 .table-hover {
 	tbody tr {
 		&:hover {
-			background-color: $table-bg-hover;
+			background-color: if($style == 'inverse', $table-bg-inv-hover, $table-bg-hover);
 		}
 	}
 }
@@ -151,25 +147,19 @@ table {
 // light text.
 //
 
-.thead-inverse,
-.thead-default {
-	th {
-		color: $table-inv-color;
-		background-color: $table-inv-bg;
-	}
-}
 .table-inverse {
-	color: $table-inv-color;
-	background-color: $table-inv-bg;
+
+	color: if($style == 'inverse', $clr-text-base, $clr-text-inv-base);
+	background-color: if($style == 'inverse', $clr-white, $table-inv-bg);
 
 	th,
 	td,
 	thead th {
-		border-color: $clr-bg-body;
+		border-color: if($style == 'inverse', $table-border-color, $table-border-inv-color);
+		color: if($style == 'inverse', $clr-text-darken, $clr-text-inv-darken);
 	}
-
 	&.table-bordered {
-		border: 0;
+		border-color: if($style == 'inverse', $table-border-color, $table-border-inv-color);
 	}
 }
 

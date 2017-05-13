@@ -128,6 +128,17 @@ blockquote.alignright {
 nav {
   margin-bottom: 24px; }
 
+/* Text Color Helpers */
+.demo-text-color {
+  background: #333;
+  padding: 30px; }
+
+.demo-text-color .demo-text-color {
+  background: #fff; }
+
+.demo-text-color .demo-text-color .demo-text-color {
+  background: #333; }
+
 /* =Tables
 -------------------------------------------------------------- */
 .responsive-utilities td.is-visible {
