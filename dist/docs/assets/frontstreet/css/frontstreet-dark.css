@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*!
- * Front Street v1.0.0 (http://frontstreet.io)
- * Light, Left-to-Right
+ * Front Street (Dark) v1.0.0 (http://frontstreet.io)
+ * Dark, Left-to-Right
  * Copyright 2017 Theme Blvd
  * Copyright 2017 Jason Bobich
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -315,7 +315,7 @@ html {
 }
 
 body {
-  background-color: #fff;
+  background-color: #101010;
 }
 
 input,
@@ -1810,7 +1810,7 @@ img {
 body,
 html {
   color: #666;
-  color: rgba(50, 50, 50, 0.7);
+  color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-size: 16px;
   font-weight: 300;
@@ -1826,19 +1826,11 @@ input,
 select,
 textarea {
   color: #666;
-  color: rgba(50, 50, 50, 0.7);
+  color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-weight: 300;
   font-size: 16px;
   line-height: 1.6;
-}
-
-.text-light,
-.text-light button,
-.text-light input,
-.text-light select,
-.text-light textarea {
-  color: rgba(255, 255, 255, 0.8);
 }
 
 .text-dark,
@@ -1847,6 +1839,14 @@ textarea {
 .text-dark select,
 .text-dark textarea {
   color: rgba(50, 50, 50, 0.7);
+}
+
+.text-light,
+.text-light button,
+.text-light input,
+.text-light select,
+.text-light textarea {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 a {
@@ -1860,25 +1860,25 @@ a:focus {
   color: #2a6496;
 }
 
-.text-light a {
+.text-dark a {
   color: inherit;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(50, 50, 50, 0.7);
   padding-bottom: 1px;
   text-decoration: none;
 }
 
-.text-light a:hover, .text-light a:focus {
-  border-color: #fff;
-  color: #fff;
+.text-dark a:hover, .text-dark a:focus {
+  border-color: #333;
+  color: #333;
 }
 
-.text-dark a {
+.text-light a {
   color: #428bca;
 }
 
-.text-dark a:hover,
-.text-dark a:active,
-.text-dark a:focus {
+.text-light a:hover,
+.text-light a:active,
+.text-light a:focus {
   color: #2a6496;
 }
 
@@ -1910,7 +1910,7 @@ p:last-child {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  color: #333;
+  color: #fff;
   font-weight: 700;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-weight: 700;
@@ -1930,15 +1930,6 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:la
   margin-bottom: 0;
 }
 
-.text-light h1, .text-light .h1,
-.text-light h2, .text-light .h2,
-.text-light h3, .text-light .h3,
-.text-light h4, .text-light .h4,
-.text-light h5, .text-light .h5,
-.text-light h6, .text-light .h6 {
-  color: #fff;
-}
-
 .text-dark h1, .text-dark .h1,
 .text-dark h2, .text-dark .h2,
 .text-dark h3, .text-dark .h3,
@@ -1946,6 +1937,15 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:la
 .text-dark h5, .text-dark .h5,
 .text-dark h6, .text-dark .h6 {
   color: #333;
+}
+
+.text-light h1, .text-light .h1,
+.text-light h2, .text-light .h2,
+.text-light h3, .text-light .h3,
+.text-light h4, .text-light .h4,
+.text-light h5, .text-light .h5,
+.text-light h6, .text-light .h6 {
+  color: #fff;
 }
 
 h1, .h1 {
@@ -2109,7 +2109,7 @@ h6 small, .h6 small {
 }
 
 .heading-underline {
-  border-bottom: 2px solid rgba(237, 237, 237, 0.4);
+  border-bottom: 2px solid rgba(16, 16, 16, 0.5);
   padding-bottom: .8em;
   position: relative;
 }
@@ -2125,12 +2125,12 @@ h6 small, .h6 small {
   z-index: 2;
 }
 
-.text-light .heading-underline {
-  border-bottom-color: rgba(16, 16, 16, 0.5);
-}
-
 .text-dark .heading-underline {
   border-bottom-color: rgba(237, 237, 237, 0.4);
+}
+
+.text-light .heading-underline {
+  border-bottom-color: rgba(16, 16, 16, 0.5);
 }
 
 pre {
@@ -2242,7 +2242,7 @@ abbr, acronym {
 }
 
 blockquote {
-  color: #333;
+  color: #fff;
   font-size: 1.3rem;
   font-style: italic;
   line-height: 1.4;
@@ -2275,12 +2275,12 @@ blockquote.alignleft, blockquote.pull-left, blockquote.alignright, blockquote.pu
   }
 }
 
-.text-light blockquote {
-  color: #fff;
-}
-
 .text-dark blockquote {
   color: #333;
+}
+
+.text-light blockquote {
+  color: #fff;
 }
 
 blockquote.pull-left
@@ -2303,7 +2303,7 @@ blockquote cite {
 
 blockquote cite,
 blockquote cite:before {
-  color: rgba(110, 110, 110, 0.7);
+  color: #ccc;
   font-size: 12px;
   line-height: 1.4;
 }
@@ -2312,14 +2312,14 @@ blockquote cite:before {
   content: '\2014 \00A0';
 }
 
-.text-light blockquote cite,
-.text-light blockquote cite:before {
-  color: #ccc;
-}
-
 .text-dark blockquote cite,
 .text-dark blockquote cite:before {
   color: rgba(110, 110, 110, 0.7);
+}
+
+.text-light blockquote cite,
+.text-light blockquote cite:before {
+  color: #ccc;
 }
 
 ul,
@@ -2429,7 +2429,7 @@ table:last-child {
 }
 
 table th {
-  color: #333;
+  color: #fff;
   font-weight: bold;
 }
 
@@ -2437,20 +2437,20 @@ table th,
 table td {
   padding: 0.75rem;
   vertical-align: top;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #101010;
 }
 
 table thead th {
   vertical-align: bottom;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid #101010;
 }
 
 table tbody + tbody {
-  border-top: 2px solid #ddd;
+  border-top: 2px solid #101010;
 }
 
 table table {
-  background-color: #fff;
+  background-color: #101010;
 }
 
 .table-sm,
@@ -2466,12 +2466,12 @@ table table {
 }
 
 .table-bordered {
-  border: 1px solid #ddd;
+  border: 1px solid #101010;
 }
 
 .table-bordered th,
 .table-bordered td {
-  border: 1px solid #ddd;
+  border: 1px solid #101010;
 }
 
 .table-bordered thead th,
@@ -2480,11 +2480,11 @@ table table {
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
-  background-color: rgba(0, 0, 0, 0.025);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .table-hover tbody tr:hover {
-  background-color: rgba(0, 0, 0, 0.025);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .table-active,
@@ -2563,19 +2563,19 @@ table table {
 }
 
 .table-inverse {
-  color: #fff;
-  background-color: #333;
+  color: rgba(50, 50, 50, 0.7);
+  background-color: #fff;
 }
 
 .table-inverse th,
 .table-inverse td,
 .table-inverse thead th {
-  border-color: #101010;
-  color: #fff;
+  border-color: #ddd;
+  color: #333;
 }
 
 .table-inverse.table-bordered {
-  border-color: #101010;
+  border-color: #ddd;
 }
 
 .table-responsive {

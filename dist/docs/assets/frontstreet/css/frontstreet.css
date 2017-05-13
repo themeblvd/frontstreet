@@ -1,5 +1,7 @@
+@charset "UTF-8";
 /*!
  * Front Street v1.0.0 (http://frontstreet.io)
+ * Light, Left-to-Right
  * Copyright 2017 Theme Blvd
  * Copyright 2017 Jason Bobich
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -1831,11 +1833,20 @@ textarea {
   line-height: 1.6;
 }
 
+.text-light,
 .text-light button,
 .text-light input,
 .text-light select,
 .text-light textarea {
   color: rgba(255, 255, 255, 0.8);
+}
+
+.text-dark,
+.text-dark button,
+.text-dark input,
+.text-dark select,
+.text-dark textarea {
+  color: rgba(50, 50, 50, 0.7);
 }
 
 a {
@@ -1859,6 +1870,16 @@ a:focus {
 .text-light a:hover, .text-light a:focus {
   border-color: #fff;
   color: #fff;
+}
+
+.text-dark a {
+  color: #428bca;
+}
+
+.text-dark a:hover,
+.text-dark a:active,
+.text-dark a:focus {
+  color: #2a6496;
 }
 
 p {
@@ -1916,6 +1937,15 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:la
 .text-light h5, .text-light .h5,
 .text-light h6, .text-light .h6 {
   color: #fff;
+}
+
+.text-dark h1, .text-dark .h1,
+.text-dark h2, .text-dark .h2,
+.text-dark h3, .text-dark .h3,
+.text-dark h4, .text-dark .h4,
+.text-dark h5, .text-dark .h5,
+.text-dark h6, .text-dark .h6 {
+  color: #333;
 }
 
 h1, .h1 {
@@ -2096,7 +2126,11 @@ h6 small, .h6 small {
 }
 
 .text-light .heading-underline {
-  border-bottom-color: #101010;
+  border-bottom-color: rgba(16, 16, 16, 0.5);
+}
+
+.text-dark .heading-underline {
+  border-bottom-color: rgba(237, 237, 237, 0.4);
 }
 
 pre {
@@ -2245,6 +2279,10 @@ blockquote.alignleft, blockquote.pull-left, blockquote.alignright, blockquote.pu
   color: #fff;
 }
 
+.text-dark blockquote {
+  color: #333;
+}
+
 blockquote.pull-left
 blockquote.alignleft {
   text-align: left;
@@ -2277,6 +2315,11 @@ blockquote cite:before {
 .text-light blockquote cite,
 .text-light blockquote cite:before {
   color: #ccc;
+}
+
+.text-dark blockquote cite,
+.text-dark blockquote cite:before {
+  color: rgba(110, 110, 110, 0.7);
 }
 
 ul,
@@ -2347,6 +2390,8 @@ dd:last-child {
 
 .list-icon.fa-ul li > .fa-li {
   top: 50%;
+  left: -1.875em;
+  width: 1.875em;
   -webkit-transform: translate(0, -50%);
   -moz-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
@@ -2357,15 +2402,15 @@ table {
   background-color: transparent;
 }
 
+caption,
+th {
+  text-align: left;
+}
+
 caption {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   color: rgba(110, 110, 110, 0.7);
-  text-align: left;
-}
-
-th {
-  text-align: left;
 }
 
 table {
@@ -2439,7 +2484,7 @@ table table {
 }
 
 .table-hover tbody tr:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.025);
 }
 
 .table-active,
@@ -2517,12 +2562,6 @@ table table {
   background-color: #ebcccc;
 }
 
-.thead-inverse th,
-.thead-default th {
-  color: #fff;
-  background-color: #333;
-}
-
 .table-inverse {
   color: #fff;
   background-color: #333;
@@ -2531,11 +2570,12 @@ table table {
 .table-inverse th,
 .table-inverse td,
 .table-inverse thead th {
-  border-color: #fff;
+  border-color: #101010;
+  color: #fff;
 }
 
 .table-inverse.table-bordered {
-  border: 0;
+  border-color: #101010;
 }
 
 .table-responsive {
@@ -6870,6 +6910,7 @@ button.close {
 
 .fs-menu.navbar-horz ul ul,
 .fs-menu.subnav-horz ul ul {
+  list-style: none;
   padding-left: 0;
 }
 
@@ -6891,6 +6932,7 @@ button.close {
   }
   .fs-menu.navbar-horz-xs ul ul,
   .fs-menu.subnav-horz-xs ul ul {
+    list-style: none;
     padding-left: 0;
   }
 }
@@ -6913,6 +6955,7 @@ button.close {
   }
   .fs-menu.navbar-horz-sm ul ul,
   .fs-menu.subnav-horz-sm ul ul {
+    list-style: none;
     padding-left: 0;
   }
 }
@@ -6935,6 +6978,7 @@ button.close {
   }
   .fs-menu.navbar-horz-md ul ul,
   .fs-menu.subnav-horz-md ul ul {
+    list-style: none;
     padding-left: 0;
   }
 }
@@ -6957,6 +7001,7 @@ button.close {
   }
   .fs-menu.navbar-horz-lg ul ul,
   .fs-menu.subnav-horz-lg ul ul {
+    list-style: none;
     padding-left: 0;
   }
 }
@@ -7015,6 +7060,7 @@ button.close {
 }
 
 .mobile-navbar .menu-btn.back:after {
+  content: if false, "", "";
   content: "\f104";
   font-family: "FontAwesome";
 }
