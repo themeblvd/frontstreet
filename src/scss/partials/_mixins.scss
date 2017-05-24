@@ -3,6 +3,16 @@
 // ==========================================================================
 
 //
+// Appearance
+//
+
+@mixin appearance($val) {
+	-webkit-appearance: $val;
+	-moz-appearance: $val;
+	appearance: $val;
+}
+
+//
 // Box sizing
 //
 
@@ -65,6 +75,24 @@
 	-moz-user-select: $val;
 	-ms-user-select: $val; // IE10+
 	user-select: $val;
+}
+
+//
+// Placeholder text
+//
+
+@mixin placeholder($color: "") {
+
+	@if ($color == "") {
+		$color: if($style == 'inverse', $clr-text-inv-placeholder, $clr-text-placeholder);
+	}
+
+	&::-moz-placeholder {
+		color: $color;
+		opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+	}
+	&:-ms-input-placeholder { color: $color; } // Internet Explorer 10+
+	&::-webkit-input-placeholder  { color: $color; } // Safari and Chrome
 }
 
 // ==========================================================================
@@ -531,69 +559,6 @@
 	}
 }
 
-//
-// Buttons
-//
-
-@mixin button-variant($color, $text, $bg, $bg-hover: null) {
-	.btn.btn-#{$color},
-	.button.btn-#{$color},
-	button.btn-#{$color},
-	input[type="submit"].btn-#{$color},
-	input[type="reset"].btn-#{$color},
-	input[type="button"].btn-#{$color},
-	.fancy-select.btn-#{$color} {
-
-		background-color: $bg;
-		color: $text;
-
-		&:hover,
-		&:focus,
-		&.focus {
-			@if $bg-hover != null {
-				background-color: $bg-hover;
-			} @else {
-				background-color: darken($bg, 10%);
-			}
-		}
-
-		&:active,
-		&.active {
-			@if $bg-hover != null {
-				background-color: darken($bg-hover, 5%);
-			} @else {
-				background-color: darken($bg, 15%);
-			}
-		}
-	}
-	.btn.btn-#{$color}.btn-trans,
-	.button.btn-#{$color}.btn-trans,
-	button.btn-#{$color}.btn-trans,
-	input[type="submit"].btn-#{$color}.btn-trans,
-	input[type="reset"].btn-#{$color}.btn-trans,
-	input[type="button"].btn-#{$color}.btn-trans,
-	.fancy-select.btn-#{$color}.btn-trans {
-
-		background-color: transparent;
-		border-color: $bg;
-
-		@if $color == white {
-			color: $bg;
-		} @elseif $text != #fff or $color == info or $color == success or $color == warning or $color == danger {
-			color: $text;
-		} @else {
-			color: $bg;
-		}
-
-		&:hover,
-		&:focus,
-		&.focus {
-			background-color: $bg;
-			color: $text;
-		}
-	}
-}
-
 // ==========================================================================
 // Utilities
 // ==========================================================================
@@ -671,6 +636,7 @@
 	}
 }
 
+//
 // Visible Element
 //
 
@@ -680,6 +646,7 @@
 	}
 }
 
+//
 // Invisible Element
 //
 
@@ -689,10 +656,20 @@
 	}
 }
 
+//
+// Background Triangle
+//
+
+@mixin background-triangle($color: $clr-dark) {
+	$rgb: 'rgb%28#{round(red($color))}, #{round(green($color))}, #{round(blue($color))}%29';
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'><polygon points='0,0 32,0 16,24' style='fill: #{$rgb}'></polygon></svg>");
+}
+
 // ==========================================================================
 // Tables
 // ==========================================================================
 
+//
 // Table Row Backgrounds
 //
 
@@ -729,6 +706,10 @@
 // Navigation
 // ==========================================================================
 
+//
+// Dropdown menu styling
+//
+
 @mixin dropdown {
 	ul {
 		@include box-shadow( 0 2px 5px rgba($clr-black, .05) );
@@ -750,5 +731,95 @@
 	}
 	ul ul {
 		@include list-unstyled;
+	}
+}
+
+// ==========================================================================
+// Forms & Buttons
+// ==========================================================================
+
+//
+// Generate input selectors.
+//
+
+@mixin input-selector {
+
+	#{$input-selector} {
+		@content;
+	}
+
+}
+
+//
+// Generate button selectors.
+//
+
+@mixin btn-selector {
+
+	#{$btn-selector} {
+		@content;
+	}
+
+}
+
+//
+// Style buttons.
+//
+
+@mixin button-variant($color, $text, $bg, $bg-hover: null) {
+
+	// Standard Buttons
+
+	$clr-selector: str-replace( $btn-selector, ",", ".btn-#{$color}," );
+	$clr-selector: "#{$clr-selector}.btn-#{$color}";
+
+	#{$clr-selector} {
+
+		background-color: $bg;
+		color: $text;
+
+		&:hover,
+		&:focus,
+		&.focus {
+			@if $bg-hover != null {
+				background-color: $bg-hover;
+			} @else {
+				background-color: darken($bg, 10%);
+			}
+		}
+
+		&:active,
+		&.active {
+			@if $bg-hover != null {
+				background-color: darken($bg-hover, 5%);
+			} @else {
+				background-color: darken($bg, 15%);
+			}
+		}
+	}
+
+	// Transparent Buttons
+
+	$trans-selector: str-replace( $clr-selector, "#{$color}", "#{$color}.btn-trans" );
+
+	#{$trans-selector} {
+
+		background-color: transparent;
+		border-color: $bg;
+
+		@if $color == white {
+			color: $bg;
+		} @elseif $text != #fff or $color == info or $color == success or $color == warning or $color == danger {
+			color: $text;
+		} @else {
+			color: $bg;
+		}
+
+		&:hover,
+		&:focus,
+		&.focus {
+			background-color: $bg;
+			color: $text;
+		}
 	}
 }

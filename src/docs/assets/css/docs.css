@@ -139,6 +139,10 @@ nav {
 .demo-text-color .demo-text-color .demo-text-color {
   background: #333; }
 
+/* Forms */
+.form-example {
+  padding: 40px; }
+
 /* =Tables
 -------------------------------------------------------------- */
 .responsive-utilities td.is-visible {

@@ -1,0 +1,1155 @@
+@@include('../layout/header.html', {
+	 "title": "Forms"
+})
+
+<p>Below is an example of a basic contact form.</p>
+
+<form>
+	<p>
+		<label for="name1">Name</label>
+		<input type="text" id="name1" placeholder="Enter Name">
+	</p>
+	<p>
+		<label for="email1">E-mail</label>
+		<input type="email" id="email1" placeholder="Enter E-mail">
+	</p>
+	<p>
+		<label for="occupation">Occupation</label>
+		<select id="occupation">
+			<option value="developer">Developer</option>
+			<option value="designer">Designer</option>
+			<option value="unemployed">Unemployed</option>
+		</select>
+	</p>
+	<p>
+		<label for="message1">Message</label>
+		<textarea id="message1" placeholder="Enter Message" rows="10"></textarea>
+	</p>
+	<p>
+		<button type="submit">Submit</button>
+	</p>
+</form>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<form>
+	<p>
+		<label for="name1">Name</label>
+		<input type="text" id="name1" placeholder="Enter Name">
+	</p>
+	<p>
+		<label for="email1">E-mail</label>
+		<input type="email" id="email1" placeholder="Enter E-mail">
+	</p>
+	<p>
+		<label for="occupation">Occupation</label>
+		<select id="occupation">
+			<option value="developer">Developer</option>
+			<option value="designer">Designer</option>
+			<option value="unemployed">Unemployed</option>
+		</select>
+	</p>
+	<p>
+		<label for="message1">Message</label>
+		<textarea id="message1" placeholder="Enter Message" rows="10"></textarea>
+	</p>
+	<p>
+		<button type="submit">Submit</button>
+	</p>
+</form>
+</pre>
+
+<p>And the following demonstrates how adding the <a href="helpers.html" target="_blank" title="Helper Classes">helper class</a> <code>text-light</code> can effect the form fields when using them on a dark background.</p>
+
+<div class="form-example primary text-light">
+	<form>
+		<p>
+			<label for="name2">Name</label>
+			<input type="text" id="name2" placeholder="Enter Name">
+		</p>
+		<p>
+			<label for="email2">E-mail</label>
+			<input type="email" id="email2" placeholder="Enter E-mail">
+		</p>
+		<p>
+			<label for="occupation2">Occupation</label>
+			<select id="occupation2">
+				<option value="developer">Developer</option>
+				<option value="designer">Designer</option>
+				<option value="unemployed">Unemployed</option>
+			</select>
+		</p>
+		<p>
+			<label for="message2">Message</label>
+			<textarea id="message2" placeholder="Enter Message" rows="10"></textarea>
+		</p>
+		<p>
+			<button type="submit">Submit</button>
+		</p>
+	</form>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="primary text-light">
+	<form>
+		<p>
+			<label for="name">Name</label>
+			<input type="text" id="name" placeholder="Enter Name">
+		</p>
+		<p>
+			<label for="email">E-mail</label>
+			<input type="email" id="email" placeholder="Enter E-mail">
+		</p>
+		<p>
+			<label for="occupation">Occupation</label>
+			<select id="occupation">
+				<option value="developer">Developer</option>
+				<option value="designer">Designer</option>
+				<option value="unemployed">Unemployed</option>
+			</select>
+		</p>
+		<p>
+			<label for="message">Message</label>
+			<textarea id="message" placeholder="Enter Message" rows="10"></textarea>
+		</p>
+		<p>
+			<button type="submit">Submit</button>
+		</p>
+	</form>
+</div>
+</pre>
+
+<!-- TEXT INPUTS -->
+
+<h2 id="text-inputs">Text Inputs</h2>
+
+<p>
+	<label for="name4">Name</label>
+	<input type="text" id="name4" placeholder="Enter Name">
+</p>
+<p>
+	<label for="email4">E-mail</label>
+	<input type="email" id="email4" placeholder="Enter E-mail">
+</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<p>
+	<label for="name">Name</label>
+	<input type="text" id="name" placeholder="Enter Name">
+</p>
+<p>
+	<label for="email">E-mail</label>
+	<input type="email" id="email" placeholder="Enter E-mail">
+</p>
+</pre>
+
+<!-- NUMBER INPUTS -->
+
+<h2 id="number-inputs">Number Inputs</h2>
+
+<p>
+	<label for="woodchuck">How much wood could a woodchuck chuck if a woodchuck could chuck wood?</label>
+	<input type="number" id="woodchuck" value="100">
+</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<p>
+	<label for="woodchuck">How much wood could a woodchuck chuck if a woodchuck could chuck wood?</label>
+	<input type="number" id="woodchuck" value="100">
+</p>
+</pre>
+
+<!-- TEXT AREAS -->
+
+<h2 id="textarea">Text Areas</h2>
+
+<p>
+	<label for="message4">Message</label>
+	<textarea id="message4" placeholder="Your Message..." rows="10"></textarea>
+</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<p>
+	<label for="message">Message</label>
+	<textarea id="message" placeholder="Your Message..." rows="10"></textarea>
+</p>
+</pre>
+
+<!-- SELECT MENUS -->
+
+<h2 id="select">Select Menus</h2>
+
+<h3 id="select-menu" class="h4">Select Menu</h3>
+
+<p>
+	<label for="player">Favorite Player</label>
+	<select id="player">
+		<option value="crosby">Crosby</option>
+		<option value="mcdavid">McDavid</option>
+		<option value="ovechkin">Ovechkin</option>
+		<option value="malkin">Malkin</option>
+	</select>
+</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<p>
+	<label for="player">Favorite Player</label>
+	<select id="player">
+		<option value="crosby">Crosby</option>
+		<option value="mcdavid">McDavid</option>
+		<option value="ovechkin">Ovechkin</option>
+		<option value="malkin">Malkin</option>
+	</select>
+</p>
+</pre>
+
+<h3 id="multiple-select-menu" class="h4">Multiple Select Menu</h3>
+
+<p>
+	<label for="player">Favorite Players</label>
+	<select id="player" multiple>
+		<option value="crosby">Crosby</option>
+		<option value="mcdavid">McDavid</option>
+		<option value="ovechkin">Ovechkin</option>
+		<option value="malkin">Malkin</option>
+	</select>
+</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<p>
+	<label for="players">Favorite Players</label>
+	<select id="players" multiple>
+		<option value="crosby">Crosby</option>
+		<option value="mcdavid">McDavid</option>
+		<option value="ovechkin">Ovechkin</option>
+		<option value="malkin">Malkin</option>
+	</select>
+</p>
+</pre>
+
+<!-- CHECKBOXES -->
+
+<h2 id="checkboxes">Checkboxes</h2>
+
+<h3 id="checkbox" class="h4">Single Checkbox</h3>
+
+<p>The following example shows a basic checkbox. Note that the class <code>checkbox-label</code> has been added to the <code>&lt;label&gt;</code>.</p>
+
+<p>
+	<input type="checkbox" id="terms">
+	<label for="terms" class="checkbox-label">Agree to terms and conditions.</label>
+</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<p>
+	<input type="checkbox" id="terms">
+	<label for="terms" class="checkbox-label">Agree to terms and conditions.</label>
+</p>
+</pre>
+
+<h3 id="checkbox-group" class="h4">Checkbox Groups</h3>
+
+<p>For a group of checkboxes, group them in an unordered list with class <code>checkbox-group</code>.</p>
+
+<ul class="checkbox-group">
+	<li class="label">Favorite Players</li>
+	<li>
+		<input type="checkbox" name="favorite-player" value="crosby" id="crosby">
+		<label for="crosby" class="checkbox-label">Crosby</label>
+	</li>
+	<li>
+		<input type="checkbox" name="favorite-player" value="mcdavid" id="mcdavid">
+		<label for="mcdavid" class="checkbox-label">McDavid</label>
+	</li>
+	<li>
+		<input type="checkbox" name="favorite-player" value="ovechkin" id="ovechkin">
+		<label for="ovechkin" class="checkbox-label">Ovechkin</label>
+	</li>
+	<li>
+		<input type="checkbox" name="favorite-player" value="malkin" id="malkin">
+		<label for="malkin" class="checkbox-label">Malkin</label>
+	</li>
+</ul>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<ul class="checkbox-group">
+	<li class="label">Favorite Players</li>
+	<li>
+		<input type="checkbox" name="favorite-player" value="crosby" id="crosby">
+		<label for="crosby" class="checkbox-label">Crosby</label>
+	</li>
+	<li>
+		<input type="checkbox" name="favorite-player" value="mcdavid" id="mcdavid">
+		<label for="mcdavid" class="checkbox-label">McDavid</label>
+	</li>
+	<li>
+		<input type="checkbox" name="favorite-player" value="ovechkin" id="ovechkin">
+		<label for="ovechkin" class="checkbox-label">Ovechkin</label>
+	</li>
+	<li>
+		<input type="checkbox" name="favorite-player" value="malkin" id="malkin">
+		<label for="malkin" class="checkbox-label">Malkin</label>
+	</li>
+</ul>
+</pre>
+
+<p>And if you'd like your checkbox group to be within a <code>&lt;fieldset&gt;</code> with a <code>&lt;legend&gt;</code>, you can do that, as well.</p>
+
+<fieldset>
+	<legend>Favorite Players</legend>
+	<ul class="checkbox-group">
+		<li>
+			<input type="checkbox" name="favorite-player" value="crosby" id="crosby2">
+			<label for="crosby2" class="checkbox-label">Crosby</label>
+		</li>
+		<li>
+			<input type="checkbox" name="favorite-player" value="mcdavid" id="mcdavid2">
+			<label for="mcdavid2" class="checkbox-label">McDavid</label>
+		</li>
+		<li>
+			<input type="checkbox" name="favorite-player" value="ovechkin" id="ovechkin2">
+			<label for="ovechkin2" class="checkbox-label">Ovechkin</label>
+		</li>
+		<li>
+			<input type="checkbox" name="favorite-player" value="malkin" id="malkin2">
+			<label for="malkin2" class="checkbox-label">Malkin</label>
+		</li>
+	</ul>
+</fieldset>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<fieldset>
+	<legend>Favorite Players</legend>
+	<ul class="checkbox-group">
+		<li>
+			<input type="checkbox" name="favorite-player" value="crosby" id="crosby">
+			<label for="crosby" class="checkbox-label">Crosby</label>
+		</li>
+		<li>
+			<input type="checkbox" name="favorite-player" value="mcdavid" id="mcdavid">
+			<label for="mcdavid" class="checkbox-label">McDavid</label>
+		</li>
+		<li>
+			<input type="checkbox" name="favorite-player" value="ovechkin" id="ovechkin">
+			<label for="ovechkin" class="checkbox-label">Ovechkin</label>
+		</li>
+		<li>
+			<input type="checkbox" name="favorite-player" value="malkin" id="malkin">
+			<label for="malkin" class="checkbox-label">Malkin</label>
+		</li>
+	</ul>
+</fieldset>
+</pre>
+
+<h3 id="checkbox-group-inline" class="h4">Inline Checkbox Groups</h3>
+
+<p>To display your <code>.checkbox-group</code> fields inline, add class <code>checkbox-group-inline</code>.</p>
+
+<ul class="checkbox-group checkbox-group-inline">
+	<li class="label">Favorite Players</li>
+	<li>
+		<input type="checkbox" name="favorite-player" value="crosby" id="crosby3">
+		<label for="crosby3" class="checkbox-label">Crosby</label>
+	</li>
+	<li>
+		<input type="checkbox" name="favorite-player" value="mcdavid" id="mcdavid3">
+		<label for="mcdavid3" class="checkbox-label">McDavid</label>
+	</li>
+	<li>
+		<input type="checkbox" name="favorite-player" value="ovechkin" id="ovechkin3">
+		<label for="ovechkin3" class="checkbox-label">Ovechkin</label>
+	</li>
+	<li>
+		<input type="checkbox" name="favorite-player" value="malkin" id="malkin3">
+		<label for="malkin3" class="checkbox-label">Malkin</label>
+	</li>
+</ul>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<ul class="checkbox-group checkbox-group-inline">
+	<li class="label">Favorite Players</li>
+	<li>
+		<input type="checkbox" name="favorite-player" value="crosby" id="crosby">
+		<label for="crosby" class="checkbox-label">Crosby</label>
+	</li>
+	<li>
+		<input type="checkbox" name="favorite-player" value="mcdavid" id="mcdavid">
+		<label for="mcdavid" class="checkbox-label">McDavid</label>
+	</li>
+	<li>
+		<input type="checkbox" name="favorite-player" value="ovechkin" id="ovechkin">
+		<label for="ovechkin" class="checkbox-label">Ovechkin</label>
+	</li>
+	<li>
+		<input type="checkbox" name="favorite-player" value="malkin" id="malkin">
+		<label for="malkin" class="checkbox-label">Malkin</label>
+	</li>
+</ul>
+</pre>
+
+<fieldset>
+	<legend>Favorite Players</legend>
+	<ul class="checkbox-group checkbox-group-inline">
+		<li>
+			<input type="checkbox" name="favorite-player" value="crosby" id="crosby4">
+			<label for="crosby4" class="checkbox-label">Crosby</label>
+		</li>
+		<li>
+			<input type="checkbox" name="favorite-player" value="mcdavid" id="mcdavid4">
+			<label for="mcdavid4" class="checkbox-label">McDavid</label>
+		</li>
+		<li>
+			<input type="checkbox" name="favorite-player" value="ovechkin" id="ovechkin4">
+			<label for="ovechkin4" class="checkbox-label">Ovechkin</label>
+		</li>
+		<li>
+			<input type="checkbox" name="favorite-player" value="malkin" id="malkin4">
+			<label for="malkin4" class="checkbox-label">Malkin</label>
+		</li>
+	</ul>
+</fieldset>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<fieldset>
+	<legend>Favorite Players</legend>
+	<ul class="checkbox-group checkbox-group-inline">
+		<li>
+			<input type="checkbox" name="favorite-player" value="crosby" id="crosby">
+			<label for="crosby" class="checkbox-label">Crosby</label>
+		</li>
+		<li>
+			<input type="checkbox" name="favorite-player" value="mcdavid" id="mcdavid">
+			<label for="mcdavid" class="checkbox-label">McDavid</label>
+		</li>
+		<li>
+			<input type="checkbox" name="favorite-player" value="ovechkin" id="ovechkin">
+			<label for="ovechkin" class="checkbox-label">Ovechkin</label>
+		</li>
+		<li>
+			<input type="checkbox" name="favorite-player" value="malkin" id="malkin">
+			<label for="malkin2" class="checkbox-label">Malkin</label>
+		</li>
+	</ul>
+</fieldset>
+</pre>
+
+<!-- RADIO -->
+
+<h2 id="radios">Radio Buttons</h2>
+
+<h3 id="radio-group" class="h4">Radio Groups</h3>
+
+<p>For a group of radioes, group them in an unordered list with class <code>radio-group</code>.</p>
+
+<ul class="radio-group">
+	<li class="label">Favorite Player</li>
+	<li>
+		<input type="radio" name="favorite-player" value="crosby" id="crosby5">
+		<label for="crosby5" class="radio-label">Crosby</label>
+	</li>
+	<li>
+		<input type="radio" name="favorite-player" value="mcdavid" id="mcdavid5">
+		<label for="mcdavid5" class="radio-label">McDavid</label>
+	</li>
+	<li>
+		<input type="radio" name="favorite-player" value="ovechkin" id="ovechkin5">
+		<label for="ovechkin5" class="radio-label">Ovechkin</label>
+	</li>
+	<li>
+		<input type="radio" name="favorite-player" value="malkin" id="malkin5">
+		<label for="malkin5" class="radio-label">Malkin</label>
+	</li>
+</ul>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<ul class="radio-group">
+	<li class="label">Favorite Player</li>
+	<li>
+		<input type="radio" name="favorite-player" value="crosby" id="crosby">
+		<label for="crosby" class="radio-label">Crosby</label>
+	</li>
+	<li>
+		<input type="radio" name="favorite-player" value="mcdavid" id="mcdavid">
+		<label for="mcdavid" class="radio-label">McDavid</label>
+	</li>
+	<li>
+		<input type="radio" name="favorite-player" value="ovechkin" id="ovechkin">
+		<label for="ovechkin" class="radio-label">Ovechkin</label>
+	</li>
+	<li>
+		<input type="radio" name="favorite-player" value="malkin" id="malkin">
+		<label for="malkin" class="radio-label">Malkin</label>
+	</li>
+</ul>
+</pre>
+
+<p>And if you'd like your radio group to be within a <code>&lt;fieldset&gt;</code> with a <code>&lt;legend&gt;</code>, you can do that, as well.</p>
+
+<fieldset>
+	<legend>Favorite Player</legend>
+	<ul class="radio-group">
+		<li>
+			<input type="radio" name="favorite-player" value="crosby" id="crosby6">
+			<label for="crosby6" class="radio-label">Crosby</label>
+		</li>
+		<li>
+			<input type="radio" name="favorite-player" value="mcdavid" id="mcdavid6">
+			<label for="mcdavid6" class="radio-label">McDavid</label>
+		</li>
+		<li>
+			<input type="radio" name="favorite-player" value="ovechkin" id="ovechkin6">
+			<label for="ovechkin6" class="radio-label">Ovechkin</label>
+		</li>
+		<li>
+			<input type="radio" name="favorite-player" value="malkin" id="malkin6">
+			<label for="malkin6" class="radio-label">Malkin</label>
+		</li>
+	</ul>
+</fieldset>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<fieldset>
+	<legend>Favorite Player</legend>
+	<ul class="radio-group">
+		<li>
+			<input type="radio" name="favorite-player" value="crosby" id="crosby">
+			<label for="crosby" class="radio-label">Crosby</label>
+		</li>
+		<li>
+			<input type="radio" name="favorite-player" value="mcdavid" id="mcdavid">
+			<label for="mcdavid" class="radio-label">McDavid</label>
+		</li>
+		<li>
+			<input type="radio" name="favorite-player" value="ovechkin" id="ovechkin">
+			<label for="ovechkin" class="radio-label">Ovechkin</label>
+		</li>
+		<li>
+			<input type="radio" name="favorite-player" value="malkin" id="malkin">
+			<label for="malkin" class="radio-label">Malkin</label>
+		</li>
+	</ul>
+</fieldset>
+</pre>
+
+<h3 id="radio-group-inline" class="h4">Inline Radio Groups</h3>
+
+<p>To display your <code>.radio-group</code> fields inline, add class <code>radio-group-inline</code>.</p>
+
+<ul class="radio-group radio-group-inline">
+	<li class="label">Favorite Player</li>
+	<li>
+		<input type="radio" name="favorite-player" value="crosby" id="crosby7">
+		<label for="crosby7" class="radio-label">Crosby</label>
+	</li>
+	<li>
+		<input type="radio" name="favorite-player" value="mcdavid" id="mcdavid7">
+		<label for="mcdavid7" class="radio-label">McDavid</label>
+	</li>
+	<li>
+		<input type="radio" name="favorite-player" value="ovechkin" id="ovechkin7">
+		<label for="ovechkin7" class="radio-label">Ovechkin</label>
+	</li>
+	<li>
+		<input type="radio" name="favorite-player" value="malkin" id="malkin7">
+		<label for="malkin7" class="radio-label">Malkin</label>
+	</li>
+</ul>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<ul class="radio-group radio-group-inline">
+	<li class="label">Favorite Player</li>
+	<li>
+		<input type="radio" name="favorite-player" value="crosby" id="crosby">
+		<label for="crosby" class="radio-label">Crosby</label>
+	</li>
+	<li>
+		<input type="radio" name="favorite-player" value="mcdavid" id="mcdavid">
+		<label for="mcdavid" class="radio-label">McDavid</label>
+	</li>
+	<li>
+		<input type="radio" name="favorite-player" value="ovechkin" id="ovechkin">
+		<label for="ovechkin" class="radio-label">Ovechkin</label>
+	</li>
+	<li>
+		<input type="radio" name="favorite-player" value="malkin" id="malkin">
+		<label for="malkin" class="radio-label">Malkin</label>
+	</li>
+</ul>
+</pre>
+
+<fieldset>
+	<legend>Favorite Player</legend>
+	<ul class="radio-group radio-group-inline">
+		<li>
+			<input type="radio" name="favorite-player" value="crosby" id="crosby8">
+			<label for="crosby8" class="radio-label">Crosby</label>
+		</li>
+		<li>
+			<input type="radio" name="favorite-player" value="mcdavid" id="mcdavid8">
+			<label for="mcdavid8" class="radio-label">McDavid</label>
+		</li>
+		<li>
+			<input type="radio" name="favorite-player" value="ovechkin" id="ovechkin8">
+			<label for="ovechkin8" class="radio-label">Ovechkin</label>
+		</li>
+		<li>
+			<input type="radio" name="favorite-player" value="malkin" id="malkin8">
+			<label for="malkin4" class="radio-label">Malkin</label>
+		</li>
+	</ul>
+</fieldset>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<fieldset>
+	<legend>Favorite Player</legend>
+	<ul class="radio-group radio-group-inline">
+		<li>
+			<input type="radio" name="favorite-player" value="crosby" id="crosby">
+			<label for="crosby" class="radio-label">Crosby</label>
+		</li>
+		<li>
+			<input type="radio" name="favorite-player" value="mcdavid" id="mcdavid">
+			<label for="mcdavid" class="radio-label">McDavid</label>
+		</li>
+		<li>
+			<input type="radio" name="favorite-player" value="ovechkin" id="ovechkin">
+			<label for="ovechkin" class="radio-label">Ovechkin</label>
+		</li>
+		<li>
+			<input type="radio" name="favorite-player" value="malkin" id="malkin">
+			<label for="malkin2" class="radio-label">Malkin</label>
+		</li>
+	</ul>
+</fieldset>
+</pre>
+
+<!-- FIELD SIZING -->
+
+<h2 id="sizing">Field Sizing</h2>
+
+<p>For different size <code>&lt;input&gt;</code> fields add classes <code>field-xs</code>, <code>field-sm</code>, <code>field-lg</code>, <code>field-xl</code>, <code>field-xxl</code> or <code>field-xxxl</code>.</p>
+
+<p>
+	<label>X-Small</label>
+	<input type="text" class="field-xs" placeholder=".field-xs">
+</p>
+<p>
+	<label>Small</label>
+	<input type="text" class="field-sm" placeholder=".field-sm">
+</p>
+<p>
+	<label>Default</label>
+	<input type="text" placeholder="">
+</p>
+<p>
+	<label>Large</label>
+	<input type="text" class="field-lg" placeholder=".field-lg">
+</p>
+<p>
+	<label>X-Large</label>
+	<input type="text" class="field-xl" placeholder=".field-xl">
+</p>
+<p>
+	<label>XX-Large</label>
+	<input type="text" class="field-xxl" placeholder=".field-xxl">
+</p>
+<p>
+	<label>XXX-Large</label>
+	<input type="text" class="field-xxxl" placeholder=".field-xxxl">
+</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<p>
+	<label>X-Small</label>
+	<input type="text" class="field-xs" placeholder=".field-xs">
+</p>
+<p>
+	<label>Small</label>
+	<input type="text" class="field-sm" placeholder=".field-sm">
+</p>
+<p>
+	<label>Default</label>
+	<input type="text" placeholder="">
+</p>
+<p>
+	<label>Large</label>
+	<input type="text" class="field-lg" placeholder=".field-lg">
+</p>
+<p>
+	<label>X-Large</label>
+	<input type="text" class="field-xl" placeholder=".field-xl">
+</p>
+<p>
+	<label>XX-Large</label>
+	<input type="text" class="field-xxl" placeholder=".field-xxl">
+</p>
+<p>
+	<label>XXX-Large</label>
+	<input type="text" class="field-xxxl" placeholder=".field-xxxl">
+</p>
+</pre>
+
+<p>And the same classes can be added <code>&lt;select&gt;</code> fields, as well.</p>
+
+<p>
+	<label>X-Small</label>
+	<select class="field-xs">
+		<option value="foo">Foo</option>
+		<option value="bar">Bar</option>
+		<option value="baz">Baz</option>
+	</select>
+</p>
+<p>
+	<label>Small</label>
+	<select class="field-sm">
+		<option value="foo">Foo</option>
+		<option value="bar">Bar</option>
+		<option value="baz">Baz</option>
+	</select>
+</p>
+<p>
+	<label>Default</label>
+	<select>
+		<option value="foo">Foo</option>
+		<option value="bar">Bar</option>
+		<option value="baz">Baz</option>
+	</select>
+</p>
+<p>
+	<label>Large</label>
+	<select class="field-lg">
+		<option value="foo">Foo</option>
+		<option value="bar">Bar</option>
+		<option value="baz">Baz</option>
+	</select>
+</p>
+<p>
+	<label>X-Large</label>
+	<select class="field-xl">
+		<option value="foo">Foo</option>
+		<option value="bar">Bar</option>
+		<option value="baz">Baz</option>
+	</select>
+</p>
+<p>
+	<label>XX-Large</label>
+	<select class="field-xxl">
+		<option value="foo">Foo</option>
+		<option value="bar">Bar</option>
+		<option value="baz">Baz</option>
+	</select>
+</p>
+<p>
+	<label>XXX-Large</label>
+	<select class="field-xxxl">
+		<option value="foo">Foo</option>
+		<option value="bar">Bar</option>
+		<option value="baz">Baz</option>
+	</select>
+</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<p>
+	<label>X-Small</label>
+	<select class="field-xs">
+		<option value="foo">Foo</option>
+		<option value="bar">Bar</option>
+		<option value="baz">Baz</option>
+	</select>
+</p>
+<p>
+	<label>Small</label>
+	<select class="field-sm">
+		<option value="foo">Foo</option>
+		<option value="bar">Bar</option>
+		<option value="baz">Baz</option>
+	</select>
+</p>
+<p>
+	<label>Default</label>
+	<select>
+		<option value="foo">Foo</option>
+		<option value="bar">Bar</option>
+		<option value="baz">Baz</option>
+	</select>
+</p>
+<p>
+	<label>Large</label>
+	<select class="field-lg">
+		<option value="foo">Foo</option>
+		<option value="bar">Bar</option>
+		<option value="baz">Baz</option>
+	</select>
+</p>
+<p>
+	<label>X-Large</label>
+	<select class="field-xl">
+		<option value="foo">Foo</option>
+		<option value="bar">Bar</option>
+		<option value="baz">Baz</option>
+	</select>
+</p>
+<p>
+	<label>XX-Large</label>
+	<select class="field-xxl">
+		<option value="foo">Foo</option>
+		<option value="bar">Bar</option>
+		<option value="baz">Baz</option>
+	</select>
+</p>
+<p>
+	<label>XXX-Large</label>
+	<select class="field-xxxl">
+		<option value="foo">Foo</option>
+		<option value="bar">Bar</option>
+		<option value="baz">Baz</option>
+	</select>
+</p>
+</pre>
+
+<!-- REQUIRED -->
+
+<h2 id="required">Required Fields</h2>
+
+<p>For letting the user know that a field is required, add <code>&lt;span class="required"&gt;*&lt;/span&gt;</code> within its label.</p>
+
+<p>
+	<label for="name5">Name<span class="required">*</span></label>
+	<input type="text" id="name5" placeholder="Enter Name">
+</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<p>
+	<label for="name">Name<span class="required">*</span></label>
+	<input type="text" id="name" placeholder="Enter Name">
+</p>
+</pre>
+
+<!-- HELP TEXT -->
+
+<h2 id="help-text">Help Text</h2>
+
+<p>To give the user a description for a field, add a <code>&lt;span&gt;</code> with class <code>help-text</code> below the field.</p>
+
+<p>
+	<label for="name6">Name<span class="required">*</span></label>
+	<input type="text" id="name6" placeholder="Enter Name">
+	<span class="help-text">Please fill in your first and last name.</span>
+</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<p>
+	<label for="name">Name<span class="required">*</span></label>
+	<input type="text" id="name" placeholder="Enter Name">
+	<span class="help-text">Please fill in your first and last name.</span>
+</p>
+</pre>
+
+<p>And if you're inserting your <code>.help-text</code> elements dynamically, you can also utilize contextual classes, if applicable &mdash; <code>success</code>, <code>info</code>, <code>warning</code>, and <code>danger</code>.</p>
+
+<p>
+	<label for="name7">Name</label>
+	<input type="text" id="name7" placeholder="Enter Name">
+	<span class="help-text danger">Oops! You forgot to enter your name.</span>
+</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<p>
+	<label for="name">Name</label>
+	<input type="text" id="name" placeholder="Enter Name">
+	<span class="help-text danger">Please fill in your first and last name.</span>
+</p>
+</pre>
+
+<!-- FIELDSET -->
+
+<h2 id="fieldset">Fieldsets and Legends</h2>
+
+<p>When working with more complex forms, it's often good practice to group related fields with <code>&lt;fieldset&gt;</code>. And when doing this, you can use <code>&lt;legend&gt;</code> to give that group of fields a title. Front Street styles <code>&lt;legend&gt;</code> and <code>&lt;label&gt;</code> similarly, with <code>&lt;legend&gt;</code> being a little larger.</p>
+
+<p>The following example demonstrates the hierarchy of <code>&lt;legend&gt;</code> and <code>&lt;label&gt;</code> within a <code>&lt;fieldset&gt;</code>.</p>
+<fieldset>
+	<legend>Name</legend>
+	<p>
+		<label for="first-name">First</label>
+		<input id="first-name" type="text">
+	</p>
+	<p>
+		<label for="last-name">Last</label>
+		<input id="last-name" type="text">
+	</p>
+</fieldset>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<fieldset>
+	<legend>Name</legend>
+	<p>
+		<label for="first-name">First</label>
+		<input id="first-name" type="text">
+	</p>
+	<p>
+		<label for="last-name">Last</label>
+		<input id="last-name" type="text">
+	</p>
+</fieldset>
+</pre>
+
+<p>And next, this is a slightly different way of accomplishing the same concept. But instead of using a <code>&lt;label&gt;</code> for each field, we're just relying on <code>.help-text</code> descriptions below each field, instead.</p>
+
+<fieldset>
+	<legend>Name</legend>
+	<p>
+		<input type="text">
+		<span class="help-text">First</span>
+	</p>
+	<p>
+		<input type="text">
+		<span class="help-text">Last</span>
+	</p>
+</fieldset>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<fieldset>
+	<legend>Name</legend>
+	<p>
+		<input type="text">
+		<span class="help-text">First</span>
+	</p>
+	<p>
+		<input type="text">
+		<span class="help-text">Last</span>
+	</p>
+</fieldset>
+</pre>
+
+<!-- FORM LAYOUT -->
+
+<h2 id="form-layout">Form Layout</h2>
+
+<p>In the beginning of the article there is a basic example of a contact form. Utilizing <a href="grid.html" title="Grids" target="_blank">grid classes</a> we can expand our form layouts.</p>
+
+<form>
+	<div class="row">
+	    <p class="col col-md-6">
+	        <label for="name8">Name</label>
+	        <input type="text" id="name8" placeholder="Enter Name">
+	    </p>
+	    <p class="col col-md-6">
+	        <label for="email8">E-mail</label>
+	        <input type="email" id="email8" placeholder="Enter E-mail">
+	    </p>
+	</div>
+    <p>
+        <label for="message8">Message</label>
+        <textarea id="message8" placeholder="Enter Message" rows="10"></textarea>
+    </p>
+    <p>
+        <button type="submit">Submit</button>
+    </p>
+</form>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<form>
+	<div class="row">
+	    <p class="col col-md-6">
+	        <label for="name">Name</label>
+	        <input type="text" id="name" placeholder="Enter Name">
+	    </p>
+	    <p class="col col-md-6">
+	        <label for="email">E-mail</label>
+	        <input type="email" id="email" placeholder="Enter E-mail">
+	    </p>
+	</div>
+    <p>
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Enter Message" rows="10"></textarea>
+    </p>
+    <p>
+        <button type="submit">Submit</button>
+    </p>
+</form>
+</pre>
+
+<p>And here's an example of a standard comment form, utilizing required fields.</p>
+
+<form>
+	<p>
+		<label for="comment">Comment</label>
+		<textarea id="comment" rows="10"></textarea>
+	</p>
+	<div class="row">
+	    <p class="col col-md-4">
+	        <label for="commenter-name">Name<span class="required">*</span></label>
+	        <input type="text" id="commenter-name">
+	    </p>
+	    <p class="col col-md-4">
+	        <label for="commenter-email">E-mail<span class="required">*</span></label>
+	        <input type="email" id="commenter-email">
+	    </p>
+		<p class="col col-md-4">
+	        <label for="commenter-website">Website</label>
+	        <input type="url" id="commenter-website">
+	    </p>
+	</div>
+    <p>
+        <button type="submit">Submit</button>
+    </p>
+</form>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<form>
+	<p>
+		<label for="comment">Comment</label>
+		<textarea id="comment" rows="10"></textarea>
+	</p>
+	<div class="row">
+	    <p class="col col-md-4">
+	        <label for="commenter-name">Name<span class="required">*</span></label>
+	        <input type="text" id="commenter-name">
+	    </p>
+	    <p class="col col-md-4">
+	        <label for="commenter-email">E-mail<span class="required">*</span></label>
+	        <input type="email" id="commenter-email">
+	    </p>
+		<p class="col col-md-4">
+	        <label for="commenter-website">Website</label>
+	        <input type="url" id="commenter-website">
+	    </p>
+	</div>
+    <p>
+        <button type="submit">Submit</button>
+    </p>
+</form>
+</pre>
+
+<p>And last, we've got a more complex example bringing together fieldsets, legends, and grids.</p>
+<form>
+
+	<fieldset>
+		<legend>Name</legend>
+		<div class="row">
+		    <p class="col col-md-6">
+		        <input type="text">
+				<span class="help-text">First</span>
+		    </p>
+		    <p class="col col-md-6">
+		        <input type="text">
+				<span class="help-text">Last</span>
+		    </p>
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<legend>Account</legend>
+		<div class="row">
+		    <p class="col col-md-6">
+		        <input type="text">
+				<span class="help-text">Username</span>
+		    </p>
+		    <p class="col col-md-6">
+		        <input type="text">
+				<span class="help-text">E-mail</span>
+		    </p>
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<legend>Occupation</legend>
+		<div class="row">
+			<p class="col col-md-6">
+				<select id="occupation">
+					<option value="developer">Developer</option>
+					<option value="designer">Designer</option>
+					<option value="unemployed">Unemployed</option>
+				</select>
+				<span class="help-text">Job Title</span>
+			</p>
+			<p class="col col-md-6">
+				<select id="occupation">
+					<option value="developer">Full-Time</option>
+					<option value="designer">Part-Time</option>
+				</select>
+				<span class="help-text">Work Amount</span>
+			</p>
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<legend>Message</legend>
+	    <p>
+	        <textarea rows="10"></textarea>
+	    </p>
+	</fieldset>
+
+    <p>
+        <button type="submit">Submit</button>
+    </p>
+
+</form>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<form>
+
+	<fieldset>
+		<legend>Name</legend>
+		<div class="row">
+		    <p class="col col-md-6">
+		        <input type="text">
+				<span class="help-text">First</span>
+		    </p>
+		    <p class="col col-md-6">
+		        <input type="text">
+				<span class="help-text">Last</span>
+		    </p>
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<legend>Account</legend>
+		<div class="row">
+		    <p class="col col-md-6">
+		        <input type="text">
+				<span class="help-text">Username</span>
+		    </p>
+		    <p class="col col-md-6">
+		        <input type="text">
+				<span class="help-text">E-mail</span>
+		    </p>
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<legend>Occupation</legend>
+		<div class="row">
+			<p class="col col-md-6">
+				<select id="occupation">
+					<option value="developer">Developer</option>
+					<option value="designer">Designer</option>
+					<option value="unemployed">Unemployed</option>
+				</select>
+				<span class="help-text">Job Title</span>
+			</p>
+			<p class="col col-md-6">
+				<select id="occupation">
+					<option value="developer">Full-Time</option>
+					<option value="designer">Part-Time</option>
+				</select>
+				<span class="help-text">Work Amount</span>
+			</p>
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<legend>Message</legend>
+	    <p>
+	        <textarea rows="10"></textarea>
+	    </p>
+	</fieldset>
+
+    <p>
+        <button type="submit">Submit</button>
+    </p>
+
+</form>
+</pre>
+
+@@include('../layout/footer.html')

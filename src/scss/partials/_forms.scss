@@ -1,0 +1,377 @@
+
+// Forms
+// --------------------------------------------------
+
+//
+// Form
+//
+
+form {
+	margin: $margin-form;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+//
+// Fieldset
+//
+
+fieldset {
+
+	border: 0;
+	margin: $margin-fieldset;
+	padding: 0;
+	// Chrome and Firefox set a `min-width: min-content;` on fieldsets,
+	// so we reset that to ensure it behaves more like a standard block element.
+	// See https://github.com/twbs/bootstrap/issues/12359.
+	min-width: 0;
+
+	&:last-child {
+		margin: 0;
+	}
+}
+
+//
+// Labels/Legends
+//
+
+label,
+.label {
+
+	color: if($style == 'inverse', $clr-text-inv-darken, $clr-text-darken);
+	display: inline-block;
+	font-weight: bold;
+	font-size: $font-size-field-label;
+	margin: $margin-field-label;
+	max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
+
+	label,
+	.label {
+		margin-right: 0;
+		margin-left: 0;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+legend,
+.legend {
+
+	color: if($style == 'inverse', $clr-text-inv-darken, $clr-text-darken);
+	display: block;
+	font-size: $font-size-field-legend;
+	font-weight: bold;
+	border: 0;
+	padding: 0;
+	line-height: inherit;
+	margin: $margin-field-legend;
+	width: 100%;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+@if $style == 'inverse' {
+	.text-dark  {
+		label, legend {
+			color: $clr-text-darken;
+		}
+	}
+	.text-light {
+		label, legend {
+			color: $clr-text-inv-darken;
+		}
+	}
+} @else {
+	.text-light {
+		label, legend {
+			color: $clr-text-inv-darken;
+		}
+	}
+	.text-dark  {
+		label, legend {
+			color: $clr-text-darken;
+		}
+	}
+}
+
+//
+// Required Fields
+//
+
+label,
+.label {
+	.required {
+
+		color: map-deep-get($clr-contextual, danger, contrast);
+
+		@if $direction == 'rtl' {
+			margin-right: 4px;
+		} @else {
+			margin-left: 4px;
+		}
+	}
+}
+
+//
+// Help Text
+//
+
+.help-text {
+
+	font-size: $font-size-field-help;
+	margin: $margin-field-help;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+	@each $name in $clr-contextual {
+		&.#{$name} {
+			background-color: transparent;
+		}
+	}
+}
+
+//
+// General Fields
+//
+
+@include input-selector {
+	background-color: if($style == 'inverse', $clr-bg-inv-field, $clr-bg-field);
+	@include border-radius(0);
+	border: 1px solid if($style == 'inverse', $clr-border-inv, $clr-border);
+	color: if($style == 'inverse', $clr-text-inv-base, $clr-text-base);
+	display: block;
+	font-size: $font-size-field;
+	line-height: $font-lh-field;
+	margin: $margin-field;
+	padding: $padding-field;
+	width: 100%;
+}
+@include input-selector {
+	&:focus {
+		border-color: if($style == 'inverse', $clr-border-inv-active, $clr-border-active);
+		@include box-shadow(0 0 8px if($style == 'inverse', rgba($clr-black, 0.2), $clr-trans-lightest));
+		outline: 0;
+	}
+}
+@include input-selector {
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+@if $style == 'inverse' {
+
+	.text-dark {
+		@include input-selector {
+			background-color: $clr-bg-field;
+			border-color: $clr-border;
+			color: $clr-text-base;
+		}
+		@include input-selector {
+			&:focus {
+				border-color: $clr-border-active;
+				@include box-shadow(0 0 8px $clr-trans-lightest);
+			}
+		}
+	}
+
+	.text-light {
+		@include input-selector {
+			background-color: $clr-bg-inv-field;
+			border-color: $clr-border-inv;
+			color: $clr-text-inv-base;
+		}
+		@include input-selector {
+			&:focus {
+				border-color: $clr-border-inv-active;
+				@include box-shadow(0 0 8px rgba($clr-black, 0.2));
+			}
+		}
+	}
+
+} @else {
+
+	.text-light {
+		@include input-selector {
+			background-color: $clr-bg-inv-field;
+			border-color: $clr-border-inv;
+			color: $clr-text-inv-base;
+		}
+		@include input-selector {
+			&:focus {
+				border-color: $clr-border-inv-active;
+				@include box-shadow(0 0 8px rgba($clr-black, 0.2));
+			}
+		}
+	}
+
+	.text-dark {
+		@include input-selector {
+			background-color: $clr-bg-field;
+			border-color: $clr-border;
+			color: $clr-text-base;
+		}
+		@include input-selector {
+			&:focus {
+				border-color: $clr-border-active;
+				@include box-shadow(0 0 8px $clr-trans-lightest);
+			}
+		}
+	}
+
+}
+
+//
+// Text Areas
+//
+
+textarea {
+	line-height: $font-lh-field;
+}
+
+//
+// Select
+//
+
+$select-color : if($style == 'inverse', $clr-text-inv-base, $clr-text-base);
+
+select {
+
+	@include appearance(none);
+
+	-webkit-background-origin: content-box;
+    background-origin: content-box;
+
+	@include background-triangle($select-color); // setup color for text-dark and text-light
+
+	@if $direction == 'rtl' {
+		background-position: left -.25rem center;
+	} @else {
+		background-position: right -.25rem center;
+	}
+
+	background-repeat: no-repeat;
+	background-size: 9px 6px;
+}
+select[multiple] {
+    background-image: none;
+	height: auto;
+}
+select[multiple] option {
+	padding: 4px;
+}
+
+@if $style == 'inverse' {
+	.text-dark select {
+		@include background-triangle($clr-text-base);
+	}
+	.text-light select{
+		@include background-triangle($clr-text-inv-base);
+	}
+} @else {
+	.text-light select {
+		@include background-triangle($clr-text-inv-base);
+	}
+	.text-dark select {
+		@include background-triangle($clr-text-base);
+	}
+}
+
+//
+// Field Sizing
+//
+
+@each $size, $map in $field-sizes {
+	input.field-#{$size},
+	select.field-#{$size} {
+		@each $prop, $val in $map {
+			#{$prop}: #{$val};
+		}
+	}
+}
+
+//
+// Checkbox / Radio Groups
+//
+
+input[type="radio"],
+input[type="checkbox"] {
+	line-height: normal;
+	margin: 4px 0 0;
+	margin-top: 1px \9; // IE8-9
+}
+.checkbox-label,
+.radio-label {
+	font-weight: $font-weight-base;
+}
+.checkbox-group,
+.radio-group {
+
+	@include list-unstyled;
+
+	input[type=checkbox],
+	input[type=radio] {
+		margin: $margin-field-group;
+	}
+}
+.checkbox-group-inline,
+.radio-group-inline {
+
+	li {
+		display: inline;
+
+		@if $direction == 'rtl' {
+			margin-left: 10px;
+		} @else {
+			margin-right: 10px;
+		}
+
+		&.label {
+			display: block;
+		}
+		label,
+		.label {
+			margin: 0;
+		}
+	}
+}
+
+//
+// File Input
+//
+
+input[type="file"] {
+	display: block;
+}
+
+//
+// Placeholders
+//
+
+input,
+textarea {
+	@include placeholder;
+}
+@if $style == 'inverse' {
+	.text-dark input,
+	.text-dark textarea {
+		@include placeholder($clr-text-placeholder);
+	}
+	.text-light input,
+	.text-light textarea {
+		@include placeholder($clr-text-inv-placeholder);
+	}
+} @else {
+	.text-light input,
+	.text-light textarea {
+		@include placeholder($clr-text-inv-placeholder);
+	}
+	.text-dark input,
+	.text-dark textarea {
+		@include placeholder($clr-text-placeholder);
+	}
+}

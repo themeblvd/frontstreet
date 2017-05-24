@@ -17,13 +17,14 @@
 @import "type";
 @import "lists";
 @import "tables";
+@import "forms";
+@import "buttons";
 
 // Utilities
 @import "utilities";
 @import "responsive-utilities";
 
 // Components
-@import "buttons";
 @import "close";
 @import "menu-toggle";
 @import "button-groups";

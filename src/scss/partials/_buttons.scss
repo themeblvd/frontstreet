@@ -2,12 +2,7 @@
 // Buttons
 // --------------------------------------------------
 
-.btn,
-.button,
-button,
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
+@include btn-selector {
 
 	background-color: $clr-bg-btn;
 	border: $btn-border-width solid transparent;
@@ -28,7 +23,6 @@ input[type="button"] {
 	white-space: nowrap;
 	@include user-select(none);
 
-	&,
 	&:active,
 	&.active {
 		&:focus,

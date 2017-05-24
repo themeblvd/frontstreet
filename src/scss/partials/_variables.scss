@@ -123,6 +123,10 @@ $font-size-navbar-btn				: $font-size-sm;
 $font-size-subnav-btn				: $font-size-btn;
 $font-size-mobile-navbar-btn		: $font-size-sm;
 $font-size-dropdown					: $font-size-xs;
+$font-size-field					: $font-size-sm;
+$font-size-field-label				: $font-size-field;
+$font-size-field-legend				: $font-size-base;
+$font-size-field-help				: $font-size-small;
 
 // Font Line Heights
 
@@ -135,7 +139,8 @@ $font-lh-lead						: 1.4;
 $font-lh-quote						: 1.4;
 $font-lh-header-menu				: 1.25;
 $font-lh-header-menu-dropdown		: 1.4;
-$font-lh-btn 						: 1.4;
+$font-lh-btn 						: $font-size-base;
+$font-lh-field						: $font-lh-btn;
 
 // Font Style
 
@@ -393,9 +398,11 @@ $clr-contextual : (
 
 // Border Colors
 
-$clr-border-white					: $clr-white;
-$clr-border-dark					: $clr-dark;
-$clr-border-light					: $clr-trans-lighter;
+$clr-border							: $clr-trans-lighter;
+$clr-border-active					: $clr-trans-light;
+
+$clr-border-inv						: rgba($clr-black, 0.3);
+$clr-border-inv-active				: rgba($clr-black, 0.5);
 
 // Background Colors
 
@@ -410,6 +417,8 @@ $clr-bg-hr							: rgba($clr-bg-dark, 0.1);
 $clr-bg-code						: $clr-lightest;
 $clr-bg-kbd							: $clr-bg-dark;
 $clr-bg-btn							: darken($clr-bg-light, 2%);
+$clr-bg-field						: rgba($clr-white, 0.8);
+$clr-bg-inv-field					: transparent;
 
 // ==========================================================================
 // Utilities
@@ -470,13 +479,80 @@ $margin-btn-group					: 0 -1px;
 $margin-btn-group-block				: 0 -1px $spacing-element -1px;
 $margin-btn-group-btn				: 0 1px;
 $margin-pagination					: 0 0 $spacing-element 0;
+$margin-form						: 0 0 $spacing-element 0;
+$margin-field						: 0 0 ($spacing-element / 2) 0;
+$margin-field-label					: 0 4px ($spacing-element / 2) 4px;
+$margin-field-group					: 0 4px;
+$margin-field-legend				: 0 0 ($spacing-element / 2) 0;
+$margin-field-help					: $margin-field-label;
+$margin-fieldset					: 0 0 $spacing-element 0;
 
 // Padding
 
 $padding-list						: if($direction == 'rtl', 0 40px 0 0, 0 0 0 40px);
 $padding-alert						: 15px;
-$padding-btn						: 12px 20px;
+$padding-btn						: 15px 22px; // Paired w/2px border
+$padding-field						: 16px 18px; // Paired w/1px border
 $padding-subnav						: 12px;
+
+
+// ==========================================================================
+// Forms
+// ==========================================================================
+
+$clr-text-placeholder				: lighten($clr-text-base, 40%);
+$clr-text-inv-placeholder			: rgba($clr-text-inv-base, 0.4);
+
+$input-selector						: "input[type=date],
+									  input[type=datetime-local],
+									  input[type=email],
+									  input[type=month],
+									  input[type=number],
+									  input[type=password],
+									  input[type=range],
+									  input[type=search],
+									  input[type=tel],
+									  input[type=text],
+									  input[type=time],
+									  input[type=url],
+									  input[type=week],
+									  textarea,
+									  select";
+
+// Field Sizes
+
+$field-sizes : (
+	xs : (
+		font-size					: $font-size-xxs,
+		line-height					: $font-size-xxs + 2, // Must be even number.
+		padding						: 8px 10px
+	),
+	sm : (
+		font-size					: $font-size-xs,
+		line-height					: $font-size-xs + 3, // Must be even number.
+		padding						: 10px 12px
+	),
+	lg : (
+		font-size					: $font-size-md,
+		line-height					: $font-size-md + 3, // Must be even number.
+		padding						: 18px 22px
+	),
+	xl : (
+		font-size					: $font-size-base,
+		line-height					: $font-size-base + 2, // Must be even number.
+		padding						: 20px 24px
+	),
+	xxl : (
+		font-size					: $font-size-lg,
+		line-height					: $font-size-lg + 3, // Must be even number.
+		padding						: 19px 26px
+	),
+	xxxl : (
+		font-size					: $font-size-xl,
+		line-height					: $font-size-xl + 2, // Must be even number.
+		padding						: 22px 28px
+	)
+);
 
 // ==========================================================================
 // Buttons
@@ -484,6 +560,13 @@ $padding-subnav						: 12px;
 
 $btn-transition						: background-color 0.2s ease-out;
 $btn-border-width					: 2px; // Transparent on standard .btn
+
+$btn-selector						: ".btn,
+									  .button,
+									  button,
+									  input[type=submit],
+									  input[type=reset],
+									  input[type=button]";
 
 // Button Sizes
 
