@@ -23,47 +23,18 @@ html {
 		unicode-bidi: embed;
 	}
 }
-html,
-body,
-button,
-input,
-select,
-textarea {
-	color: $clr-text-base-fallback;
-    color: if($style == 'inverse', $clr-text-inv-base, $clr-text-base);
-    font-family: $font-fam-base;
-    font-weight: $font-weight-base;
-    font-size: $font-size-base;
-    line-height: $font-lh-base;
-}
 @if $style == 'inverse' {
-	.text-dark,
-	.text-dark button,
-	.text-dark input,
-	.text-dark select,
-	.text-dark textarea {
+	.text-dark {
 		color: $clr-text-base;
 	}
-	.text-light,
-	.text-light button,
-	.text-light input,
-	.text-light select,
-	.text-light textarea {
+	.text-light {
 		color: rgba($clr-text-inv-base, 0.8);
 	}
 } @else {
-	.text-light,
-	.text-light button,
-	.text-light input,
-	.text-light select,
-	.text-light textarea {
+	.text-light {
 		color: rgba($clr-text-inv-base, 0.8);
 	}
-	.text-dark,
-	.text-dark button,
-	.text-dark input,
-	.text-dark select,
-	.text-dark textarea {
+	.text-dark {
 		color: $clr-text-base;
 	}
 }
@@ -379,8 +350,27 @@ address {
 	@include margin-vert-flush;
 }
 abbr, acronym {
-    border-bottom: 1px dotted $clr-border-light;
+    border-bottom: 1px dotted if($style == 'inverse', $clr-border-inv, $clr-border);
     cursor: help;
+}
+@if $style == 'inverse' {
+	.text-dark abbr,
+	.text-dark acronym {
+		border-color: $clr-border;
+	}
+	.text-light abbr,
+	.text-light acronym {
+		border-color: $clr-border-inv;
+	}
+} @else {
+	.text-light abbr,
+	.text-light acronym {
+		border-color: $clr-border-inv;
+	}
+	.text-dark abbr,
+	.text-dark acronym {
+		border-color: $clr-border;
+	}
 }
 
 //
