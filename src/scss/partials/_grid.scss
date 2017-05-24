@@ -7,7 +7,12 @@
 //
 
 .row {
+
 	@include make-row;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 .row-flush-start {
 	@if $direction == 'rtl' {
@@ -29,10 +34,12 @@
 //
 
 .col {
+
 	margin-bottom: $margin-column;
-}
-.col:last-child {
-	margin-bottom: 0;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 //
