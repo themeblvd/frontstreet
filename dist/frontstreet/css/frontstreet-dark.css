@@ -2171,6 +2171,8 @@ kbd {
   -moz-border-radius: 2px;
   -ms-border-radius: 2px;
   border-radius: 2px;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 
@@ -7276,6 +7278,60 @@ button.close {
   .fs-menu.subnav-horz-lg .mega-col-6 .fs-mega-section {
     width: 16.6666%;
   }
+}
+
+.fs-breadcrumbs {
+  font-size: 14px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.fs-breadcrumbs li {
+  display: inline-block;
+}
+
+.fs-breadcrumbs > li + li:before {
+  content: "/\00a0";
+  padding: 0 5px;
+}
+
+.fs-breadcrumbs > li + li:before,
+.fs-breadcrumbs a:not(:hover) {
+  color: #ccc;
+}
+
+.fs-breadcrumbs li.active span {
+  color: #fff;
+}
+
+.fs-breadcrumbs.has-bg {
+  padding: 20px;
+}
+
+.fs-breadcrumbs.text-dark > li + li:before,
+.fs-breadcrumbs.text-dark a:not(:hover) {
+  color: rgba(110, 110, 110, 0.7);
+}
+
+.fs-breadcrumbs.text-dark a {
+  border: none;
+}
+
+.fs-breadcrumbs.text-dark li.active span {
+  color: #333;
+}
+
+.fs-breadcrumbs.text-light > li + li:before,
+.fs-breadcrumbs.text-light a:not(:hover) {
+  color: #ccc;
+}
+
+.fs-breadcrumbs.text-light a {
+  border: none;
+}
+
+.fs-breadcrumbs.text-light li.active span {
+  color: #fff;
 }
 
 .mobile-navbar {
