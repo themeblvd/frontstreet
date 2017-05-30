@@ -143,6 +143,11 @@ nav {
 .form-example {
   padding: 40px; }
 
+/* Breadcrumbs */
+.breadcrumbs-example {
+  margin-bottom: 24px;
+  padding: 20px; }
+
 /* =Tables
 -------------------------------------------------------------- */
 .responsive-utilities td.is-visible {
