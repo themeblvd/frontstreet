@@ -19,16 +19,17 @@
 	var Menu = function(element, options) {
 
 		var $this = this,
-			$menu = $(element),
-			dropdown = 'ul, .fs-mega';
+			$menu = $(element);
 
 		$this.options = $.extend({}, Menu.DEFAULTS, options);
 
 		$this.options.id = Menu.COUNT++;
 
-		$menu.find(dropdown).css('display', 'none');
+		$this.options.dropdown_selector = 'ul:not(.mega-sub-menu), .fs-mega';
 
-		$menu.find('li').has(dropdown)
+		$menu.find($this.options.dropdown_selector).css('display', 'none');
+
+		$menu.find('li').has($this.options.dropdown_selector)
 			.addClass('menu-item-has-children')
 			.on('mouseenter.fs.menu', function() {
 				var $el = $(this);
@@ -72,7 +73,7 @@
 			return;
 		}
 
-		var $flyout = $trigger.children('ul'),
+		var $flyout = $trigger.children(options.dropdown_selector),
 			location = $trigger.offset(),
 			space = 200;
 
@@ -98,15 +99,15 @@
 
 		clearTimeout( Menu.TIMER[ options.id ] );
 
-		$trigger.siblings().find('ul, .fs-mega').fadeOut(options.speed);
+		$trigger.siblings().find(options.dropdown_selector).fadeOut(options.speed);
 
-		$trigger.children('ul').stop(true, true).fadeIn(options.speed);
+		$trigger.children(options.dropdown_selector).stop(true, true).fadeIn(options.speed);
 
 	}
 
 	Menu.prototype.hide = function($trigger, options) {
 
-		var $flyout = $trigger.children('ul');
+		var $flyout = $trigger.children(options.dropdown_selector);
 
 		$flyout.stop(true, true).css('display', 'block');
 

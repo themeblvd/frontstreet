@@ -146,6 +146,9 @@
 		padding: .75em $flyout-horz-spacing;
 	}
 	&.text-dark ul .menu-btn {
+		color: $clr-text-darken;
+	}
+	&.text-dark ul a.menu-btn {
 
 		color: $clr-text-base;
 
@@ -155,6 +158,9 @@
 		}
 	}
 	&.text-light ul .menu-btn {
+		color: $clr-text-inv-darken;
+	}
+	&.text-light ul a.menu-btn {
 
 		color: rgba($clr-text-inv-darken, .8);
 
@@ -176,6 +182,8 @@
 //
 
 .fs-menu {
+
+	position: relative;
 
 	li,
 	.menu-btn {
@@ -208,7 +216,6 @@
 
 	// Flyout menu
 	ul {
-		display: none;
 		max-width: 100%;
 		min-width: $flyout-width;
 		padding: $flyout-vert-spacing 0;
@@ -220,6 +227,9 @@
 			left: 0;
 		}
 		z-index: 999;
+	}
+	ul:not(.mega-sub-menu) {
+		display: none;
 	}
 	ul.reverse {
 		@if $direction == 'rtl' {
@@ -272,6 +282,47 @@
 	li:hover ul {
 		display: block;
 	}
+
+	// Mega Menus
+	li.has-mega-menu {
+    	position: static;
+	}
+	.fs-mega {
+		display: none;
+		padding: 20px 0;
+		top: 100%;
+		@if $direction == 'rtl' {
+			right: 0;
+		} @else {
+			left: 0;
+		}
+		width: 100%;
+		z-index: 999;
+	}
+	.fs-mega-section {
+
+		margin-bottom: 20px;
+		width: 100%;
+
+		ul {
+			padding: 0;
+		}
+	}
+	.fs-mega-section:last-child {
+		margin-bottom: 0;
+	}
+	.mega-section-header {
+		display: block;
+		font-size: 1.1em;
+		font-weight: bold;
+	}
+	.mega-section-header a {
+		background-color: transparent !important;
+		font-size: inherit !important;
+		display: inline !important;
+		padding: 0 !important;
+	}
+
 }
 .fs-menu.navbar-horz,
 .fs-menu.subnav-horz {
@@ -287,9 +338,3 @@
 		}
 	}
 }
-
-//
-// Mega Menus
-//
-
-// ... @TODO
