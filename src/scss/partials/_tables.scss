@@ -37,7 +37,7 @@ table {
 
 	th {
 		color: if($style == 'inverse', $clr-text-inv-darken, $clr-text-darken);
-		font-weight: bold;
+		font-weight: $font-weight-bold;
 	}
 	th,
 	td {

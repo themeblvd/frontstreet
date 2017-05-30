@@ -42,7 +42,7 @@ label,
 
 	color: if($style == 'inverse', $clr-text-inv-darken, $clr-text-darken);
 	display: inline-block;
-	font-weight: bold;
+	font-weight: $font-weight-bold;
 	font-size: $font-size-field-label;
 	margin: $margin-field-label;
 	max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
@@ -62,7 +62,7 @@ legend,
 	color: if($style == 'inverse', $clr-text-inv-darken, $clr-text-darken);
 	display: block;
 	font-size: $font-size-field-legend;
-	font-weight: bold;
+	font-weight: $font-weight-bold;
 	border: 0;
 	padding: 0;
 	line-height: inherit;

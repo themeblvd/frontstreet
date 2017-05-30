@@ -116,7 +116,7 @@ abbr[title] {
 
 b,
 strong {
-	font-weight: bold;
+	font-weight: $font-weight-bold;
 }
 
 //
@@ -397,7 +397,7 @@ textarea {
 //
 
 optgroup {
-	font-weight: bold;
+	font-weight: $font-weight-bold;
 }
 
 //
