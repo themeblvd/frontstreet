@@ -28,15 +28,15 @@
 					</h1>
 
 
-<p>If you're looking for an inherently responsive menu, you can use one of our <a href="nav.html" title="Responsive Navigation">responsive navbar elements</a>. But if you're looking for a mobile-only menu, the <code>.navbar-mobile</code> element is a solid, alternate solution.</p>
+<p>If you're looking for an inherently responsive menu, you can use one of our <a href="nav.html" title="Responsive Navigation">responsive menu-bar elements</a>. But if you're looking for a mobile-only menu, the <code>.menu-bar-mobile</code> element is a solid, alternate solution.</p>
 
 <p><em>So what the heck is the difference between responsive and mobile?</em> &mdash; When we say "responsive" we mean the element will work at any viewport, adjusting to fit itself. But when we say "mobile" we mean the element is intended for the mobile view only.</p>
 
 <h2 id="example">Basic Example</h2>
 
-<p>To create a mobile navbar, add class <code>mobile-navbar</code> to an unordered list, and nest any submenus within. Make sure to add class <code>menu-btn</code> to all links within.</p>
+<p>To create a mobile menu-bar, add class <code>mobile-menu-bar</code> to an unordered list, and nest any submenus within. Make sure to add class <code>menu-btn</code> to all links within.</p>
 
-<ul class="mobile-navbar bg-light text-dark">
+<ul class="mobile-menu-bar bg-light text-dark">
 	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
 	<li>
 		<a href="#" class="menu-btn" title="About">About</a>
@@ -60,7 +60,7 @@
 </ul>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;ul class="mobile-navbar bg-light text-dark"&gt;
+&lt;ul class="mobile-menu-bar bg-light text-dark"&gt;
 	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
 	<li>
 		<a href="#" class="menu-btn" title="About">About</a>
@@ -86,12 +86,12 @@
 
 <h2 id="colors">Colors</h2>
 
-<p>Similarly to the <a href="nav.html" title="Responsive Navigation">responsive navbar element</a>, you can add <a href="colors.html" title="Color Classes" target="_blank">color classes</a> to your <code>.mobile-navar</code> element, along with classes <code>text-dark</code> or <code>text-light</code> to adjust the color of text.</p>
+<p>Similarly to the <a href="nav.html" title="Responsive Navigation">responsive menu-bar element</a>, you can add <a href="colors.html" title="Color Classes" target="_blank">color classes</a> to your <code>.mobile-navar</code> element, along with classes <code>text-dark</code> or <code>text-light</code> to adjust the color of text.</p>
 
 <div class="row">
 	<div class="col col-md-6">
 
-		<ul class="mobile-navbar primary text-light">
+		<ul class="mobile-menu-bar primary text-light">
 			<li><a href="#" class="menu-btn" title="Home">Home</a></li>
 			<li>
 				<a href="#" class="menu-btn" title="About">About</a>
@@ -115,7 +115,7 @@
 		</ul>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;ul class="mobile-navbar primary text-light"&gt;
+&lt;ul class="mobile-menu-bar primary text-light"&gt;
 	...
 &lt;/ul&gt;
 </pre>
@@ -124,7 +124,7 @@
 
 	<div class="col col-md-6">
 
-		<ul class="mobile-navbar secondary text-dark">
+		<ul class="mobile-menu-bar secondary text-dark">
 			<li><a href="#" class="menu-btn" title="Home">Home</a></li>
 			<li>
 				<a href="#" class="menu-btn" title="About">About</a>
@@ -148,7 +148,7 @@
 		</ul>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;ul class="mobile-navbar secondary text-dark"&gt;
+&lt;ul class="mobile-menu-bar secondary text-dark"&gt;
 	...
 &lt;/ul&gt;
 </pre>
@@ -161,7 +161,7 @@
 
 	<div class="col col-md-6">
 
-		<ul class="mobile-navbar blue text-light">
+		<ul class="mobile-menu-bar blue text-light">
 			<li><a href="#" class="menu-btn" title="Home">Home</a></li>
 			<li>
 				<a href="#" class="menu-btn" title="About">About</a>
@@ -185,7 +185,7 @@
 		</ul>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;ul class="mobile-navbar blue text-light"&gt;
+&lt;ul class="mobile-menu-bar blue text-light"&gt;
 	...
 &lt;/ul&gt;
 </pre>
@@ -194,7 +194,7 @@
 
 	<div class="col col-md-6">
 
-		<ul class="mobile-navbar red text-light">
+		<ul class="mobile-menu-bar red text-light">
 			<li><a href="#" class="menu-btn" title="Home">Home</a></li>
 			<li>
 				<a href="#" class="menu-btn" title="About">About</a>
@@ -218,7 +218,7 @@
 		</ul>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;ul class="mobile-navbar red text-light"&gt;
+&lt;ul class="mobile-menu-bar red text-light"&gt;
 	...
 &lt;/ul&gt;
 </pre>
@@ -229,14 +229,14 @@
 
 <h2 class="javascript">Required JavaScript</h2>
 
-<p>By default, Front Street does not invoke any JavaScript to enable your <code>.mobile-navbar</code> element. You would need to do this in your own website after including jQuery.</p>
+<p>By default, Front Street does not invoke any JavaScript to enable your <code>.mobile-menu-bar</code> element. You would need to do this in your own website after including jQuery.</p>
 
-<p>Below is a basic example that shows how the examples in this demo page were setup. We simply bind the <code>FrontStreetMobileMenu()</code> method to our <code>.mobile-navbar</code> elements with jQuery.</p>
+<p>Below is a basic example that shows how the examples in this demo page were setup. We simply bind the <code>FrontStreetMobileMenu()</code> method to our <code>.mobile-menu-bar</code> elements with jQuery.</p>
 
 <pre class="brush: js; gutter: false; toolbar: false;">
 jQuery(document).ready(function($){
 
-	$('.mobile-navbar').FrontStreetMobileMenu();
+	$('.mobile-menu-bar').FrontStreetMobileMenu();
 
 });
 </pre>
@@ -244,7 +244,7 @@ jQuery(document).ready(function($){
 <p><em>Why not invoke the JavaScript by default?</em> &mdash; With an element like mobile navigation, we don't want to assume it exists on the intial page load. </p>
 
 <p>For example, in our <a href="https://wpjumpstart.com" title="Multi-Purpose WordPress Theme" target="_blank">Jump Start WordPress Theme</a>, we use this mobile navigation element, which is completely separate from the primar navigation the desktop user sees. However, for SEO purposes it would be better not to have a complete duplicate of the entire site's primary navigation.</p>
-<p>So instead of outputting two large duplicate menus, we generate the mobile version with JavaScript when the page loads, by copying the site's main navigation and some other elements on the page. Then after that's constructed, we then invoke the JavaScript needed for our <code>.mobile-navbar</code> element (which didn't originally exist on page load).</p>
+<p>So instead of outputting two large duplicate menus, we generate the mobile version with JavaScript when the page loads, by copying the site's main navigation and some other elements on the page. Then after that's constructed, we then invoke the JavaScript needed for our <code>.mobile-menu-bar</code> element (which didn't originally exist on page load).</p>
 
 
 				</article><!-- #main (end) -->
