@@ -6,8 +6,10 @@
 // General Properties
 //
 
-.navbar,
-.subnav {
+.menu-bar,
+.submenu-bar,
+.submenu-tabs,
+.submenu-pills {
 
 	@include list-unstyled;
 	@include clearfix;
@@ -22,120 +24,29 @@
 	position: relative;
 	@include transition($btn-transition);
 }
-.navbar-horz > li,
-.subnav-horz > li {
-	@if $direction == 'rtl' {
-		float: right;
-	} @else {
-		float: left;
-	}
+.menu-bar-horz,
+.submenu-horz {
+	@include nav-horz;
 }
 @each $breakpoint in $breakpoints {
 	@if $breakpoint != xl { // skip xl
 		@include min-width($breakpoint) {
-			.navbar-horz-#{$breakpoint} > li,
-			.subnav-horz-#{$breakpoint} > li {
-				@if $direction == 'rtl' {
-					float: right;
-				} @else {
-					float: left;
-				}
+			.menu-bar-horz-#{$breakpoint},
+			.submenu-horz-#{$breakpoint} {
+				@include nav-horz;
 			}
 		}
 	}
 }
 
 //
-// Navbar
-//
-
-.navbar {
-
-	.menu-btn {
-		border: none;
-	}
-
-	// Level 1
-	> li > .menu-btn {
-    	font-size: $font-size-navbar-btn;
-		font-weight: $font-weight-navbar-btn;
-		letter-spacing: $font-ls-navbar-btn;
-    	padding: em(18px, $font-size-navbar-btn) em(20px, $font-size-navbar-btn);
-		text-transform: $font-transform-navbar-btn;
-	}
-	&.text-dark > li > .menu-btn {
-
-		color: $clr-text-darken;
-
-		&:hover,
-		&:focus {
-			background-color: rgba($clr-light, .3);
-		}
-	}
-	&.text-light > li > .menu-btn {
-
-		color: $clr-text-inv-darken;
-
-		&:hover,
-		&:focus {
-			background-color: rgba($clr-black, .3);
-		}
-	}
-
-}
-
-//
-// Subnav
-//
-
-.subnav {
-
-	padding: $padding-subnav;
-
-	.menu-btn {
-		border: none;
-	}
-	&.text-dark .menu-btn {
-
-		color: rgba($clr-text-darken, .8);
-
-		&:hover,
-		&:focus {
-			color: $clr-text-darken;
-		}
-	}
-	&.text-light .menu-btn {
-
-		color: rgba($clr-text-inv-darken, .8);
-
-		&:hover,
-		&:focus {
-			color: $clr-text-inv-darken;
-		}
-	}
-
-	// Level 1
-	> li > .menu-btn {
-		font-weight: $font-weight-subnav-btn;
-    	font-size: $font-size-subnav-btn;
-		letter-spacing: $font-ls-subnav-btn;
-    	padding: em(10px, $font-size-subnav-btn) em(16px, $font-size-subnav-btn);
-		text-transform: $font-transform-subnav-btn;
-	}
-
-	// Level 2 flyouts
-	&.fs-menu > li > ul {
-		margin-top: $padding-subnav;
-	}
-
-}
-
-//
 // Sub-levels
 //
 
-.navbar,
-.subnav {
+.menu-bar,
+.submenu-bar,
+.submenu-tabs,
+.submenu-pills {
 
 	// Level 2+
 	ul {
@@ -324,97 +235,299 @@
 	}
 
 }
-.fs-menu.navbar-horz,
-.fs-menu.subnav-horz {
-	@include dropdown();
+.fs-menu.menu-bar-horz,
+.fs-menu.submenu-horz {
+	@include nav-dropdown();
 }
 @each $breakpoint in $breakpoints {
 	@if $breakpoint != xl { // skip xl
 		@include min-width($breakpoint) {
-			.fs-menu.navbar-horz-#{$breakpoint},
-			.fs-menu.subnav-horz-#{$breakpoint} {
-				@include dropdown();
+			.fs-menu.menu-bar-horz-#{$breakpoint},
+			.fs-menu.submenu-horz-#{$breakpoint} {
+				@include nav-dropdown();
 			}
 		}
 	}
 }
 
 //
-// Breadcrumbs
+// Menu Bar
 //
 
-.fs-breadcrumbs {
+.menu-bar {
 
-	font-size: $font-size-breadcrumbs;
-	@include list-unstyled;
-
-	li {
-		display: inline-block;
-	}
-	> li + li:before {
-		content: "/\00a0";
-    	padding: 0 5px;
-	}
-	> li + li:before,
-	a:not(:hover) {
-		color: if($style == 'inverse', $clr-text-inv-lighten, $clr-text-lighten);
-	}
-	li.active span {
-		color: if($style == 'inverse', $clr-text-inv-darken, $clr-text-darken);
-	}
-	&.has-bg {
-		padding: $padding-breadcrumbs;
+	.menu-btn {
+		border: none;
 	}
 
-	@if ( $style == 'inverse' ) {
-		&.text-dark {
-			> li + li:before,
-			a:not(:hover) {
-				color: $clr-text-lighten;
-			}
-			a {
-				border: none;
-			}
-			li.active span {
-				color: $clr-text-darken;
-			}
+	// Level 1
+	> li > .menu-btn {
+    	font-size: $font-size-menu-bar-btn;
+		font-weight: $font-weight-menu-bar-btn;
+		letter-spacing: $font-ls-menu-bar-btn;
+    	padding: em(18px, $font-size-menu-bar-btn) em(20px, $font-size-menu-bar-btn);
+		text-transform: $font-transform-menu-bar-btn;
+	}
+	&.text-dark > li > .menu-btn {
+
+		color: $clr-text-darken;
+
+		&:hover,
+		&:focus {
+			background-color: rgba($clr-light, .3);
 		}
-		&.text-light {
-			> li + li:before,
-			a:not(:hover) {
-				color: $clr-text-inv-lighten;
-			}
-			a {
-				border: none;
-			}
-			li.active span {
-				color: $clr-text-inv-darken;
-			}
+	}
+	&.text-light > li > .menu-btn {
+
+		color: $clr-text-inv-darken;
+
+		&:hover,
+		&:focus {
+			background-color: rgba($clr-black, .3);
 		}
+	}
+
+}
+
+//
+// Submenu Bar
+//
+
+.submenu-bar {
+
+	padding: $padding-submenu;
+
+	.menu-btn {
+		border: none;
+	}
+	&.text-dark .menu-btn {
+
+		color: rgba($clr-text-darken, .8);
+
+		&:hover,
+		&:focus {
+			color: $clr-text-darken;
+		}
+	}
+	&.text-light .menu-btn {
+
+		color: rgba($clr-text-inv-darken, .8);
+
+		&:hover,
+		&:focus {
+			color: $clr-text-inv-darken;
+		}
+	}
+
+	// Level 1
+	> li > .menu-btn {
+		font-weight: $font-weight-submenu-btn;
+    	font-size: $font-size-submenu-btn;
+		letter-spacing: $font-ls-submenu-btn;
+    	padding: em(10px, $font-size-submenu-btn) em(16px, $font-size-submenu-btn);
+		text-transform: $font-transform-submenu-btn;
+	}
+
+	// Level 2 flyouts
+	&.fs-menu > li > ul {
+		margin-top: $padding-submenu;
+	}
+
+}
+
+//
+// Tabs
+//
+
+.submenu-tabs {
+
+	border-color: if($style == 'inverse', $tabs-border-inv-color, $tabs-border-color);
+	border-style: solid;
+	@if $direction == 'rtl' {
+		border-width: $tabs-border-width $tabs-border-width 0 0;
 	} @else {
-		&.text-light {
-			> li + li:before,
-			a:not(:hover) {
-				color: $clr-text-inv-lighten;
-			}
-			a {
-				border: none;
-			}
-			li.active span {
-				color: $clr-text-inv-darken;
+		border-width: 0 0 $tabs-border-width $tabs-border-width;
+	}
+
+	> li > .menu-btn {
+
+		background: if($style == 'inverse', $tabs-inv-bg, $tabs-bg);
+		border-color: if($style == 'inverse', $tabs-border-inv-color, $tabs-border-color);
+		border-style: solid;
+		@if $direction == 'rtl' {
+			border-width: 0 0 $tabs-border-width $tabs-border-width;
+		} @else {
+			border-width: $tabs-border-width $tabs-border-width 0 0;
+		}
+		padding: $padding-tabs;
+		font-size: $font-size-tabs;
+		color: inherit;
+
+		&:hover,
+		&:focus {
+			background-color: if($style == 'inverse', $tabs-hover-inv-bg, $tabs-hover-bg);
+		}
+	}
+	> li.active,
+	> li.current-menu-item,
+	> li.current-menu-ancestor {
+		> .menu-btn {
+			background: if($style == 'inverse', $tabs-active-inv-bg, $tabs-active-bg);
+			border-bottom-color: transparent;
+			cursor: default;
+		}
+	}
+
+	// Horizontal
+	&.submenu-horz {
+		@include nav-tabs-horz;
+	}
+
+	// Level 2+
+	ul {
+
+		background: if($style == 'inverse', $tabs-active-inv-bg, $tabs-active-bg);
+		padding-top: $flyout-vert-spacing;
+		padding-bottom: $flyout-vert-spacing;
+
+		.menu-btn {
+
+			color: if($style == 'inverse', rgba($clr-text-inv-darken, .8), $clr-text-base);
+
+			&:hover,
+			&:focus {
+				color: if($style == 'inverse', $clr-text-inv-darken, $clr-text-darken);
 			}
 		}
-		&.text-dark {
-			> li + li:before,
-			a:not(:hover) {
-				color: $clr-text-lighten;
+	}
+	> li > ul {
+		@if $direction == 'rtl' {
+			border-left-color: if($style == 'inverse', $tabs-border-inv-color, $tabs-border-color);
+			border-left-style: solid;
+			border-left-width: $tabs-border-width;
+		} @else {
+			border-right-color: if($style == 'inverse', $tabs-border-inv-color, $tabs-border-color);
+			border-right-style: solid;
+			border-right-width: $tabs-border-width;
+		}
+	}
+
+}
+
+@each $breakpoint in $breakpoints {
+	@if $breakpoint != xl { // skip xl
+		@include min-width($breakpoint) {
+			.submenu-tabs.submenu-horz-#{$breakpoint} {
+				@include nav-tabs-horz;
 			}
-			a {
-				border: none;
+		}
+	}
+}
+
+@if ($style == 'inverse') {
+	.text-dark {
+		@include tabs-variant;
+	}
+	.text-light {
+		@include tabs-variant('inverse');
+	}
+} @else {
+	.text-light {
+		@include tabs-variant('inverse');
+	}
+	.text-dark {
+		@include tabs-variant;
+	}
+}
+
+//
+// Pills
+//
+
+.submenu-pills {
+
+	margin: -$pills-spacing;
+
+	> li {
+		padding: $pills-spacing;
+	}
+	> li > .menu-btn {
+
+		background: $pills-bg;
+		border-color: if($style == 'inverse', $pills-border-inv-color, $pills-border-color);
+		border-style: solid;
+		border-width: $pills-border-width;
+		color: inherit;
+		padding: $padding-pills;
+		font-size: $font-size-pills;
+
+		&:hover,
+		&:focus {
+			background: if($style == 'inverse', $pills-hover-inv-bg, $pills-hover-bg);
+		}
+	}
+
+	// Horizontal
+	&.submenu-horz {
+		@include nav-pills-horz;
+	}
+
+	// Level 2+
+	ul {
+
+		padding: $flyout-vert-spacing 10px;
+
+		.menu-btn {
+
+			color: if($style == 'inverse', rgba($clr-text-inv-darken, .8), $clr-text-base);
+			padding-right: 10px;
+			padding-left: 10px;
+
+			&:hover,
+			&:focus {
+				color: if($style == 'inverse', $clr-text-inv-darken, $clr-text-darken);
 			}
-			li.active span {
-				color: $clr-text-darken;
+		}
+	}
+}
+
+@each $breakpoint in $breakpoints {
+	@if $breakpoint != xl { // skip xl
+		@include min-width($breakpoint) {
+			.submenu-pills.submenu-horz-#{$breakpoint} {
+				@include nav-pills-horz;
 			}
+		}
+	}
+}
+
+@if ($style == 'inverse') {
+	.text-dark {
+		@include pills-variant;
+	}
+	.text-light {
+		@include pills-variant('inverse');
+	}
+} @else {
+	.text-light {
+		@include pills-variant('inverse');
+	}
+	.text-dark {
+		@include pills-variant;
+	}
+}
+
+.submenu-pills {
+	> li.active,
+	> li.current-menu-item,
+	> li.current-menu-ancestor {
+		> .menu-btn,
+		> .menu-btn:hover,
+		> .menu-btn:focus {
+			background: $pills-active-bg;
+			border-color: transparent;
+			color: $pills-active-text;
+			cursor: default;
 		}
 	}
 }

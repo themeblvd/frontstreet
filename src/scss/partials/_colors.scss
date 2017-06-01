@@ -17,9 +17,7 @@
 
 @include bg-variant('.bg-light', $clr-lightest);
 
-.bg-light {
-	border-color: $clr-lighter;
-}
+@include bg-variant('.bg-dark', $clr-dark);
 
 @each $name, $map in $clr-library {
 	@include bg-variant('.#{$name}', map-get($map, base), map-get($map, contrast));

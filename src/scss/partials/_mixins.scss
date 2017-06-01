@@ -537,6 +537,10 @@
 		background-color: $color;
 		@if $parent == info or $parent == success or $parent == warning or $parent == danger {
 			border-color: darken(adjust-hue($color, -10), 50%);
+		} @else if $parent == 'bg-light' {
+			border-color: $clr-border;
+		} @else if $parent == 'bg-dark' {
+			border-color: $clr-inv-border;
 		} @else {
 			border-color: darken($color, 15%);
 		}
@@ -554,7 +558,7 @@
 			color: $text;
 		}
 	}
-	#{$parent}.mobile-navbar ul {
+	#{$parent}.mobile-menu-bar ul {
 		background-color: $color;
 	}
 }
@@ -707,10 +711,185 @@
 // ==========================================================================
 
 //
-// Dropdown menu styling
+// General Horizontal Navigation
 //
 
-@mixin dropdown {
+@mixin nav-horz {
+	> li {
+		@if $direction == 'rtl' {
+			float: right;
+		} @else {
+			float: left;
+		}
+	}
+}
+
+//
+// Horizontal Tabs
+//
+
+@mixin nav-tabs-horz {
+	> li > .menu-btn {
+		border-bottom-width: $tabs-border-width;
+		margin-bottom: -$tabs-border-width;
+	}
+	> li.active > .menu-btn {
+		border-bottom-color: transparent;
+	}
+	&.fs-menu > li > ul {
+		border: none;
+		margin-top: $tabs-border-width;
+	}
+}
+
+//
+// Tabs Variant
+//
+
+@mixin tabs-variant($style: "default") {
+	.submenu-tabs {
+		@if ( $style == 'inverse' ) {
+
+			border-color: $tabs-border-inv-color;
+
+			> li > .menu-btn {
+				background: $tabs-inv-bg;
+				border-color: $tabs-border-inv-color;
+
+				&:hover,
+				&:focus {
+					background-color: $tabs-hover-inv-bg;
+				}
+			}
+			> li.active,
+			> li.current-menu-item,
+			> li.current-menu-ancestor {
+				> .menu-btn {
+					background: $tabs-active-inv-bg;
+				}
+			}
+			ul {
+
+				background: $tabs-active-inv-bg;
+
+				.menu-btn {
+
+					color: rgba($clr-text-inv-darken, .8);
+
+					&:hover,
+					&:focus {
+						color: $clr-text-inv-darken;
+					}
+				}
+
+			}
+			> li > ul {
+				@if $direction == 'rtl' {
+					border-left-color: $tabs-border-inv-color;
+				} @else {
+					border-right-color: $tabs-border-inv-color;
+				}
+			}
+
+		} @else {
+
+			border-color: $tabs-border-color;
+
+			> li > .menu-btn {
+				background: $tabs-bg;
+				border-color: $tabs-border-color;
+
+				&:hover,
+				&:focus {
+					background-color: $tabs-hover-bg;
+				}
+			}
+			> li.active,
+			> li.current-menu-item,
+			> li.current-menu-ancestor {
+				> .menu-btn {
+					background: $tabs-active-bg;
+				}
+			}
+			ul {
+
+				background: $tabs-active-bg;
+
+				.menu-btn {
+
+					color: $clr-text-base;
+
+					&:hover,
+					&:focus {
+						color: $clr-text-darken;
+					}
+				}
+			}
+			> li > ul {
+				@if $direction == 'rtl' {
+					border-right-color: $tabs-border-color;
+				} @else {
+					border-left-color: $tabs-border-color;
+				}
+			}
+		}
+	}
+}
+
+//
+// Horizontal Pills
+//
+
+@mixin nav-pills-horz {
+	&.fs-menu ul {
+		background-color: if($style == 'inverse', $pills-flyout-inv-bg, $pills-flyout-bg);
+		@if $direction == 'rtl' {
+			margin: $pills-spacing $pills-spacing 0 0;
+		} @else {
+			margin: $pills-spacing 0 0 $pills-spacing;
+		}
+	}
+}
+
+//
+// Pills Variant
+//
+
+@mixin pills-variant($style: "default") {
+	.submenu-pills {
+		@if ( $style == 'inverse' ) {
+
+			> li > .menu-btn {
+
+				border-color: $pills-border-inv-color;
+
+				&:hover,
+				&:focus {
+					background: $pills-hover-inv-bg;
+				}
+			}
+
+		} @else {
+
+			> li > .menu-btn {
+
+				border-color: $pills-border-color;
+
+				&:hover,
+				&:focus {
+					background: $pills-hover-bg;
+				}
+			}
+
+		}
+	}
+}
+
+//
+// Dropdown Menus
+//
+
+@mixin nav-dropdown {
 	ul,
 	.fs-mega {
 		@include box-shadow( 0 2px 5px rgba($clr-black, .05) );

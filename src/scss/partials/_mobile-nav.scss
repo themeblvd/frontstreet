@@ -2,7 +2,7 @@
 // Mobile (only) Navigation
 // --------------------------------------------------
 
-.mobile-navbar {
+.mobile-menu-bar {
 
 	overflow: hidden;
 	position: relative;
@@ -11,11 +11,11 @@
 
  	.menu-btn {
 		border: none;
-		font-size: $font-size-mobile-navbar-btn;
-		font-weight: $font-weight-mobile-navbar-btn;
-		letter-spacing: $font-ls-mobile-navbar-btn;
-		padding: em(18px, $font-size-mobile-navbar-btn) em(20px, $font-size-mobile-navbar-btn);
-		text-transform: $font-transform-mobile-navbar-btn;
+		font-size: $font-size-mobile-menu-bar-btn;
+		font-weight: $font-weight-mobile-menu-bar-btn;
+		letter-spacing: $font-ls-mobile-menu-bar-btn;
+		padding: em(18px, $font-size-mobile-menu-bar-btn) em(20px, $font-size-mobile-menu-bar-btn);
+		text-transform: $font-transform-mobile-menu-bar-btn;
 	}
 	&.text-dark .menu-btn {
 

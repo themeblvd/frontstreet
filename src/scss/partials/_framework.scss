@@ -3,9 +3,9 @@
 // --------------------------------------------------
 
 // Core Variables, Mixins and Functions
+@import "functions";
 @import "variables";
 @import "mixins";
-@import "functions";
 
 // Reset and Dependencies
 @import "normalize";
@@ -30,6 +30,7 @@
 @import "button-groups";
 @import "nav";
 @import "mobile-nav";
+@import "breadcrumbs";
 @import "alerts";
 // @import "dividers";
 

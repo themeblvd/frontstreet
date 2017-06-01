@@ -43,11 +43,11 @@ $font-size-micro					: $font-size-base - 6px; // 10px
 
 $font-size-headings : (
 	h1 : (
-		base						: 2.5rem,
+		base						: 2.75rem,
 		mobile						: 28px
 	),
 	h2 : (
-		base						: 2rem,
+		base						: 2.25rem,
 		mobile						: 22px
 	),
 	h3 : (
@@ -119,9 +119,11 @@ $font-size-caption					: $font-size-sm;
 $font-size-quote					: 1.3rem;
 $font-size-alert					: 0.9375rem;
 $font-size-btn						: $font-size-xxxs;
-$font-size-navbar-btn				: $font-size-sm;
-$font-size-subnav-btn				: $font-size-btn;
-$font-size-mobile-navbar-btn		: $font-size-sm;
+$font-size-menu-bar-btn				: $font-size-sm;
+$font-size-submenu-btn				: $font-size-btn;
+$font-size-tabs						: $font-size-sm;
+$font-size-pills					: $font-size-xxs;
+$font-size-mobile-menu-bar-btn		: $font-size-sm;
 $font-size-dropdown					: $font-size-xs;
 $font-size-field					: $font-size-sm;
 $font-size-field-label				: $font-size-field;
@@ -156,9 +158,9 @@ $font-weight-heading				: 700;
 $font-weight-heading-lg				: 700;
 $font-weight-heading-sm				: 700;
 $font-weight-btn					: 500;
-$font-weight-navbar-btn				: $font-weight-base;
-$font-weight-subnav-btn				: $font-weight-btn;
-$font-weight-mobile-navbar-btn		: $font-weight-navbar-btn;
+$font-weight-menu-bar-btn			: $font-weight-base;
+$font-weight-submenu-btn			: $font-weight-btn;
+$font-weight-mobile-menu-bar-btn	: $font-weight-menu-bar-btn;
 
 // Text Transform
 
@@ -168,9 +170,9 @@ $font-transform-heading-sm			: uppercase;
 $font-transform-subtitles			: none;
 $font-transform-quote				: none;
 $font-transform-btn					: uppercase;
-$font-transform-navbar-btn			: none;
-$font-transform-subnav-btn			: $font-transform-btn;
-$font-transform-mobile-navbar-btn	: $font-transform-navbar-btn;
+$font-transform-menu-bar-btn		: none;
+$font-transform-submenu-btn			: $font-transform-btn;
+$font-transform-mobile-menu-bar-btn	: $font-transform-menu-bar-btn;
 
 // Letter Spacing
 
@@ -179,9 +181,9 @@ $font-ls-heading-lg					: 1px;
 $font-ls-heading-sm					: 1px;
 $font-ls-subtitles					: 0;
 $font-ls-btn						: .12em;
-$font-ls-navbar-btn					: 0;
-$font-ls-subnav-btn					: $font-ls-btn;
-$font-ls-mobile-navbar-btn			: $font-ls-navbar-btn;
+$font-ls-menu-bar-btn				: 0;
+$font-ls-submenu-btn				: $font-ls-btn;
+$font-ls-mobile-menu-bar-btn		: $font-ls-menu-bar-btn;
 
 // ==========================================================================
 // Colors
@@ -239,7 +241,7 @@ $clr-link-hover						: #2a6496;
 
 $clr-branding : (
 	primary : (
-		base						: $clr-dark,
+		base						: $clr-darker,
 		contrast					: $clr-text-inv-base
 	),
 	secondary : (
@@ -403,8 +405,8 @@ $clr-contextual : (
 $clr-border							: $clr-trans-lighter;
 $clr-border-active					: $clr-trans-light;
 
-$clr-border-inv						: rgba($clr-black, 0.3);
-$clr-border-inv-active				: rgba($clr-black, 0.5);
+$clr-border-inv						: $clr-black;
+$clr-border-inv-active				: $clr-black;
 
 // Background Colors
 
@@ -413,10 +415,10 @@ $clr-bg-light						: $clr-lightest;
 $clr-bg-dark						: $clr-dark;
 $clr-bg-black						: $clr-black;
 
-$clr-bg-body						: $clr-white;
+$clr-bg-body						: $clr-bg-white;
 $clr-bg-inv-body					: $clr-darkest;
 $clr-bg-hr							: rgba($clr-bg-dark, 0.1);
-$clr-bg-code						: $clr-lightest;
+$clr-bg-code						: if($style == 'inverse', $clr-bg-black, $clr-bg-light);
 $clr-bg-kbd							: $clr-bg-dark;
 $clr-bg-btn							: darken($clr-bg-light, 2%);
 $clr-bg-field						: rgba($clr-white, 0.8);
@@ -495,8 +497,10 @@ $padding-list						: if($direction == 'rtl', 0 40px 0 0, 0 0 0 40px);
 $padding-alert						: 15px;
 $padding-btn						: 15px 22px; // Paired w/2px border
 $padding-field						: 16px 18px; // Paired w/1px border
-$padding-subnav						: 12px;
+$padding-submenu					: 12px;
 $padding-breadcrumbs				: 20px;
+$padding-tabs						: 14px 18px;
+$padding-pills						: 10px 14px;
 
 
 // ==========================================================================
@@ -642,6 +646,42 @@ $table-sm-font-size					: $font-size-sm;
 // ==========================================================================
 // Menus
 // ==========================================================================
+
+// Tabs
+
+$tabs-border-width					: 1px;
+$tabs-border-color					: $clr-border;
+$tabs-border-inv-color				: $clr-border-inv;
+
+$tabs-bg							: $clr-bg-light;
+$tabs-inv-bg						: rgba($clr-black, 0.2);
+
+$tabs-hover-bg						: darken($tabs-bg, 4%);
+$tabs-hover-inv-bg					: rgba($clr-black, 0.5);
+
+$tabs-active-bg						: $clr-bg-white;
+$tabs-active-inv-bg					: $clr-bg-dark;
+
+// Pills
+
+$pills-border-width					: 2px;
+$pills-border-color					: $clr-border;
+$pills-border-inv-color				: $clr-border-inv;
+
+$pills-bg							: transparent;
+
+$pills-hover-bg						: $tabs-hover-bg;
+$pills-hover-inv-bg					: $tabs-hover-inv-bg;
+
+$pills-active-bg					: map-deep-get($clr-branding, primary, base);
+$pills-active-text					: map-deep-get($clr-branding, primary, contrast);
+
+$pills-spacing						: 2px;
+
+$pills-flyout-bg					: $clr-bg-white;
+$pills-flyout-inv-bg				: $clr-bg-dark;
+
+// General flyout menus
 
 $flyout-vert-spacing				: .85em;
 $flyout-horz-spacing				: 20px;
