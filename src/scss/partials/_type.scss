@@ -295,7 +295,7 @@ code, kbd, tt, var {
 code {
     background-color: $clr-bg-code;
     @include border-radius(1px);
-	color: $clr-text-base;
+	color: if($style == 'inverse', $clr-text-inv-base, $clr-text-base);
 	font-size: 90%;
 	padding: 0.125em 0.25em;
 }
