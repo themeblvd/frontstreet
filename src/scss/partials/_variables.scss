@@ -490,6 +490,7 @@ $margin-field-group					: 0 4px;
 $margin-field-legend				: 0 0 ($spacing-element / 2) 0;
 $margin-field-help					: $margin-field-label;
 $margin-fieldset					: 0 0 $spacing-element 0;
+$margin-tabs						: 0 0 $spacing-element 0;
 
 // Padding
 
@@ -501,6 +502,7 @@ $padding-submenu					: 12px;
 $padding-breadcrumbs				: 20px;
 $padding-tabs						: 14px 18px;
 $padding-pills						: 10px 14px;
+$padding-tab-content				: 30px;
 
 
 // ==========================================================================
@@ -686,3 +688,14 @@ $pills-flyout-inv-bg				: $clr-bg-dark;
 $flyout-vert-spacing				: .85em;
 $flyout-horz-spacing				: 20px;
 $flyout-width						: 200px;
+
+// ==========================================================================
+// Tabs and Toggles
+// ==========================================================================
+
+$tab-content-border-width			: $tabs-border-width;
+$tab-content-border-color			: $tabs-border-color;
+$tab-content-border-inv-color		: $tabs-border-inv-color;
+
+$tab-content-bg						: $tabs-active-bg;
+$tab-content-inv-bg					: $tabs-active-inv-bg;

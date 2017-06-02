@@ -268,22 +268,41 @@
     	padding: em(18px, $font-size-menu-bar-btn) em(20px, $font-size-menu-bar-btn);
 		text-transform: $font-transform-menu-bar-btn;
 	}
-	&.text-dark > li > .menu-btn {
+	&.text-dark {
+		> li > .menu-btn {
 
-		color: $clr-text-darken;
+			color: $clr-text-darken;
 
-		&:hover,
-		&:focus {
-			background-color: rgba($clr-light, .3);
+			&:hover,
+			&:focus {
+				background-color: rgba($clr-light, .3);
+			}
+		}
+		> li.active,
+		> li.current-menu-item,
+		> li.current-menu-ancestor {
+			> .menu-btn {
+				background-color: rgba($clr-light, .3)
+			}
 		}
 	}
-	&.text-light > li > .menu-btn {
+	&.text-light {
 
-		color: $clr-text-inv-darken;
+		> li > .menu-btn {
 
-		&:hover,
-		&:focus {
-			background-color: rgba($clr-black, .3);
+			color: $clr-text-inv-darken;
+
+			&:hover,
+			&:focus {
+				background-color: rgba($clr-black, .5);
+			}
+		}
+		> li.active,
+		> li.current-menu-item,
+		> li.current-menu-ancestor {
+			> .menu-btn {
+				background-color: rgba($clr-black, .5);
+			}
 		}
 	}
 
@@ -300,22 +319,42 @@
 	.menu-btn {
 		border: none;
 	}
-	&.text-dark .menu-btn {
+	&.text-dark {
+		.menu-btn {
 
-		color: rgba($clr-text-darken, .8);
+			color: rgba($clr-text-darken, .8);
 
-		&:hover,
-		&:focus {
-			color: $clr-text-darken;
+			&:hover,
+			&:focus {
+				color: $clr-text-darken;
+			}
+		}
+		> li.active,
+		> li.current-menu-item,
+		> li.current-menu-ancestor {
+			> .menu-btn {
+				background-color: rgba($clr-light, .3);
+				color: $clr-text-darken;
+			}
 		}
 	}
-	&.text-light .menu-btn {
+	&.text-light {
+		.menu-btn {
 
-		color: rgba($clr-text-inv-darken, .8);
+			color: rgba($clr-text-inv-darken, .8);
 
-		&:hover,
-		&:focus {
-			color: $clr-text-inv-darken;
+			&:hover,
+			&:focus {
+				color: $clr-text-inv-darken;
+			}
+		}
+		> li.active,
+		> li.current-menu-item,
+		> li.current-menu-ancestor {
+			> .menu-btn {
+				background-color: rgba($clr-black, .5);
+				color: $clr-text-inv-darken;
+			}
 		}
 	}
 
@@ -374,6 +413,12 @@
 		> .menu-btn {
 			background: if($style == 'inverse', $tabs-active-inv-bg, $tabs-active-bg);
 			border-bottom-color: transparent;
+			cursor: default;
+		}
+	}
+	> li.active,
+	> li.current-menu-item {
+		> .menu-btn {
 			cursor: default;
 		}
 	}
@@ -446,10 +491,11 @@
 
 .submenu-pills {
 
-	margin: -$pills-spacing;
+	margin-right: -$pills-spacing;
+	margin-left: -$pills-spacing;
 
 	> li {
-		padding: $pills-spacing;
+		padding: 0 $pills-spacing;
 	}
 	> li > .menu-btn {
 
@@ -527,7 +573,10 @@
 			background: $pills-active-bg;
 			border-color: transparent;
 			color: $pills-active-text;
-			cursor: default;
 		}
+	}
+	> li.active,
+	> li.current-menu-item {
+		cursor: default;
 	}
 }

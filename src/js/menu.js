@@ -154,7 +154,7 @@
 	// SELF-INVOKING
 	// =============
 
-	$(document).ready(function(){
+	$(document).ready(function() {
 
 		$('.fs-menu').FrontStreetMenu();
 

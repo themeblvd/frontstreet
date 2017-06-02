@@ -134,7 +134,8 @@ gulp.task('render-project-js', function() {
 		'src/js/init.js',
 		'src/js/jump-menu.js',
 		'src/js/menu.js',
-		'src/js/mobile-menu.js'
+		'src/js/mobile-menu.js',
+		'src/js/tabs.js'
 	];
 
 	return gulp.src(files)

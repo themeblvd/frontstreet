@@ -16,7 +16,7 @@
 	// SELF-INVOKING
 	// =============
 
-	$(document).ready(function(){
+	$(document).ready(function() {
 
 		$("select.fs-jump-menu, select.tb-jump-menu").on('change', function() {
 

@@ -1038,3 +1038,18 @@
 		}
 	}
 }
+
+// ==========================================================================
+// Tabs and Toggles
+// ==========================================================================
+
+//
+// Tab Content Variant
+//
+
+@mixin tab-content-variant($style: "default") {
+	.fs-tabs.tabs-framed .tab-content {
+		background: if($style == 'inverse', $tab-content-inv-bg, $tab-content-bg);
+		border-color: if($style == 'inverse', $tab-content-border-inv-color, $tab-content-border-color);
+	}
+}

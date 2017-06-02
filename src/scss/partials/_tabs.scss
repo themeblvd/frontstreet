@@ -1,0 +1,56 @@
+
+// Tabbed Content
+// --------------------------------------------------
+
+.fs-tabs {
+
+	margin: $margin-tabs;
+
+	.tab-content {
+		padding: 0 5px;
+	}
+	.tab-pane {
+		display: none;
+	}
+	.tab-pane.active {
+		display: block;
+	}
+	&.tabs-framed {
+		.submenu-tabs {
+			margin-bottom: 0;
+		}
+		.menu-bar,
+		.submenu-bar,
+		.submenu-pills {
+			margin-bottom: $spacing-element / 2;
+		}
+		.tab-content {
+			border-style: solid;
+			border-width: $tab-content-border-width;
+			margin-top: -$tabs-border-width;
+			padding: $padding-tab-content;
+			padding-top: $padding-tab-content + 1;
+		}
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+@include tab-content-variant($style);
+
+@if ($style == 'inverse') {
+	.text-dark {
+		@include tab-content-variant;
+	}
+	.text-light {
+		@include tab-content-variant('inverse');
+	}
+} @else {
+	.text-light {
+		@include tab-content-variant('inverse');
+	}
+	.text-dark {
+		@include tab-content-variant;
+	}
+}

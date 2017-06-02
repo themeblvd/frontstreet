@@ -7273,12 +7273,24 @@ button.close {
   background-color: rgba(204, 204, 204, 0.3);
 }
 
+.menu-bar.text-dark > li.active > .menu-btn,
+.menu-bar.text-dark > li.current-menu-item > .menu-btn,
+.menu-bar.text-dark > li.current-menu-ancestor > .menu-btn {
+  background-color: rgba(204, 204, 204, 0.3);
+}
+
 .menu-bar.text-light > li > .menu-btn {
   color: #fff;
 }
 
 .menu-bar.text-light > li > .menu-btn:hover, .menu-bar.text-light > li > .menu-btn:focus {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.menu-bar.text-light > li.active > .menu-btn,
+.menu-bar.text-light > li.current-menu-item > .menu-btn,
+.menu-bar.text-light > li.current-menu-ancestor > .menu-btn {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .submenu-bar {
@@ -7297,11 +7309,25 @@ button.close {
   color: #333;
 }
 
+.submenu-bar.text-dark > li.active > .menu-btn,
+.submenu-bar.text-dark > li.current-menu-item > .menu-btn,
+.submenu-bar.text-dark > li.current-menu-ancestor > .menu-btn {
+  background-color: rgba(204, 204, 204, 0.3);
+  color: #333;
+}
+
 .submenu-bar.text-light .menu-btn {
   color: rgba(255, 255, 255, 0.8);
 }
 
 .submenu-bar.text-light .menu-btn:hover, .submenu-bar.text-light .menu-btn:focus {
+  color: #fff;
+}
+
+.submenu-bar.text-light > li.active > .menu-btn,
+.submenu-bar.text-light > li.current-menu-item > .menu-btn,
+.submenu-bar.text-light > li.current-menu-ancestor > .menu-btn {
+  background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
 }
 
@@ -7342,6 +7368,11 @@ button.close {
 .submenu-tabs > li.current-menu-ancestor > .menu-btn {
   background: #fff;
   border-bottom-color: transparent;
+  cursor: default;
+}
+
+.submenu-tabs > li.active > .menu-btn,
+.submenu-tabs > li.current-menu-item > .menu-btn {
   cursor: default;
 }
 
@@ -7506,11 +7537,12 @@ button.close {
 }
 
 .submenu-pills {
-  margin: -2px;
+  margin-right: -2px;
+  margin-left: -2px;
 }
 
 .submenu-pills > li {
-  padding: 2px;
+  padding: 0 2px;
 }
 
 .submenu-pills > li > .menu-btn {
@@ -7602,6 +7634,10 @@ button.close {
   background: #1b1b1b;
   border-color: transparent;
   color: #fff;
+}
+
+.submenu-pills > li.active,
+.submenu-pills > li.current-menu-item {
   cursor: default;
 }
 
@@ -7843,6 +7879,59 @@ button.close {
 
 .alert-danger.mobile-menu-bar ul {
   background-color: #f2dede;
+}
+
+.fs-tabs {
+  margin: 0 0 24px 0;
+}
+
+.fs-tabs .tab-content {
+  padding: 0 5px;
+}
+
+.fs-tabs .tab-pane {
+  display: none;
+}
+
+.fs-tabs .tab-pane.active {
+  display: block;
+}
+
+.fs-tabs.tabs-framed .submenu-tabs {
+  margin-bottom: 0;
+}
+
+.fs-tabs.tabs-framed .menu-bar,
+.fs-tabs.tabs-framed .submenu-bar,
+.fs-tabs.tabs-framed .submenu-pills {
+  margin-bottom: 12px;
+}
+
+.fs-tabs.tabs-framed .tab-content {
+  border-style: solid;
+  border-width: 1px;
+  margin-top: -1px;
+  padding: 30px;
+  padding-top: 31px;
+}
+
+.fs-tabs:last-child {
+  margin-bottom: 0;
+}
+
+.fs-tabs.tabs-framed .tab-content {
+  background: #fff;
+  border-color: rgba(176, 176, 176, 0.4);
+}
+
+.text-light .fs-tabs.tabs-framed .tab-content {
+  background: #333;
+  border-color: #000;
+}
+
+.text-dark .fs-tabs.tabs-framed .tab-content {
+  background: #fff;
+  border-color: rgba(176, 176, 176, 0.4);
 }
 
 .primary {
