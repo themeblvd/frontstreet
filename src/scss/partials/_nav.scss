@@ -103,7 +103,7 @@
 
 	// Drop indicator icons
 	li.menu-item-has-children > .menu-btn {
-		@if $direction == 'rtl' {
+		@if ($direction == 'rtl') {
 			padding-left: 2.5em;
 		} @else {
 			padding-right: 2.5em;
@@ -114,7 +114,7 @@
 		font-family: "FontAwesome";
 		position: absolute;
 		top: 50%;
-		@if $direction == 'rtl' {
+		@if ($direction == 'rtl') {
 			left: 1em;
 		} @else {
 			right: 1em;
@@ -132,7 +132,7 @@
 		padding: $flyout-vert-spacing 0;
 		position: static;
 		top: 100%;
-		@if $direction == 'rtl' {
+		@if ($direction == 'rtl') {
 			right: 0;
 		} @else {
 			left: 0;
@@ -143,7 +143,7 @@
 		display: none;
 	}
 	ul.reverse {
-		@if $direction == 'rtl' {
+		@if ($direction == 'rtl') {
 			left: 0;
 			right: initial;
 		} @else {
@@ -153,14 +153,14 @@
 	}
 	ul ul {
 		top: 0;
-		@if $direction == 'rtl' {
+		@if ($direction == 'rtl') {
 			right: 100%;
 		} @else {
 			left: 100%;
 		}
 	}
 	ul.reverse ul {
-		@if $direction == 'rtl' {
+		@if ($direction == 'rtl') {
 			left: 100%;
 			right: initial;
 		} @else {
@@ -202,7 +202,7 @@
 		display: none;
 		padding: 20px 0;
 		top: 100%;
-		@if $direction == 'rtl' {
+		@if ($direction == 'rtl') {
 			right: 0;
 		} @else {
 			left: 0;
@@ -382,7 +382,7 @@
 
 	border-color: if($style == 'inverse', $tabs-border-inv-color, $tabs-border-color);
 	border-style: solid;
-	@if $direction == 'rtl' {
+	@if ($direction == 'rtl') {
 		border-width: $tabs-border-width $tabs-border-width 0 0;
 	} @else {
 		border-width: 0 0 $tabs-border-width $tabs-border-width;
@@ -393,7 +393,7 @@
 		background: if($style == 'inverse', $tabs-inv-bg, $tabs-bg);
 		border-color: if($style == 'inverse', $tabs-border-inv-color, $tabs-border-color);
 		border-style: solid;
-		@if $direction == 'rtl' {
+		@if ($direction == 'rtl') {
 			border-width: 0 0 $tabs-border-width $tabs-border-width;
 		} @else {
 			border-width: $tabs-border-width $tabs-border-width 0 0;
@@ -446,7 +446,7 @@
 		}
 	}
 	> li > ul {
-		@if $direction == 'rtl' {
+		@if ($direction == 'rtl') {
 			border-left-color: if($style == 'inverse', $tabs-border-inv-color, $tabs-border-color);
 			border-left-style: solid;
 			border-left-width: $tabs-border-width;

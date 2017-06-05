@@ -38,14 +38,14 @@
 
 	// Sub-level indicator icons
 	li.menu-item-has-children > .menu-btn {
-		@if $direction == 'rtl' {
+		@if ($direction == 'rtl') {
 			padding-left: 2.5em;
 		} @else {
 			padding-right: 2.5em;
 		}
 	}
 	li.menu-item-has-children > .menu-btn:after {
-		@if $direction == 'rtl' {
+		@if ($direction == 'rtl') {
 			content: "\f104"; // point left
 		} @else {
 			content: "\f105"; // point right
@@ -53,15 +53,14 @@
 		font-family: "FontAwesome";
 		position: absolute;
 		top: 50%;
-		@if $direction == 'rtl' {
+		@if ($direction == 'rtl') {
 			left: 1em;
 		} @else {
 			right: 1em;
 		}
 		text-align: center;
 		@include transform( translate(0, -50%) );
-		-webkit-transition: -webkit-transform .2s cubic-bezier(0.04,.78,.35,.92), top .2s ease-in-out;
-		transition: transform .2s cubic-bezier(0.04,.78,.35,.92), top .2s ease-in-out;
+		@include transition( "transform .2s cubic-bezier(0.04,.78,.35,.92), top .2s ease-in-out" );
 		width: 1em;
 		height: 1em;
 	}
@@ -69,7 +68,7 @@
 	// Back buttons
 	.menu-btn.back:after {
 		content: if ( $direction == 'rtl', "\f105", "\f104" );
-		@if $direction == 'rtl' {
+		@if ($direction == 'rtl') {
 			content: "\f105"; // point right
 		} @else {
 			content: "\f104"; // point left
@@ -82,19 +81,19 @@
 		position: absolute;
 		top: 0;
 		bottom: 0;
-		@if $direction == 'rtl' {
+		@if ($direction == 'rtl') {
 			right: 100%;
 		} @else {
 			left: 100%;
 		}
 		width: 100%;
 		@include transform( translate3D(0, 0, 0) );
-		transition: transform .4s ease-in-out; // Transition effect only supported in modern browsers
+		@include transition( transform .4s ease-in-out );
 		z-index: 1;
 		@include list-unstyled;
 	}
 	ul.on {
-		@if $direction == 'rtl' {
+		@if ($direction == 'rtl') {
 			@include transform( translate3D(100%, 0, 0) );
 		} @else {
 			@include transform( translate3D(-100%, 0, 0) );

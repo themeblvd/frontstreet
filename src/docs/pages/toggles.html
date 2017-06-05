@@ -1,32 +1,6 @@
-<!DOCTYPE html>
-<html lang="en-US">
-	<head>
-
-		<meta charset="UTF-8" />
-		<link rel="profile" href="http://gmpg.org/xfn/11" />
-
-		<title>Toggled Content</title>
-
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-		<link rel="stylesheet" href='assets/frontstreet/plugins/fontawesome/css/font-awesome.min.css' type='text/css' media='all' />
-		<link rel="stylesheet" href='assets/frontstreet/css/frontstreet.css' type='text/css' media='all' />
-
-		<link rel="stylesheet" href='assets/css/docs.min.css' type='text/css' media='all' />
-
-	</head>
-	<body>
-
-		<div id="wrapper">
-			<div id="container">
-
-				<article id="main">
-
-					<h1 class="heading-lg">
-						Toggled Content
-						
-					</h1>
-
+@@include('../layout/header.html', {
+	 "title": "Toggled Content"
+})
 
 <p>To create a toggled content element, you need a title and content element wrapped within a parent element with class <code>fs-toggle</code>. Your title element can be any heading element, but must have class <code>toggle-title</code> added to trigger the toggle functionality. And your content element must have class <code>toggle-content</code> in order to be toggleable.</p>
 
@@ -696,37 +670,4 @@
 &lt;/div&gt;<!-- .toggle-group -->
 </pre>
 
-
-				</article><!-- #main (end) -->
-
-			</div><!-- #container (end) -->
-		</div><!-- #wrapper (end) -->
-
-<script type='text/javascript'>
-/* <![CDATA[ */
-/**
- * Optional configuration object that can be used to
- * disable individiual JavaScript components.
- */
-var frontstreet_config = {
-	"menu"  			: true,
-	"mobile-menu"		: true,
-	'jump-menu'			: true,
-	'tabs'				: true,
-	'toggles'			: true
-};
-/* ]]> */
-</script>
-
-<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="assets/frontstreet/js/frontstreet.min.js"></script>
-<script type="text/javascript" src="assets/js/docs.min.js"></script>
-
-<script type="text/javascript">
-	SyntaxHighlighter.all()
-</script>
-
-
-	</body>
-</html>
-
+@@include('../layout/footer.html')

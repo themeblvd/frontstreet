@@ -59,9 +59,16 @@
 //
 
 @mixin transition($val) {
-	-webkit-transition: $val;
-	-moz-transition: $val;
-	-ms-transition: $val;
+
+	$new-val: str-replace(inspect($val), "transform", "-webkit-transform");
+	-webkit-transition: #{$new-val};
+
+	$new-val: str-replace(inspect($val), "transform", "-moz-transform");
+	-moz-transition: #{$new-val};
+
+	$new-val: str-replace(inspect($val), "transform", "-ms-transform");
+	-ms-transition: #{$new-val};
+
 	transition: $val;
 }
 
@@ -268,7 +275,7 @@
 
 	}
 	#{$list} {
-		@if $direction == 'rtl' {
+		@if ($direction == 'rtl') {
 			float: right;
 		} @else {
 			float: left;
@@ -289,7 +296,7 @@
 	}
 	@if ($type == push) and ($index > 0) {
 		.col-#{$class}-push-#{$num} {
-			@if $direction == 'rtl' {
+			@if ($direction == 'rtl') {
 				right: percentage(($index / $columns));
 			} @else  {
 				left: percentage(($index / $columns));
@@ -298,7 +305,7 @@
 	}
 	@if ($type == push) and ($index == 0) {
 		.col-#{$class}-push-0 {
-			@if $direction == 'rtl' {
+			@if ($direction == 'rtl') {
 				right: auto;
 			} @else  {
 				left: auto;
@@ -307,7 +314,7 @@
 	}
 	@if ($type == pull) and ($index > 0) {
 		.col-#{$class}-pull-#{$num} {
-			@if $direction == 'rtl' {
+			@if ($direction == 'rtl') {
 				left: percentage(($index / $columns));
 			} @else  {
 				right: percentage(($index / $columns));
@@ -316,7 +323,7 @@
 	}
 	@if ($type == pull) and ($index == 0) {
 		.col-#{$class}-pull-0 {
-			@if $direction == 'rtl' {
+			@if ($direction == 'rtl') {
 				left: auto;
 			} @else {
 				right: auto;
@@ -325,7 +332,7 @@
 	}
 	@if ($type == offset) {
 		.col-#{$class}-offset-#{$num} {
-			@if $direction == 'rtl' {
+			@if ($direction == 'rtl') {
 				margin-right: percentage(($index / $columns));
 			} @else {
 				margin-left: percentage(($index / $columns));
@@ -398,7 +405,7 @@
 				#{$has-bg} {
 					@if $type == 'start' {
 
-						@if $direction == 'rtl' {
+						@if ($direction == 'rtl') {
 							margin-left: $grid-gutters / 2;
 						} @else {
 							margin-right: $grid-gutters / 2;
@@ -406,7 +413,7 @@
 
 					} @else {
 
-						@if $direction == 'rtl' {
+						@if ($direction == 'rtl') {
 							margin-right: $grid-gutters / 2;
 						} @else {
 							margin-left: $grid-gutters / 2;
@@ -417,7 +424,7 @@
 				#{$non-bg} {
 					@if $type == 'start' {
 
-						@if $direction == 'rtl' {
+						@if ($direction == 'rtl') {
 							padding-right: 0;
 						} @else {
 							padding-left: 0;
@@ -425,7 +432,7 @@
 
 					} @else {
 
-						@if $direction == 'rtl' {
+						@if ($direction == 'rtl') {
 							padding-left: 0;
 						} @else {
 							padding-right: 0;
@@ -444,6 +451,29 @@
 // Typography
 // ==========================================================================
 
+@mixin heading-variant($style: "default") {
+
+	$color: $clr-text-darken;
+
+	@if ( $style == 'inverse' ) {
+		$color: $clr-text-inv-darken;
+	}
+
+	$selector: "h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6";
+
+	@each $tag, $map in $font-size-headings-bigger {
+		$selector: "#{$selector}, .heading-#{$tag}";
+	}
+
+	@each $tag, $map in $font-size-headings-smaller {
+		$selector: "#{$selector}, .heading-#{$tag}";
+	}
+
+	#{$selector} {
+		color: $color;
+	}
+}
+
 //
 // Colorless links, meant to blend into content.
 // Used with sections, which shift text to opposite of default style.
@@ -452,7 +482,7 @@
 @mixin blend-links() {
 	a {
 		color: inherit;
-		@if $style == 'inverse' {
+		@if ($style == 'inverse') {
 			border-bottom: 1px solid $clr-text-base;
 		} @else {
 			border-bottom: 1px solid rgba($clr-text-inv-base, 0.8);
@@ -462,7 +492,7 @@
 
 		&:hover,
 		&:focus {
-			@if $style == 'inverse' {
+			@if ($style == 'inverse') {
 				border-color: $clr-text-darken;
 				color: $clr-text-darken;
 			} @else {
@@ -503,7 +533,7 @@
 
 @mixin list-unstyled() {
 	list-style: none;
-	@if $direction == 'rtl' {
+	@if ($direction == 'rtl') {
 		padding-right: 0;
 	} @else {
 		padding-left: 0;
@@ -716,7 +746,7 @@
 
 @mixin nav-horz {
 	> li {
-		@if $direction == 'rtl' {
+		@if ($direction == 'rtl') {
 			float: right;
 		} @else {
 			float: left;
@@ -784,7 +814,7 @@
 
 			}
 			> li > ul {
-				@if $direction == 'rtl' {
+				@if ($direction == 'rtl') {
 					border-left-color: $tabs-border-inv-color;
 				} @else {
 					border-right-color: $tabs-border-inv-color;
@@ -826,7 +856,7 @@
 				}
 			}
 			> li > ul {
-				@if $direction == 'rtl' {
+				@if ($direction == 'rtl') {
 					border-right-color: $tabs-border-color;
 				} @else {
 					border-left-color: $tabs-border-color;
@@ -843,7 +873,7 @@
 @mixin nav-pills-horz {
 	&.fs-menu ul {
 		background-color: if($style == 'inverse', $pills-flyout-inv-bg, $pills-flyout-bg);
-		@if $direction == 'rtl' {
+		@if ($direction == 'rtl') {
 			margin: $pills-spacing $pills-spacing 0 0;
 		} @else {
 			margin: $pills-spacing 0 0 $pills-spacing;
@@ -896,14 +926,14 @@
 		position: absolute;
 	}
 	ul li.menu-item-has-children > .menu-btn:after {
-		@if $direction == 'rtl' {
+		@if ($direction == 'rtl') {
 			content: "\f104";
 		} @else {
 			content: "\f105";
 		}
 	}
 	ul.reverse li.menu-item-has-children > .menu-btn:after {
-		@if $direction == 'rtl' {
+		@if ($direction == 'rtl') {
 			content: "\f105";
 		} @else {
 			content: "\f104";
@@ -924,7 +954,7 @@
 		}
 	}
 	.fs-mega-section {
-		@if $direction == 'rtl' {
+		@if ($direction == 'rtl') {
 			float: right;
 		} @else {
 			float: left;
@@ -1051,5 +1081,29 @@
 	.fs-tabs.tabs-framed .tab-content {
 		background: if($style == 'inverse', $tab-content-inv-bg, $tab-content-bg);
 		border-color: if($style == 'inverse', $tab-content-border-inv-color, $tab-content-border-color);
+	}
+}
+
+//
+// Toggle Variant
+//
+
+@mixin toggle-variant($style: "default") {
+
+	$icon: "close-dark.svg";
+	$border-clr: $toggle-border-color;
+
+	@if ($style == 'inverse') {
+		$icon: "close-light.svg";
+		$border-clr: $toggle-border-inv-color;
+	}
+
+	.fs-toggle {
+
+		border-color: $border-clr;
+
+		.toggle-title:after {
+			background-image: url('../svg/#{$icon}');
+		}
 	}
 }

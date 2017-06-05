@@ -38,8 +38,7 @@
 		opacity: 1;
 		position: absolute;
 		@include transform(preserve-3d);
-		-webkit-transition: -webkit-transform .2s cubic-bezier(0.04,.78,.35,.92), top .2s ease-in-out;
-		transition: transform .2s cubic-bezier(0.04,.78,.35,.92), top .2s ease-in-out;
+		@include transition( "transform .2s cubic-bezier(0.04,.78,.35,.92), top .2s ease-in-out" );
 		width: 100%;
 		height: 2px;
 	}

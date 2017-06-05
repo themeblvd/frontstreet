@@ -3,7 +3,7 @@
 // --------------------------------------------------
 
 .alert {
-	@if $direction == 'rtl' {
+	@if ($direction == 'rtl') {
 		border-right: 10px solid transparent;
 	} @else {
 		border-left: 10px solid transparent;

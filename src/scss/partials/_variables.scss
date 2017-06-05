@@ -464,33 +464,37 @@ $border-utils : (
 
 // General
 
-$spacing-element					: 24px;
+$spacing-element					: 30px;
+$spacing-paragraph					: 24px;
 
 // Margins
 
-$margin-element						: 0 0 $spacing-element 0;
+$margin-element						: $spacing-element 0;
+
+$margin-paragraph					: $spacing-paragraph 0;
+$margin-heading						: $spacing-element 0 $spacing-paragraph 0;
+$margin-heading-lg					: $margin-paragraph;
+$margin-heading-sm					: $margin-paragraph;
 $margin-column						: $spacing-element;
-$margin-heading						: ($spacing-element + 10px) 0 $spacing-element 0;
-$margin-heading-lg					: 0 0 $spacing-element 0;
-$margin-heading-sm					: 0 0 $spacing-element 0;
-$margin-paragraph					: 0 0 $spacing-element 0;
-$margin-lead						: 0 0 $spacing-element 0;
-$margin-list						: 0 0 $spacing-element 0;
+$margin-lead						: $margin-element;
+$margin-list						: $margin-element;
 $margin-quote						: 40px 30px;
-$margin-table						: 0 0 $spacing-element 0;
-$margin-alert						: 0 0 $spacing-element 0;
+$margin-table						: $margin-element;
+$margin-alert						: $margin-element;
 $margin-btn-group					: 0 -1px;
 $margin-btn-group-block				: 0 -1px $spacing-element -1px;
 $margin-btn-group-btn				: 0 1px;
-$margin-pagination					: 0 0 $spacing-element 0;
-$margin-form						: 0 0 $spacing-element 0;
+$margin-pagination					: $margin-element;
+$margin-form						: $margin-element;
 $margin-field						: 0 0 ($spacing-element / 2) 0;
 $margin-field-label					: 0 4px ($spacing-element / 2) 4px;
 $margin-field-group					: 0 4px;
 $margin-field-legend				: 0 0 ($spacing-element / 2) 0;
 $margin-field-help					: $margin-field-label;
-$margin-fieldset					: 0 0 $spacing-element 0;
-$margin-tabs						: 0 0 $spacing-element 0;
+$margin-fieldset					: $margin-element;
+$margin-tabs						: $margin-element;
+$margin-toggle						: $margin-element;
+$margin-toggle-group				: $margin-toggle;
 
 // Padding
 
@@ -693,9 +697,23 @@ $flyout-width						: 200px;
 // Tabs and Toggles
 // ==========================================================================
 
+// Tabs
+
 $tab-content-border-width			: $tabs-border-width;
 $tab-content-border-color			: $tabs-border-color;
 $tab-content-border-inv-color		: $tabs-border-inv-color;
 
 $tab-content-bg						: $tabs-active-bg;
 $tab-content-inv-bg					: $tabs-active-inv-bg;
+
+// Toggles
+
+$toggle-border-width				: 1px;
+$toggle-border-color				: $clr-border;
+$toggle-border-inv-color			: $clr-border-inv;
+
+$toggle-vert-space					: 24px;
+$toggle-horz-space					: 10px;
+
+$toggle-icon-size					: $font-size-base;
+$toggle-icon-buffer					: 4px;

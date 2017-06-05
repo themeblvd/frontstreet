@@ -11,7 +11,7 @@ table {
 }
 caption,
 th {
-	@if $direction == 'rtl' {
+	@if ($direction == 'rtl') {
 		text-align: right;
 	} @else {
 		text-align: left;

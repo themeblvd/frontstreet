@@ -17,13 +17,13 @@ html {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-@if $direction == 'rtl' {
+@if ($direction == 'rtl') {
 	body {
 		direction: rtl;
 		unicode-bidi: embed;
 	}
 }
-@if $style == 'inverse' {
+@if ($style == 'inverse') {
 	.text-dark {
 		color: $clr-text-base;
 	}
@@ -52,7 +52,7 @@ a:active,
 a:focus {
 	color: $clr-link-hover;
 }
-@if $style == 'inverse' {
+@if ($style == 'inverse') {
 	.text-dark {
 		@include blend-links();
 	}
@@ -84,14 +84,14 @@ a:focus {
 
 p {
 	margin: $margin-paragraph;
-	@include margin-vert-flush
+	@include margin-vert-flush;
 }
 .lead {
 	@include min-width(sm) {
 		font-size: $font-size-lead;
 		line-height: $font-lh-lead;
 		margin: $margin-lead;
-		@include margin-vert-flush
+		@include margin-vert-flush;
 	}
 }
 
@@ -101,7 +101,6 @@ p {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-	color: if($style == 'inverse', $clr-text-inv-darken, $clr-text-darken);
 	font-weight: $font-weight-heading;
 	font-family: $font-fam-headings;
 	font-weight: $font-weight-heading;
@@ -110,41 +109,6 @@ h1, h2, h3, h4, h5, h6,
 	margin: $margin-heading;
 	text-transform: $font-transform-heading;
 	@include margin-vert-flush;
-}
-@if $style == 'inverse' {
-	.text-dark h1, .text-dark .h1,
-	.text-dark h2, .text-dark .h2,
-	.text-dark h3, .text-dark .h3,
-	.text-dark h4, .text-dark .h4,
-	.text-dark h5, .text-dark .h5,
-	.text-dark h6, .text-dark .h6 {
-		color: $clr-text-darken;
-	}
-	.text-light h1, .text-light .h1,
-	.text-light h2, .text-light .h2,
-	.text-light h3, .text-light .h3,
-	.text-light h4, .text-light .h4,
-	.text-light h5, .text-light .h5,
-	.text-light h6, .text-light .h6 {
-		color: $clr-text-inv-darken;
-	}
-} @else {
-	.text-light h1, .text-light .h1,
-	.text-light h2, .text-light .h2,
-	.text-light h3, .text-light .h3,
-	.text-light h4, .text-light .h4,
-	.text-light h5, .text-light .h5,
-	.text-light h6, .text-light .h6 {
-		color: $clr-text-inv-darken;
-	}
-	.text-dark h1, .text-dark .h1,
-	.text-dark h2, .text-dark .h2,
-	.text-dark h3, .text-dark .h3,
-	.text-dark h4, .text-dark .h4,
-	.text-dark h5, .text-dark .h5,
-	.text-dark h6, .text-dark .h6 {
-		color: $clr-text-darken;
-	}
 }
 @each $tag, $map in $font-size-headings {
 	#{$tag}, .#{$tag} {
@@ -190,6 +154,7 @@ h6 small, .h6 small {
 .heading-xl,
 .heading-xxl,
 .heading-xxxl {
+	color: if($style == 'inverse', $clr-text-inv-darken, $clr-text-darken);
 	font-weight: $font-weight-heading-lg;
 	letter-spacing: $font-ls-heading-lg;
 	margin: $margin-heading-lg;
@@ -217,6 +182,7 @@ h6 small, .h6 small {
 .heading-xs,
 .heading-xxs,
 .heading-xxxs {
+	color: if($style == 'inverse', $clr-text-inv-darken, $clr-text-darken);
 	font-weight: $font-weight-heading-sm;
 	letter-spacing: $font-ls-heading-sm;
 	margin: $margin-heading-sm;
@@ -226,6 +192,28 @@ h6 small, .h6 small {
 @each $tag, $map in $font-size-headings-smaller {
 	.heading-#{$tag} {
 		font-size: map-get($map, base);
+	}
+}
+
+//
+// Heading Color
+//
+
+@include heading-variant($style);
+
+@if ($style == 'inverse') {
+	.text-dark {
+		@include heading-variant('default');
+	}
+	.text-light {
+		@include heading-variant('inverse');
+	}
+} @else {
+	.text-light {
+		@include heading-variant('inverse');
+	}
+	.text-dark {
+		@include heading-variant('default');
 	}
 }
 
@@ -244,7 +232,7 @@ h6 small, .h6 small {
 		background: map-deep-get($clr-branding, secondary, base);
 		position: absolute;
 		bottom: -2px;
-		@if $direction == 'rtl' {
+		@if ($direction == 'rtl') {
 			right: 0;
 		} @else {
 			left: 0;
@@ -254,7 +242,7 @@ h6 small, .h6 small {
 		z-index: 2;
 	}
 }
-@if $style == 'inverse' {
+@if ($style == 'inverse') {
 	.text-dark .heading-underline {
 		border-bottom-color: $clr-trans-lightest;
 	}
@@ -352,8 +340,9 @@ address {
 abbr, acronym {
     border-bottom: 1px dotted if($style == 'inverse', $clr-border-inv, $clr-border);
     cursor: help;
+	text-decoration: inherit;
 }
-@if $style == 'inverse' {
+@if ($style == 'inverse') {
 	.text-dark abbr,
 	.text-dark acronym {
 		border-color: $clr-border;
@@ -406,7 +395,7 @@ blockquote {
 		margin-left: 0;
 	}
 }
-@if $style == 'inverse' {
+@if ($style == 'inverse') {
 	.text-dark blockquote {
 		color: $clr-text-darken;
 	}
@@ -449,7 +438,7 @@ blockquote {
 	}
 
 }
-@if $style == 'inverse' {
+@if ($style == 'inverse') {
 	.text-dark blockquote cite,
 	.text-dark blockquote cite:before {
 		color: $clr-text-lighten;

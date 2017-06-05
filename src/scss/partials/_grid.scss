@@ -7,22 +7,18 @@
 //
 
 .row {
-
 	@include make-row;
-
-	&:last-child {
-		margin-bottom: 0;
-	}
+	@include margin-vert-flush;
 }
 .row-flush-start {
-	@if $direction == 'rtl' {
+	@if ($direction == 'rtl') {
 		margin-right: 0;
 	} @else {
 		margin-left: 0;
 	}
 }
 .row-flush-end {
-	@if $direction == 'rtl' {
+	@if ($direction == 'rtl') {
 		margin-left: 0;
 	} @else {
 		margin-right: 0;
@@ -34,12 +30,8 @@
 //
 
 .col {
-
 	margin-bottom: $margin-column;
-
-	&:last-child {
-		margin-bottom: 0;
-	}
+	@include margin-vert-flush;
 }
 
 //

@@ -31,6 +31,22 @@
 			$this.options.deepLink = true;
 		}
 
+		// Setup accessiblity.
+
+		$element
+			.find('.tab-pane')
+			.each(function() {
+
+				var $pane = $(this);
+
+				if ( $pane.hasClass('active') ) {
+					$pane.attr('aria-expanded', true);
+				} else {
+					$pane.attr('aria-expanded', false);
+				}
+
+			});
+
 		// Toggle tab content.
 
 		$element
@@ -61,14 +77,13 @@
 
 		}
 
-	}
+	};
 
 	Tabs.DEFAULTS = {
-		speed 		: 200,
 		nav			: '.menu-bar, .submenu-bar, .submenu-tabs, .submenu-pills',
 		height		: false,
 		deepLink	: false
-	}
+	};
 
 	Tabs.prototype.show = function($element, $btn, options) {
 
@@ -78,8 +93,20 @@
 		$nav.find('li').removeClass('active');
 		$btn.closest('li').addClass('active');
 
-		$element.find('.tab-pane').hide();
-		$element.find('#' + target).fadeIn(options.speed);
+		$element
+			.find('.tab-pane')
+			.attr('aria-expanded', false)
+			.removeClass('in')
+			.hide()
+			.removeClass('fade');
+
+		$element
+			.find('#' + target)
+			.attr('aria-expanded', true)
+			.addClass('fade')
+			.show(0, function() {
+				$(this).addClass('in');
+			});
 
 	};
 

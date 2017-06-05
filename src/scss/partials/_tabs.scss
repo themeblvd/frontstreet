@@ -32,9 +32,9 @@
 			padding-top: $padding-tab-content + 1;
 		}
 	}
-	&:last-child {
-		margin-bottom: 0;
-	}
+
+	@include margin-vert-flush;
+
 }
 
 @include tab-content-variant($style);

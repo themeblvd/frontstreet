@@ -1,0 +1,113 @@
+
+// Toggles
+// --------------------------------------------------
+
+
+.fs-toggle {
+
+	border-style: solid;
+	border-width: $toggle-border-width 0;
+	margin: $margin-toggle;
+
+	.toggle-title {
+
+		cursor: pointer;
+		display: block;
+		margin: 0;
+		padding: $toggle-vert-space $toggle-horz-space;
+
+		@if ($direction == 'rtl') {
+			padding-left: $toggle-icon-size + (2 * $toggle-horz-space) + (2 * $toggle-icon-buffer);
+		} @else {
+			padding-right: $toggle-icon-size + (2 * $toggle-horz-space) + (2 * $toggle-icon-buffer);
+		}
+
+		position: relative;
+
+		&.heading-lg,
+		&.heading-xl,
+		&.heading-xxl,
+		&.heading-xxxl {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+		&:after {
+			content: "";
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: $toggle-icon-size $toggle-icon-size;
+			display: block;
+			opacity: 0.5;
+			position: absolute;
+			top: 50%;
+
+			@if ($direction == 'rtl') {
+				left: $toggle-horz-space + $toggle-icon-buffer;
+			} @else {
+				right: $toggle-horz-space + $toggle-icon-buffer;
+			}
+
+			width: $toggle-icon-size;
+			height: $toggle-icon-size;
+
+			@include transform( translate3D(0, -50%, 0) rotate(45deg) );
+			@include transition( transform .1s ease );
+
+		}
+		&:hover:after,
+		&:focus:after {
+			opacity: 1;
+		}
+	}
+	&.toggle-expanded .toggle-title:after {
+		@include transform( translate3D(0, -50%, 0) rotate(0) );
+	}
+	.toggle-content {
+		display: none;
+		padding:  $toggle-vert-space $toggle-horz-space;
+		padding-top: 0;
+	}
+
+	@include margin-vert-flush;
+
+}
+
+@include toggle-variant($style);
+
+@if ($style == 'inverse') {
+	.text-dark {
+		@include toggle-variant('default');
+	}
+	.text-light {
+		@include toggle-variant('inverse');
+	}
+} @else {
+	.text-light {
+		@include toggle-variant('inverse');
+	}
+	.text-dark {
+		@include toggle-variant('default');
+	}
+}
+
+//
+// Groups
+//
+
+.toggle-group {
+
+	margin: $margin-toggle-group;
+
+	@include margin-vert-flush;
+
+	.fs-toggle {
+
+		border-bottom-width: 0;
+		margin-top: 0;
+		margin-bottom: 0;
+
+		&:last-child {
+			border-bottom-width: $toggle-border-width;
+		}
+	}
+}
