@@ -340,7 +340,7 @@ address {
 abbr, acronym {
     border-bottom: 1px dotted if($style == 'inverse', $clr-border-inv, $clr-border);
     cursor: help;
-	text-decoration: inherit;
+	text-decoration: inherit ;
 }
 @if ($style == 'inverse') {
 	.text-dark abbr,
