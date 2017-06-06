@@ -48,8 +48,10 @@
 
 		$toggle
 			.find('.toggle-title')
-			.on('click.fs.toggle', function() {
-				$this.toggle( $this, $(this), $toggle, $group );
+			.on('click.fs.toggle', function(e) {
+				e.preventDefault();
+				$(this).blur();
+				$this.toggle( $this, $toggle, $group );
 				return false;
 			});
 
@@ -60,7 +62,7 @@
 		accordion 	: false
 	};
 
-	Toggles.prototype.toggle = function($this, $title, $toggle, $group) {
+	Toggles.prototype.toggle = function($this, $toggle, $group) {
 
 		if ( $toggle.hasClass('toggle-expanded') ) {
 

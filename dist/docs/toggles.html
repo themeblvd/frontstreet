@@ -9,7 +9,8 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<link rel="stylesheet" href='assets/frontstreet/plugins/fontawesome/css/font-awesome.min.css' type='text/css' media='all' />
+		<link rel="stylesheet" href='assets/frontstreet/plugins/font-awesome/css/font-awesome.min.css' type='text/css' media='all' />
+		<link rel="stylesheet" href='assets/frontstreet/plugins/magnific-popup/magnific-popup.min.css' type='text/css' media='all' />
 		<link rel="stylesheet" href='assets/frontstreet/css/frontstreet.css' type='text/css' media='all' />
 
 		<link rel="stylesheet" href='assets/css/docs.min.css' type='text/css' media='all' />
@@ -405,6 +406,58 @@
 &lt;/div&gt;<!-- .fs-toggle -->
 </pre>
 
+<!-- LINKS -->
+
+<h2>Toggle Link Headings</h2>
+
+<p>If you prefer to have the hover effect of a standard link, you can also mix heading classes and links together.</p>
+
+<p>For example, the following uses an <code>&lt;a&gt;</code> tag with class <code>h3</code> to give it the styling of an <code>&lt;h3&gt;</code> tag, but with the hover effect of a standard link.</p>
+
+<div class="fs-toggle">
+
+	<a href="#" class="h3 toggle-title">What is the meaning of life?</a>
+
+	<div class="toggle-content">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus quis massa facilisis fringilla. Nulla lacinia feugiat massa in varius. Praesent hendrerit leo eu elit molestie, id tincidunt justo finibus. Aenean maximus consectetur est vel ullamcorper.</p>
+		<p>Curabitur nec suscipit purus, in lacinia leo. Nunc quis purus et odio posuere pellentesque sit amet sed nunc. Mauris in nunc lacinia, ornare ipsum id, egestas mauris. Mauris iaculis gravida diam, at interdum nisi iaculis egestas.</p>
+	</div><!-- .toggle-content -->
+
+</div><!-- .fs-toggle -->
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;div class="fs-toggle"&gt;
+
+	<a href="#" class="h3 toggle-title">What is the meaning of life?</a>
+
+	<!-- Same markup from above... -->
+
+&lt;/div&gt;<!-- .fs-toggle -->
+</pre>
+
+<p>And of course, you can use any of the <code>heading-*</code> classes, as well, on an <code>&lt;a&gt;</code> tag.</p>
+
+<div class="fs-toggle">
+
+	<a href="#" class="heading-sm toggle-title">What is the meaning of life?</a>
+
+	<div class="toggle-content">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus quis massa facilisis fringilla. Nulla lacinia feugiat massa in varius. Praesent hendrerit leo eu elit molestie, id tincidunt justo finibus. Aenean maximus consectetur est vel ullamcorper.</p>
+		<p>Curabitur nec suscipit purus, in lacinia leo. Nunc quis purus et odio posuere pellentesque sit amet sed nunc. Mauris in nunc lacinia, ornare ipsum id, egestas mauris. Mauris iaculis gravida diam, at interdum nisi iaculis egestas.</p>
+	</div><!-- .toggle-content -->
+
+</div><!-- .fs-toggle -->
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;div class="fs-toggle"&gt;
+
+	<a href="#" class="heading-sm toggle-title">What is the meaning of life?</a>
+
+	<!-- Same markup from above... -->
+
+&lt;/div&gt;<!-- .fs-toggle -->
+</pre>
+
 <!-- GROUPED -->
 
 <h2 id="toggle-group">Grouped Toggles</h2>
@@ -711,6 +764,7 @@
 var frontstreet_config = {
 	"menu"  			: true,
 	"mobile-menu"		: true,
+	'modal'				: true,
 	'jump-menu'			: true,
 	'tabs'				: true,
 	'toggles'			: true
@@ -719,6 +773,7 @@ var frontstreet_config = {
 </script>
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="assets/frontstreet/plugins/magnific-popup/magnific-popup.min.js"></script>
 <script type="text/javascript" src="assets/frontstreet/js/frontstreet.min.js"></script>
 <script type="text/javascript" src="assets/js/docs.min.js"></script>
 
