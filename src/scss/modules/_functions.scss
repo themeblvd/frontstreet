@@ -9,7 +9,7 @@
 // @param {String} $context - Closest specified font size in px
 //
 
-@function em($target, $context: $font-size-base) {
+@function em($target, $context) {
 	@return ($target / $context) * 1em;
 }
 
@@ -19,8 +19,8 @@
 // @param {String} $target - Initial value in px
 //
 
-@function rem($target) {
-	@return ($target / $font-size-base) * 1rem;
+@function rem($target, $context) {
+	@return ($target / $context) * 1rem;
 }
 
 //

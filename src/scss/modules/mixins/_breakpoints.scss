@@ -8,32 +8,32 @@
 
 @mixin max-width($size) {
 	@if $size == 'xl' {
-		@media (max-width: em($breakpoint-xl - 1)) {
+		@media (max-width: em($breakpoint-xl - 1, $font-size-base)) {
 			@content;
 		}
 	}
 	@else if $size == 'lg' {
-		@media (max-width: em($breakpoint-lg - 1)) {
+		@media (max-width: em($breakpoint-lg - 1, $font-size-base)) {
 			@content;
 		}
 	}
 	@else if $size == 'md' {
-		@media (max-width: em($breakpoint-md - 1)) {
+		@media (max-width: em($breakpoint-md - 1, $font-size-base)) {
 			@content;
 		}
 	}
 	@else if $size == 'sm' {
-		@media (max-width: em($breakpoint-sm - 1)) {
+		@media (max-width: em($breakpoint-sm - 1, $font-size-base)) {
 			@content;
 		}
 	}
 	@else if $size == 'xs' {
-		@media (max-width: em($breakpoint-xs - 1)) {
+		@media (max-width: em($breakpoint-xs - 1, $font-size-base)) {
 			@content;
 		}
 	}
 	@else {
-		@media (max-width: em($size)) {
+		@media (max-width: em($size, $font-size-base)) {
 			@content;
 		}
 	}
@@ -45,32 +45,32 @@
 
 @mixin min-width($size) {
 	@if $size == 'xl' {
-		@media (min-width: em($breakpoint-xl)) {
+		@media (min-width: em($breakpoint-xl, $font-size-base)) {
 			@content;
 		}
 	}
 	@else if $size == 'lg' {
-		@media (min-width: em($breakpoint-lg)) {
+		@media (min-width: em($breakpoint-lg, $font-size-base)) {
 			@content;
 		}
 	}
 	@else if $size == 'md' {
-		@media (min-width: em($breakpoint-md)) {
+		@media (min-width: em($breakpoint-md, $font-size-base)) {
 			@content;
 		}
 	}
 	@else if $size == 'sm' {
-		@media (min-width: em($breakpoint-sm)) {
+		@media (min-width: em($breakpoint-sm, $font-size-base)) {
 			@content;
 		}
 	}
 	@else if $size == 'xs' {
-		@media (min-width: em($breakpoint-xs)) {
+		@media (min-width: em($breakpoint-xs, $font-size-base)) {
 			@content;
 		}
 	}
 	@else {
-		@media (min-width: em($size)) {
+		@media (min-width: em($size, $font-size-base)) {
 			@content;
 		}
 	}
