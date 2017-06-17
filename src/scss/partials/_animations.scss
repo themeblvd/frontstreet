@@ -9,8 +9,7 @@
 .fade {
 
 	opacity: 0;
-
-	@include transition(opacity .2s linear);
+	transition: opacity .2s linear;
 
 	&.in {
 		opacity: 1;

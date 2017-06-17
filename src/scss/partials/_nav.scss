@@ -22,7 +22,7 @@
 	display: block;
 	line-height: 1;
 	position: relative;
-	@include transition($btn-transition);
+	transition: $btn-transition;
 }
 .menu-bar-horz,
 .submenu-horz {
@@ -120,7 +120,7 @@
 			right: 1em;
 		}
 		text-align: center;
-		@include transform( translate(0, -50%) );
+		transform: translate(0, -50%);
 		width: 1em;
 		height: 1em;
 	}

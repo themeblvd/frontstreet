@@ -128,7 +128,7 @@ label,
 
 @include input-selector {
 	background-color: if($style == 'inverse', $clr-bg-inv-field, $clr-bg-field);
-	@include border-radius(0);
+	border-radius: 0;
 	border: 1px solid if($style == 'inverse', $clr-border-inv, $clr-border);
 	color: if($style == 'inverse', $clr-text-inv-base, $clr-text-base);
 	display: block;
@@ -141,7 +141,7 @@ label,
 @include input-selector {
 	&:focus {
 		border-color: if($style == 'inverse', $clr-border-inv-active, $clr-border-active);
-		@include box-shadow(0 0 8px if($style == 'inverse', rgba($clr-black, 0.2), $clr-trans-lightest));
+		box-shadow: 0 0 8px if($style == 'inverse', rgba($clr-black, 0.2), $clr-trans-lightest);
 		outline: 0;
 	}
 }
@@ -160,7 +160,7 @@ label,
 		@include input-selector {
 			&:focus {
 				border-color: $clr-border-active;
-				@include box-shadow(0 0 8px $clr-trans-lightest);
+				box-shadow: 0 0 8px $clr-trans-lightest;
 			}
 		}
 	}
@@ -174,7 +174,7 @@ label,
 		@include input-selector {
 			&:focus {
 				border-color: $clr-border-inv-active;
-				@include box-shadow(0 0 8px rgba($clr-black, 0.2));
+				box-shadow: 0 0 8px rgba($clr-black, 0.2);
 			}
 		}
 	}
@@ -190,7 +190,7 @@ label,
 		@include input-selector {
 			&:focus {
 				border-color: $clr-border-inv-active;
-				@include box-shadow(0 0 8px rgba($clr-black, 0.2));
+				box-shadow: 0 0 8px rgba($clr-black, 0.2);
 			}
 		}
 	}
@@ -204,7 +204,7 @@ label,
 		@include input-selector {
 			&:focus {
 				border-color: $clr-border-active;
-				@include box-shadow(0 0 8px $clr-trans-lightest);
+				box-shadow: 0 0 8px $clr-trans-lightest;
 			}
 		}
 	}
@@ -223,23 +223,13 @@ textarea {
 // Select
 //
 
-$select-color : if($style == 'inverse', $clr-text-inv-base, $clr-text-base);
+$select-color : if($style == 'inverse', $clr-svg-inv, $clr-svg);
 
 select {
-
-	@include appearance(none);
-
-	-webkit-background-origin: content-box;
+	appearance: none;
     background-origin: content-box;
-
-	@include background-triangle($select-color); // setup color for text-dark and text-light
-
-	@if ($direction == 'rtl') {
-		background-position: left -.25rem center;
-	} @else {
-		background-position: right -.25rem center;
-	}
-
+	@include background-triangle($select-color);
+	background-position: if($direction == 'rtl', left -.25rem center, right -.25rem center);
 	background-repeat: no-repeat;
 	background-size: 9px 6px;
 }
@@ -253,17 +243,17 @@ select[multiple] option {
 
 @if ($style == 'inverse') {
 	.text-dark select {
-		@include background-triangle($clr-text-base);
+		@include background-triangle($clr-svg);
 	}
 	.text-light select{
-		@include background-triangle($clr-text-inv-base);
+		@include background-triangle($clr-svg-inv);
 	}
 } @else {
 	.text-light select {
-		@include background-triangle($clr-text-inv-base);
+		@include background-triangle($clr-svg-inv);
 	}
 	.text-dark select {
-		@include background-triangle($clr-text-base);
+		@include background-triangle($clr-svg);
 	}
 }
 
@@ -275,7 +265,9 @@ select[multiple] option {
 	input.field-#{$size},
 	select.field-#{$size} {
 		@each $prop, $val in $map {
-			#{$prop}: #{$val};
+			@if ($prop != height) {
+				#{$prop}: #{$val};
+			}
 		}
 	}
 }
@@ -288,7 +280,6 @@ input[type="radio"],
 input[type="checkbox"] {
 	line-height: normal;
 	margin: 4px 0 0;
-	margin-top: 1px \9; // IE8-9
 }
 .checkbox-label,
 .radio-label {
@@ -296,6 +287,8 @@ input[type="checkbox"] {
 }
 .checkbox-group,
 .radio-group {
+
+	margin-top: 0;
 
 	@include list-unstyled;
 
@@ -340,24 +333,34 @@ input[type="file"] {
 
 input,
 textarea {
-	@include placeholder;
+	&::placeholder {
+		color: if($style == 'inverse', $clr-text-inv-placeholder, $clr-text-placeholder);
+	}
 }
 @if ($style == 'inverse') {
 	.text-dark input,
 	.text-dark textarea {
-		@include placeholder($clr-text-placeholder);
+		&::placeholder {
+			color: $clr-text-placeholder;
+		}
 	}
 	.text-light input,
 	.text-light textarea {
-		@include placeholder($clr-text-inv-placeholder);
+		&::placeholder {
+			color: $clr-text-inv-placeholder;
+		}
 	}
 } @else {
 	.text-light input,
 	.text-light textarea {
-		@include placeholder($clr-text-inv-placeholder);
+		&::placeholder {
+			color: $clr-text-inv-placeholder;
+		}
 	}
 	.text-dark input,
 	.text-dark textarea {
-		@include placeholder($clr-text-placeholder);
+		&::placeholder {
+			color: $clr-text-placeholder;
+		}
 	}
 }

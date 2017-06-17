@@ -46,8 +46,8 @@ dd {
 
 .list-inline {
 
-	@include list-unstyled;
 	margin: 0 -5px;
+	@include list-unstyled;
 
 	li {
 		display: inline-block;
@@ -73,5 +73,5 @@ dd {
 		left: (-30em / strip-unit($font-size-base));
 	}
 	width: 30em / strip-unit($font-size-base);
-	@include transform(translate(0, -50%));
+	transform: translate(0, -50%);
 }

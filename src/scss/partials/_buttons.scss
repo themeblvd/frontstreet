@@ -18,10 +18,10 @@
 	text-align: center;
 	text-transform: $font-transform-btn;
 	touch-action: manipulation;
-	@include transition($btn-transition);
+	transition: $btn-transition;
+	user-select: none;
 	vertical-align: middle;
 	white-space: nowrap;
-	@include user-select(none);
 
 	&:active,
 	&.active {

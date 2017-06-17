@@ -7,11 +7,11 @@
 //
 
 * {
-	@include box-sizing(border-box);
+	box-sizing: border-box;
 }
 *:before,
 *:after {
-	@include box-sizing(border-box);
+	box-sizing: border-box;
 }
 
 //
@@ -58,7 +58,7 @@ img {
 	vertical-align: middle;
 }
 .img-circle {
-	@include border-radius(50%);
+	border-radius: 50%;
 }
 
 // Responsive images (ensure images don't scale beyond their parents)

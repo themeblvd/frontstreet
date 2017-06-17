@@ -37,30 +37,22 @@
 			background-repeat: no-repeat;
 			background-size: $toggle-icon-size $toggle-icon-size;
 			display: block;
-			opacity: 0.5;
 			position: absolute;
 			top: 50%;
-
 			@if ($direction == 'rtl') {
 				left: $toggle-horz-space + $toggle-icon-buffer;
 			} @else {
 				right: $toggle-horz-space + $toggle-icon-buffer;
 			}
-
+			transform: translate3D(0, -50%, 0) rotate(45deg);
+			transition: transform .1s ease;
 			width: $toggle-icon-size;
 			height: $toggle-icon-size;
 
-			@include transform( translate3D(0, -50%, 0) rotate(45deg) );
-			@include transition( transform .1s ease );
-
-		}
-		&:hover:after,
-		&:focus:after {
-			opacity: 1;
 		}
 	}
 	&.toggle-expanded .toggle-title:after {
-		@include transform( translate3D(0, -50%, 0) rotate(0) );
+		transform: translate3D(0, -50%, 0) rotate(0);
 	}
 	.toggle-content {
 		display: none;

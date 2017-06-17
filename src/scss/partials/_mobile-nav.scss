@@ -59,8 +59,8 @@
 			right: 1em;
 		}
 		text-align: center;
-		@include transform( translate(0, -50%) );
-		@include transition( "transform .2s cubic-bezier(0.04,.78,.35,.92), top .2s ease-in-out" );
+		transform: translate(0, -50%);
+		transition: transform .2s cubic-bezier(0.04,.78,.35,.92), top .2s ease-in-out;
 		width: 1em;
 		height: 1em;
 	}
@@ -87,16 +87,16 @@
 			left: 100%;
 		}
 		width: 100%;
-		@include transform( translate3D(0, 0, 0) );
-		@include transition( transform .4s ease-in-out );
+		transform: translate3D(0, 0, 0);
+		transition: transform .4s ease-in-out;
 		z-index: 1;
 		@include list-unstyled;
 	}
 	ul.on {
 		@if ($direction == 'rtl') {
-			@include transform( translate3D(100%, 0, 0) );
+			transform: translate3D(100%, 0, 0);
 		} @else {
-			@include transform( translate3D(-100%, 0, 0) );
+			transform: translate3D(-100%, 0, 0);
 		}
 	}
 

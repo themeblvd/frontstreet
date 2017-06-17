@@ -1,15 +1,17 @@
-var gulp		= require('gulp'),
-	// marky	= require('marky-markdown'),
-	copy 		= require('copy'),
-	copydir 	= require('copy-dir'),
-	escapehtml	= require('escape-html'),
-	concat 		= require('gulp-concat'),
-	watch		= require('gulp-watch'),
-	fileinclude	= require('gulp-file-include'),
-	rename		= require('gulp-rename'),
-	minifyjs	= require('gulp-uglify'),
-	minifycss	= require('gulp-clean-css'),
-	sass		= require('gulp-sass');
+var gulp			= require('gulp'),
+	copy 			= require('copy'),
+	copydir 		= require('copy-dir'),
+	escapehtml		= require('escape-html'),
+	concat 			= require('gulp-concat'),
+	watch			= require('gulp-watch'),
+	fileinclude		= require('gulp-file-include'),
+	rename			= require('gulp-rename'),
+	minifyjs		= require('gulp-uglify'),
+	minifycss		= require('gulp-clean-css'),
+	sass			= require('gulp-sass'),
+	imagemin 		= require('gulp-imagemin'),
+	clean			= require('gulp-clean'),
+	autoprefixer 	= require('gulp-autoprefixer');
 
 /**
  * Required tasks for distribution.
@@ -18,10 +20,31 @@ var serve = [
 	'render-docs-css',
 	'render-docs-js',
 	'render-docs-html',
+	'render-docs-img',
+	'render-project-clean',
 	'render-project-css',
 	'render-project-js',
-	'render-project-svg',
+	'render-project-img',
 	'render-project-plugins'
+];
+
+/**
+ * Supported browsers for CSS autoprefixer.
+ * Loosely based on Bootstrap 4 browser
+ * support policy.
+ *
+ * @link https://v4-alpha.getbootstrap.com/getting-started/browsers-devices/#supported-browsers
+ */
+var browsers = [
+	'Chrome >= 35',
+	'Firefox >= 38',
+	'Edge >= 12',
+	'Explorer >= 10',
+	'iOS >= 8',
+	'Safari >= 8',
+	'Android 2.3',
+	'Android >= 4',
+	'Opera >= 12'
 ];
 
 /**
@@ -99,11 +122,38 @@ gulp.task('render-docs-html', function() {
 });
 
 /**
+ * Copy any compress images for docs.
+ */
+gulp.task('render-docs-img', function() {
+
+	return gulp.src('src/docs/assets/img/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/docs/assets/img'));
+
+});
+
+/**
+ * Empty out distribution before compiling
+ * everything.
+ */
+gulp.task('render-project-clean', function() {
+
+	var dist = [
+		'dist/docs/assets/frontstreet/*',
+		'dist/frontstreet/*'
+	];
+
+	return gulp.src(dist, {read: false})
+        .pipe(clean());
+
+});
+
+/**
  * Compile expanded project SASS into frontend.css for
  * distribution. Then, minify that for project
  * distribution and docs.
  */
-gulp.task('render-project-css', function() {
+gulp.task('render-project-css', ['render-project-clean'], function() {
 
 	var files = [
 		'src/scss/frontstreet.scss',
@@ -114,6 +164,10 @@ gulp.task('render-project-css', function() {
 
 	return gulp.src(files)
 		.pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+		.pipe(autoprefixer({
+            browsers: browsers,
+            cascade: false
+        }))
 		.pipe(gulp.dest('dist/frontstreet/css'))
 		.pipe(gulp.dest('dist/docs/assets/frontstreet/css'))
 		.pipe(minifycss())
@@ -128,13 +182,14 @@ gulp.task('render-project-css', function() {
  * for distribution. Then, minify that for project
  * distribution and docs.
  */
-gulp.task('render-project-js', function() {
+gulp.task('render-project-js', ['render-project-clean'], function() {
 
 	var files = [
 		'src/js/init.js',
 		'src/js/jump-menu.js',
 		'src/js/menu.js',
 		'src/js/mobile-menu.js',
+		'src/js/modal.js',
 		'src/js/tabs.js',
 		'src/js/toggles.js'
 	];
@@ -153,10 +208,12 @@ gulp.task('render-project-js', function() {
 /**
  * Copy any svg files to distributed docs and project.
  */
-gulp.task('render-project-svg', function() {
+gulp.task('render-project-img', ['render-project-clean'], function() {
 
-	copydir.sync('src/svg', 'dist/docs/assets/frontstreet/svg');
-	copydir.sync('src/svg', 'dist/frontstreet/svg');
+	return gulp.src('src/img/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/docs/assets/frontstreet/img'))
+		.pipe(gulp.dest('dist/frontstreet/img'));
 
 });
 
@@ -164,10 +221,10 @@ gulp.task('render-project-svg', function() {
  * Copy any third-party plugins we're packaging to
  * distributed docs and project.
  */
-gulp.task('render-project-plugins', function() {
+gulp.task('render-project-plugins', ['render-project-clean'], function() {
 
-	copydir.sync('plugins/fontawesome', 'dist/docs/assets/frontstreet/plugins/fontawesome');
-	copydir.sync('plugins/fontawesome', 'dist/frontstreet/plugins/fontawesome');
+	copydir.sync('plugins', 'dist/docs/assets/frontstreet/plugins');
+	copydir.sync('plugins', 'dist/frontstreet/plugins');
 
 });
 
