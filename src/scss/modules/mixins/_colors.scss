@@ -1,0 +1,54 @@
+// --------------------------------------------------
+// Mixins: Colors
+// --------------------------------------------------
+
+//
+// Text
+//
+
+@mixin text-emphasis-variant($parent, $clr) {
+	#{$parent} {
+		color: $clr;
+	}
+	a#{$parent}:hover,
+	a#{$parent}:focus {
+		color: darken($clr, 10%);
+	}
+}
+
+//
+// Backgrounds
+//
+
+@mixin bg-variant($parent, $clr, $text: null) {
+	#{$parent} {
+		background-color: $clr;
+
+		@if $parent == info or $parent == success or $parent == warning or $parent == danger {
+			border-color: darken(adjust-hue($clr, -10), 50%);
+		} @else if $parent == 'bg-light' {
+			border-color: $clr-border;
+		} @else if $parent == 'bg-dark' {
+			border-color: $clr-inv-border;
+		} @else {
+			border-color: darken($clr, 15%);
+		}
+
+		@if $text != null {
+			color: $text;
+		}
+	}
+	@if $text != null and $text != $clr-text-base {
+		#{$parent} h1,
+		#{$parent} h2,
+		#{$parent} h3,
+		#{$parent} h4,
+		#{$parent} h5,
+		#{$parent} h6 {
+			color: $text;
+		}
+	}
+	#{$parent}.mobile-menu-bar ul {
+		background-color: $clr;
+	}
+}

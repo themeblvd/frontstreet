@@ -1,0 +1,29 @@
+// --------------------------------------------------
+// Mixins: Toggles
+// --------------------------------------------------
+
+@mixin toggle-variant($style: "default") {
+
+	$border-clr: $toggle-border-color;
+	$close-clr: $clr-svg;
+	$close-hover-clr: $clr-svg-hover;
+
+	@if ($style == 'inverse') {
+		$border-clr: $toggle-border-inv-color;
+		$close-clr: $clr-svg-inv;
+		$close-hover-clr: $clr-svg-inv-hover;
+	}
+
+	.fs-toggle {
+
+		border-color: $border-clr;
+
+		.toggle-title:after {
+			@include background-close($close-clr);
+		}
+		.toggle-title:hover:after,
+		.toggle-title:focus:after {
+			@include background-close($close-hover-clr);
+		}
+	}
+}

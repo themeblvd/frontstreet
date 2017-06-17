@@ -1,0 +1,36 @@
+// --------------------------------------------------
+// Mixins: Modals
+// --------------------------------------------------
+
+//
+// Modal sizing variations.
+//
+
+@mixin modal-sizing( $map ) {
+
+	font-size: map-get($map, font-size);
+	max-width: map-get($map, width);
+
+	.modal-header,
+	.modal-content {
+		padding-right: map-get($map, padding-horz);
+		padding-left: map-get($map, padding-horz);
+	}
+	.modal-header {
+
+		padding-top: map-get($map, padding-header);
+		padding-bottom: map-get($map, padding-header);
+
+		.fs-close {
+			@if ($direction == 'rtl') {
+				left: map-get($map, padding-horz);
+			} @else {
+				right: map-get($map, padding-horz);
+			}
+		}
+	}
+	.modal-content {
+		padding-top: map-get($map, padding-content);
+		padding-bottom: map-get($map, padding-content);
+	}
+}

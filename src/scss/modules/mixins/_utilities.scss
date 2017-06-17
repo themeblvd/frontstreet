@@ -1,0 +1,96 @@
+// --------------------------------------------------
+// Mixins: Utilities
+// --------------------------------------------------
+
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    contenteditable attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that are clearfixed.
+// 2. The use of `table` rather than `block` is only necessary if using
+//    `:before` to contain the top-margins of child elements.
+//
+// Source: http://nicolasgallagher.com/micro-clearfix-hack/
+
+@mixin clearfix() {
+	&:before,
+	&:after {
+		content: " "; // 1
+		display: table; // 2
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+//
+// Center-align block-level element.
+//
+
+@mixin aligncenter() {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+//
+// Floats
+//
+
+@mixin alignleft() {
+	float: left !important; // @noflip
+	margin: 5px 20px 20px 0; // @noflip
+}
+
+@mixin alignright() {
+	float: right !important; // @noflip
+	margin: 5px 0 20px 20px; // @noflip
+}
+
+//
+// Hide Text
+//
+
+@mixin hide-text() {
+	text-indent: -9999px;
+}
+
+//
+// Hide Element
+//
+
+@mixin hide($parent) {
+	#{$parent} {
+		display: none !important;
+	}
+}
+
+//
+// Show Element
+//
+
+@mixin show($parent) {
+	#{$parent} {
+		display: block !important;
+	}
+}
+
+//
+// Visible Element
+//
+
+@mixin visible($parent) {
+	#{$parent} {
+		visibility: visible;
+	}
+}
+
+//
+// Invisible Element
+//
+
+@mixin invisible($parent) {
+	#{$parent} {
+		visibility: hidden;
+	}
+}

@@ -1,0 +1,16 @@
+// --------------------------------------------------
+// Mixins: Lists
+// --------------------------------------------------
+
+//
+// Unstyled Lists
+//
+
+@mixin list-unstyled() {
+	list-style: none;
+	@if ($direction == 'rtl') {
+		padding-right: 0;
+	} @else {
+		padding-left: 0;
+	}
+}

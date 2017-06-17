@@ -2,7 +2,7 @@ jQuery(document).ready(function($){
 
 	// Menu Toggle examples
 
-	$('.menu-toggle').on('click', function(){
+	$('.fs-menu-toggle').on('click', function(){
 
 		var $el = $(this);
 

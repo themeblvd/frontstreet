@@ -1,32 +1,47 @@
-
+// --------------------------------------------------
 // Close Icon
 // --------------------------------------------------
 
-.close {
-	background: url('../svg/close-dark.svg') center center no-repeat;
-	background-size: (map-get($btn-close, sm) / 2) (map-get($btn-close, sm) / 2);
+.fs-close {
+
+	background-color: transparent;
+	@include background-close($clr-svg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: (map-get($btn-close, md) / 2) (map-get($btn-close, md) / 2);
 	display: inline-block;
-	outline: none !important;
-	opacity: .7;
-	width: map-get($btn-close, sm);
-	height: map-get($btn-close, sm);
-	@include hide-text();
-}
-.text-light .close,
-.close-light {
-	background-image: url('../svg/close-light.svg');
-	border: none;
+	cursor: pointer;
 	padding: 0;
+	outline: none !important;
+	width: map-get($btn-close, md);
+	height: map-get($btn-close, md);
+
+	@include hide-text();
+
+	&:hover,
+	&:focus {
+		background-color: transparent; // Override default <button> styling.
+		@include background-close($clr-svg-hover);
+	}
 }
-.close:hover,
-.close:focus {
-	opacity: 1;
+.text-light .fs-close,
+.fs-close.close-light {
+
+	@include background-close($clr-svg-inv);
+	border: none;
+
+	&:hover,
+	&:focus {
+		@include background-close($clr-svg-inv-hover);
+	}
 }
 @each $size, $val in $btn-close {
-	.close-#{$size} {
-		background-size: ($val / 2) ($val / 2);
-		width: $val;
-		height: $val;
+	@include min-width('sm') {
+		.fs-close.close-#{$size} {
+			background-size: ($val / 2) ($val / 2);
+			width: $val;
+			height: $val;
+		}
 	}
 }
 
@@ -38,7 +53,7 @@
 button.close {
 	background-color: transparent !important;
 	border: 0;
-	@include box-shadow(none); // Override possible generic form stylings.
+	box-shadow: none; // Override possible generic form stylings.
 	padding: 0;
 	cursor: pointer;
 	-webkit-appearance: none;

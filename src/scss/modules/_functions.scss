@@ -1,0 +1,97 @@
+// --------------------------------------------------
+// Functions
+// --------------------------------------------------
+
+//
+// Convert px to em units.
+//
+// @param {String} $target - Initial value in px
+// @param {String} $context - Closest specified font size in px
+//
+
+@function em($target, $context: $font-size-base) {
+	@return ($target / $context) * 1em;
+}
+
+//
+// Convert px to rem units.
+//
+// @param {String} $target - Initial value in px
+//
+
+@function rem($target) {
+	@return ($target / $font-size-base) * 1rem;
+}
+
+//
+// Get value from map within map.
+//
+// @param {Map} $map - Top-level map
+// @param {String} $keys - Keys where nested maps are located
+//
+
+@function map-deep-get($map, $keys...) {
+
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+
+    @return $map;
+}
+
+//
+// Remove units from number value.
+//
+// @param {Number} $val - Number value with unit suffix
+// @return {Number} $val - Original number with unit suffix removed
+//
+
+@function strip-unit($val) {
+
+	@if type-of($val) == 'number' and not unitless($val) {
+		@return $val / ($val * 0 + 1);
+	}
+
+	@return $val;
+}
+
+//
+// Replace `$search` with `$replace` in `$string`.
+// @author Hugo Giraudel
+//
+// @param {String} $string - Initial string
+// @param {String} $search - Substring to replace
+// @param {String} $replace - New value
+// @return {String} - Updated string
+//
+
+@function str-replace($string, $search, $replace: '') {
+
+	$string: "#{$string}";
+	$search: "#{$search}";
+	$replace: "#{$replace}";
+
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
+
+}
+
+//
+// When given a color hex like #000, the `#` will
+// be replaced by a `%23` for using withing a
+// URL string.
+//
+// @param {String} $clr - Color hex.
+// @return {String} - Color hex code with '#' replaced with `%23`.
+//
+
+@function url-friendly-clr($clr) {
+
+	@return str-replace($clr, "#", "%23");
+
+}

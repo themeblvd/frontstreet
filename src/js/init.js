@@ -11,7 +11,7 @@ if (typeof jQuery === 'undefined') {
 var FrontStreet = {
 	doComponent: function(component) {
 
-		if ( typeof frontstreet_config[component] !== 'undefined' && ( frontstreet_config[component] === false || frontstreet_config[component] === 'false' ) ) {
+		if ( typeof FrontStreetConfig[component] !== 'undefined' && ( FrontStreetConfig[component] === false || FrontStreetConfig[component] === 'false' ) ) {
 			return false;
 		}
 
@@ -26,7 +26,7 @@ var FrontStreet = {
 	var version = $.fn.jquery.split(' ')[0].split('.');
 
 	if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1) || (version[0] > 3)) {
-		throw new Error('Front Street\'s JavaScript requires jQuery version 1.9.1 or higher, but lower than version 4');
+		throw new Error('Front Street\'s JavaScript requires jQuery version 1.9.1 or higher, but lower than version 4.');
 	}
 
 }(jQuery);

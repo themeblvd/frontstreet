@@ -1,0 +1,59 @@
+// --------------------------------------------------
+// Mixins: Typography
+// --------------------------------------------------
+
+//
+// Heading text colors.
+//
+
+@mixin heading-variant($style: "default") {
+
+	$clr: $clr-text-darken;
+
+	@if ( $style == 'inverse' ) {
+		$clr: $clr-text-inv-darken;
+	}
+
+	$selector: "h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6";
+
+	@each $tag, $map in $font-size-headings-bigger {
+		$selector: "#{$selector}, .heading-#{$tag}";
+	}
+
+	@each $tag, $map in $font-size-headings-smaller {
+		$selector: "#{$selector}, .heading-#{$tag}";
+	}
+
+	#{$selector} {
+		color: $clr;
+	}
+}
+
+//
+// Colorless links, meant to blend into content.
+// Used with sections, which shift text to opposite of default style.
+//
+
+@mixin blend-links() {
+	a {
+		color: inherit;
+		@if ($style == 'inverse') {
+			border-bottom: 1px solid $clr-text-base;
+		} @else {
+			border-bottom: 1px solid rgba($clr-text-inv-base, 0.8);
+		}
+		padding-bottom: 1px;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			@if ($style == 'inverse') {
+				border-color: $clr-text-darken;
+				color: $clr-text-darken;
+			} @else {
+				border-color: $clr-text-inv-base;
+				color: $clr-text-inv-base;
+			}
+		}
+	}
+}

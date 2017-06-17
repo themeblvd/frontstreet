@@ -11,7 +11,7 @@ if (typeof jQuery === 'undefined') {
 var FrontStreet = {
 	doComponent: function(component) {
 
-		if ( typeof frontstreet_config[component] !== 'undefined' && ( frontstreet_config[component] === false || frontstreet_config[component] === 'false' ) ) {
+		if ( typeof FrontStreetConfig[component] !== 'undefined' && ( FrontStreetConfig[component] === false || FrontStreetConfig[component] === 'false' ) ) {
 			return false;
 		}
 
@@ -26,7 +26,7 @@ var FrontStreet = {
 	var version = $.fn.jquery.split(' ')[0].split('.');
 
 	if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1) || (version[0] > 3)) {
-		throw new Error('Front Street\'s JavaScript requires jQuery version 1.9.1 or higher, but lower than version 4');
+		throw new Error('Front Street\'s JavaScript requires jQuery version 1.9.1 or higher, but lower than version 4.');
 	}
 
 }(jQuery);
@@ -333,6 +333,211 @@ var FrontStreet = {
 }(jQuery);
 
 /* ========================================================================
+ * Front Street: modal.js v1.0.0
+ * ========================================================================
+ * Copyright 2017 Theme Blvd
+ * Licensed under MIT
+ * ======================================================================== */
+
++function ($) {
+
+	'use strict';
+
+	if ( ! FrontStreet.doComponent('modal') ) {
+		return;
+	}
+
+	if ( ! $.fn.magnificPopup ) {
+		return;
+	}
+
+	// SELF-INVOKING
+	// =============
+
+	$(document).ready(function() {
+
+		var mainClass = 'fs-modal',
+			removalDelay = 0;
+
+		var config = {
+			'animation'			: 'fade',
+			'mobile'			: 0,
+			'mobileIframe'		: 768,
+			'mobileGallery'		: 0,
+			'error'				: 'The modal media could not be loaded.',
+			'close'				: 'Close',
+			'loading'			: 'Loading...',
+			'counter'			: '%curr% of %total%',
+			'next'				: 'Next',
+			'previous'			: 'Previous',
+			'closeMarkup'		: '<button type="button" class="mfp-close fs-close close-light close-md">%title%</button>'
+		};
+
+		if ( typeof FrontStreetModalConfig !== 'undefined' ) {
+			config = $.extend({}, config, FrontStreetModalConfig);
+		}
+
+		if ( config['animation'] && config['animation'] !== 'none' ) {
+			mainClass = mainClass + ' fs-modal-' + config['animation'];
+			removalDelay = 150;
+		}
+
+		$.extend( true, $.magnificPopup.defaults, {
+			tClose: config.close,
+			tLoading: config.loading,
+			gallery: {
+				tPrev: config.previous,
+				tNext: config.next,
+				tCounter: config.counter
+			},
+			image: {
+				tError: config.error
+			},
+			ajax: {
+				tError: config.error
+			}
+		});
+
+		$('.fs-modal-gallery, .themeblvd-gallery').each(function() {
+
+			var $gallery = $(this),
+				selector = '',
+				classes = [
+					'themeblvd-lightbox',
+					'fs-content-modal-link',
+					'fs-image-modal-link',
+					'fs-iframe-modal-link'
+				];
+
+			for ( var i = 0; i < classes.length; i++ ) {
+
+				selector += '.' + classes[i];
+
+				if ( i != classes.length - 1 ) {
+					selector += ', ';
+				}
+			}
+
+			$gallery.find(selector).each(function() {
+
+				var $link = $(this),
+					linkClass = '';
+
+				if ( $link.hasClass('fs-content-modal-link') ) {
+
+					linkClass = 'mfp-inline';
+
+				} else if ( $link.hasClass('fs-image-modal-link') ) {
+
+					linkClass = 'mfp-image';
+
+				} else if ( $link.hasClass('fs-iframe-modal-link') ) {
+
+					linkClass = 'mfp-iframe';
+
+				}
+
+				linkClass = 'fs-gallery-modal-link ' + linkClass;
+
+				$link
+					.removeClass( classes.join(' ') )
+					.addClass(linkClass);
+
+			});
+
+			$gallery.magnificPopup({
+				mainClass: mainClass,
+				closeMarkup: config.closeMarkup,
+				removalDelay: removalDelay,
+				disableOn: config.mobileGallery,
+				gallery: {
+					enabled: true
+				},
+				image: {
+					cursor: null
+				},
+				delegate: 'a.fs-gallery-modal-link',
+				iframe: {
+					// Add bottom bar for iframes
+					markup: '<div class="mfp-iframe-scaler">' +
+								'<div class="mfp-close"></div>' +
+								'<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>' +
+								'<div class="mfp-bottom-bar">' +
+								  '<div class="mfp-title"></div>' +
+								  '<div class="mfp-counter"></div>' +
+								'</div>' +
+							  '</div>'
+				},
+				callbacks: {
+					markupParse: function(template, values, item) {
+						values.title = item.el.attr('title');
+					}
+  				}
+			});
+
+		});
+
+		$('.fs-modal-close').on('click', function() {
+			$.magnificPopup.close();
+			return false;
+		});
+
+		$('.fs-content-modal-link').magnificPopup({
+			type: 'inline',
+			mainClass: mainClass,
+			alignTop: true,
+			showCloseBtn: false,
+			removalDelay: removalDelay,
+			callbacks: {
+				open: function() {
+					$('.mfp-wrap .fs-modal').attr('aria-hidden', false);
+				},
+				beforeClose: function() {
+					$('.mfp-wrap .fs-modal').attr('aria-hidden', true);
+				}
+			}
+		});
+
+		$('.fs-image-modal-link').magnificPopup({
+			type: 'image',
+			mainClass: mainClass,
+			closeMarkup: config.closeMarkup,
+			removalDelay: removalDelay,
+			disableOn: config.mobile,
+			image: {
+				cursor: null
+			}
+		});
+
+		$('.fs-iframe-modal-link').magnificPopup({
+			type: 'iframe',
+			mainClass: mainClass,
+			closeMarkup: config.closeMarkup,
+			removalDelay: removalDelay,
+			disableOn: config.mobileIframe,
+			iframe: {
+				// Add bottom bar for iframes
+				markup: '<div class="mfp-iframe-scaler">' +
+							'<div class="mfp-close"></div>' +
+							'<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>' +
+							'<div class="mfp-bottom-bar">' +
+							  '<div class="mfp-title"></div>' +
+							  '<div class="mfp-counter"></div>' +
+							'</div>' +
+						  '</div>'
+			},
+			callbacks: {
+				markupParse: function(template, values, item) {
+					values.title = item.el.attr('title');
+				}
+			}
+		});
+
+	});
+
+}(jQuery);
+
+/* ========================================================================
  * Front Street: tabs.js v1.0.0
  * ========================================================================
  * Copyright 2017 Theme Blvd
@@ -584,8 +789,10 @@ var FrontStreet = {
 
 		$toggle
 			.find('.toggle-title')
-			.on('click.fs.toggle', function() {
-				$this.toggle( $this, $(this), $toggle, $group );
+			.on('click.fs.toggle', function(e) {
+				e.preventDefault();
+				$(this).blur();
+				$this.toggle( $this, $toggle, $group );
 				return false;
 			});
 
@@ -596,7 +803,7 @@ var FrontStreet = {
 		accordion 	: false
 	};
 
-	Toggles.prototype.toggle = function($this, $title, $toggle, $group) {
+	Toggles.prototype.toggle = function($this, $toggle, $group) {
 
 		if ( $toggle.hasClass('toggle-expanded') ) {
 

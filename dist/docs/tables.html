@@ -9,7 +9,7 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<link rel="stylesheet" href='assets/frontstreet/plugins/fontawesome/css/font-awesome.min.css' type='text/css' media='all' />
+		<link rel="stylesheet" href='assets/frontstreet/plugins/font-awesome/css/font-awesome.min.css' type='text/css' media='all' />
 		<link rel="stylesheet" href='assets/frontstreet/css/frontstreet.css' type='text/css' media='all' />
 
 		<link rel="stylesheet" href='assets/css/docs.min.css' type='text/css' media='all' />
@@ -804,18 +804,37 @@
  * Optional configuration object that can be used to
  * disable individiual JavaScript components.
  */
-var frontstreet_config = {
-	"menu"  			: true,
-	"mobile-menu"		: true,
+var FrontStreetConfig = {
+	'menu'  			: true,
+	'mobile-menu'		: true,
+	'modal'				: true,
 	'jump-menu'			: true,
 	'tabs'				: true,
 	'toggles'			: true
+};
+
+/**
+ * Optional configuration object that can adjust how
+ * Magnific Popup is configured.
+ */
+var FrontStreetModalConfig = {
+	'animation'			: 'fade',	// 'fade', 'slide' or 'none'
+	'mobile'			: 0,		// Image modals will work at all viewports.
+	'mobileIframe'		: 768,		// Iframe modals will only work when viewport >= 768.
+	'mobileGallery'		: 0,		// Gallery modals will work at all viewports.
+	'error'				: 'The modal media could not be loaded.',
+	'close'				: 'Close',
+	'loading'			: 'Loading...',
+	'counter'			: '%curr% of %total%',
+	'next'				: 'Next',
+	'previous'			: 'Previous'
 };
 /* ]]> */
 </script>
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="assets/frontstreet/js/frontstreet.min.js"></script>
+<script type="text/javascript" src="assets/frontstreet/plugins/magnific-popup/magnific-popup.min.js"></script>
+<script type="text/javascript" src="assets/frontstreet/js/frontstreet.js"></script>
 <script type="text/javascript" src="assets/js/docs.min.js"></script>
 
 <script type="text/javascript">

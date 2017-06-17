@@ -9,4 +9,5 @@
 $style 		: 'default';
 $direction 	: 'rtl';
 
-@import "partials/framework";
+@import "modules/index";
+@import "partials/index";

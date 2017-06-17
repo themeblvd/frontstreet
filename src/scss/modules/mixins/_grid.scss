@@ -1,0 +1,250 @@
+// --------------------------------------------------
+// Mixins: Grids
+// --------------------------------------------------
+
+//
+// Rows
+//
+
+@mixin make-row($gutter: $grid-gutters) {
+	margin-right: floor(($gutter / -2));
+	margin-bottom: $margin-column;
+	margin-left:  ceil(($gutter / -2));
+	@include clearfix;
+}
+
+//
+// Rows w/Equal Height Columns
+//
+
+@mixin make-equal-height-grid($breakpoint) {
+	@include min-width($breakpoint) {
+		.container-#{$breakpoint}-height {
+		    display: table;
+		    padding-left: 0;
+		    padding-right: 0;
+		    width: 100%;
+		}
+		.row-#{$breakpoint}-height {
+		    display: table-row;
+		}
+		.col-#{$breakpoint}-height {
+		    display: table-cell;
+		    float: none;
+		}
+	}
+}
+
+//
+// All columns, all viewports
+//
+
+@mixin make-grid-columns($columns, $i: 1, $list: "") {
+	@for $i from 1 through $columns {
+
+		$num: "#{$i}";
+
+		@if $columns == 10 {
+			$num: "0#{$i}0";
+		}
+
+		$list: "#{$list}, .col-xs-#{$num}, .col-sm-#{$num}, .col-md-#{$num}, .col-lg-#{$num}";
+
+	}
+	#{$list} {
+		position: relative;
+		min-height: 1px; // Prevent columns from collapsing when empty
+		padding-left: ceil(($grid-gutters / 2));
+		padding-right: floor(($grid-gutters / 2));
+	}
+}
+
+//
+// Column class floating
+//
+
+@mixin float-grid-columns($columns, $class, $i: 1, $list: "") {
+
+	@for $i from 1 through $columns {
+
+		$num: "#{$i}";
+
+		@if $columns == 10 {
+			$num: "0#{$i}0";
+		}
+
+		$list: "#{$list}, .col-#{$class}-#{$num}";
+
+	}
+	#{$list} {
+		@if ($direction == 'rtl') {
+			float: right;
+		} @else {
+			float: left;
+		}
+		margin-bottom: 0;
+	}
+}
+
+//
+// Determine individual column properties
+//
+
+@mixin calc-grid-column($columns, $index, $num, $class, $type) {
+	@if ($type == width) and ($index > 0) {
+		.col-#{$class}-#{$num} {
+			width: percentage(($index / $columns));
+		}
+	}
+	@if ($type == push) and ($index > 0) {
+		.col-#{$class}-push-#{$num} {
+			@if ($direction == 'rtl') {
+				right: percentage(($index / $columns));
+			} @else  {
+				left: percentage(($index / $columns));
+			}
+		}
+	}
+	@if ($type == push) and ($index == 0) {
+		.col-#{$class}-push-0 {
+			@if ($direction == 'rtl') {
+				right: auto;
+			} @else  {
+				left: auto;
+			}
+		}
+	}
+	@if ($type == pull) and ($index > 0) {
+		.col-#{$class}-pull-#{$num} {
+			@if ($direction == 'rtl') {
+				left: percentage(($index / $columns));
+			} @else  {
+				right: percentage(($index / $columns));
+			}
+		}
+	}
+	@if ($type == pull) and ($index == 0) {
+		.col-#{$class}-pull-0 {
+			@if ($direction == 'rtl') {
+				left: auto;
+			} @else {
+				right: auto;
+			}
+		}
+	}
+	@if ($type == offset) {
+		.col-#{$class}-offset-#{$num} {
+			@if ($direction == 'rtl') {
+				margin-right: percentage(($index / $columns));
+			} @else {
+				margin-left: percentage(($index / $columns));
+			}
+		}
+	}
+}
+
+//
+// Column properties
+//
+
+@mixin loop-grid-columns($columns, $class, $type) {
+	@for $i from 0 through $columns {
+
+		$num: "#{$i}";
+
+		@if $columns == 10 {
+			$num: "0#{$i}0";
+		}
+
+		@include calc-grid-column($columns, $i, $num, $class, $type);
+
+	}
+}
+
+//
+// Column classes for specific viewports
+//
+
+@mixin make-grid($columns, $class) {
+	@include float-grid-columns($columns, $class);
+	@include loop-grid-columns($columns, $class, width);
+	@include loop-grid-columns($columns, $class, pull);
+	@include loop-grid-columns($columns, $class, push);
+	@include loop-grid-columns($columns, $class, offset);
+}
+
+//
+// Flush columns
+//
+
+@mixin make-flush-columns($columns, $type) {
+	@each $breakpoint in $breakpoints {
+		@if $breakpoint != xl { // skip xl
+
+			$has-bg: "";
+			$non-bg: "";
+
+			@for $i from 1 through $columns {
+
+				$num: "#{$i}";
+
+				@if $columns == 10 {
+					$num: "0#{$i}0";
+				}
+
+				@if $type == start {
+					$has-bg: "#{$has-bg}, .row-flush-start:not(.row-flush-end) .col-#{$breakpoint}-#{$num}.has-bg";
+					$non-bg: "#{$non-bg}, .row-flush-start:not(.row-flush-end) .col-#{$breakpoint}-#{$num}:not(.has-bg)";
+				} @else  {
+					$has-bg: "#{$has-bg}, .row-flush-end:not(.row-flush-start) .col-#{$breakpoint}-#{$num}.has-bg";
+					$non-bg: "#{$non-bg}, .row-flush-end:not(.row-flush-start) .col-#{$breakpoint}-#{$num}:not(.has-bg)";
+				}
+
+			}
+
+			@include max-width($breakpoint) {
+
+				#{$has-bg} {
+					@if $type == 'start' {
+
+						@if ($direction == 'rtl') {
+							margin-left: $grid-gutters / 2;
+						} @else {
+							margin-right: $grid-gutters / 2;
+						}
+
+					} @else {
+
+						@if ($direction == 'rtl') {
+							margin-right: $grid-gutters / 2;
+						} @else {
+							margin-left: $grid-gutters / 2;
+						}
+
+					}
+				}
+				#{$non-bg} {
+					@if $type == 'start' {
+
+						@if ($direction == 'rtl') {
+							padding-right: 0;
+						} @else {
+							padding-left: 0;
+						}
+
+					} @else {
+
+						@if ($direction == 'rtl') {
+							padding-left: 0;
+						} @else {
+							padding-right: 0;
+						}
+
+					}
+				}
+
+			}
+
+		}
+	}
+}

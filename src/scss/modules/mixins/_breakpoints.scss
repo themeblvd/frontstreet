@@ -1,0 +1,77 @@
+// --------------------------------------------------
+// Mixins: Responsive Breakpoints
+// --------------------------------------------------
+
+//
+// Max-Width Media Query
+//
+
+@mixin max-width($size) {
+	@if $size == 'xl' {
+		@media (max-width: em($breakpoint-xl - 1)) {
+			@content;
+		}
+	}
+	@else if $size == 'lg' {
+		@media (max-width: em($breakpoint-lg - 1)) {
+			@content;
+		}
+	}
+	@else if $size == 'md' {
+		@media (max-width: em($breakpoint-md - 1)) {
+			@content;
+		}
+	}
+	@else if $size == 'sm' {
+		@media (max-width: em($breakpoint-sm - 1)) {
+			@content;
+		}
+	}
+	@else if $size == 'xs' {
+		@media (max-width: em($breakpoint-xs - 1)) {
+			@content;
+		}
+	}
+	@else {
+		@media (max-width: em($size)) {
+			@content;
+		}
+	}
+}
+
+//
+// Min-Width Media Query
+//
+
+@mixin min-width($size) {
+	@if $size == 'xl' {
+		@media (min-width: em($breakpoint-xl)) {
+			@content;
+		}
+	}
+	@else if $size == 'lg' {
+		@media (min-width: em($breakpoint-lg)) {
+			@content;
+		}
+	}
+	@else if $size == 'md' {
+		@media (min-width: em($breakpoint-md)) {
+			@content;
+		}
+	}
+	@else if $size == 'sm' {
+		@media (min-width: em($breakpoint-sm)) {
+			@content;
+		}
+	}
+	@else if $size == 'xs' {
+		@media (min-width: em($breakpoint-xs)) {
+			@content;
+		}
+	}
+	@else {
+		@media (min-width: em($size)) {
+			@content;
+		}
+	}
+}

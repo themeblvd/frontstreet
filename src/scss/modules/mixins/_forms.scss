@@ -1,0 +1,89 @@
+// --------------------------------------------------
+// Mixins: Forms & Buttons
+// --------------------------------------------------
+
+//
+// Generate input selectors.
+//
+
+@mixin input-selector {
+
+	#{$input-selector} {
+		@content;
+	}
+
+}
+
+//
+// Generate button selectors.
+//
+
+@mixin btn-selector {
+
+	#{$btn-selector} {
+		@content;
+	}
+
+}
+
+//
+// Style buttons.
+//
+
+@mixin button-variant($clr, $text, $bg, $bg-hover: null) {
+
+	// Standard Buttons
+
+	$clr-selector: str-replace( $btn-selector, ",", ".btn-#{$clr}," );
+	$clr-selector: "#{$clr-selector}.btn-#{$clr}";
+
+	#{$clr-selector} {
+
+		background-color: $bg;
+		color: $text;
+
+		&:hover,
+		&:focus,
+		&.focus {
+			@if $bg-hover != null {
+				background-color: $bg-hover;
+			} @else {
+				background-color: darken($bg, 10%);
+			}
+		}
+
+		&:active,
+		&.active {
+			@if $bg-hover != null {
+				background-color: darken($bg-hover, 5%);
+			} @else {
+				background-color: darken($bg, 15%);
+			}
+		}
+	}
+
+	// Transparent Buttons
+
+	$trans-selector: str-replace( $clr-selector, "#{$clr}", "#{$clr}.btn-trans" );
+
+	#{$trans-selector} {
+
+		background-color: transparent;
+		border-color: $bg;
+
+		@if $clr == white {
+			color: $bg;
+		} @elseif $text != #fff or $clr == info or $clr == success or $clr == warning or $clr == danger {
+			color: $text;
+		} @else {
+			color: $bg;
+		}
+
+		&:hover,
+		&:focus,
+		&.focus {
+			background-color: $bg;
+			color: $text;
+		}
+	}
+}

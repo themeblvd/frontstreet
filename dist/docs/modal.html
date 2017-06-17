@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+
+		<meta charset="UTF-8" />
+		<link rel="profile" href="http://gmpg.org/xfn/11" />
+
+		<title>Modals</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href='assets/frontstreet/plugins/font-awesome/css/font-awesome.min.css' type='text/css' media='all' />
+		<link rel="stylesheet" href='assets/frontstreet/css/frontstreet.css' type='text/css' media='all' />
+
+		<link rel="stylesheet" href='assets/css/docs.min.css' type='text/css' media='all' />
+
+	</head>
+	<body>
+
+		<div id="wrapper">
+			<div id="container">
+
+				<article id="main">
+
+					<h1 class="heading-lg">
+						Modals
+						
+					</h1>
+
+
+<p>All of our modal functionality extends the <a href="http://dimsemenov.com/plugins/magnific-popup" title="Magnific Popup" target="_blank">Magnific Popup</a> jQuery plugin. So in order for anything in this article to work, you must include the Magnific Popup script in your website.</p>
+
+<p>As you browse thise article, you'll see that we've taken care of all the custom JavaScript by binding Magnific Popup to CSS classes used in Front Street's HTML markup.</p>
+
+<h2 id="content-modals">Content Modals</h2>
+
+<p>Front Street extends Magnific Popup, allowing you to easily open up niceley styled inline content in modal windows. Below is a basic example.</p>
+
+<p><a href="#modal-example" title="View Content Modal" class="fs-content-modal-link btn btn-default">View Content Modal</a></p>
+
+<div id="modal-example" class="fs-content-modal modal-md" aria-hidden="true">
+
+	<div class="modal-header">
+		<h3>Content Modal</h3>
+		<button type="button" class="fs-modal-close fs-close close-md">Close</button>
+	</div><!-- modal-header -->
+
+	<div class="modal-content">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus quis massa facilisis fringilla. Nulla lacinia feugiat massa in varius. Praesent hendrerit leo eu elit molestie, id tincidunt justo finibus. Aenean maximus consectetur est vel ullamcorper.</p>
+		<p>Curabitur nec suscipit purus, in lacinia leo. Nunc quis purus et odio posuere pellentesque sit amet sed nunc. Mauris in nunc lacinia, ornare ipsum id, egestas mauris. Mauris iaculis gravida diam, at interdum nisi iaculis egestas.</p>
+	</div><!-- .modal-content -->
+
+</div><!-- .fs-content-modal (end) -->
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<a href="#modal-example" title="View Medium Modal" class="fs-content-modal-link btn btn-default">View Medium Modal</a>
+
+<div id="modal-example" class="fs-content-modal modal-md" aria-hidden="true">
+
+	<div class="modal-header">
+		<h3>Content Modal</h3>
+		<button type="button" class="fs-modal-close fs-close close-md">Close</button>
+	</div><!-- modal-header -->
+
+	<div class="modal-content">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus quis massa facilisis fringilla. Nulla lacinia feugiat massa in varius. Praesent hendrerit leo eu elit molestie, id tincidunt justo finibus. Aenean maximus consectetur est vel ullamcorper.</p>
+		<p>Curabitur nec suscipit purus, in lacinia leo. Nunc quis purus et odio posuere pellentesque sit amet sed nunc. Mauris in nunc lacinia, ornare ipsum id, egestas mauris. Mauris iaculis gravida diam, at interdum nisi iaculis egestas.</p>
+	</div><!-- .modal-content -->
+
+</div><!-- .fs-content-modal (end) -->
+</pre>
+
+<p>Now, in the following sections we'll break down the various parts that make all this work and discuss the different options.</p>
+
+<h3 class="heading-sm">Modal Linking</h3>
+
+<p>A content modal element and <code>&lt;a&gt;</code> tag are linked together by a unique ID. Your <code>&lt;a&gt;</code> tag will link to the ID of the modal element and will need the class <code>fs-modal-content-link</code> to invoke the JavaScript.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<a href="#my-modal" class="fs-modal-content-link">Open Modal</a>
+
+<div id="my-modal" class="fs-content-modal" aria-hidden="true">
+	<!-- Content here... -->
+</div>
+</pre>
+
+<h3 class="heading-sm">Modal Headers</h3>
+
+<p>If you want your modal to have a header, you can wrap any heading in a <code>.modal-header</code> element like the following.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div id="my-modal" class="fs-content-modal">
+
+	<div class="modal-header">
+		<h3>Modal Header</h3>
+	</div><!-- .modal-header -->
+
+	<!-- Content here... -->
+
+</div>
+</pre>
+
+<h3 class="heading-sm">Modal Content</h3>
+
+<p>To get matching padding and styling within your modal window's content, place it within an element with class <code>modal-content</code> like the following.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div id="my-modal" class="fs-content-modal">
+
+	<!-- Header here... -->
+
+	<div class="modal-content">
+		<!-- Content here... -->
+	</div><!-- .modal-content -->
+
+</div>
+</pre>
+
+<h3 class="heading-sm">Modal Closing</h3>
+
+<p>If you add one of the framework's <a href="buttons.html#close-buttons" title="Close Buttons" target="_blank">close buttons</a> within your header, it'll automatically get styled and placed in the top right corner. You can use any of the four sizes, as well. The only thing to note is that you must add the class <code>fs-modal-close</code> to invoke the JavaScript required for closing the modal.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div id="my-modal" class="fs-content-modal">
+
+	<div class="modal-header">
+		<h3>Modal Header</h3>
+		<button type="button" class="fs-modal-close fs-close close-md">Close</button>
+	</div><!-- .modal-header -->
+
+	<!-- Content here... -->
+
+</div>
+</pre>
+
+<p>However, adding <code>fs-modal-close</code> to any link within your modal will invoke the JavaScript needed to close the modal. Below is a basic example, where we're using a standard button to close the modal window.</p>
+
+<p><a href="#modal-with-btn" title="Open Modal" class="fs-content-modal-link">Open Modal With Alternate Button</a></p>
+
+<div id="modal-with-btn" class="fs-content-modal modal-md" aria-hidden="true">
+
+	<div class="modal-header">
+		<h3>Content Modal</h3>
+	</div><!-- .modal-header -->
+
+	<div class="modal-content">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus quis massa facilisis fringilla. Nulla lacinia feugiat massa in varius. Praesent hendrerit leo eu elit molestie, id tincidunt justo finibus. Aenean maximus consectetur est vel ullamcorper.</p>
+		<p>Curabitur nec suscipit purus, in lacinia leo. Nunc quis purus et odio posuere pellentesque sit amet sed nunc. Mauris in nunc lacinia, ornare ipsum id, egestas mauris. Mauris iaculis gravida diam, at interdum nisi iaculis egestas.</p>
+		<p><a href="#" class="fs-modal-close btn btn-primary">Close</a></p>
+	</div><!-- .modal-content -->
+
+</div><!-- .fs-content-modal (end) -->
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<a href="#modal-with-btn" title="Open Modal" class="fs-content-modal-link">Open Modal With Alternate Button</a>
+
+<div id="modal-with-btn"  class="fs-content-modal modal-md" aria-hidden="true">
+
+	<div class="modal-header">
+		<h3>Content Modal</h3>
+	</div><!-- .modal-header -->
+
+	<div class="modal-content">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus quis massa facilisis fringilla. Nulla lacinia feugiat massa in varius. Praesent hendrerit leo eu elit molestie, id tincidunt justo finibus. Aenean maximus consectetur est vel ullamcorper.</p>
+		<p>Curabitur nec suscipit purus, in lacinia leo. Nunc quis purus et odio posuere pellentesque sit amet sed nunc. Mauris in nunc lacinia, ornare ipsum id, egestas mauris. Mauris iaculis gravida diam, at interdum nisi iaculis egestas.</p>
+		<p><a href="#" class="fs-modal-close btn btn-primary">Close</a></p>
+	</div><!-- .modal-content -->
+
+</div><!-- .fs-content-modal (end) -->
+</pre>
+
+<h3 class="heading-sm">Modal Sizes</h3>
+
+<p>Content modals can be implemented in three different sizes by adding classes <code>modal-sm</code>, <code>modal-md</code>, or <code>modal-lg</code> to the <code>.fs-content-modal</code> element. Note that there is no default size and so you must <em>always</em> use one of these sizing classes.</p>
+
+<p>In viewing the following three sizes, you can see how we've incorporated various sized headings and close buttons to match the size of the modal windows, but you can mix this around and include whichever of these elements you want. &mdash; In other words, the size of these inner headings and close buttons are not directly tied to the size of the modal window.</p>
+
+<p>Below is an example of a small modal using class <code>.modal-sm</code>.</p>
+
+<p><a href="#modal-sm" title="View Small Modal" class="fs-content-modal-link">View Small Modal</a></p>
+
+<div id="modal-sm" class="fs-content-modal modal-sm" aria-hidden="true">
+
+	<div class="modal-header">
+		<h3 class="heading-xs">Small Modal</h3>
+		<button type="button" class="fs-modal-close fs-close close-sm">Close</button>
+	</div><!-- modal-header -->
+
+	<div class="modal-content">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus quis massa facilisis fringilla. Nulla lacinia feugiat massa in varius. Praesent hendrerit leo eu elit molestie, id tincidunt justo finibus.</p>
+	</div><!-- .modal-content -->
+
+</div><!-- .fs-content-modal (end) -->
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<a href="#modal-sm" title="View Small Modal" class="fs-content-modal-link">View Small Modal</a>
+
+<div id="modal-sm" class="fs-content-modal modal-sm" aria-hidden="true">
+
+	<div class="modal-header">
+		<h3 class="heading-xs">Small Modal</h3>
+		<button type="button" class="fs-modal-close fs-close close-sm">Close</button>
+	</div><!-- modal-header -->
+
+	<div class="modal-content">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus quis massa facilisis fringilla. Nulla lacinia feugiat massa in varius. Praesent hendrerit leo eu elit molestie, id tincidunt justo finibus.</p>
+	</div><!-- .modal-content -->
+
+</div><!-- .fs-content-modal (end) -->
+</pre>
+
+<p>Below is an example of a medium modal using class <code>.modal-md</code>.</p>
+
+<p><a href="#modal-md" title="View Medium Modal" class="fs-content-modal-link">View Medium Modal</a></p>
+
+<div id="modal-md" class="fs-content-modal modal-md" aria-hidden="true">
+
+	<div class="modal-header">
+		<h3>Medium Modal</h3>
+		<button type="button" class="fs-modal-close fs-close close-md">Close</button>
+	</div><!-- modal-header -->
+
+	<div class="modal-content">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus quis massa facilisis fringilla. Nulla lacinia feugiat massa in varius. Praesent hendrerit leo eu elit molestie, id tincidunt justo finibus. Aenean maximus consectetur est vel ullamcorper.</p>
+		<p>Curabitur nec suscipit purus, in lacinia leo. Nunc quis purus et odio posuere pellentesque sit amet sed nunc. Mauris in nunc lacinia, ornare ipsum id, egestas mauris. Mauris iaculis gravida diam, at interdum nisi iaculis egestas.</p>
+	</div><!-- .modal-content -->
+
+</div><!-- .fs-content-modal (end) -->
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<a href="#modal-md" title="View Medium Modal" class="fs-content-modal-link">View Medium Modal</a>
+
+<div id="modal-md" class="fs-content-modal modal-md" aria-hidden="true">
+
+	<div class="modal-header">
+		<h3>Medium Modal</h3>
+		<button type="button" class="fs-modal-close fs-close close-md">Close</button>
+	</div><!-- modal-header -->
+
+	<div class="modal-content">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus quis massa facilisis fringilla. Nulla lacinia feugiat massa in varius. Praesent hendrerit leo eu elit molestie, id tincidunt justo finibus. Aenean maximus consectetur est vel ullamcorper.</p>
+		<p>Curabitur nec suscipit purus, in lacinia leo. Nunc quis purus et odio posuere pellentesque sit amet sed nunc. Mauris in nunc lacinia, ornare ipsum id, egestas mauris. Mauris iaculis gravida diam, at interdum nisi iaculis egestas.</p>
+	</div><!-- .modal-content -->
+
+</div><!-- .fs-content-modal (end) -->
+</pre>
+
+<p>Below is an example of a large modal using class <code>.modal-lg</code>.</p>
+
+<p><a href="#modal-lg" title="View Large Modal" class="fs-content-modal-link">View Large Modal</a></p>
+
+<div id="modal-lg" class="fs-content-modal modal-lg" aria-hidden="true">
+
+	<div class="modal-header">
+		<h2>Large Modal</h2>
+		<button type="button" class="fs-modal-close fs-close close-lg">Close</button>
+	</div><!-- modal-header -->
+
+	<div class="modal-content">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus quis massa facilisis fringilla. Nulla lacinia feugiat massa in varius. Praesent hendrerit leo eu elit molestie, id tincidunt justo finibus. Aenean maximus consectetur est vel ullamcorper.</p>
+		<p>Curabitur nec suscipit purus, in lacinia leo. Nunc quis purus et odio posuere pellentesque sit amet sed nunc. Mauris in nunc lacinia, ornare ipsum id, egestas mauris. Mauris iaculis gravida diam, at interdum nisi iaculis egestas.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus quis massa facilisis fringilla. Nulla lacinia feugiat massa in varius. Praesent hendrerit leo eu elit molestie, id tincidunt justo finibus. Aenean maximus consectetur est vel ullamcorper.</p>
+		<p>Curabitur nec suscipit purus, in lacinia leo. Nunc quis purus et odio posuere pellentesque sit amet sed nunc. Mauris in nunc lacinia, ornare ipsum id, egestas mauris. Mauris iaculis gravida diam, at interdum nisi iaculis egestas.</p>
+	</div><!-- .modal-content -->
+
+</div><!-- .fs-content-modal (end) -->
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<a href="#modal-lg" title="View Large Modal" class="fs-content-modal-link">View Large Modal</a>
+
+<div id="modal-lg" class="fs-content-modal modal-lg" aria-hidden="true">
+
+	<div class="modal-header">
+		<h2>Large Modal</h2>
+		<button type="button" class="fs-modal-close fs-close close-lg">Close</button>
+	</div><!-- modal-header -->
+
+	<div class="modal-content">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus quis massa facilisis fringilla. Nulla lacinia feugiat massa in varius. Praesent hendrerit leo eu elit molestie, id tincidunt justo finibus. Aenean maximus consectetur est vel ullamcorper.</p>
+		<p>Curabitur nec suscipit purus, in lacinia leo. Nunc quis purus et odio posuere pellentesque sit amet sed nunc. Mauris in nunc lacinia, ornare ipsum id, egestas mauris. Mauris iaculis gravida diam, at interdum nisi iaculis egestas.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus quis massa facilisis fringilla. Nulla lacinia feugiat massa in varius. Praesent hendrerit leo eu elit molestie, id tincidunt justo finibus. Aenean maximus consectetur est vel ullamcorper.</p>
+		<p>Curabitur nec suscipit purus, in lacinia leo. Nunc quis purus et odio posuere pellentesque sit amet sed nunc. Mauris in nunc lacinia, ornare ipsum id, egestas mauris. Mauris iaculis gravida diam, at interdum nisi iaculis egestas.</p>
+	</div><!-- .modal-content -->
+
+</div><!-- .fs-content-modal (end) -->
+</pre>
+
+<h3 class="heading-sm">Naked Modals</h3>
+
+<p>And of course most of the different elements we've discussed are optional. If you just want a bare-bones content modal that you can style yourself, here's an example of that.</p>
+
+<p><a href="#modal-naked" class="fs-content-modal-link">Open Naked Content Modal</a></p>
+
+<div id="modal-naked" class="fs-content-modal modal-md" aria-hidden="true">
+	<p>Okay, you've opened me; now <a href="#" class="fs-modal-close">close me</a>.</p>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<a href="#modal-naked" class="fs-content-modal-link">Open Naked Content Modal</a>
+
+<div id="modal-naked" class="fs-content-modal modal-md" aria-hidden="true">
+	<p>Okay, you've opened me; now <a href="#" class="fs-modal-close">close me</a>.</p>
+</div>
+</pre>
+
+<h2 id="image-modals">Image Modals</h2>
+
+<p>To open an image modal, you need to link to an image URL and add class <code>fs-image-modal-link</code> to that link. Note that the <code>title</code> attribute of the link will be used as the title displayed below the image modal.</p>
+
+<p><a href="assets/img/image-1.jpg" class="fs-image-modal-link" title="A Quiet Beach">Open Image Modal</a></p>
+
+<pre class="brush: xml; gutter: false; toolbar: false; class-name: no-wrap;">
+<a href="assets/img/image-1.jpg" class="fs-image-modal-link" title="A Quiet Beach">Open Image</a>
+</pre>
+
+<h2 id="iframe-modals">Videos</h2>
+
+<p>Iframe content generally consists of video and other content loaded from external URLs. For all iframe-based elements, you need to link to the desired URL and add class <code>fs-iframe-modal-link</code> to the link. And similary to images, whatever you place in the <code>title</code> attribute of the link will display as a title below the iframe modal.</p>
+
+<p>Below is a basic example showing how any URL can be opened up within an iframe modal.</p>
+
+<p><a href="https://wpjumpstart.com" title="Jump Start" class="fs-iframe-modal-link">Open Webpage Modal</a></p>
+
+<pre class="brush: xml; gutter: false; toolbar: false; class-name: no-wrap;">
+<a href="https://wpjumpstart.com" title="Jump Start" class="fs-iframe-modal-link">Open YouTube Webpage Modal</a>
+</pre>
+
+<p>And of course anything that would more typically use an iframe, like embedding a video for example works great, too. The following is an example of linking to the embed URL for a video on WordPress.tv.</p>
+
+<p><a href="https://videopress.com/embed/IYfHX4jN" class="fs-iframe-modal-link" title="State of the Word 2016">Open WordPress.tv Embed</a></p>
+
+<pre class="brush: xml; gutter: false; toolbar: false; class-name: no-wrap;">
+<a href="https://videopress.com/embed/IYfHX4jN" class="fs-iframe-modal-link" title="State of the Word 2016">Open WordPress.tv Embed</a>
+</pre>
+
+<p>Or, how about a video from Funny or Die.</p>
+
+<p><a href="https://www.funnyordie.com/embed/ca9b942215" class="fs-iframe-modal-link" title="Handman's Tale">Open Funny or Die Embed</a></p>
+
+<pre class="brush: xml; gutter: false; toolbar: false; class-name: no-wrap;">
+<a href="https://www.funnyordie.com/embed/ca9b942215" class="fs-iframe-modal-link" title="Handman's Tale">Open Funny or Die Embed</a>
+</pre>
+
+<p>When linking to a YouTube video, there is some special treatment that Magnific Popup gives us. Instead of linking to the embed URL, we can just link directly to the YouTube video page &mdash; i.e. <code>http://youtube.com/watch?v={Video ID}</code>. This also allows for a smoother experience by auto-playing the video when the modal opens.</p>
+
+<p><a href="https://www.youtube.com/watch?v=2Tx3wm8mN6g" class="fs-iframe-modal-link" title="Who We Are">Open YouTube Video Modal</a></p>
+
+<pre class="brush: xml; gutter: false; toolbar: false; class-name: no-wrap;">
+<a href="https://www.youtube.com/watch?v=2Tx3wm8mN6g" class="fs-iframe-modal-link" title="Who We Are">Open YouTube Video Modal</a>
+</pre>
+
+<p>And similarly to YouTube, we can do the same thing for Vimeo by linking to a standard Vimeo page like <code>https://vimeo.com/{Video ID}</code>.</p>
+
+<p><a href="https://vimeo.com/126340425" class="fs-iframe-modal-link" title="Jump Start Promo">Open Vimeo Video Modal</a></p>
+
+<pre class="brush: xml; gutter: false; toolbar: false; class-name: no-wrap;">
+<a href="https://vimeo.com/126340425" class="fs-iframe-modal-link" title="Jump Start Promo">Open Vimeo Video Modal</a>
+</pre>
+
+<h2 id="gallery-modals">Gallery Modals</h2>
+
+<p>Galleries are used to group image and iframe modal elements together. This way, when one element in the gallery is open, the user can then navigate through the rest of the elements without closing the modal window.</p>
+
+<p>To group a set of modal elements into a gallery, simply wrap them in an element with class <code>fs-modal-gallery</code>. Below is a mix of image and iframe modal links grouped together this way into a gallery.</p>
+
+<div class="fs-modal-gallery">
+	<p>
+		<a href="assets/img/image-1.jpg" class="fs-image-modal-link" title="A Quiet Beach">Open Item #1 (image)</a><br>
+		<a href="assets/img/image-2.jpg" class="fs-image-modal-link" title="A Lone Mountain">Open Item #2 (image)</a><br>
+		<a href="assets/img/image-3.jpg" class="fs-image-modal-link" title="An Epic Hike">Open Item #3 (image)</a><br>
+		<a href="https://www.youtube.com/watch?v=2Tx3wm8mN6g" title="Who We Are" class="fs-iframe-modal-link">Open Item #4 (YouTube video)</a><br>
+		<a href="https://vimeo.com/126340425" title="Jump Start Promo" class="fs-iframe-modal-link">Open Item #5 (Vimeo video)</a>
+	</p>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="fs-modal-gallery">
+	<a href="assets/img/image-1.jpg" class="fs-image-modal-link" title="A Quiet Beach">Open Item #1 (image)</a>
+	<a href="assets/img/image-2.jpg" class="fs-image-modal-link" title="A Lone Mountain">Open Item #2 (image)</a>
+	<a href="assets/img/image-3.jpg" class="fs-image-modal-link" title="An Epic Hike">Open Item #3 (image)</a>
+	<a href="https://www.youtube.com/watch?v=2Tx3wm8mN6g" class="fs-iframe-modal-link" title="Who We Are">Open Item #4 (YouTube video)</a>
+	<a href="https://vimeo.com/126340425" class="fs-iframe-modal-link" title="Jump Start Promo">Open Item #5 (Vimeo video)</a>
+</div>
+</pre>
+
+<div class="alert info">
+	<p><strong>Note:</strong> To create a styled gallery of thumbnails, which could be combined with this modal functionality, see <a href="images.html#galleries" title="Thumbnail Galleries">here</a>.</p>
+</div>
+
+<h2 id="search-modal">Search Modal</h2>
+
+
+
+				</article><!-- #main (end) -->
+
+			</div><!-- #container (end) -->
+		</div><!-- #wrapper (end) -->
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+/**
+ * Optional configuration object that can be used to
+ * disable individiual JavaScript components.
+ */
+var FrontStreetConfig = {
+	'menu'  			: true,
+	'mobile-menu'		: true,
+	'modal'				: true,
+	'jump-menu'			: true,
+	'tabs'				: true,
+	'toggles'			: true
+};
+
+/**
+ * Optional configuration object that can adjust how
+ * Magnific Popup is configured.
+ */
+var FrontStreetModalConfig = {
+	'animation'			: 'fade',	// 'fade', 'slide' or 'none'
+	'mobile'			: 0,		// Image modals will work at all viewports.
+	'mobileIframe'		: 768,		// Iframe modals will only work when viewport >= 768.
+	'mobileGallery'		: 0,		// Gallery modals will work at all viewports.
+	'error'				: 'The modal media could not be loaded.',
+	'close'				: 'Close',
+	'loading'			: 'Loading...',
+	'counter'			: '%curr% of %total%',
+	'next'				: 'Next',
+	'previous'			: 'Previous'
+};
+/* ]]> */
+</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="assets/frontstreet/plugins/magnific-popup/magnific-popup.min.js"></script>
+<script type="text/javascript" src="assets/frontstreet/js/frontstreet.js"></script>
+<script type="text/javascript" src="assets/js/docs.min.js"></script>
+
+<script type="text/javascript">
+	SyntaxHighlighter.all()
+</script>
+
+
+	</body>
+</html>
+
