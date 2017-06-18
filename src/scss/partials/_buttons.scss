@@ -12,9 +12,9 @@
 	font-size: $font-size-btn;
 	font-weight: $font-weight-btn;
 	letter-spacing: $font-ls-btn;
-	line-height: $font-lh-btn;
+	line-height: $btn-base-lh;
 	margin-bottom: 0; // For input.btn
-	padding: $padding-btn;
+	padding: padding-y($btn-base-height, $btn-base-lh, $btn-border-width) $btn-base-padding;
 	text-align: center;
 	text-transform: $font-transform-btn;
 	touch-action: manipulation;
@@ -30,7 +30,6 @@
 			@include tab-focus;
 		}
 	}
-
 	&:hover,
 	&:focus,
 	&.focus {
@@ -38,16 +37,13 @@
 		color: $clr-text-base;
 		text-decoration: none;
 	}
-
 	&:active,
 	&.active {
 		outline: 0;
 	}
-
 	&.active {
 		border-color: transparent;
 	}
-
 }
 
 //
@@ -56,9 +52,10 @@
 
 @each $size, $map in $btn-sizes {
 	.btn-#{$size} {
-		@each $prop, $val in $map {
-			#{$prop}: #{$val};
-		}
+		font-size: map-get($map, font-size);
+		letter-spacing: map-get($map, letter-spacing);
+		line-height: map-get($map, line-height);
+		padding: padding-y(map-get($map, height), map-get($map, line-height), $btn-border-width) map-get($map, padding);
 	}
 }
 

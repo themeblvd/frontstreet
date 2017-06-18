@@ -95,3 +95,19 @@
 	@return str-replace($clr, "#", "%23");
 
 }
+
+//
+// Calculate vertical padding values based
+// on desired height and other paramters.
+//
+// @param {Int} $height - Destired height of element.
+// @param {Int} $line-height - Line height of element.
+// @param {Int} $border-width - Width of border around element.
+// @return {Int} - Padding used for top and bottom of element.
+//
+
+@function padding-y($height, $line-height, $border-width: 0) {
+
+	@return (($height - $line-height - ($border-width * 2)) / 2 );
+
+}

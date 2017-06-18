@@ -126,38 +126,39 @@ label,
 // General Fields
 //
 
-@include input-selector {
+@include field-selector {
 	background-color: if($style == 'inverse', $clr-bg-inv-field, $clr-bg-field);
 	border-radius: 0;
-	border: 1px solid if($style == 'inverse', $clr-border-inv, $clr-border);
+	border: $field-border-width solid if($style == 'inverse', $clr-border-inv, $clr-border);
 	color: if($style == 'inverse', $clr-text-inv-base, $clr-text-base);
 	display: block;
 	font-size: $font-size-field;
-	line-height: $font-lh-field;
+	height: $field-base-height;
+	line-height: $field-base-lh;
 	margin: $margin-field;
-	padding: $padding-field;
+	padding: padding-y($field-base-height, $field-base-lh, $field-border-width) $field-base-padding;
 	width: 100%;
 }
-@include input-selector {
+@include field-selector {
 	&:focus {
 		border-color: if($style == 'inverse', $clr-border-inv-active, $clr-border-active);
 		box-shadow: 0 0 8px if($style == 'inverse', rgba($clr-black, 0.2), $clr-trans-lightest);
 		outline: 0;
 	}
 }
-@include input-selector {
+@include field-selector {
 	@include margin-vert-flush;
 }
 
 @if ($style == 'inverse') {
 
 	.text-dark {
-		@include input-selector {
+		@include field-selector {
 			background-color: $clr-bg-field;
 			border-color: $clr-border;
 			color: $clr-text-base;
 		}
-		@include input-selector {
+		@include field-selector {
 			&:focus {
 				border-color: $clr-border-active;
 				box-shadow: 0 0 8px $clr-trans-lightest;
@@ -166,12 +167,12 @@ label,
 	}
 
 	.text-light {
-		@include input-selector {
+		@include field-selector {
 			background-color: $clr-bg-inv-field;
 			border-color: $clr-border-inv;
 			color: $clr-text-inv-base;
 		}
-		@include input-selector {
+		@include field-selector {
 			&:focus {
 				border-color: $clr-border-inv-active;
 				box-shadow: 0 0 8px rgba($clr-black, 0.2);
@@ -182,12 +183,12 @@ label,
 } @else {
 
 	.text-light {
-		@include input-selector {
+		@include field-selector {
 			background-color: $clr-bg-inv-field;
 			border-color: $clr-border-inv;
 			color: $clr-text-inv-base;
 		}
-		@include input-selector {
+		@include field-selector {
 			&:focus {
 				border-color: $clr-border-inv-active;
 				box-shadow: 0 0 8px rgba($clr-black, 0.2);
@@ -196,12 +197,12 @@ label,
 	}
 
 	.text-dark {
-		@include input-selector {
+		@include field-selector {
 			background-color: $clr-bg-field;
 			border-color: $clr-border;
 			color: $clr-text-base;
 		}
-		@include input-selector {
+		@include field-selector {
 			&:focus {
 				border-color: $clr-border-active;
 				box-shadow: 0 0 8px $clr-trans-lightest;
@@ -216,7 +217,8 @@ label,
 //
 
 textarea {
-	line-height: $font-lh-field;
+	height: initial;
+	line-height: $field-base-lh;
 }
 
 //
@@ -264,11 +266,10 @@ select[multiple] option {
 @each $size, $map in $field-sizes {
 	input.field-#{$size},
 	select.field-#{$size} {
-		@each $prop, $val in $map {
-			@if ($prop != height) {
-				#{$prop}: #{$val};
-			}
-		}
+		font-size: map-get($map, font-size);
+		height: map-get($map, height);
+		line-height: map-get($map, line-height);
+		padding: padding-y(map-get($map, height), map-get($map, line-height), $field-border-width) map-get($map, padding);
 	}
 }
 
@@ -325,6 +326,37 @@ input[type="checkbox"] {
 
 input[type="file"] {
 	display: block;
+}
+
+//
+// Field Groups
+//
+
+.field-group {
+
+	margin: $margin-field;
+	@include list-unstyled;
+
+	> li {
+		margin: $margin-field;
+		@include margin-vert-flush;
+	}
+}
+@include min-width(sm) {
+	.field-group {
+
+		align-items: flex-end;
+		display: flex;
+		justify-content: center;
+
+		> li {
+			margin: 0 5px;
+			@include margin-horz-flush;
+		}
+		> li.has-field {
+			flex: 1;
+		}
+	}
 }
 
 //

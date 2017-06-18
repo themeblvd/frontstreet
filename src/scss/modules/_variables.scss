@@ -142,8 +142,6 @@ $font-lh-lead						: 1.4;
 $font-lh-quote						: 1.4;
 $font-lh-header-menu				: 1.25;
 $font-lh-header-menu-dropdown		: 1.4;
-$font-lh-btn 						: $font-size-base;
-$font-lh-field						: $font-lh-btn;
 
 // Font Style
 
@@ -513,8 +511,6 @@ $margin-modal-mobile				: 0 auto;
 
 $padding-list						: if($direction == 'rtl', 0 40px 0 0, 0 0 0 40px);
 $padding-alert						: 15px;
-$padding-btn						: 15px 22px; // Paired w/2px border
-$padding-field						: 16px 18px; // Paired w/1px border
 $padding-submenu					: 12px;
 $padding-breadcrumbs				: 20px;
 $padding-tabs						: 14px 18px;
@@ -528,10 +524,16 @@ $padding-modal-bg-mobile			: 6px;
 // Forms
 // ==========================================================================
 
+$field-base-height					: 50px;
+$field-base-lh						: $font-size-base;
+$field-base-padding					: 18px;
+
+$field-border-width					: 1px;
+
 $clr-text-placeholder				: lighten($clr-text-base, 40%);
 $clr-text-inv-placeholder			: rgba($clr-text-inv-base, 0.4);
 
-$input-selector						: "input[type=date],
+$field-selector						: "input[type=date],
 									  input[type=datetime-local],
 									  input[type=email],
 									  input[type=month],
@@ -554,43 +556,47 @@ $field-sizes : (
 		font-size					: $font-size-xxs,
 		height						: 32px,
 		line-height					: $font-size-xxs + 2, // Must be even number.
-		padding						: 8px 10px
+		padding						: 10px
 	),
 	sm : (
 		font-size					: $font-size-xs,
 		height						: 38px,
 		line-height					: $font-size-xs + 3, // Must be even number.
-		padding						: 10px 12px
+		padding						: 12px
 	),
 	lg : (
 		font-size					: $font-size-md,
 		height						: 56px,
 		line-height					: $font-size-md + 3, // Must be even number.
-		padding						: 18px 22px
+		padding						: 22px
 	),
 	xl : (
 		font-size					: $font-size-base,
 		height						: 60px,
 		line-height					: $font-size-base + 2, // Must be even number.
-		padding						: 20px 24px
+		padding						: 24px
 	),
 	xxl : (
 		font-size					: $font-size-lg,
 		height						: 64px,
 		line-height					: $font-size-lg + 6, // Must be even number.
-		padding						: 18px 26px
+		padding						: 26px
 	),
 	xxxl : (
 		font-size					: $font-size-xl,
-		height						: 72px,
+		height						: 76px,
 		line-height					: $font-size-xl + 6, // Must be even number.
-		padding						: 20px 28px
+		padding						: 28px
 	)
 );
 
 // ==========================================================================
 // Buttons
 // ==========================================================================
+
+$btn-base-height					: $field-base-height;
+$btn-base-lh						: $field-base-lh;
+$btn-base-padding					: $field-base-padding + 4;
 
 $btn-transition						: background-color 0.2s ease-out;
 $btn-border-width					: 2px; // Transparent on standard .btn
@@ -608,32 +614,44 @@ $btn-sizes : (
 	xs : (
 		font-size					: 10px,
 		letter-spacing 				: $font-ls-btn,
-		padding						: 6px 10px
+		line-height					: $btn-base-lh,
+		padding						: 10px,
+		height						: map-deep-get($field-sizes, xs, height)
 	),
 	sm : (
 		font-size					: 10px,
 		letter-spacing 				: $font-ls-btn,
-		padding						: 9px 15px
+		line-height					: $btn-base-lh,
+		padding						: 15px,
+		height						: map-deep-get($field-sizes, sm, height)
 	),
 	lg : (
 		font-size					: 12px,
 		letter-spacing 				: $font-ls-btn,
-		padding						: 18px 30px
+		line-height					: $btn-base-lh,
+		padding						: 30px,
+		height						: map-deep-get($field-sizes, lg, height)
 	),
 	xl : (
 		font-size					: 14px,
 		letter-spacing 				: $font-ls-btn,
-		padding						: 20px 40px
+		line-height					: $btn-base-lh,
+		padding						: 40px,
+		height						: map-deep-get($field-sizes, xl, height)
 	),
 	xxl : (
 		font-size					: 15px,
 		letter-spacing 				: $font-ls-btn,
-		padding						: 22px 50px
+		line-height					: $btn-base-lh,
+		padding						: 50px,
+		height						: map-deep-get($field-sizes, xxl, height)
 	),
 	xxxl : (
 		font-size					: 16px,
 		letter-spacing 				: $font-ls-btn,
-		padding						: 28px 64px
+		line-height					: $btn-base-lh,
+		padding						: 64px,
+		height						: map-deep-get($field-sizes, xxxl, height)
 	)
 );
 

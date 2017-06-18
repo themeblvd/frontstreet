@@ -832,6 +832,422 @@
 </p>
 </pre>
 
+<!-- FIELD GROUPS -->
+
+<h2 id="field-groups">Field Groups</h2>
+
+<p>Fields and buttons can easily be put into horizontal groups by adding them within an element with class <code>field-group</code>. This is necessary when you want the elements within to equally span the row.</p>
+
+<ul class="field-group">
+	<li class="has-field">
+		<input type="text" placeholder="you@youremail.com">
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary" type="submit">Subscribe</button>
+	</li>
+</ul>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<ul class="field-group">
+	<li class="has-field">
+		<input type="text" placeholder="you@youremail.com">
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary" type="submit">Subscribe</button>
+	</li>
+</ul>
+</pre>
+
+<p>Multiple fields will automatically adjust to fit, as well.</p>
+
+<ul class="field-group">
+	<li class="has-field">
+		<input type="text" placeholder="Name">
+	</li>
+	<li class="has-field">
+		<input type="text" placeholder="you@youremail.com">
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary" type="submit">Subscribe</button>
+	</li>
+</ul>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<ul class="field-group">
+	<li class="has-field">
+		<input type="text" placeholder="Name">
+	</li>
+	<li class="has-field">
+		<input type="text" placeholder="you@youremail.com">
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary" type="submit">Subscribe</button>
+	</li>
+</ul>
+</pre>
+
+<p>Slightly more complex uses with labels can be also utilized here.</p>
+
+<ul class="field-group">
+	<li class="has-field">
+		<label>Name</label>
+		<input type="text">
+	</li>
+	<li class="has-field">
+		<label>Email</label>
+		<input type="text">
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary" type="submit">Subscribe</button>
+	</li>
+</ul>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<ul class="field-group">
+	<li class="has-field">
+		<label>Name</label>
+		<input type="text">
+	</li>
+	<li class="has-field">
+		<label>Email</label>
+		<input type="text">
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary" type="submit">Subscribe</button>
+	</li>
+</ul>
+</pre>
+
+<p>And using matching sizes on your fields and buttons can adjust the overall field group sizes.</p>
+
+<ul class="field-group">
+	<li class="has-field">
+		<input type="text" class="field-xs" class="field-xs" placeholder="you@youremail.com">
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary btn-xs" type="submit">Subscribe</button>
+	</li>
+</ul>
+
+<ul class="field-group">
+	<li class="has-field">
+		<input type="text" class="field-sm" placeholder="you@youremail.com">
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary btn-sm" type="submit">Subscribe</button>
+	</li>
+</ul>
+
+<ul class="field-group">
+	<li class="has-field">
+		<input type="text" placeholder="you@youremail.com">
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary" type="submit">Subscribe</button>
+	</li>
+</ul>
+
+<ul class="field-group">
+	<li class="has-field">
+		<input type="text" class="field-lg" placeholder="you@youremail.com">
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary btn-lg" type="submit">Subscribe</button>
+	</li>
+</ul>
+
+<ul class="field-group">
+	<li class="has-field">
+		<input type="text" class="field-xl" placeholder="you@youremail.com">
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary btn-xl" type="submit">Subscribe</button>
+	</li>
+</ul>
+
+<ul class="field-group">
+	<li class="has-field">
+		<input type="text" class="field-xxl" placeholder="you@youremail.com">
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary btn-xxl" type="submit">Subscribe</button>
+	</li>
+</ul>
+
+<ul class="field-group">
+	<li class="has-field">
+		<input type="text" class="field-xxxl" placeholder="you@youremail.com">
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary btn-xxxl" type="submit">Subscribe</button>
+	</li>
+</ul>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<ul class="field-group">
+	<li class="has-field">
+		<input type="text" class="field-xs" class="field-xs" placeholder="you@youremail.com">
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary btn-xs" type="submit">Subscribe</button>
+	</li>
+</ul>
+
+<ul class="field-group">
+	<li class="has-field">
+		<input type="text" class="field-sm" placeholder="you@youremail.com">
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary btn-sm" type="submit">Subscribe</button>
+	</li>
+</ul>
+
+<ul class="field-group">
+	<li class="has-field">
+		<input type="text" placeholder="you@youremail.com">
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary" type="submit">Subscribe</button>
+	</li>
+</ul>
+
+<ul class="field-group">
+	<li class="has-field">
+		<input type="text" class="field-lg" placeholder="you@youremail.com">
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary btn-lg" type="submit">Subscribe</button>
+	</li>
+</ul>
+
+<ul class="field-group">
+	<li class="has-field">
+		<input type="text" class="field-xl" placeholder="you@youremail.com">
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary btn-xl" type="submit">Subscribe</button>
+	</li>
+</ul>
+
+<ul class="field-group">
+	<li class="has-field">
+		<input type="text" class="field-xxl" placeholder="you@youremail.com">
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary btn-xxl" type="submit">Subscribe</button>
+	</li>
+</ul>
+
+<ul class="field-group">
+	<li class="has-field">
+		<input type="text" class="field-xxxl" placeholder="you@youremail.com">
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary btn-xxxl" type="submit">Subscribe</button>
+	</li>
+</ul>
+</pre>
+
+<p>And your <code>.field-group</code> elements can also contain <code>&lt;select&gt;</code> menus, too.</p>
+
+<ul class="field-group">
+	<li class="has-field">
+		<select class="field-xs">
+			<option value="crosby">Crosby</option>
+			<option value="mcdavid">McDavid</option>
+			<option value="ovechkin">Ovechkin</option>
+			<option value="malkin">Malkin</option>
+		</select>
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary btn-xs" type="submit">Submit</button>
+	</li>
+</ul>
+
+<ul class="field-group">
+	<li class="has-field">
+		<select class="field-sm">
+			<option value="crosby">Crosby</option>
+			<option value="mcdavid">McDavid</option>
+			<option value="ovechkin">Ovechkin</option>
+			<option value="malkin">Malkin</option>
+		</select>
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary btn-sm" type="submit">Submit</button>
+	</li>
+</ul>
+
+<ul class="field-group">
+	<li class="has-field">
+		<select>
+			<option value="crosby">Crosby</option>
+			<option value="mcdavid">McDavid</option>
+			<option value="ovechkin">Ovechkin</option>
+			<option value="malkin">Malkin</option>
+		</select>
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary" type="submit">Submit</button>
+	</li>
+</ul>
+
+<ul class="field-group">
+	<li class="has-field">
+		<select class="field-lg">
+			<option value="crosby">Crosby</option>
+			<option value="mcdavid">McDavid</option>
+			<option value="ovechkin">Ovechkin</option>
+			<option value="malkin">Malkin</option>
+		</select>
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary btn-lg" type="submit">Submit</button>
+	</li>
+</ul>
+
+<ul class="field-group">
+	<li class="has-field">
+		<select class="field-xl">
+			<option value="crosby">Crosby</option>
+			<option value="mcdavid">McDavid</option>
+			<option value="ovechkin">Ovechkin</option>
+			<option value="malkin">Malkin</option>
+		</select>
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary btn-xl" type="submit">Submit</button>
+	</li>
+</ul>
+
+<ul class="field-group">
+	<li class="has-field">
+		<select class="field-xxl">
+			<option value="crosby">Crosby</option>
+			<option value="mcdavid">McDavid</option>
+			<option value="ovechkin">Ovechkin</option>
+			<option value="malkin">Malkin</option>
+		</select>
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary btn-xxl" type="submit">Submit</button>
+	</li>
+</ul>
+
+<ul class="field-group">
+	<li class="has-field">
+		<select class="field-xxxl">
+			<option value="crosby">Crosby</option>
+			<option value="mcdavid">McDavid</option>
+			<option value="ovechkin">Ovechkin</option>
+			<option value="malkin">Malkin</option>
+		</select>
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary btn-xxxl" type="submit">Submit</button>
+	</li>
+</ul>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<ul class="field-group">
+	<li class="has-field">
+		<select class="field-xs">
+			<option value="crosby">Crosby</option>
+			<option value="mcdavid">McDavid</option>
+			<option value="ovechkin">Ovechkin</option>
+			<option value="malkin">Malkin</option>
+		</select>
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary btn-xs" type="submit">Submit</button>
+	</li>
+</ul>
+
+<ul class="field-group">
+	<li class="has-field">
+		<select class="field-sm">
+			<option value="crosby">Crosby</option>
+			<option value="mcdavid">McDavid</option>
+			<option value="ovechkin">Ovechkin</option>
+			<option value="malkin">Malkin</option>
+		</select>
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary btn-sm" type="submit">Submit</button>
+	</li>
+</ul>
+
+<ul class="field-group">
+	<li class="has-field">
+		<select>
+			<option value="crosby">Crosby</option>
+			<option value="mcdavid">McDavid</option>
+			<option value="ovechkin">Ovechkin</option>
+			<option value="malkin">Malkin</option>
+		</select>
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary" type="submit">Submit</button>
+	</li>
+</ul>
+
+<ul class="field-group">
+	<li class="has-field">
+		<select class="field-lg">
+			<option value="crosby">Crosby</option>
+			<option value="mcdavid">McDavid</option>
+			<option value="ovechkin">Ovechkin</option>
+			<option value="malkin">Malkin</option>
+		</select>
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary btn-lg" type="submit">Submit</button>
+	</li>
+</ul>
+
+<ul class="field-group">
+	<li class="has-field">
+		<select class="field-xl">
+			<option value="crosby">Crosby</option>
+			<option value="mcdavid">McDavid</option>
+			<option value="ovechkin">Ovechkin</option>
+			<option value="malkin">Malkin</option>
+		</select>
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary btn-xl" type="submit">Submit</button>
+	</li>
+</ul>
+
+<ul class="field-group">
+	<li class="has-field">
+		<select class="field-xxl">
+			<option value="crosby">Crosby</option>
+			<option value="mcdavid">McDavid</option>
+			<option value="ovechkin">Ovechkin</option>
+			<option value="malkin">Malkin</option>
+		</select>
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary btn-xxl" type="submit">Submit</button>
+	</li>
+</ul>
+
+<ul class="field-group">
+	<li class="has-field">
+		<select class="field-xxxl">
+			<option value="crosby">Crosby</option>
+			<option value="mcdavid">McDavid</option>
+			<option value="ovechkin">Ovechkin</option>
+			<option value="malkin">Malkin</option>
+		</select>
+	</li>
+	<li class="has-btn">
+		<button class="btn-primary btn-xxxl" type="submit">Submit</button>
+	</li>
+</ul>
+</pre>
+
 <!-- REQUIRED -->
 
 <h2 id="required">Required Fields</h2>

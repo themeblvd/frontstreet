@@ -6,9 +6,9 @@
 // Generate input selectors.
 //
 
-@mixin input-selector {
+@mixin field-selector {
 
-	#{$input-selector} {
+	#{$field-selector} {
 		@content;
 	}
 
