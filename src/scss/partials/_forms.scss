@@ -360,6 +360,40 @@ input[type="file"] {
 }
 
 //
+// Field Icons
+//
+
+.field-icon {
+
+	display: block;
+	font-size: $font-size-field;
+	margin: $margin-field;
+	position: relative;
+	@include margin-vert-flush;
+	@include font-icon;
+
+	&:before {
+		display: block;
+	    position: absolute;
+	    top: 50%;
+	    left: 1em;
+	    transform: translate(0, -50%);
+	}
+	input,
+	select {
+		padding-left: 2.5em;
+	}
+}
+
+@include min-width(sm) {
+	@each $size, $map in $field-sizes {
+		.field-icon-#{$size} {
+			font-size: map-get($map, font-size);
+		}
+	}
+}
+
+//
 // Placeholders
 //
 
