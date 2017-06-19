@@ -763,8 +763,8 @@ $toggle-icon-buffer					: 4px;
 
 // General
 
-$modal-overlay-color				: $clr-darkest;
-$modal-overlay-opacity				: 0.8;
+$modal-overlay-color				: $clr-black;
+$modal-overlay-opacity				: 0.9;
 $modal-shadow						: 0 0 20px rgba(0, 0, 0, 0.4);
 $modal-z-index-base					: 100000;
 
@@ -831,3 +831,6 @@ $modal-sizes : (
 		width 						: 900px
 	)
 );
+
+// Search Modal
+$modal-search-border-clr			: map-deep-get($clr-branding, secondary, base);
