@@ -6,8 +6,6 @@
 
 	background-color: transparent;
 	@include background-close($clr-svg);
-	background-position: center center;
-	background-repeat: no-repeat;
 	background-size: (map-get($btn-close, md) / 2) (map-get($btn-close, md) / 2);
 	display: inline-block;
 	cursor: pointer;
