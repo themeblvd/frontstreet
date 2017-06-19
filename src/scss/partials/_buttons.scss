@@ -50,12 +50,14 @@
 // Button Sizes
 //
 
-@each $size, $map in $btn-sizes {
-	.btn-#{$size} {
-		font-size: map-get($map, font-size);
-		letter-spacing: map-get($map, letter-spacing);
-		line-height: map-get($map, line-height);
-		padding: padding-y(map-get($map, height), map-get($map, line-height), $btn-border-width) map-get($map, padding);
+@include min-width(sm) {
+	@each $size, $map in $btn-sizes {
+		.btn-#{$size} {
+			font-size: map-get($map, font-size);
+			letter-spacing: map-get($map, letter-spacing);
+			line-height: map-get($map, line-height);
+			padding: padding-y(map-get($map, height), map-get($map, line-height), $btn-border-width) map-get($map, padding);
+		}
 	}
 }
 

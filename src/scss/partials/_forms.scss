@@ -263,13 +263,15 @@ select[multiple] option {
 // Field Sizing
 //
 
-@each $size, $map in $field-sizes {
-	input.field-#{$size},
-	select.field-#{$size} {
-		font-size: map-get($map, font-size);
-		height: map-get($map, height);
-		line-height: map-get($map, line-height);
-		padding: padding-y(map-get($map, height), map-get($map, line-height), $field-border-width) map-get($map, padding);
+@include min-width(sm) {
+	@each $size, $map in $field-sizes {
+		input.field-#{$size},
+		select.field-#{$size} {
+			font-size: map-get($map, font-size);
+			height: map-get($map, height);
+			line-height: map-get($map, line-height);
+			padding: padding-y(map-get($map, height), map-get($map, line-height), $field-border-width) map-get($map, padding);
+		}
 	}
 }
 
