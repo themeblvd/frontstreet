@@ -1,0 +1,129 @@
+// --------------------------------------------------
+// Modals
+// --------------------------------------------------
+
+//
+// Content Modals
+//
+
+.fs-content-modal {
+
+	background-clip: padding-box;
+	background-color: if($style == 'inverse', $clr-bg-inv-content, $clr-bg-content);
+	border: $modal-content-border-width solid $modal-content-border-color;
+	display: none;
+	font-size: map-deep-get($modal-sizes, xs, font-size);
+	margin: $margin-modal-mobile;
+	outline: 0; // Remove focus outline from opened modal
+	width: 100%;
+
+	.modal-header {
+
+		border-color: if($style == 'inverse', $modal-header-border-inv-color, $modal-header-border-color);
+		border-style: solid;
+		border-width: 0 0 $modal-header-border-width 0;
+		padding: map-deep-get($modal-sizes, xs, padding-header) map-deep-get($modal-sizes, xs, padding-horz);
+		position: relative;
+
+		.fs-close {
+			position: absolute;
+			top: 50%;
+			@if ($direction == 'rtl') {
+				left: map-deep-get($modal-sizes, xs, padding-horz);
+			} @else {
+				right: map-deep-get($modal-sizes, xs, padding-horz);
+			}
+			transform: translate(0, -50%);
+		}
+		* {
+			margin: 0;
+		}
+	}
+	.modal-content {
+		padding: map-deep-get($modal-sizes, xs, padding-content) map-deep-get($modal-sizes, xs, padding-horz);
+	}
+}
+.mfp-content .fs-content-modal {
+	display: block;
+}
+
+@each $size, $map in $modal-sizes {
+	@if ($size != 'xs') { // Size 'xs' used for mobile only.
+		@include min-width('sm') {
+			.fs-content-modal.modal-#{$size} {
+
+				font-size: map-get($map, font-size);
+				margin: $margin-modal;
+				max-width: map-get($map, width);
+
+				.modal-header {
+
+					padding: map-get($map, padding-header) map-get($map, padding-horz);
+
+					.fs-close {
+						@if ($direction == 'rtl') {
+							left: map-get($map, padding-horz);
+						} @else {
+							right: map-get($map, padding-horz);
+						}
+					}
+				}
+				.modal-content {
+					padding: map-get($map, padding-content) map-get($map, padding-horz);
+				}
+			}
+		}
+	}
+}
+
+//
+// Search Modals
+//
+
+.fs-search-modal {
+
+	display: none;
+
+	.field-icon:before {
+		content: "";
+		@include background-search($clr-white);
+		background-size: 3.5vh 3.5vh;
+		@if ($direction == 'rtl') {
+			right: 4vh;
+		} @else {
+			left: 4vh;
+		}
+		width: 4vh;
+    	height: 4vh;
+	}
+	input[type="search"] {
+
+		background: transparent;
+		color: $clr-text-inv-base;
+		font-size: 3.5vh;
+		height: auto;
+		line-height: 1;
+		padding: 1em 1.5em 1em 3.2em;
+
+		&:focus {
+			border-color: $modal-search-border-clr;
+			box-shadow: none;
+		}
+		&::placeholder {
+			color: $clr-text-inv-placeholder;
+		}
+	}
+}
+.mfp-search {
+	.mfp-content {
+		max-width: 50vw;
+	}
+	.fs-search-modal {
+		display: block;
+	}
+	.fs-close {
+		top: 0;
+		width: 90px;
+		height: 90px;
+	}
+}
