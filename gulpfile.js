@@ -1,6 +1,4 @@
 var gulp			= require('gulp'),
-	copy 			= require('copy'),
-	copydir 		= require('copy-dir'),
 	escapehtml		= require('escape-html'),
 	concat 			= require('gulp-concat'),
 	watch			= require('gulp-watch'),
@@ -159,7 +157,7 @@ gulp.task('render-project-css', ['render-project-clean'], function() {
 		'src/scss/frontstreet.scss',
 		'src/scss/frontstreet-dark.scss',
 		'src/scss/frontstreet-rtl.scss',
-		'src/scss/frontstreet-dark.scss'
+		'src/scss/frontstreet-dark-rtl.scss'
 	];
 
 	return gulp.src(files)
@@ -223,8 +221,9 @@ gulp.task('render-project-img', ['render-project-clean'], function() {
  */
 gulp.task('render-project-plugins', ['render-project-clean'], function() {
 
-	copydir.sync('plugins', 'dist/docs/assets/frontstreet/plugins');
-	copydir.sync('plugins', 'dist/frontstreet/plugins');
+	return gulp.src('plugins/**/*')
+		.pipe(gulp.dest('dist/docs/assets/frontstreet/plugins'))
+		.pipe(gulp.dest('dist/frontstreet/plugins'));
 
 });
 

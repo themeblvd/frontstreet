@@ -17,8 +17,6 @@
   },
   "homepage": "https://github.com/themeblvd/frontstreet",
   "devDependencies": {
-    "copy": "latest",
-    "copy-dir": "latest",
     "escape-html": "latest",
     "gulp": "latest",
     "gulp-autoprefixer": "^4.0.0",
