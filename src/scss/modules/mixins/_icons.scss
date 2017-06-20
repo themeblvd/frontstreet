@@ -114,6 +114,7 @@
 	@media screen and (min-width:0\0) {
 		$img: if(lightness($clr) < 60%, 'search-dark.png', 'search-light.png');
 		background-image: url("../img/#{$img}");
+		background-size: contain;
 	}
 
 }

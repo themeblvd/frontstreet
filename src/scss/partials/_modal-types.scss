@@ -86,7 +86,6 @@
 
 	.field-icon:before {
 		content: "";
-		@include background-search($clr-white);
 		background-size: 3.5vh 3.5vh;
 		@if ($direction == 'rtl') {
 			right: 4vh;
@@ -95,6 +94,9 @@
 		}
 		width: 4vh;
     	height: 4vh;
+
+		@include background-search($clr-white);
+
 	}
 	input[type="search"] {
 
