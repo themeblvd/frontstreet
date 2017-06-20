@@ -555,7 +555,7 @@
 
 <h2 id="groups">Button Groups</h3>
 
-<p>Button groups require the class <code>btn-group</code> but can be structured as an element with buttons within, or as an unordered list.</p>
+<p>Button groups require the class <code>btn-group</code> but can be structured as an element with buttons within.</p>
 
 <h3 id="groups-standard">Standard Button Group</h3>
 
@@ -565,24 +565,12 @@
 	<a href="#" class="btn btn-default">Hot</a>
 </div>
 
-<ul class="btn-group" role="group" aria-label="...">
-	<li><a href="#" class="btn btn-default">Cold</a></li>
-	<li><a href="#" class="btn btn-default">Warm</a></li>
-	<li><a href="#" class="btn btn-default">Hot</a></li>
-</ul>
-
 <pre class="brush: xml; gutter: false; toolbar: false;">
 <div class="btn-group" role="group" aria-label="...">
 	<a href="#" class="btn btn-default">Cold</a>
 	<a href="#" class="btn btn-default">Warm</a>
 	<a href="#" class="btn btn-default">Hot</a>
 </div>
-
-<ul class="btn-group" role="group" aria-label="...">
-	<li><a href="#" class="btn btn-default">Cold</a></li>
-	<li><a href="#" class="btn btn-default">Warm</a></li>
-	<li><a href="#" class="btn btn-default">Hot</a></li>
-</ul>
 </pre>
 
 <h3 id="groups-tight">Tight Button Group</h3>
@@ -595,165 +583,195 @@
 	<a href="#" class="btn btn-default">Hot</a>
 </div>
 
-<ul class="btn-group btn-group-tight" role="group" aria-label="...">
-	<li><a href="#" class="btn btn-default">Cold</a></li>
-	<li><a href="#" class="btn btn-default">Warm</a></li>
-	<li><a href="#" class="btn btn-default">Hot</a></li>
-</ul>
-
 <pre class="brush: xml; gutter: false; toolbar: false;">
 <div class="btn-group btn-group-tight" role="group" aria-label="...">
 	<a href="#" class="btn btn-default">Cold</a>
 	<a href="#" class="btn btn-default">Warm</a>
 	<a href="#" class="btn btn-default">Hot</a>
 </div>
+</pre>
 
-<ul class="btn-group btn-group-tight" role="group" aria-label="...">
-	<li><a href="#" class="btn btn-default">Cold</a></li>
-	<li><a href="#" class="btn btn-default">Warm</a></li>
-	<li><a href="#" class="btn btn-default">Hot</a></li>
-</ul>
+<h3 id="groups-alignment">Button Group Alignment</h3>
+
+<p>By default, buttons will be aligned to the start of the <code>.btn-group</code> container, but you can can add classes <code>btn-group-align-center</code> or <code>btn-group-align-end</code> to change that.</p>
+
+<div class="btn-group" role="group" aria-label="...">
+	<a href="#" class="btn btn-default">One</a>
+	<a href="#" class="btn btn-default">Two</a>
+	<a href="#" class="btn btn-default">Three</a>
+</div>
+
+<div class="btn-group btn-group-align-center" role="group" aria-label="...">
+	<a href="#" class="btn btn-default">One</a>
+	<a href="#" class="btn btn-default">Two</a>
+	<a href="#" class="btn btn-default">Three</a>
+</div>
+
+<div class="btn-group btn-group-align-end" role="group" aria-label="...">
+	<a href="#" class="btn btn-default">One</a>
+	<a href="#" class="btn btn-default">Two</a>
+	<a href="#" class="btn btn-default">Three</a>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="btn-group" role="group" aria-label="...">
+	<a href="#" class="btn btn-default">One</a>
+	<a href="#" class="btn btn-default">Two</a>
+	<a href="#" class="btn btn-default">Three</a>
+</div>
+
+<div class="btn-group btn-group-align-center" role="group" aria-label="...">
+	<a href="#" class="btn btn-default">One</a>
+	<a href="#" class="btn btn-default">Two</a>
+	<a href="#" class="btn btn-default">Three</a>
+</div>
+
+<div class="btn-group btn-group-align-end" role="group" aria-label="...">
+	<a href="#" class="btn btn-default">One</a>
+	<a href="#" class="btn btn-default">Two</a>
+	<a href="#" class="btn btn-default">Three</a>
+</div>
 </pre>
 
 <h3 id="groups-justified">Justified Button Group</h3>
 
-<p>For a justified buttong group, add class <code>btn-group-justified</code>, but the group must be structured as an unordered list.</p>
+<p>For a justified button group or a row of buttons with equal widths, add class <code>btn-group-justified</code>, but the group must be structured as an unordered list.</p>
 
-<ul class="btn-group btn-group-justified" role="group" aria-label="...">
-	<li><a href="#" class="btn btn-default">Cold</a></li>
-	<li><a href="#" class="btn btn-default">Warm</a></li>
-	<li><a href="#" class="btn btn-default">Hot</a></li>
-</ul>
+<div class="btn-group btn-group-justified" role="group" aria-label="...">
+	<a href="#" class="btn btn-default">Cold</a>
+	<a href="#" class="btn btn-default">Warm</a>
+	<a href="#" class="btn btn-default">Hot</a>
+</div>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-<ul class="btn-group btn-group-justified" role="group" aria-label="...">
-	<li><a href="#" class="btn btn-default">Cold</a></li>
-	<li><a href="#" class="btn btn-default">Warm</a></li>
-	<li><a href="#" class="btn btn-default">Hot</a></li>
-</ul>
+<div class="btn-group btn-group-justified" role="group" aria-label="...">
+	<a href="#" class="btn btn-default">Cold</a>
+	<a href="#" class="btn btn-default">Warm</a>
+	<a href="#" class="btn btn-default">Hot</a>
+</div>
 </pre>
 
 <p>You can also use class <code>btn-group-tight</code> in this scenario, as well. In the following example button color classes have been added to show the separation of buttons from each other.</p>
 
-<ul class="btn-group btn-group-justified btn-group-tight" role="group" aria-label="...">
-	<li><a href="#" class="btn btn-royal">Cold</a></li>
-	<li><a href="#" class="btn btn-orange">Warm</a></li>
-	<li><a href="#" class="btn btn-red">Hot</a></li>
-</ul>
-
-<pre class="brush: xml; gutter: false; toolbar: false;">
-<ul class="btn-group btn-group-justified btn-group-tight" role="group" aria-label="...">
-	<li><a href="#" class="btn btn-royal">Cold</a></li>
-	<li><a href="#" class="btn btn-orange">Warm</a></li>
-	<li><a href="#" class="btn btn-red">Hot</a></li>
-</ul>
-</pre>
-
-<h3 id="groups-block">Block-Level Button Group</h3>
-
-<p>By default, a button group is styled as <code>inline-block</code>. To give a block-level styling and standard element spacing, add class <code>btn-group-block</code>. &mdash; In the following example, you can see that the two button groups are on separate lines and spaced from each other.</p>
-
-<div class="btn-group btn-group-block" role="group" aria-label="...">
-	<a href="#" class="btn btn-default">Cold</a>
-	<a href="#" class="btn btn-default">Warm</a>
-	<a href="#" class="btn btn-default">Hot</a>
-</div>
-
-<div class="btn-group btn-group-block" role="group" aria-label="...">
-	<a href="#" class="btn btn-default">Cold</a>
-	<a href="#" class="btn btn-default">Warm</a>
-	<a href="#" class="btn btn-default">Hot</a>
+<div class="btn-group btn-group-justified btn-group-tight" role="group" aria-label="...">
+	<a href="#" class="btn btn-royal">Cold</a>
+	<a href="#" class="btn btn-orange">Warm</a>
+	<a href="#" class="btn btn-red">Hot</a>
 </div>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-<div class="btn-group btn-group-block" role="group" aria-label="...">
-	...
-</div>
-
-<div class="btn-group btn-group-block" role="group" aria-label="...">
-	...
+<div class="btn-group btn-group-justified btn-group-tight" role="group" aria-label="...">
+	<a href="#" class="btn btn-royal">Cold</a>
+	<a href="#" class="btn btn-orange">Warm</a>
+	<a href="#" class="btn btn-red">Hot</a>
 </div>
 </pre>
+
+<p>A justified button group can also be very useful when you just want a couple of buttons to match in width. In the example below we've styled the <code>.btn-group</code> element to have <code>max-width: 400px</code> and <code>auto</code> left and right margin.</p>
+
+<div class="btn-group btn-group-justified btn-group-justified-example" role="group" aria-label="...">
+	<a href="#" class="btn btn-default">Learn More</a>
+	<a href="#" class="btn btn-secondary">Get Started Today</a>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="btn-group btn-group-justified" role="group" aria-label="...">
+	<a href="#" class="btn btn-default">Learn More</a>
+	<a href="#" class="btn btn-secondary">Get Started Today</a>
+</div>
+</pre>
+
+<div class="alert alert-info">
+	<p><strong>Note:</strong> Because a justified button group's buttons will automatically expand to have equal width and fill the container, it generally won't make sense to mix <code>.btn-group-justified</code> with alignment classes.</p>
+</div>
 
 <h3 id="groups-sizing">Button Group Sizing</h3>
 
-<p>From <a href="#sizes" title="Button Sizes">above</a>, you already know that individual buttons can get size classes, but you can also add similar classes to the entire button group to change the buttons within. Whether you use a size class on the button group or individual buttons, the result will be the same; however things are always easier to manage when you can reduce your HTML markup.</p>
+<p>Include buttons from any of the sizes <a href="#sizes" title="Button Sizes">above</a> in your button groups.</p>
 
-<p>You can use classes <code>btn-group-xs</code>, <code>btn-group-sm</code>, <code>btn-group-lg</code>, <code>btn-group-xl</code>, <code>btn-group-xxl</code> and <code>btn-group-xxxl</code>.</p>
+<div class="btn-group" role="group" aria-label="...">
+	<a href="#" class="btn btn-default btn-xs">Cold</a>
+	<a href="#" class="btn btn-default btn-xs">Warm</a>
+	<a href="#" class="btn btn-default btn-xs">Hot</a>
+</div>
 
-<div class="btn-group btn-group-block btn-group-xs" role="group" aria-label="...">
+<div class="btn-group" role="group" aria-label="...">
+	<a href="#" class="btn btn-default btn-sm">Cold</a>
+	<a href="#" class="btn btn-default btn-sm">Warm</a>
+	<a href="#" class="btn btn-default btn-sm">Hot</a>
+</div>
+
+<div class="btn-group" role="group" aria-label="...">
 	<a href="#" class="btn btn-default">Cold</a>
 	<a href="#" class="btn btn-default">Warm</a>
 	<a href="#" class="btn btn-default">Hot</a>
 </div>
 
-<div class="btn-group btn-group-block btn-group-sm" role="group" aria-label="...">
-	<a href="#" class="btn btn-default">Cold</a>
-	<a href="#" class="btn btn-default">Warm</a>
-	<a href="#" class="btn btn-default">Hot</a>
+<div class="btn-group" role="group" aria-label="...">
+	<a href="#" class="btn btn-default btn-lg">Cold</a>
+	<a href="#" class="btn btn-default btn-lg">Warm</a>
+	<a href="#" class="btn btn-default btn-lg">Hot</a>
 </div>
 
-<div class="btn-group btn-group-block" role="group" aria-label="...">
-	<a href="#" class="btn btn-default">Cold</a>
-	<a href="#" class="btn btn-default">Warm</a>
-	<a href="#" class="btn btn-default">Hot</a>
+<div class="btn-group" role="group" aria-label="...">
+	<a href="#" class="btn btn-default btn-xl">Cold</a>
+	<a href="#" class="btn btn-default btn-xl">Warm</a>
+	<a href="#" class="btn btn-default btn-xl">Hot</a>
 </div>
 
-<div class="btn-group btn-group-block btn-group-lg" role="group" aria-label="...">
-	<a href="#" class="btn btn-default">Cold</a>
-	<a href="#" class="btn btn-default">Warm</a>
-	<a href="#" class="btn btn-default">Hot</a>
+<div class="btn-group" role="group" aria-label="...">
+	<a href="#" class="btn btn-default btn-xxl">Cold</a>
+	<a href="#" class="btn btn-default btn-xxl">Warm</a>
+	<a href="#" class="btn btn-default btn-xxl">Hot</a>
 </div>
 
-<div class="btn-group btn-group-block btn-group-xl" role="group" aria-label="...">
-	<a href="#" class="btn btn-default">Cold</a>
-	<a href="#" class="btn btn-default">Warm</a>
-	<a href="#" class="btn btn-default">Hot</a>
-</div>
-
-<div class="btn-group btn-group-block btn-group-xxl" role="group" aria-label="...">
-	<a href="#" class="btn btn-default">Cold</a>
-	<a href="#" class="btn btn-default">Warm</a>
-	<a href="#" class="btn btn-default">Hot</a>
-</div>
-
-<div class="btn-group btn-group-block btn-group-xxxl" role="group" aria-label="...">
-	<a href="#" class="btn btn-default">Cold</a>
-	<a href="#" class="btn btn-default">Warm</a>
-	<a href="#" class="btn btn-default">Hot</a>
+<div class="btn-group" role="group" aria-label="...">
+	<a href="#" class="btn btn-default btn-xxxl">Cold</a>
+	<a href="#" class="btn btn-default btn-xxxl">Warm</a>
+	<a href="#" class="btn btn-default btn-xxxl">Hot</a>
 </div>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-<div class="btn-group btn-group-block btn-group-xs" role="group" aria-label="...">
-	...
+<div class="btn-group" role="group" aria-label="...">
+	<a href="#" class="btn btn-default btn-xs">Cold</a>
+	<a href="#" class="btn btn-default btn-xs">Warm</a>
+	<a href="#" class="btn btn-default btn-xs">Hot</a>
 </div>
 
-<div class="btn-group btn-group-block btn-group-xs" role="group" aria-label="...">
-	...
+<div class="btn-group" role="group" aria-label="...">
+	<a href="#" class="btn btn-default btn-sm">Cold</a>
+	<a href="#" class="btn btn-default btn-sm">Warm</a>
+	<a href="#" class="btn btn-default btn-sm">Hot</a>
 </div>
 
-<div class="btn-group btn-group-block btn-group-sm" role="group" aria-label="...">
-	...
+<div class="btn-group" role="group" aria-label="...">
+	<a href="#" class="btn btn-default">Cold</a>
+	<a href="#" class="btn btn-default">Warm</a>
+	<a href="#" class="btn btn-default">Hot</a>
 </div>
 
-<div class="btn-group btn-group-block" role="group" aria-label="...">
-	...
+<div class="btn-group" role="group" aria-label="...">
+	<a href="#" class="btn btn-default btn-lg">Cold</a>
+	<a href="#" class="btn btn-default btn-lg">Warm</a>
+	<a href="#" class="btn btn-default btn-lg">Hot</a>
 </div>
 
-<div class="btn-group btn-group-block btn-group-lg" role="group" aria-label="...">
-	...
+<div class="btn-group" role="group" aria-label="...">
+	<a href="#" class="btn btn-default btn-xl">Cold</a>
+	<a href="#" class="btn btn-default btn-xl">Warm</a>
+	<a href="#" class="btn btn-default btn-xl">Hot</a>
 </div>
 
-<div class="btn-group btn-group-block btn-group-xl" role="group" aria-label="...">
-	...
+<div class="btn-group" role="group" aria-label="...">
+	<a href="#" class="btn btn-default btn-xxl">Cold</a>
+	<a href="#" class="btn btn-default btn-xxl">Warm</a>
+	<a href="#" class="btn btn-default btn-xxl">Hot</a>
 </div>
 
-<div class="btn-group btn-group-block btn-group-xxl" role="group" aria-label="...">
-	...
-</div>
-
-<div class="btn-group btn-group-block btn-group-xxxl" role="group" aria-label="...">
-	...
+<div class="btn-group" role="group" aria-label="...">
+	<a href="#" class="btn btn-default btn-xxxl">Cold</a>
+	<a href="#" class="btn btn-default btn-xxxl">Warm</a>
+	<a href="#" class="btn btn-default btn-xxxl">Hot</a>
 </div>
 </pre>
 
