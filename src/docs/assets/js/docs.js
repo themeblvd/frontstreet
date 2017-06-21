@@ -26,6 +26,6 @@ jQuery(document).ready(function($){
 
 	// Moble Menu examples
 
-	$('.mobile-navbar').FrontStreetMobileMenu();
+	$('.mobile-menu-bar').FrontStreetMobileMenu();
 
 });

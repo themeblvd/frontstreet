@@ -217,7 +217,7 @@ jQuery(document).ready(function($){
 
 <p><em>Why not invoke the JavaScript by default?</em> &mdash; With an element like mobile navigation, we don't want to assume it exists on the intial page load. </p>
 
-<p>For example, in our <a href="https://wpjumpstart.com" title="Multi-Purpose WordPress Theme" target="_blank">Jump Start WordPress Theme</a>, we use this mobile navigation element, which is completely separate from the primar navigation the desktop user sees. However, for SEO purposes it would be better not to have a complete duplicate of the entire site's primary navigation.</p>
-<p>So instead of outputting two large duplicate menus, we generate the mobile version with JavaScript when the page loads, by copying the site's main navigation and some other elements on the page. Then after that's constructed, we then invoke the JavaScript needed for our <code>.mobile-menu-bar</code> element (which didn't originally exist on page load).</p>
+<p>For example, in our <a href="https://wpjumpstart.com" title="Multi-Purpose WordPress Theme" target="_blank">Jump Start WordPress Theme</a>, we use this mobile navigation element, which is completely separate from the primary navigation the desktop user sees. However, for SEO purposes it would be better not to have a complete duplicate of the entire site's primary navigation.</p>
+<p>So instead of outputting two large duplicate menus, we generate the mobile version with JavaScript when the page loads, by copying the site's main navigation and some other elements on the page. Then after that's constructed, we then invoke the JavaScript needed for our <code>.mobile-menu-bar</code> element (which didn't originally exist on the DOM on page load).</p>
 
 @@include('../layout/footer.html')
