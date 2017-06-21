@@ -7,13 +7,8 @@
 //
 
 @mixin nav-horz {
-	> li {
-		@if ($direction == 'rtl') {
-			float: right;
-		} @else {
-			float: left;
-		}
-	}
+	display: flex;
+	flex-wrap: wrap;
 }
 
 //
@@ -184,7 +179,7 @@
 @mixin nav-dropdown {
 	ul,
 	.fs-mega {
-		box-shadow: 0 2px 5px rgba($clr-black, .05);
+		box-shadow: $flyout-shadow;
 		position: absolute;
 	}
 	ul li.menu-item-has-children > .menu-btn:after {
@@ -208,35 +203,16 @@
 	// Mega Menu
 	.fs-mega {
 
-		padding: 20px 10px;
+		padding: $mega-menu-padding;
 
 		ul {
+			// display: block;
 			position: static;
 			box-shadow: none;
 		}
 	}
 	.fs-mega-section {
-		@if ($direction == 'rtl') {
-			float: right;
-		} @else {
-			float: left;
-		}
 		margin-bottom: 0;
 		padding: 0 10px;
-	}
-	.mega-col-2 .fs-mega-section {
-		width: 50%;
-	}
-	.mega-col-3 .fs-mega-section {
-		width: 33.3333%;
-	}
-	.mega-col-4 .fs-mega-section {
-		width: 25%;
-	}
-	.mega-col-5 .fs-mega-section {
-		width: 20%;
-	}
-	.mega-col-6 .fs-mega-section {
-		width: 16.6666%;
 	}
 }

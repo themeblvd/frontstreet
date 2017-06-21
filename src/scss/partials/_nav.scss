@@ -51,6 +51,7 @@
 	// Level 2+
 	ul {
 		font-size: $font-size-dropdown;
+		margin: 0;
 		padding-left: 10px;
 	}
 	ul .menu-btn {
@@ -139,8 +140,11 @@
 		}
 		z-index: 999;
 	}
-	ul:not(.mega-sub-menu) {
+	li > ul {
 		display: none;
+	}
+	li > ul.show {
+		display: block;
 	}
 	ul.reverse {
 		@if ($direction == 'rtl') {
@@ -190,7 +194,7 @@
 	}
 
 	// Display drop menus (no-js fallback)
-	li:hover ul {
+	&.no-js li:hover > ul {
 		display: block;
 	}
 
@@ -210,12 +214,16 @@
 		width: 100%;
 		z-index: 999;
 	}
+	.fs-mega.show {
+		display: flex;
+	}
 	.fs-mega-section {
 
 		margin-bottom: 20px;
 		width: 100%;
 
 		ul {
+			display: block;
 			padding: 0;
 		}
 	}
@@ -491,11 +499,10 @@
 
 .submenu-pills {
 
-	margin-right: -$pills-spacing;
-	margin-left: -$pills-spacing;
+	margin: (-$pills-spacing) (-$pills-spacing) ($spacing-element - 2) (-$pills-spacing);
 
 	> li {
-		padding: 0 $pills-spacing;
+		padding: $pills-spacing;
 	}
 	> li > .menu-btn {
 
