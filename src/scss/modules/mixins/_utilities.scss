@@ -66,12 +66,22 @@
 }
 
 //
-// Show Element
+// Show Block Element
 //
 
-@mixin show($parent) {
+@mixin show-block($parent) {
 	#{$parent} {
 		display: block !important;
+	}
+}
+
+//
+// Show Flexbox Element
+//
+
+@mixin show-flex($parent) {
+	#{$parent} {
+		display: flex !important;
 	}
 }
 

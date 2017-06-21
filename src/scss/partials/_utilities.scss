@@ -45,7 +45,9 @@
 
 @include hide('.hide');
 
-@include show('.show');
+@include show-block('.show-block');
+
+@include show-flex('.show-flex');
 
 @include invisible('.invisible');
 
