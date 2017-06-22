@@ -28,7 +28,7 @@
 .submenu-horz {
 	@include nav-horz;
 }
-@each $breakpoint in $breakpoints {
+@each $breakpoint in map-keys($breakpoints) {
 	@if $breakpoint != xl { // skip xl
 		@include min-width($breakpoint) {
 			.menu-bar-horz-#{$breakpoint},
@@ -247,7 +247,7 @@
 .fs-menu.submenu-horz {
 	@include nav-dropdown();
 }
-@each $breakpoint in $breakpoints {
+@each $breakpoint in map-keys($breakpoints) {
 	@if $breakpoint != xl { // skip xl
 		@include min-width($breakpoint) {
 			.fs-menu.menu-bar-horz-#{$breakpoint},
@@ -467,7 +467,7 @@
 
 }
 
-@each $breakpoint in $breakpoints {
+@each $breakpoint in map-keys($breakpoints) {
 	@if $breakpoint != xl { // skip xl
 		@include min-width($breakpoint) {
 			.submenu-tabs.submenu-horz-#{$breakpoint} {
@@ -544,7 +544,7 @@
 	}
 }
 
-@each $breakpoint in $breakpoints {
+@each $breakpoint in map-keys($breakpoints) {
 	@if $breakpoint != xl { // skip xl
 		@include min-width($breakpoint) {
 			.submenu-pills.submenu-horz-#{$breakpoint} {

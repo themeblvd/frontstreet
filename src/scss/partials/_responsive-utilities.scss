@@ -6,18 +6,18 @@
 	@include hide('.hidden-xs');
 }
 
-@media (min-width: em($breakpoint-xs, $font-size-base)) and (max-width: em($breakpoint-sm - 1, $font-size-base)) {
+@media (min-width: em(map-get($breakpoints, xs), $font-size-base)) and (max-width: em(map-get($breakpoints, sm) - 1, $font-size-base)) {
 	@include hide('.hidden-sm');
 }
 
-@media (min-width: em($breakpoint-sm, $font-size-base)) and (max-width: em($breakpoint-md - 1, $font-size-base)) {
+@media (min-width: em(map-get($breakpoints, sm), $font-size-base)) and (max-width: em(map-get($breakpoints, md) - 1, $font-size-base)) {
 	@include hide('.hidden-md');
 }
 
-@media (min-width: em($breakpoint-md, $font-size-base)) and (max-width: em($breakpoint-lg - 1, $font-size-base)) {
+@media (min-width: em(map-get($breakpoints, md), $font-size-base)) and (max-width: em(map-get($breakpoints, lg) - 1, $font-size-base)) {
 	@include hide('.hidden-lg');
 }
 
-@media (min-width: em($breakpoint-lg, $font-size-base)) {
+@media (min-width: em(map-get($breakpoints, lg), $font-size-base)) {
 	@include hide('.hidden-xl');
 }
