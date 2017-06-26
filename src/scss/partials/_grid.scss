@@ -1,64 +1,176 @@
 // --------------------------------------------------
-// Grids
+// Flexbox Grids
 // --------------------------------------------------
 
 //
 // Row
 //
 
+.row-container {
+	@include make-row-container;
+}
 .row {
 	@include make-row;
 	@include margin-vert-flush;
 }
-.row-flush-start {
-	@if ($direction == 'rtl') {
-		margin-right: 0;
-	} @else {
-		margin-left: 0;
-	}
-}
-.row-flush-end {
-	@if ($direction == 'rtl') {
-		margin-left: 0;
-	} @else {
-		margin-right: 0;
+
+//
+// No Gutters
+//
+
+.row-no-gutters {
+
+	margin-right: 0;
+	margin-left: 0;
+
+	.col {
+		padding-right: 0;
+		padding-left: 0;
 	}
 }
 
 //
-// Individual Columns
+// Reverse Row
+//
+
+.row-xs-reverse {
+	flex-direction: row-reverse;
+}
+
+@each $breakpoint in map-keys($breakpoints) {
+
+	@if ($breakpoint != 'xl') { // Skip xl.
+
+		$name: breakpoint-next($breakpoint, $breakpoints);
+
+		@include min-width($breakpoint) {
+			.row-#{$name}-reverse {
+				flex-direction: row-reverse;
+			}
+		}
+	}
+}
+
+//
+// Column Base
 //
 
 .col {
-	margin-bottom: $margin-column;
-	@include margin-vert-flush;
+	@include make-col-base;
 }
 
-//
-// 12-Column
-//
+@include make-cols('xs'); // .col-xs-* never collapse.
 
-@include make-grid-columns(12);
+@each $breakpoint in map-keys($breakpoints) {
 
-@each $breakpoint in $breakpoints {
-	@if $breakpoint != xl { // skip xl
+	@if ($breakpoint != 'xl') { // Skip xl.
+
+		$name: breakpoint-next($breakpoint, $breakpoints);
+
 		@include min-width($breakpoint) {
-			@include make-grid(12, $breakpoint);
+			@include make-cols($name);
 		}
 	}
 }
 
 //
-// 10-Column
+// Equal Width Flex Columns
 //
 
-@include make-grid-columns(10);
+.col-xs { // .col-xs never collapse.
+	flex: 1;
+}
 
-@each $breakpoint in $breakpoints {
-	@if $breakpoint != xl { // skip xl
+@each $breakpoint in map-keys($breakpoints) {
+
+	@if ($breakpoint != 'xl') { // Skip xl.
+
+		$name: breakpoint-next($breakpoint, $breakpoints);
+
 		@include min-width($breakpoint) {
-			@include make-grid(10, $breakpoint);
+			.col-#{$name} {
+				flex: 1;
+			}
 		}
+	}
+}
+
+//
+// Varying column widths.
+//
+
+@include make-col-widths('xs'); // .col-xs-* never collapse.
+
+@each $breakpoint in map-keys($breakpoints) {
+
+	@if ($breakpoint != 'xl') { // Skip xl.
+
+		$name: breakpoint-next($breakpoint, $breakpoints);
+
+		@include min-width($breakpoint) {
+			@include make-col-widths($name);
+		}
+	}
+}
+
+//
+// Vertical Alignment
+//
+
+.row {
+	&.align-stretch {
+		align-items: stretch;
+	}
+	&.align-top {
+		align-items: flex-start;
+	}
+	&.align-middle {
+		align-items: center;
+	}
+	&.align-bottom {
+		align-items: flex-end;
+	}
+}
+.col {
+	&.align-stretch {
+		align-self: stretch;
+	}
+	&.align-top {
+		align-self: flex-start;
+	}
+	&.align-middle {
+		align-self: center;
+	}
+	&.align-bottom {
+		align-self: flex-end;
+	}
+}
+
+//
+// Horizontal Alignment
+//
+
+.row {
+	&.align-start {
+		justify-content: flex-start;
+	}
+	&.align-center {
+		justify-content: center;
+	}
+	&.align-end {
+		justify-content: flex-end;
+	}
+}
+.col {
+	&.align-start {
+		margin-right: auto;
+	}
+	&.align-center {
+		margin-right: auto;
+		margin-left: auto;
+	}
+	&.align-end {
+		margin-left: auto;
 	}
 }
 
@@ -67,23 +179,68 @@
 //
 
 .col.has-bg {
-	padding: $grid-gutters;
+
+	display: flex;
+
+	> .wrap {
+		padding: $grid-gutters;
+	}
 }
 
-@include make-flush-columns(12, start);
-
-@include make-flush-columns(10, start);
-
-@include make-flush-columns(12, end);
-
-@include make-flush-columns(10, end);
-
 //
-// Equal-Height Columns
+// Offset
 //
 
-@each $breakpoint in $breakpoints {
-	@if $breakpoint != xl { // skip xl
-		@include make-equal-height-grid($breakpoint);
+@include make-cols('xs');
+
+@each $breakpoint in map-keys($breakpoints) {
+
+	@if ($breakpoint != 'xl') { // Skip xl.
+
+		$name: breakpoint-next($breakpoint, $breakpoints);
+
+		@include min-width($breakpoint) {
+			@include make-col-offsets($name);
+		}
+	}
+}
+
+//
+// Ordering
+//
+
+.col-xs-order-first {
+	order: -1;
+}
+
+@each $breakpoint in map-keys($breakpoints) {
+
+	@if ($breakpoint != 'xl') { // Skip xl.
+
+		$name: breakpoint-next($breakpoint, $breakpoints);
+
+		@include min-width($breakpoint) {
+			.col-#{$name}-order-first {
+				order: -1;
+			}
+		}
+	}
+}
+
+.col-xs-order-last {
+	order: 100;
+}
+
+@each $breakpoint in map-keys($breakpoints) {
+
+	@if ($breakpoint != 'xl') { // Skip xl.
+
+		$name: breakpoint-next($breakpoint, $breakpoints);
+
+		@include min-width($breakpoint) {
+			.col-#{$name}-order-last {
+				order: 100;
+			}
+		}
 	}
 }

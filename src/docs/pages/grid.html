@@ -2,103 +2,201 @@
 	 "title": "Grids"
 })
 
-<p>Throughout this article, we'll build on the pieces you'll put together to create the columns classes used in your grids.</p>
+<p>Throughout this article, we'll build on the pieces you'll put together to create columns using the Front Street grid system and how to overcome various real-world layout problems. Our grid system uses Flexbox CSS to create fluid layout columns. And we include classes for both a 10-column and 12-column grid system to give you the ultimate flexibility in building the different layouts within your website.</p>
+
+<ol class="table-of-contents">
+	<li><a href="#usage" title="General Overview">General Overview</a></li>
+	<li><a href="#responsiveness" title="Responsiveness">Responsiveness</a></li>
+	<li><a href="#widths" title="Column Widths">Column Widths</a></li>
+	<li><a href="#row-container" title="Row Containers">Row Containers</a></li>
+	<li><a href="#no-gutters" title="No Gutters">No Gutters</a></li>
+	<li><a href="#nested" title="Nested Columns">Nested Columns</a></li>
+	<li><a href="#has-bg" title="Columns With Backgrounds">Columns With Backgrounds</a></li>
+	<li><a href="#alignment" title="Column Alignment">Column Alignment</a></li>
+	<li><a href="#ordering" title="Column Ordering">Column Ordering</a></li>
+	<li><a href="#offset" title="Column Offsetting">Column Offsetting</a></li>
+</ol>
 
 <!-- GENERAL USAGE -->
 
-<h2 id="usage">General Usage</h2>
+<h2 id="usage">General Overview</h2>
 
-<p>A basic grid is setup by first creating a wrapping element with class <code>row</code>. Next, your column classes will then get used on the elements immediately within. Each column must have the class <code>col</code> followed by a class to determine its <a href="#widths" title="Clumn Widths">width</a> and <a href="#responsiveness" title="Grid Responsiveness">responsive breakpoint</a> like <code>col-md-6</code>, for example.</p>
+<p>There are three basic steps to remember when setting up a row of columns &mdash; Rows, columns and content.</p>
 
-<p>Below is a basic example of a single row of three, equal-width columns, utilizing the 12-column grid system.</p>
+<ol>
+<li><strong>Rows:</strong> Create a wrapping element with class <code>row</code>.</li>
+<li><strong>Columns:</strong> Add your column elements directly within. Each column should have class <code>col</code> followed by a class to determine its <a href="#responsiveness" title="Grid Responsiveness">responsive breakpoint</a> and <a href="#widths" title="Clumn Widths">width</a> formatted like <code>col-{breakpoint}-{size}</code>.</li>
+<li><strong>Content:</strong> Within each column, we'll add an element with class <code>wrap</code>, which will contain the content.</li>
+</ol>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row">
+	<div class="col col-md-3">
+		<div class="wrap">
+			...
+		</div>
+	</div>
+	...
+</div>
+</pre>
+
+<h3 id="auto-sizing-columns" class="heading-sm">Auto-Sizing, Equal-Width Columns</h3>
+
+<p>When <em>not</em> including a specifc column size, all <code>.col-{breakpoint}</code> elements will automatically adjust to be equal width, depending on the number of columns. Below is a basic example of a single row of three, equal-width columns. Each <code>.col</code> element has class <code>col-md</code> added to it, meaning they will be equal in width and stack responsively below the <code>md</code> breakpoint.</p>
+
+<div class="row row-example">
+	<div class="col col-md">
+		<div class="wrap">
+			<h6>Column #1</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		</div>
+	</div>
+	<div class="col col-md">
+		<div class="wrap">
+			<h6>Column #2</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		</div>
+	</div>
+	<div class="col col-md">
+		<div class="wrap">
+			<h6>Column #3</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		</div>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row">
+	<div class="col col-md">
+		<div class="wrap">
+			...
+		</div>
+	</div>
+	<div class="col col-md">
+		<div class="wrap">
+			...
+		</div>
+	</div>
+	<div class="col col-md">
+		<div class="wrap">
+			...
+		</div>
+	</div>
+</div>
+</pre>
+
+<h3 id="varying-widths" class="heading-sm">Specifying Column Widths</h3>
+
+<p>For a row with columns varying in width, you can construct your column classes like <code>col-{breakpoint}-{size}</code>. See <a href="#widths" title="Column Widths">column widths</a> for more on sizing using the 10-column and 12-column grid systems.</p>
+
+<p>In the following example, we have two columns sized at <code>4/12</code> and <code>8/12</code>, which will responsively stack when the viewport is less than the <code>md</code> breakpoint.</p>
 
 <div class="row row-example">
 	<div class="col col-md-4">
-		<h6>Column #1</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		<div class="wrap">
+			<h6>Column #1</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		</div>
 	</div>
-	<div class="col col-md-4">
-		<h6>Column #2</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-	</div>
-	<div class="col col-md-4">
-		<h6>Column #3</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	<div class="col col-md-8">
+		<div class="wrap">
+			<h6>Column #2</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum. Mauris tempus convallis lectus, placerat hendrerit ligula auctor id.</p>
+		</div>
 	</div>
 </div>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
 <div class="row">
 	<div class="col col-md-4">
-		<h6>Column #1</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		<div class="wrap">
+			...
+		</div>
 	</div>
-	<div class="col col-md-4">
-		<h6>Column #2</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-	</div>
-	<div class="col col-md-4">
-		<h6>Column #3</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	<div class="col col-md-8">
+		<div class="wrap">
+			...
+		</div>
 	</div>
 </div>
 </pre>
 
-<p>For multiple rows of columns, the <code>row</code> class will clear the previous set.</p>
+<h3 id="multiple-rows" class="heading-sm">Multiple Rows</h3>
+
+<p>Multiple rows of columns can simply be stacked one after the next, as well. Separating multiple rows into separate <code>.row</code> elements is necessary primarily because the <code>.row</code> element is what will space the columns vertically from each other. And additionally in the following scenario, it's necessary also because our first row is using auto-sizing <code>.col-md</code> elements that are intended to be 1/3 each.</p>
 
 <div class="row row-example">
-	<div class="col col-md-4">
-		<h6>Column #1</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	<div class="col col-md">
+		<div class="wrap">
+			<h6>Column #1</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		</div>
 	</div>
-	<div class="col col-md-4">
-		<h6>Column #2</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	<div class="col col-md">
+		<div class="wrap">
+			<h6>Column #2</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		</div>
 	</div>
-	<div class="col col-md-4">
-		<h6>Column #3</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	<div class="col col-md">
+		<div class="wrap">
+			<h6>Column #3</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		</div>
 	</div>
 </div>
 
 <div class="row row-example">
-	<div class="col col-md-6">
-		<h6>Column #5</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+	<div class="col col-md-4">
+		<div class="wrap">
+			<h6>Column #5</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		</div>
 	</div>
-	<div class="col col-md-6">
-		<h6>Column #6</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+	<div class="col col-md-8">
+		<div class="wrap">
+			<h6>Column #6</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum. Mauris tempus convallis lectus, placerat hendrerit ligula auctor id.</p>
+		</div>
 	</div>
 </div>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
 <div class="row">
-	<div class="col col-md-4">
-		<h6>Column #1</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	<div class="col col-md">
+		<div class="wrap">
+			...
+		</div>
 	</div>
-	<div class="col col-md-4">
-		<h6>Column #2</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	<div class="col col-md">
+		<div class="wrap">
+			...
+		</div>
 	</div>
-	<div class="col col-md-4">
-		<h6>Column #3</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	<div class="col col-md">
+		<div class="wrap">
+			...
+		</div>
 	</div>
 </div>
 
 <div class="row">
-	<div class="col col-md-6">
-		<h6>Column #5</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+	<div class="col col-md-4">
+		<div class="wrap">
+			...
+		</div>
 	</div>
-	<div class="col col-md-6">
-		<h6>Column #6</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+	<div class="col col-md-8">
+		<div class="wrap">
+			...
+		</div>
 	</div>
 </div>
 </pre>
+
+<div class="alert alert-info">
+	<p><strong>Note:</strong> A <code>.row</code> element will have margin on the bottom to separate it from the next <code>.row</code> element. However, you don't need to separate multiple rows of columns into separate <code>.row</code> elements if you don't need that spacing. Having several rows within a single <code>.row.row-no-gutters</code> element is <a href="#layered-row" title="Columns With Backgrounds">a good example</a> when you might do this.</p>
+</div>
 
 <!-- RESPONSIVENESS -->
 
@@ -109,17 +207,23 @@
 <div class="table-responsive">
 	<table class="table-bordered table-condensed">
 		<tr>
-			<td width="25%"><code>.col-xs-*</code></td>
-			<td rowspan="4">Classes containing <code>xs</code> will collapse and begin to stack when viewport is less than 576px. This will generally include smaller mobile devices.</td>
+			<td width="30%"><code>.col-xs</code></td>
+			<td rowspan="6">Classes containing <code>xs</code> will never collapse.</td>
 		</tr>
 		<tr>
-			<td width="25%"><code>.col-xs-pull-*</code></td>
+			<td width="30%"><code>.col-xs-{size}</code></td>
 		</tr>
 		<tr>
-			<td width="25%"><code>.col-xs-push-*</code></td>
+			<td width="30%"><code>.col-xs-offset-{size}</code></td>
 		</tr>
 		<tr>
-			<td width="25%"><code>.col-xs-height</code></td>
+			<td width="30%"><code>.col-xs-order-first</code></td>
+		</tr>
+		<tr>
+			<td width="30%"><code>.col-xs-order-last</code></td>
+		</tr>
+		<tr>
+			<td width="30%"><code>.row-xs-reverse</code></td>
 		</tr>
 	</table>
 </div>
@@ -127,17 +231,23 @@
 <div class="table-responsive">
 	<table class="table-bordered table-condensed">
 		<tr>
-			<td width="25%"><code>.col-sm-*</code></td>
-			<td rowspan="4">Classes containing <code>sm</code> will collapse and begin to stack when viewport is less than 768px. This will generally include slightly larger mobile devices (or those in the landscape orientation) and smaller mobile devices.</td>
+			<td width="30%"><code>.col-sm</code></td>
+			<td rowspan="6">Classes containing <code>sm</code> will collapse and begin to stack when viewport is less than 576px. This will generally include smaller mobile devices.</td>
 		</tr>
 		<tr>
-			<td width="25%"><code>.col-sm-pull-*</code></td>
+			<td width="30%"><code>.col-sm-{size}</code></td>
 		</tr>
 		<tr>
-			<td width="25%"><code>.col-sm-push-*</code></td>
+			<td width="30%"><code>.col-sm-offset-{size}</code></td>
 		</tr>
 		<tr>
-			<td width="25%"><code>.col-sm-height</code></td>
+			<td width="30%"><code>.col-sm-order-first</code></td>
+		</tr>
+		<tr>
+			<td width="30%"><code>.col-sm-order-last</code></td>
+		</tr>
+		<tr>
+			<td width="30%"><code>.row-sm-reverse</code></td>
 		</tr>
 	</table>
 </div>
@@ -145,17 +255,23 @@
 <div class="table-responsive">
 	<table class="table-bordered table-condensed">
 		<tr>
-			<td width="25%"><code>.col-md-*</code></td>
-			<td rowspan="4">Classes containing <code>md</code> will collapse and begin to stack when viewport is less than 992px. This will generally include tablets (in portrait orientation) and any mobile device smaller than that.</td>
+			<td width="30%"><code>.col-md</code></td>
+			<td rowspan="6">Classes containing <code>md</code> will collapse and begin to stack when viewport is less than 768px. This will generally include slightly larger mobile devices (or those in the landscape orientation) and smaller mobile devices.</td>
 		</tr>
 		<tr>
-			<td width="25%"><code>.col-md-pull-*</code></td>
+			<td width="30%"><code>.col-md-{size}</code></td>
 		</tr>
 		<tr>
-			<td width="25%"><code>.col-md-push-*</code></td>
+			<td width="30%"><code>.col-md-offset-{size}</code></td>
 		</tr>
 		<tr>
-			<td width="25%"><code>.col-md-height</code></td>
+			<td width="30%"><code>.col-md-order-first</code></td>
+		</tr>
+		<tr>
+			<td width="30%"><code>.col-md-order-last</code></td>
+		</tr>
+		<tr>
+			<td width="30%"><code>.row-md-reverse</code></td>
 		</tr>
 	</table>
 </div>
@@ -163,19 +279,53 @@
 <div class="table-responsive">
 	<table class="table-bordered table-condensed">
 		<tr>
-			<td width="25%"><code>.col-lg-*</code></td>
-			<td rowspan="4">Classes containing <code>lg</code> will collapse and begin to stack when viewport is less than 1200px. This will generally include smaller desktop computers, and all tablets and mobile devices.</td>
+			<td width="30%"><code>.col-lg</code></td>
+			<td rowspan="6">Classes containing <code>lg</code> will collapse and begin to stack when viewport is less than 992px. This will generally include tablets (in portrait orientation) and any mobile device smaller than that.</td>
 		</tr>
 		<tr>
-			<td width="25%"><code>.col-lg-pull-*</code></td>
+			<td width="30%"><code>.col-lg-{size}</code></td>
 		</tr>
 		<tr>
-			<td width="25%"><code>.col-lg-push-*</code></td>
+			<td width="30%"><code>.col-lg-offset-{size}</code></td>
 		</tr>
 		<tr>
-			<td width="25%"><code>.col-lg-height</code></td>
+			<td width="30%"><code>.col-lg-order-first</code></td>
+		</tr>
+		<tr>
+			<td width="30%"><code>.col-lg-order-last</code></td>
+		</tr>
+		<tr>
+			<td width="30%"><code>.row-lg-reverse</code></td>
 		</tr>
 	</table>
+</div>
+
+<div class="table-responsive">
+	<table class="table-bordered table-condensed">
+		<tr>
+			<td width="30%"><code>.col-xl</code></td>
+			<td rowspan="6">Classes containing <code>xl</code> will collapse and begin to stack when viewport is less than 1200px. This will generally include smaller desktop computers, and all tablets and mobile devices.</td>
+		</tr>
+		<tr>
+			<td width="30%"><code>.col-xl-{size}</code></td>
+		</tr>
+		<tr>
+			<td width="30%"><code>.col-xl-offset-{size}</code></td>
+		</tr>
+		<tr>
+			<td width="30%"><code>.col-xl-order-first</code></td>
+		</tr>
+		<tr>
+			<td width="30%"><code>.col-xl-order-last</code></td>
+		</tr>
+		<tr>
+			<td width="30%"><code>.row-xl-reverse</code></td>
+		</tr>
+	</table>
+</div>
+
+<div class="alert alert-info">
+	<p><strong>Note:</strong> Responsive breakpoints can also be mixed for some more complex layouts. See <a href="#mixing-column-widths">mixing column widths below</a>.</p>
 </div>
 
 <!-- COLUMN WIDTHS -->
@@ -184,109 +334,127 @@
 
 <p>Something fairly unique to Front Street is that we provide a 10-column grid system that can be used throughout your website in conjunction with the standard 12-column grid system. Our goal with this is to give you more flexbility in your column widths.</p>
 
-<h3 id="12-col">12-Column Grid</h3>
+<h3 id="12-col" class="heading-sm">12-Column Grid</h3>
 
-<p>When grouping classes in a 12-column grid system, you want to make sure the integers all add up to <code>12</code>. Below are some basic examples, but there are many other combinations you could come up with.</p>
+<p>When grouping classes in a 12-column grid system, you want to make sure the integers all add up to <code>12</code>.</p>
 
-<div class="row row-example">
-	<div class="col col-xs-2"><code>.col-*-2</code></div>
-	<div class="col col-xs-2"><code>.col-*-2</code></div>
-	<div class="col col-xs-2"><code>.col-*-2</code></div>
-	<div class="col col-xs-2"><code>.col-*-2</code></div>
-	<div class="col col-xs-2"><code>.col-*-2</code></div>
-	<div class="col col-xs-2"><code>.col-*-2</code></div>
+<div class="row row-width-example">
+	<div class="col col-sm-12">
+		<div class="wrap">12</div>
+	</div>
 </div>
 
-<p><var>2</var> + <var>2</var> + <var>2</var> + <var>2</var> + <var>2</var> + <var>2</var> = <var>12</var></p>
-
-<div class="row row-example">
-	<div class="col col-xs-3"><code>.col-*-3</code></div>
-	<div class="col col-xs-3"><code>.col-*-3</code></div>
-	<div class="col col-xs-3"><code>.col-*-3</code></div>
-	<div class="col col-xs-3"><code>.col-*-3</code></div>
+<div class="row row-width-example">
+	<div class="col col-sm-1">
+		<div class="wrap">1</div>
+	</div>
+	<div class="col col-sm-11">
+		<div class="wrap">11</div>
+	</div>
 </div>
 
-<p><var>3</var> + <var>3</var> + <var>3</var> + <var>3</var> = <var>12</var></p>
-
-<div class="row row-example">
-	<div class="col col-xs-4"><code>.col-*-4</code></div>
-	<div class="col col-xs-4"><code>.col-*-4</code></div>
-	<div class="col col-xs-4"><code>.col-*-4</code></div>
+<div class="row row-width-example">
+	<div class="col col-sm-2">
+		<div class="wrap">2</div>
+	</div>
+	<div class="col col-sm-10">
+		<div class="wrap">10</div>
+	</div>
 </div>
 
-<p><var>4</var> + <var>4</var> + <var>4</var> = <var>12</var></p>
-
-<div class="row row-example">
-	<div class="col col-xs-6"><code>.col-*-6</code></div>
-	<div class="col col-xs-6"><code>.col-*-6</code></div>
+<div class="row row-width-example">
+	<div class="col col-sm-3">
+		<div class="wrap">3</div>
+	</div>
+	<div class="col col-sm-9">
+		<div class="wrap">9</div>
+	</div>
 </div>
 
-<p><var>6</var> + <var>6</var> = <var>12</var></p>
-
-<div class="row row-example">
-	<div class="col col-xs-4"><code>.col-*-4</code></div>
-	<div class="col col-xs-8"><code>.col-*-8</code></div>
+<div class="row row-width-example">
+	<div class="col col-sm-4">
+		<div class="wrap">4</div>
+	</div>
+	<div class="col col-sm-8">
+		<div class="wrap">8</div>
+	</div>
 </div>
 
-<p><var>4</var> + <var>8</var> = <var>12</var></p>
-
-<div class="row row-example">
-	<div class="col col-xs-6"><code>.col-*-6</code></div>
-	<div class="col col-xs-2"><code>.col-*-2</code></div>
-	<div class="col col-xs-2"><code>.col-*-2</code></div>
-	<div class="col col-xs-2"><code>.col-*-2</code></div>
+<div class="row row-width-example">
+	<div class="col col-sm-5">
+		<div class="wrap">5</div>
+	</div>
+	<div class="col col-sm-7">
+		<div class="wrap">7</div>
+	</div>
 </div>
 
-<p><var>6</var> + <var>2</var> + <var>2</var> + <var>2</var> = <var>12</var></p>
-
-<div class="alert alert-info">
-	<p><strong>Note:</strong> In the above examples, all asterixis (*) would need to be replaced with a <a href="#responsiveness" title="Grid Responsiveness">responsive breakpoint</a> &mdash; <code>xs</code>, <code>sm</code>, <code>md</code>, or <code>lg</code>.</p>
+<div class="row row-width-example">
+	<div class="col col-sm-6">
+		<div class="wrap">6</div>
+	</div>
+	<div class="col col-sm-6">
+		<div class="wrap">6</div>
+	</div>
 </div>
 
-<h3 id="10-col">10-Column Grid</h3>
-
-<p>In most cases, you'll probably be utilizing the 12-column grid; however, one really common dilemma the 10-column grid solves is when you need five equal-width columns, which is not possible in a 12-column grid.</p>
-
-<p>To separate this 10-column grid system, the column integers used in the classes are formatted like <code>010</code>, <code>020</code>, <code>030</code>, <code>040</code>, etc. However, conceptually everything is still the same; you'll want the integers to add up to <code>10</code>. Below are a few examples.</p>
-
-<div class="row row-example">
-	<div class="col col-xs-020"><code>.col-*-020</code></div>
-	<div class="col col-xs-020"><code>.col-*-020</code></div>
-	<div class="col col-xs-020"><code>.col-*-020</code></div>
-	<div class="col col-xs-020"><code>.col-*-020</code></div>
-	<div class="col col-xs-020"><code>.col-*-020</code></div>
+<div class="row row-width-example">
+	<div class="col col-sm-7">
+		<div class="wrap">7</div>
+	</div>
+	<div class="col col-sm-5">
+		<div class="wrap">5</div>
+	</div>
 </div>
 
-<p><var>2</var> + <var>2</var> + <var>2</var> + <var>2</var> + <var>2</var> = <var>10</var></p>
-
-<div class="row row-example">
-	<div class="col col-xs-020"><code>.col-*-010</code></div>
-	<div class="col col-xs-020"><code>.col-*-020</code></div>
-	<div class="col col-xs-060"><code>.col-*-070</code></div>
+<div class="row row-width-example">
+	<div class="col col-sm-8">
+		<div class="wrap">8</div>
+	</div>
+	<div class="col col-sm-4">
+		<div class="wrap">4</div>
+	</div>
 </div>
 
-<p><var>2</var> + <var>2</var> + <var>7</var> = <var>10</var></p>
-
-<div class="row row-example">
-	<div class="col col-xs-060"><code>.col-*-060</code></div>
-	<div class="col col-xs-040"><code>.col-*-040</code></div>
+<div class="row row-width-example">
+	<div class="col col-sm-9">
+		<div class="wrap">9</div>
+	</div>
+	<div class="col col-sm-3">
+		<div class="wrap">3</div>
+	</div>
 </div>
 
-<p><var>6</var> + <var>4</var> = <var>10</var></p>
-
-<div class="alert alert-info">
-	<p><strong>Note:</strong> In the above examples, all asterixis (*) would need to be replaced with a <a href="#responsiveness" title="Grid Responsiveness">responsive breakpoint</a> &mdash; <code>xs</code>, <code>sm</code>, <code>md</code>, or <code>lg</code>.</p>
+<div class="row row-width-example">
+	<div class="col col-sm-10">
+		<div class="wrap">10</div>
+	</div>
+	<div class="col col-sm-2">
+		<div class="wrap">2</div>
+	</div>
 </div>
 
-<h3 id="widths-overview">Column Width Overview</h3>
+<div class="row row-width-example">
+	<div class="col col-sm-11">
+		<div class="wrap">11</div>
+	</div>
+	<div class="col col-sm-1">
+		<div class="wrap">1</div>
+	</div>
+</div>
 
-<p>Combining everything from above, here's an overview of all the possible column width classes. In picking your column classes you generally want to make sure all columns of a row add up to 100% and that they use the same <a href="#responsiveness" title="Grid Responsiveness">responsive breakpoint</a>.</p>
+<div class="row row-width-example">
+	<div class="col col-sm-12">
+		<div class="wrap">12</div>
+	</div>
+</div>
 
 <div class="table-responsive">
 	<table class="table-bordered table-condensed table-grid-overview">
 		<tr>
 			<th>Fraction</th>
 			<th>Percentage</th>
+			<th>Never Collapse</th>
 			<th>Collapse @576px</th>
 			<th>Collapse @767px</th>
 			<th>Collapse @991px</th>
@@ -299,14 +467,7 @@
 			<td><code>.col-sm-1</code></td>
 			<td><code>.col-md-1</code></td>
 			<td><code>.col-lg-1</code></td>
-		</tr>
-		<tr>
-			<td>1/10</td>
-			<td>10%</td>
-			<td><code>.col-xs-010</code></td>
-			<td><code>.col-sm-010</code></td>
-			<td><code>.col-md-010</code></td>
-			<td><code>.col-lg-010</code></td>
+			<td><code>.col-xl-1</code></td>
 		</tr>
 		<tr>
 			<td>1/6</td>
@@ -315,14 +476,7 @@
 			<td><code>.col-sm-2</code></td>
 			<td><code>.col-md-2</code></td>
 			<td><code>.col-lg-2</code></td>
-		</tr>
-		<tr>
-			<td>1/5</td>
-			<td>20%</td>
-			<td><code>.col-xs-020</code></td>
-			<td><code>.col-sm-020</code></td>
-			<td><code>.col-md-020</code></td>
-			<td><code>.col-lg-020</code></td>
+			<td><code>.col-xl-2</code></td>
 		</tr>
 		<tr>
 			<td>1/4</td>
@@ -331,14 +485,7 @@
 			<td><code>.col-sm-3</td>
 			<td><code>.col-md-3</td>
 			<td><code>.col-lg-3</td>
-		</tr>
-		<tr>
-			<td>3/10</td>
-			<td>30%</td>
-			<td><code>.col-xs-030</code></td>
-			<td><code>.col-sm-030</code></td>
-			<td><code>.col-md-030</code></td>
-			<td><code>.col-lg-030</code></td>
+			<td><code>.col-xl-3</td>
 		</tr>
 		<tr>
 			<td>1/3</td>
@@ -347,14 +494,7 @@
 			<td><code>.col-sm-4</code></td>
 			<td><code>.col-md-4</code></td>
 			<td><code>.col-lg-4</code></td>
-		</tr>
-		<tr>
-			<td>2/5</td>
-			<td>40%</td>
-			<td><code>.col-xs-040</code></td>
-			<td><code>.col-sm-040</code></td>
-			<td><code>.col-md-040</code></td>
-			<td><code>.col-lg-040</code></td>
+			<td><code>.col-xl-4</code></td>
 		</tr>
 		<tr>
 			<td>5/12</td>
@@ -363,6 +503,7 @@
 			<td><code>.col-sm-5</code></td>
 			<td><code>.col-md-5</code></td>
 			<td><code>.col-lg-5</code></td>
+			<td><code>.col-xl-5</code></td>
 		</tr>
 		<tr>
 			<td>1/2</td>
@@ -371,6 +512,7 @@
 			<td><code>.col-sm-6</code></td>
 			<td><code>.col-md-6</code></td>
 			<td><code>.col-lg-6</code></td>
+			<td><code>.col-xl-6</code></td>
 		</tr>
 		<tr>
 			<td>7/12</td>
@@ -379,14 +521,7 @@
 			<td><code>.col-sm-7</code></td>
 			<td><code>.col-md-7</code></td>
 			<td><code>.col-lg-7</code></td>
-		</tr>
-		<tr>
-			<td>3/5</td>
-			<td>60%</td>
-			<td><code>.col-xs-060</code></td>
-			<td><code>.col-sm-060</code></td>
-			<td><code>.col-md-060</code></td>
-			<td><code>.col-lg-060</code></td>
+			<td><code>.col-xl-7</code></td>
 		</tr>
 		<tr>
 			<td>2/3</td>
@@ -395,14 +530,7 @@
 			<td><code>.col-sm-8</code></td>
 			<td><code>.col-md-8</code></td>
 			<td><code>.col-lg-8</code></td>
-		</tr>
-		<tr>
-			<td>7/10</td>
-			<td>70%</td>
-			<td><code>.col-xs-070</code></td>
-			<td><code>.col-sm-070</code></td>
-			<td><code>.col-md-070</code></td>
-			<td><code>.col-lg-070</code></td>
+			<td><code>.col-xl-8</code></td>
 		</tr>
 		<tr>
 			<td>3/4</td>
@@ -411,14 +539,7 @@
 			<td><code>.col-sm-9</code></td>
 			<td><code>.col-md-9</code></td>
 			<td><code>.col-lg-9</code></td>
-		</tr>
-		<tr>
-			<td>4/5</td>
-			<td>80%</td>
-			<td><code>.col-xs-080</code></td>
-			<td><code>.col-sm-080</code></td>
-			<td><code>.col-md-080</code></td>
-			<td><code>.col-lg-080</code></td>
+			<td><code>.col-xl-9</code></td>
 		</tr>
 		<tr>
 			<td>5/6</td>
@@ -427,14 +548,7 @@
 			<td><code>.col-sm-10</code></td>
 			<td><code>.col-md-10</code></td>
 			<td><code>.col-lg-10</code></td>
-		</tr>
-		<tr>
-			<td>9/10</td>
-			<td>90%</td>
-			<td><code>.col-xs-090</code></td>
-			<td><code>.col-sm-090</code></td>
-			<td><code>.col-md-090</code></td>
-			<td><code>.col-lg-090</code></td>
+			<td><code>.col-xl-10</code></td>
 		</tr>
 		<tr>
 			<td>11/12</td>
@@ -443,14 +557,7 @@
 			<td><code>.col-sm-11</code></td>
 			<td><code>.col-md-11</code></td>
 			<td><code>.col-lg-11</code></td>
-		</tr>
-		<tr>
-			<td>10/10</td>
-			<td>100%</td>
-			<td><code>.col-xs-0100</code>/td>
-			<td><code>.col-sm-0100</code>/td>
-			<td><code>.col-md-0100</code>/td>
-			<td><code>.col-lg-0100</code>/td>
+			<td><code>.col-xl-11</code></td>
 		</tr>
 		<tr>
 			<td>12/12</td>
@@ -459,500 +566,1319 @@
 			<td><code>.col-sm-12</code></td>
 			<td><code>.col-md-12</code></td>
 			<td><code>.col-lg-12</code></td>
+			<td><code>.col-xl-12</code></td>
 		</tr>
 	</table>
 </div>
 
-<!-- NESTED COLUMNS -->
+<h3 id="10-col" class="heading-sm">10-Column Grid</h3>
 
-<h2 id="nested">Nested Columns</h2>
+<p>To separate this 10-column grid system, the column integers used in the classes are formatted like <code>010</code>, <code>020</code>, <code>030</code>, <code>040</code>, etc. However, conceptually everything is still the same; you'll want the integers to add up to <code>10</code>. Below are a few examples.</p>
 
-<p>You can also nest rows of columns within columns. Here's an example.</p>
-
-<div class="row row-example">
-	<div class="col col-md-6">
-
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
-
-		<div class="row">
-			<div class="col col-md-6">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
-			</div>
-			<div class="col col-md-6">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
-			</div>
-		</div>
-
-	</div>
-
-	<div class="col col-md-6">
-
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
-
-		<p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id. Donec sodales ultrices leo, vel tempor libero. Donec maximus faucibus scelerisque.</p>
-
-		<p>Maecenas pharetra augue risus, eu pretium arcu rhoncus eget.</p>
-
-	</div>
-
-</div>
-
-<pre class="brush: xml; gutter: false; toolbar: false;">
-<div class="row">
-	<div class="col col-md-6">
-
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
-
-		<div class="row">
-			<div class="col col-md-6">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
-			</div>
-			<div class="col col-md-6">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
-			</div>
-		</div>
-
-	</div>
-
-	<div class="col col-md-6">
-
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
-
-		<p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id. Donec sodales ultrices leo, vel tempor libero. Donec maximus faucibus scelerisque.</p>
-
-		<p>Maecenas pharetra augue risus, eu pretium arcu rhoncus eget.</p>
-
-	</div>
-
-</div>
-</pre>
-
-<!-- COLUMNS WITH BACKGROUNDS -->
-
-<h2 id="has-bg">Columns With Backgrounds</h2>
-
-<p>If you're giving entire columns background colors, you can utilize the class <code>has-bg</code> on the columns to make them look a little nicer. You can also utilize the classes <code>row-flush-start</code> and <code>row-flush-end</code> on the rows to make sure thse background columns to hang outside of the container. &mdash; This is probably a bit confusing; so let's work through this with some eaxmples.</p>
-
-<h3>The Problem</h3>
-
-<p>Consider the following example. &mdash; We're adding classes from the <a href="colors.html#color-library" title="Color Library Classes">color library</a> to give columns in a grid some background colors, but we are <em>not</em> using our helping classes.</p>
-
-<div class="row row-example">
-	<div class="col col-md-4 green">
-		<h6>Column #1</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-	</div>
-	<div class="col col-md-4 forest">
-		<h6>Column #2</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-	</div>
-	<div class="col col-md-4 jungle">
-		<h6>Column #3</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+<div class="row row-width-example">
+	<div class="col col-sm-0100">
+		<div class="wrap">0100</div>
 	</div>
 </div>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
-<div class="row">
-	<div class="col col-md-4 green">
-		<h6>Column #1</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+<div class="row row-width-example">
+	<div class="col col-sm-010">
+		<div class="wrap">010</div>
 	</div>
-	<div class="col col-md-4 forest">
-		<h6>Column #2</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-	</div>
-	<div class="col col-md-4 jungle">
-		<h6>Column #3</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-	</div>
-</div>
-</pre>
-
-<h3>The Solution</h3>
-
-<p>You can see from the above example, that things are not quite looking right. There are two issues that stick out.</p>
-
-<ol>
-	<li><strong>Column Padding:</strong> Because a column now has a background color that's different from its container, it needs a little more room to breathe. So use class <code>has-bg</code> to add some extra padding.</li>
-	<li><strong>Column Overhang:</strong> And because the first and last columns now have a background color different from their container, they appear to hang outside of that container. So on our wrapping row, we can add class <code>row-flush-start</code> to fix the first column and <code>row-flush-end</code> to fix the last column.</li>
-</ol>
-
-<p>And so here's an example of the same setup, with adding our helper classes to the rows and columns.</p>
-
-<div class="row row-example row-flush-start row-flush-end">
-	<div class="col col-md-4 has-bg green">
-		<h6>Column #1</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-	</div>
-	<div class="col col-md-4 has-bg forest">
-		<h6>Column #2</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-	</div>
-	<div class="col col-md-4 has-bg jungle">
-		<h6>Column #3</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	<div class="col col-sm-090">
+		<div class="wrap">090</div>
 	</div>
 </div>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
-<div class="row row-flush-start row-flush-end">
-	<div class="col col-md-4 has-bg green">
-		<h6>Column #1</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+<div class="row row-width-example">
+	<div class="col col-sm-020">
+		<div class="wrap">020</div>
 	</div>
-	<div class="col col-md-4 has-bg forest">
-		<h6>Column #2</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-	</div>
-	<div class="col col-md-4 has-bg jungle">
-		<h6>Column #3</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-	</div>
-</div>
-</pre>
-
-<p><em>Can I mix and match?</em> &mdash; Sure! Not every column in a row needs a background color. Below is an example where we just want the right column to have a background color. So only the right column will need the <code>has-bg</code> helper class. And since we now only need to worry about the last column hanging outside the container, we <em>only</em> need to add the class <code>row-flush-end</code> to our row.</p>
-
-<div class="row row-example row-flush-end">
-	<div class="col col-md-8">
-		<h6>Column #1</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		<p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id. Donec sodales ultrices leo, vel tempor libero. Donec maximus faucibus scelerisque.</p>
-	</div>
-	<div class="col col-md-4 has-bg green">
-		<h6>Column #2</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	<div class="col col-sm-080">
+		<div class="wrap">080</div>
 	</div>
 </div>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
-<div class="row row-flush-end">
-	<div class="col col-md-8">
-		<h6>Column #1</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		<p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id. Donec sodales ultrices leo, vel tempor libero. Donec maximus faucibus scelerisque.</p>
+<div class="row row-width-example">
+	<div class="col col-sm-030">
+		<div class="wrap">030</div>
 	</div>
-	<div class="col col-md-4 has-bg green">
-		<h6>Column #2</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-	</div>
-</div>
-</pre>
-
-<!-- EQUAL-HEIGHT COLUMNS -->
-
-<h2 id="equal-height">Equal-Height Columns</h2>
-
-<p>When you start getting into more complicated setups with <a href="#has-bg" title="Collumns With Backgrounds">background colors being added to columns</a>, being the perfectionist that you are, you may find yourself wanting those columns to be the same height, no matter the content within.</p>
-
-<h3>The Problem</h3>
-
-<p>Consider the following example. &mdash; We've got two columns with background colors applied, which have different amounts of content.</p>
-
-<div class="row row-example row-flush-start row-flush-end">
-	<div class="col col-md-8 has-bg forest">
-		<h6>Column #1</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque arcu et accumsan pulvinar. Quisque gravida quam a est consequat, non pulvinar ante dictum.</p>
-		<p>Etiam et metus non nunc tincidunt dignissim. Vivamus non quam in felis vestibulum elementum placerat a nulla. In sapien ante, posuere id facilisis ut, molestie vitae dui. Pellentesque ac diam sed lectus convallis tincidunt. Vestibulum risus neque, commodo quis maximus vel.</p>
-		<p>Nulla tristique purus mi, faucibus interdum felis varius in. Etiam consectetur, leo ac imperdiet interdum, libero enim viverra orci.</p>
-	</div>
-	<div class="col col-md-4 has-bg green">
-		<h6>Column #2</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	<div class="col col-sm-070">
+		<div class="wrap">070</div>
 	</div>
 </div>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
-<div class="row row-flush-start row-flush-end">
-	<div class="col col-md-8 has-bg forest">
-		<h6>Column #1</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque arcu et accumsan pulvinar. Quisque gravida quam a est consequat, non pulvinar ante dictum.</p>
-		<p>Etiam et metus non nunc tincidunt dignissim. Vivamus non quam in felis vestibulum elementum placerat a nulla. In sapien ante, posuere id facilisis ut, molestie vitae dui. Pellentesque ac diam sed lectus convallis tincidunt. Vestibulum risus neque, commodo quis maximus vel.</p>
-		<p>Nulla tristique purus mi, faucibus interdum felis varius in. Etiam consectetur, leo ac imperdiet interdum, libero enim viverra orci.</p>
+<div class="row row-width-example">
+	<div class="col col-sm-040">
+		<div class="wrap">040</div>
 	</div>
-	<div class="col col-md-4 has-bg green">
-		<h6>Column #2</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-	</div>
-</div>
-</pre>
-
-<h3>The Solution</h3>
-
-<p>Now the above example doesn't look terrible, but often in a scenario like this, it might look nicer if the columns were the same height. To accomplish this, we need to add helper classes to the wrapping row and inner columns.</p>
-
-<ol>
-<li><strong>Row:</strong> To the row, we'll add a class <code>row-*-height</code>, and in place of the asterix, we'll use the matching <a href="#responsiveness" title="Grid Responsiveness">responsive breakpoint</a> used in the columns.</li>
-<li><strong>Columns:</strong> To the columns, we'll add a class <code>col-*-height</code>, and again in place of the asterix, we'll use the matching <a href="#responsiveness" title="Grid Responsiveness">responsive breakpoint</a>.</li>
-</ol>
-
-<div class="row row-example row-md-height row-flush-start row-flush-end">
-	<div class="col col-md-8 col-md-height has-bg forest">
-		<h6>Column #1</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque arcu et accumsan pulvinar. Quisque gravida quam a est consequat, non pulvinar ante dictum.</p>
-		<p>Etiam et metus non nunc tincidunt dignissim. Vivamus non quam in felis vestibulum elementum placerat a nulla. In sapien ante, posuere id facilisis ut, molestie vitae dui. Pellentesque ac diam sed lectus convallis tincidunt. Vestibulum risus neque, commodo quis maximus vel.</p>
-		<p>Nulla tristique purus mi, faucibus interdum felis varius in. Etiam consectetur, leo ac imperdiet interdum, libero enim viverra orci.</p>
-	</div>
-	<div class="col col-md-4 col-md-height has-bg green">
-		<h6>Column #2</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+	<div class="col col-sm-060">
+		<div class="wrap">060</div>
 	</div>
 </div>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
-<div class="row row-md-height row-flush-start row-flush-end">
-	<div class="col col-md-8 col-md-height has-bg forest">
-		<h6>Column #1</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque arcu et accumsan pulvinar. Quisque gravida quam a est consequat, non pulvinar ante dictum.</p>
-		<p>Etiam et metus non nunc tincidunt dignissim. Vivamus non quam in felis vestibulum elementum placerat a nulla. In sapien ante, posuere id facilisis ut, molestie vitae dui. Pellentesque ac diam sed lectus convallis tincidunt. Vestibulum risus neque, commodo quis maximus vel.</p>
-		<p>Nulla tristique purus mi, faucibus interdum felis varius in. Etiam consectetur, leo ac imperdiet interdum, libero enim viverra orci.</p>
+<div class="row row-width-example">
+	<div class="col col-sm-050">
+		<div class="wrap">050</div>
 	</div>
-	<div class="col col-md-4 col-md-height has-bg green">
-		<h6>Column #2</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-	</div>
-</div>
-</pre>
-
-<!-- COLUMN ORDERING -->
-
-<h2 id="ordering">Column Ordering</h2>
-
-<p>By adding <code>push</code> and <code>pull</code> column classes you can shift them from their original position. The <code>push</code> classes will push columns to the right, while <code>pull</code> classes will pull columns to the left. This can be really useful, for example, when you want columns to display in a different order when stacked on mobile, than when displayed on desktops.</p>
-
-<p>Consider the following example. &mdash; We've got two columns, each with the class <code>col-md-6</code>, which float them and sets them to 50% width. Next, on the first column we add the class <code>col-md-push-6</code>, which will then <em>push</em> it over to the right by 50%. And finally, we add class <code>col-md-pull-6</code> to the last column to <em>pull</em> it to the left by 50%. The final result is that we've swapped the order of the two columns on desktops, but when displayed on tablets and mobile devices, they'll display in the natural order.</p>
-
-<div class="row row-example">
-	<div class="col col-md-6 col-md-push-6">
-		<h6>Column #1</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
-	</div>
-	<div class="col col-md-6 col-md-pull-6">
-		<h6>Column #2</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+	<div class="col col-sm-050">
+		<div class="wrap">050</div>
 	</div>
 </div>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
-<div class="row">
-	<div class="col col-md-6 col-md-push-6">
-		<h6>Column #1</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+<div class="row row-width-example">
+	<div class="col col-sm-060">
+		<div class="wrap">060</div>
 	</div>
-	<div class="col col-md-6 col-md-pull-6">
-		<h6>Column #2</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
-	</div>
-</div>
-</pre>
-
-<p>A really common dilemma this helps to solve is with setting up the primary sidebar layout of your website. &mdash; Let's say you have a sidebar positioned to the left of your content. When your columns stack on mobile, you'd want your site's primary content to display <em>before</em> the sidebar, right? So in thie scenario, you'd need to setup the natural order with content first and sidebar second, but then you'd add <code>push</code> and <code>pull</code> classes to rearrange the display order on desktops.</p>
-
-<div class="row row-example">
-	<div class="col col-md-8 col-md-push-4">
-		<h6>Primary Content</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
-	</div>
-	<div class="col col-md-4 col-md-pull-8">
-		<h6>Left Sidebar</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	<div class="col col-sm-040">
+		<div class="wrap">040</div>
 	</div>
 </div>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
-<div class="row">
-	<div class="col col-md-8 col-md-push-4">
-		<h6>Primary Content</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+<div class="row row-width-example">
+	<div class="col col-sm-070">
+		<div class="wrap">070</div>
 	</div>
-	<div class="col col-md-4 col-md-pull-8">
-		<h6>Left Sidebar</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	<div class="col col-sm-030">
+		<div class="wrap">030</div>
 	</div>
 </div>
-</pre>
 
-<p>By looking at the code for the above example, you can see it starts to get a little more complicated than our first example because both columns are not equal in width. The primary content column is 8/12 wide and the sidebar column is 4/12. This means that we must <em>push</em> the primary content over to the right the distance of the sidebar column, and <em>pull</em> the sidebar column over to the left the distance of the primary content column.</p>
+<div class="row row-width-example">
+	<div class="col col-sm-080">
+		<div class="wrap">080</div>
+	</div>
+	<div class="col col-sm-020">
+		<div class="wrap">020</div>
+	</div>
+</div>
 
-<p>Now, in combining everything from above, here's an overview of all the possible column ordering classes.</p>
+<div class="row row-width-example">
+	<div class="col col-sm-090">
+		<div class="wrap">090</div>
+	</div>
+	<div class="col col-sm-010">
+		<div class="wrap">010</div>
+	</div>
+</div>
+
+<div class="row row-width-example">
+	<div class="col col-sm-0100">
+		<div class="wrap">0100</div>
+	</div>
+</div>
 
 <div class="table-responsive">
 	<table class="table-bordered table-condensed table-grid-overview">
 		<tr>
-			<th colspan="2">Push/Pull Distance</th>
+			<th>Fraction</th>
+			<th>Percentage</th>
+			<th>Never Collapse</th>
 			<th>Collapse @576px</th>
 			<th>Collapse @767px</th>
 			<th>Collapse @991px</th>
 			<th>Collapse @1199px</th>
 		</tr>
 		<tr>
-			<td>1/12</td>
-			<td>8.33%</td>
-			<td><code>.col-xs-push-1</code><br><code>.col-xs-pull-1</code></td>
-			<td><code>.col-sm-push-1</code><br><code>.col-sm-pull-1</code></td>
-			<td><code>.col-md-push-1</code><br><code>.col-md-pull-1</code></td>
-			<td><code>.col-lg-push-1</code><br><code>.col-lg-pull-1</code></td>
-		</tr>
-		<tr>
 			<td>1/10</td>
 			<td>10%</td>
-			<td><code>.col-xs-push-010</code><br><code>.col-xs-pull-010</code></td>
-			<td><code>.col-sm-push-010</code><br><code>.col-sm-pull-010</code></td>
-			<td><code>.col-ms-push-010</code><br><code>.col-ms-pull-010</code></td>
-			<td><code>.col-lg-push-010</code><br><code>.col-lg-pull-010</code></td>
-		</tr>
-		<tr>
-			<td>1/6</td>
-			<td>16.66%</td>
-			<td><code>.col-xs-push-2</code><br><code>.col-xs-pull-2</code></td>
-			<td><code>.col-sm-push-2</code><br><code>.col-sm-pull-2</code></td>
-			<td><code>.col-md-push-2</code><br><code>.col-md-pull-2</code></td>
-			<td><code>.col-lg-push-2</code><br><code>.col-lg-pull-2</code></td>
+			<td><code>.col-xs-010</code></td>
+			<td><code>.col-sm-010</code></td>
+			<td><code>.col-md-010</code></td>
+			<td><code>.col-lg-010</code></td>
+			<td><code>.col-xl-010</code></td>
 		</tr>
 		<tr>
 			<td>1/5</td>
 			<td>20%</td>
-			<td><code>.col-xs-push-020</code><br><code>.col-xs-pull-020</code></td>
-			<td><code>.col-sm-push-020</code><br><code>.col-sm-pull-020</code></td>
-			<td><code>.col-md-push-020</code><br><code>.col-md-pull-020</code></td>
-			<td><code>.col-lg-push-020</code><br><code>.col-lg-pull-020</code></td>
-		</tr>
-		<tr>
-			<td>1/4</td>
-			<td>25%</td>
-			<td><code>.col-xs-push-3</code><br><code>.col-xs-pull-3</code></td>
-			<td><code>.col-sm-push-3</code><br><code>.col-sm-pull-3</code></td>
-			<td><code>.col-md-push-3</code><br><code>.col-md-pull-3</code></td>
-			<td><code>.col-lg-push-3</code><br><code>.col-lg-pull-3</code></td>
+			<td><code>.col-xs-020</code></td>
+			<td><code>.col-sm-020</code></td>
+			<td><code>.col-md-020</code></td>
+			<td><code>.col-lg-020</code></td>
+			<td><code>.col-xl-020</code></td>
 		</tr>
 		<tr>
 			<td>3/10</td>
 			<td>30%</td>
-			<td><code>.col-xs-push-030</code><br><code>.col-xs-pull-030</code></td>
-			<td><code>.col-sm-push-030</code><br><code>.col-sm-pull-030</code></td>
-			<td><code>.col-md-push-030</code><br><code>.col-md-pull-030</code></td>
-			<td><code>.col-lg-push-030</code><br><code>.col-lg-pull-030</code></td>
-		</tr>
-		<tr>
-			<td>1/3</td>
-			<td>33.33%</td>
-			<td><code>.col-xs-push-4</code><br><code>.col-xs-pull-4</code></td>
-			<td><code>.col-sm-push-4</code><br><code>.col-sm-pull-4</code></td>
-			<td><code>.col-md-push-4</code><br><code>.col-md-pull-4</code></td>
-			<td><code>.col-lg-push-4</code><br><code>.col-lg-pull-4</code></td>
+			<td><code>.col-xs-030</code></td>
+			<td><code>.col-sm-030</code></td>
+			<td><code>.col-md-030</code></td>
+			<td><code>.col-lg-030</code></td>
+			<td><code>.col-xl-030</code></td>
 		</tr>
 		<tr>
 			<td>2/5</td>
 			<td>40%</td>
-			<td><code>.col-xs-push-040</code><br><code>.col-xs-pull-040</code></td>
-			<td><code>.col-sm-push-040</code><br><code>.col-sm-pull-040</code></td>
-			<td><code>.col-md-push-040</code><br><code>.col-md-pull-040</code></td>
-			<td><code>.col-lg-push-040</code><br><code>.col-lg-pull-040</code></td>
-		</tr>
-		<tr>
-			<td>5/12</td>
-			<td>41.66%</td>
-			<td><code>.col-xs-push-5</code><br><code>.col-xs-pull-5</code></td>
-			<td><code>.col-sm-push-5</code><br><code>.col-sm-pull-5</code></td>
-			<td><code>.col-md-push-5</code><br><code>.col-md-pull-5</code></td>
-			<td><code>.col-lg-push-5</code><br><code>.col-lg-pull-5</code></td>
+			<td><code>.col-xs-040</code></td>
+			<td><code>.col-sm-040</code></td>
+			<td><code>.col-md-040</code></td>
+			<td><code>.col-lg-040</code></td>
+			<td><code>.col-xl-040</code></td>
 		</tr>
 		<tr>
 			<td>1/2</td>
 			<td>50%</td>
-			<td><code>.col-xs-push-6</code><br><code>.col-xs-pull-6</code></td>
-			<td><code>.col-sm-push-6</code><br><code>.col-sm-pull-6</code></td>
-			<td><code>.col-md-push-6</code><br><code>.col-md-pull-6</code></td>
-			<td><code>.col-lg-push-6</code><br><code>.col-lg-pull-6</code></td>
-		</tr>
-		<tr>
-			<td>7/12</td>
-			<td>58.33%</td>
-			<td><code>.col-xs-push-7</code><br><code>.col-xs-pull-7</code></td>
-			<td><code>.col-sm-push-7</code><br><code>.col-sm-pull-7</code></td>
-			<td><code>.col-md-push-7</code><br><code>.col-md-pull-7</code></td>
-			<td><code>.col-lg-push-7</code><br><code>.col-lg-pull-7</code></td>
+			<td><code>.col-xs-050</code></td>
+			<td><code>.col-sm-050</code></td>
+			<td><code>.col-md-050</code></td>
+			<td><code>.col-lg-050</code></td>
+			<td><code>.col-xl-050</code></td>
 		</tr>
 		<tr>
 			<td>3/5</td>
 			<td>60%</td>
-			<td><code>.col-xs-push-060</code><br><code>.col-xs-pull-060</code></td>
-			<td><code>.col-sm-push-060</code><br><code>.col-sm-pull-060</code></td>
-			<td><code>.col-md-push-060</code><br><code>.col-md-pull-060</code></td>
-			<td><code>.col-lg-push-060</code><br><code>.col-lg-pull-060</code></td>
-		</tr>
-		<tr>
-			<td>2/3</td>
-			<td>66.66%</td>
-			<td><code>.col-xs-push-8</code><br><code>.col-xs-pull-8</code></td>
-			<td><code>.col-sm-push-8</code><br><code>.col-sm-pull-8</code></td>
-			<td><code>.col-md-push-8</code><br><code>.col-md-pull-8</code></td>
-			<td><code>.col-lg-push-8</code><br><code>.col-lg-pull-8</code></td>
+			<td><code>.col-xs-060</code></td>
+			<td><code>.col-sm-060</code></td>
+			<td><code>.col-md-060</code></td>
+			<td><code>.col-lg-060</code></td>
+			<td><code>.col-xl-060</code></td>
 		</tr>
 		<tr>
 			<td>7/10</td>
 			<td>70%</td>
-			<td><code>.col-xs-push-070</code><br><code>.col-xs-pull-070</code></td>
-			<td><code>.col-sm-push-070</code><br><code>.col-sm-pull-070</code></td>
-			<td><code>.col-md-push-070</code><br><code>.col-md-pull-070</code></td>
-			<td><code>.col-lg-push-070</code><br><code>.col-lg-pull-070</code></td>
-		</tr>
-		<tr>
-			<td>3/4</td>
-			<td>75%</td>
-			<td><code>.col-xs-push-9</code><br><code>.col-xs-pull-9</code></td>
-			<td><code>.col-sm-push-9</code><br><code>.col-sm-pull-9</code></td>
-			<td><code>.col-md-push-9</code><br><code>.col-md-pull-9</code></td>
-			<td><code>.col-lg-push-9</code><br><code>.col-lg-pull-9</code></td>
+			<td><code>.col-xs-070</code></td>
+			<td><code>.col-sm-070</code></td>
+			<td><code>.col-md-070</code></td>
+			<td><code>.col-lg-070</code></td>
+			<td><code>.col-xl-070</code></td>
 		</tr>
 		<tr>
 			<td>4/5</td>
 			<td>80%</td>
-			<td><code>.col-xs-push-080</code><br><code>.col-xs-pull-080</code></td>
-			<td><code>.col-sm-push-080</code><br><code>.col-sm-pull-080</code></td>
-			<td><code>.col-md-push-080</code><br><code>.col-md-pull-080</code></td>
-			<td><code>.col-lg-push-080</code><br><code>.col-lg-pull-080</code></td>
-		</tr>
-		<tr>
-			<td>5/6</td>
-			<td>83.33%</td>
-			<td><code>.col-xs-push-10</code><br><code>.col-xs-pull-10</code></td>
-			<td><code>.col-sm-push-10</code><br><code>.col-sm-pull-10</code></td>
-			<td><code>.col-md-push-10</code><br><code>.col-md-pull-10</code></td>
-			<td><code>.col-lg-push-10</code><br><code>.col-lg-pull-10</code></td>
+			<td><code>.col-xs-080</code></td>
+			<td><code>.col-sm-080</code></td>
+			<td><code>.col-md-080</code></td>
+			<td><code>.col-lg-080</code></td>
+			<td><code>.col-xl-080</code></td>
 		</tr>
 		<tr>
 			<td>9/10</td>
 			<td>90%</td>
-			<td><code>.col-xs-push-090</code><br><code>.col-xs-pull-090</code></td>
-			<td><code>.col-sm-push-090</code><br><code>.col-sm-pull-090</code></td>
-			<td><code>.col-md-push-090</code><br><code>.col-md-pull-090</code></td>
-			<td><code>.col-lg-push-090</code><br><code>.col-lg-pull-090</code></td>
-		</tr>
-		<tr>
-			<td>11/12</td>
-			<td>91.66%</td>
-			<td><code>.col-xs-push-11</code><br><code>.col-xs-pull-11</code></td>
-			<td><code>.col-sm-push-11</code><br><code>.col-sm-pull-11</code></td>
-			<td><code>.col-md-push-11</code><br><code>.col-md-pull-11</code></td>
-			<td><code>.col-lg-push-11</code><br><code>.col-lg-pull-11</code></td>
+			<td><code>.col-xs-090</code></td>
+			<td><code>.col-sm-090</code></td>
+			<td><code>.col-md-090</code></td>
+			<td><code>.col-lg-090</code></td>
+			<td><code>.col-xl-090</code></td>
 		</tr>
 		<tr>
 			<td>10/10</td>
 			<td>100%</td>
-			<td><code>.col-xs-push-0100</code><br><code>.col-xs-pull-0100</code></td>
-			<td><code>.col-sm-push-0100</code><br><code>.col-sm-pull-0100</code></td>
-			<td><code>.col-md-push-0100</code><br><code>.col-md-pull-0100</code></td>
-			<td><code>.col-lg-push-0100</code><br><code>.col-lg-pull-0100</code></td>
+			<td><code>.col-xs-0100</code></td>
+			<td><code>.col-sm-0100</code></td>
+			<td><code>.col-md-0100</code></td>
+			<td><code>.col-lg-0100</code></td>
+			<td><code>.col-xl-0100</code></td>
+		</tr>
+	</table>
+</div>
+
+<h3 id="mixing-column-widths" class="heading-sm">Mixing Columns Widths</h3>
+
+<p>Even with fluid columns, we sometimes face real-world layout issues with columns being the same widths across all viewports, before their stacking point.</p>
+
+<p>For example, let's say our website's layout is three columns &mdash; A middle content column surrounded by two sidebars. On really large desktops we don't want gigantic sidebars. However, the issue is that once we reach a bit smaller desktop, our sidebars then become too narrow. This is where mixing column classes intended for different viewports can come in handy.</p>
+
+<p>The following example has our three-column layout, with the columns setup for the <code>xl</code> breakpoint and above, distributed as <code>3/12 - 6/12 - 3/12</code>.</p>
+
+<div class="row row-example">
+	<div class="col col-xl-3">
+		<h6>Left Sidebar</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	</div>
+	<div class="col col-xl-6">
+		<h6>Content</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+	</div>
+	<div class="col col-xl-3">
+		<h6>Right Sidebar</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row">
+	<div class="col col-xl-4">
+		<div class="wrap">
+			...
+		</div>
+	</div>
+	<div class="col col-xl-6">
+		<div class="wrap">
+			...
+		</div>
+	</div>
+	<div class="col col-xl-4">
+		<div class="wrap">
+			...
+		</div>
+	</div>
+</div>
+</pre>
+
+<p>And now we can see that the above example's columns will display how we want when the viewport is 1200px or larger, but then simply stack responsively below that.</p>
+
+<p>So now let's build on our above example and add a new set of classes to adjust the widths to be distributed evenly (i.e. three equal-width columns) when at the <code>lg</code> and <code>md</code> viewport sizes.</p>
+
+<div class="row row-example">
+	<div class="col col-xl-3 col-md">
+		<h6>Left Sidebar</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	</div>
+	<div class="col col-xl-6 col-md">
+		<h6>Content</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+	</div>
+	<div class="col col-xl-3 col-md">
+		<h6>Right Sidebar</h6>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row">
+	<div class="col col-xl-4 col-md">
+		<div class="wrap">
+			...
+		</div>
+	</div>
+	<div class="col col-xl-6 col-md">
+		<div class="wrap">
+			...
+		</div>
+	</div>
+	<div class="col col-xl-4 col-md">
+		<div class="wrap">
+			...
+		</div>
+	</div>
+</div>
+</pre>
+
+<!-- ROW CONTAINERS -->
+
+<h2 id="row-container">Row Containers</h2>
+
+<p>By default your columns have gutters to separate their content from each other. And in order for the content of your first and last columns to sit flush against the edge of the row, the <code>.row</code> elements have negative margin on the sides.</p>
+
+<p>In some circustances, this can cause layout issues (like unwanted horizontal mobile scrolling, for example) depending on what's wrapping your columns. So while completely optional and only necessary if needed, <code>.row-container</code> elements can be used to fix this.</p>
+
+<p>Consider the following example with a standard row of three columns, where you can see the negative margins of the row pushing the content flush against the sides of the container.</p>
+
+<div class="row-container-example bg-light">
+	<div class="wrap">
+		<div class="row row-example">
+			<div class="col col-md">
+				<div class="wrap">
+					<h6>Column #1</h6>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+				</div>
+			</div>
+			<div class="col col-md">
+				<div class="wrap">
+					<h6>Column #2</h6>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+				</div>
+			</div>
+			<div class="col col-md">
+				<div class="wrap">
+					<h6>Column #3</h6>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row">
+	...
+</div>
+</pre>
+
+<p>But if we wanted to the outer edge of our row to sit naturally without any negative margin, we can wrap it in an element with class <code>row-container</code>.</p>
+
+<div class="row-container-example bg-light">
+	<div class="wrap">
+		<div class="row-container">
+			<div class="row row-example">
+				<div class="col col-md">
+					<div class="wrap">
+						<h6>Column #1</h6>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+					</div>
+				</div>
+				<div class="col col-md">
+					<div class="wrap">
+						<h6>Column #2</h6>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+					</div>
+				</div>
+				<div class="col col-md">
+					<div class="wrap">
+						<h6>Column #3</h6>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row-container">
+	<div class="row">
+		...
+	</div>
+</div>
+</pre>
+
+<!-- NO GUTTERS -->
+
+<h2 id="no-gutters">No Gutters</h2>
+
+<p>By default, columns have padding on the sides that we call <em>gutters</em>, and then as we discussed in the previous section, the wrapping <code>.row</code> element has equal negative margin on the sides to allow the content within columns to appear flush against. By adding the <code>no-gutters</code> class to a <code>.row</code> element, you can remove all column gutters along with the negative margin on the row meant to counteract the first and last gutters.</p>
+
+<p>The example below has two matching columns, with the second row having the <code>row-no-gutters</code> class applied.</p>
+
+<div class="row row-width-example">
+	<div class="col col-md">
+		<div class="wrap">
+			First
+		</div>
+	</div>
+	<div class="col col-md">
+		<div class="wrap">
+			Second
+		</div>
+	</div>
+	<div class="col col-md">
+		<div class="wrap">
+			Third
+		</div>
+	</div>
+</div>
+
+<div class="row row-no-gutters row-width-example">
+	<div class="col col-md">
+		<div class="wrap">
+			First
+		</div>
+	</div>
+	<div class="col col-md">
+		<div class="wrap">
+			Second
+		</div>
+	</div>
+	<div class="col col-md">
+		<div class="wrap">
+			Third
+		</div>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row">
+	...
+</div>
+
+<div class="row row-no-gutters">
+	...
+</div>
+</pre>
+
+<div class="alert alert-info">
+	<p><strong>Note:</strong> If you're wanting to maintain your column gutters, but simply counteract the negative side margins of a <code>.row</code> element, remember that you can use <a href="#row-container" title="Row Containers">row containers from above</a>.</p>
+</div>
+
+<!-- NESTED COLUMNS -->
+
+<h2 id="nested">Nested Columns</h2>
+
+<p>You can also nest rows of columns within columns. Here's an example using automatic, equal-width columns.</p>
+
+<div class="row row-example">
+
+	<div class="col col-md">
+		<div class="wrap">
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+
+			<div class="row">
+				<div class="col col-md">
+					<div class="wrap">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+					</div><!-- .wrap -->
+				</div><!-- .col.col-md -->
+				<div class="col col-md">
+					<div class="wrap">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+					</div><!-- .wrap -->
+				</div><!-- .col.col-md -->
+			</div><!-- .row -->
+
+		</div><!-- .wrap -->
+	</div><!-- .col.col-md -->
+
+	<div class="col col-md">
+		<div class="wrap">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+			<p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id. Donec sodales ultrices leo, vel tempor libero. Donec maximus faucibus scelerisque.</p>
+			<p>Maecenas pharetra augue risus, eu pretium arcu rhoncus eget.</p>
+		</div><!-- .wrap -->
+	</div><!-- .col.col-md -->
+
+</div><!-- .row -->
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row">
+
+	<div class="col col-md">
+		<div class="wrap">
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+
+			<div class="row">
+				<div class="col col-md">
+					<div class="wrap">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+					</div><!-- .wrap -->
+				</div><!-- .col.col-md -->
+				<div class="col col-md">
+					<div class="wrap">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+					</div><!-- .wrap -->
+				</div><!-- .col.col-md -->
+			</div><!-- .row -->
+
+		</div><!-- .wrap -->
+	</div><!-- .col.col-md -->
+
+	<div class="col col-md">
+		<div class="wrap">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+			<p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id. Donec sodales ultrices leo, vel tempor libero. Donec maximus faucibus scelerisque.</p>
+			<p>Maecenas pharetra augue risus, eu pretium arcu rhoncus eget.</p>
+		</div><!-- .wrap -->
+	</div><!-- .col.col-md -->
+
+</div><!-- .row -->
+</pre>
+
+<!-- COLUMNS WITH BACKGROUNDS -->
+
+<h2 id="has-bg">Columns With Backgrounds</h2>
+
+<p>By default, columns are styled for raw content within to be laid out nicely. But when adding background colors to your columns, this will generally change the desired layout.</p>
+
+<p>Consider the following example. &mdash; We've got a basic row of three columns and have simply added classes from the <a href="colors.html#color-library" title="Color Library Classes">color library</a> to give <code>.wrap</code> content elements background colors.</p>
+
+<div class="row row-example">
+	<div class="col col-md">
+		<div class="wrap green">
+			<h6>Column #1</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		</div>
+	</div>
+	<div class="col col-md">
+		<div class="wrap forest">
+			<h6>Column #2</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		</div>
+	</div>
+	<div class="col col-md">
+		<div class="wrap jungle">
+			<h6>Column #3</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		</div>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row">
+	<div class="col col-md">
+		<div class="wrap green">
+			...
+		</div>
+	</div>
+	<div class="col col-md">
+		<div class="wrap forest">
+			...
+		</div>
+	</div>
+	<div class="col col-md">
+		<div class="wrap jungle">
+			...
+		</div>
+	</div>
+</div>
+</pre>
+
+<p>The first issue we see in the above example is that now our content elements don't have enough padding because of the background colors added.</p>
+
+<p>So next we can add the class <code>has-bg</code> to our columns, which will add padding to the <code>.wrap</code> elements within.</p>
+
+<div class="row row-example">
+	<div class="col col-md has-bg">
+		<div class="wrap green">
+			<h6>Column #1</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		</div>
+	</div>
+	<div class="col col-md has-bg">
+		<div class="wrap forest">
+			<h6>Column #2</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		</div>
+	</div>
+	<div class="col col-md has-bg">
+		<div class="wrap jungle">
+			<h6>Column #3</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		</div>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row">
+	<div class="col col-md has-bg">
+		<div class="wrap green">
+			...
+		</div>
+	</div>
+	<div class="col col-md has-bg">
+		<div class="wrap forest">
+			...
+		</div>
+	</div>
+	<div class="col col-md has-bg">
+		<div class="wrap jungle">
+			...
+		</div>
+	</div>
+</div>
+</pre>
+
+<p>This will also go nicely with the <code>row-no-gutters</code> class <a href="#no-gutters" title="No Gutters">discussed above</a>.</p>
+
+<div class="row row-no-gutters row-example">
+	<div class="col col-md has-bg">
+		<div class="wrap green">
+			<h6>Column #1</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		</div>
+	</div>
+	<div class="col col-md has-bg">
+		<div class="wrap forest">
+			<h6>Column #2</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		</div>
+	</div>
+	<div class="col col-md has-bg">
+		<div class="wrap jungle">
+			<h6>Column #3</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		</div>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row row-no-gutters">
+	<div class="col col-md has-bg">
+		<div class="wrap green">
+			...
+		</div>
+	</div>
+	<div class="col col-md has-bg">
+		<div class="wrap forest">
+			...
+		</div>
+	</div>
+	<div class="col col-md has-bg">
+		<div class="wrap jungle">
+			...
+		</div>
+	</div>
+</div>
+</pre>
+
+<p id="layered-row">And <a href="#multiple-rows" title="Multiple Rows">earlier we said</a> that if you need spacing between each row, that you should separate your columns into separate <code>.row</code> elements. However, a gutterless grid with background colors might be a great example not to do that.</p>
+
+<p>So, the following example takes nine columns all specified to be <code>4/12</code>, but contained in the same <code>.row</code> element.</p>
+
+<div class="row row-no-gutters row-example">
+	<div class="col col-lg-4 has-bg">
+		<div class="wrap asphalt">
+			<h6>Column #1</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		</div>
+	</div>
+	<div class="col col-lg-4 has-bg">
+		<div class="wrap red">
+			<h6>Column #2</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		</div>
+	</div>
+	<div class="col col-lg-4 has-bg">
+		<div class="wrap purple">
+			<h6>Column #3</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		</div>
+	</div>
+	<div class="col col-lg-4 has-bg">
+		<div class="wrap blue">
+			<h6>Column #4</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		</div>
+	</div>
+	<div class="col col-lg-4 has-bg">
+		<div class="wrap forest">
+			<h6>Column #5</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		</div>
+	</div>
+	<div class="col col-lg-4 has-bg">
+		<div class="wrap jungle">
+			<h6>Column #6</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		</div>
+	</div>
+	<div class="col col-lg-4 has-bg">
+		<div class="wrap pomegranate">
+			<h6>Column #7</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		</div>
+	</div>
+	<div class="col col-lg-4 has-bg">
+		<div class="wrap peach">
+			<h6>Column #8</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		</div>
+	</div>
+	<div class="col col-lg-4 has-bg">
+		<div class="wrap brown">
+			<h6>Column #9</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		</div>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row row-no-gutters">
+	<div class="col col-lg-4 has-bg">
+		<div class="wrap asphalt">
+			...
+		</div>
+	</div>
+	<div class="col col-lg-4 has-bg">
+		<div class="wrap red">
+			...
+		</div>
+	</div>
+	<div class="col col-lg-4 has-bg">
+		<div class="wrap purple">
+			...
+		</div>
+	</div>
+	<div class="col col-lg-4 has-bg">
+		<div class="wrap blue">
+			...
+		</div>
+	</div>
+	<div class="col col-lg-4 has-bg">
+		<div class="wrap forest">
+			...
+		</div>
+	</div>
+	<div class="col col-lg-4 has-bg">
+		<div class="wrap jungle">
+			...
+		</div>
+	</div>
+	<div class="col col-lg-4 has-bg">
+		<div class="wrap pomegranate">
+			...
+		</div>
+	</div>
+	<div class="col col-lg-4 has-bg">
+		<div class="wrap peach">
+			...
+		</div>
+	</div>
+	<div class="col col-lg-4 has-bg">
+		<div class="wrap brown">
+			...
+		</div>
+	</div>
+</div>
+</pre>
+
+<p><em>Can I mix and match?</em> &mdash; Sure! Not every column in a row needs a background color. Below is an example where we just want the second column to have a background color, and so only the second column will need the <code>has-bg</code> helper class.</p>
+
+<div class="row row-example">
+	<div class="col col-md-8">
+		<div class="wrap">
+			<h6>Column #1</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+			<p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id. Donec sodales ultrices leo, vel tempor libero. Donec maximus faucibus scelerisque.</p>
+			<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni.</p>
+		</div>
+	</div>
+	<div class="col col-md-4 has-bg">
+		<div class="wrap green">
+			<h6>Column #2</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+		</div>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row">
+	<div class="col col-md-8">
+		<div class="wrap">
+			...
+		</div>
+	</div>
+	<div class="col col-md-4 has-bg">
+		<div class="wrap green">
+			...
+		</div>
+	</div>
+</div>
+</pre>
+
+<!-- ALIGNMENT -->
+
+<h2 id="alignment">Column Alignment</h2>
+
+<p>Utilizing the power of Flexbox CSS, we can provide several helpful classes for aligning columns in a grid.</p>
+
+<h3 id="vert-alignment" class="heading-sm">Vertical Alignment</h3>
+
+<p>By default columns will stretch vertically to fill the height of their row.</p>
+
+<div class="row row-example row-example-align bg-light">
+	<div class="col col-md has-bg">
+		<div class="wrap blue">
+			<h6>Column #1</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</div>
+	</div>
+	<div class="col col-md has-bg">
+		<div class="wrap steel-blue">
+			<h6>Column #2</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</div>
+	</div>
+	<div class="col col-md has-bg">
+		<div class="wrap royal">
+			<h6>Column #3</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id.</p>
+		</div>
+	</div>
+</div>
+
+<p>To align your columns vertically to the top of a row, you can add class <code>align-top</code> to the wrapping <code>.row</code> element.</p>
+
+<div class="row align-top row-example row-example-align bg-light">
+	<div class="col col-md has-bg">
+		<div class="wrap blue">
+			<h6>Column #1</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</div>
+	</div>
+	<div class="col col-md has-bg">
+		<div class="wrap steel-blue">
+			<h6>Column #2</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</div>
+	</div>
+	<div class="col col-md has-bg">
+		<div class="wrap royal">
+			<h6>Column #3</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id.</p>
+		</div>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row align-top">
+	...
+</div>
+</pre>
+
+<p>To align your columns vertically to the middle of a row, you can add class <code>align-middle</code> to the wrapping <code>.row</code> element.</p>
+
+<div class="row align-middle row-example row-example-align bg-light">
+	<div class="col col-md has-bg">
+		<div class="wrap blue">
+			<h6>Column #1</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</div>
+	</div>
+	<div class="col col-md has-bg">
+		<div class="wrap steel-blue">
+			<h6>Column #2</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</div>
+	</div>
+	<div class="col col-md has-bg">
+		<div class="wrap royal">
+			<h6>Column #3</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id.</p>
+		</div>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row align-middle">
+	...
+</div>
+</pre>
+
+<p>To align your columns vertically to the bottom of a row, you can add class <code>align-bottom</code> to the wrapping <code>.row</code> element.</p>
+
+<div class="row align-bottom row-example row-example-align bg-light">
+	<div class="col col-md has-bg">
+		<div class="wrap blue">
+			<h6>Column #1</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</div>
+	</div>
+	<div class="col col-md has-bg">
+		<div class="wrap steel-blue">
+			<h6>Column #2</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</div>
+	</div>
+	<div class="col col-md has-bg">
+		<div class="wrap royal">
+			<h6>Column #3</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id.</p>
+		</div>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row align-bottom">
+	...
+</div>
+</pre>
+
+<p>You can also align individual columns within a row, by adding the <code>align-top</code>, <code>alin-middle</code>, and <code>align-bottom</code> classes to the individual columns instead of the wrapping row.</p>
+
+<div class="row row-example row-example-align row-example-align-single-col bg-light">
+	<div class="col align-top col-md has-bg">
+		<div class="wrap blue">
+			<h6>Column #1</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</div>
+	</div>
+	<div class="col align-middle col-md has-bg">
+		<div class="wrap steel-blue">
+			<h6>Column #2</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</div>
+	</div>
+	<div class="col align-bottom col-md has-bg">
+		<div class="wrap royal">
+			<h6>Column #3</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</div>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row">
+	<div class="col align-top col-md has-bg">
+		<div class="wrap blue">
+			...
+		</div>
+	</div>
+	<div class="col align-middle col-md has-bg">
+		<div class="wrap steel-blue">
+			...
+		</div>
+	</div>
+	<div class="col align-bottom col-md has-bg">
+		<div class="wrap royal">
+			...
+		</div>
+	</div>
+</div>
+</pre>
+
+<h3 id="horz-alignment" class="heading-sm">Horizontal Alignment</h3>
+
+<p>By default columns will be aligned to the start of their row.</p>
+
+<div class="row row-example row-example-align bg-light">
+	<div class="col col-md-4 has-bg">
+		<div class="wrap blue">
+			<h6>Column #1</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</div>
+	</div>
+	<div class="col col-md-4 has-bg">
+		<div class="wrap steel-blue">
+			<h6>Column #2</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</div>
+	</div>
+</div>
+
+<p>To align your columns horizontally to the end of a row, you can add class <code>align-end</code> to the wrapping <code>.row</code> element.</p>
+
+<div class="row align-end row-example row-example-align bg-light">
+	<div class="col col-md-4 has-bg">
+		<div class="wrap blue">
+			<h6>Column #1</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</div>
+	</div>
+	<div class="col col-md-4 has-bg">
+		<div class="wrap steel-blue">
+			<h6>Column #2</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</div>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row align-end">
+	...
+</div>
+</pre>
+
+<p>To align your columns horizontally to the center of a row, you can add class <code>align-center</code> to the wrapping <code>.row</code> element.</p>
+
+<div class="row align-center row-example row-example-align bg-light">
+	<div class="col col-md-4 has-bg">
+		<div class="wrap blue">
+			<h6>Column #1</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</div>
+	</div>
+	<div class="col col-md-4 has-bg">
+		<div class="wrap steel-blue">
+			<h6>Column #2</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</div>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row align-center">
+	...
+</div>
+</pre>
+
+<p>You can also align individual columns within a row, by adding the <code>align-start</code>, <code>align-center</code>, and <code>align-end</code> classes to the individual columns instead of the wrapping row.</p>
+
+<div class="row row-example row-example-align bg-light">
+	<div class="col align-start col-md-3 has-bg">
+		<div class="wrap blue">
+			<h6>Column #1</h6>
+		</div>
+	</div>
+	<div class="col align-center col-md-3 has-bg">
+		<div class="wrap steel-blue">
+			<h6>Column #2</h6>
+		</div>
+	</div>
+	<div class="col align-end col-md-3 has-bg">
+		<div class="wrap royal">
+			<h6>Column #3</h6>
+		</div>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row">
+	<div class="col align-start col-md-3 has-bg">
+		<div class="wrap blue">
+			...
+		</div>
+	</div>
+	<div class="col align-center col-md-3 has-bg">
+		<div class="wrap steel-blue">
+			...
+		</div>
+	</div>
+	<div class="col align-end col-md-3 has-bg">
+		<div class="wrap royal">
+			...
+		</div>
+	</div>
+</div>
+</pre>
+
+<h3 id="combine-alignment" class="heading-sm">Combining Alignment</h3>
+
+<p>And of course, we can combine vertical and horizontal alignment classes.</p>
+
+<p>For example, combining <code>.align-center</code> and <code>align-middle</code> can help us to achieve a common scenario of placing a column perfectly centered within a row that's been given a specific height larger than the column, itself.</p>
+
+<div class="row align-center align-middle row-example row-example-align row-example-align-single-col bg-light">
+	<div class="col col-md-4 has-bg">
+		<div class="wrap blue">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</div>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row align-center align-middle">
+	<div class="col col-md-4 has-bg">
+		<div class="wrap blue">
+			...
+		</div>
+	</div>
+</div>
+</pre>
+
+<p>And for fun, below is a less practical example, but just showing how we can apply this concept to indvidual columns within.</p>
+
+<div class="row row-example row-example-align row-example-align-single-col bg-light">
+	<div class="col align-start align-bottom col-md-4 has-bg">
+		<div class="wrap blue">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</div>
+	</div>
+	<div class="col align-end align-top col-md-4 has-bg">
+		<div class="wrap royal">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</div>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row">
+	<div class="col align-start align-bottom col-md-4 has-bg">
+		<div class="wrap blue">
+			...
+		</div>
+	</div>
+	<div class="col align-end align-top col-md-4 has-bg">
+		<div class="wrap royal">
+			...
+		</div>
+	</div>
+</div>
+</pre>
+
+<div class="alert alert-info">
+	<p><strong>Note:</strong> IE 10-11 have issues with vertical alignment, when a <code>.row</code> relies <em>only</em> on <code>min-height</code>. So make sure to set a CSS <code>height</code> on your <code>.row</code> element, if you want it to be taller than all columns within, like the two examples above.</p>
+</div>
+
+<h3 id="alignment-overview" class="heading-sm">Alignment Overview</h3>
+
+<div class="table-responsive">
+	<table class="table-bordered table-condensed table-grid-overview">
+		<tr>
+			<th>Element</th>
+			<th>Orientation</th>
+			<th>Alignment</th>
 		</tr>
 		<tr>
-			<td>112/12</td>
-			<td>100%</td>
-			<td><code>.col-xs-push-12</code><br><code>.col-xs-pull-12</code></td>
-			<td><code>.col-sm-push-12</code><br><code>.col-sm-pull-12</code></td>
-			<td><code>.col-md-push-12</code><br><code>.col-md-pull-12</code></td>
-			<td><code>.col-lg-push-12</code><br><code>.col-lg-pull-12</code></td>
+			<td><code>.align-top</code></td>
+			<td>Vertical</td>
+			<td>Top</td>
+		</tr>
+		<tr>
+			<td><code>.align-middle</code></td>
+			<td>Vertical</td>
+			<td>Middle</td>
+		</tr>
+		<tr>
+			<td><code>.align-bottom</code></td>
+			<td>Vertical</td>
+			<td>Bottom</td>
+		</tr>
+		<tr>
+			<td><code>.align-start</code></td>
+			<td>Horizontal</td>
+			<td>Start</td>
+		</tr>
+		<tr>
+			<td><code>.align-center</code></td>
+			<td>Horizontal</td>
+			<td>Center</td>
+		</tr>
+		<tr>
+			<td><code>.align-end</code></td>
+			<td>Horizontal</td>
+			<td>End</td>
+		</tr>
+	</table>
+</div>
+
+<!-- COLUMN ORDERING -->
+
+<h2 id="order">Column Ordering</h2>
+
+<p>Keeping a mobile-first approach in mind, column ordering classes can be very useful. Your HTML markup will be naturally ordered for the mobile view, but then by adding ordering classes you can adjust the display order on larger viewports where your columns are laid out.</p>
+
+<p>A really common dilemma column ordering solves is with laying out the content and sidebars of a website. &mdash; For example, if you have a layout with a left sidebar and main content area, you don't want (1) your mobile users seeing that left sidebar at the top, before your main content and (2) Google reading that sidebar first in your HTML markup. So this can be solved by outputting your primary content column first, but then using ordering classes to display the sidebar on the left at the larger, specified viewport.</p>
+
+<h3 id="order-reverse" class="heading-sm">Reverse Order</h3>
+
+<p>To reverse the order of all columns in a row, use one of the <code>row-{breakpoint}-reverse</code> classes on your <code>.row</code> element.</p>
+
+<div class="row row-md-reverse row-width-example">
+	<div class="col col-md">
+		<div class="wrap">
+			First
+		</div>
+	</div>
+	<div class="col col-md">
+		<div class="wrap">
+			Second
+		</div>
+	</div>
+	<div class="col col-md">
+		<div class="wrap">
+			Third
+		</div>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row row-md-reverse">
+	<div class="col col-md">
+		<div class="wrap">
+			First
+		</div>
+	</div>
+	<div class="col col-md">
+		<div class="wrap">
+			Second
+		</div>
+	</div>
+	<div class="col col-md">
+		<div class="wrap">
+			Third
+		</div>
+	</div>
+</div>
+</pre>
+
+<h3 id="order-first-and-last" class="heading-sm">First and Last</h3>
+
+<p>To bump a single column into the first position of a row, add class <code>col-{breakpoint}-order-first</code> to the column.</p>
+
+<div class="row row-width-example">
+	<div class="col col-md">
+		<div class="wrap">
+			First
+		</div>
+	</div>
+	<div class="col col-md">
+		<div class="wrap">
+			Second
+		</div>
+	</div>
+	<div class="col col-md col-md-order-first">
+		<div class="wrap">
+			Third
+		</div>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row">
+	<div class="col col-md">
+		<div class="wrap">
+			First
+		</div>
+	</div>
+	<div class="col col-md">
+		<div class="wrap">
+			Second
+		</div>
+	</div>
+	<div class="col col-md col-md-order-first">
+		<div class="wrap">
+			Third
+		</div>
+	</div>
+</div>
+</pre>
+
+<p>And similarly, to bump a single column into the last position of a row, add class <code>col-{breakpoint}-order-last</code> to the column.</p>
+
+<div class="row row-width-example">
+	<div class="col col-md col-md-order-last">
+		<div class="wrap">
+			First
+		</div>
+	</div>
+	<div class="col col-md">
+		<div class="wrap">
+			Second
+		</div>
+	</div>
+	<div class="col col-md">
+		<div class="wrap">
+			Third
+		</div>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row">
+	<div class="col col-md col-md-order-last">
+		<div class="wrap">
+			First
+		</div>
+	</div>
+	<div class="col col-md">
+		<div class="wrap">
+			Second
+		</div>
+	</div>
+	<div class="col col-md">
+		<div class="wrap">
+			Third
+		</div>
+	</div>
+</div>
+</pre>
+
+<h3 id="order-overview" class="heading-sm">Ordering Overview</h3>
+
+<div class="table-responsive">
+	<table class="table-bordered table-condensed table-grid-overview">
+		<tr>
+			<th>Always Ordered</th>
+			<th>Ordered Above 576px</th>
+			<th>Ordered Above 767px</th>
+			<th>Ordered Above 991px</th>
+			<th>Ordered Above 1199px</th>
+		</tr>
+		<tr>
+			<td><code>.row-xs-reverse</code></td>
+			<td><code>.row-sm-reverse</code></td>
+			<td><code>.row-md-reverse</code></td>
+			<td><code>.row-lg-reverse</code></td>
+			<td><code>.row-xl-reverse</code></td>
+		</tr>
+		<tr>
+			<td><code>.col-xs-first-order</code></td>
+			<td><code>.col-sm-first-order</code></td>
+			<td><code>.col-md-first-order</code></td>
+			<td><code>.col-lg-first-order</code></td>
+			<td><code>.col-xl-first-order</code></td>
+		</tr>
+		<tr>
+			<td><code>.col-xs-last-order</code></td>
+			<td><code>.col-sm-last-order</code></td>
+			<td><code>.col-md-last-order</code></td>
+			<td><code>.col-lg-last-order</code></td>
+			<td><code>.col-xl-last-order</code></td>
 		</tr>
 	</table>
 </div>
@@ -961,33 +1887,88 @@
 
 <h2 id="offset">Column Offsetting</h2>
 
-<p>Move columns inward using <code>.col-*-offset-*</code> classes. These classes increase the left margin of a column by specified columns. For example, adding the class <code>col-md-offset-4</code> to a <code>.col-md-4</code> element moves it over four columns.</p>
+<p>Move columns inward using <code>.col-{breakpoint}-offset-{size}</code> classes. These classes increase the left margin of a column by specified number of columns. For example, adding the class <code>col-md-offset-4</code> to a column element moves it over four columns.</p>
 
-<div class="row row-example">
-	<div class="col col-md-4"><code>.col-*-4</code></div>
-	<div class="col col-md-4 col-md-offset-4"><code>.col-*-4.col-*-offset-4</code></div>
+<div class="row-container offset-examples bg-light">
+
+	<div class="row row-example row-width-example row-no-gutters">
+		<span class="label">11</span>
+		<div class="col col-md-1 col-md-offset-11">
+			<div class="wrap">1</div>
+		</div>
+	</div>
+
+	<div class="row row-example row-width-example row-no-gutters">
+		<span class="label">10</span>
+		<div class="col col-md-2 col-md-offset-10">
+			<div class="wrap">2</div>
+		</div>
+	</div>
+
+	<div class="row row-example row-width-example row-no-gutters">
+		<span class="label">9</span>
+		<div class="col col-md-3 col-md-offset-9">
+			<div class="wrap">3</div>
+		</div>
+	</div>
+
+	<div class="row row-example row-width-example row-no-gutters">
+		<span class="label">8</span>
+		<div class="col col-md-4 col-md-offset-8">
+			<div class="wrap">4</div>
+		</div>
+	</div>
+
+	<div class="row row-example row-width-example row-no-gutters">
+		<span class="label">11</span>
+		<div class="col col-md-5 col-md-offset-7">
+			<div class="wrap">7</div>
+		</div>
+	</div>
+
+	<div class="row row-example row-width-example row-no-gutters">
+		<span class="label">6</span>
+		<div class="col col-md-6 col-md-offset-6">
+			<div class="wrap">6</div>
+		</div>
+	</div>
+
+	<div class="row row-example row-width-example row-no-gutters">
+		<span class="label">5</span>
+		<div class="col col-md-7 col-md-offset-5">
+			<div class="wrap">7</div>
+		</div>
+	</div>
+
+	<div class="row row-example row-width-example row-no-gutters">
+		<span class="label">4</span>
+		<div class="col col-md-8 col-md-offset-4">
+			<div class="wrap">8</div>
+		</div>
+	</div>
+
+	<div class="row row-example row-width-example row-no-gutters">
+		<span class="label">3</span>
+		<div class="col col-md-9 col-md-offset-3">
+			<div class="wrap">9</div>
+		</div>
+	</div>
+
+	<div class="row row-example row-width-example row-no-gutters">
+		<span class="label">2</span>
+		<div class="col col-md-10 col-md-offset-2">
+			<div class="wrap">10</div>
+		</div>
+	</div>
+
+	<div class="row row-example row-width-example row-no-gutters">
+		<span class="label">1</span>
+		<div class="col col-md-11 col-md-offset-1">
+			<div class="wrap">11</div>
+		</div>
+	</div>
+
 </div>
-
-<div class="row row-example">
-	<div class="col col-md-5"><code>.col-*-5</code></div>
-	<div class="col col-md-5 col-md-offset-2"><code>.col-*-5.col-*-offset-2</code></div>
-</div>
-
-<div class="row row-example">
-	<div class="col col-md-4 col-md-offset-2"><code>.col-*-4.col-*-offset-2</code></div>
-	<div class="col col-md-4"><code>.col-*-4</code></div>
-</div>
-
-<div class="row row-example">
-	<div class="col col-md-6 col-md-offset-3"><code>.col-*-6.col-*-offset-3</code></div>
-</div>
-
-<div class="row row-example">
-	<div class="col col-md-040"><code>.col-*-040</code></div>
-	<div class="col col-md-040 col-md-offset-020"><code>.col-*-040.col-*-offset-020</code></div>
-</div>
-
-<p>Now, in combining everything from above, here's an overview of all the possible column offset classes.</p>
 
 <div class="table-responsive">
 	<table class="table-bordered table-condensed table-grid-overview">
@@ -1149,22 +2130,6 @@
 			<td><code>.col-sm-offset-11</code></td>
 			<td><code>.col-md-offset-11</code></td>
 			<td><code>.col-lg-offset-11</code></td>
-		</tr>
-		<tr>
-			<td>10/10</td>
-			<td>100%</td>
-			<td><code>.col-xs-offset-0100</code></td>
-			<td><code>.col-sm-offset-0100</code></td>
-			<td><code>.col-md-offset-0100</code></td>
-			<td><code>.col-lg-offset-0100</code></td>
-		</tr>
-		<tr>
-			<td>12/12</td>
-			<td>100%</td>
-			<td><code>.col-xs-offset-12</code></td>
-			<td><code>.col-sm-offset-12</code></td>
-			<td><code>.col-md-offset-12</code></td>
-			<td><code>.col-lg-offset-12</code></td>
 		</tr>
 	</table>
 </div>

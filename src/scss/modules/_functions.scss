@@ -111,3 +111,24 @@
 	@return (($height - $line-height - ($border-width * 2)) / 2 );
 
 }
+
+//
+// Get the next largest breakpoint name.
+//
+// For example, if given "xs" the returned value
+// would be "sm".
+//
+// @param {String} $name - Name of breakpoint.
+// @param {Map} $breakpoints - Defined map of breakpoints.
+// @return {String} - Next largest breakpoint name.
+//
+
+@function breakpoint-next($name, $breakpoints) {
+
+	$breakpoint-names: map-keys($breakpoints);
+
+	$n: index($breakpoint-names, $name);
+
+	@return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), '');
+
+}

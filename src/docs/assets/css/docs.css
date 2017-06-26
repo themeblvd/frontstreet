@@ -22,10 +22,60 @@ body {
 .row-example {
   font-size: 14px; }
 
-.row-example code {
-  background: #eee;
+.row-width-example .col .wrap {
+  background: #1b1b1b;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 10px;
   display: block;
+  text-align: center; }
+
+.row-width-example .col.col-md-order-first .wrap,
+.row-width-example .col.col-md-order-last .wrap {
+  background: #428bca; }
+
+.row-container-example {
+  padding: 15px; }
+  .row-container-example > .wrap {
+    border: 1px dashed #ddd;
+    padding: 14px 0; }
+  .row-container-example .row {
+    background-color: rgba(255, 0, 0, 0.2); }
+
+.row-nesting-example .has-bg .wrap {
   padding: 10px; }
+
+.row-example-align {
+  margin: 0;
+  padding: 15px 0; }
+
+.row-example-align-single-col {
+  min-height: 300px; }
+
+@media screen and (min-width: 0\0) {
+  .row-example-align-single-col {
+    height: 300px; } }
+
+.offset-examples {
+  padding-top: 15px;
+  padding-bottom: 15px; }
+  .offset-examples .row {
+    border: 1px dashed #ddd;
+    margin-bottom: 5px;
+    position: relative; }
+  .offset-examples .label {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translate(0, -50%); }
+  .offset-examples .col {
+    margin-top: -1px;
+    margin-right: -1px;
+    margin-bottom: -1px; }
+  .offset-examples .row-width-example .col .wrap {
+    background: #1b1b1b; }
 
 /* Quotes */
 blockquote.alignleft,

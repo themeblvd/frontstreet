@@ -30,10 +30,73 @@ body {
 	// margin-top: 40px;
 	// margin-bottom: 24px;
 }
-.row-example code {
-	background: #eee;
-	display: block;
+.row-width-example .col {
+	.wrap {
+		background: #1b1b1b;
+		color: #fff;
+		font-size: 12px;
+		font-weight: bold;
+		padding: 10px;
+		display: block;
+		text-align: center;
+	}
+	&.col-md-order-first .wrap,
+	&.col-md-order-last .wrap {
+		background: #428bca;
+	}
+}
+.row-container-example {
+
+	padding: 15px;
+
+	> .wrap {
+		border: 1px dashed #ddd;
+		padding: 14px 0;
+	}
+	.row {
+		background-color: rgba(red, 0.2);
+	}
+}
+.row-nesting-example .has-bg .wrap {
 	padding: 10px;
+}
+.row-example-align {
+	margin: 0;
+	padding: 15px 0;
+}
+.row-example-align-single-col {
+	min-height: 300px;
+}
+@media screen and (min-width:0\0) {
+	.row-example-align-single-col {
+		height: 300px;
+	}
+}
+.offset-examples {
+
+	padding-top: 15px;
+	padding-bottom: 15px;
+
+	.row {
+		border: 1px dashed #ddd;
+		margin-bottom: 5px;
+		position: relative;
+	}
+	.label {
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 15px;
+		transform: translate(0, -50%);
+	}
+	.col {
+		margin-top: -1px;
+		margin-right: -1px;
+		margin-bottom: -1px;
+	}
+	.row-width-example .col .wrap {
+		background: #1b1b1b;
+	}
 }
 
 /* Quotes */

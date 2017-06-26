@@ -1,250 +1,122 @@
 // --------------------------------------------------
-// Mixins: Grids
+// Mixins: Flexbox Grids
 // --------------------------------------------------
+
+//
+// Row Container
+//
+
+@mixin make-row-container($gutter: $grid-gutters) {
+	padding: 0 ($gutter / 2);
+}
 
 //
 // Rows
 //
 
 @mixin make-row($gutter: $grid-gutters) {
-	margin-right: floor(($gutter / -2));
+	display: flex;
+	flex: 0 1 auto;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-right: ($gutter / -2);
 	margin-bottom: $margin-column;
-	margin-left:  ceil(($gutter / -2));
-	@include clearfix;
+	margin-left:  ($gutter / -2);
 }
 
 //
-// Rows w/Equal Height Columns
+// Column Base
 //
 
-@mixin make-equal-height-grid($breakpoint) {
-	@include min-width($breakpoint) {
-		.container-#{$breakpoint}-height {
-		    display: table;
-		    padding-left: 0;
-		    padding-right: 0;
-		    width: 100%;
-		}
-		.row-#{$breakpoint}-height {
-		    display: table-row;
-		}
-		.col-#{$breakpoint}-height {
-		    display: table-cell;
-		    float: none;
-		}
+@mixin make-col-base {
+
+	position: relative;
+	margin-bottom: $margin-column;
+	min-height: 1px; // Prevent collapsing.
+	padding-left: ceil(($grid-gutters / 2));
+	padding-right: floor(($grid-gutters / 2));
+	// Prevent columns from becoming too narrow when at smaller grid tiers by
+	// always setting `width: 100%;`. This works because we use `flex` values
+	// later on to override this initial width.
+	width: 100%;
+
+	@include margin-vert-flush;
+
+	> .wrap {
+		width: 100%;
 	}
+
 }
 
 //
-// All columns, all viewports
+// All columns for a particular breakpoint,
+// when positioned.
 //
 
-@mixin make-grid-columns($columns, $i: 1, $list: "") {
-	@for $i from 1 through $columns {
+@mixin make-cols($breakpoint) {
 
-		$num: "#{$i}";
+	$selector: ".col-#{$breakpoint}";
 
-		@if $columns == 10 {
-			$num: "0#{$i}0";
-		}
-
-		$list: "#{$list}, .col-xs-#{$num}, .col-sm-#{$num}, .col-md-#{$num}, .col-lg-#{$num}";
-
+	@for $i from 1 through 12 {
+		$selector: "#{$selector}, .col-#{$breakpoint}-#{$i}";
 	}
-	#{$list} {
-		position: relative;
-		min-height: 1px; // Prevent columns from collapsing when empty
-		padding-left: ceil(($grid-gutters / 2));
-		padding-right: floor(($grid-gutters / 2));
+
+	@for $i from 1 through 10 {
+		$selector: "#{$selector}, .col-#{$breakpoint}-0#{$i}0";
 	}
-}
 
-//
-// Column class floating
-//
-
-@mixin float-grid-columns($columns, $class, $i: 1, $list: "") {
-
-	@for $i from 1 through $columns {
-
-		$num: "#{$i}";
-
-		@if $columns == 10 {
-			$num: "0#{$i}0";
-		}
-
-		$list: "#{$list}, .col-#{$class}-#{$num}";
-
-	}
-	#{$list} {
-		@if ($direction == 'rtl') {
-			float: right;
-		} @else {
-			float: left;
-		}
+	#{$selector} {
 		margin-bottom: 0;
 	}
+
 }
 
 //
-// Determine individual column properties
+// Varying width columns.
 //
 
-@mixin calc-grid-column($columns, $index, $num, $class, $type) {
-	@if ($type == width) and ($index > 0) {
-		.col-#{$class}-#{$num} {
-			width: percentage(($index / $columns));
+@mixin make-col-widths($breakpoint) {
+	@for $i from 1 through 12 {
+		.col-#{$breakpoint}-#{$i} {
+			@include make-col-width($i, 12);
 		}
 	}
-	@if ($type == push) and ($index > 0) {
-		.col-#{$class}-push-#{$num} {
-			@if ($direction == 'rtl') {
-				right: percentage(($index / $columns));
-			} @else  {
-				left: percentage(($index / $columns));
-			}
-		}
-	}
-	@if ($type == push) and ($index == 0) {
-		.col-#{$class}-push-0 {
-			@if ($direction == 'rtl') {
-				right: auto;
-			} @else  {
-				left: auto;
-			}
-		}
-	}
-	@if ($type == pull) and ($index > 0) {
-		.col-#{$class}-pull-#{$num} {
-			@if ($direction == 'rtl') {
-				left: percentage(($index / $columns));
-			} @else  {
-				right: percentage(($index / $columns));
-			}
-		}
-	}
-	@if ($type == pull) and ($index == 0) {
-		.col-#{$class}-pull-0 {
-			@if ($direction == 'rtl') {
-				left: auto;
-			} @else {
-				right: auto;
-			}
-		}
-	}
-	@if ($type == offset) {
-		.col-#{$class}-offset-#{$num} {
-			@if ($direction == 'rtl') {
-				margin-right: percentage(($index / $columns));
-			} @else {
-				margin-left: percentage(($index / $columns));
-			}
+	@for $i from 1 through 10 {
+		.col-#{$breakpoint}-0#{$i}0 {
+			@include make-col-width($i, 10);
 		}
 	}
 }
 
+@mixin make-col-width($column, $columns) {
+	flex: 0 0 percentage($column / $columns);
+	// Add a `max-width` to ensure content within each column does not blow out
+	// the width of the column. Applies to IE10+ and Firefox. Chrome and Safari
+	// do not appear to require this.
+	max-width: percentage($column / $columns);
+}
+
 //
-// Column properties
+// Offsets
 //
 
-@mixin loop-grid-columns($columns, $class, $type) {
-	@for $i from 0 through $columns {
-
-		$num: "#{$i}";
-
-		@if $columns == 10 {
-			$num: "0#{$i}0";
+@mixin make-col-offsets($breakpoint) {
+	@for $i from 1 through 11 {
+		.col-#{$breakpoint}-offset-#{$i} {
+			@include make-col-offset($i, 12);
 		}
-
-		@include calc-grid-column($columns, $i, $num, $class, $type);
-
+	}
+	@for $i from 1 through 9 {
+		.col-#{$breakpoint}-offset-0#{$i}0 {
+			@include make-col-offset($i, 10);
+		}
 	}
 }
 
-//
-// Column classes for specific viewports
-//
-
-@mixin make-grid($columns, $class) {
-	@include float-grid-columns($columns, $class);
-	@include loop-grid-columns($columns, $class, width);
-	@include loop-grid-columns($columns, $class, pull);
-	@include loop-grid-columns($columns, $class, push);
-	@include loop-grid-columns($columns, $class, offset);
-}
-
-//
-// Flush columns
-//
-
-@mixin make-flush-columns($columns, $type) {
-	@each $breakpoint in $breakpoints {
-		@if $breakpoint != xl { // skip xl
-
-			$has-bg: "";
-			$non-bg: "";
-
-			@for $i from 1 through $columns {
-
-				$num: "#{$i}";
-
-				@if $columns == 10 {
-					$num: "0#{$i}0";
-				}
-
-				@if $type == start {
-					$has-bg: "#{$has-bg}, .row-flush-start:not(.row-flush-end) .col-#{$breakpoint}-#{$num}.has-bg";
-					$non-bg: "#{$non-bg}, .row-flush-start:not(.row-flush-end) .col-#{$breakpoint}-#{$num}:not(.has-bg)";
-				} @else  {
-					$has-bg: "#{$has-bg}, .row-flush-end:not(.row-flush-start) .col-#{$breakpoint}-#{$num}.has-bg";
-					$non-bg: "#{$non-bg}, .row-flush-end:not(.row-flush-start) .col-#{$breakpoint}-#{$num}:not(.has-bg)";
-				}
-
-			}
-
-			@include max-width($breakpoint) {
-
-				#{$has-bg} {
-					@if $type == 'start' {
-
-						@if ($direction == 'rtl') {
-							margin-left: $grid-gutters / 2;
-						} @else {
-							margin-right: $grid-gutters / 2;
-						}
-
-					} @else {
-
-						@if ($direction == 'rtl') {
-							margin-right: $grid-gutters / 2;
-						} @else {
-							margin-left: $grid-gutters / 2;
-						}
-
-					}
-				}
-				#{$non-bg} {
-					@if $type == 'start' {
-
-						@if ($direction == 'rtl') {
-							padding-right: 0;
-						} @else {
-							padding-left: 0;
-						}
-
-					} @else {
-
-						@if ($direction == 'rtl') {
-							padding-left: 0;
-						} @else {
-							padding-right: 0;
-						}
-
-					}
-				}
-
-			}
-
-		}
+@mixin make-col-offset($column, $columns) {
+	@if ($direction == 'rtl') {
+		margin-right: percentage(($column / $columns));
+	} @else {
+		margin-left: percentage(($column / $columns));
 	}
 }
