@@ -1616,7 +1616,7 @@
 </div>
 </pre>
 
-<h3 id="combine-alignment" class="heading-sm">Combining Alignment</h3>
+<h3 id="combine-alignment" class="heading-sm">Combining Horizontal and Vertical Alignment</h3>
 
 <p>And of course, we can combine vertical and horizontal alignment classes.</p>
 
@@ -1674,6 +1674,60 @@
 	<p><strong>Note:</strong> IE 10-11 have issues with vertical alignment, when a <code>.row</code> relies <em>only</em> on <code>min-height</code>. So make sure to set a CSS <code>height</code> on your <code>.row</code> element, if you want it to be taller than all columns within, like the two examples above.</p>
 </div>
 
+<h3 id="distribution" class="heading-sm">Distribution</h3>
+
+<p>When your columns don't all add up to 100%, you can evenly distribute the space around them by adding class <code>space-around</code> to the <code>.row</code> element.</p>
+
+<div class="row space-around row-example row-example-align bg-light">
+	<div class="col col-md-3 has-bg">
+		<div class="wrap blue">
+			<h6>Column #1</h6>
+		</div>
+	</div>
+	<div class="col col-md-3 has-bg">
+		<div class="wrap steel-blue">
+			<h6>Column #2</h6>
+		</div>
+	</div>
+	<div class="col col-md-3 has-bg">
+		<div class="wrap royal">
+			<h6>Column #3</h6>
+		</div>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row space-around">
+	...
+</div>
+</pre>
+
+<p>And similarly, you can evenly distribute the space around, but with the first and last columns against the row edges, by adding class <code>space-between</code> to the <code>.row</code> element.</p>
+
+<div class="row space-between row-example row-example-align bg-light">
+	<div class="col col-md-3 has-bg">
+		<div class="wrap blue">
+			<h6>Column #1</h6>
+		</div>
+	</div>
+	<div class="col col-md-3 has-bg">
+		<div class="wrap steel-blue">
+			<h6>Column #2</h6>
+		</div>
+	</div>
+	<div class="col col-md-3 has-bg">
+		<div class="wrap royal">
+			<h6>Column #3</h6>
+		</div>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="row space-between">
+	...
+</div>
+</pre>
+
 <h3 id="alignment-overview" class="heading-sm">Alignment Overview</h3>
 
 <div class="table-responsive">
@@ -1682,36 +1736,64 @@
 			<th>Element</th>
 			<th>Orientation</th>
 			<th>Alignment</th>
+			<th class="text-center">Use with <code>.row</code></th>
+			<th class="text-center">Use with <code>.col</code></th>
 		</tr>
 		<tr>
 			<td><code>.align-top</code></td>
 			<td>Vertical</td>
 			<td>Top</td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
 		</tr>
 		<tr>
 			<td><code>.align-middle</code></td>
 			<td>Vertical</td>
 			<td>Middle</td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
 		</tr>
 		<tr>
 			<td><code>.align-bottom</code></td>
 			<td>Vertical</td>
 			<td>Bottom</td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
 		</tr>
 		<tr>
 			<td><code>.align-start</code></td>
 			<td>Horizontal</td>
 			<td>Start</td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
 		</tr>
 		<tr>
 			<td><code>.align-center</code></td>
 			<td>Horizontal</td>
 			<td>Center</td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
 		</tr>
 		<tr>
 			<td><code>.align-end</code></td>
 			<td>Horizontal</td>
 			<td>End</td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+		</tr>
+		<tr>
+			<td><code>.space-around</code></td>
+			<td>Horizontal</td>
+			<td>Even distribution</td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
+		</tr>
+		<tr>
+			<td><code>.space-between</code></td>
+			<td>Horizontal</td>
+			<td>Even distribution, against outer edges</td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
 		</tr>
 	</table>
 </div>

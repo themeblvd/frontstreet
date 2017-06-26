@@ -1,5 +1,5 @@
 // --------------------------------------------------
-// Flexbox Grids
+// Grids
 // --------------------------------------------------
 
 //
@@ -160,17 +160,31 @@
 	&.align-end {
 		justify-content: flex-end;
 	}
+	&.space-between {
+		justify-content: space-between;
+	}
+	&.space-around {
+		justify-content: space-around;
+	}
 }
 .col {
 	&.align-start {
-		margin-right: auto;
+		@if ($direction == 'rtl') {
+			margin-left: auto;
+		} @else {
+			margin-right: auto;
+		}
 	}
 	&.align-center {
 		margin-right: auto;
 		margin-left: auto;
 	}
 	&.align-end {
-		margin-left: auto;
+		@if ($direction == 'rtl') {
+			margin-right: auto;
+		} @else {
+			margin-left: auto;
+		}
 	}
 }
 
