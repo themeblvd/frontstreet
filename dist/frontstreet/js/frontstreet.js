@@ -94,7 +94,9 @@ var FrontStreet = {
 
 		$this.options.dropdown_selector = 'ul:not(.mega-sub-menu), .fs-mega';
 
-		$menu.find($this.options.dropdown_selector).css('display', 'none');
+		Menu.TIMER[ $this.options.id ] = [];
+
+		$menu.removeClass('no-js');
 
 		$menu.find('li').has($this.options.dropdown_selector)
 			.addClass('menu-item-has-children')
@@ -126,8 +128,7 @@ var FrontStreet = {
 	}
 
 	Menu.DEFAULTS = {
-		delay	: 500,
-		speed	: 200
+		delay: 500
 	}
 
 	Menu.COUNT = 0; // Assign a unique ID to each menu.
@@ -160,29 +161,64 @@ var FrontStreet = {
 			$flyout.removeClass('reverse');
 		}
 
-	}
+	};
 
 	Menu.prototype.show = function($trigger, options) {
 
-		clearTimeout( Menu.TIMER[ options.id ] );
+		var level = Menu.prototype.getLevel($trigger),
+			$siblings = $trigger.siblings().find(options.dropdown_selector),
+			$target = $trigger.children(options.dropdown_selector);
 
-		$trigger.siblings().find(options.dropdown_selector).fadeOut(options.speed);
+		clearTimeout( Menu.TIMER[ options.id ][ level ] );
 
-		$trigger.children(options.dropdown_selector).stop(true, true).fadeIn(options.speed);
+		$siblings.removeClass('in');
 
-	}
+		$target.addClass('show fade');
+
+		Menu.TIMER[ options.id ][ level ] = setTimeout(function() {
+
+			$siblings.removeClass('show fade');
+
+			$target.addClass('in');
+
+		}, 200);
+
+	};
 
 	Menu.prototype.hide = function($trigger, options) {
 
-		var $flyout = $trigger.children(options.dropdown_selector);
+		var level = Menu.prototype.getLevel($trigger),
+			$flyout = $trigger.children(options.dropdown_selector);
 
-		$flyout.stop(true, true).css('display', 'block');
+		clearTimeout( Menu.TIMER[ options.id ][ level ] );
 
-		Menu.TIMER[ options.id ] = setTimeout(function() {
-			$flyout.fadeOut(options.speed);
+		Menu.TIMER[ options.id ][ level ] = setTimeout(function() {
+
+			$flyout.removeClass('in');
+
+			setTimeout(function() {
+
+				$flyout.removeClass('show fade');
+
+			}, 200);
+
 		}, options.delay);
 
-	}
+	};
+
+	Menu.prototype.getLevel = function($trigger) {
+
+		var level = 'level-1';
+
+		if ( $trigger.hasClass('level-2') ) {
+			level = 'level-2';
+		} else if ( $trigger.hasClass('level-3') ) {
+			level = 'level-3';
+		}
+
+		return level;
+
+	};
 
 	// MENU PLUGIN DEFINITION
 	// =======================
@@ -398,6 +434,51 @@ var FrontStreet = {
 			}
 		});
 
+		$('.fs-modal-close').on('click', function() {
+			$.magnificPopup.close();
+			return false;
+		});
+
+		$('.fs-content-modal-link').magnificPopup({
+			type: 'inline',
+			mainClass: mainClass,
+			alignTop: true,
+			showCloseBtn: false,
+			removalDelay: removalDelay,
+			callbacks: {
+				open: function() {
+					$('.mfp-wrap .fs-modal').attr('aria-hidden', false);
+				},
+				beforeClose: function() {
+					$('.mfp-wrap .fs-modal').attr('aria-hidden', true);
+				}
+			}
+		});
+
+		$('.fs-search-modal-link').magnificPopup({
+			type: 'inline',
+			mainClass: mainClass + ' mfp-search',
+			closeBtnInside: false,
+			closeMarkup: config.closeMarkup,
+			removalDelay: removalDelay,
+			callbacks: {
+				open: function() {
+
+					$('.mfp-wrap .fs-search-modal').attr('aria-hidden', false);
+
+					$.magnificPopup.instance.wrap[0].addEventListener('focus', function (e) {
+
+						$('.mfp-search .fs-search-modal input[type="search"]').focus();
+
+					});
+
+				},
+				beforeClose: function() {
+					$('.mfp-wrap .fs-search-modal').attr('aria-hidden', true);
+				}
+			}
+		});
+
 		$('.fs-modal-gallery, .themeblvd-gallery').each(function() {
 
 			var $gallery = $(this),
@@ -475,27 +556,6 @@ var FrontStreet = {
   				}
 			});
 
-		});
-
-		$('.fs-modal-close').on('click', function() {
-			$.magnificPopup.close();
-			return false;
-		});
-
-		$('.fs-content-modal-link').magnificPopup({
-			type: 'inline',
-			mainClass: mainClass,
-			alignTop: true,
-			showCloseBtn: false,
-			removalDelay: removalDelay,
-			callbacks: {
-				open: function() {
-					$('.mfp-wrap .fs-modal').attr('aria-hidden', false);
-				},
-				beforeClose: function() {
-					$('.mfp-wrap .fs-modal').attr('aria-hidden', true);
-				}
-			}
 		});
 
 		$('.fs-image-modal-link').magnificPopup({

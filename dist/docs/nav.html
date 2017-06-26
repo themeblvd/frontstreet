@@ -32,7 +32,7 @@
 
 <p>Because the navigation of a website can be such an integral part of its unique design, we've done our best to keep top-level menu styling as simple as possible, for easy CSS extending.</p>
 
-<p>However, one of the most notable features of our navigation menus is the support for dropdown (or "fly-out") menus, which are always triggered with a <em>hover</em> state. This is done with custom styling and JavaScript from the Front Street framework. When building the navigational elements discussed in this article, you can add support for our dropdown script by simply adding the class <code>fs-menu</code>.</p>
+<p>However, one of the most notable features of our navigation menus is the support for dropdown (or "fly-out") menus, which are always triggered with a <em>hover</em> state. This is done with custom styling and JavaScript from the Front Street framework. When building the navigational elements discussed in this article, you can add support for our dropdown script by simply adding the class <code>fs-menu</code>. Also add class <code>no-js</code> to allow dropdowns to function when the browser doesn't have JavaScript; this is </p>
 
 <p>And for any of the navigation bars, if you'd like to utilize Front Street for coloring them, use any of the <a href="colors.html" title="Color Classes" target="_blank">color classes</a> to set a background color and classes <code>text-light</code> and <code>text-dark</code> to adjust the text.</p>
 
@@ -148,7 +148,7 @@
 
 <p>And to present those second-level and third-level menus as dropdown (or "fly-out") menus, add the class <code>fs-menu</code> to the <code>.menu-bar</code> element. &mdash; And for fun, this time we've added the classes <code>red</code> and <code>text-light</code> for coloring.</p>
 
-<ul class="menu-bar fs-menu red text-light">
+<ul class="menu-bar fs-menu no-js red text-light">
 	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
 	<li>
 		<a href="#" class="menu-btn" title="About">About</a>
@@ -172,7 +172,7 @@
 </ul>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;ul class="menu-bar fs-menu red text-light"&gt;
+&lt;ul class="menu-bar fs-menu no-js red text-light"&gt;
 	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
 	<li>
 		<a href="#" class="menu-btn" title="About">About</a>
@@ -198,7 +198,7 @@
 
 <p>And an additional feature available when working with a <code>.fs-menu</code> element is that you can use these <a href="colors.html" title="Color Classes" target="_blank">color classes</a> on the second-level and third-level submenus, as well; so you'll see we've expanded on the previous example to include classes <code>crimson</code> and <code>text-light</code> to the submenus.</p>
 
-<ul class="menu-bar fs-menu red text-light">
+<ul class="menu-bar fs-menu no-js red text-light">
 	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
 	<li>
 		<a href="#" class="menu-btn" title="About">About</a>
@@ -222,7 +222,7 @@
 </ul>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;ul class="menu-bar fs-menu red text-light"&gt;
+&lt;ul class="menu-bar fs-menu no-js red text-light"&gt;
 	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
 	<li>
 		<a href="#" class="menu-btn" title="About">About</a>
@@ -294,7 +294,7 @@
 
 <p>And when working with a horizontal <code>.menu-bar</code> with submenus, you must add <a href="colors.html" title="Color Classes" target="_blank">color classes</a> to the nested submenus. You'll notice in the following example we've added classes <code>dark_blue</code> and <code>text-light</code> to those nested unordered lists.</p>
 
-<ul class="menu-bar menu-bar-horz-sm fs-menu royal text-light">
+<ul class="menu-bar menu-bar-horz-sm fs-menu no-js royal text-light">
 	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
 	<li>
 		<a href="#" class="menu-btn no-click" title="About">About</a>
@@ -318,7 +318,7 @@
 </ul>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;ul class="menu-bar menu-bar-horz-sm fs-menu royal text-light"&gt;
+&lt;ul class="menu-bar menu-bar-horz-sm fs-menu no-js royal text-light"&gt;
 	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
 	<li>
 		<a href="#" class="menu-btn no-click" title="About">About</a>
@@ -348,7 +348,7 @@
 
 <h4 class="heading-sm">Mega Menus</h4>
 
-<ul class="menu-bar menu-bar-horz-sm fs-menu royal text-light">
+<ul class="menu-bar menu-bar-horz-sm fs-menu no-js royal text-light">
 	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
 	<li class="has-mega-menu mega-col-3">
 		<a href="#" class="menu-btn no-click" title="About">About</a>
@@ -403,7 +403,7 @@
 </ul>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;ul class="menu-bar menu-bar-horz-sm fs-menu royal text-light"&gt;
+&lt;ul class="menu-bar menu-bar-horz-sm fs-menu no-js royal text-light"&gt;
 	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
 	<li class="has-mega-menu mega-col-3">
 		<a href="#" class="menu-btn no-click" title="About">About</a>
@@ -544,7 +544,7 @@
 
 <p>If you'd like nested submenus to have the dropdown (or "fly-out") effect, you can add class <code>fs-menu</code>. &mdash; And to mix things up, we've adjusted the color classes from the previous example, as well.</p>
 
-<ul class="submenu-bar fs-menu jungle text-light">
+<ul class="submenu-bar fs-menu no-js jungle text-light">
 	<li>
 		<a href="#" class="menu-btn" title="About">About</a>
 		<ul>
@@ -560,7 +560,7 @@
 </ul>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;ul class="submenu-bar fs-menu jungle text-light"&gt;
+&lt;ul class="submenu-bar fs-menu no-js jungle text-light"&gt;
 	<li>
 		<a href="#" class="menu-btn" title="About">About</a>
 		<ul>
@@ -578,7 +578,7 @@
 
 <p>And an additional feature available when working with a <code>.fs-menu</code> element is that you can use these <a href="colors.html" title="Color Classes" target="_blank">color classes</a> on the second-level and third-level submenus, as well; so you'll see we've expanded on the previous example to include classes <code>black</code> and <code>text-light</code> to the submenu.</p>
 
-<ul class="submenu-bar fs-menu jungle text-light">
+<ul class="submenu-bar fs-menu no-js jungle text-light">
 	<li>
 		<a href="#" class="menu-btn" title="About">About</a>
 		<ul class="black text-light">
@@ -594,7 +594,7 @@
 </ul>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;ul class="submenu-bar fs-menu jungle text-light"&gt;
+&lt;ul class="submenu-bar fs-menu no-js jungle text-light"&gt;
 	<li>
 		<a href="#" class="menu-btn" title="About">About</a>
 		<ul class="black text-light">
@@ -652,7 +652,7 @@
 
 <p>And when working with a horizontal <code>.submenu</code> with submenus, you must add <a href="colors.html" title="Color Classes" target="_blank">color classes</a> to the nested submenus. You'll notice in the following example we've added classes <code>pink</code> and <code>text-light</code> to that nested unordered list.</p>
 
-<ul class="submenu-bar submenu-horz-sm fs-menu dark_purple text-light">
+<ul class="submenu-bar submenu-horz-sm fs-menu no-js dark_purple text-light">
 	<li>
 		<a href="#" class="menu-btn" title="About">About</a>
 		<ul class="pink text-light">
@@ -668,7 +668,7 @@
 </ul>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;ul class="submenu-bar submenu-horz-sm fs-menu dark_purple text-light"&gt;
+&lt;ul class="submenu-bar submenu-horz-sm fs-menu no-js dark_purple text-light"&gt;
 	<li>
 		<a href="#" class="menu-btn" title="About">About</a>
 		<ul class="pink text-light">
@@ -686,7 +686,7 @@
 
 <h4 class="heading-sm">Mega Menus</h4>
 
-<ul class="submenu-bar submenu-horz-sm fs-menu dark_purple text-light">
+<ul class="submenu-bar submenu-horz-sm fs-menu no-js dark_purple text-light">
 	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
 	<li class="has-mega-menu mega-col-3">
 		<a href="#" class="menu-btn no-click" title="About">About</a>
@@ -741,7 +741,7 @@
 </ul>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;ul class="submenu-bar submenu-horz-sm fs-menu dark_purple text-light"&gt;
+&lt;ul class="submenu-bar submenu-horz-sm fs-menu no-js dark_purple text-light"&gt;
 	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
 	<li class="has-mega-menu mega-col-3">
 		<a href="#" class="menu-btn no-click" title="About">About</a>
@@ -1232,7 +1232,7 @@
 
 <p>In the following example, we've got a <code>.menu-bar</code> element as we've discussed above, but now the class <code>menu-bar-horz-md</code> has been used <em>instead</em> of <code>menu-bar-horz</code>. And so this means the menu will stack when the viewport is less than 992px.</p>
 
-<ul class="menu-bar menu-bar-horz-md fs-menu bg-dark text-light">
+<ul class="menu-bar menu-bar-horz-md fs-menu no-js bg-dark text-light">
 	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
 	<li class="no-click">
 		<a href="#" class="menu-btn" title="About">About</a>
@@ -1256,7 +1256,7 @@
 </ul>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;ul class="menu-bar menu-bar-horz-md fs-menu bg-dark text-light"&gt;
+&lt;ul class="menu-bar menu-bar-horz-md fs-menu no-js bg-dark text-light"&gt;
 	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
 	<li class="no-click">
 		<a href="#" class="menu-btn" title="About">About</a>
@@ -1282,7 +1282,7 @@
 
 <p>And in this example, the class <code>submenu-horz-sm</code> has been used with the <code>.submenu-bar</code> element. This means it will stack when the viewport is less than 768px.</p>
 
-<ul class="submenu-bar submenu-horz-sm fs-menu bg-light text-dark">
+<ul class="submenu-bar submenu-horz-sm fs-menu no-js bg-light text-dark">
 	<li>
 		<a href="#" class="menu-btn" title="About">About</a>
 		<ul class="white text-dark">
@@ -1298,7 +1298,7 @@
 </ul>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;ul class="submenu-bar submenu-horz-sm fs-menu bg-light text-dark"&gt;
+&lt;ul class="submenu-bar submenu-horz-sm fs-menu no-js bg-light text-dark"&gt;
 	<li>
 		<a href="#" class="menu-btn" title="About">About</a>
 		<ul class="white text-dark">

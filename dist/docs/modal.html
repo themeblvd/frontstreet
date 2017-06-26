@@ -389,6 +389,29 @@
 
 <h2 id="search-modal">Search Modal</h2>
 
+<p>The search modal allows you to hide a nice big search field for your website. Link to the search modal however you want &mdash; via a button, text link, icon, etc.</p>
+
+<p>Below is an example of how this works. We've got a <code>&lt;form&gt;</code> with an <code>&lt;input type="search"&gt;</code>. field within. On the form, we've added class <code>fs-search-modal</code> and ID <code>search</code> which we can reference from our link.
+
+<p>To link to the search modal, create any kind of link with class <code>fs-search-modal-link</code> and then link to the ID you've given to your <code>&lt;form&gt;</code>.</p>
+
+<p><a href="#search" class="fs-search-modal-link" title="Search the Website">Open Search Modal</a></p>
+
+<form id="search" class="fs-search-modal" method="get" aria-hidden="true">
+	<div class="field-icon">
+		<input type="search" name="s" placeholder="Search the site...">
+	</div>
+</form>
+
+<pre class="brush: xml; gutter: false; toolbar: false; class-name: no-wrap;">
+<a href="#search" class="fs-search-modal-link" title="Search the Website">Open Search Modal</a>
+
+<form id="search" class="fs-search-modal" method="get" aria-hidden="true">
+	<div class="field-icon">
+		<input type="search" name="s" placeholder="Search the site...">
+	</div>
+</form>
+</pre>
 
 
 				</article><!-- #main (end) -->
