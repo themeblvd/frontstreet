@@ -20,7 +20,15 @@
 @include bg-variant('.bg-dark', $clr-dark);
 
 @each $name, $map in $clr-library {
+
+	$alt: str-replace($name, "-", "_");
+
+	@if ($alt != $name) {
+		@include bg-variant('.#{$alt}', map-get($map, base), map-get($map, contrast));
+	}
+
 	@include bg-variant('.#{$name}', map-get($map, base), map-get($map, contrast));
+
 }
 
 //

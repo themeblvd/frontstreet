@@ -91,7 +91,15 @@
 //
 
 @each $clr, $map in $clr-library {
+
+	$alt: str-replace($clr, "-", "_");
+
+	@if ($alt != $clr) {
+		@include button-variant($alt, map-get($map, contrast), map-get($map, base) )
+	}
+
 	@include button-variant($clr, map-get($map, contrast), map-get($map, base) );
+
 }
 
 //

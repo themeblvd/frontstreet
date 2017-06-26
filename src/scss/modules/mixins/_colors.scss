@@ -21,6 +21,7 @@
 //
 
 @mixin bg-variant($parent, $clr, $text: null) {
+
 	#{$parent} {
 		background-color: $clr;
 
