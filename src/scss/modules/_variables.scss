@@ -132,6 +132,8 @@ $font-size-field-legend				: $font-size-base;
 $font-size-field-help				: $font-size-small;
 $font-size-breadcrumbs				: $font-size-sm;
 $font-size-widget					: $font-size-sm;
+$font-size-label-factor				: 0.75;
+$font-size-label					: $font-size-label-factor * $font-size-base; // 0.75 * 16px = 12px
 
 // Font Line Heights
 
@@ -173,6 +175,7 @@ $font-transform-btn					: uppercase;
 $font-transform-menu-bar-btn		: none;
 $font-transform-submenu-btn			: $font-transform-btn;
 $font-transform-mobile-menu-bar-btn	: $font-transform-menu-bar-btn;
+$font-transform-label				: $font-transform-btn;
 
 // Letter Spacing
 
@@ -184,6 +187,7 @@ $font-ls-btn						: .12em;
 $font-ls-menu-bar-btn				: 0;
 $font-ls-submenu-btn				: $font-ls-btn;
 $font-ls-mobile-menu-bar-btn		: $font-ls-menu-bar-btn;
+$font-ls-label						: 1px;
 
 // ==========================================================================
 // Colors
@@ -436,6 +440,7 @@ $clr-bg-field						: rgba($clr-white, 0.8);
 $clr-bg-inv-field					: transparent;
 $clr-bg-widget						: $clr-bg-content;
 $clr-bg-inv-widget					: $clr-bg-inv-content;
+$clr-bg-label						: $clr-bg-dark;
 
 
 // ==========================================================================
@@ -524,6 +529,7 @@ $padding-tab-content				: 30px;
 $padding-modal-bg					: 10px;
 $padding-modal-bg-mobile			: 6px;
 $padding-widget						: 30px;
+$padding-label						: (1em * ($font-lh-base - $font-size-label-factor) / 2) .8em;
 
 
 // ==========================================================================
