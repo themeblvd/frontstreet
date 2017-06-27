@@ -240,6 +240,16 @@ nav {
 	max-width: 400px;
 }
 
+/* Widgets */
+.widget-examples {
+	padding: 10px;
+}
+@media (min-width: 36em) {
+	.widget-examples {
+		padding: 50px;
+	}
+}
+
 /* =Tables
 -------------------------------------------------------------- */
 

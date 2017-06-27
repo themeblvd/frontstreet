@@ -22,7 +22,10 @@
 
 @mixin bg-variant($parent, $clr, $text: null) {
 
-	#{$parent} {
+	#{$parent},
+	#{$parent}.over-bg-content,
+	#{$parent}.panel-classic .widget-title {
+
 		background-color: $clr;
 
 		@if $parent == info or $parent == success or $parent == warning or $parent == danger {
@@ -32,7 +35,7 @@
 		} @else if $parent == 'bg-dark' {
 			border-color: $clr-inv-border;
 		} @else {
-			border-color: darken($clr, 15%);
+			border-color: darken($clr, 20%);
 		}
 
 		@if $text != null {
@@ -48,6 +51,10 @@
 		#{$parent} h6 {
 			color: $text;
 		}
+	}
+	#{$parent}.panel-classic {
+		background-color: if($style == 'inverse', $tab-content-inv-bg, $tab-content-bg);
+		color: if($style == 'inverse', $clr-text-inv-base, $clr-text-base);
 	}
 	#{$parent}.mobile-menu-bar ul {
 		background-color: $clr;

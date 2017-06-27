@@ -131,6 +131,7 @@ $font-size-field-label				: $font-size-field;
 $font-size-field-legend				: $font-size-base;
 $font-size-field-help				: $font-size-small;
 $font-size-breadcrumbs				: $font-size-sm;
+$font-size-widget					: $font-size-sm;
 
 // Font Line Heights
 
@@ -425,7 +426,7 @@ $clr-bg-black						: $clr-black;
 $clr-bg-content						: $clr-bg-white;
 $clr-bg-inv-content					: $clr-bg-dark;
 
-$clr-bg-body						: $clr-bg-white;
+$clr-bg-body						: $clr-lightest;
 $clr-bg-inv-body					: $clr-darkest;
 $clr-bg-hr							: rgba($clr-bg-dark, 0.1);
 $clr-bg-code						: if($style == 'inverse', $clr-bg-black, $clr-bg-light);
@@ -433,6 +434,9 @@ $clr-bg-kbd							: $clr-bg-dark;
 $clr-bg-btn							: darken($clr-bg-light, 2%);
 $clr-bg-field						: rgba($clr-white, 0.8);
 $clr-bg-inv-field					: transparent;
+$clr-bg-widget						: $clr-bg-content;
+$clr-bg-inv-widget					: $clr-bg-inv-content;
+
 
 // ==========================================================================
 // Utilities
@@ -506,6 +510,7 @@ $margin-toggle						: $margin-element;
 $margin-toggle-group				: $margin-toggle;
 $margin-modal						: $spacing-element auto;
 $margin-modal-mobile				: 0 auto;
+$margin-widget						: $margin-element;
 
 // Padding
 
@@ -518,6 +523,7 @@ $padding-pills						: 10px 14px;
 $padding-tab-content				: 30px;
 $padding-modal-bg					: 10px;
 $padding-modal-bg-mobile			: 6px;
+$padding-widget						: 30px;
 
 
 // ==========================================================================
@@ -838,4 +844,26 @@ $modal-sizes : (
 );
 
 // Search Modal
+
 $modal-search-border-clr			: map-deep-get($clr-branding, secondary, base);
+
+// ==========================================================================
+// Widgets
+// ==========================================================================
+
+// Default
+
+$widget-default-title-size			: em(18px, $font-size-widget);
+$widget-default-sm-title-size		: em(15px, $font-size-widget);
+
+// Classic Panel
+
+$widget-panel-classic-title-size	: em(16px, $font-size-widget);
+$widget-panel-classic-sm-title-size	: em(15px, $font-size-widget);
+
+$widget-classic-panel-title-bg-clr	: darken($clr-lightest, 2%);
+
+// Modern Panel
+
+$widget-panel-modern-title-size		: em(15px, $font-size-widget);
+$widget-panel-modern-sm-title-size	: em(13px, $font-size-widget);
