@@ -15,9 +15,9 @@
 // Color Library Backgrounds
 //
 
-@include bg-variant('.bg-light', $clr-lightest);
+@include bg-variant('.bg-light', $clr-lightest, $clr-text-base);
 
-@include bg-variant('.bg-dark', $clr-dark);
+@include bg-variant('.bg-dark', $clr-dark, $clr-text-inv-base);
 
 @each $name, $map in $clr-library {
 
