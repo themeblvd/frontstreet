@@ -132,8 +132,7 @@ $font-size-field-legend				: $font-size-base;
 $font-size-field-help				: $font-size-small;
 $font-size-breadcrumbs				: $font-size-sm;
 $font-size-widget					: $font-size-sm;
-$font-size-label-factor				: 0.75;
-$font-size-label					: $font-size-label-factor * $font-size-base; // 0.75 * 16px = 12px
+$font-size-label					: $font-size-micro;
 
 // Font Line Heights
 
@@ -440,7 +439,7 @@ $clr-bg-field						: rgba($clr-white, 0.8);
 $clr-bg-inv-field					: transparent;
 $clr-bg-widget						: $clr-bg-content;
 $clr-bg-inv-widget					: $clr-bg-inv-content;
-$clr-bg-label						: $clr-bg-dark;
+$clr-bg-label						: $clr-greyer;
 
 
 // ==========================================================================
@@ -529,7 +528,7 @@ $padding-tab-content				: 30px;
 $padding-modal-bg					: 10px;
 $padding-modal-bg-mobile			: 6px;
 $padding-widget						: 30px;
-$padding-label						: (1em * ($font-lh-base - $font-size-label-factor) / 2) .8em;
+$padding-label						: 6px 10px;
 
 
 // ==========================================================================
