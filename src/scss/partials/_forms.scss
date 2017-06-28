@@ -232,7 +232,6 @@ select {
     background-origin: content-box;
 	@include background-triangle($select-color);
 	background-position: if($direction == 'rtl', left -.25rem center, right -.25rem center);
-	background-repeat: no-repeat;
 	background-size: 9px 6px;
 }
 select[multiple] {
