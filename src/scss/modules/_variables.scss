@@ -489,7 +489,7 @@ $spacing-paragraph					: 24px;
 
 $margin-element						: $spacing-element 0;
 
-$margin-paragraph					: $spacing-paragraph 0;
+$margin-paragraph					: 0 0 $spacing-paragraph 0;
 $margin-heading						: $spacing-element 0 $spacing-paragraph 0;
 $margin-heading-lg					: $margin-paragraph;
 $margin-heading-sm					: $margin-paragraph;
@@ -515,6 +515,7 @@ $margin-toggle-group				: $margin-toggle;
 $margin-modal						: $spacing-element auto;
 $margin-modal-mobile				: 0 auto;
 $margin-widget						: $margin-element;
+$margin-embed						: $margin-element;
 
 // Padding
 
