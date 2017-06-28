@@ -1348,7 +1348,7 @@
 
 <!-- ALIGNMENT -->
 
-<h2 id="alignment">Column Alignment</h2>
+<h2 id="alignment">Alignment</h2>
 
 <p>Utilizing the power of Flexbox CSS, we can provide several helpful classes for aligning columns in a grid.</p>
 
@@ -1378,9 +1378,9 @@
 	</div>
 </div>
 
-<p>To align your columns vertically to the top of a row, you can add class <code>align-top</code> to the wrapping <code>.row</code> element.</p>
+<p>To align your columns vertically to the top of a row, you can add class <code>row-align-top</code> to the wrapping <code>.row</code> element.</p>
 
-<div class="row align-top row-example row-example-align bg-light">
+<div class="row row-align-top row-example row-example-align bg-light">
 	<div class="col col-md has-bg">
 		<div class="wrap blue">
 			<h6>Column #1</h6>
@@ -1403,14 +1403,14 @@
 </div>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-<div class="row align-top">
+<div class="row row-align-top">
 	...
 </div>
 </pre>
 
-<p>To align your columns vertically to the middle of a row, you can add class <code>align-middle</code> to the wrapping <code>.row</code> element.</p>
+<p>To align your columns vertically to the middle of a row, you can add class <code>row-align-middle</code> to the wrapping <code>.row</code> element.</p>
 
-<div class="row align-middle row-example row-example-align bg-light">
+<div class="row row-align-middle row-example row-example-align bg-light">
 	<div class="col col-md has-bg">
 		<div class="wrap blue">
 			<h6>Column #1</h6>
@@ -1433,14 +1433,14 @@
 </div>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-<div class="row align-middle">
+<div class="row row-align-middle">
 	...
 </div>
 </pre>
 
-<p>To align your columns vertically to the bottom of a row, you can add class <code>align-bottom</code> to the wrapping <code>.row</code> element.</p>
+<p>To align your columns vertically to the bottom of a row, you can add class <code>row-align-bottom</code> to the wrapping <code>.row</code> element.</p>
 
-<div class="row align-bottom row-example row-example-align bg-light">
+<div class="row row-align-bottom row-example row-example-align bg-light">
 	<div class="col col-md has-bg">
 		<div class="wrap blue">
 			<h6>Column #1</h6>
@@ -1463,27 +1463,27 @@
 </div>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-<div class="row align-bottom">
+<div class="row row-align-bottom">
 	...
 </div>
 </pre>
 
-<p>You can also align individual columns within a row, by adding the <code>align-top</code>, <code>alin-middle</code>, and <code>align-bottom</code> classes to the individual columns instead of the wrapping row.</p>
+<p>You can also align individual columns within a row, by adding the <code>col-align-top</code>, <code>col-align-middle</code>, and <code>col-align-bottom</code> classes to the individual columns.</p>
 
 <div class="row row-example row-example-align row-example-align-single-col bg-light">
-	<div class="col align-top col-md has-bg">
+	<div class="col col-align-top col-md has-bg">
 		<div class="wrap blue">
 			<h6>Column #1</h6>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 		</div>
 	</div>
-	<div class="col align-middle col-md has-bg">
+	<div class="col col-align-middle col-md has-bg">
 		<div class="wrap steel-blue">
 			<h6>Column #2</h6>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 		</div>
 	</div>
-	<div class="col align-bottom col-md has-bg">
+	<div class="col col-align-bottom col-md has-bg">
 		<div class="wrap royal">
 			<h6>Column #3</h6>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -1493,17 +1493,17 @@
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
 <div class="row">
-	<div class="col align-top col-md has-bg">
+	<div class="col col-align-top col-md has-bg">
 		<div class="wrap blue">
 			...
 		</div>
 	</div>
-	<div class="col align-middle col-md has-bg">
+	<div class="col col-align-middle col-md has-bg">
 		<div class="wrap steel-blue">
 			...
 		</div>
 	</div>
-	<div class="col align-bottom col-md has-bg">
+	<div class="col col-align-bottom col-md has-bg">
 		<div class="wrap royal">
 			...
 		</div>
@@ -1530,9 +1530,9 @@
 	</div>
 </div>
 
-<p>To align your columns horizontally to the end of a row, you can add class <code>align-end</code> to the wrapping <code>.row</code> element.</p>
+<p>To align your columns horizontally to the end of a row, you can add class <code>row-align-end</code> to the wrapping <code>.row</code> element.</p>
 
-<div class="row align-end row-example row-example-align bg-light">
+<div class="row row-align-end row-example row-example-align bg-light">
 	<div class="col col-md-4 has-bg">
 		<div class="wrap blue">
 			<h6>Column #1</h6>
@@ -1548,14 +1548,14 @@
 </div>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-<div class="row align-end">
+<div class="row row-align-end">
 	...
 </div>
 </pre>
 
-<p>To align your columns horizontally to the center of a row, you can add class <code>align-center</code> to the wrapping <code>.row</code> element.</p>
+<p>To align your columns horizontally to the center of a row, you can add class <code>row-align-center</code> to the wrapping <code>.row</code> element.</p>
 
-<div class="row align-center row-example row-example-align bg-light">
+<div class="row row-align-center row-example row-example-align bg-light">
 	<div class="col col-md-4 has-bg">
 		<div class="wrap blue">
 			<h6>Column #1</h6>
@@ -1571,25 +1571,25 @@
 </div>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-<div class="row align-center">
+<div class="row row-align-center">
 	...
 </div>
 </pre>
 
-<p>You can also align individual columns within a row, by adding the <code>align-start</code>, <code>align-center</code>, and <code>align-end</code> classes to the individual columns instead of the wrapping row.</p>
+<p>You can also align individual columns within a row, by adding the <code>col-align-start</code>, <code>col-align-center</code>, and <code>col-align-end</code> classes to the individual columns instead of the wrapping row.</p>
 
 <div class="row row-example row-example-align bg-light">
-	<div class="col align-start col-md-3 has-bg">
+	<div class="col col-align-start col-md-3 has-bg">
 		<div class="wrap blue">
 			<h6>Column #1</h6>
 		</div>
 	</div>
-	<div class="col align-center col-md-3 has-bg">
+	<div class="col col-align-center col-md-3 has-bg">
 		<div class="wrap steel-blue">
 			<h6>Column #2</h6>
 		</div>
 	</div>
-	<div class="col align-end col-md-3 has-bg">
+	<div class="col col-align-end col-md-3 has-bg">
 		<div class="wrap royal">
 			<h6>Column #3</h6>
 		</div>
@@ -1598,17 +1598,17 @@
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
 <div class="row">
-	<div class="col align-start col-md-3 has-bg">
+	<div class="col col-align-start col-md-3 has-bg">
 		<div class="wrap blue">
 			...
 		</div>
 	</div>
-	<div class="col align-center col-md-3 has-bg">
+	<div class="col col-align-center col-md-3 has-bg">
 		<div class="wrap steel-blue">
 			...
 		</div>
 	</div>
-	<div class="col align-end col-md-3 has-bg">
+	<div class="col col-align-end col-md-3 has-bg">
 		<div class="wrap royal">
 			...
 		</div>
@@ -1620,9 +1620,9 @@
 
 <p>And of course, we can combine vertical and horizontal alignment classes.</p>
 
-<p>For example, combining <code>.align-center</code> and <code>align-middle</code> can help us to achieve a common scenario of placing a column perfectly centered within a row that's been given a specific height larger than the column, itself.</p>
+<p>For example, combining <code>row-align-center</code> and <code>row-align-middle</code> can help us to achieve a common scenario of placing a column perfectly centered within a row that's been given a specific height larger than the column, itself.</p>
 
-<div class="row align-center align-middle row-example row-example-align row-example-align-single-col bg-light">
+<div class="row row-align-center row-align-middle row-example row-example-align row-example-align-single-col bg-light">
 	<div class="col col-md-4 has-bg">
 		<div class="wrap blue">
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -1631,7 +1631,7 @@
 </div>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-<div class="row align-center align-middle">
+<div class="row row-align-center row-align-middle">
 	<div class="col col-md-4 has-bg">
 		<div class="wrap blue">
 			...
@@ -1643,12 +1643,12 @@
 <p>And for fun, below is a less practical example, but just showing how we can apply this concept to indvidual columns within.</p>
 
 <div class="row row-example row-example-align row-example-align-single-col bg-light">
-	<div class="col align-start align-bottom col-md-4 has-bg">
+	<div class="col col-align-start col-align-bottom col-md-4 has-bg">
 		<div class="wrap blue">
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 		</div>
 	</div>
-	<div class="col align-end align-top col-md-4 has-bg">
+	<div class="col col-align-end row-align-top col-md-4 has-bg">
 		<div class="wrap royal">
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 		</div>
@@ -1657,12 +1657,12 @@
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
 <div class="row">
-	<div class="col align-start align-bottom col-md-4 has-bg">
+	<div class="col col-align-start col-align-bottom col-md-4 has-bg">
 		<div class="wrap blue">
 			...
 		</div>
 	</div>
-	<div class="col align-end align-top col-md-4 has-bg">
+	<div class="col col-align-end row-align-top col-md-4 has-bg">
 		<div class="wrap royal">
 			...
 		</div>
@@ -1676,9 +1676,9 @@
 
 <h3 id="distribution" class="heading-sm">Distribution</h3>
 
-<p>When your columns don't all add up to 100%, you can evenly distribute the space around them by adding class <code>space-around</code> to the <code>.row</code> element.</p>
+<p>When your columns don't all add up to 100%, you can evenly distribute the space around them by adding class <code>row-space-around</code> to the <code>.row</code> element.</p>
 
-<div class="row space-around row-example row-example-align bg-light">
+<div class="row row-space-around row-example row-example-align bg-light">
 	<div class="col col-md-3 has-bg">
 		<div class="wrap blue">
 			<h6>Column #1</h6>
@@ -1697,14 +1697,14 @@
 </div>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-<div class="row space-around">
+<div class="row row-space-around">
 	...
 </div>
 </pre>
 
-<p>And similarly, you can evenly distribute the space around, but with the first and last columns against the row edges, by adding class <code>space-between</code> to the <code>.row</code> element.</p>
+<p>And similarly, you can evenly distribute the space around, but with the first and last columns against the row edges, by adding class <code>row-space-between</code> to the <code>.row</code> element.</p>
 
-<div class="row space-between row-example row-example-align bg-light">
+<div class="row row-space-between row-example row-example-align bg-light">
 	<div class="col col-md-3 has-bg">
 		<div class="wrap blue">
 			<h6>Column #1</h6>
@@ -1723,7 +1723,7 @@
 </div>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-<div class="row space-between">
+<div class="row row-space-between">
 	...
 </div>
 </pre>
@@ -1740,60 +1740,102 @@
 			<th class="text-center">Use with <code>.col</code></th>
 		</tr>
 		<tr>
-			<td><code>.align-top</code></td>
+			<td><code>.row-align-top</code></td>
 			<td>Vertical</td>
 			<td>Top</td>
-			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-		</tr>
-		<tr>
-			<td><code>.align-middle</code></td>
-			<td>Vertical</td>
-			<td>Middle</td>
-			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-		</tr>
-		<tr>
-			<td><code>.align-bottom</code></td>
-			<td>Vertical</td>
-			<td>Bottom</td>
-			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-		</tr>
-		<tr>
-			<td><code>.align-start</code></td>
-			<td>Horizontal</td>
-			<td>Start</td>
-			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-		</tr>
-		<tr>
-			<td><code>.align-center</code></td>
-			<td>Horizontal</td>
-			<td>Center</td>
-			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-		</tr>
-		<tr>
-			<td><code>.align-end</code></td>
-			<td>Horizontal</td>
-			<td>End</td>
-			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-		</tr>
-		<tr>
-			<td><code>.space-around</code></td>
-			<td>Horizontal</td>
-			<td>Even distribution</td>
 			<td class="text-center"><i class="fa fa-check text-success"></i></td>
 			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
 		</tr>
 		<tr>
-			<td><code>.space-between</code></td>
+			<td><code>.row-align-middle</code></td>
+			<td>Vertical</td>
+			<td>Middle</td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
+		</tr>
+		<tr>
+			<td><code>.row-align-bottom</code></td>
+			<td>Vertical</td>
+			<td>Bottom</td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
+		</tr>
+		<tr>
+			<td><code>.row-align-start</code></td>
+			<td>Horizontal</td>
+			<td>Start</td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
+		</tr>
+		<tr>
+			<td><code>.row-align-center</code></td>
+			<td>Horizontal</td>
+			<td>Center</td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
+		</tr>
+		<tr>
+			<td><code>.row-align-end</code></td>
+			<td>Horizontal</td>
+			<td>End</td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
+		</tr>
+		<tr>
+			<td><code>.row-space-around</code></td>
+			<td>Horizontal</td>
+			<td>Even distribution, all around</td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
+		</tr>
+		<tr>
+			<td><code>.row-space-between</code></td>
 			<td>Horizontal</td>
 			<td>Even distribution, against outer edges</td>
 			<td class="text-center"><i class="fa fa-check text-success"></i></td>
 			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
+		</tr>
+		<tr>
+			<td><code>.col-align-top</code></td>
+			<td>Vertical</td>
+			<td>Top</td>
+			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+		</tr>
+		<tr>
+			<td><code>.col-align-middle</code></td>
+			<td>Vertical</td>
+			<td>Middle</td>
+			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+		</tr>
+		<tr>
+			<td><code>.col-align-bottom</code></td>
+			<td>Vertical</td>
+			<td>Bottom</td>
+			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+		</tr>
+		<tr>
+			<td><code>.col-align-start</code></td>
+			<td>Horizontal</td>
+			<td>Start</td>
+			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+		</tr>
+		<tr>
+			<td><code>.col-align-center</code></td>
+			<td>Horizontal</td>
+			<td>Center</td>
+			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+		</tr>
+		<tr>
+			<td><code>.col-align-end</code></td>
+			<td>Horizontal</td>
+			<td>End</td>
+			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
 		</tr>
 	</table>
 </div>
