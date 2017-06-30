@@ -117,6 +117,7 @@ $font-size-cite						: $font-size-xxs;
 $font-size-code						: $font-size-sm;
 $font-size-pre						: $font-size-md;
 $font-size-caption					: $font-size-sm;
+$font-size-caption-gallery			: $font-size-xxs;
 $font-size-quote					: 1.3rem;
 $font-size-alert					: 0.9375rem;
 $font-size-btn						: $font-size-xxxs;
@@ -133,6 +134,7 @@ $font-size-field-help				: $font-size-small;
 $font-size-breadcrumbs				: $font-size-sm;
 $font-size-widget					: $font-size-sm;
 $font-size-label					: $font-size-micro;
+$font-size-caption					: $font-size-sm;
 
 // Font Line Heights
 
@@ -440,6 +442,8 @@ $clr-bg-inv-field					: transparent;
 $clr-bg-widget						: $clr-bg-content;
 $clr-bg-inv-widget					: $clr-bg-inv-content;
 $clr-bg-label						: $clr-greyer;
+$clr-bg-caption						: $clr-bg-light;
+$clr-bg-inv-caption					: $clr-darkest;
 
 
 // ==========================================================================
@@ -488,14 +492,15 @@ $spacing-paragraph					: 24px;
 // Margins
 
 $margin-element						: $spacing-element 0;
-
 $margin-paragraph					: 0 0 $spacing-paragraph 0;
+
+$margin-figure						: $margin-paragraph;
 $margin-heading						: $spacing-element 0 $spacing-paragraph 0;
 $margin-heading-lg					: $margin-paragraph;
 $margin-heading-sm					: $margin-paragraph;
 $margin-column						: $spacing-element;
 $margin-lead						: $margin-element;
-$margin-list						: $margin-element;
+$margin-list						: $margin-paragraph;
 $margin-quote						: 40px 30px;
 $margin-table						: $margin-element;
 $margin-alert						: $margin-element;
@@ -515,7 +520,8 @@ $margin-toggle-group				: $margin-toggle;
 $margin-modal						: $spacing-element auto;
 $margin-modal-mobile				: 0 auto;
 $margin-widget						: $margin-element;
-$margin-embed						: $margin-element;
+$margin-embed						: $margin-paragraph;
+$margin-thumb						: $margin-paragraph;
 
 // Padding
 
@@ -530,6 +536,8 @@ $padding-modal-bg					: 10px;
 $padding-modal-bg-mobile			: 6px;
 $padding-widget						: 30px;
 $padding-label						: 6px 10px;
+$padding-caption					: 20px;
+$padding-caption-gallery			: 15px;
 
 
 // ==========================================================================
@@ -873,3 +881,35 @@ $widget-classic-panel-title-bg-clr	: darken($clr-lightest, 2%);
 
 $widget-panel-modern-title-size		: em(15px, $font-size-widget);
 $widget-panel-modern-sm-title-size	: em(13px, $font-size-widget);
+
+// ==========================================================================
+// Media
+// ==========================================================================
+
+// Responsive Embeds
+
+$embed-default-ratio				: 16 9;
+
+$embed-ratios : (
+	academy							: 4 3,
+	widescreen						: 16 9,
+	ultrawide						: 21 9,
+);
+
+
+// Thumbnail Links
+
+$thumb-link-icon-size				: 20px;
+$thumb-link-icon-w					: 4em;
+$thumb-link-icon-h					: 4em;
+$thumb-link-icon-radius				: 50%; // Circle
+
+$thumb-link-icon-clr				: map-deep-get($clr-branding, primary, contrast);
+$thumb-link-icon-bg-clr				: map-deep-get($clr-branding, primary, base);
+
+// Gallery
+
+$gallery-gutters					: 10px;
+$gallery-thumb-link-icon-size		: 18px;
+$gallery-thumb-link-icon-w			: 3em;
+$gallery-thumb-link-icon-h			: 3em;
