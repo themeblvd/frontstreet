@@ -88,6 +88,7 @@
 
 	display: inline-block;
 	margin: $margin-thumb;
+	max-width: 100%; // Needed for IE 10-11
 	outline: 0;
 	position: relative;
 
