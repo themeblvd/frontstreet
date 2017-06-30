@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+
+		<meta charset="UTF-8" />
+		<link rel="profile" href="http://gmpg.org/xfn/11" />
+
+		<title>Media</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href='assets/frontstreet/plugins/font-awesome/css/font-awesome.min.css' type='text/css' media='all' />
+		<link rel="stylesheet" href='assets/frontstreet/css/frontstreet.css' type='text/css' media='all' />
+
+		<link rel="stylesheet" href='assets/css/docs.min.css' type='text/css' media='all' />
+
+	</head>
+	<body>
+
+		<div id="wrapper">
+			<div id="container">
+
+				<article id="main">
+
+					<h1 class="heading-lg">
+						Media
+						
+					</h1>
+
+
+<h2 class="responsive-images">Responsive Images</h2>
+
+<p>All images are inherently responsive. For example, the following image is quite large, but that's okay; it still fits.</p>
+
+<img src="assets/img/image-1.jpg" alt="Quiet Beach">
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;img src="assets/img/image-1.jpg" alt="Quiet Beach"&gt;
+</pre>
+
+<h2 class="responsive-video">Responsive Videos</h2>
+
+<p>To make videos responsive, wrap them in an element with class <code>fs-embed</code> and a class for the aspect ratio &mdash; <code>academy</code>, <code>widescreen</code> or <code>ultrawide</code>. They will then be 100% width and respond to the size of their container.</p>
+
+<p>This will work for the following embedded elements within &mdash; <code>&lt;iframe&gt;</code>, <code>&lt;object&gt;</code>, <code>&lt;embed&gt;</code>, or <code>&lt;video&gt;</code>. And to use a different type of element, you can add class <code>embed-item</code> to it.</p>
+
+<div class="fs-embed widescreen">
+	<iframe src="https://www.youtube.com/embed/ChOhcHD8fBA"></iframe>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="fs-embed widescreen">
+	&lt;iframe src="https://www.youtube.com/embed/ChOhcHD8fBA"&gt;&lt;/iframe&gt;
+</div>
+</pre>
+
+<p>The previous example was a <code>widescreen</code> example at <code>16:9</code>, while the next example below utilizes the <code>ultrawide</code> class to display the video at <code>21:9</code>.</p>
+
+<div class="fs-embed ultrawide">
+	<iframe src="https://www.youtube.com/embed/L14nXRxJILg"></iframe>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="fs-embed ultrawide">
+	&lt;iframe src="https://www.youtube.com/embed/L14nXRxJILg"&gt;&lt;/iframe&gt;
+</div>
+</pre>
+
+<div class="table-responsive">
+	<table class="table-bordered table-condensed">
+		<tr>
+			<th>Element</th>
+			<th>Aspect Ratio</th>
+		</tr>
+		<tr>
+			<td><code>.fs-embed.academy</code></td>
+			<td>4:3</td>
+		</tr>
+		<tr>
+			<td><code>.fs-embed.widescreen</code></td>
+			<td>16:9</td>
+		</tr>
+		<tr>
+			<td><code>.fs-embed.ultrawide</code></td>
+			<td>21:9</td>
+		</tr>
+	</table>
+</div>
+
+<h2 id="media-captions">Media Captions</h2>
+
+<p>When captioning an image, wrap it an element with class <code>.fs-caption</code>. And then below your image, add your text wrapped in an element class <code>caption-text</code>.</p>
+
+<figure class="fs-caption">
+	<img src="assets/img/image-8.jpg" alt="Water Hitting the Rocks">
+	<figcaption class="caption-text">Donec rutrum, est vel posuere congue, arcu mauris euismod libero.</figcaption>
+</figure>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<figure class="fs-caption">
+	&lt;img src="assets/img/image-8.jpg" alt="Water Hitting the Rocks"&gt;
+	<figcaption class="caption-text">Donec rutrum, est vel posuere congue, arcu mauris euismod libero.</figcaption>
+</figure>
+</pre>
+
+<p>You could also caption a video with this same approach. In the following example there is a responsive embed added within our <code>.fs-caption</code> element.</p>
+
+<figure class="fs-caption">
+	<div class="fs-embed widescreen">
+		<iframe src="https://www.youtube.com/embed/vlDzYIIOYmM"></iframe>
+	</div>
+	<figcaption class="caption-text">Donec rutrum, est vel posuere congue, arcu mauris euismod libero.</figcaption>
+</figure>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<figure class="fs-caption">
+	<div class="fs-embed widescreen">
+		&lt;iframe src="https://www.youtube.com/embed/vlDzYIIOYmM"&gt;&lt;/iframe&gt;
+	</div>
+	<figcaption class="caption-text">Donec rutrum, est vel posuere congue, arcu mauris euismod libero.</figcaption>
+</figure>
+</pre>
+
+<h2 id="image-alignment">Image Alignment</h2>
+
+<p>For centering and floating images, you can use the standard alignment <a href="utilities.html" title="Utilities">utility classes</a> &mdash; <code>align-center</code>, and <code>align-left</code>, <code>align-right</code>. And keep in mind that floated elements will get cleared once you reach the <code>xs</code> breakpoint.</p>
+
+<img src="assets/img/image-5.jpg" class="align-center" alt="Waterfall" width="500px">
+
+<p>Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
+
+<p>Nullam in dolor sed leo cursus posuere sit amet non tortor. Sed facilisis risus sed massa pellentesque sagittis. Quisque felis leo, commodo eu sagittis ut, suscipit nec lectus.</p>
+
+<img src="assets/img/image-float-1.jpg" class="align-left" alt="Hiker" width="200px">
+
+<p>Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
+
+<p>Nullam in dolor sed leo cursus posuere sit amet non tortor. Sed facilisis risus sed massa pellentesque sagittis. Quisque felis leo, commodo eu sagittis ut, suscipit nec lectus.</p>
+
+<p>Sed congue quam non ante pharetra id aliquam nunc elementum. Donec et purus id dui pellentesque porta. Nam imperdiet fringilla nunc non malesuada. Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui. Cras sed lacus tellus, in porttitor tortor. Vivamus auctor mattis nunc, quis mattis justo vulputate at. Nam rhoncus mollis convallis. Nullam in dolor sed leo cursus posuere.</p>
+
+<img src="assets/img/image-float-1.jpg" class="align-right" alt="Hiker" width="200px">
+
+<p>Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
+
+<p>Nullam in dolor sed leo cursus posuere sit amet non tortor. Sed facilisis risus sed massa pellentesque sagittis. Quisque felis leo, commodo eu sagittis ut, suscipit nec lectus.</p>
+
+<p>Sed congue quam non ante pharetra id aliquam nunc elementum. Donec et purus id dui pellentesque porta. Nam imperdiet fringilla nunc non malesuada. Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui. Cras sed lacus tellus, in porttitor tortor. Vivamus auctor mattis nunc, quis mattis justo vulputate at. Nam rhoncus mollis convallis. Nullam in dolor sed leo cursus posuere.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;img src="assets/img/image-5.jpg" class="align-center" alt="Waterfall" width="500px"&gt;
+&lt;img src="assets/img/image-float-1.jpg" class="align-left" alt="Hiker" width="200px"&gt;
+&lt;img src="assets/img/image-float-1.jpg" class="align-right" alt="Hiker" width="200px"&gt;
+</pre>
+
+<h3 id="alignment-sizing" class="heading-sm">Responsive Sizing</h3>
+
+<p>By taking advantage of column classes from the <a href="grid.html" title="Grid System">grid system</a>, you can achieve some useful results with combing image alignment and sizing.</p>
+
+<p>Consider the following example. &mdash; We've got an image that's fairly large that we want to float to the left. So first we've added class <code>align-left</code>. Next, so it will display at 1/2 the width of the content area on desktop screens we add class <code>col-lg-6</code>. Then for tablets and larger mobile screens we add class <code>col-sm-4</code> so that it will scale down to 1/3 width of the content area. And then when we get to small mobile devices, the image becomes un-floated and pops back to 100% width.</p>
+
+<img src="assets/img/image-4.jpg" class="align-left col-sm-4 col-lg-6" alt="Waterfall">
+
+<p>Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
+
+<p>Nullam in dolor sed leo cursus posuere sit amet non tortor. Sed facilisis risus sed massa pellentesque sagittis. Quisque felis leo, commodo eu sagittis ut, suscipit nec lectus.</p>
+
+<p>Sed congue quam non ante pharetra id aliquam nunc elementum. Donec et purus id dui pellentesque porta. Nam imperdiet fringilla nunc non malesuada. Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui. Cras sed lacus tellus, in porttitor tortor. Vivamus auctor mattis nunc, quis mattis justo vulputate at. Nam rhoncus mollis convallis. Nullam in dolor sed leo cursus posuere.</p>
+
+<p><span class="label-inline info">Remember!</span> <em>Remember that our grid system uses Flexbox CSS and so the column classes alone will not float the images, but only size them.</em></p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;img src="assets/img/image-4.jpg" class="align-left col-sm-4 col-lg-6" alt="Waterfall"&gt;
+</pre>
+
+<h3 id="alignment-captions" class="heading-sm">Alignment and Captions</h3>
+
+<p>You can also float <a href="#media-captions" title="Media Captions">captioned images</a> by adding your alignment class directly to the <code>.fs-caption</code> element, and not the image itself. Also keep in mind that for best results, you'll want to set your desired width on the <code>.fs-caption</code> element, as well; so let's just take the same approach we did in the last example.</p>
+
+<figure class="fs-caption align-left col-sm-4 col-lg-6">
+	<img src="assets/img/image-4.jpg" alt="Waterfall">
+    <figcaption class="caption-text">Donec rutrum, est vel posuere congue, arcu mauris euismod libero.</figcaption>
+</figure>
+
+<p>Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
+
+<p>Nullam in dolor sed leo cursus posuere sit amet non tortor. Sed facilisis risus sed massa pellentesque sagittis. Quisque felis leo, commodo eu sagittis ut, suscipit nec lectus.</p>
+
+<p>Sed congue quam non ante pharetra id aliquam nunc elementum. Donec et purus id dui pellentesque porta. Nam imperdiet fringilla nunc non malesuada. Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui. Cras sed lacus tellus, in porttitor tortor. Vivamus auctor mattis nunc, quis mattis justo vulputate at. Nam rhoncus mollis convallis. Nullam in dolor sed leo cursus posuere.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<figure class="fs-caption align-left col-sm-4 col-lg-6">
+	&lt;img src="assets/img/image-4.jpg" alt="Waterfall"&gt;
+    <figcaption class="caption-text">Donec rutrum, est vel posuere congue, arcu mauris euismod libero.</figcaption>
+</figure>
+</pre>
+
+<h2 id="thumb-links">Thumbnail Links</h2>
+
+<p>Thumbnail links can be useful to add a hover animation and icon to images. When an image is linked, add class <code>fs-thumb-link</code> to the wrapping <code>&lt;a&gt;</code> along with a <a href="http://fontawesome.io/icons" title="FontAwesome Icons" target="_blank">FontAwesome icon class</a> to designate which icon to show.</p>
+
+<p>In the following example, we've got an image wrapped in a link, and we've added class <code>fs-thumb-link</code> to give it the animation and the class <code>fa-long-arrow-right</code> to designate the right-facing arrow icon. Hover your mouse on the image to see the effect.</p>
+
+<a href="http://google.com" class="fs-thumb-link fa-long-arrow-right">
+	<img src="assets/img/image-1.jpg" alt="Beach">
+</a>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<a href="http://google.com" class="fs-thumb-link fa-long-arrow-right">
+	&lt;img src="assets/img/image-1-thumb.jpg" alt="Beach"&gt;
+</a>
+</pre>
+
+<p>These thumbnail links pair really nicely with <a href="modal.html#image-modals" title="Image Modals" target="_blank">modal functionality</a>. In the following example we've linked to the image file and added class <code>fs-image-modal-link</code> to the <code>.fs-thumb-link</code> element. We're also now using the <code>fa-expand</code> icon.</p>
+
+<a href="assets/img/image-2.jpg" class="fs-image-modal-link fs-thumb-link fa-expand">
+	<img src="assets/img/image-2.jpg" alt="Mountain">
+</a>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<a href="assets/img/image-2.jpg" class="fs-image-modal-link fs-thumb-link fa-expand">
+	&lt;img src="assets/img/image-2-thumb.jpg" alt="Mountain"&gt;
+</a>
+</pre>
+
+<h2 id="gallery">Galleries</h2>
+
+<p>For displaying a gallery of thumbnail images, create an element with class <code>fs-gallery</code>, and this will give you a flexible grid of images.  You can set the number of columns by adding class <code>gallery-columns-{number}</code> &mdash; 1-9 columns are supported here.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="fs-gallery gallery-columns-4">
+...
+</div>
+</pre>
+
+<p>Within your <code>.fs-gallery</code> element, each item will be given the class <code>gallery-item</code>. And within that, wrap thumbnail images in a <code>.gallery-icon</code> element and captions with a <code>.gallery-caption</code> element.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<dl class="gallery-item">
+	<dt class="gallery-icon">
+		...
+	</dt>
+	<dt class="gallery-caption">
+		...
+	</dt>
+</dl>
+</pre>
+
+<p>So let's put that together. &mdash; The following is the most basic example, where we've created a gallery of thumbnail images, with no image links or captions just yet.</p>
+
+<p>By scaling your browser, you can see that the gallery grid is flexible. And when the viewport gets to the <code>xs</code> breakpoint, the grid becomes two-columns; this is the behavior for all grids that are more than one column.</p>
+
+<div class="fs-gallery gallery-columns-4">
+	<dl class="gallery-item">
+		<dt class="gallery-icon">
+			<img src="assets/img/image-1-thumb.jpg" alt="A Quiet Beach">
+		</dt>
+	</dl>
+	<dl class="gallery-item">
+		<dt class="gallery-icon">
+			<img src="assets/img/image-2-thumb.jpg" alt="Lone Mountain Top">
+		</dt>
+	</dl>
+	<dl class="gallery-item">
+		<dt class="gallery-icon">
+			<img src="assets/img/image-3-thumb.jpg" alt="Long Path to Zen">
+		</dt>
+	</dl>
+	<dl class="gallery-item">
+		<dt class="gallery-icon">
+			<img src="assets/img/image-4-thumb.jpg" alt="Waterfall Closeup">
+		</dt>
+	</dl>
+	<dl class="gallery-item">
+		<dt class="gallery-icon">
+			<img src="assets/img/image-5-thumb.jpg" alt="Our Swimming Hole">
+		</dt>
+	</dl>
+	<dl class="gallery-item">
+		<dt class="gallery-icon">
+			<img src="assets/img/image-6-thumb.jpg" alt="From Up Above">
+		</dt>
+	</dl>
+	<dl class="gallery-item">
+		<dt class="gallery-icon">
+			<img src="assets/img/image-7-thumb.jpg" alt="Rocky Beach">
+		</dt>
+	</dl>
+	<dl class="gallery-item">
+		<dt class="gallery-icon">
+			<img src="assets/img/image-8-thumb.jpg" alt="Water Hitting Rocks">
+		</dt>
+	</dl>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="fs-gallery gallery-columns-4">
+	<dl class="gallery-item">
+		<dt class="gallery-icon">
+			&lt;img src="assets/img/image-1-thumb.jpg" alt="A Quiet Beach"&gt;
+		</dt>
+	</dl>
+	...
+</div>
+</pre>
+
+<p>Next, we'll add captions to our <code>.gallery-item</code> elements. We do this by adding a <code>.gallery-caption</code> element within each.</p>
+
+<div class="fs-gallery gallery-columns-3">
+	<dl class="gallery-item">
+		<dt class="gallery-icon">
+			<img src="assets/img/image-1-thumb.jpg" alt="A Quiet Beach">
+		</dt>
+		<dt class="gallery-caption">
+			A Quiet Beach
+		</dt>
+	</dl>
+	<dl class="gallery-item">
+		<dt class="gallery-icon">
+			<img src="assets/img/image-2-thumb.jpg" alt="Lone Mountain Top">
+		</dt>
+		<dt class="gallery-caption">
+			Lone Mountain Top
+		</dt>
+	</dl>
+	<dl class="gallery-item">
+		<dt class="gallery-icon">
+			<img src="assets/img/image-3-thumb.jpg" alt="Long Path to Zen">
+		</dt>
+		<dt class="gallery-caption">
+			Long Path to Zen
+		</dt>
+	</dl>
+	<dl class="gallery-item">
+		<dt class="gallery-icon">
+			<img src="assets/img/image-4-thumb.jpg" alt="Waterfall Closeup">
+		</dt>
+		<dt class="gallery-caption">
+			Waterfall Closeup
+		</dt>
+	</dl>
+	<dl class="gallery-item">
+		<dt class="gallery-icon">
+			<img src="assets/img/image-5-thumb.jpg" alt="Our Swimming Hole">
+		</dt>
+		<dt class="gallery-caption">
+			Our Swimming Hole
+		</dt>
+	</dl>
+	<dl class="gallery-item">
+		<dt class="gallery-icon">
+			<img src="assets/img/image-6-thumb.jpg" alt="From Up Above">
+		</dt>
+		<dt class="gallery-caption">
+			From Up Above
+		</dt>
+	</dl>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="fs-gallery gallery-columns-3">
+	<dl class="gallery-item">
+		<dt class="gallery-icon">
+			&lt;img src="assets/img/image-1-thumb.jpg" alt="A Quiet Beach"&gt;
+		</dt>
+		<dt class="gallery-caption">
+			A Quiet Beach
+		</dt>
+	</dl>
+	...
+</div>
+</pre>
+
+<p id="modal-gallery">The flexible grid structure of a <code>.fs-gallery</code> element is really just a starting point for utilizing it with other features. In the following example, we've added the following functionality:</p>
+
+<ol>
+	<li>An additional class <code>fs-modal-gallery</code> has been given to the <code>.fs-gallery</code> element to setup a <a href="modal.html#gallery-modals" title="Modal Galleries" target="_blank">modal gallery</a>.</li>
+	<li>Each thumbnail image is linked to an enlarged version of itself.</li>
+	<li>Each link has been given the classes to setup a <a href="#thumb-links" title="Thumbnail Links" >thumbnail link element</a>.</li>
+	<li>Each link has also been given the classes to <a href="modal.html#image-modals" title="Modal Images" target="_blank">open each enlarged image in a modal</a>.</li>
+</ol>
+
+<div class="fs-modal-gallery fs-gallery gallery-columns-4">
+	<dl class="gallery-item">
+		<dt class="gallery-icon">
+			<a href="assets/img/image-1.jpg" class="fs-image-modal-link fs-thumb-link fa-expand" title="A Quiet Beach">
+				<img src="assets/img/image-1-thumb.jpg" alt="A Quiet Beach">
+			</a>
+		</dt>
+	</dl>
+	<dl class="gallery-item">
+		<dt class="gallery-icon">
+			<a href="assets/img/image-2.jpg" class="fs-image-modal-link fs-thumb-link fa-expand" title="Lone Mountain Top">
+				<img src="assets/img/image-2-thumb.jpg" alt="Lone Mountain Top">
+			</a>
+		</dt>
+	</dl>
+	<dl class="gallery-item">
+		<dt class="gallery-icon">
+			<a href="assets/img/image-3.jpg" class="fs-image-modal-link fs-thumb-link fa-expand" title="Long Path to Zen">
+				<img src="assets/img/image-3-thumb.jpg" alt="Long Path to Zen">
+			</a>
+		</dt>
+	</dl>
+	<dl class="gallery-item">
+		<dt class="gallery-icon">
+			<a href="assets/img/image-4.jpg" class="fs-image-modal-link fs-thumb-link fa-expand" title="Waterfall Closeup">
+				<img src="assets/img/image-4-thumb.jpg" alt="Waterfall Closeup">
+			</a>
+		</dt>
+	</dl>
+	<dl class="gallery-item">
+		<dt class="gallery-icon">
+			<a href="assets/img/image-5.jpg" class="fs-image-modal-link fs-thumb-link fa-expand" title="Our Swimming Hole">
+				<img src="assets/img/image-5-thumb.jpg" alt="Our Swimming Hole">
+			</a>
+		</dt>
+	</dl>
+	<dl class="gallery-item">
+		<dt class="gallery-icon">
+			<a href="assets/img/image-6.jpg" class="fs-image-modal-link fs-thumb-link fa-expand" title="From Up Above">
+				<img src="assets/img/image-6-thumb.jpg" alt="From Up Above">
+			</a>
+		</dt>
+	</dl>
+	<dl class="gallery-item">
+		<dt class="gallery-icon">
+			<a href="assets/img/image-7.jpg" class="fs-image-modal-link fs-thumb-link fa-expand" title="Rocky Beach">
+				<img src="assets/img/image-7-thumb.jpg" alt="Rocky Beach">
+			</a>
+		</dt>
+	</dl>
+	<dl class="gallery-item">
+		<dt class="gallery-icon">
+			<a href="assets/img/image-8.jpg" class="fs-image-modal-link fs-thumb-link fa-expand" title="Water Hitting Rocks">
+				<img src="assets/img/image-8-thumb.jpg" alt="Water Hitting Rocks">
+			</a>
+		</dt>
+	</dl>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="fs-modal-gallery fs-gallery gallery-columns-3">
+	<dl class="gallery-item">
+		<dt class="gallery-icon">
+			<a href="assets/img/image-1.jpg" class="fs-image-modal-link fs-thumb-link fa-expand" title="A Quiet Beach">
+				&lt;img src="assets/img/image-1-thumb.jpg" alt="A Quiet Beach"&gt;
+			</a>
+		</dt>
+		<dt class="gallery-caption">
+			A Quiet Beach
+		</dt>
+	</dl>
+	...
+</div>
+</pre>
+
+<h3 id="gallery-overview" class="heading-sm">Overview</h3>
+
+<div class="table-responsive">
+	<table class="table-bordered table-condensed table-grid-overview">
+		<tr>
+			<th>Element</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td><code>.fs-gallery.gallery-columns-1</code></td>
+			<td>One-column gallery container</td>
+		</tr>
+		<tr>
+			<td><code>.fs-gallery.gallery-columns-2</code></td>
+			<td>Two-column gallery container</td>
+		</tr>
+		<tr>
+			<td><code>.fs-gallery.gallery-columns-3</code></td>
+			<td>Three-column gallery container</td>
+		</tr>
+		<tr>
+			<td><code>.fs-gallery.gallery-columns-4</code></td>
+			<td>Four-column gallery container</td>
+		</tr>
+		<tr>
+			<td><code>.fs-gallery.gallery-columns-5</code></td>
+			<td>Five-column gallery container</td>
+		</tr>
+		<tr>
+			<td><code>.fs-gallery.gallery-columns-6</code></td>
+			<td>Six-column gallery container</td>
+		</tr>
+		<tr>
+			<td><code>.fs-gallery.gallery-columns-7</code></td>
+			<td>Seven-column gallery container</td>
+		</tr>
+		<tr>
+			<td><code>.fs-gallery.gallery-columns-8</code></td>
+			<td>Eight-column gallery container</td>
+		</tr>
+		<tr>
+			<td><code>.fs-gallery.gallery-columns-9</code></td>
+			<td>Nine-column gallery container</td>
+		</tr>
+		<tr>
+			<td><code>.gallery-item</code></td>
+			<td>Each gallery item wrapper immediately within container</td>
+		</tr>
+		<tr>
+			<td><code>.gallery-item > .gallery-icon</code></td>
+			<td>Wrapper for each gallery item image</td>
+		</tr>
+		<tr>
+			<td><code>.gallery-item > .gallery-caption</code></td>
+			<td>Wrapper for each gallery item caption text</td>
+		</tr>
+	</table>
+</div>
+
+
+				</article><!-- #main (end) -->
+
+			</div><!-- #container (end) -->
+		</div><!-- #wrapper (end) -->
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+/**
+ * Optional configuration object that can be used to
+ * disable individiual JavaScript components.
+ */
+var FrontStreetConfig = {
+	'menu'  			: true,
+	'mobile-menu'		: true,
+	'modal'				: true,
+	'jump-menu'			: true,
+	'tabs'				: true,
+	'toggles'			: true
+};
+
+/**
+ * Optional configuration object that can adjust how
+ * Magnific Popup is configured.
+ */
+var FrontStreetModalConfig = {
+	'animation'			: 'fade',	// 'fade', 'slide' or 'none'
+	'mobile'			: 0,		// Image modals will work at all viewports.
+	'mobileIframe'		: 768,		// Iframe modals will only work when viewport >= 768.
+	'mobileGallery'		: 0,		// Gallery modals will work at all viewports.
+	'error'				: 'The modal media could not be loaded.',
+	'close'				: 'Close',
+	'loading'			: 'Loading...',
+	'counter'			: '%curr% of %total%',
+	'next'				: 'Next',
+	'previous'			: 'Previous'
+};
+/* ]]> */
+</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="assets/frontstreet/plugins/magnific-popup/magnific-popup.min.js"></script>
+<script type="text/javascript" src="assets/frontstreet/js/frontstreet.js"></script>
+<script type="text/javascript" src="assets/js/docs.min.js"></script>
+
+<script type="text/javascript">
+	SyntaxHighlighter.all()
+</script>
+
+
+	</body>
+</html>
+

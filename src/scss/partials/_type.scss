@@ -437,7 +437,6 @@ blockquote {
 	cite:before {
 	    content: '\2014 \00A0';
 	}
-
 }
 @if ($style == 'inverse') {
 	.text-dark blockquote cite,

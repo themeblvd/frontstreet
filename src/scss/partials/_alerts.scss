@@ -3,6 +3,7 @@
 // --------------------------------------------------
 
 .alert {
+
 	@if ($direction == 'rtl') {
 		border-right: 10px solid transparent;
 	} @else {

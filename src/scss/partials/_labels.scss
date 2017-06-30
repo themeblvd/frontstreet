@@ -5,14 +5,14 @@
 .label-inline {
 	background: $clr-bg-label;
 	border-radius: 2px;
-    display: inline-block;
-    padding: $padding-label;
-    font-size: $font-size-label;
+	color: $clr-text-inv-base;
+	display: inline-block;
+	font-size: $font-size-label;
 	font-weight: $font-weight-bold;
-    line-height: 1;
-    color: $clr-text-inv-base;
-    text-align: center;
+	line-height: 1;
+	padding: $padding-label;
+	text-align: center;
 	text-transform: $font-transform-label;
-    white-space: nowrap;
-    vertical-align: baseline;
+	white-space: nowrap;
+	vertical-align: baseline;
 }
