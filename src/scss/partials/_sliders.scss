@@ -1,0 +1,339 @@
+// --------------------------------------------------
+// Slider
+// --------------------------------------------------
+
+//
+// Owl Carousel
+//
+
+@import "../../../plugins/owl-carousel/scss/core";
+@import "../../../plugins/owl-carousel/scss/animate";
+@import "../../../plugins/owl-carousel/scss/autoheight";
+
+//
+// Owl Carousel adjustments.
+//
+
+.fs-slider {
+
+	margin: 0;
+
+	// Adjust default fade speed from 1000ms to 500ms.
+	.animated {
+		animation-duration: 500ms;
+	}
+
+	// Enabled for item.page.index to work in JS,
+	// but hidden with CSS.
+	.owl-dots {
+		display: none;
+	}
+}
+
+//
+// Slider standard navigation.
+//
+
+.fs-slider-nav {
+
+	justify-content: center;
+	margin: 20px auto 0 auto;
+
+	@include hide-text;
+	@include list-unstyled;
+
+	li {
+		background-color: transparent;
+		border: 2px solid if($style == 'inverse', $clr-black, $clr-lighter);
+		border-radius: $slider-nav-btn-size;
+		cursor: pointer;
+		display: block;
+    	margin: 1px 2px;
+		width: $slider-nav-btn-size;
+		height: $slider-nav-btn-size;
+	}
+	li.active {
+		background-color: if($style == 'inverse', $clr-black, $clr-lighter);
+	}
+}
+
+//
+// Slider Arrows - Next/Prev navigation.
+//
+
+.fs-slider-arrows {
+
+	margin: 0;
+
+	@include list-unstyled;
+
+	li {
+		background-size: $slider-arrow-icon-size;
+		cursor: pointer;
+		position: absolute;
+		top: 50%;
+		transform: translate(0, -50%);
+		width: $slider-arrow-w;
+		height: $slider-arrow-h;
+		z-index: $slider-nav-z-index;
+		@include hide-text;
+	}
+	li.trans {
+
+		background-color: $slider-arrow-bg;
+
+		&:hover,
+		&:focus {
+			background-color: $slider-arrow-hover-bg;
+		}
+	}
+	.prev {
+		@if ($direction == 'rtl') {
+			border-radius: $slider-arrow-radius 0 0 $slider-arrow-radius;
+			right: 0;
+			@include background-chevron('right', $clr-white);
+		} @else {
+			border-radius: 0 $slider-arrow-radius $slider-arrow-radius 0;
+			left: 0;
+			@include background-chevron('left', $clr-white);
+		}
+	}
+	.next {
+		@if ($direction == 'rtl') {
+			border-radius: 0 $slider-arrow-radius $slider-arrow-radius 0;
+			left: 0;
+			@include background-chevron('left', $clr-white);
+		} @else {
+			border-radius: $slider-arrow-radius 0 0 $slider-arrow-radius;
+			right: 0;
+			@include background-chevron('right', $clr-white);
+		}
+	}
+}
+
+//
+// Slider thumbnail navigation.
+//
+
+.fs-slider-thumbs {
+
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 ($slider-thumb-gutters / -2);
+	padding-top: $slider-thumb-gutters;
+
+	@include list-unstyled;
+
+	li {
+		cursor: pointer;
+		padding: 0 ($slider-thumb-gutters / 2);
+	}
+	img {
+		opacity: 0.6;
+		transition: opacity .2s ease-in-out;
+	}
+	li:hover img,
+	li:focus img,
+	li.active img {
+		opacity: 1;
+	}
+	@each $size, $val in $slider-thumbs {
+		&.thumbs-#{$size} img {
+			width: $val;
+		}
+	}
+}
+
+//
+// All Slider Types
+//
+
+.fs-simple-slider,
+.fs-gallery-slider,
+.fs-block-slider {
+
+	margin: $margin-slider;
+	@include margin-vert-flush;
+
+	&.loaded {
+		.fs-slider-arrows {
+			display: block;
+		}
+		.fs-slider-nav,
+		.fs-slider-thumbs {
+			display: flex;
+		}
+	}
+	.fs-slider-arrows li {
+
+		transition: transform 0.2s ease-in-out, $transition-fade;
+
+		&.next {
+			@if ($direction == 'rtl') {
+				transform: translate(-$slider-arrow-w, -50%);
+			} @else {
+				transform: translate($slider-arrow-w, -50%);
+			}
+		}
+		&.prev {
+			@if ($direction == 'rtl') {
+				transform: translate($slider-arrow-w, -50%);
+			} @else {
+				transform: translate(-$slider-arrow-w, -50%);
+			}
+		}
+	}
+	&.hovered .fs-slider-arrows li {
+		transform: translate(0, -50%);
+	}
+}
+
+//
+// Simple Slider
+//
+
+.fs-simple-slider {
+
+	> .wrap {
+		overflow: hidden;
+		position: relative;
+
+		.fs-slider-nav {
+			@include slider-nav-overlaid($slider-nav-bottom-pos);
+		}
+	}
+	.slider-caption {
+
+		color: $clr-white;
+		font-size: $font-size-slider-caption;
+		position: absolute;
+		top: 50%;
+		left: 20%;
+		right: 20%;
+		padding: $padding-slider-caption;
+		text-align: center;
+		text-shadow: $slider-caption-shadow;
+		transform: translate(0, -50%);
+		z-index: $slider-caption-z-index;
+
+		.slider-heading {
+			color: $clr-white;
+		}
+		.slider-heading,
+		p {
+			margin: $margin-slider-caption-elem;
+			@include margin-vert-flush;
+		}
+	}
+	&.slider-mini {
+		.fs-slider-arrows {
+			display: flex;
+			position: absolute;
+			top: 5px;
+			left: 4px;
+		}
+		.fs-slider-arrows li {
+			background-size: $slider-arrow-mini-icon-size;
+			border-radius: 0;
+			margin: 0 1px;
+			position: static;
+			transform: translate(0, 0);
+			width: $slider-arrow-mini-w;
+			height: $slider-arrow-mini-h;
+		}
+	}
+	&.text-dark {
+		> .wrap .fs-slider-nav {
+			@include slider-nav-overlaid-dark;
+		}
+		.slider-caption,
+		.slider-heading {
+			color: $clr-dark;
+			text-shadow: $slider-caption-inv-shadow;
+		}
+	}
+}
+
+//
+// Gallery Slider
+//
+
+.fs-gallery-slider {
+
+	> .wrap {
+
+		overflow: hidden;
+		position: relative;
+
+		.fs-slider-nav {
+
+			@include slider-nav-overlaid($slider-nav-gallery-bottom-pos);
+
+			@include max-width(md) {
+				bottom: $slider-nav-bottom-pos / 2;
+			}
+			@include max-width(sm) {
+				bottom: $slider-nav-bottom-pos / 3;
+			}
+			@include max-width(xs) {
+				bottom: $slider-nav-bottom-pos / 4;
+			}
+		}
+	}
+	.fs-slider {
+		background-color: $slider-gallery-bg-clr;
+	}
+	.fs-slider,
+	.slider-item {
+		height: nth($slider-gallery-height, 1);
+	}
+	@include max-width(md) {
+		.fs-slider,
+		.slider-item {
+			height: nth($slider-gallery-height, 2);
+		}
+	}
+	@include max-width(sm) {
+		.fs-slider,
+		.slider-item {
+			height: nth($slider-gallery-height, 3);
+		}
+	}
+	@include max-width(xs) {
+		.fs-slider,
+		.slider-item {
+			height: nth($slider-gallery-height, 4);
+		}
+	}
+	.slider-item img {
+		opacity: .5 !important;
+		transform: translate3d(0,0,0);
+		transition: opacity .2s ease-out;
+		width: auto !important;
+		height: 100%;
+	}
+	.center .slider-item img {
+		opacity: 1 !important;
+	}
+	&.text-dark {
+		> .wrap .fs-slider-nav {
+			@include slider-nav-overlaid-dark;
+		}
+	}
+}
+
+//
+// Block Slider
+//
+
+.fs-block-slider {
+	> .wrap {
+
+		overflow: hidden;
+		position: relative;
+
+		.fs-slider-nav {
+			@include slider-nav-overlaid($slider-nav-block-bottom-pos);
+		}
+	}
+}

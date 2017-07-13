@@ -135,6 +135,7 @@ $font-size-breadcrumbs				: $font-size-sm;
 $font-size-widget					: $font-size-sm;
 $font-size-label					: $font-size-micro;
 $font-size-caption					: $font-size-sm;
+$font-size-slider-caption			: $font-size-md;
 
 // Font Line Heights
 
@@ -445,6 +446,11 @@ $clr-bg-label						: $clr-greyer;
 $clr-bg-caption						: $clr-bg-light;
 $clr-bg-inv-caption					: $clr-darkest;
 
+// ==========================================================================
+// Animations
+// ==========================================================================
+
+$transition-fade					: opacity .2s linear;
 
 // ==========================================================================
 // Utilities
@@ -522,6 +528,8 @@ $margin-modal-mobile				: 0 auto;
 $margin-widget						: $margin-element;
 $margin-embed						: $margin-paragraph;
 $margin-thumb						: $margin-paragraph;
+$margin-slider						: $margin-element;
+$margin-slider-caption-elem			: 10px 0;
 
 // Padding
 
@@ -538,6 +546,7 @@ $padding-widget						: 30px;
 $padding-label						: 6px 10px;
 $padding-caption					: 20px;
 $padding-caption-gallery			: 15px;
+$padding-slider-caption				: 30px 0;
 
 
 // ==========================================================================
@@ -751,7 +760,7 @@ $pills-flyout-inv-bg				: $clr-bg-dark;
 $flyout-vert-spacing				: .85em;
 $flyout-horz-spacing				: 20px;
 $flyout-width						: 200px;
-$flyout-shadow						: 0 2px 5px rgba($clr-black, .05);
+$flyout-shadow						: 0 2px 5px rgba($clr-black, 0.05);
 
 // Mega Menus
 
@@ -790,7 +799,7 @@ $toggle-icon-buffer					: 4px;
 
 $modal-overlay-color				: $clr-black;
 $modal-overlay-opacity				: 0.9;
-$modal-shadow						: 0 0 20px rgba(0, 0, 0, 0.4);
+$modal-shadow						: 0 0 20px rgba($clr-black, 0.4);
 $modal-z-index-base					: 100000;
 
 $modal-caption-text-color			: $clr-text-inv-base;
@@ -803,7 +812,7 @@ $modal-controls-text-color-hover	: $clr-text-inv-base;
 $modal-close-btn-size				: 14px;
 
 $modal-arrow-btn-size				: 40px;
-$modal-arrow-btn-img-size			: $modal-arrow-btn-size $modal-arrow-btn-size;
+$modal-arrow-btn-img-size			: 34px 38px;
 
 // Iframes / Video
 
@@ -820,7 +829,7 @@ $modal-img-spacing					: 50px;
 // Inline Content
 
 $modal-content-border-width			: 1px;
-$modal-content-border-color			: rgba(0, 0, 0, 0.5);
+$modal-content-border-color			: rgba($clr-black, 0.5);
 
 $modal-header-border-width			: 1px;
 $modal-header-border-color			: $clr-border;
@@ -913,3 +922,41 @@ $gallery-gutters					: 10px;
 $gallery-thumb-link-icon-size		: 18px;
 $gallery-thumb-link-icon-w			: 3em;
 $gallery-thumb-link-icon-h			: 3em;
+
+// ==========================================================================
+// Sliders
+// ==========================================================================
+
+$slider-caption-z-index				: 1;
+$slider-nav-z-index					: 2;
+
+$slider-nav-bottom-pos				: 40px;
+$slider-nav-gallery-bottom-pos		: 40px;
+$slider-nav-block-bottom-pos		: 10px;
+$slider-nav-btn-size				: 12px;
+
+$slider-caption-shadow				: 0 1px 2px rgba($clr-black, 0.7);
+$slider-caption-inv-shadow			: 0 1px 1px rgba($clr-white, 0.8);
+
+$slider-arrow-bg					: rgba($clr-black, 0.5);
+$slider-arrow-hover-bg				: rgba($clr-black, 0.7);
+$slider-arrow-w						: 50px;
+$slider-arrow-h						: 80px;
+$slider-arrow-radius				: 4px;
+$slider-arrow-icon-size				: 20px 22px;
+
+$slider-arrow-mini-w				: 24px;
+$slider-arrow-mini-h				: 24px;
+$slider-arrow-mini-icon-size		: 12px 14px;
+
+$slider-thumbs : (
+	sm								: 50px,
+	md								: 75px,
+	lg								: 100px,
+	xl								: 125px
+);
+
+$slider-thumb-gutters				: 4px;
+
+$slider-gallery-bg-clr				: $clr-darkest;
+$slider-gallery-height				: (400px, 300px, 200px, 150px);

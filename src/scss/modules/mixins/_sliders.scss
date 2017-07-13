@@ -1,0 +1,40 @@
+// --------------------------------------------------
+// Mixins: Sliders
+// --------------------------------------------------
+
+//
+// Position slider nav over top slider.
+//
+
+@mixin slider-nav-overlaid( $pos, $z-index: $slider-nav-z-index ) {
+
+	margin: 0;
+	position: absolute;
+	bottom: $pos;
+	left: 50%;
+	transform: translate(-50%, 0);
+	z-index: $z-index;
+
+	li {
+		background-color: rgba($clr-black, 0.2);
+		border-color: rgba($clr-white, 0.8);
+		transform: none;
+	}
+	li.active {
+		background-color: $clr-white;
+	}
+}
+
+//
+// When slider nav is already positioned over top
+// slider, darken it.
+//
+
+@mixin slider-nav-overlaid-dark {
+	> li {
+		border-color: rgba($clr-dark, 0.8);
+	}
+	> li.active {
+		background-color: $clr-dark;
+	}
+}

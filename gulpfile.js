@@ -188,6 +188,7 @@ gulp.task('render-project-js', ['render-project-clean'], function() {
 		'src/js/menu.js',
 		'src/js/mobile-menu.js',
 		'src/js/modal.js',
+		'src/js/slider.js',
 		'src/js/tabs.js',
 		'src/js/toggles.js'
 	];
@@ -221,7 +222,14 @@ gulp.task('render-project-img', ['render-project-clean'], function() {
  */
 gulp.task('render-project-plugins', ['render-project-clean'], function() {
 
-	return gulp.src('plugins/**/*')
+	var files = [
+		'plugins/**/*.txt',
+		'plugins/**/*.js',
+		'plugins/**/css/*',
+		'plugins/**/fonts/*'
+	];
+
+	return gulp.src(files)
 		.pipe(gulp.dest('dist/docs/assets/frontstreet/plugins'))
 		.pipe(gulp.dest('dist/frontstreet/plugins'));
 

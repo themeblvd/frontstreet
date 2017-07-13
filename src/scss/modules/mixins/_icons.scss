@@ -74,7 +74,7 @@
 		$points: '68,19.1 29.7,49.1 68,79.1 69.2,77.6 32.9,49.1 69.2,20.6 68,19.1';
 	}
 
-	$icon: "<svg version='1.1' viewBox='0 0 100 100' xml:space='preserve' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><polygon fill='#{$url-clr}' points='#{$points}'/></svg>";
+	$icon: "<svg version='1.1' viewBox='0 0 100 100' preserveAspectRatio='none' xml:space='preserve' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><polygon fill='#{$url-clr}' points='#{$points}'/></svg>";
 
 	background-image: url("data:image/svg+xml;utf8,#{$icon}");
 	background-position: center center;

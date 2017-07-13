@@ -216,6 +216,24 @@ nav {
   .widget-examples {
     padding: 50px; } }
 
+/* Sliders */
+pre .fs-slider,
+pre .fs-slider-nav,
+pre .fs-slider-arrows,
+pre .fs-slider-thumbs {
+  display: none; }
+
+/* Mini Slider */
+@media (min-width: 36em) {
+  .mini-slider-example {
+    background: #f8f8f8;
+    margin-bottom: 24px;
+    padding: 10% 0; } }
+
+.mini-slider-example .slider-mini {
+  margin: 0 auto;
+  max-width: 350px; }
+
 /* =Tables
 -------------------------------------------------------------- */
 .responsive-utilities td.is-visible {

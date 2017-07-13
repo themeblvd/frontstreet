@@ -250,6 +250,30 @@ nav {
 	}
 }
 
+/* Sliders */
+pre {
+	.fs-slider,
+	.fs-slider-nav,
+	.fs-slider-arrows,
+	.fs-slider-thumbs {
+		display: none;
+	}
+}
+
+
+/* Mini Slider */
+@media (min-width: 36em) {
+	.mini-slider-example {
+		background: #f8f8f8;
+		margin-bottom: 24px;
+		padding: 10% 0;
+	}
+}
+.mini-slider-example .slider-mini {
+	margin: 0 auto;
+	max-width: 350px;
+}
+
 /* =Tables
 -------------------------------------------------------------- */
 
