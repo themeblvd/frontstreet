@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+
+		<meta charset="UTF-8" />
+		<link rel="profile" href="http://gmpg.org/xfn/11" />
+
+		<title>Sliders</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href='assets/frontstreet/plugins/font-awesome/css/font-awesome.min.css' type='text/css' media='all' />
+		<link rel="stylesheet" href='assets/frontstreet/css/frontstreet.css' type='text/css' media='all' />
+
+		<link rel="stylesheet" href='assets/css/docs.min.css' type='text/css' media='all' />
+
+	</head>
+	<body>
+
+		<div id="wrapper">
+			<div id="container">
+
+				<article id="main">
+
+					<h1 class="heading-lg">
+						Sliders
+						
+					</h1>
+
+
+<p>Front Street implements a few different types of basic sliders, which utilize the <a href="http://owlcarousel2.github.io/OwlCarousel2/" title="Owl Carousel" target="_blank">Owl Carousel</a> script. The goal here is to style and implement the JavaScript for some basic sliders that you can utilize with HTML.</p>
+
+<div class="fs-simple-slider">
+	<div class="wrap">
+
+		<div class="fs-slider owl-carousel">
+
+			<div class="slider-item">
+				<img src="assets/img/image-2.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-7.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-5.jpg">
+			</div><!-- .slider-item -->
+
+		</div><!-- .owl-carousel -->
+
+		<ol class="fs-slider-arrows">
+			<li class="prev trans">Previous</li>
+			<li class="next trans">Next</li>
+		</ol>
+
+		<ol class="fs-slider-nav">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ol>
+
+	</div><!-- .wrap -->
+</div><!-- .fs-simple-slider -->
+
+<h2 id="overview">General Overview</h2>
+
+<p>Basic sliders come in three types, in which the JavaScript is all setup for you &mdash; <a href="#simple-slider" title="Simple Slider">Simple Slider</a>, <a href="#gallery-slider" title="Gallery Slider">Gallery Slider</a> and <a href="#block-slider" title="Block Slider">Block Slider</a>. In this section, we'll cover the general information that can be applied to all slider types.</p>
+
+<h3 id="html-structure" class="heading-sm">HTML Structure</h3>
+
+<p>Below is an overview of the basic, outer HTML structure.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="fs-{type}-slider">
+	<div class="wrap">
+
+		<div class="fs-slider owl-carousel">
+			<!-- Slider Items -->
+		</div>
+
+		<ol class="fs-slider-nav">
+			<!-- Optional: Nav Dots -->
+		</ol>
+
+		<ol class="fs-slider-arrows">
+			<!-- Optional: Nav Arrows -->
+		</ol>
+
+	</div><!-- .wrap -->
+
+	<ol class="fs-slider-thumbs thumbs-md">
+		<!-- Optional: Nav Thumbnails -->
+	</ol>
+
+</div><!-- .fs-simple-slider -->
+</pre>
+
+<h3 id="slides" class="heading-sm">Slides</h3>
+
+<p>For all slider types, your actual slides will go in an element with class <code>fs-slider</code> <em>and</em> <code>owl-carousel</code>. The <code>fs-slider</code> class is what triggers our JavaScript and recieves any custom styling for the specific slider type. And the <code>owl-carousel</code> class is what actually receives the styling from the included Owl Carousel CSS, compiled with Front Street. Then within, you'll have an element for each slide with class <code>slider-item</code>.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="fs-slider owl-carousel">
+	<div class="slider-item">
+		...
+	</div>
+	<div class="slider-item">
+		...
+	</div>
+	<div class="slider-item">
+		...
+	</div>
+</div>
+</pre>
+
+<h3 id="navigation" class="heading-sm">Navigation</h3>
+
+<p>In the above structure, you may have noticed that there were three types of navigation. Each of these are optional; include them or don't. You can preview how these looks with the various types of sliders later in this article.</p>
+
+<p>The first type of navigation is the standard navigation dots. Create a list with class <code>fs-slider-nav</code>. Make sure to include a list item for each slide you create. For example, if there are three slides, there should be three list items in your <code>.fs-slider-nav</code> element.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<ol class="fs-slider-nav">
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+</ol>
+</pre>
+
+<p>The second type of navigation are the absolute-positioned arrows, to move the slider to next or previous slide. Create a list with class <code>fs-slider-arrows</code> and two list items within with classes <code>next</code> and <code>prev</code>. You can also add the class <code>trans</code> to each list item to give it a transparent look.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<ol class="fs-slider-arrows">
+	<li class="prev trans">Previous</li>
+	<li class="next trans">Next</li>
+</ol>
+</pre>
+
+<p>You can also use any <a href="colors.html" target="_blank" title="Color Library">color library class</a> on the list items to give them a specific color.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<ol class="fs-slider-arrows">
+	<li class="prev royal">Previous</li>
+	<li class="next ryoal">Next</li>
+</ol>
+</pre>
+
+<p id="thumb-nav">The last type is the thumbnail navigation. This would generally be used in place of the standard dot navigation. For this type of navigation create a list of thumbnail images with class <code>fs-slider-thumbs</code>. Make sure the thumbnail images coorespond to the slide images and are in the same order.</p>
+
+<p>You can also include one of the sizing classes to determine the size of the thumbnail images &mdash; <code>thumbs-sm</code>, <code>thumbs-md</code>, <code>thumbs-lg</code> or <code>thumbs-xl</code>.</p>
+
+<p><span class="label-inline info">Important!</span> Different from the two previous navigation types, make sure the <code>.fs-slider-thumbs</code> element comes outside of the <code>.wrap</code> element.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<ol class="fs-slider-thumbs thumbs-md">
+	<li>&lt;img src="thumb-1.jpg"&gt;</li>
+	<li>&lt;img src="thumb-2.jpg"&gt;</li>
+	<li>&lt;img src="thumb-3.jpg"&gt;</li>
+</ol>
+</pre>
+
+<h3 id="data-atts" class="heading-sm">Data Attributes</h3>
+
+<p>Even though the JavaScript is setup for you with these pre-configured slider types, we've included some optional <code>data-*</code> attributes you can add to customize some of the slider settings. To utilize them, just add them into your wrapping <code>.fs-{type}-slider</code> element.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="fs-{type}-slider" data-autoplay="3000" data-speed="250">
+	<div class="wrap">
+		...
+	</div><!-- .wrap -->
+</div><!-- .fs-{type}-slider -->
+</pre>
+
+<p>Here's a table of all available <code>data-*</code> attributes; pay attention to which slider types they support.</p>
+
+<div class="table-responsive">
+	<table class="table-bordered table-condensed table-grid-overview">
+		<tr>
+			<th width="16%">Data Attribute</th>
+			<th width="8%">Type</th>
+			<th width="8%">Default</th>
+			<th width="23%">Description</th>
+			<th width="15%" class="text-center">Simple</th>
+			<th width="15%" class="text-center">Gallery</th>
+			<th width="15%" class="text-center">Block</th>
+		</tr>
+		<tr>
+			<td><code>data-autoplay</code></td>
+			<td>Number</td>
+			<td><code>0</code></td>
+			<td>Number of milliseconda between auto-rotating slider; use <code>0</code> to disable auto-rotating.</td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><code>data-fade</code></td>
+			<td>Boolean</td>
+			<td><code>false</code></td>
+			<td>Enable fade effect for slide transitions; <code>data-speed</code> will have no effect for fade effect.</td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
+			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
+		</tr>
+		<tr>
+			<td><code>data-items</code></td>
+			<td>Number</td>
+			<td><code>4</code></td>
+			<td>Number of slide items visibile at once.</td>
+			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
+			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+		</tr>
+		<tr>
+			<td><code>data-loop</code></td>
+			<td>Booloean</td>
+			<td><code>true</code></td>
+			<td>Enable infinity loop. Duplicate last and first items to get loop illusion.</td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><code>data-margin</code></td>
+			<td>Number</td>
+			<td><code>1</code></td>
+			<td>Space between slides.</td>
+			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+		</tr>
+		<tr>
+			<td><code>data-pause</code></td>
+			<td>Booloean</td>
+			<td><code>true</code></td>
+			<td>If auto-rotating enabled, pause on mouse hover.</td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><code>data-speed</code></td>
+			<td>Number</td>
+			<td><code>500</code></td>
+			<td>Speed of slide transitions in milliseconds.</td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+</div>
+
+<h2 id="simple-slider">Simple Slider</h2>
+
+<p>The simple slider is meant to serve as a basic image slider, but could include other content types with some custom styling. Let's stick with creating a basic image slider, though.</p>
+
+<div class="fs-simple-slider">
+	<div class="wrap">
+
+		<div class="fs-slider owl-carousel">
+
+			<div class="slider-item">
+				<img src="assets/img/image-2.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-7.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-5.jpg">
+				<div class="slider-caption">
+					<h3 class="slider-heading">Donec Rutrum</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+				</div><!-- .slider-caption -->
+			</div><!-- .slider-item -->
+
+		</div><!-- .owl-carousel -->
+
+		<ol class="fs-slider-arrows">
+			<li class="prev trans">Previous</li>
+			<li class="next trans">Next</li>
+		</ol>
+
+		<ol class="fs-slider-nav">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ol>
+
+	</div><!-- .wrap -->
+</div><!-- .fs-simple-slider -->
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;div class="fs-simple-slider"&gt;
+	<div class="wrap">
+
+		<div class="fs-slider owl-carousel">
+
+			<div class="slider-item">
+				&lt;img src="image-1.jpg"&gt;
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				&lt;img src="image-2.jpg"&gt;
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				&lt;img src="image-3.jpg"&gt;
+				<div class="slider-caption">
+					<h3 class="slider-heading">Donec Rutrum</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+				</div><!-- .slider-caption -->
+			</div><!-- .slider-item -->
+
+		</div><!-- .fs-slider.owl-carousel -->
+
+		<ol class="fs-slider-arrows">
+			<li class="prev trans">Previous</li>
+			<li class="next trans">Next</li>
+		</ol>
+
+		<ol class="fs-slider-nav">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ol>
+
+	</div><!-- .wrap -->
+&lt;/div&gt;<!-- .fs-simple-slider -->
+</pre>
+
+<h3 id="simple-slider-captions" class="heading-sm">Slide Captions</h3>
+
+<p>You may have noticed in the third slide above, we included some caption text. Here's the basic structure for a caption included within each <code>.slider-item</code> element.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="slider-caption">
+	<h3 class="slider-heading">Donec Rutrum</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+</div><!-- .slider-caption -->
+</pre>
+
+<h3 id="simple-slider-dots" class="heading-sm">Dots Navigation</h3>
+
+<p>The <code>.fs-slider-nav</code> navigation element can go inside or outside of the <code>.wrap</code> element to achieve different looks. In the example below, we've placed it <em>outside</em> so that it appears below the slider instead of over top.</p>
+
+<div class="fs-simple-slider">
+	<div class="wrap">
+
+		<div class="fs-slider owl-carousel">
+
+			<div class="slider-item">
+				<img src="assets/img/image-2.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-5.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-7.jpg">
+			</div><!-- .slider-item -->
+
+		</div><!-- .fs-slider.owl-carousel -->
+
+		<ol class="fs-slider-arrows">
+			<li class="prev trans">Previous</li>
+			<li class="next trans">Next</li>
+		</ol>
+
+	</div><!-- .wrap -->
+
+	<ol class="fs-slider-nav">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ol>
+
+</div><!-- .fs-simple-slider -->
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;div class="fs-simple-slider"&gt;
+
+	<div class="wrap">
+		...
+	</div><!-- .wrap -->
+
+	<ol class="fs-slider-nav">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ol>
+
+&lt;/div&gt;<!-- .fs-simple-slider -->
+</pre>
+
+<h3 id="simple-slider-thumbs" class="heading-sm">Thumbnail Navigation</h3>
+
+<p>Here's an alternate example of the slider above, where we've subsituted the standard navigation dots for a <a href="#thumb-nav" title="Thumbnail Navigation">thumbnail navigation</a>. Notice that the the thumbnail navigation is outside of the <code>.wrap</code> element &mdash; This is important!</p>
+
+<div class="fs-simple-slider">
+	<div class="wrap">
+
+		<div class="fs-slider owl-carousel">
+
+			<div class="slider-item">
+				<img src="assets/img/image-2.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-5.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-7.jpg">
+			</div><!-- .slider-item -->
+
+		</div><!-- .fs-slider.owl-carousel -->
+
+		<ol class="fs-slider-arrows">
+			<li class="prev trans">Previous</li>
+			<li class="next trans">Next</li>
+		</ol>
+
+	</div><!-- .wrap -->
+
+	<ul class="fs-slider-thumbs thumbs-md">
+		<li><img src="assets/img/image-2-thumb.jpg"></li>
+		<li><img src="assets/img/image-5-thumb.jpg"></li>
+		<li><img src="assets/img/image-7-thumb.jpg"></li>
+	</ul>
+
+</div><!-- .fs-simple-slider -->
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;div class="fs-simple-slider"&gt;
+
+	<div class="wrap">
+		...
+	</div><!-- .wrap -->
+
+	<ul class="fs-slider-thumbs thumbs-md">
+		<li>&lt;img src="thumb-1.jpg"&gt;</li>
+		<li>&lt;img src="thumb-2.jpg"&gt;</li>
+		<li>&lt;img src="thumb-3.jpg"&gt;</li>
+	</ul>
+
+&lt;/div&gt;<!-- .fs-simple-slider -->
+</pre>
+
+<h3 id="simple-slider-dark" class="heading-sm">Dark Text</h3>
+
+<p>What if you have really light images and you'd prefer dark navigational elements and text? Add class <code>text-dark</code> to your <code>.fs-simple-slider</code> element.</p>
+
+<div class="fs-simple-slider text-dark">
+	<div class="wrap">
+
+		<div class="fs-slider owl-carousel">
+
+			<div class="slider-item">
+				<img src="assets/img/light-1.jpg">
+				<div class="slider-caption">
+					<h3 class="slider-heading">Lorem ipsum dolor sit amet</h3>
+					<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				</div><!-- .slider-caption -->
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/light-2.jpg">
+				<div class="slider-caption">
+					<h3 class="slider-heading">Lorem ipsum dolor sit amet</h3>
+					<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				</div><!-- .slider-caption -->
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/light-3.jpg">
+				<div class="slider-caption">
+					<h3 class="slider-heading">Lorem ipsum dolor sit amet</h3>
+					<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				</div><!-- .slider-caption -->
+			</div><!-- .slider-item -->
+
+		</div><!-- .owl-carousel -->
+
+		<ol class="fs-slider-arrows">
+			<li class="prev trans">Previous</li>
+			<li class="next trans">Next</li>
+		</ol>
+
+		<ol class="fs-slider-nav">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ol>
+
+	</div><!-- .wrap -->
+</div><!-- .fs-simple-slider -->
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;div class="fs-simple-slider text-dark"&gt;
+	<div class="wrap">
+		...
+	</div><!-- .wrap -->
+&lt;/div&gt;<!-- .fs-simple-slider -->
+</pre>
+
+<h3 id="simple-slider-mini" class="heading-sm">Mini Simple Slider</h3>
+
+<p>If your <code>.fs-simple-slider</code> element uses really small images, adding the class <code>slider-mini</code> will adjust the <code>.fs-slider-arrows</code> element to fit better.</p>
+
+<div class="mini-slider-example">
+	<div class="fs-simple-slider slider-mini">
+		<div class="wrap">
+
+			<div class="fs-slider owl-carousel">
+
+				<div class="slider-item">
+					<img src="assets/img/image-2.jpg">
+				</div><!-- .slider-item -->
+
+				<div class="slider-item">
+					<img src="assets/img/image-5.jpg">
+				</div><!-- .slider-item -->
+
+				<div class="slider-item">
+					<img src="assets/img/image-7.jpg">
+				</div><!-- .slider-item -->
+
+			</div><!-- .fs-slider.owl-carousel -->
+
+			<ol class="fs-slider-arrows">
+				<li class="prev trans">Previous</li>
+				<li class="next trans">Next</li>
+			</ol>
+
+		</div><!-- .wrap -->
+
+	</div><!-- .fs-simple-slider -->
+</div><!-- .mini-slider-example (end) -->
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;div class="fs-simple-slider slider-mini"&gt;
+	<div class="wrap">
+		...
+	</div><!-- .wrap -->
+&lt;/div&gt;<!-- .fs-simple-slider -->
+</pre>
+
+<h2 id="gallery-slider">Gallery Slider</h2>
+
+<p>The gallery slider is useful for displaying images of varying dimensions in a more modern, carousel-style slider. It's setup essentially the same a simple slider, except for you'll use class <code>fs-gallery-slider</code>.</p>
+
+<div class="fs-gallery-slider">
+	<div class="wrap">
+
+		<div class="fs-slider owl-carousel">
+
+			<div class="slider-item">
+				<img src="assets/img/image-2.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-3.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-4.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-5.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-6.jpg">
+			</div><!-- .slider-item -->
+
+		</div><!-- .owl-carousel -->
+
+		<ol class="fs-slider-arrows">
+			<li class="prev trans">Previous</li>
+			<li class="next trans">Next</li>
+		</ol>
+
+		<ol class="fs-slider-nav">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ol>
+
+	</div><!-- .wrap -->
+</div><!-- .fs-gallery-slider -->
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;div class="fs-gallery-slider"&gt;
+	<div class="wrap">
+
+		<div class="fs-slider owl-carousel">
+
+			<div class="slider-item">
+				&lt;img src="image-1.jpg"&gt;
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				&lt;img src="image-2.jpg"&gt;
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				&lt;img src="image-3.jpg"&gt;
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				&lt;img src="image-4.jpg"&gt;
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				&lt;img src="image-5.jpg"&gt;
+			</div><!-- .slider-item -->
+
+		</div><!-- .owl-carousel -->
+
+		<ol class="fs-slider-arrows">
+			<li class="prev trans">Previous</li>
+			<li class="next trans">Next</li>
+		</ol>
+
+		<ol class="fs-slider-nav">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ol>
+
+	</div><!-- .wrap -->
+&lt;/div&gt;<!-- .fs-gallery-slider -->
+</pre>
+
+<h3 id="gallery-slider-dots" class="heading-sm">Dots Navigation</h3>
+
+<p>The standard dot navigation can also go outside of the <code>.wrap</code> element so that it appears below the slider, with a slightly different look.</p>
+
+<div class="fs-gallery-slider">
+	<div class="wrap">
+
+		<div class="fs-slider owl-carousel">
+
+			<div class="slider-item">
+				<img src="assets/img/image-2.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-3.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-4.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-5.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-6.jpg">
+			</div><!-- .slider-item -->
+
+		</div><!-- .owl-carousel -->
+
+		<ol class="fs-slider-arrows">
+			<li class="prev trans">Previous</li>
+			<li class="next trans">Next</li>
+		</ol>
+
+	</div><!-- .wrap -->
+
+	<ol class="fs-slider-nav">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ol>
+
+</div><!-- .fs-gallery-slider -->
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;div class="fs-gallery-slider"&gt;
+
+	<div class="wrap">
+		...
+	</div><!-- .wrap -->
+
+	<ol class="fs-slider-nav">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ol>
+
+&lt;/div&gt;<!-- .fs-simple-slider -->
+</pre>
+
+<h3 id="gallery-slider-thumbs" class="heading-sm">Thumbnail Navigation</h3>
+
+<p>Just like with a simple slider, the thumbnail navigation will work with a gallery slider, too.</p>
+
+<div class="fs-gallery-slider">
+	<div class="wrap">
+
+		<div class="fs-slider owl-carousel">
+
+			<div class="slider-item">
+				<img src="assets/img/image-2.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-3.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-4.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-5.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-6.jpg">
+			</div><!-- .slider-item -->
+
+		</div><!-- .owl-carousel -->
+
+		<ol class="fs-slider-arrows">
+			<li class="prev trans">Previous</li>
+			<li class="next trans">Next</li>
+		</ol>
+
+	</div><!-- .wrap -->
+
+	<ul class="fs-slider-thumbs thumbs-md">
+		<li><img src="assets/img/image-2-thumb.jpg"></li>
+		<li><img src="assets/img/image-3-thumb.jpg"></li>
+		<li><img src="assets/img/image-4-thumb.jpg"></li>
+		<li><img src="assets/img/image-5-thumb.jpg"></li>
+		<li><img src="assets/img/image-6-thumb.jpg"></li>
+	</ul>
+
+</div><!-- .fs-gallery-slider -->
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;div class="fs-simple-slider"&gt;
+
+	<div class="wrap">
+		...
+	</div><!-- .wrap -->
+
+	<ul class="fs-slider-thumbs thumbs-md">
+		<li>&lt;img src="thumb-1.jpg"&gt;</li>
+		<li>&lt;img src="thumb-2.jpg"&gt;</li>
+		<li>&lt;img src="thumb-3.jpg"&gt;</li>
+		<li>&lt;img src="thumb-4.jpg"&gt;</li>
+		<li>&lt;img src="thumb-5.jpg"&gt;</li>
+	</ul>
+
+&lt;/div&gt;<!-- .fs-simple-slider -->
+</pre>
+
+<h3 id="gallery-slider-height" class="heading-sm">Gallery Slider Height</h3>
+
+<p>The images of a gallery slider are styled in a way that you might call... reverse responsive? They're given <code>height: 100%</code> and <code>width: auto</code>. &mdash; In other words, images will all match the height of the slider, with their widths scaling proportionally.</p>
+
+<p>So for the gallery slider to work properly, it needs a specified height, which will unify all images at an equal height, but with varying widths.</p>
+
+<p>By default we've set this at <code>400px</code>, with the height shrinking at smaller viewports. But through your own CSS customizations, you could create your own height specifications. Below is an example.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;div class="fs-gallery-slider my-slider"&gt;
+	<div class="wrap">
+		...
+	</div><!-- .wrap -->
+&lt;/div&gt;<!-- .fs-simple-slider -->
+</pre>
+
+<pre class="brush: css; gutter: false; toolbar: false;">
+.my-slider .fs-slider,
+.my-slider .slider-item {
+	height: 400px;
+}
+@media (max-width: 61.9375em) { /* md */
+	.my-slider .fs-slider,
+	.my-slider .slider-item {
+		height: 300px;
+	}
+}
+@media (max-width: 47.9375em) { /* sm */
+	.my-slider .fs-slider,
+	.my-slider .slider-item {
+		height: 200px;
+	}
+}
+@media (max-width: 35.9375em) { /* xs */
+	.my-slider .fs-slider,
+	.my-slider .slider-item {
+		height: 150px;
+	}
+}
+</pre>
+
+<h2 id="block-slider">Block Slider</h2>
+
+<p>If you're wanting more of a classic carousel to cycle through blocks, use the class <code>fs-block-slider</code> with your slider element.</p>
+
+<div class="fs-block-slider">
+	<div class="wrap">
+
+		<div class="fs-slider owl-carousel">
+
+			<div class="slider-item">
+				<img src="assets/img/image-1-thumb.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-2-thumb.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-3-thumb.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-4-thumb.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-5-thumb.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-6-thumb.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-7-thumb.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-8-thumb.jpg">
+			</div><!-- .slider-item -->
+
+		</div><!-- .owl-carousel -->
+
+		<ol class="fs-slider-arrows">
+			<li class="prev trans">Previous</li>
+			<li class="next trans">Next</li>
+		</ol>
+
+	</div><!-- .wrap -->
+
+</div><!-- .fs-block-slider -->
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;div class="fs-block-slider"&gt;
+	<div class="wrap">
+
+		<div class="fs-slider owl-carousel">
+
+			<div class="slider-item">
+				&lt;img src="image-1.jpg"&gt;
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				&lt;img src="image-2.jpg"&gt;
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				&lt;img src="image-3.jpg"&gt;
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				&lt;img src="image-4.jpg"&gt;
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				&lt;img src="image-5.jpg"&gt;
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				&lt;img src="image-6.jpg"&gt;
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				&lt;img src="image-7.jpg"&gt;
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				&lt;img src="image-8.jpg"&gt;
+			</div><!-- .slider-item -->
+
+		</div><!-- .owl-carousel -->
+
+		<ol class="fs-slider-arrows">
+			<li class="prev trans">Previous</li>
+			<li class="next trans">Next</li>
+		</ol>
+
+	</div><!-- .wrap -->
+&lt;/div&gt;<!-- .fs-block-slider -->
+</pre>
+
+<p>The following example changes up some things. &mdash; First we've added some data attributes. We've got <code>data-items="3"</code> to adjust how many items show per slide, <code>data-margin="15"</code> to add some gutters between items, and <code>data-loop="false"</code> to not allow the carousel to continuously cycle. And last, we've added the standard dot navigation outside of the <code>.wrap</code> element so that it appears below the carousel.</p>
+
+<div class="fs-block-slider" data-items="3" data-margin="15" data-loop="false">
+	<div class="wrap">
+
+		<div class="fs-slider owl-carousel">
+
+			<div class="slider-item">
+				<img src="assets/img/image-1-thumb.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-2-thumb.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-3-thumb.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-4-thumb.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-5-thumb.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-6-thumb.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-7-thumb.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-8-thumb.jpg">
+			</div><!-- .slider-item -->
+
+		</div><!-- .owl-carousel -->
+
+		<ol class="fs-slider-arrows">
+			<li class="prev trans">Previous</li>
+			<li class="next trans">Next</li>
+		</ol>
+
+	</div><!-- .wrap -->
+
+	<ol class="fs-slider-nav">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ol>
+
+</div><!-- .fs-block-slider -->
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;div class="fs-block-slider" data-items="3" data-margin="15" data-loop="false"&gt;
+
+	<div class="wrap">
+		...
+	</div><!-- .wrap -->
+
+	<ol class="fs-slider-nav">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ol>
+
+&lt;/div&gt;<!-- .fs-block-slider -->
+</pre>
+
+<div class="alert info">
+	<p><strong>Note:</strong> When adding the dots navigation to the block slider, remember to count the number of slides that will be generated for determining how many to add. &mdash; For example, if you have nine items and you've set <code>data-items="3"</code>, then three slides will be produced and so your navigation needs three dots.</p>
+</div>
+
+<p>The block slider will also go great when combined with <a href="media.html#thumb-links" title="Thumbnail Links" target="_blank">thumbnail links</a> and <a href="modal.html" title="Modals" target="_blank">modal functionality</a>.</p>
+
+<div class="fs-block-slider" data-items="2" data-margin="15" data-loop="false">
+
+	<div class="wrap">
+
+		<div class="fs-slider fs-modal-gallery owl-carousel">
+
+			<div class="slider-item">
+				<a href="assets/img/image-1.jpg" class="fs-image-modal-link fs-thumb-link fa-expand">
+					<img src="assets/img/image-1-thumb.jpg">
+				</a>
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<a href="assets/img/image-2.jpg" class="fs-image-modal-link fs-thumb-link fa-expand">
+					<img src="assets/img/image-2-thumb.jpg">
+				</a>
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<a href="assets/img/image-3.jpg" class="fs-image-modal-link fs-thumb-link fa-expand">
+					<img src="assets/img/image-3-thumb.jpg">
+				</a>
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<a href="assets/img/image-4.jpg" class="fs-image-modal-link fs-thumb-link fa-expand">
+					<img src="assets/img/image-4-thumb.jpg">
+				</a>
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<a href="assets/img/image-5.jpg" class="fs-image-modal-link fs-thumb-link fa-expand">
+					<img src="assets/img/image-5-thumb.jpg">
+				</a>
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<a href="assets/img/image-6.jpg" class="fs-image-modal-link fs-thumb-link fa-expand">
+					<img src="assets/img/image-6-thumb.jpg">
+				</a>
+			</div><!-- .slider-item -->
+
+		</div><!-- .owl-carousel -->
+
+		<ol class="fs-slider-arrows">
+			<li class="prev trans">Previous</li>
+			<li class="next trans">Next</li>
+		</ol>
+
+	</div><!-- .wrap -->
+
+	<ol class="fs-slider-nav">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ol>
+
+</div><!-- .fs-block-slider -->
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;div class="fs-block-slider"&gt;
+
+	<div class="wrap">
+
+		<div class="fs-slider fs-modal-gallery owl-carousel">
+
+			<div class="slider-item">
+				&lt;a href="image-1.jpg" class="fs-image-modal-link fs-thumb-link fa-expand"&gt;
+					&lt;img src="image-1-thumb.jpg"&gt;
+				&lt;/a&gt;
+			</div><!-- .slider-item -->
+
+			...
+
+		</div><!-- .owl-carousel -->
+
+		<ol class="fs-slider-arrows">
+			<li class="prev trans">Previous</li>
+			<li class="next trans">Next</li>
+		</ol>
+
+	</div><!-- .wrap -->
+
+	<ol class="fs-slider-nav">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ol>
+
+&lt;/div&gt;<!-- .fs-block-slider -->
+</pre>
+
+
+				</article><!-- #main (end) -->
+
+			</div><!-- #container (end) -->
+		</div><!-- #wrapper (end) -->
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+/**
+ * Optional configuration object that can be used to
+ * disable individiual JavaScript components.
+ */
+var FrontStreetConfig = {
+	'menu'  			: true,
+	'mobile-menu'		: true,
+	'modal'				: true,
+	'jump-menu'			: true,
+	'slider'  			: true,
+	'tabs'				: true,
+	'toggles'			: true
+};
+
+/**
+ * Optional configuration object that can adjust how
+ * Magnific Popup is configured.
+ */
+var FrontStreetModalConfig = {
+	'animation'			: 'fade',	// 'fade', 'slide' or 'none'
+	'mobile'			: 0,		// Image modals will work at all viewports.
+	'mobileIframe'		: 768,		// Iframe modals will only work when viewport >= 768.
+	'mobileGallery'		: 0,		// Gallery modals will work at all viewports.
+	'error'				: 'The modal media could not be loaded.',
+	'close'				: 'Close',
+	'loading'			: 'Loading...',
+	'counter'			: '%curr% of %total%',
+	'next'				: 'Next',
+	'previous'			: 'Previous'
+};
+/* ]]> */
+</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="assets/frontstreet/plugins/magnific-popup/magnific-popup.min.js"></script>
+<script type="text/javascript" src="assets/frontstreet/plugins/owl-carousel/owl-carousel.min.js"></script>
+<script type="text/javascript" src="assets/frontstreet/js/frontstreet.js"></script>
+<script type="text/javascript" src="assets/js/docs.min.js"></script>
+
+<script type="text/javascript">
+	SyntaxHighlighter.all()
+</script>
+
+
+	</body>
+</html>
+
