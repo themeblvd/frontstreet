@@ -8,13 +8,13 @@ $breakpoints : (
 	md								: 992px,
 	lg								: 1200px,
 	xl								: 1600px
-);
+) !default;
 
 // ==========================================================================
 // Grid System
 // ==========================================================================
 
-$grid-gutters						: 30px;
+$grid-gutters						: 30px !default; // @TODO multiple gutter sizes
 
 // ==========================================================================
 // Typography
@@ -22,23 +22,23 @@ $grid-gutters						: 30px;
 
 // Font Families
 
-$font-fam-base						: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-$font-fam-headings					: $font-fam-base;
-$font-fam-code						: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font-fam-base						: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !default;
+$font-fam-headings					: $font-fam-base !default;
+$font-fam-code						: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace !default;
 
 // Font Sizes
 
-$font-size-xxxl						: 64px;
-$font-size-xxl						: 40px;
-$font-size-xl						: 24px;
-$font-size-lg						: 20px;
-$font-size-base 					: 16px;
-$font-size-md						: $font-size-base - 1px; // 15px
-$font-size-sm						: $font-size-base - 2px; // 14px
-$font-size-xs						: $font-size-base - 3px; // 13px
-$font-size-xxs						: $font-size-base - 4px; // 12px
-$font-size-xxxs						: $font-size-base - 5px; // 11px
-$font-size-micro					: $font-size-base - 6px; // 10px
+$font-size-xxxl						: 64px !default;
+$font-size-xxl						: 40px !default;
+$font-size-xl						: 24px !default;
+$font-size-lg						: 20px !default;
+$font-size-base 					: 16px !default;
+$font-size-md						: $font-size-base - 1px !default; // 15px
+$font-size-sm						: $font-size-base - 2px !default; // 14px
+$font-size-xs						: $font-size-base - 3px !default; // 13px
+$font-size-xxs						: $font-size-base - 4px !default; // 12px
+$font-size-xxxs						: $font-size-base - 5px !default; // 11px
+$font-size-micro					: $font-size-base - 6px !default; // 10px
 
 // Font Size Usage
 
@@ -67,7 +67,7 @@ $font-size-headings : (
 		base						: 1rem,
 		mobile						: $font-size-base
 	)
-);
+) !default;
 
 $font-size-headings-bigger : (
 	lg : (
@@ -86,7 +86,7 @@ $font-size-headings-bigger : (
 		base						: 6rem,
 		mobile						: 34px
 	)
-);
+) !default;
 
 $font-size-headings-smaller : (
 	sm : (
@@ -105,91 +105,91 @@ $font-size-headings-smaller : (
 		base						: $font-size-xs,
 		mobile						: $font-size-xs
 	)
-);
+) !default;
 
-$font-size-subtitle					: .45em;
-$font-size-subtitle-sm				: $font-size-xxs;
+$font-size-subtitle					: .45em !default;
+$font-size-subtitle-sm				: $font-size-xxs !default;
 
-$font-size-lead						: $font-size-lg;
-$font-size-small					: .8em;
-$font-size-big						: 1.25em;
-$font-size-cite						: $font-size-xxs;
-$font-size-code						: $font-size-sm;
-$font-size-pre						: $font-size-md;
-$font-size-caption					: $font-size-sm;
-$font-size-caption-gallery			: $font-size-xxs;
-$font-size-quote					: 1.3rem;
-$font-size-alert					: 0.9375rem;
-$font-size-btn						: $font-size-xxxs;
-$font-size-menu-bar-btn				: $font-size-sm;
-$font-size-submenu-btn				: $font-size-btn;
-$font-size-tabs						: $font-size-sm;
-$font-size-pills					: $font-size-xxs;
-$font-size-mobile-menu-bar-btn		: $font-size-sm;
-$font-size-dropdown					: $font-size-xs;
-$font-size-field					: $font-size-sm;
-$font-size-field-label				: $font-size-field;
-$font-size-field-legend				: $font-size-base;
-$font-size-field-help				: $font-size-small;
-$font-size-breadcrumbs				: $font-size-sm;
-$font-size-widget					: $font-size-sm;
-$font-size-label					: $font-size-micro;
-$font-size-caption					: $font-size-sm;
-$font-size-slider-caption			: $font-size-md;
+$font-size-lead						: $font-size-lg !default;
+$font-size-small					: .8em !default;
+$font-size-big						: 1.25em !default;
+$font-size-cite						: $font-size-xxs !default;
+$font-size-code						: $font-size-sm !default;
+$font-size-pre						: $font-size-md !default;
+$font-size-caption					: $font-size-sm !default;
+$font-size-caption-gallery			: $font-size-xxs !default;
+$font-size-quote					: 1.3rem !default;
+$font-size-alert					: 0.9375rem !default;
+$font-size-btn						: $font-size-xxxs !default;
+$font-size-menu-bar-btn				: $font-size-sm !default;
+$font-size-submenu-btn				: $font-size-btn !default;
+$font-size-tabs						: $font-size-sm !default;
+$font-size-pills					: $font-size-xxs !default;
+$font-size-mobile-menu-bar-btn		: $font-size-sm !default;
+$font-size-dropdown					: $font-size-xs !default;
+$font-size-field					: $font-size-sm !default;
+$font-size-field-label				: $font-size-field !default;
+$font-size-field-legend				: $font-size-base !default;
+$font-size-field-help				: $font-size-small !default;
+$font-size-breadcrumbs				: $font-size-sm !default;
+$font-size-widget					: $font-size-sm !default;
+$font-size-label					: $font-size-micro !default;
+$font-size-caption					: $font-size-sm !default;
+$font-size-slider-caption			: $font-size-md !default;
 
 // Font Line Heights
 
-$font-lh-base 						: 1.6;
-$font-lh-caption					: 1.4;
-$font-lh-cite						: 1.4;
-$font-lh-heading 					: 1.2;
-$font-lh-heading-sm 				: 1.4;
-$font-lh-lead						: 1.4;
-$font-lh-quote						: 1.4;
-$font-lh-header-menu				: 1.25;
-$font-lh-header-menu-dropdown		: 1.4;
+$font-lh-base 						: 1.6 !default;
+$font-lh-caption					: 1.4 !default;
+$font-lh-cite						: 1.4 !default;
+$font-lh-heading 					: 1.2 !default;
+$font-lh-heading-sm 				: 1.4 !default;
+$font-lh-lead						: 1.4 !default;
+$font-lh-quote						: 1.4 !default;
+$font-lh-header-menu				: 1.25 !default;
+$font-lh-header-menu-dropdown		: 1.4 !default;
 
 // Font Style
 
-$font-style-quote					: italic;
-$font-style-address					: normal;
+$font-style-quote					: italic !default;
+$font-style-address					: normal !default;
 
 // Font Weights
 
-$font-weight-base					: 300;
-$font-weight-bold					: bold;
-$font-weight-heading				: 700;
-$font-weight-heading-lg				: 700;
-$font-weight-heading-sm				: 700;
-$font-weight-btn					: 500;
-$font-weight-menu-bar-btn			: $font-weight-base;
-$font-weight-submenu-btn			: $font-weight-btn;
-$font-weight-mobile-menu-bar-btn	: $font-weight-menu-bar-btn;
+$font-weight-base					: 300 !default;
+$font-weight-bold					: bold !default;
+$font-weight-heading				: 700 !default;
+$font-weight-heading-lg				: 700 !default;
+$font-weight-heading-sm				: 700 !default;
+$font-weight-btn					: 500 !default;
+$font-weight-menu-bar-btn			: $font-weight-base !default;
+$font-weight-submenu-btn			: $font-weight-btn !default;
+$font-weight-mobile-menu-bar-btn	: $font-weight-menu-bar-btn !default;
 
 // Text Transform
 
-$font-transform-heading				: none;
-$font-transform-heading-lg			: none;
-$font-transform-heading-sm			: uppercase;
-$font-transform-subtitles			: none;
-$font-transform-quote				: none;
-$font-transform-btn					: uppercase;
-$font-transform-menu-bar-btn		: none;
-$font-transform-submenu-btn			: $font-transform-btn;
-$font-transform-mobile-menu-bar-btn	: $font-transform-menu-bar-btn;
-$font-transform-label				: $font-transform-btn;
+$font-transform-heading				: none !default;
+$font-transform-heading-lg			: none !default;
+$font-transform-heading-sm			: uppercase !default;
+$font-transform-subtitles			: none !default;
+$font-transform-quote				: none !default;
+$font-transform-btn					: uppercase !default;
+$font-transform-menu-bar-btn		: none !default;
+$font-transform-submenu-btn			: $font-transform-btn !default;
+$font-transform-mobile-menu-bar-btn	: $font-transform-menu-bar-btn !default;
+$font-transform-label				: $font-transform-btn !default;
 
 // Letter Spacing
 
-$font-ls-heading					: 0;
-$font-ls-heading-lg					: 1px;
-$font-ls-heading-sm					: 1px;
-$font-ls-subtitles					: 0;
-$font-ls-btn						: .12em;
-$font-ls-menu-bar-btn				: 0;
-$font-ls-submenu-btn				: $font-ls-btn;
-$font-ls-mobile-menu-bar-btn		: $font-ls-menu-bar-btn;
-$font-ls-label						: 1px;
+$font-ls-heading					: 0 !default;
+$font-ls-heading-lg					: 1px !default;
+$font-ls-heading-sm					: 1px !default;
+$font-ls-subtitles					: 0 !default;
+$font-ls-btn						: .12em !default;
+$font-ls-menu-bar-btn				: 0 !default;
+$font-ls-submenu-btn				: $font-ls-btn !default;
+$font-ls-mobile-menu-bar-btn		: $font-ls-menu-bar-btn !default;
+$font-ls-label						: 1px !default;
 
 // ==========================================================================
 // Colors
@@ -197,59 +197,59 @@ $font-ls-label						: 1px;
 
 // Greyscale
 
-$clr-white							: #fff;
+$clr-white							: #fff !default;
 
-$clr-light							: #ccc;
-$clr-lighter						: #ddd;
-$clr-lightest						: #f8f8f8;
+$clr-light							: #ccc !default;
+$clr-lighter						: #ddd !default;
+$clr-lightest						: #f8f8f8 !default;
 
-$clr-grey							: #999;
-$clr-greyer							: #666;
-$clr-greyest						: #444;
+$clr-grey							: #999 !default;
+$clr-greyer							: #666 !default;
+$clr-greyest						: #444 !default;
 
-$clr-dark							: #333;
-$clr-darker							: #1b1b1b;
-$clr-darkest						: #101010;
+$clr-dark							: #333 !default;
+$clr-darker							: #1b1b1b !default;
+$clr-darkest						: #101010 !default;
 
-$clr-black							: #000;
+$clr-black							: #000 !default;
 
 // Transparent Greyscale
 
-$clr-trans-light 					: rgba(97, 97, 97, .4);     // On white BG ≈ #ccc
-$clr-trans-lighter 					: rgba(176, 176, 176, .4);  // On white BG ≈ #ddd
-$clr-trans-lightest 				: rgba(237, 237, 237, .4);  // On white BG ≈ #f8f8f8
+$clr-trans-light 					: rgba(97, 97, 97, .4) !default;     // On white BG ≈ #ccc
+$clr-trans-lighter 					: rgba(176, 176, 176, .4) !default;  // On white BG ≈ #ddd
+$clr-trans-lightest 				: rgba(237, 237, 237, .4) !default;  // On white BG ≈ #f8f8f8
 
-$clr-trans-grey						: rgba(110, 110, 110, .7);  // On white BG ≈ #999
-$clr-trans-greyer					: rgba(50, 50, 50, .7);     // On white BG ≈ #666
-$clr-trans-greyest					: rgba(0, 0, 0, .7);        // On white BG ≈ #444
+$clr-trans-grey						: rgba(110, 110, 110, .7) !default;  // On white BG ≈ #999
+$clr-trans-greyer					: rgba(50, 50, 50, .7) !default;     // On white BG ≈ #666
+$clr-trans-greyest					: rgba(0, 0, 0, .7) !default;        // On white BG ≈ #444
 
 // Action Colors
 
-$clr-highlight						: #fcf8e3;
+$clr-highlight						: #fcf8e3 !default;
 
 // Text Colors
 
-$clr-text-base-fallback				: $clr-greyer;
-$clr-text-base						: $clr-trans-greyer;
-$clr-text-lighten					: $clr-trans-grey;
-$clr-text-darken					: $clr-dark;
+$clr-text-base-fallback				: $clr-greyer !default;
+$clr-text-base						: $clr-trans-greyer !default;
+$clr-text-lighten					: $clr-trans-grey !default;
+$clr-text-darken					: $clr-dark !default;
 
-$clr-text-inv-base					: $clr-white;
-$clr-text-inv-lighten				: $clr-light;
-$clr-text-inv-darken				: $clr-white;
+$clr-text-inv-base					: $clr-white !default;
+$clr-text-inv-lighten				: $clr-light !default;
+$clr-text-inv-darken				: $clr-white !default;
 
 // Vector Colors
 
-$clr-svg							: $clr-greyer;
-$clr-svg-hover						: $clr-dark;
+$clr-svg							: $clr-greyer !default;
+$clr-svg-hover						: $clr-dark !default;
 
-$clr-svg-inv						: $clr-light;
-$clr-svg-inv-hover					: $clr-white;
+$clr-svg-inv						: $clr-light !default;
+$clr-svg-inv-hover					: $clr-white !default;
 
 // Links
 
-$clr-link							: #428bca;
-$clr-link-hover						: #2a6496;
+$clr-link							: #428bca !default;
+$clr-link-hover						: #2a6496 !default;
 
 // Branding
 
@@ -262,7 +262,7 @@ $clr-branding : (
 		base						: #fec527,
 		contrast					: $clr-text-inv-base
 	)
-);
+) !default;
 
 // Color Library
 
@@ -391,7 +391,7 @@ $clr-library : (
 		base 						: $clr-white,
 		contrast 					: $clr-text-base
 	)
-);
+) !default;
 
 // Contextual
 
@@ -412,45 +412,45 @@ $clr-contextual : (
 		base						: #f2dede,
 		contrast					: #a94442
 	)
-);
+) !default;
 
 // Border Colors
 
-$clr-border							: $clr-trans-lighter;
-$clr-border-active					: $clr-trans-light;
+$clr-border							: $clr-trans-lighter !default;
+$clr-border-active					: $clr-trans-light !default;
 
-$clr-border-inv						: $clr-black;
-$clr-border-inv-active				: $clr-black;
+$clr-border-inv						: $clr-black !default;
+$clr-border-inv-active				: $clr-black !default;
 
 // Background Colors
 
-$clr-bg-white						: $clr-white;
-$clr-bg-light						: $clr-lightest;
-$clr-bg-dark						: $clr-dark;
-$clr-bg-black						: $clr-black;
+$clr-bg-white						: $clr-white !default;
+$clr-bg-light						: $clr-lightest !default;
+$clr-bg-dark						: $clr-dark !default;
+$clr-bg-black						: $clr-black !default;
 
-$clr-bg-content						: $clr-bg-white;
-$clr-bg-inv-content					: $clr-bg-dark;
+$clr-bg-content						: $clr-bg-white !default;
+$clr-bg-inv-content					: $clr-bg-dark !default;
 
-$clr-bg-body						: $clr-lightest;
-$clr-bg-inv-body					: $clr-darkest;
-$clr-bg-hr							: rgba($clr-bg-dark, 0.1);
-$clr-bg-code						: if($style == 'inverse', $clr-bg-black, $clr-bg-light);
-$clr-bg-kbd							: $clr-bg-dark;
-$clr-bg-btn							: darken($clr-bg-light, 2%);
-$clr-bg-field						: rgba($clr-white, 0.8);
-$clr-bg-inv-field					: transparent;
-$clr-bg-widget						: $clr-bg-content;
-$clr-bg-inv-widget					: $clr-bg-inv-content;
-$clr-bg-label						: $clr-greyer;
-$clr-bg-caption						: $clr-bg-light;
-$clr-bg-inv-caption					: $clr-darkest;
+$clr-bg-body						: $clr-lightest !default;
+$clr-bg-inv-body					: $clr-darkest !default;
+$clr-bg-hr							: rgba($clr-bg-dark, 0.1) !default;
+$clr-bg-code						: if($style == 'inverse', $clr-bg-black, $clr-bg-light) !default;
+$clr-bg-kbd							: $clr-bg-dark !default;
+$clr-bg-btn							: darken($clr-bg-light, 2%) !default;
+$clr-bg-field						: rgba($clr-white, 0.8) !default;
+$clr-bg-inv-field					: transparent !default;
+$clr-bg-widget						: $clr-bg-content !default;
+$clr-bg-inv-widget					: $clr-bg-inv-content !default;
+$clr-bg-label						: $clr-greyer !default;
+$clr-bg-caption						: $clr-bg-light !default;
+$clr-bg-inv-caption					: $clr-darkest !default;
 
 // ==========================================================================
 // Animations
 // ==========================================================================
 
-$transition-fade					: opacity .2s linear;
+$transition-fade					: opacity .2s linear !default;
 
 // ==========================================================================
 // Utilities
@@ -484,7 +484,7 @@ $border-utils : (
 		style 						: solid,
 		color						: $clr-lighter
 	)
-);
+) !default;
 
 // ==========================================================================
 // Spacing
@@ -492,75 +492,75 @@ $border-utils : (
 
 // General
 
-$spacing-element					: 30px;
-$spacing-paragraph					: 24px;
+$spacing-element					: 30px !default;
+$spacing-paragraph					: 24px !default;
 
 // Margins
 
-$margin-element						: $spacing-element 0;
-$margin-paragraph					: 0 0 $spacing-paragraph 0;
+$margin-element						: $spacing-element 0 !default;
+$margin-paragraph					: 0 0 $spacing-paragraph 0 !default;
 
-$margin-figure						: $margin-paragraph;
-$margin-heading						: $spacing-element 0 $spacing-paragraph 0;
-$margin-heading-lg					: $margin-paragraph;
-$margin-heading-sm					: $margin-paragraph;
-$margin-column						: $spacing-element;
-$margin-lead						: $margin-element;
-$margin-list						: $margin-paragraph;
-$margin-quote						: 40px 30px;
-$margin-table						: $margin-element;
-$margin-alert						: $margin-element;
-$margin-btn-group-btn				: 2px;
-$margin-btn-group					: $spacing-paragraph (-$margin-btn-group-btn);
-$margin-pagination					: $margin-element;
-$margin-form						: $margin-element;
-$margin-field						: 0 0 ($spacing-element / 2) 0;
-$margin-field-label					: 0 4px ($spacing-element / 2) 4px;
-$margin-field-group					: 0 4px;
-$margin-field-legend				: 0 0 ($spacing-element / 2) 0;
-$margin-field-help					: $margin-field-label;
-$margin-fieldset					: $margin-element;
-$margin-tabs						: $margin-element;
-$margin-toggle						: $margin-element;
-$margin-toggle-group				: $margin-toggle;
-$margin-modal						: $spacing-element auto;
-$margin-modal-mobile				: 0 auto;
-$margin-widget						: $margin-element;
-$margin-embed						: $margin-paragraph;
-$margin-thumb						: $margin-paragraph;
-$margin-slider						: $margin-element;
-$margin-slider-caption-elem			: 10px 0;
+$margin-figure						: $margin-paragraph !default;
+$margin-heading						: $spacing-element 0 $spacing-paragraph 0 !default;
+$margin-heading-lg					: $margin-paragraph !default;
+$margin-heading-sm					: $margin-paragraph !default;
+$margin-column						: $spacing-element !default;
+$margin-lead						: $margin-element !default;
+$margin-list						: $margin-paragraph !default;
+$margin-quote						: 40px 30px !default;
+$margin-table						: $margin-element !default;
+$margin-alert						: $margin-element !default;
+$margin-btn-group-btn				: 2px !default;
+$margin-btn-group					: $spacing-paragraph (-$margin-btn-group-btn) !default;
+$margin-pagination					: $margin-element !default;
+$margin-form						: $margin-element !default;
+$margin-field						: 0 0 ($spacing-element / 2) 0 !default;
+$margin-field-label					: 0 4px ($spacing-element / 2) 4px !default;
+$margin-field-group					: 0 4px !default;
+$margin-field-legend				: 0 0 ($spacing-element / 2) 0 !default;
+$margin-field-help					: $margin-field-label !default;
+$margin-fieldset					: $margin-element !default;
+$margin-tabs						: $margin-element !default;
+$margin-toggle						: $margin-element !default;
+$margin-toggle-group				: $margin-toggle !default;
+$margin-modal						: $spacing-element auto !default;
+$margin-modal-mobile				: 0 auto !default;
+$margin-widget						: $margin-element !default;
+$margin-embed						: $margin-paragraph !default;
+$margin-thumb						: $margin-paragraph !default;
+$margin-slider						: $margin-element !default;
+$margin-slider-caption-elem			: 10px 0 !default;
 
 // Padding
 
-$padding-list						: if($direction == 'rtl', 0 40px 0 0, 0 0 0 40px);
-$padding-alert						: 15px;
-$padding-submenu					: 12px;
-$padding-breadcrumbs				: 20px;
-$padding-tabs						: 14px 18px;
-$padding-pills						: 10px 14px;
-$padding-tab-content				: 30px;
-$padding-modal-bg					: 10px;
-$padding-modal-bg-mobile			: 6px;
-$padding-widget						: 30px;
-$padding-label						: 6px 10px;
-$padding-caption					: 20px;
-$padding-caption-gallery			: 15px;
-$padding-slider-caption				: 30px 0;
+$padding-list						: if($direction == 'rtl', 0 40px 0 0, 0 0 0 40px) !default;
+$padding-alert						: 15px !default;
+$padding-submenu					: 12px !default;
+$padding-breadcrumbs				: 20px !default;
+$padding-tabs						: 14px 18px !default;
+$padding-pills						: 10px 14px !default;
+$padding-tab-content				: 30px !default;
+$padding-modal-bg					: 10px !default;
+$padding-modal-bg-mobile			: 6px !default;
+$padding-widget						: 30px !default;
+$padding-label						: 6px 10px !default;
+$padding-caption					: 20px !default;
+$padding-caption-gallery			: 15px !default;
+$padding-slider-caption				: 30px 0 !default;
 
 
 // ==========================================================================
 // Forms
 // ==========================================================================
 
-$field-base-height					: 50px;
-$field-base-lh						: $font-size-base;
-$field-base-padding					: 18px;
+$field-base-height					: 50px !default;
+$field-base-lh						: $font-size-base !default;
+$field-base-padding					: 18px !default;
 
-$field-border-width					: 1px;
+$field-border-width					: 1px !default;
 
-$clr-text-placeholder				: lighten($clr-text-base, 40%);
-$clr-text-inv-placeholder			: rgba($clr-text-inv-base, 0.4);
+$clr-text-placeholder				: lighten($clr-text-base, 40%) !default;
+$clr-text-inv-placeholder			: rgba($clr-text-inv-base, 0.4) !default;
 
 $field-selector						: "input[type=date],
 									  input[type=datetime-local],
@@ -576,7 +576,7 @@ $field-selector						: "input[type=date],
 									  input[type=url],
 									  input[type=week],
 									  textarea,
-									  select";
+									  select" !default;
 
 // Field Sizes
 
@@ -617,25 +617,20 @@ $field-sizes : (
 		line-height					: $font-size-xl + 6, // Must be even number.
 		padding						: 28px
 	)
-);
+) !default;
 
 // ==========================================================================
 // Buttons
 // ==========================================================================
 
-$btn-base-height					: $field-base-height;
-$btn-base-lh						: $field-base-lh;
-$btn-base-padding					: $field-base-padding + 4;
+$btn-base-height					: $field-base-height !default;
+$btn-base-lh						: $field-base-lh !default;
+$btn-base-padding					: $field-base-padding + 4 !default;
 
-$btn-transition						: background-color 0.2s ease-out;
-$btn-border-width					: 2px; // Transparent on standard .btn
+$btn-transition						: background-color 0.2s ease-out !default;
+$btn-border-width					: 2px !default; // Transparent on standard .btn
 
-$btn-selector						: ".btn,
-									  .button,
-									  button,
-									  input[type=submit],
-									  input[type=reset],
-									  input[type=button]";
+$btn-selector						: ".btn, [type=submit]" !default;
 
 // Button Sizes
 
@@ -682,7 +677,7 @@ $btn-sizes : (
 		padding						: 64px,
 		height						: map-deep-get($field-sizes, xxxl, height)
 	)
-);
+) !default;
 
 // Close Buttons
 
@@ -691,31 +686,31 @@ $btn-close : (
 	md								: 32px,
 	lg								: 44px,
 	xl								: 56px
-);
+) !default;
 
 // ==========================================================================
 // Tables
 // ==========================================================================
 
-$table-cell-padding					: .75rem;
+$table-cell-padding					: .75rem !default;
 
-$table-bg							: transparent;
-$table-inv-bg						: $clr-bg-dark;
+$table-bg							: transparent !default;
+$table-inv-bg						: $clr-bg-dark !default;
 
-$table-bg-accent					: rgba($clr-black, .025);
-$table-bg-inv-accent				: rgba($clr-black, .2);
-$table-bg-hover						: $table-bg-accent;
-$table-bg-inv-hover					: $table-bg-inv-accent;
-$table-bg-active					: $clr-light;
+$table-bg-accent					: rgba($clr-black, .025) !default;
+$table-bg-inv-accent				: rgba($clr-black, .2) !default;
+$table-bg-hover						: $table-bg-accent !default;
+$table-bg-inv-hover					: $table-bg-inv-accent !default;
+$table-bg-active					: $clr-light !default;
 
-$table-border-width					: 1px;
-$table-border-color					: $clr-lighter;
-$table-border-inv-color				: $clr-darkest;
+$table-border-width					: 1px !default;
+$table-border-color					: $clr-lighter !default;
+$table-border-inv-color				: $clr-darkest !default;
 
 // Condensed Tables
 
-$table-sm-cell-padding				: .5rem;
-$table-sm-font-size					: $font-size-sm;
+$table-sm-cell-padding				: .5rem !default;
+$table-sm-font-size					: $font-size-sm !default;
 
 // ==========================================================================
 // Menus
@@ -723,48 +718,48 @@ $table-sm-font-size					: $font-size-sm;
 
 // Tabs
 
-$tabs-border-width					: 1px;
-$tabs-border-color					: $clr-border;
-$tabs-border-inv-color				: $clr-border-inv;
+$tabs-border-width					: 1px !default;
+$tabs-border-color					: $clr-border !default;
+$tabs-border-inv-color				: $clr-border-inv !default;
 
-$tabs-bg							: $clr-bg-light;
-$tabs-inv-bg						: rgba($clr-black, 0.2);
+$tabs-bg							: $clr-bg-light !default;
+$tabs-inv-bg						: rgba($clr-black, 0.2) !default;
 
-$tabs-hover-bg						: darken($tabs-bg, 4%);
-$tabs-hover-inv-bg					: rgba($clr-black, 0.5);
+$tabs-hover-bg						: darken($tabs-bg, 4%) !default;
+$tabs-hover-inv-bg					: rgba($clr-black, 0.5) !default;
 
-$tabs-active-bg						: $clr-bg-white;
-$tabs-active-inv-bg					: $clr-bg-dark;
+$tabs-active-bg						: $clr-bg-white !default;
+$tabs-active-inv-bg					: $clr-bg-dark !default;
 
 // Pills
 
-$pills-border-width					: 2px;
-$pills-border-color					: $clr-border;
-$pills-border-inv-color				: $clr-border-inv;
+$pills-border-width					: 2px !default;
+$pills-border-color					: $clr-border !default;
+$pills-border-inv-color				: $clr-border-inv !default;
 
-$pills-bg							: transparent;
+$pills-bg							: transparent !default;
 
-$pills-hover-bg						: $tabs-hover-bg;
-$pills-hover-inv-bg					: $tabs-hover-inv-bg;
+$pills-hover-bg						: $tabs-hover-bg !default;
+$pills-hover-inv-bg					: $tabs-hover-inv-bg !default;
 
-$pills-active-bg					: map-deep-get($clr-branding, primary, base);
-$pills-active-text					: map-deep-get($clr-branding, primary, contrast);
+$pills-active-bg					: map-deep-get($clr-branding, primary, base) !default;
+$pills-active-text					: map-deep-get($clr-branding, primary, contrast) !default;
 
-$pills-spacing						: 2px;
+$pills-spacing						: 2px !default;
 
-$pills-flyout-bg					: $clr-bg-white;
-$pills-flyout-inv-bg				: $clr-bg-dark;
+$pills-flyout-bg					: $clr-bg-white !default;
+$pills-flyout-inv-bg				: $clr-bg-dark !default;
 
 // General flyout menus
 
-$flyout-vert-spacing				: .85em;
-$flyout-horz-spacing				: 20px;
-$flyout-width						: 200px;
-$flyout-shadow						: 0 2px 5px rgba($clr-black, 0.05);
+$flyout-vert-spacing				: .85em !default;
+$flyout-horz-spacing				: 20px !default;
+$flyout-width						: 200px !default;
+$flyout-shadow						: 0 2px 5px rgba($clr-black, 0.05) !default;
 
 // Mega Menus
 
-$mega-menu-padding					: 24px 10px;
+$mega-menu-padding					: 24px 10px !default;
 
 // ==========================================================================
 // Tabs and Toggles
@@ -772,24 +767,24 @@ $mega-menu-padding					: 24px 10px;
 
 // Tabs
 
-$tab-content-border-width			: $tabs-border-width;
-$tab-content-border-color			: $tabs-border-color;
-$tab-content-border-inv-color		: $tabs-border-inv-color;
+$tab-content-border-width			: $tabs-border-width !default;
+$tab-content-border-color			: $tabs-border-color !default;
+$tab-content-border-inv-color		: $tabs-border-inv-color !default;
 
-$tab-content-bg						: $tabs-active-bg;
-$tab-content-inv-bg					: $tabs-active-inv-bg;
+$tab-content-bg						: $tabs-active-bg !default;
+$tab-content-inv-bg					: $tabs-active-inv-bg !default;
 
 // Toggles
 
-$toggle-border-width				: 1px;
-$toggle-border-color				: $clr-border;
-$toggle-border-inv-color			: $clr-border-inv;
+$toggle-border-width				: 1px !default;
+$toggle-border-color				: $clr-border !default;
+$toggle-border-inv-color			: $clr-border-inv !default;
 
-$toggle-vert-space					: 24px;
-$toggle-horz-space					: 10px;
+$toggle-vert-space					: 24px !default;
+$toggle-horz-space					: 10px !default;
 
-$toggle-icon-size					: $font-size-base;
-$toggle-icon-buffer					: 4px;
+$toggle-icon-size					: $font-size-base !default;
+$toggle-icon-buffer					: 4px !default;
 
 // ==========================================================================
 // Modal
@@ -797,43 +792,43 @@ $toggle-icon-buffer					: 4px;
 
 // General
 
-$modal-overlay-color				: $clr-black;
-$modal-overlay-opacity				: 0.9;
-$modal-shadow						: 0 0 20px rgba($clr-black, 0.4);
-$modal-z-index-base					: 100000;
+$modal-overlay-color				: $clr-black !default;
+$modal-overlay-opacity				: 0.9 !default;
+$modal-shadow						: 0 0 20px rgba($clr-black, 0.4) !default;
+$modal-z-index-base					: 100000 !default;
 
-$modal-caption-text-color			: $clr-text-inv-base;
-$modal-caption-font-size			: $font-size-sm;
-$modal-caption-spacing				: 4px;
+$modal-caption-text-color			: $clr-text-inv-base !default;
+$modal-caption-font-size			: $font-size-sm !default;
+$modal-caption-spacing				: 4px !default;
 
-$modal-controls-text-color			: $clr-text-inv-lighten;
-$modal-controls-text-color-hover	: $clr-text-inv-base;
+$modal-controls-text-color			: $clr-text-inv-lighten !default;
+$modal-controls-text-color-hover	: $clr-text-inv-base !default;
 
-$modal-close-btn-size				: 14px;
+$modal-close-btn-size				: 14px !default;
 
-$modal-arrow-btn-size				: 40px;
-$modal-arrow-btn-img-size			: 34px 38px;
+$modal-arrow-btn-size				: 40px !default;
+$modal-arrow-btn-img-size			: 34px 38px !default;
 
 // Iframes / Video
 
-$modal-iframe-bg					: $clr-black;
-$modal-iframe-spacing				: 40px;
-$modal-iframe-width					: 900px;
-$modal-iframe-ratio					: 9/16;
+$modal-iframe-bg					: $clr-black !default;
+$modal-iframe-spacing				: 40px !default;
+$modal-iframe-width					: 900px !default;
+$modal-iframe-ratio					: 9/16 !default;
 
 // Images
 
-$modal-img-bg						: $clr-black;
-$modal-img-spacing					: 50px;
+$modal-img-bg						: $clr-black !default;
+$modal-img-spacing					: 50px !default;
 
 // Inline Content
 
-$modal-content-border-width			: 1px;
-$modal-content-border-color			: rgba($clr-black, 0.5);
+$modal-content-border-width			: 1px !default;
+$modal-content-border-color			: rgba($clr-black, 0.5) !default;
 
-$modal-header-border-width			: 1px;
-$modal-header-border-color			: $clr-border;
-$modal-header-border-inv-color		: $clr-border-inv;
+$modal-header-border-width			: 1px !default;
+$modal-header-border-color			: $clr-border !default;
+$modal-header-border-inv-color		: $clr-border-inv !default;
 
 $modal-sizes : (
 	xs : ( // Mobile viewport version for all sizes
@@ -864,11 +859,11 @@ $modal-sizes : (
 		padding-horz				: 70px,
 		width 						: 900px
 	)
-);
+) !default;
 
 // Search Modal
 
-$modal-search-border-clr			: map-deep-get($clr-branding, secondary, base);
+$modal-search-border-clr			: map-deep-get($clr-branding, secondary, base) !default;
 
 // ==========================================================================
 // Widgets
@@ -876,20 +871,20 @@ $modal-search-border-clr			: map-deep-get($clr-branding, secondary, base);
 
 // Default
 
-$widget-default-title-size			: em(18px, $font-size-widget);
-$widget-default-sm-title-size		: em(15px, $font-size-widget);
+$widget-default-title-size			: em(18px, $font-size-widget) !default;
+$widget-default-sm-title-size		: em(15px, $font-size-widget) !default;
 
 // Classic Panel
 
-$widget-panel-classic-title-size	: em(16px, $font-size-widget);
-$widget-panel-classic-sm-title-size	: em(15px, $font-size-widget);
+$widget-panel-classic-title-size	: em(16px, $font-size-widget) !default;
+$widget-panel-classic-sm-title-size	: em(15px, $font-size-widget) !default;
 
-$widget-classic-panel-title-bg-clr	: darken($clr-lightest, 2%);
+$widget-classic-panel-title-bg-clr	: darken($clr-lightest, 2%) !default;
 
 // Modern Panel
 
-$widget-panel-modern-title-size		: em(15px, $font-size-widget);
-$widget-panel-modern-sm-title-size	: em(13px, $font-size-widget);
+$widget-panel-modern-title-size		: em(15px, $font-size-widget) !default;
+$widget-panel-modern-sm-title-size	: em(13px, $font-size-widget) !default;
 
 // ==========================================================================
 // Media
@@ -897,66 +892,66 @@ $widget-panel-modern-sm-title-size	: em(13px, $font-size-widget);
 
 // Responsive Embeds
 
-$embed-default-ratio				: 16 9;
+$embed-default-ratio				: 16 9 !default;
 
 $embed-ratios : (
 	academy							: 4 3,
 	widescreen						: 16 9,
 	ultrawide						: 21 9,
-);
+) !default;
 
 
 // Thumbnail Links
 
-$thumb-link-icon-size				: 20px;
-$thumb-link-icon-w					: 4em;
-$thumb-link-icon-h					: 4em;
-$thumb-link-icon-radius				: 50%; // Circle
+$thumb-link-icon-size				: 20px !default;
+$thumb-link-icon-w					: 4em !default;
+$thumb-link-icon-h					: 4em !default;
+$thumb-link-icon-radius				: 50% !default; // Circle
 
-$thumb-link-icon-clr				: map-deep-get($clr-branding, primary, contrast);
-$thumb-link-icon-bg-clr				: map-deep-get($clr-branding, primary, base);
+$thumb-link-icon-clr				: map-deep-get($clr-branding, primary, contrast) !default;
+$thumb-link-icon-bg-clr				: map-deep-get($clr-branding, primary, base) !default;
 
 // Gallery
 
-$gallery-gutters					: 10px;
-$gallery-thumb-link-icon-size		: 18px;
-$gallery-thumb-link-icon-w			: 3em;
-$gallery-thumb-link-icon-h			: 3em;
+$gallery-gutters					: 10px !default;
+$gallery-thumb-link-icon-size		: 18px !default;
+$gallery-thumb-link-icon-w			: 3em !default;
+$gallery-thumb-link-icon-h			: 3em !default;
 
 // ==========================================================================
 // Sliders
 // ==========================================================================
 
-$slider-caption-z-index				: 1;
-$slider-nav-z-index					: 2;
+$slider-caption-z-index				: 1 !default;
+$slider-nav-z-index					: 2 !default;
 
-$slider-nav-bottom-pos				: 40px;
-$slider-nav-gallery-bottom-pos		: 40px;
-$slider-nav-block-bottom-pos		: 10px;
-$slider-nav-btn-size				: 12px;
+$slider-nav-bottom-pos				: 40px !default;
+$slider-nav-gallery-bottom-pos		: 40px !default;
+$slider-nav-block-bottom-pos		: 10px !default;
+$slider-nav-btn-size				: 12px !default;
 
-$slider-caption-shadow				: 0 1px 2px rgba($clr-black, 0.7);
-$slider-caption-inv-shadow			: 0 1px 1px rgba($clr-white, 0.8);
+$slider-caption-shadow				: 0 1px 2px rgba($clr-black, 0.7) !default;
+$slider-caption-inv-shadow			: 0 1px 1px rgba($clr-white, 0.8) !default;
 
-$slider-arrow-bg					: rgba($clr-black, 0.5);
-$slider-arrow-hover-bg				: rgba($clr-black, 0.7);
-$slider-arrow-w						: 50px;
-$slider-arrow-h						: 80px;
-$slider-arrow-radius				: 4px;
-$slider-arrow-icon-size				: 20px 22px;
+$slider-arrow-bg					: rgba($clr-black, 0.5) !default;
+$slider-arrow-hover-bg				: rgba($clr-black, 0.7) !default;
+$slider-arrow-w						: 50px !default;
+$slider-arrow-h						: 80px !default;
+$slider-arrow-radius				: 4px !default;
+$slider-arrow-icon-size				: 20px 22px !default;
 
-$slider-arrow-mini-w				: 24px;
-$slider-arrow-mini-h				: 24px;
-$slider-arrow-mini-icon-size		: 12px 14px;
+$slider-arrow-mini-w				: 24px !default;
+$slider-arrow-mini-h				: 24px !default;
+$slider-arrow-mini-icon-size		: 12px 14px !default;
 
 $slider-thumbs : (
 	sm								: 50px,
 	md								: 75px,
 	lg								: 100px,
 	xl								: 125px
-);
+) !default;
 
-$slider-thumb-gutters				: 4px;
+$slider-thumb-gutters				: 4px !default;
 
-$slider-gallery-bg-clr				: $clr-darkest;
-$slider-gallery-height				: (400px, 300px, 200px, 150px);
+$slider-gallery-bg-clr				: $clr-darkest !default;
+$slider-gallery-height				: (400px, 300px, 200px, 150px) !default;

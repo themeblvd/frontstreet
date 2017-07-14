@@ -3,47 +3,7 @@
 // --------------------------------------------------
 
 @include btn-selector {
-
-	background-color: $clr-bg-btn;
-	border: $btn-border-width solid transparent;
-	color: $clr-text-darken;
-	cursor: pointer;
-	display: inline-block;
-	font-size: $font-size-btn;
-	font-weight: $font-weight-btn;
-	letter-spacing: $font-ls-btn;
-	line-height: $btn-base-lh;
-	margin-bottom: 0; // For input.btn
-	padding: padding-y($btn-base-height, $btn-base-lh, $btn-border-width) $btn-base-padding;
-	text-align: center;
-	text-transform: $font-transform-btn;
-	touch-action: manipulation;
-	transition: $btn-transition;
-	user-select: none;
-	vertical-align: middle;
-	white-space: nowrap;
-
-	&:active,
-	&.active {
-		&:focus,
-		&.focus {
-			@include tab-focus;
-		}
-	}
-	&:hover,
-	&:focus,
-	&.focus {
-		background-color: darken($clr-bg-btn, 2%);
-		color: $clr-text-base;
-		text-decoration: none;
-	}
-	&:active,
-	&.active {
-		outline: 0;
-	}
-	&.active {
-		border-color: transparent;
-	}
+	@include btn-styles;
 }
 
 //
@@ -91,15 +51,7 @@
 //
 
 @each $clr, $map in $clr-library {
-
-	$alt: str-replace($clr, "-", "_");
-
-	@if ($alt != $clr) {
-		@include button-variant($alt, map-get($map, contrast), map-get($map, base) )
-	}
-
 	@include button-variant($clr, map-get($map, contrast), map-get($map, base) );
-
 }
 
 //

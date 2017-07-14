@@ -5,6 +5,7 @@
 .fs-close {
 
 	background-color: transparent;
+	border: none;
 	@include background-close($clr-svg);
 	background-size: (map-get($btn-close, md) / 2) (map-get($btn-close, md) / 2);
 	display: inline-block;

@@ -223,10 +223,14 @@ gulp.task('render-project-img', ['render-project-clean'], function() {
 gulp.task('render-project-plugins', ['render-project-clean'], function() {
 
 	var files = [
-		'plugins/**/*.md',
-		'plugins/**/*.js',
-		'plugins/**/css/*',
-		'plugins/**/fonts/*'
+		'src/plugins/**/*.md',
+		'src/plugins/**/*.js',
+		'src/plugins/**/*.eot',
+		'src/plugins/**/*.svg',
+		'src/plugins/**/*.ttf',
+		'src/plugins/**/*.woff',
+		'src/plugins/**/*.woff2',
+		'src/plugins/**/*.otf'
 	];
 
 	return gulp.src(files)

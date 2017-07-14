@@ -10,49 +10,60 @@
 @import "print";
 
 //
+// Plugins
+//
+
+$fa-font-path: "../plugins/font-awesome";
+@import "../../plugins/font-awesome/scss/font-awesome";
+
+@import "../../plugins/owl-carousel/scss/core";
+@import "../../plugins/owl-carousel/scss/animate";
+@import "../../plugins/owl-carousel/scss/autoheight";
+
+//
 // Core CSS
 //
 
-@import "scaffolding";
-@import "animations";
-@import "grid";
-@import "type";
-@import "lists";
-@import "tables";
-@import "forms";
-@import "buttons";
-@import "media";
+@import "scaffolding";				// Compiled = <1 KB
+@import "animations";				// Compiled = <1 KB
+@import "grid";						// Compiled = 21 KB
+@import "type";						// Compiled = 7 KB
+@import "lists";					// Compiled = 1 KB
+@import "tables";					// Compiled = 3 KB
+@import "forms";					// Compiled = 11 KB
+@import "buttons";					// Compiled = 41 KB
+@import "media";					// Compiled = 6 KB
 
 //
 // Utilities
 //
 
-@import "utilities";
-@import "responsive-utilities";
+@import "utilities";				// Compiled = 1 KB
+@import "responsive-utilities";		// Compiled = 1 KB
 
 //
 // Components
 //
 
-@import "close";
-@import "menu-toggle";
-@import "button-groups";
-@import "nav";
-@import "mobile-nav";
-@import "breadcrumbs";
-@import "alerts";
-@import "labels";
-@import "tabs"; // Tabbed content.
-@import "toggles";
-@import "modal"; // Modified Magnific Popup.
-@import "modal-types";
-@import "widgets";
-@import "sliders";
-@import "testimonials";
-// @import "dividers";
+@import "close";					// Compiled = 3 KB
+@import "menu-toggle";				// Compiled = 5 KB
+@import "button-groups";			// Compiled = 1 KB
+@import "nav";						// Compiled = 17 KB
+@import "mobile-nav";				// Compiled = 2 KB
+@import "breadcrumbs";				// Compiled = 1 KB
+@import "alerts";					// Compiled = 2 KB
+@import "labels";					// Compiled = < 1 KB
+@import "tabs";						// Compiled = 1 KB
+@import "toggles";					// Compiled = 5 KB
+@import "modal";					// Compiled = 11 KB
+@import "modal-types";				// Compiled = 3 KB
+@import "widgets";					// Compiled = 2 KB
+@import "sliders";					// Compiled = 8 KB
+@import "testimonials";				// Compiled = @TODO KB
+// @import "dividers";				// Compiled = @TODO KB
 
 //
 // Colors
 //
 
-@import "colors";
+@import "colors";					// Compiled = 20 KB
