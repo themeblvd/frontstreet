@@ -25,7 +25,7 @@ To lighten things up, we've compiled a custom owl-carousel.js file to go with Fr
 
 ## CSS
 
-In our package we've included only the Sass files from Owl Carousel that we're using. We're @import'ing these into Front Street's `sliders.scss` file.
+In our package we've included only the Sass files from Owl Carousel that we're using.
 
 * core - yes
 * animate - yes
