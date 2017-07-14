@@ -75,7 +75,7 @@ gulp.task('render-docs-css', ['compile-docs-scss'], function() {
     	.pipe(concat('docs.css'))
 		.pipe(minifycss())
 		.pipe(rename({ suffix: '.min' }))
-    	.pipe(gulp.dest('dist/docs/assets/css'));
+    	.pipe(gulp.dest('docs/assets/css'));
 
 });
 
@@ -97,7 +97,7 @@ gulp.task('render-docs-js', function() {
 		.pipe(concat('docs.js'))
 		.pipe(minifyjs())
 		.pipe(rename({ suffix: '.min' }))
-		.pipe(gulp.dest('dist/docs/assets/js'));
+		.pipe(gulp.dest('docs/assets/js'));
 
 });
 
@@ -115,7 +115,7 @@ gulp.task('render-docs-html', function() {
 				escape: escapehtml
 			}
 		}))
-		.pipe(gulp.dest('dist/docs'));
+		.pipe(gulp.dest('docs'));
 
 });
 
@@ -126,7 +126,7 @@ gulp.task('render-docs-img', function() {
 
 	return gulp.src('src/docs/assets/img/*')
         .pipe(imagemin())
-        .pipe(gulp.dest('dist/docs/assets/img'));
+        .pipe(gulp.dest('docs/assets/img'));
 
 });
 
@@ -137,8 +137,8 @@ gulp.task('render-docs-img', function() {
 gulp.task('render-project-clean', function() {
 
 	var dist = [
-		'dist/docs/assets/frontstreet/*',
-		'dist/frontstreet/*'
+		'docs/assets/frontstreet/*',
+		'dist/*'
 	];
 
 	return gulp.src(dist, {read: false})
@@ -166,12 +166,12 @@ gulp.task('render-project-css', ['render-project-clean'], function() {
             browsers: browsers,
             cascade: false
         }))
-		.pipe(gulp.dest('dist/frontstreet/css'))
-		.pipe(gulp.dest('dist/docs/assets/frontstreet/css'))
+		.pipe(gulp.dest('dist/css'))
+		.pipe(gulp.dest('docs/assets/frontstreet/css'))
 		.pipe(minifycss())
 		.pipe(rename({ suffix: '.min' }))
-    	.pipe(gulp.dest('dist/frontstreet/css'))
-		.pipe(gulp.dest('dist/docs/assets/frontstreet/css'));
+    	.pipe(gulp.dest('dist/css'))
+		.pipe(gulp.dest('docs/assets/frontstreet/css'));
 
 });
 
@@ -195,12 +195,12 @@ gulp.task('render-project-js', ['render-project-clean'], function() {
 
 	return gulp.src(files)
 		.pipe(concat('frontstreet.js'))
-		.pipe(gulp.dest('dist/frontstreet/js'))
-		.pipe(gulp.dest('dist/docs/assets/frontstreet/js'))
+		.pipe(gulp.dest('dist/js'))
+		.pipe(gulp.dest('docs/assets/frontstreet/js'))
 		.pipe(minifyjs())
 		.pipe(rename({ suffix: '.min' }))
-		.pipe(gulp.dest('dist/frontstreet/js'))
-		.pipe(gulp.dest('dist/docs/assets/frontstreet/js'));
+		.pipe(gulp.dest('dist/js'))
+		.pipe(gulp.dest('docs/assets/frontstreet/js'));
 
 });
 
@@ -211,8 +211,8 @@ gulp.task('render-project-img', ['render-project-clean'], function() {
 
 	return gulp.src('src/img/*')
         .pipe(imagemin())
-        .pipe(gulp.dest('dist/docs/assets/frontstreet/img'))
-		.pipe(gulp.dest('dist/frontstreet/img'));
+        .pipe(gulp.dest('docs/assets/frontstreet/img'))
+		.pipe(gulp.dest('dist/img'));
 
 });
 
@@ -223,15 +223,15 @@ gulp.task('render-project-img', ['render-project-clean'], function() {
 gulp.task('render-project-plugins', ['render-project-clean'], function() {
 
 	var files = [
-		'plugins/**/*.txt',
+		'plugins/**/*.md',
 		'plugins/**/*.js',
 		'plugins/**/css/*',
 		'plugins/**/fonts/*'
 	];
 
 	return gulp.src(files)
-		.pipe(gulp.dest('dist/docs/assets/frontstreet/plugins'))
-		.pipe(gulp.dest('dist/frontstreet/plugins'));
+		.pipe(gulp.dest('docs/assets/frontstreet/plugins'))
+		.pipe(gulp.dest('dist/plugins'));
 
 });
 

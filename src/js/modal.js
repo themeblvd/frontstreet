@@ -17,9 +17,6 @@
 		return;
 	}
 
-	// SELF-INVOKING
-	// =============
-
 	$(document).ready(function() {
 
 		var mainClass = 'fs-modal',

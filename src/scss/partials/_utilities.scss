@@ -65,7 +65,7 @@
 //
 
 .text-hide {
-	@include hide-text();
+	@include hide-text;
 }
 
 //

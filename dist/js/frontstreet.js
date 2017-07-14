@@ -655,18 +655,10 @@ var FrontStreet = {
 			});
 
 			if ( $wrap.hasClass('fs-simple-slider') ) {
-
 				margin = 0;
 				items = 1;
-
 			} else if ( $wrap.hasClass('fs-gallery-slider') ) {
-
 				items = 1;
-
-			} else if ( $wrap.hasClass('fs-block-slider') ) {
-
-				// ...
-
 			}
 
 			$slider.owlCarousel({
@@ -717,6 +709,7 @@ var FrontStreet = {
 					// Standard navigation dots.
 					$nav.find('li').removeClass('active');
 					$nav.find('li:nth-child(' + (e.page.index + 1) + ')').addClass('active');
+
 				}
 			});
 
