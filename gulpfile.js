@@ -225,12 +225,8 @@ gulp.task('render-project-plugins', ['render-project-clean'], function() {
 	var files = [
 		'src/plugins/**/*.md',
 		'src/plugins/**/*.js',
-		'src/plugins/**/*.eot',
-		'src/plugins/**/*.svg',
-		'src/plugins/**/*.ttf',
-		'src/plugins/**/*.woff',
-		'src/plugins/**/*.woff2',
-		'src/plugins/**/*.otf'
+		'src/plugins/**/css/*',
+		'src/plugins/**/fonts/*'
 	];
 
 	return gulp.src(files)

@@ -6,8 +6,12 @@
 
 ## How to Include
 
-FontAwesome will be automatically integrated into your Front Street website.
+From Front Street's `/dist` directory, include the CSS file, `plugins/font-awesome/font-awesome.min.css` in your website's `&lt;head&gt;`. 
 
 ## CSS
 
-We've included FontAwesome Sass files into our project. These get compiled directly into Front Street CSS files. So there's nothing for you to included in your website; FontAwesome will be automatically integrated with Front Street.
+No CSS has been modified from FontAwesome.
+
+## Font Files
+
+Font Files are included with the Front Street package and are already automatically referenced by including the FontAwesome CSS file.
