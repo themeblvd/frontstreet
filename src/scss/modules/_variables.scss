@@ -531,6 +531,7 @@ $margin-embed						: $margin-paragraph !default;
 $margin-thumb						: $margin-paragraph !default;
 $margin-slider						: $margin-element !default;
 $margin-slider-caption-elem			: 10px 0 !default;
+$margin-testimonial					: $margin-element !default;
 
 // Padding
 
@@ -907,7 +908,7 @@ $embed-ratios : (
 $thumb-link-icon-size				: 20px !default;
 $thumb-link-icon-w					: 4em !default;
 $thumb-link-icon-h					: 4em !default;
-$thumb-link-icon-radius				: 50% !default; // Circle
+$thumb-link-icon-radius				: 100% !default;
 
 $thumb-link-icon-clr				: map-deep-get($clr-branding, primary, contrast) !default;
 $thumb-link-icon-bg-clr				: map-deep-get($clr-branding, primary, base) !default;
@@ -956,3 +957,32 @@ $slider-thumb-gutters				: 4px !default;
 
 $slider-gallery-bg-clr				: $clr-darkest !default;
 $slider-gallery-height				: (400px, 300px, 200px, 150px) !default;
+
+// ==========================================================================
+// Testimonials
+// ==========================================================================
+
+$testimonial-img-radius				: 100% !default;
+
+// Small
+
+$testimonial-sm-radius				: 2px !default;
+$testimonial-sm-spacing				: 30px 35px !default;
+$testimonial-sm-img					: 50px !default;
+$testimonial-sm-img-spacing			: 15px !default;
+$testimonial-sm-triangle			: 5px !default;
+$testimonial-sm-font-size			: $font-size-sm !default;
+
+// Medium
+
+$testimonial-md-radius				: 2px !default;
+$testimonial-md-spacing				: 35px 40px !default;
+$testimonial-md-img					: 75px !default;
+$testimonial-md-triangle			: 15px !default;
+$testimonial-md-font-size			: $font-size-base !default;
+
+// Large
+
+$testimonial-lg-img					: 75px !default;
+$testimonial-lg-spacing				: 0 20px !default;
+$testimonial-lg-font-size			: $font-size-xl + 4px !default;

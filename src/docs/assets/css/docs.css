@@ -216,6 +216,26 @@ nav {
   .widget-examples {
     padding: 50px; } }
 
+/* Testimonials */
+.testimonial-examples {
+  margin-bottom: 30px; }
+  .testimonial-examples .fs-testimonial {
+    margin: 0 auto; }
+  .testimonial-examples .fs-testimonial.testimonial-sm {
+    max-width: 350px; }
+  .testimonial-examples .fs-testimonial.testimonial-md {
+    max-width: 400px; }
+
+.testimonial-lg-example {
+  margin: 0 -120px 30px -120px;
+  padding: 80px; }
+
+@media (max-width: 767px) {
+  .testimonial-lg-example {
+    margin-right: -40px;
+    margin-left: -40px;
+    padding: 30px; } }
+
 /* Sliders */
 pre .fs-slider,
 pre .fs-slider-nav,

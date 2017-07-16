@@ -250,6 +250,33 @@ nav {
 	}
 }
 
+/* Testimonials */
+.testimonial-examples {
+
+	margin-bottom: 30px;
+
+	.fs-testimonial {
+		margin: 0 auto;
+	}
+	.fs-testimonial.testimonial-sm {
+		max-width: 350px;
+	}
+	.fs-testimonial.testimonial-md {
+		max-width: 400px;
+	}
+}
+.testimonial-lg-example {
+	margin: 0 -120px 30px -120px;
+	padding: 80px
+}
+@media (max-width: 767px) {
+	.testimonial-lg-example {
+		margin-right: -40px;
+		margin-left: -40px;
+		padding: 30px
+	}
+}
+
 /* Sliders */
 pre {
 	.fs-slider,

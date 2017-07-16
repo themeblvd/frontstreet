@@ -42,6 +42,13 @@
 			color: $text;
 		}
 	}
+	.testimonial-sm #{$parent}:before {
+		border-top-color: $clr;
+	}
+	.testimonial-md #{$parent}:before {
+		border-right-color: $clr;
+		border-left-color: $clr;
+	}
 	@if $text != null and $text != $clr-text-base {
 		#{$parent} h1,
 		#{$parent} h2,
