@@ -1,6 +1,14 @@
 // --------------------------------------------------
-// Colors
+// Background Colors
 // --------------------------------------------------
+
+//
+// General
+//
+
+@include bg-variant('.bg-light', $clr-lightest, $clr-text-base);
+
+@include bg-variant('.bg-dark', $clr-dark, $clr-text-inv-base);
 
 //
 // Branding
@@ -9,26 +17,6 @@
 @each $name, $map in $clr-branding {
 	@include bg-variant('.#{$name}', map-get($map, base), map-get($map, contrast));
 	@include bg-variant('.bg-#{$name}', map-get($map, base), map-get($map, contrast)); // Include .bg-* for Theme Blvd compat.
-}
-
-//
-// Color Library Backgrounds
-//
-
-@include bg-variant('.bg-light', $clr-lightest, $clr-text-base);
-
-@include bg-variant('.bg-dark', $clr-dark, $clr-text-inv-base);
-
-@each $name, $map in $clr-library {
-
-	$alt: str-replace($name, "-", "_");
-
-	@if ($alt != $name) {
-		@include bg-variant('.#{$alt}', map-get($map, base), map-get($map, contrast));
-	}
-
-	@include bg-variant('.#{$name}', map-get($map, base), map-get($map, contrast));
-
 }
 
 //

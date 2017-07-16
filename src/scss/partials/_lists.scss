@@ -5,7 +5,7 @@
 ul,
 ol {
     margin: $margin-list;
-	padding: $padding-list;
+	padding: if($direction == 'rtl', 0 $padding-list 0 0, 0 0 0 $padding-list);
 	@include margin-vert-flush;
 }
 ul {

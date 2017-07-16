@@ -47,14 +47,6 @@
 }
 
 //
-// Color Library
-//
-
-@each $clr, $map in $clr-library {
-	@include button-variant($clr, map-get($map, contrast), map-get($map, base) );
-}
-
-//
 // Block button
 //
 

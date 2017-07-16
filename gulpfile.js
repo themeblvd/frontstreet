@@ -157,7 +157,8 @@ gulp.task('render-project-css', ['render-project-clean'], function() {
 		'src/scss/frontstreet.scss',
 		'src/scss/frontstreet-dark.scss',
 		'src/scss/frontstreet-rtl.scss',
-		'src/scss/frontstreet-dark-rtl.scss'
+		'src/scss/frontstreet-dark-rtl.scss',
+		'src/scss/frontstreet-colors.scss'
 	];
 
 	return gulp.src(files)

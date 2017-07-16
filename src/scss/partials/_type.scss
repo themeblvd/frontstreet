@@ -281,7 +281,7 @@ code, kbd, tt, var {
 	font-weight: $font-weight-bold;
 }
 code {
-    background-color: $clr-bg-code;
+	background-color: if($style == 'inverse', $clr-bg-inv-code, $clr-bg-code);
     border-radius: 1px;
 	color: if($style == 'inverse', $clr-text-inv-base, $clr-text-base);
 	font-size: 90%;

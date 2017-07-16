@@ -435,7 +435,8 @@ $clr-bg-inv-content					: $clr-bg-dark !default;
 $clr-bg-body						: $clr-lightest !default;
 $clr-bg-inv-body					: $clr-darkest !default;
 $clr-bg-hr							: rgba($clr-bg-dark, 0.1) !default;
-$clr-bg-code						: if($style == 'inverse', $clr-bg-black, $clr-bg-light) !default;
+$clr-bg-code						: $clr-bg-light !default;
+$clr-bg-inv-code					: $clr-bg-black !default;
 $clr-bg-kbd							: $clr-bg-dark !default;
 $clr-bg-btn							: darken($clr-bg-light, 2%) !default;
 $clr-bg-field						: rgba($clr-white, 0.8) !default;
@@ -533,7 +534,7 @@ $margin-slider-caption-elem			: 10px 0 !default;
 
 // Padding
 
-$padding-list						: if($direction == 'rtl', 0 40px 0 0, 0 0 0 40px) !default;
+$padding-list						: 40px !default;
 $padding-alert						: 15px !default;
 $padding-submenu					: 12px !default;
 $padding-breadcrumbs				: 20px !default;

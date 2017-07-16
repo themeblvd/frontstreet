@@ -62,6 +62,13 @@
 	}
 }
 
+// This is a bit of a hack so that we can override color library
+// for content area of widget, but avoid using !important.
+body .panel-classic {
+	background-color: if($style == 'inverse', $tab-content-inv-bg, $tab-content-bg);
+	color: if($style == 'inverse', $clr-text-inv-base, $clr-text-base);
+}
+
 //
 // Style: Modnern Panel
 //
