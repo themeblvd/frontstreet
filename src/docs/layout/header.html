@@ -17,14 +17,17 @@
 	</head>
 	<body>
 
-		<div id="wrapper">
-			<div id="container">
+		<div id="wrapper" class="row-container">
+			<div id="container" class="row">
 
-				<article id="main">
+				<div class="site-content col col-lg-10">
+					<div class="wrap">
 
-					<h1 class="heading-lg">
-						@@title
-						@@if ( context.subtitle ) {
-							<small class="text-muted">@@subtitle</small>
-						}
-					</h1>
+						<article id="main">
+
+							<h1 class="heading-lg">
+								@@title
+								@@if ( context.subtitle ) {
+									<small class="text-muted">@@subtitle</small>
+								}
+							</h1>

@@ -17,15 +17,18 @@
 	</head>
 	<body>
 
-		<div id="wrapper">
-			<div id="container">
+		<div id="wrapper" class="row-container">
+			<div id="container" class="row">
 
-				<article id="main">
+				<div class="site-content col col-lg-10">
+					<div class="wrap">
 
-					<h1 class="heading-lg">
-						Mobile Navigation
-						
-					</h1>
+						<article id="main">
+
+							<h1 class="heading-lg">
+								Mobile Navigation
+								
+							</h1>
 
 
 <p>If you're looking for an inherently responsive menu, you can use one of our <a href="nav.html" title="Responsive Navigation">responsive menu-bar elements</a>. But if you're looking for a mobile-only menu, the <code>.menu-bar-mobile</code> element is a solid, alternate solution.</p>
@@ -247,10 +250,147 @@ jQuery(document).ready(function($){
 <p>So instead of outputting two large duplicate menus, we generate the mobile version with JavaScript when the page loads, by copying the site's main navigation and some other elements on the page. Then after that's constructed, we then invoke the JavaScript needed for our <code>.mobile-menu-bar</code> element (which didn't originally exist on the DOM on page load).</p>
 
 
-				</article><!-- #main (end) -->
+						</article><!-- #main -->
 
-			</div><!-- #container (end) -->
-		</div><!-- #wrapper (end) -->
+					</div><!-- .wrap -->
+				</div><!-- .site-content -->
+
+				<div class="site-sidebar col col-lg-2 col-lg-order-first primary">
+					<div class="wrap">
+
+						<h4 class="heading-xxs">Core</h4>
+
+<ul>
+	<li>
+		<a href="type.html" title="Typography">Typography</a>
+	</li>
+	<li>
+		<a href="grid.html" title="Grid">Grid</a>
+	</li>
+	<li>
+		<a href="media.html" title="Media">Media</a>
+	</li>
+	<li>
+		<a href="forms.html" title="Forms">Forms</a>
+	</li>
+	<li>
+		<a href="buttons.html" title="Buttons">Buttons</a>
+	</li>
+	<li>
+		<a href="lists.html" title="Lists">Lists</a>
+	</li>
+	<li>
+		<a href="quotes.html" title="Quotes">Quotes</a>
+	</li>
+	<li>
+		<a href="tables.html" title="Tables">Tables</a>
+	</li>
+</ul>
+
+<h4 class="heading-xxs">Utilities</h4>
+
+<ul>
+	<li>
+		<a href="utilities.html" title="Core Utilities">Core Utilities</a>
+	</li>
+	<li>
+		<a href="colors.html" title="Colors">Colors</a>
+	</li>
+	<li>
+		<a href="Helpers.html" title="Helpers">Helpers</a>
+	</li>
+</ul>
+
+<h4 class="heading-xxs">Components</h4>
+
+<ul>
+	<li>
+		<a href="alerts.html" title="Alerts">Alerts</a>
+	</li>
+	<li>
+		<a href="backgrounds.html" title="Backgrounds">Backgrounds</a>
+	</li>
+	<li>
+		<a href="breadcrumbs.html" title="Breadcrumbs">Breadcrumbs</a>
+	</li>
+	<li>
+		<a href="dividers.html" title="Dividers">Dividers</a>
+	</li>
+	<li>
+		<a href="nav.html" title="Navigation">Navigation</a>
+	</li>
+	<li>
+		<a href="mobile-nav.html" title="Mobile Navigation">Mobile Nav</a>
+	</li>
+	<li>
+		<a href="pricing.html" title="Pricing Tables">Pricing Tables</a>
+	</li>
+	<li>
+		<a href="progress.html" title="Progress Bars">Progress Bars</a>
+	</li>
+	<li>
+		<a href="sliders.html" title="Sliders">Sliders</a>
+	</li>
+	<li>
+		<a href="tabs.html" title="Tabs">Tabs</a>
+	</li>
+	<li>
+		<a href="testimonials.html" title="Testimonials">Testimonials</a>
+	</li>
+	<li>
+		<a href="toggles.html" title="Toggles">Toggles</a>
+	</li>
+	<li>
+		<a href="tooltips.html" title="Tooltips">Tooltips</a>
+	</li>
+	<li>
+		<a href="widgets.html" title="Widgets">Widgets</a>
+	</li>
+</ul>
+
+<!--
+## Core
+
+type.html
+grid.html
+media.html
+forms.html
+buttons.html
+lists.html
+quotes.html
+tables.html
+
+## Utilities
+
+colors.html
+utilities.html
+helpers.html
+
+## Components
+
+alerts.html
+backgrounds.html
+breadcrumbs.html
+dividers.html
+mobile-nav.html
+modal.html
+nav.html
+pricing.html
+progress.html
+sliders.html
+tabs.html
+testimonials.html
+toggles.html
+tooltips.html
+widgets.html
+-->
+
+
+					</div><!-- .wrap -->
+				</div><!-- .site-sidebar -->
+
+			</div><!-- #container.row -->
+		</div><!-- #wrapper -->
 
 <script type='text/javascript'>
 /* <![CDATA[ */

@@ -3,6 +3,26 @@
 body {
   background: #f8f8f8; }
 
+.site-sidebar {
+  padding: 20px; }
+  .site-sidebar h4 {
+    margin: 30px 0 10px 0; }
+  .site-sidebar ul {
+    list-style: none;
+    padding: 0; }
+  .site-sidebar li {
+    padding: 2px 0; }
+  .site-sidebar a {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 14px; }
+  .site-sidebar a:hover,
+  .site-sidebar a:focus {
+    color: #fff; }
+
+@media (min-width: 62em) {
+  .site-sidebar {
+    max-width: 200px; } }
+
 #main {
   background-color: #fff;
   -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
