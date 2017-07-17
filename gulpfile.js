@@ -111,6 +111,7 @@ gulp.task('render-docs-html', function() {
 		.pipe(fileinclude({
 			prefix: '@@',
 			basepath: '@file',
+			indent: true,
 			filters: {
 				escape: escapehtml
 			}

@@ -6,6 +6,17 @@ body {
 	// background: #101010;
 }
 
+/* Content Column */
+.site-content {
+	padding: 50px;
+}
+@media (max-width: 991px) {
+	.site-content {
+		padding: 0;
+	}
+}
+
+/* Sidebar Columns */
 .site-sidebar {
 
 	padding: 30px 20px;
@@ -28,8 +39,11 @@ body {
 	a:focus {
 		color: #fff;
 	}
+	li.active a {
+		color: #fec527;
+	}
 }
-@media (min-width: 62em) {
+@media (min-width: 992px) {
 	.site-sidebar {
 		max-width: 200px;
 	}
@@ -40,9 +54,15 @@ body {
 	// background-color: #333;
 	-webkit-box-shadow: 0 0 4px rgba(0,0,0,.05);
   	box-shadow: 0 0 4px rgba(0,0,0,.05);
-	margin: 50px auto;
+	margin: auto;
 	max-width: 960px;
     padding: 60px 120px;
+}
+@media (max-width: 991px) {
+	#main {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
 }
 @media (max-width: 767px) {
 	#main {
@@ -130,8 +150,8 @@ body {
 }
 
 /* Quotes */
-blockquote.alignleft,
-blockquote.alignright {
+blockquote.align-left,
+blockquote.align-right {
 	max-width: 300px;
 }
 

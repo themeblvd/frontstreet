@@ -7,7 +7,9 @@
 				<div class="site-sidebar col col-lg-2 col-lg-order-first primary">
 					<div class="wrap">
 
-						@@include('sidebar.html')
+						@@include('sidebar.html', {
+							"page": "@@page"
+						})
 
 					</div><!-- .wrap -->
 				</div><!-- .site-sidebar -->
@@ -15,7 +17,7 @@
 			</div><!-- #container.row -->
 		</div><!-- #wrapper -->
 
-@@include('../partials/scripts.html')
+		@@include('../partials/scripts.html')
 
 	</body>
 </html>

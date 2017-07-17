@@ -659,4 +659,6 @@
 	<p><strong>Note:</strong> If you're just trying to set one of your tabs to always open up on page load, you do NOT need to use deep linking; you can just adjust where you add the <code>active</code> classes in your HTML markup. Deep linking is only needed if you want to dynamically open different tabs, depending on the URL linked to.</p>
 </div>
 
-@@include('../layout/footer.html')
+@@include('../layout/footer.html', {
+	"page": "tabs"
+})
