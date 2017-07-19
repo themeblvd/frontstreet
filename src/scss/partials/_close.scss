@@ -35,7 +35,7 @@
 	}
 }
 @each $size, $val in $btn-close {
-	@include min-width('sm') {
+	@include min-width(sm) {
 		.fs-close.close-#{$size} {
 			background-size: ($val / 2) ($val / 2);
 			width: $val;

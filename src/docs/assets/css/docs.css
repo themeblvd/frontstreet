@@ -188,13 +188,18 @@ blockquote.align-right {
 
 /* Close/Menu Toggle Button */
 .close-button-examples,
+.play-button-examples,
 .menu-button-examples,
 .menu-button-examples-2 {
   margin-bottom: 24px;
   height: 80px;
   position: relative; }
 
+.play-button-examples {
+  height: 180px; }
+
 .close-button-examples .fs-close,
+.play-button-examples .fs-play,
 .menu-button-examples .fs-menu-toggle,
 .menu-button-examples-2 .fs-menu-toggle {
   position: absolute;
@@ -228,6 +233,18 @@ blockquote.align-right {
 
 .menu-button-examples-2 .fs-menu-toggle:nth-child(4) {
   left: 410px; }
+
+.play-button-examples .fs-play:nth-child(1) {
+  left: 20px; }
+
+.play-button-examples .fs-play:nth-child(2) {
+  left: 190px; }
+
+.play-button-examples .fs-play:nth-child(3) {
+  left: 320px; }
+
+.play-button-examples .fs-play:nth-child(4) {
+  left: 420px; }
 
 /* Navigation */
 nav {
