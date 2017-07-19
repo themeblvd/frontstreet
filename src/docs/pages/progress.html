@@ -2,7 +2,129 @@
 	 "title": "Progress Bars"
 })
 
-@TODO ...
+<p>Provide up-to-date feedback on the progress of an action with simple, modern progress bars... Or, just use them like all the cool kids do these days on their resumes and freelance websites.</p>
+
+<div class="fs-progress">
+
+	<span class="progress-label heading-sm">Web Design</span>
+	<span class="progress-value">25%</span>
+
+	<div class="progress">
+		<div class="progress-bar green" style="width: 25%;">
+			<span class="sr-only">25% Complete</span>
+		</div>
+	</div>
+
+</div>
+
+<div class="fs-progress">
+
+	<span class="progress-label heading-sm">Graphic Design</span>
+	<span class="progress-value">50%</span>
+
+	<div class="progress">
+		<div class="progress-bar pomegranate" style="width: 50%;">
+			<span class="sr-only">50% Complete</span>
+		</div>
+	</div>
+
+</div>
+
+<div class="fs-progress">
+
+	<span class="progress-label heading-sm">Print Design</span>
+	<span class="progress-value">75%</span>
+
+	<div class="progress">
+		<div class="progress-bar royal" style="width: 75%;">
+			<span class="sr-only">75% Complete</span>
+		</div>
+	</div>
+
+</div>
+
+<p>There are a couple things to note about the markup below. First notice that we've added class <code>heading-sm</code> to the <code>.progress-label</code> element to give it that consistent small heading font styling. And next, take note that you must add a <a href="colors.html" title="Color Classes" target="_blank">color class</a> to <code>.progress-bar</code> element. And lastly, make sure to also give your <code>.progress-bar</code> element an inline style width percentage like <code>style="width: 50%"</code>.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="fs-progress">
+
+	<span class="progress-label heading-sm">Web Design</span>
+	<span class="progress-value">25%</span>
+
+	<div class="progress">
+		<div class="progress-bar green" style="width: 25%;">
+			<span class="sr-only">25% Complete</span>
+		</div>
+	</div>
+
+</div>
+
+<div class="fs-progress">
+
+	<span class="progress-label heading-sm">Graphic Design</span>
+	<span class="progress-value">50%</span>
+
+	<div class="progress">
+		<div class="progress-bar pomegranate" style="width: 50%;">
+			<span class="sr-only">50% Complete</span>
+		</div>
+	</div>
+
+</div>
+
+<div class="fs-progress">
+
+	<span class="progress-label heading-sm">Print Design</span>
+	<span class="progress-value">75%</span>
+
+	<div class="progress">
+		<div class="progress-bar royal" style="width: 75%;">
+			<span class="sr-only">75% Complete</span>
+		</div>
+	</div>
+
+</div>
+</pre>
+
+<p>And if you just want a stand-alone progress bar with no fancy labels or anything, feel free to use the <code>.progress</code> element where you want.</p>
+
+<div class="progress">
+	<div class="progress-bar dark-blue" style="width: 25%;">
+		<span class="sr-only">25% Complete</span>
+	</div>
+</div>
+
+<div class="progress">
+	<div class="progress-bar dark-green" style="width: 50%;">
+		<span class="sr-only">50% Complete</span>
+	</div>
+</div>
+
+<div class="progress">
+	<div class="progress-bar teal" style="width: 75%;">
+		<span class="sr-only">75% Complete</span>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="progress">
+	<div class="progress-bar dark-blue" style="width: 25%;">
+		<span class="sr-only">25% Complete</span>
+	</div>
+</div>
+
+<div class="progress">
+	<div class="progress-bar dark-green" style="width: 50%;">
+		<span class="sr-only">50% Complete</span>
+	</div>
+</div>
+
+<div class="progress">
+	<div class="progress-bar teal" style="width: 75%;">
+		<span class="sr-only">75% Complete</span>
+	</div>
+</div>
+</pre>
 
 @@include('../layout/footer.html', {
 	"page": "progress"

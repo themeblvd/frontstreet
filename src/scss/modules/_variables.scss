@@ -136,6 +136,7 @@ $font-size-widget					: $font-size-sm !default;
 $font-size-label					: $font-size-micro !default;
 $font-size-caption					: $font-size-sm !default;
 $font-size-slider-caption			: $font-size-md !default;
+$font-size-progress					: $font-size-xs !default;
 
 // Font Line Heights
 
@@ -532,6 +533,7 @@ $margin-thumb						: $margin-paragraph !default;
 $margin-slider						: $margin-element !default;
 $margin-slider-caption-elem			: 10px 0 !default;
 $margin-testimonial					: $margin-element !default;
+$margin-progress					: $margin-element !default;
 
 // Padding
 
@@ -986,3 +988,14 @@ $testimonial-md-font-size			: $font-size-base !default;
 $testimonial-lg-img					: 75px !default;
 $testimonial-lg-spacing				: 0 20px !default;
 $testimonial-lg-font-size			: $font-size-xl + 4px !default;
+
+// ==========================================================================
+// Progress Bars
+// ==========================================================================
+
+
+$progress-height					: 6px !default;
+$progress-bg						: darken($clr-bg-light, 2%) !default;
+$progress-inv-bg					: $clr-bg-black !default;
+$progress-radius					: 2px !default;
+$progress-label-spacing				: 2.15em;
