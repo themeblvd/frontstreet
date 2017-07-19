@@ -8,7 +8,16 @@ body {
 
 /* Content Column */
 .site-content {
+
 	padding: 50px;
+
+	footer {
+		font-size: 14px;
+		margin: 0 auto;
+		max-width: 960px;
+		padding: 20px 10px;
+		text-align: center;
+	}
 }
 @media (max-width: 991px) {
 	.site-content {
@@ -19,8 +28,12 @@ body {
 /* Sidebar Columns */
 .site-sidebar {
 
-	padding: 30px 0;
+	padding: 0 0 30px 0;
 
+	header {
+		border-bottom: 1px solid rgba(255,255,255,0.1);
+		padding: 20px;
+	}
 	h4 {
 		font-size: 13px;
 		margin: 30px 20px 10px 20px;
@@ -271,6 +284,7 @@ nav {
 
 /* Forms */
 .form-example {
+	margin-bottom: 30px;
 	padding: 40px;
 }
 
