@@ -12,6 +12,14 @@ body {
     max-width: 960px;
     padding: 20px 10px;
     text-align: center; }
+  .site-content footer a {
+    border-bottom: 1px solid #ddd;
+    color: inherit;
+    padding-bottom: 2px; }
+  .site-content footer a:hover,
+  .site-content footer a:focus {
+    border-color: #333;
+    color: #333; }
 
 @media (max-width: 991px) {
   .site-content {
