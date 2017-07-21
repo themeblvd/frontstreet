@@ -327,6 +327,12 @@ pre .fs-slider-thumbs {
   margin: 0 auto;
   max-width: 350px; }
 
+/* Tooltips */
+div.fs-tooltip-trigger {
+  background: #f8f8f8;
+  padding: 20px;
+  text-align: center; }
+
 /* =Tables
 -------------------------------------------------------------- */
 .responsive-utilities td.is-visible {

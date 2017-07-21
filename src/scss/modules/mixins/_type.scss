@@ -3,6 +3,17 @@
 // --------------------------------------------------
 
 //
+// Text Reset
+//
+
+@mixin text-reset {
+	font-family: $font-fam-base;
+	font-size: $font-size-base;
+	font-weight: $font-weight-base;
+	line-height: $font-lh-base;
+}
+
+//
 // Heading text colors.
 //
 

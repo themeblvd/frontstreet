@@ -1,5 +1,5 @@
 /*!
- * Front Street v1.0.0 (http://getbootstrap.com)
+ * Front Street v1.0.0 (http://frontstreet.io)
  * Copyright 2017 Theme Blvd
  * Licensed under the MIT license
  */

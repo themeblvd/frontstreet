@@ -192,6 +192,7 @@ gulp.task('render-project-js', ['render-project-clean'], function() {
 		'src/js/modal.js',
 		'src/js/slider.js',
 		'src/js/tabs.js',
+		'src/js/tooltip.js',
 		'src/js/toggles.js'
 	];
 

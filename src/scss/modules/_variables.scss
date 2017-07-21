@@ -137,6 +137,7 @@ $font-size-label					: $font-size-micro !default;
 $font-size-caption					: $font-size-sm !default;
 $font-size-slider-caption			: $font-size-md !default;
 $font-size-progress					: $font-size-xs !default;
+$font-size-tooltip					: $font-size-xxs !default;
 
 // Font Line Heights
 
@@ -260,7 +261,7 @@ $clr-branding : (
 		contrast					: $clr-text-inv-base
 	),
 	secondary : (
-		base						: #fec527,
+		base						: #2ea3f2,
 		contrast					: $clr-text-inv-base
 	)
 ) !default;
@@ -1002,9 +1003,22 @@ $testimonial-lg-font-size			: $font-size-xl + 4px !default;
 // Progress Bars
 // ==========================================================================
 
-
 $progress-height					: 6px !default;
 $progress-bg						: darken($clr-bg-light, 2%) !default;
 $progress-inv-bg					: $clr-bg-black !default;
 $progress-radius					: 2px !default;
-$progress-label-spacing				: 2.15em;
+$progress-label-spacing				: 2.15em !default;
+
+// ==========================================================================
+// Tooltips
+// ==========================================================================
+
+$tooltip-z-index					: $modal-z-index-base + 10 !default;
+$tooltip-opacity					: 1 !default;
+$tooltip-arrow-width				: 5px !default;
+$tooltip-max-width					: 200px !default;
+$tooltip-radius						: 1px;
+$tooltip-padding					: 10px 14px;
+
+$tooltip-bg							: map-deep-get($clr-branding, secondary, base);
+$tooltip-text						: map-deep-get($clr-branding, secondary, contrast);
