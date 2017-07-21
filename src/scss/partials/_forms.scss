@@ -127,8 +127,9 @@ label,
 //
 
 @include field-selector {
+	-webkit-appearance: none;
 	background-color: if($style == 'inverse', $clr-bg-inv-field, $clr-bg-field);
-	border-radius: 0;
+	border-radius: $field-radius;
 	border: $field-border-width solid if($style == 'inverse', $clr-border-inv, $clr-border);
 	color: if($style == 'inverse', $clr-text-inv-base, $clr-text-base);
 	display: block;

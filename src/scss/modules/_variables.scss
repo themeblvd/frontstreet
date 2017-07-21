@@ -570,6 +570,7 @@ $field-base-lh						: $font-size-base !default;
 $field-base-padding					: 18px !default;
 
 $field-border-width					: 1px !default;
+$field-radius						: 0;
 
 $clr-text-placeholder				: lighten($clr-text-base, 40%) !default;
 $clr-text-inv-placeholder			: rgba($clr-text-inv-base, 0.4) !default;
