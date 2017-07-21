@@ -11,12 +11,22 @@
 @include bg-variant('.bg-dark', $clr-dark, $clr-text-inv-base);
 
 //
-// Branding
+// Branding Background
 //
 
 @each $name, $map in $clr-branding {
 	@include bg-variant('.#{$name}', map-get($map, base), map-get($map, contrast));
 	@include bg-variant('.bg-#{$name}', map-get($map, base), map-get($map, contrast)); // Include .bg-* for Theme Blvd compat.
+}
+
+//
+// Branding Text
+//
+
+@each $name, $map in $clr-branding {
+	.text-#{$name} {
+		color: map-get($map, base);
+	}
 }
 
 //
