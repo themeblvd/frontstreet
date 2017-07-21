@@ -2104,6 +2104,11 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:la
   margin-bottom: 0;
 }
 
+h1 .fs-divider, h2 .fs-divider, h3 .fs-divider, h4 .fs-divider, h5 .fs-divider, h6 .fs-divider,
+.h1 .fs-divider, .h2 .fs-divider, .h3 .fs-divider, .h4 .fs-divider, .h5 .fs-divider, .h6 .fs-divider {
+  margin-top: 20px;
+}
+
 h1, .h1 {
   font-size: 2.75rem;
 }
@@ -2293,6 +2298,24 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .heading-lg, .heading-xl, 
   width: 75px;
   height: 2px;
   z-index: 2;
+}
+
+.heading-underline.text-left:before {
+  right: auto;
+  left: 0;
+}
+
+.heading-underline.text-right:before {
+  right: 0;
+  left: auto;
+}
+
+.heading-underline.text-center:before {
+  right: auto;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
 }
 
 .text-dark .heading-underline {
@@ -7535,6 +7558,79 @@ body .panel-classic {
   border-bottom-color: #2ea3f2;
 }
 
+hr,
+.fs-divider {
+  border: none;
+  border-radius: 2px;
+  display: block;
+  height: 4px;
+  margin: 30px 0;
+}
+
+hr:not(.fs-divider) {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.text-dark hr:not(.fs-divider) {
+  background: rgba(176, 176, 176, 0.4);
+}
+
+.text-light hr:not(.fs-divider) {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.fs-divider.divider-thick {
+  height: 8px;
+}
+
+.fs-divider.divider-thicker {
+  height: 12px;
+}
+
+.fs-divider.divider-thickest {
+  height: 16px;
+}
+
+.fs-divider.divider-xs {
+  width: 75px;
+}
+
+.fs-divider.divider-sm {
+  width: 25%;
+}
+
+.fs-divider.divider-md {
+  width: 50%;
+}
+
+.fs-divider.divider-lg {
+  width: 75%;
+}
+
+.fs-divider.divider-left {
+  margin-right: auto;
+}
+
+.fs-divider.divider-right {
+  margin-left: auto;
+}
+
+.fs-divider.divider-center {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.fs-divider.divider-icon:before {
+  font-family: "FontAwesome";
+  line-height: 1em;
+  text-align: center;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 1em;
+  height: 1em;
+}
+
 .bg-light,
 .bg-light.over-bg-content,
 .bg-light.panel-classic .widget-title {
@@ -7704,6 +7800,14 @@ body .panel-classic {
 
 .bg-secondary.mobile-menu-bar ul {
   background-color: #2ea3f2;
+}
+
+.text-primary {
+  color: #1b1b1b;
+}
+
+.text-secondary {
+  color: #2ea3f2;
 }
 
 .success,
