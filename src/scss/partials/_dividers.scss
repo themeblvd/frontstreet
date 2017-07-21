@@ -2,11 +2,87 @@
 // Dividers
 // --------------------------------------------------
 
-hr {
-	background-color: $clr-bg-hr;
-    border: 0;
-    height: 1px;
-    margin: (round( $font-size-base * $font-lh-base ) ) 0;
+hr,
+.fs-divider {
+    border: none;
+	border-radius: $divider-radius;
+	display: block;
+    height: $divider-height;
+    margin: $margin-divider 0;
+}
+hr:not(.fs-divider) {
+	background-color: if($style == 'inverse', $clr-bg-inv-hr, $clr-bg-hr);
+}
+@if ($style == 'inverse') {
+	.text-dark hr:not(.fs-divider) {
+		background: $clr-bg-hr;
+	}
+	.text-light hr:not(.fs-divider) {
+		background: $clr-bg-inv-hr;
+	}
+} @else {
+	.text-light hr:not(.fs-divider) {
+		background: $clr-bg-inv-hr;
+	}
+	.text-dark hr:not(.fs-divider) {
+		background: $clr-bg-hr;
+	}
 }
 
-// @TODO
+//
+// Thickness (height)
+//
+
+.fs-divider {
+	&.divider-thick {
+		height: $divider-height * 2;
+	}
+	&.divider-thicker {
+		height: $divider-height * 3;
+	}
+	&.divider-thickest {
+		height: $divider-height * 4;
+	}
+}
+
+//
+// Size (width)
+//
+
+.fs-divider {
+	@each $size, $width in $divider-sizes {
+		&.divider-#{$size} {
+			width: $width;
+		}
+	}
+}
+
+//
+// Alignment
+//
+
+.fs-divider {
+	&.divider-left {
+		margin-right: auto;
+	}
+	&.divider-right {
+		margin-left: auto;
+	}
+	&.divider-center {
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+//
+// Icons
+//
+
+.fs-divider.divider-icon {
+
+	@include font-icon;
+
+	&:before {
+
+	}
+}

@@ -2,7 +2,186 @@
 	 "title": "Dividers"
 })
 
-@TODO ...
+<p>Below is an example of a default <code>&lt;hr&gt;</code>.</p>
+
+<hr>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<hr>
+</pre>
+
+<p>To begin building on a divider with Front Street features, start by adding class <code>fs-divider</code> and a <a href="colors.html" title="Colors" target="_blank">color class</a>.</p>
+
+<hr class="fs-divider secondary">
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<hr class="fs-divider secondary">
+</pre>
+
+<h2 id="thickness">Thickness</h2>
+
+<p>To alter the thickness (i.e. height) of an <code>.fs-divider</code> element, add class <code>divider-thick</code>, <code>divider-thicker</code> or <code>divider-thickest</code>.</p>
+
+<hr class="fs-divider secondary">
+<hr class="fs-divider secondary divider-thick">
+<hr class="fs-divider secondary divider-thicker">
+<hr class="fs-divider secondary divider-thickest">
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<hr class="fs-divider secondary">
+<hr class="fs-divider secondary divider-thick">
+<hr class="fs-divider secondary divider-thicker">
+<hr class="fs-divider secondary divider-thickest">
+</pre>
+
+<div class="table-responsive">
+	<table class="table-bordered table-condensed">
+		<tr>
+			<th>Size</th>
+			<th>Element</th>
+			<th>Height</th>
+		</tr>
+		<tr>
+			<td>Default</td>
+			<td><code>.fs-divider</code></td>
+			<td>4px</td>
+		</tr>
+		<tr>
+			<td>Thick</td>
+			<td><code>.fs-divider.divider-thick</code></td>
+			<td>8px</td>
+		</tr>
+		<tr>
+			<td>Thicker</td>
+			<td><code>.fs-divider.divider-thicker</code></td>
+			<td>12px</td>
+		</tr>
+		<tr>
+			<td>Thickest</td>
+			<td><code>.fs-divider.divider-thickest</code></td>
+			<td>16px</td>
+		</tr>
+	</table>
+</div>
+
+<h2 id="sizes">Sizes</h2>
+
+<p>To alter the size (i.e. width) of an <code>.fs-divider</code> element, add class <code>divider-xs</code>, <code>divider-sm</code>, <code>divider-md</code> or <code>divider-lg</code>.</p>
+
+<hr class="fs-divider secondary divider-xs">
+<hr class="fs-divider secondary divider-sm">
+<hr class="fs-divider secondary divider-md">
+<hr class="fs-divider secondary divider-lg">
+<hr class="fs-divider secondary">
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<hr class="fs-divider secondary divider-xs">
+<hr class="fs-divider secondary divider-sm">
+<hr class="fs-divider secondary divider-md">
+<hr class="fs-divider secondary divider-lg">
+<hr class="fs-divider secondary">
+</pre>
+
+<div class="table-responsive">
+	<table class="table-bordered table-condensed">
+		<tr>
+			<th>Size</th>
+			<th>Element</th>
+			<th>Width</th>
+		</tr>
+		<tr>
+			<td>Extra Small</td>
+			<td><code>.fs-divider.divider-xs</code></td>
+			<td>75px</td>
+		</tr>
+		<tr>
+			<td>Small</td>
+			<td><code>.fs-divider.divider-sm</code></td>
+			<td>25%</td>
+		</tr>
+		<tr>
+			<td>Medium</td>
+			<td><code>.fs-divider.divider-md</code></td>
+			<td>50%</td>
+		</tr>
+		<tr>
+			<td>Large</td>
+			<td><code>.fs-divider.divider-lg</code></td>
+			<td>75%</td>
+		</tr>
+		<tr>
+			<td>Default</td>
+			<td><code>.fs-divider</code></td>
+			<td>100%</td>
+		</tr>
+	</table>
+</div>
+
+<h2 id="alignment">Alignment</h2>
+
+<p>When an <code>.fs-divider</code> element uses a size class from the previous section, it can also be given an alignment class &mdash; <code>divider-left</code>, <code>divider-right</code> or <code>divider-center</code>.</p>
+
+<hr class="fs-divider secondary divider-md divider-left">
+<hr class="fs-divider secondary divider-md divider-center">
+<hr class="fs-divider secondary divider-md divider-right">
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<hr class="fs-divider secondary divider-md divider-left">
+<hr class="fs-divider secondary divider-md divider-center">
+<hr class="fs-divider secondary divider-md divider-right">
+</pre>
+
+<h2 id="headings">Headings</h2>
+
+<p>And finally for fun, pairing dividers with headings can help a tendy effect. Really, there are just so many ways you could combine dividers with headings. Below is just a random asortment of examples.</p>
+
+<h1>
+	Lorem Ipsum
+	<span class="fs-divider divider-thick divider-xs secondary"></span>
+</h1>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<h1>
+	Lorem Ipsum
+	<span class="fs-divider divider-thick divider-xs secondary"></span>
+</h1>
+</pre>
+
+<h2>
+	Lorem Ipsum
+	<span class="fs-divider divider-xs secondary"></span>
+</h2>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<h2>
+	Lorem Ipsum
+	<span class="fs-divider divider-xs secondary"></span>
+</h2>
+</pre>
+
+<h1 class="heading-lg text-center">
+	Lorem Ipsum
+	<span class="fs-divider divider-center divider-thick divider-xs secondary"></span>
+</h1>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<h1 class="heading-lg text-center">
+	Lorem Ipsum
+	<span class="fs-divider divider-center divider-thick divider-xs secondary"></span>
+</h1>
+</pre>
+
+<h2 class="text-center">
+	Lorem Ipsum
+	<span class="fs-divider divider-center divider-xs secondary"></span>
+</h2>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<h2 class="text-center">
+	Lorem Ipsum
+	<span class="fs-divider divider-center divider-xs secondary"></span>
+</h2>
+</pre>
 
 @@include('../layout/footer.html', {
 	"page": "dividers"

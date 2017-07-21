@@ -193,6 +193,11 @@ $font-ls-submenu-btn				: $font-ls-btn !default;
 $font-ls-mobile-menu-bar-btn		: $font-ls-menu-bar-btn !default;
 $font-ls-label						: 1px !default;
 
+// Components
+
+$heading-underline-w				: 75px !default;
+$heading-underline-h				: 2px !default;
+
 // ==========================================================================
 // Colors
 // ==========================================================================
@@ -436,7 +441,8 @@ $clr-bg-inv-content					: $clr-bg-dark !default;
 
 $clr-bg-body						: $clr-lightest !default;
 $clr-bg-inv-body					: $clr-darkest !default;
-$clr-bg-hr							: rgba($clr-bg-dark, 0.1) !default;
+$clr-bg-hr							: $clr-trans-lighter !default;
+$clr-bg-inv-hr						: rgba($clr-bg-black, 0.8) !default;
 $clr-bg-code						: $clr-bg-light !default;
 $clr-bg-inv-code					: $clr-bg-black !default;
 $clr-bg-kbd							: $clr-bg-dark !default;
@@ -503,6 +509,7 @@ $spacing-paragraph					: 24px !default;
 $margin-element						: $spacing-element 0 !default;
 $margin-paragraph					: 0 0 $spacing-paragraph 0 !default;
 
+$margin-divider						: $spacing-element !default;
 $margin-figure						: $margin-paragraph !default;
 $margin-heading						: $spacing-element 0 $spacing-paragraph 0 !default;
 $margin-heading-lg					: $margin-paragraph !default;
@@ -1020,5 +1027,19 @@ $tooltip-max-width					: 200px !default;
 $tooltip-radius						: 1px;
 $tooltip-padding					: 10px 14px;
 
-$tooltip-bg							: map-deep-get($clr-branding, secondary, base);
-$tooltip-text						: map-deep-get($clr-branding, secondary, contrast);
+$tooltip-bg							: map-deep-get($clr-branding, secondary, base) !default;
+$tooltip-text						: map-deep-get($clr-branding, secondary, contrast) !default;
+
+// ==========================================================================
+// Dividers
+// ==========================================================================
+
+$divider-height						: 4px !default;
+$divider-radius						: 2px !default;
+
+$divider-sizes : (
+	xs								: 75px,
+	sm								: 25%,
+	md								: 50%,
+	lg								: 75%
+) !default;

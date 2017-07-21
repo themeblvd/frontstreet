@@ -108,7 +108,12 @@ h1, h2, h3, h4, h5, h6,
 	line-height: $font-lh-heading;
 	margin: $margin-heading;
 	text-transform: $font-transform-heading;
+
 	@include margin-vert-flush;
+
+	.fs-divider {
+		margin-top: $margin-divider - 10px;
+	}
 }
 @each $tag, $map in $font-size-headings {
 	#{$tag}, .#{$tag} {
@@ -127,23 +132,27 @@ h1, h2, h3, h4, h5, h6,
 // Subtitles
 //
 
-h1 small, .h1 small,
-h2 small, .h2 small,
-h3 small, .h3 small,
-h4 small, .h4 small,
-h5 small, .h5 small,
-h6 small, .h6 small {
-	display: block;
-	font-size: .45em;
-	letter-spacing: $font-ls-subtitles;
-	margin: .6em 0 0 .1em;
-	text-transform: $font-transform-subtitles;
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+	small {
+		display: block;
+		font-size: .45em;
+		letter-spacing: $font-ls-subtitles;
+		margin: .6em 0 0 .1em;
+		text-transform: $font-transform-subtitles;
+	}
 }
-h3 small, .h3 small,
-h4 small, .h4 small,
-h5 small, .h5 small,
-h6 small, .h6 small {
-	font-size: $font-size-subtitle-sm;
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+	small {
+		font-size: $font-size-subtitle-sm;
+	}
 }
 
 //
@@ -231,15 +240,28 @@ h6 small, .h6 small {
 		content: "";
 		background: map-deep-get($clr-branding, secondary, base);
 		position: absolute;
-		bottom: -2px;
+		bottom: -$heading-underline-h;
 		@if ($direction == 'rtl') {
 			right: 0;
 		} @else {
 			left: 0;
 		}
-		width: 75px;
-		height: 2px;
+		width: $heading-underline-w;
+		height: $heading-underline-h;
 		z-index: 2;
+	}
+	&.text-left:before {
+		right: auto;
+		left: 0;
+	}
+	&.text-right:before {
+		right: 0;
+		left: auto;
+	}
+	&.text-center:before {
+		right: auto;
+		left: 50%;
+		transform: translate(-50%, 0);
 	}
 }
 @if ($style == 'inverse') {
