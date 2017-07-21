@@ -31,13 +31,91 @@
 							</h1>
 
 
-@TODO ...
+<p>Easily create tooltip helper text throughout your site, with this handly, little component. Our component started as a stripped down version of <a href="http://getbootstrap.com" title="Bootsrap" target="_blank">Bootstrap</a>'s Tooltips, which was originally inspired by <a href="https://github.com/jaz303/tipsy" title="Tipsy Tooltips" target="_blank">Tipsy</a>.</p>
+
+<p>The required JavaScript is already implemented for you. To get a tooltip working you just need to create a trigger element with class <code>fs-tooltip-trigger</code>, which your tooltip will be attached to. The tooltip text will be pulled from the <code>title</code> attribute of the element.</p>
+
+<p><a href="#" title="Tooltip Text Here" class="fs-tooltip-trigger">Hover On Me!</a></p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<a href="#" title="Tooltip Text Here" class="fs-tooltip-trigger">Hover On Me!</a>
+</pre>
+
+<h2 class="heading-sm">Data Attributes</h2>
+
+<p>Even though the JavaScript is setup for you with <code>.fs-tooltip-trigger</code> elements, we've included some optional <code>data-*</code> attributes you can add to customize some of the tooltip settings. To utilize them, just add them into your <code>.fs-tooltip-trigger</code> element.</p>
+
+<div class="table-responsive">
+	<table class="table-bordered table-condensed table-grid-overview">
+		<tr>
+			<th width="16%">Data Attribute</th>
+			<th width="8%">Type</th>
+			<th width="8%">Default</th>
+			<th width="23%">Description</th>
+		</tr>
+		<tr>
+			<td><code>data-container</code></td>
+			<td>String | False</td>
+			<td><code>false</code></td>
+			<td>Optional. Appends the tooltip to a specific element. By default tooltip will be appended to the original trigger element, but this can cause issues in more complicated layouts. For example, using <code>body</code> as the container can solve a lot of these problems.</td>
+		</tr>
+		<tr>
+			<td><code>data-placement</code></td>
+			<td>String</td>
+			<td><code>top</code></td>
+			<td>Optional. Determines placement of tooltip, relative to the original trigger element. This can be <code>top</code> or <code>bottom</code>.</td>
+		</tr>
+		<tr>
+			<td><code>data-title</code></td>
+			<td>String</td>
+			<td class="text-muted"><em>None</em></td>
+			<td>Optional. Text for tooltip. This is useful when don't want the tooltip to pull from a link's <code>title</code> attribute, or you're using an HTML element for the trigger which doesn't have a <code>title</code> attribute.</td>
+		</tr>
+	</table>
+</div>
+
+<p>For example, let's say we want the tooltip to be positioned at the bottom of the trigger, instead of the top. Just add <code>data-placement="bottom"</code> to your trigger element.</p>
+
+<p><a href="#" title="Tooltip On Bottom" class="fs-tooltip-trigger" data-placement="bottom">Hover On Me!</a></p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<a href="#" title="Tooltip On Bottom" class="fs-tooltip-trigger" data-placement="bottom">Hover On Me!</a>
+</pre>
+
+<p>Or, let's say you don't want the tooltip taken from a <code>title</code> attribute; instead, you can use <code>data-title</code>.</p>
+
+<p><div class="fs-tooltip-trigger" data-title="Tooltip Text Here">Hover On Me!</div></p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="fs-tooltip-trigger" data-title="Tooltip Text Here">Hover On Me!</div>
+</pre>
+
+<div class="alert info">
+	<p><strong>Note:</strong> The <code>data-title</code> attribute will always override the <code>title</code> attribute, if present. For example, maybe you want a link to have a certain title for SEO purposes, then you could use <code>data-title</code> to designate specifically the tooltip text.</p>
+</div>
+
+<h2 class="heading-sm">CSS Customization</h2>
+
+<p>The color of the tooltips cooresponds to the secondary color of the <a href="colors.html" title="Colors" target="_blank">branding colors</a>. If you're not compiling and adjusting Sass variables for your project, here's an example of how you can change the color of tooltips with basic CSS.</p>
+
+<pre class="brush: css; gutter: false; toolbar: false;">
+.fs-tooltip .tooltip-inner {
+	background-color: #000;
+	color: #fff;
+}
+.fs-tooltip.top .tooltip-arrow {
+	border-top-color: #000;
+}
+.fs-tooltip.bottom .tooltip-arrow {
+	border-bottom-color: #000;
+}
+</pre>
 
 
 						</article><!-- #main -->
 
 						<footer>
-							<p>&copy; <a href="http://frontstreet.io" title="Frontend CSS Framework">Front Street</a> - A Frontend Framework by <a href="http://themeblvd.com" title="WordPress Themes and Website Templates" target="_blank">Theme Blvd</a>, proudly used in <a href="https://wpjumpstart.com" title="Jump Start WordPress Theme" target="_blank">Jump Start</a>.</p>
+							<p>&copy; <a href="http://frontstreet.io" title="Frontend CSS Framework">Front Street</a> - A Frontend Framework by <a href="http://themeblvd.com" title="WordPress Themes and Website Templates" target="_blank">Theme Blvd</a>, proudly powering <a href="https://wpjumpstart.com" title="Jump Start WordPress Theme" target="_blank">Jump Start</a>.</p>
 						</footer>
 
 					</div><!-- .wrap -->
@@ -165,6 +243,7 @@
 			'jump-menu'			: true,
 			'slider'  			: true,
 			'tabs'				: true,
+			'tooltip'			: true,
 			'toggles'			: true
 		};
 

@@ -2291,7 +2291,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .heading-lg, .heading-xl, 
 
 .heading-underline:before {
   content: "";
-  background: #fec527;
+  background: #2ea3f2;
   position: absolute;
   bottom: -2px;
   right: 0;
@@ -3552,26 +3552,26 @@ textarea::placeholder {
 }
 
 .btn.btn-secondary, [type=submit].btn-secondary {
-  background-color: #fec527;
+  background-color: #2ea3f2;
   color: #fff;
 }
 
 .btn.btn-secondary:hover, .btn.btn-secondary:focus, [type=submit].btn-secondary:hover, [type=submit].btn-secondary:focus {
-  background-color: #f1b101;
+  background-color: #0e8bdf;
 }
 
 .btn.btn-secondary:active, .btn.btn-secondary.active, [type=submit].btn-secondary:active, [type=submit].btn-secondary.active {
-  background-color: #d89f01;
+  background-color: #0c7cc7;
 }
 
 .btn.btn-secondary.btn-trans, [type=submit].btn-secondary.btn-trans {
   background-color: transparent;
-  border-color: #fec527;
-  color: #fec527;
+  border-color: #2ea3f2;
+  color: #2ea3f2;
 }
 
 .btn.btn-secondary.btn-trans:hover, .btn.btn-secondary.btn-trans:focus, [type=submit].btn-secondary.btn-trans:hover, [type=submit].btn-secondary.btn-trans:focus {
-  background-color: #fec527;
+  background-color: #2ea3f2;
   color: #fff;
 }
 
@@ -6714,7 +6714,7 @@ button.close {
 }
 
 .fs-search-modal input[type="search"]:focus {
-  border-color: #fec527;
+  border-color: #2ea3f2;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
@@ -7465,6 +7465,81 @@ body .panel-classic {
   margin: 0;
 }
 
+.fs-tooltip {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.6;
+  font-size: 12px;
+  display: block;
+  position: absolute;
+  opacity: 0;
+  z-index: 100010;
+}
+
+.fs-tooltip.in {
+  opacity: 1;
+}
+
+.fs-tooltip.top {
+  margin-top: -3px;
+  padding: 5px 0;
+}
+
+.fs-tooltip.bottom {
+  margin-top: 3px;
+  padding: 5px 0;
+}
+
+.fs-tooltip .tooltip-inner {
+  background-color: #2ea3f2;
+  border-radius: 1px;
+  color: #fff;
+  max-width: 200px;
+  padding: 10px 14px;
+  text-align: center;
+}
+
+.fs-tooltip .tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+
+.fs-tooltip.top .tooltip-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #2ea3f2;
+}
+
+.fs-tooltip.right .tooltip-arrow {
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-width: 5px 5px 5px 0;
+  border-right-color: #2ea3f2;
+}
+
+.fs-tooltip.left .tooltip-arrow {
+  top: 50%;
+  right: 0;
+  margin-top: -5px;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #2ea3f2;
+}
+
+.fs-tooltip.bottom .tooltip-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #2ea3f2;
+}
+
 .bg-light,
 .bg-light.over-bg-content,
 .bg-light.panel-classic .widget-title {
@@ -7579,18 +7654,18 @@ body .panel-classic {
 .secondary,
 .secondary.over-bg-content,
 .secondary.panel-classic .widget-title {
-  background-color: #fec527;
-  border-color: #be8c01;
+  background-color: #2ea3f2;
+  border-color: #0b6daf;
   color: #fff;
 }
 
 .testimonial-sm .secondary:before {
-  border-top-color: #fec527;
+  border-top-color: #2ea3f2;
 }
 
 .testimonial-md .secondary:before {
-  border-right-color: #fec527;
-  border-left-color: #fec527;
+  border-right-color: #2ea3f2;
+  border-left-color: #2ea3f2;
 }
 
 .secondary h1,
@@ -7603,24 +7678,24 @@ body .panel-classic {
 }
 
 .secondary.mobile-menu-bar ul {
-  background-color: #fec527;
+  background-color: #2ea3f2;
 }
 
 .bg-secondary,
 .bg-secondary.over-bg-content,
 .bg-secondary.panel-classic .widget-title {
-  background-color: #fec527;
-  border-color: #be8c01;
+  background-color: #2ea3f2;
+  border-color: #0b6daf;
   color: #fff;
 }
 
 .testimonial-sm .bg-secondary:before {
-  border-top-color: #fec527;
+  border-top-color: #2ea3f2;
 }
 
 .testimonial-md .bg-secondary:before {
-  border-right-color: #fec527;
-  border-left-color: #fec527;
+  border-right-color: #2ea3f2;
+  border-left-color: #2ea3f2;
 }
 
 .bg-secondary h1,
@@ -7633,7 +7708,7 @@ body .panel-classic {
 }
 
 .bg-secondary.mobile-menu-bar ul {
-  background-color: #fec527;
+  background-color: #2ea3f2;
 }
 
 .success,

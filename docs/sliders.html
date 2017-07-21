@@ -180,10 +180,13 @@
 <div class="table-responsive">
 	<table class="table-bordered table-condensed table-grid-overview">
 		<tr>
-			<th width="16%">Data Attribute</th>
-			<th width="8%">Type</th>
-			<th width="8%">Default</th>
-			<th width="23%">Description</th>
+			<th width="16%"rowspan="2">Data Attribute</th>
+			<th width="8%" rowspan="2">Type</th>
+			<th width="8%" rowspan="2">Default</th>
+			<th width="23%" rowspan="2">Description</th>
+			<th width="45%" colspan="3" class="text-center">Slider Type</th>
+		</tr>
+		<tr>
 			<th width="15%" class="text-center">Simple</th>
 			<th width="15%" class="text-center">Gallery</th>
 			<th width="15%" class="text-center">Block</th>
@@ -194,8 +197,8 @@
 			<td><code>0</code></td>
 			<td>Number of milliseconda between auto-rotating slider; use <code>0</code> to disable auto-rotating.</td>
 			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-			<td></td>
-			<td></td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
 		</tr>
 		<tr>
 			<td><code>data-fade</code></td>
@@ -221,8 +224,8 @@
 			<td><code>true</code></td>
 			<td>Enable infinity loop. Duplicate last and first items to get loop illusion.</td>
 			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-			<td></td>
-			<td></td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
 		</tr>
 		<tr>
 			<td><code>data-margin</code></td>
@@ -239,8 +242,8 @@
 			<td><code>true</code></td>
 			<td>If auto-rotating enabled, pause on mouse hover.</td>
 			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-			<td></td>
-			<td></td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
 		</tr>
 		<tr>
 			<td><code>data-speed</code></td>
@@ -248,8 +251,8 @@
 			<td><code>500</code></td>
 			<td>Speed of slide transitions in milliseconds.</td>
 			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-			<td></td>
-			<td></td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
+			<td class="text-center"><i class="fa fa-check text-success"></i></td>
 		</tr>
 	</table>
 </div>
@@ -450,6 +453,51 @@
 		<li>&lt;img src="thumb-3.jpg"&gt;</li>
 	</ul>
 
+&lt;/div&gt;<!-- .fs-simple-slider -->
+</pre>
+
+<h3 id="simple-slider-fade" class="heading-sm">Fade Transition</h3>
+
+<p>For a simple slider to transition with a fade effect, instead of the standard sliding effect, add <code>data-fade="true"</code> to your <code>.fs-simple-slider</code> element.</p>
+
+<div class="fs-simple-slider" data-fade="true">
+	<div class="wrap">
+
+		<div class="fs-slider owl-carousel">
+
+			<div class="slider-item">
+				<img src="assets/img/image-2.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-7.jpg">
+			</div><!-- .slider-item -->
+
+			<div class="slider-item">
+				<img src="assets/img/image-5.jpg">
+			</div><!-- .slider-item -->
+
+		</div><!-- .owl-carousel -->
+
+		<ol class="fs-slider-arrows">
+			<li class="prev trans">Previous</li>
+			<li class="next trans">Next</li>
+		</ol>
+
+		<ol class="fs-slider-nav">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ol>
+
+	</div><!-- .wrap -->
+</div><!-- .fs-simple-slider -->
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+&lt;div class="fs-simple-slider" data-fade="true"&gt;
+    <div class="wrap">
+        ...
+    </div><!-- .wrap -->
 &lt;/div&gt;<!-- .fs-simple-slider -->
 </pre>
 
@@ -1092,7 +1140,7 @@
 						</article><!-- #main -->
 
 						<footer>
-							<p>&copy; <a href="http://frontstreet.io" title="Frontend CSS Framework">Front Street</a> - A Frontend Framework by <a href="http://themeblvd.com" title="WordPress Themes and Website Templates" target="_blank">Theme Blvd</a>, proudly used in <a href="https://wpjumpstart.com" title="Jump Start WordPress Theme" target="_blank">Jump Start</a>.</p>
+							<p>&copy; <a href="http://frontstreet.io" title="Frontend CSS Framework">Front Street</a> - A Frontend Framework by <a href="http://themeblvd.com" title="WordPress Themes and Website Templates" target="_blank">Theme Blvd</a>, proudly powering <a href="https://wpjumpstart.com" title="Jump Start WordPress Theme" target="_blank">Jump Start</a>.</p>
 						</footer>
 
 					</div><!-- .wrap -->
@@ -1220,6 +1268,7 @@
 			'jump-menu'			: true,
 			'slider'  			: true,
 			'tabs'				: true,
+			'tooltip'			: true,
 			'toggles'			: true
 		};
 
