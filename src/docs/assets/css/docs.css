@@ -42,12 +42,13 @@ body {
     padding: 1px 0; }
   .site-sidebar a {
     color: rgba(255, 255, 255, 0.75);
-    font-size: 14px; }
+    font-size: 14px;
+    font-weight: 500; }
   .site-sidebar a:hover,
   .site-sidebar a:focus {
     color: #fff; }
   .site-sidebar li.active a {
-    color: #fec527; }
+    color: #5ea5e2; }
 
 @media (min-width: 992px) {
   .site-sidebar {

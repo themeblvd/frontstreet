@@ -59,13 +59,14 @@ body {
 	a {
 		color: rgba(#fff, 0.75);
 		font-size: 14px;
+		font-weight: 500;
 	}
 	a:hover,
 	a:focus {
 		color: #fff;
 	}
 	li.active a {
-		color: #fec527;
+		color: #5ea5e2;
 	}
 }
 @media (min-width: 992px) {
