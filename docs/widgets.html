@@ -56,6 +56,8 @@
 
 <p>And from there, we can start utilizing various Front Street pieces to dress things up. Throughout this article we'll show you some nice examples of pairing various utility and typography elements with the different widget styles.</p>
 
+<!-- DEFAULT WIDGETS -->
+
 <h2 id="default">Default Widgets</h2>
 
 <p>A default widget gives you a really simple starting point to build from. Add class <code>widget-default</code> to your <code>.widget</code> element.</p>
@@ -80,7 +82,7 @@
 </aside>
 </pre>
 
-<p id="headings-underline">The default widget goes great with <a href="type.html#headings-underline" title="Headings With Unerline">underlined headings</a>; just add class <code>heading-underline</code> to your <code>.widget-title</code> element.</p>
+<p id="headings-underline">The default widget goes great with <a href="type.html#headings-underline" title="Typography: Headings With Unerline" target="_blank">underlined headings</a>; just add class <code>heading-underline</code> to your <code>.widget-title</code> element.</p>
 
 <div class="row row-no-gutters row-align-center widget-examples bg-light">
 	<div class="col col-md-7">
@@ -146,7 +148,7 @@
 </aside>
 </pre>
 
-<p>Or, to really color your widgets by adding any of the <a href="colors.html" title="Color Library">color classes</a>. If your widget has more than just basic text, you may find it useful to also add class <code>text-light</code> or <code>text-dark</code>, as well.</p>
+<p>Or, to really color your widgets by adding any of the <a href="colors.html" title="Color Library" target="_blank">color classes</a>. If your widget has more than just basic text, you may find it useful to also add class <code>text-light</code> or <code>text-dark</code>, as well.</p>
 
 <div class="row">
 	<div class="col col-md-6">
@@ -216,7 +218,7 @@
 </aside>
 </pre>
 
-<p>The default widget style will also pair well with <a href="helpers.html#borders">border helper classes</a>. Any background color class you use (as described just above) will determine the border color, while your border helper class will determine the size of the border.</p>
+<p>The default widget style will also pair well with <a href="helpers.html#borders" title="Helpers: Borders" target="_blank">border helper classes</a>. Any background color class you use (as described just above) will determine the border color, while your border helper class will determine the size of the border.</p>
 
 <div class="row">
 	<div class="col col-md-6">
@@ -286,7 +288,9 @@
 </aside>
 </pre>
 
-<h2 id="classic-panel">Classic Panel</h2>
+<!-- CLASSIC PANEL -->
+
+<h2 id="panel-classic">Classic Panel</h2>
 
 <p>The classic panel style was originally inspired by the panels of older versions of Twitter Bootstrap. Add class <code>panel-classic</code> to your <code>.widget</code> element. And when using this style, the <code>.widget-title</code> element becomes a more integral part of the design.</p>
 
@@ -310,7 +314,7 @@
 </aside>
 </pre>
 
-<p>For the ultimate classic panel look, pair with <a href="helpers.html#borders">border helper classes</a>.</p>
+<p>For the ultimate classic panel look, pair with <a href="helpers.html#borders" title="Helpers: Borders" target="_blank">border helper classes</a>.</p>
 
 <div class="row row-no-gutters row-align-center widget-examples bg-light">
 	<div class="col col-md-7">
@@ -332,7 +336,7 @@
 </aside>
 </pre>
 
-<p>And just like default widgets, you can add any <a href="colors.html" title="Color Library">color classes</a> you want. However, the difference here is that the content area of the widget will retain the standard content color, while the <code>.widget-title</code> and border (if applied) will receive the color.</p>
+<p>And just like default widgets, you can add any <a href="colors.html" title="Color Library" target="_blank">color classes</a> you want. However, the difference here is that the content area of the widget will retain the standard content color, while the <code>.widget-title</code> and border (if applied) will receive the color.</p>
 
 <div class="row">
 	<div class="col col-md-6">
@@ -402,9 +406,129 @@
 </aside>
 </pre>
 
-<h2 id="modern-panel">Modern Panel</h2>
+<!-- COLOR PANEL -->
 
-<p>The modern panel provides a simpler look than the classic panel by using a single background color but with a subtle separation between the title and content. Add class <code>panel-modern</code> to your <code>.widget</code> element.</p>
+<h2 id="panel-color">Color Panel</h2>
+
+<p>A color panel is similar to a classic panel, except that it's filled in with color. And because of this, a color panel is the only widget style that <em>must</em> have a <a href="colors.html" title="Color Library" target="_blank">color class</a> added to it.</p>
+
+<div class="row row-no-gutters row-align-center widget-examples bg-white">
+	<div class="col col-md-7">
+		<div class="wrap">
+
+			<aside class="widget panel-color bg-light">
+				<h3 class="widget-title">Color Panel</h3>
+				<p>Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui. Cras sed lacus tellus, in porttitor tortor. Vivamus auctor mattis nunc, quis mattis justo vulputate at.</p>
+			</aside>
+
+		</div>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<aside class="widget panel-classic bg-light">
+	<h3 class="widget-title">Color Panel</h3>
+	...
+</aside>
+</pre>
+
+<p>And you can also pair color panels with <a href="helpers.html#borders" title="Helpers: Borders" target="_blank">border helper classes</a>.</p>
+
+<div class="row row-no-gutters row-align-center widget-examples bg-white">
+	<div class="col col-md-7">
+		<div class="wrap">
+
+			<aside class="widget panel-color bg-light border-xs">
+				<h3 class="widget-title">Color Panel</h3>
+				<p>Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui. Cras sed lacus tellus, in porttitor tortor. Vivamus auctor mattis nunc, quis mattis justo vulputate at.</p>
+			</aside>
+
+		</div>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<aside class="widget panel-color bg-light border-xs">
+	<h3 class="widget-title">Color Panel</h3>
+	...
+</aside>
+</pre>
+
+<p>And of course, you can add any <a href="colors.html" title="Color Library" target="_blank">color classes</a> you want.</p>
+
+<div class="row">
+	<div class="col col-md-6">
+		<div class="wrap">
+
+			<aside class="widget panel-color forest border-xs">
+				<h3 class="widget-title">Color Panel</h3>
+				<p>Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui. Cras sed lacus tellus, in porttitor tortor. Vivamus auctor mattis nunc, quis mattis justo vulputate at.</p>
+			</aside>
+
+		</div>
+	</div>
+	<div class="col col-md-6">
+		<div class="wrap">
+
+			<aside class="widget panel-color crimson border-xs">
+				<h3 class="widget-title">Color Panel</h3>
+				<p>Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui. Cras sed lacus tellus, in porttitor tortor. Vivamus auctor mattis nunc, quis mattis justo vulputate at.</p>
+			</aside>
+
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col col-md-6">
+		<div class="wrap">
+
+			<aside class="widget panel-color purple border-xs">
+				<h3 class="widget-title">Color Panel</h3>
+				<p>Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui. Cras sed lacus tellus, in porttitor tortor. Vivamus auctor mattis nunc, quis mattis justo vulputate at.</p>
+			</aside>
+
+		</div>
+	</div>
+	<div class="col col-md-6">
+		<div class="wrap">
+
+			<aside class="widget panel-color dark-blue border-xs">
+				<h3 class="widget-title">Color Panel</h3>
+				<p>Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui. Cras sed lacus tellus, in porttitor tortor. Vivamus auctor mattis nunc, quis mattis justo vulputate at.</p>
+			</aside>
+
+		</div>
+	</div>
+</div>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<aside class="widget panel-color primary border-xs">
+	<h3 class="widget-title">Color Panel</h3>
+	...
+</aside>
+
+<aside class="widget panel-color red border-xs">
+	<h3 class="widget-title">Color Panel</h3>
+	...
+</aside>
+
+<aside class="widget panel-color peach border-xs">
+	<h3 class="widget-title">Color Panel</h3>
+	...
+</aside>
+
+<aside class="widget panel-color blue border-xs">
+	<h3 class="widget-title">Color Panel</h3>
+	...
+</aside>
+</pre>
+
+<!-- MODERN PANEL -->
+
+<h2 id="panel-modern">Modern Panel</h2>
+
+<p>The modern panel provides a simpler look than the classic or color panel by using a single background color but with a subtle separation between the title and content. Add class <code>panel-modern</code> to your <code>.widget</code> element.</p>
 
 <div class="row row-no-gutters row-align-center widget-examples bg-light">
 	<div class="col col-md-7">
@@ -470,7 +594,7 @@
 </aside>
 </pre>
 
-<p>Like with all other widget styles, you can add any <a href="colors.html" title="Color Library">color classes</a> to really make them pop. &mdash; And note that while you can add <a href="helpers.html#borders">border helper classes</a> to this widget, as well, we don't think they match aesthetically very well here.</p>
+<p>Like with all other widget styles, you can add any <a href="colors.html" title="Color Library" target="_blank">color classes</a> to really make them pop. &mdash; And note that while you can add <a href="helpers.html#borders" title="Helpers: Borders" target="_blank">border helper classes</a> to this widget, as well, we don't think they match aesthetically very well here.</p>
 
 <div class="row">
 	<div class="col col-md-6">
@@ -559,7 +683,19 @@
 							</a>
 						</header>
 
-						<h4 class="heading-xxs">Core</h4>
+						<h4 class="heading-sm">About</h4>
+
+						<ul>
+							<li>
+								<a href="install.html" title="Installation">Installation</a>
+							</li>
+							<li>
+								<a href="customize.html" title="Customization">Customization</a>
+							</li>
+						</ul>
+
+
+						<h4 class="heading-sm">Core</h4>
 
 						<ul>
 							<li>
@@ -588,7 +724,7 @@
 							</li>
 						</ul>
 
-						<h4 class="heading-xxs">Utilities</h4>
+						<h4 class="heading-sm">Utilities</h4>
 
 						<ul>
 							<li>
@@ -602,7 +738,7 @@
 							</li>
 						</ul>
 
-						<h4 class="heading-xxs">Components</h4>
+						<h4 class="heading-sm">Components</h4>
 
 						<ul>
 							<li>

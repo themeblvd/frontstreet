@@ -24,22 +24,34 @@
 
 	#{$parent},
 	#{$parent}.over-bg-content,
-	#{$parent}.panel-classic .widget-title {
+	#{$parent}.panel-classic .widget-title,
+	#{$parent}.panel-color .widget-title {
 
 		background-color: $clr;
 
-		@if $parent == info or $parent == success or $parent == warning or $parent == danger {
+		@if $parent == '.info' or $parent == '.success' or $parent == '.warning' or $parent == '.danger' {
 			border-color: darken(adjust-hue($clr, -10), 50%);
-		} @else if $parent == 'bg-light' {
+		} @else if $parent == '.bg-light' {
 			border-color: $clr-border;
-		} @else if $parent == 'bg-dark' {
-			border-color: $clr-inv-border;
+		} @else if $parent == '.bg-dark' {
+			border-color: $clr-border-inv;
 		} @else {
 			border-color: darken($clr, 20%);
 		}
 
-		@if $text != null {
+		@if $text != null and $parent != '.bg-light' {
 			color: $text;
+		}
+	}
+	#{$parent}.panel-color .widget-title {
+		@if $parent == info or $parent == success or $parent == warning or $parent == danger {
+			background-color: darken(adjust-hue($clr, -10), 30%);
+		} @else if $parent == '.bg-light' {
+			background-color: darken($clr-bg-light, 2%); // @TODO
+		} @else if $parent == '.bg-dark' {
+			background-color: $clr-border-inv; // @TODO
+		} @else {
+			background-color: darken($clr, 10%);
 		}
 	}
 	.testimonial-sm #{$parent}:before {

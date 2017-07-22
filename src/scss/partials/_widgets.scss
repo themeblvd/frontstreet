@@ -36,10 +36,11 @@
 }
 
 //
-// Style: Classic Panel
+// Style: Classic/Color Panel
 //
 
-.panel-classic {
+.panel-classic,
+.panel-color {
 	.widget-title {
 
 		background: $widget-classic-panel-title-bg-clr;
