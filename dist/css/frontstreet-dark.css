@@ -7303,6 +7303,7 @@ body .panel-classic {
 }
 
 .fs-testimonial .testimonial-text {
+  margin: 0;
   position: relative;
 }
 
