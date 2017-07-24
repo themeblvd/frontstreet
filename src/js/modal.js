@@ -47,7 +47,7 @@
 
 		$.extend( true, $.magnificPopup.defaults, {
 			tClose: config.close,
-			tLoading: config.loading,
+			tLoading: '<div class="fs-loader"><span>' + config.loading + '</span></div>',
 			gallery: {
 				tPrev: config.previous,
 				tNext: config.next,

@@ -1,0 +1,80 @@
+// --------------------------------------------------
+// Loader
+// --------------------------------------------------
+
+.fs-loader {
+
+	background-color: $loader-clr;
+	border-radius: $loader-radius;
+	box-shadow: $loader-shadow;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 102px;
+	height: $loader-height;
+	transform: translate(-50%, -50%);
+	z-index: $loader-z-index;
+
+	&:before,
+	&:after {
+		content: "";
+	}
+	&:before,
+	&:after,
+	span {
+		border: $loader-icon-bdr-size solid $loader-icon-clr;
+	    border-radius: 100%;
+		margin-top: ($loader-icon-size / -2);
+	    position: absolute;
+	    top: 50%;
+		@if ($direction == 'rtl') {
+			right: 0;
+		} @else {
+			left: 0;
+		}
+		width: $loader-icon-size;
+	    height: $loader-icon-size;
+	    transform: transformZ(0);
+	    animation: LOADING 2s infinite;
+	}
+	&:before {
+		@if ($direction == 'rtl') {
+			right: 20px;
+		} @else {
+			left: 20px;
+		}
+		animation-delay: 0s;
+	}
+	span {
+		@if ($direction == 'rtl') {
+			right: 44px;
+		} @else {
+			left: 44px;
+		}
+		animation-delay: 0.2s;
+		@include hide-text;
+	}
+	&:after {
+		@if ($direction == 'rtl') {
+			right: 68px;
+		} @else {
+			left: 68px;
+		}
+		animation-delay: 0.4s;
+	}
+}
+
+@keyframes LOADING {
+	0% {
+		transform: scale(0.5);
+		background: $loader-icon-clr;
+	}
+	50% {
+		transform: scale(1);
+		background: transparent;
+	}
+	100% {
+		transform: scale(0.5);
+		background: $loader-icon-clr;
+	}
+}

@@ -433,7 +433,7 @@ $clr-border-inv-active				: $clr-black !default;
 
 $clr-bg-white						: $clr-white !default;
 $clr-bg-light						: $clr-lightest !default;
-$clr-bg-dark						: $clr-dark !default;
+$clr-bg-dark						: $clr-darker !default;
 $clr-bg-black						: $clr-black !default;
 
 $clr-bg-content						: $clr-bg-white !default;
@@ -1044,3 +1044,24 @@ $divider-sizes : (
 	md								: 50%,
 	lg								: 75%
 ) !default;
+
+// ==========================================================================
+// Section Backgrounds
+// ==========================================================================
+
+$bg-z-index-base					: 0 !default;
+
+// ==========================================================================
+// Loader
+// ==========================================================================
+
+$loader-height						: 60px !default;
+
+$loader-clr							: rgba($clr-black, 0.25) !default;
+$loader-radius						: 2px !default;
+$loader-shadow						: 0 1px 2px rgba($clr-black, 0.1) !default;
+$loader-z-index						: $modal-z-index-base - 10 !default;
+
+$loader-icon-size					: 14px !default;
+$loader-icon-bdr-size				: 3px !default;
+$loader-icon-clr					: $clr-white !default;
