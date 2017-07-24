@@ -28,6 +28,7 @@
 
 .fs-slider-nav {
 
+	display: none;
 	justify-content: center;
 	margin: 20px auto 0 auto;
 
@@ -55,6 +56,7 @@
 
 .fs-slider-arrows {
 
+	display: none;
 	margin: 0;
 
 	@include list-unstyled;
@@ -147,6 +149,15 @@
 	margin: $margin-slider;
 	@include margin-vert-flush;
 
+	&.loading {
+		> .wrap {
+			background-color: $slider-loading-clr;
+			height: $slider-loading-height;
+		}
+		.fs-loader {
+			top: $slider-loading-height / 2;
+		}
+	}
 	&.loaded {
 		.fs-slider-arrows {
 			display: block;

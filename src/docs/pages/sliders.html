@@ -4,7 +4,7 @@
 
 <p>Front Street implements a few different types of basic sliders, which utilize the <a href="http://owlcarousel2.github.io/OwlCarousel2/" title="Owl Carousel" target="_blank">Owl Carousel</a> script. The goal here is to style and implement the JavaScript for some basic sliders that you can utilize with HTML.</p>
 
-<div class="fs-simple-slider">
+<div class="fs-simple-slider loading">
 	<div class="wrap">
 
 		<div class="fs-slider owl-carousel">
@@ -21,7 +21,7 @@
 				<img src="assets/img/image-5.jpg">
 			</div><!-- .slider-item -->
 
-		</div><!-- .owl-carousel -->
+		</div><!-- .fs-slider.owl-carousel -->
 
 		<ol class="fs-slider-arrows">
 			<li class="prev trans">Previous</li>
@@ -33,6 +33,10 @@
 			<li>2</li>
 			<li>3</li>
 		</ol>
+
+		<div class="fs-loader">
+			<span>Loading</span>
+		</div>
 
 	</div><!-- .wrap -->
 </div><!-- .fs-simple-slider -->
@@ -46,7 +50,7 @@
 <p>Below is an overview of the basic, outer HTML structure.</p>
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-<div class="fs-{type}-slider">
+<div class="fs-{type}-slider loading">
 	<div class="wrap">
 
 		<div class="fs-slider owl-carousel">
@@ -66,6 +70,10 @@
 	<ol class="fs-slider-thumbs thumbs-md">
 		<!-- Optional: Nav Thumbnails -->
 	</ol>
+
+	<div class="fs-loader">
+		<span>Loading</span>
+	</div>
 
 </div><!-- .fs-simple-slider -->
 </pre>
@@ -132,6 +140,24 @@
 	<li>&lt;img src="thumb-2.jpg"&gt;</li>
 	<li>&lt;img src="thumb-3.jpg"&gt;</li>
 </ol>
+</pre>
+
+<h3 id="loader" class="heading-sm">Loader</h3>
+
+<p>To implement the <a href="loader.html" title="Loader" target="_blank">loader component</a>, add it within your <code>.wrap</code> element. Also make sure to add the class <code>loading</code> to your top-level <code>.fs-{type}-slider</code> element.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<div class="fs-{type}-slider loading">
+	<div class="wrap">
+
+		...
+
+		<div class="fs-loader">
+			<span>Loading</span>
+		</div>
+
+	</div><!-- .wrap -->
+</div><!-- .fs-{type}-slider -->
 </pre>
 
 <h3 id="data-atts" class="heading-sm">Data Attributes</h3>
@@ -232,7 +258,7 @@
 
 <p>The simple slider is meant to serve as a basic image slider, but could include other content types with some custom styling. Let's stick with creating a basic image slider, though.</p>
 
-<div class="fs-simple-slider">
+<div class="fs-simple-slider loading">
 	<div class="wrap">
 
 		<div class="fs-slider owl-carousel">
@@ -266,11 +292,15 @@
 			<li>3</li>
 		</ol>
 
+		<div class="fs-loader">
+			<span>Loading</span>
+		</div>
+
 	</div><!-- .wrap -->
 </div><!-- .fs-simple-slider -->
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;div class="fs-simple-slider"&gt;
+&lt;div class="fs-simple-slider loading"&gt;
 	<div class="wrap">
 
 		<div class="fs-slider owl-carousel">
@@ -304,6 +334,10 @@
 			<li>3</li>
 		</ol>
 
+		<div class="fs-loader">
+			<span>Loading</span>
+		</div>
+
 	</div><!-- .wrap -->
 &lt;/div&gt;<!-- .fs-simple-slider -->
 </pre>
@@ -323,7 +357,7 @@
 
 <p>The <code>.fs-slider-nav</code> navigation element can go inside or outside of the <code>.wrap</code> element to achieve different looks. In the example below, we've placed it <em>outside</em> so that it appears below the slider instead of over top.</p>
 
-<div class="fs-simple-slider">
+<div class="fs-simple-slider loading">
 	<div class="wrap">
 
 		<div class="fs-slider owl-carousel">
@@ -347,6 +381,10 @@
 			<li class="next trans">Next</li>
 		</ol>
 
+		<div class="fs-loader">
+			<span>Loading</span>
+		</div>
+
 	</div><!-- .wrap -->
 
 	<ol class="fs-slider-nav">
@@ -358,7 +396,7 @@
 </div><!-- .fs-simple-slider -->
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;div class="fs-simple-slider"&gt;
+&lt;div class="fs-simple-slider loading"&gt;
 
 	<div class="wrap">
 		...
@@ -377,7 +415,7 @@
 
 <p>Here's an alternate example of the slider above, where we've subsituted the standard navigation dots for a <a href="#thumb-nav" title="Thumbnail Navigation">thumbnail navigation</a>. Notice that the the thumbnail navigation is outside of the <code>.wrap</code> element &mdash; This is important!</p>
 
-<div class="fs-simple-slider">
+<div class="fs-simple-slider loading">
 	<div class="wrap">
 
 		<div class="fs-slider owl-carousel">
@@ -401,6 +439,10 @@
 			<li class="next trans">Next</li>
 		</ol>
 
+		<div class="fs-loader">
+			<span>Loading</span>
+		</div>
+
 	</div><!-- .wrap -->
 
 	<ul class="fs-slider-thumbs thumbs-md">
@@ -412,7 +454,7 @@
 </div><!-- .fs-simple-slider -->
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;div class="fs-simple-slider"&gt;
+&lt;div class="fs-simple-slider loading"&gt;
 
 	<div class="wrap">
 		...
@@ -431,7 +473,7 @@
 
 <p>For a simple slider to transition with a fade effect, instead of the standard sliding effect, add <code>data-fade="true"</code> to your <code>.fs-simple-slider</code> element.</p>
 
-<div class="fs-simple-slider" data-fade="true">
+<div class="fs-simple-slider loading" data-fade="true">
 	<div class="wrap">
 
 		<div class="fs-slider owl-carousel">
@@ -461,11 +503,15 @@
 			<li>3</li>
 		</ol>
 
+		<div class="fs-loader">
+			<span>Loading</span>
+		</div>
+
 	</div><!-- .wrap -->
 </div><!-- .fs-simple-slider -->
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;div class="fs-simple-slider" data-fade="true"&gt;
+&lt;div class="fs-simple-slider loading" data-fade="true"&gt;
     <div class="wrap">
         ...
     </div><!-- .wrap -->
@@ -476,7 +522,7 @@
 
 <p>What if you have really light images and you'd prefer dark navigational elements and text? Add class <code>text-dark</code> to your <code>.fs-simple-slider</code> element.</p>
 
-<div class="fs-simple-slider text-dark">
+<div class="fs-simple-slider loading text-dark">
 	<div class="wrap">
 
 		<div class="fs-slider owl-carousel">
@@ -518,11 +564,15 @@
 			<li>3</li>
 		</ol>
 
+		<div class="fs-loader">
+			<span>Loading</span>
+		</div>
+
 	</div><!-- .wrap -->
 </div><!-- .fs-simple-slider -->
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;div class="fs-simple-slider text-dark"&gt;
+&lt;div class="fs-simple-slider loading text-dark"&gt;
 	<div class="wrap">
 		...
 	</div><!-- .wrap -->
@@ -575,7 +625,7 @@
 
 <p>The gallery slider is useful for displaying images of varying dimensions in a more modern, carousel-style slider. It's setup essentially the same a simple slider, except for you'll use class <code>fs-gallery-slider</code>.</p>
 
-<div class="fs-gallery-slider">
+<div class="fs-gallery-slider loading">
 	<div class="wrap">
 
 		<div class="fs-slider owl-carousel">
@@ -615,11 +665,15 @@
 			<li>5</li>
 		</ol>
 
+		<div class="fs-loader">
+			<span>Loading</span>
+		</div>
+
 	</div><!-- .wrap -->
 </div><!-- .fs-gallery-slider -->
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;div class="fs-gallery-slider"&gt;
+&lt;div class="fs-gallery-slider loading"&gt;
 	<div class="wrap">
 
 		<div class="fs-slider owl-carousel">
@@ -659,6 +713,10 @@
 			<li>5</li>
 		</ol>
 
+		<div class="fs-loader">
+			<span>Loading</span>
+		</div>
+
 	</div><!-- .wrap -->
 &lt;/div&gt;<!-- .fs-gallery-slider -->
 </pre>
@@ -667,7 +725,7 @@
 
 <p>The standard dot navigation can also go outside of the <code>.wrap</code> element so that it appears below the slider, with a slightly different look.</p>
 
-<div class="fs-gallery-slider">
+<div class="fs-gallery-slider loading">
 	<div class="wrap">
 
 		<div class="fs-slider owl-carousel">
@@ -699,6 +757,10 @@
 			<li class="next trans">Next</li>
 		</ol>
 
+		<div class="fs-loader">
+			<span>Loading</span>
+		</div>
+
 	</div><!-- .wrap -->
 
 	<ol class="fs-slider-nav">
@@ -712,7 +774,7 @@
 </div><!-- .fs-gallery-slider -->
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;div class="fs-gallery-slider"&gt;
+&lt;div class="fs-gallery-slider loading"&gt;
 
 	<div class="wrap">
 		...
@@ -733,7 +795,7 @@
 
 <p>Just like with a simple slider, the thumbnail navigation will work with a gallery slider, too.</p>
 
-<div class="fs-gallery-slider">
+<div class="fs-gallery-slider loading">
 	<div class="wrap">
 
 		<div class="fs-slider owl-carousel">
@@ -765,6 +827,10 @@
 			<li class="next trans">Next</li>
 		</ol>
 
+		<div class="fs-loader">
+			<span>Loading</span>
+		</div>
+
 	</div><!-- .wrap -->
 
 	<ul class="fs-slider-thumbs thumbs-md">
@@ -778,7 +844,7 @@
 </div><!-- .fs-gallery-slider -->
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;div class="fs-simple-slider"&gt;
+&lt;div class="fs-gallery-slider loading"&gt;
 
 	<div class="wrap">
 		...
@@ -840,7 +906,7 @@
 
 <p>If you're wanting more of a classic carousel to cycle through blocks, use the class <code>fs-block-slider</code> with your slider element.</p>
 
-<div class="fs-block-slider">
+<div class="fs-block-slider loading">
 	<div class="wrap">
 
 		<div class="fs-slider owl-carousel">
@@ -884,12 +950,16 @@
 			<li class="next trans">Next</li>
 		</ol>
 
+		<div class="fs-loader">
+			<span>Loading</span>
+		</div>
+
 	</div><!-- .wrap -->
 
 </div><!-- .fs-block-slider -->
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;div class="fs-block-slider"&gt;
+&lt;div class="fs-block-slider loading"&gt;
 	<div class="wrap">
 
 		<div class="fs-slider owl-carousel">
@@ -933,13 +1003,17 @@
 			<li class="next trans">Next</li>
 		</ol>
 
+		<div class="fs-loader">
+			<span>Loading</span>
+		</div>
+
 	</div><!-- .wrap -->
 &lt;/div&gt;<!-- .fs-block-slider -->
 </pre>
 
 <p>The following example changes up some things. &mdash; First we've added some data attributes. We've got <code>data-items="3"</code> to adjust how many items show per slide, <code>data-margin="15"</code> to add some gutters between items, and <code>data-loop="false"</code> to not allow the carousel to continuously cycle. And last, we've added the standard dot navigation outside of the <code>.wrap</code> element so that it appears below the carousel.</p>
 
-<div class="fs-block-slider" data-items="3" data-margin="15" data-loop="false">
+<div class="fs-block-slider loading" data-items="3" data-margin="15" data-loop="false">
 	<div class="wrap">
 
 		<div class="fs-slider owl-carousel">
@@ -983,6 +1057,10 @@
 			<li class="next trans">Next</li>
 		</ol>
 
+		<div class="fs-loader">
+			<span>Loading</span>
+		</div>
+
 	</div><!-- .wrap -->
 
 	<ol class="fs-slider-nav">
@@ -994,7 +1072,7 @@
 </div><!-- .fs-block-slider -->
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;div class="fs-block-slider" data-items="3" data-margin="15" data-loop="false"&gt;
+&lt;div class="fs-block-slider loading" data-items="3" data-margin="15" data-loop="false"&gt;
 
 	<div class="wrap">
 		...
@@ -1015,7 +1093,7 @@
 
 <p>The block slider will also go great when combined with <a href="media.html#thumb-links" title="Thumbnail Links" target="_blank">thumbnail links</a> and <a href="modal.html" title="Modals" target="_blank">modal functionality</a>.</p>
 
-<div class="fs-block-slider" data-items="2" data-margin="15" data-loop="false">
+<div class="fs-block-slider loading" data-items="2" data-margin="15" data-loop="false">
 
 	<div class="wrap">
 
@@ -1064,6 +1142,10 @@
 			<li class="next trans">Next</li>
 		</ol>
 
+		<div class="fs-loader">
+			<span>Loading</span>
+		</div>
+
 	</div><!-- .wrap -->
 
 	<ol class="fs-slider-nav">
@@ -1075,7 +1157,7 @@
 </div><!-- .fs-block-slider -->
 
 <pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;div class="fs-block-slider"&gt;
+&lt;div class="fs-block-slider loading"&gt;
 
 	<div class="wrap">
 
@@ -1095,6 +1177,10 @@
 			<li class="prev trans">Previous</li>
 			<li class="next trans">Next</li>
 		</ol>
+
+		<div class="fs-loader">
+			<span>Loading</span>
+		</div>
 
 	</div><!-- .wrap -->
 

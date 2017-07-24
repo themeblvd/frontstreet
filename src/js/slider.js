@@ -82,11 +82,14 @@
 				onInitialized: function(e) {
 
 					$nav.find('li:first-child').addClass('active');
-					$wrap.addClass('loaded');
+					$wrap.removeClass('loading').addClass('loaded');
 
 					if ( ! loop ) {
 						$arrows.find('li').addClass('fade');
 					}
+
+					$wrap.find('.fs-loader').fadeOut();
+
 				},
 				onChanged: function(e) {
 
