@@ -1055,13 +1055,16 @@ $bg-z-index-base					: 0 !default;
 // Loader
 // ==========================================================================
 
-$loader-height						: 60px !default;
+$loader-icon-size					: 14px !default;
+$loader-icon-bdr-size				: 3px !default;
+$loader-icon-clr					: $clr-white !default;
 
 $loader-clr							: rgba($clr-black, 0.25) !default;
 $loader-radius						: 2px !default;
 $loader-shadow						: 0 1px 2px rgba($clr-black, 0.1) !default;
 $loader-z-index						: $modal-z-index-base - 10 !default;
+$loader-padding						: 20px !default;
+$loader-gutter						: 9px !default;
 
-$loader-icon-size					: 14px !default;
-$loader-icon-bdr-size				: 3px !default;
-$loader-icon-clr					: $clr-white !default;
+$loader-width						: ($loader-padding * 2) + ($loader-gutter * 2) + ($loader-icon-size * 3);
+$loader-height						: $loader-width / 2 !default;

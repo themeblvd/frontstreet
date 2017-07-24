@@ -10,7 +10,7 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	width: 102px;
+	width: $loader-width;
 	height: $loader-height;
 	transform: translate(-50%, -50%);
 	z-index: $loader-z-index;
@@ -27,11 +27,6 @@
 		margin-top: ($loader-icon-size / -2);
 	    position: absolute;
 	    top: 50%;
-		@if ($direction == 'rtl') {
-			right: 0;
-		} @else {
-			left: 0;
-		}
 		width: $loader-icon-size;
 	    height: $loader-icon-size;
 	    transform: transformZ(0);
@@ -39,26 +34,28 @@
 	}
 	&:before {
 		@if ($direction == 'rtl') {
-			right: 20px;
+			right: $loader-padding;
 		} @else {
-			left: 20px;
+			left: $loader-padding;
 		}
 		animation-delay: 0s;
 	}
 	span {
 		@if ($direction == 'rtl') {
-			right: 44px;
+			right: 50%;
+			margin-right: ($loader-icon-size / -2);
 		} @else {
-			left: 44px;
+			left: 50%;
+			margin-left: ($loader-icon-size / -2);
 		}
 		animation-delay: 0.2s;
 		@include hide-text;
 	}
 	&:after {
 		@if ($direction == 'rtl') {
-			right: 68px;
+			left: $loader-padding;
 		} @else {
-			left: 68px;
+			right: $loader-padding;
 		}
 		animation-delay: 0.4s;
 	}
