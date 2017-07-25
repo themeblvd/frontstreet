@@ -81,7 +81,7 @@
 
 <ul class="demo-colors list-unstyled clearfix">
 	<li class="bg-light"><code>.bg-light</code></li>
-	<li class="white"><code>.white</code></li>
+	<li class="bg-dark"><code>.bg-dark</code></li>
 	<li class="asphalt"><code>.asphalt</code></li>
 	<li class="black"><code>.black</code></li>
 	<li class="blue"><code>.blue</code></li>
@@ -112,6 +112,7 @@
 	<li class="turquoise"><code>.turquoise</code></li>
 	<li class="yellow"><code>.yellow</code></li>
 	<li class="wheat"><code>.wheat</code></li>
+	<li class="white"><code>.white</code></li>
 </ul>
 
 <p>These colors can also be applied to text with the <code>text-{color}</code> classes.</p>
@@ -192,7 +193,24 @@
 							</a>
 						</header>
 
-						<h4 class="heading-xxs">Core</h4>
+						<h4 class="heading-sm">About</h4>
+
+						<ul>
+							<li>
+								<a href="install.html" title="Installation">Installation</a>
+							</li>
+							<li>
+								<a href="customize.html" title="Customization">Customization</a>
+							</li>
+							<li>
+								<a href="plgins.html" title="Plugins">Plugins</a>
+							</li>
+							<li>
+								<a href="javascript.html" title="JavaScript">JavaScript</a>
+							</li>
+						</ul>
+
+						<h4 class="heading-sm">Core</h4>
 
 						<ul>
 							<li>
@@ -221,7 +239,7 @@
 							</li>
 						</ul>
 
-						<h4 class="heading-xxs">Utilities</h4>
+						<h4 class="heading-sm">Utilities</h4>
 
 						<ul>
 							<li>
@@ -235,7 +253,7 @@
 							</li>
 						</ul>
 
-						<h4 class="heading-xxs">Components</h4>
+						<h4 class="heading-sm">Components</h4>
 
 						<ul>
 							<li>
@@ -249,6 +267,9 @@
 							</li>
 							<li>
 								<a href="dividers.html" title="Dividers">Dividers</a>
+							</li>
+							<li>
+								<a href="loader.html" title="Loader">Loader</a>
 							</li>
 							<li>
 								<a href="modal.html" title="Modals">Modals</a>
@@ -296,6 +317,7 @@
 		 * disable individiual JavaScript components.
 		 */
 		var FrontStreetConfig = {
+			'background'  		: true,
 			'menu'  			: true,
 			'mobile-menu'		: true,
 			'modal'				: true,

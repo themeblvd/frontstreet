@@ -48,9 +48,16 @@
 							</h1>
 
 
-<p>A widget is a small, secondary content container. Common uses for these would be in the sidebar or footer of a website. Widgets come in three styles &mdash; <a href="#default" title="Default">Default</a>, <a href="#classic-panel" title="Classic Panel">Classic Panel</a>, and <a href="#modern-panel" title="Modern Panel">Modern Panel</a>.</p>
+<p>A widget is a small, secondary content container. Common uses for these would be in the sidebar or footer of a website. Widgets come in four styles &mdash;
 
-<p>A basic widget is setup simply by creating an element with class <code>widget</code> and one of the style classes &mdash; <code>widget-default</code>, <code>classic-panel</code> or <code>modern-panel</code>.
+<ol>
+	<li><a href="#default" title="Default">Default</a></li>
+	<li><a href="#panel-classic" title="Classic Panel">Classic Panel</a></li>
+	<li><a href="#panel-color" title="Color Panel">Color Panel</a></li>
+	<li><a href="#panel-modern" title="Modern Panel">Modern Panel</a></li>
+</ol>
+
+<p>A basic widget is setup simply by creating an element with class <code>widget</code> and one of the style classes &mdash; <code>widget-default</code>, <code>panel-classic</code>, <code>panel-color</code> or <code>panel-modern</code>.
 
 <p>Optionally you can add a title by adding class <code>widget-title</code> to any heading element within. While you can use <a href="type.html#headings">different headings</a>, your <code>.widget-title</code> element will have a specific font size for each widget style. So if you'd like specifically the font-size for a heading style you're using, you'd need to remove the <code>widget-title</code> class.</p>
 
@@ -692,8 +699,13 @@
 							<li>
 								<a href="customize.html" title="Customization">Customization</a>
 							</li>
+							<li>
+								<a href="plgins.html" title="Plugins">Plugins</a>
+							</li>
+							<li>
+								<a href="javascript.html" title="JavaScript">JavaScript</a>
+							</li>
 						</ul>
-
 
 						<h4 class="heading-sm">Core</h4>
 
@@ -754,6 +766,9 @@
 								<a href="dividers.html" title="Dividers">Dividers</a>
 							</li>
 							<li>
+								<a href="loader.html" title="Loader">Loader</a>
+							</li>
+							<li>
 								<a href="modal.html" title="Modals">Modals</a>
 							</li>
 							<li>
@@ -799,6 +814,7 @@
 		 * disable individiual JavaScript components.
 		 */
 		var FrontStreetConfig = {
+			'background'  		: true,
 			'menu'  			: true,
 			'mobile-menu'		: true,
 			'modal'				: true,

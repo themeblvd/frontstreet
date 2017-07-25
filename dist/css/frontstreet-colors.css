@@ -750,10 +750,15 @@
 
 .asphalt,
 .asphalt.over-bg-content,
-.asphalt.panel-classic .widget-title {
+.asphalt.panel-classic .widget-title,
+.asphalt.panel-color .widget-title {
   background-color: #34495e;
   border-color: #10161c;
   color: #fff;
+}
+
+.asphalt.panel-color .widget-title {
+  background-color: #22303d;
 }
 
 .testimonial-sm .asphalt:before {
@@ -780,10 +785,15 @@
 
 .blue,
 .blue.over-bg-content,
-.blue.panel-classic .widget-title {
+.blue.panel-classic .widget-title,
+.blue.panel-color .widget-title {
   background-color: #00437f;
   border-color: #000d19;
   color: #fff;
+}
+
+.blue.panel-color .widget-title {
+  background-color: #00284c;
 }
 
 .testimonial-sm .blue:before {
@@ -810,10 +820,15 @@
 
 .black,
 .black.over-bg-content,
-.black.panel-classic .widget-title {
+.black.panel-classic .widget-title,
+.black.panel-color .widget-title {
   background-color: #000;
   border-color: black;
   color: #fff;
+}
+
+.black.panel-color .widget-title {
+  background-color: black;
 }
 
 .testimonial-sm .black:before {
@@ -840,10 +855,15 @@
 
 .brown,
 .brown.over-bg-content,
-.brown.panel-classic .widget-title {
+.brown.panel-classic .widget-title,
+.brown.panel-color .widget-title {
   background-color: #825a2c;
   border-color: #362512;
   color: #fff;
+}
+
+.brown.panel-color .widget-title {
+  background-color: #5c401f;
 }
 
 .testimonial-sm .brown:before {
@@ -870,10 +890,15 @@
 
 .concrete,
 .concrete.over-bg-content,
-.concrete.panel-classic .widget-title {
+.concrete.panel-classic .widget-title,
+.concrete.panel-color .widget-title {
   background-color: #95a5a6;
   border-color: #617374;
   color: #fff;
+}
+
+.concrete.panel-color .widget-title {
+  background-color: #798d8f;
 }
 
 .testimonial-sm .concrete:before {
@@ -900,10 +925,15 @@
 
 .cream,
 .cream.over-bg-content,
-.cream.panel-classic .widget-title {
+.cream.panel-classic .widget-title,
+.cream.panel-color .widget-title {
   background-color: #f5d76e;
   border-color: #edbc10;
   color: rgba(50, 50, 50, 0.7);
+}
+
+.cream.panel-color .widget-title {
+  background-color: #f2ca3e;
 }
 
 .testimonial-sm .cream:before {
@@ -921,10 +951,15 @@
 
 .crimson,
 .crimson.over-bg-content,
-.crimson.panel-classic .widget-title {
+.crimson.panel-classic .widget-title,
+.crimson.panel-color .widget-title {
   background-color: #c3272b;
   border-color: #6e1618;
   color: #fff;
+}
+
+.crimson.panel-color .widget-title {
+  background-color: #991f22;
 }
 
 .testimonial-sm .crimson:before {
@@ -951,10 +986,15 @@
 
 .dark-blue,
 .dark-blue.over-bg-content,
-.dark-blue.panel-classic .widget-title {
+.dark-blue.panel-classic .widget-title,
+.dark-blue.panel-color .widget-title {
   background-color: #153f5a;
   border-color: #020507;
   color: #fff;
+}
+
+.dark-blue.panel-color .widget-title {
+  background-color: #0b2231;
 }
 
 .testimonial-sm .dark-blue:before {
@@ -981,10 +1021,15 @@
 
 .dark-brown,
 .dark-brown.over-bg-content,
-.dark-brown.panel-classic .widget-title {
+.dark-brown.panel-classic .widget-title,
+.dark-brown.panel-color .widget-title {
   background-color: #572f05;
   border-color: black;
   color: #fff;
+}
+
+.dark-brown.panel-color .widget-title {
+  background-color: #271502;
 }
 
 .testimonial-sm .dark-brown:before {
@@ -1011,10 +1056,15 @@
 
 .dark-green,
 .dark-green.over-bg-content,
-.dark-green.panel-classic .widget-title {
+.dark-green.panel-classic .widget-title,
+.dark-green.panel-color .widget-title {
   background-color: #485a21;
   border-color: #0c0f06;
   color: #fff;
+}
+
+.dark-green.panel-color .widget-title {
+  background-color: #2a3513;
 }
 
 .testimonial-sm .dark-green:before {
@@ -1041,10 +1091,15 @@
 
 .dark-purple,
 .dark-purple.over-bg-content,
-.dark-purple.panel-classic .widget-title {
+.dark-purple.panel-classic .widget-title,
+.dark-purple.panel-color .widget-title {
   background-color: #5d3f6A;
   border-color: #25192a;
   color: #fff;
+}
+
+.dark-purple.panel-color .widget-title {
+  background-color: #412c4a;
 }
 
 .testimonial-sm .dark-purple:before {
@@ -1071,10 +1126,15 @@
 
 .forest,
 .forest.over-bg-content,
-.forest.panel-classic .widget-title {
+.forest.panel-classic .widget-title,
+.forest.panel-color .widget-title {
   background-color: #006442;
   border-color: black;
   color: #fff;
+}
+
+.forest.panel-color .widget-title {
+  background-color: #003120;
 }
 
 .testimonial-sm .forest:before {
@@ -1101,10 +1161,15 @@
 
 .green,
 .green.over-bg-content,
-.green.panel-classic .widget-title {
+.green.panel-classic .widget-title,
+.green.panel-color .widget-title {
   background-color: #26a65b;
   border-color: #13532e;
   color: #fff;
+}
+
+.green.panel-color .widget-title {
+  background-color: #1d7d44;
 }
 
 .testimonial-sm .green:before {
@@ -1131,10 +1196,15 @@
 
 .jungle,
 .jungle.over-bg-content,
-.jungle.panel-classic .widget-title {
+.jungle.panel-classic .widget-title,
+.jungle.panel-color .widget-title {
   background-color: #36b3a8;
   border-color: #1e655e;
   color: #fff;
+}
+
+.jungle.panel-color .widget-title {
+  background-color: #2a8c83;
 }
 
 .testimonial-sm .jungle:before {
@@ -1161,10 +1231,15 @@
 
 .mauve,
 .mauve.over-bg-content,
-.mauve.panel-classic .widget-title {
+.mauve.panel-classic .widget-title,
+.mauve.panel-color .widget-title {
   background-color: #7b726c;
   border-color: #45403c;
   color: #fff;
+}
+
+.mauve.panel-color .widget-title {
+  background-color: #605954;
 }
 
 .testimonial-sm .mauve:before {
@@ -1191,10 +1266,15 @@
 
 .orange,
 .orange.over-bg-content,
-.orange.panel-classic .widget-title {
+.orange.panel-classic .widget-title,
+.orange.panel-color .widget-title {
   background-color: #ff9624;
   border-color: #bd6200;
   color: #fff;
+}
+
+.orange.panel-color .widget-title {
+  background-color: #f07d00;
 }
 
 .testimonial-sm .orange:before {
@@ -1221,10 +1301,15 @@
 
 .peach,
 .peach.over-bg-content,
-.peach.panel-classic .widget-title {
+.peach.panel-classic .widget-title,
+.peach.panel-color .widget-title {
   background-color: #f47983;
   border-color: #ec1b2c;
   color: #fff;
+}
+
+.peach.panel-color .widget-title {
+  background-color: #f04a57;
 }
 
 .testimonial-sm .peach:before {
@@ -1251,10 +1336,15 @@
 
 .pearl,
 .pearl.over-bg-content,
-.pearl.panel-classic .widget-title {
+.pearl.panel-classic .widget-title,
+.pearl.panel-color .widget-title {
   background-color: #bca89d;
   border-color: #907363;
   color: #fff;
+}
+
+.pearl.panel-color .widget-title {
+  background-color: #a78d7f;
 }
 
 .testimonial-sm .pearl:before {
@@ -1281,10 +1371,15 @@
 
 .pink,
 .pink.over-bg-content,
-.pink.panel-classic .widget-title {
+.pink.panel-classic .widget-title,
+.pink.panel-color .widget-title {
   background-color: #de2e81;
   border-color: #8f1750;
   color: #fff;
+}
+
+.pink.panel-color .widget-title {
+  background-color: #bb1e68;
 }
 
 .testimonial-sm .pink:before {
@@ -1311,10 +1406,15 @@
 
 .pomegranate,
 .pomegranate.over-bg-content,
-.pomegranate.panel-classic .widget-title {
+.pomegranate.panel-classic .widget-title,
+.pomegranate.panel-color .widget-title {
   background-color: #e74c3c;
   border-color: #a82315;
   color: #fff;
+}
+
+.pomegranate.panel-color .widget-title {
+  background-color: #d62c1a;
 }
 
 .testimonial-sm .pomegranate:before {
@@ -1341,10 +1441,15 @@
 
 .purple,
 .purple.over-bg-content,
-.purple.panel-classic .widget-title {
+.purple.panel-classic .widget-title,
+.purple.panel-color .widget-title {
   background-color: #78498e;
   border-color: #3f264b;
   color: #fff;
+}
+
+.purple.panel-color .widget-title {
+  background-color: #5c386c;
 }
 
 .testimonial-sm .purple:before {
@@ -1371,10 +1476,15 @@
 
 .red,
 .red.over-bg-content,
-.red.panel-classic .widget-title {
+.red.panel-classic .widget-title,
+.red.panel-color .widget-title {
   background-color: #8f1d21;
   border-color: #3a0c0d;
   color: #fff;
+}
+
+.red.panel-color .widget-title {
+  background-color: #651417;
 }
 
 .testimonial-sm .red:before {
@@ -1401,10 +1511,15 @@
 
 .royal,
 .royal.over-bg-content,
-.royal.panel-classic .widget-title {
+.royal.panel-classic .widget-title,
+.royal.panel-color .widget-title {
   background-color: #428bca;
   border-color: #245682;
   color: #fff;
+}
+
+.royal.panel-color .widget-title {
+  background-color: #3071a9;
 }
 
 .testimonial-sm .royal:before {
@@ -1431,10 +1546,15 @@
 
 .slate-grey,
 .slate-grey.over-bg-content,
-.slate-grey.panel-classic .widget-title {
+.slate-grey.panel-classic .widget-title,
+.slate-grey.panel-color .widget-title {
   background-color: #7f8d9c;
   border-color: #4f5a66;
   color: #fff;
+}
+
+.slate-grey.panel-color .widget-title {
+  background-color: #657383;
 }
 
 .testimonial-sm .slate-grey:before {
@@ -1461,10 +1581,15 @@
 
 .silver,
 .silver.over-bg-content,
-.silver.panel-classic .widget-title {
+.silver.panel-classic .widget-title,
+.silver.panel-color .widget-title {
   background-color: #bdc3c7;
   border-color: #869198;
   color: #fff;
+}
+
+.silver.panel-color .widget-title {
+  background-color: #a1aab0;
 }
 
 .testimonial-sm .silver:before {
@@ -1491,10 +1616,15 @@
 
 .steel-blue,
 .steel-blue.over-bg-content,
-.steel-blue.panel-classic .widget-title {
+.steel-blue.panel-classic .widget-title,
+.steel-blue.panel-color .widget-title {
   background-color: #4b77Be;
   border-color: #2b4978;
   color: #fff;
+}
+
+.steel-blue.panel-color .widget-title {
+  background-color: #395f9d;
 }
 
 .testimonial-sm .steel-blue:before {
@@ -1521,10 +1651,15 @@
 
 .teal,
 .teal.over-bg-content,
-.teal.panel-classic .widget-title {
+.teal.panel-classic .widget-title,
+.teal.panel-color .widget-title {
   background-color: #008080;
   border-color: #001a1a;
   color: #fff;
+}
+
+.teal.panel-color .widget-title {
+  background-color: #004d4d;
 }
 
 .testimonial-sm .teal:before {
@@ -1551,10 +1686,15 @@
 
 .turquoise,
 .turquoise.over-bg-content,
-.turquoise.panel-classic .widget-title {
+.turquoise.panel-classic .widget-title,
+.turquoise.panel-color .widget-title {
   background-color: #36d7b7;
   border-color: #1c8b75;
   color: #fff;
+}
+
+.turquoise.panel-color .widget-title {
+  background-color: #24b699;
 }
 
 .testimonial-sm .turquoise:before {
@@ -1581,10 +1721,15 @@
 
 .yellow,
 .yellow.over-bg-content,
-.yellow.panel-classic .widget-title {
+.yellow.panel-classic .widget-title,
+.yellow.panel-color .widget-title {
   background-color: #ecc11B;
   border-color: #95790c;
   color: rgba(50, 50, 50, 0.7);
+}
+
+.yellow.panel-color .widget-title {
+  background-color: #c49f10;
 }
 
 .testimonial-sm .yellow:before {
@@ -1602,10 +1747,15 @@
 
 .wheat,
 .wheat.over-bg-content,
-.wheat.panel-classic .widget-title {
+.wheat.panel-classic .widget-title,
+.wheat.panel-color .widget-title {
   background-color: #b4ad8b;
   border-color: #847c55;
   color: #fff;
+}
+
+.wheat.panel-color .widget-title {
+  background-color: #a0976c;
 }
 
 .testimonial-sm .wheat:before {
@@ -1632,10 +1782,15 @@
 
 .white,
 .white.over-bg-content,
-.white.panel-classic .widget-title {
+.white.panel-classic .widget-title,
+.white.panel-color .widget-title {
   background-color: #fff;
   border-color: #cccccc;
   color: rgba(50, 50, 50, 0.7);
+}
+
+.white.panel-color .widget-title {
+  background-color: #e6e6e6;
 }
 
 .testimonial-sm .white:before {
