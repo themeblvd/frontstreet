@@ -186,6 +186,7 @@ gulp.task('render-project-js', ['render-project-clean'], function() {
 
 	var files = [
 		'src/js/init.js',
+		'src/js/background.js',
 		'src/js/jump-menu.js',
 		'src/js/menu.js',
 		'src/js/mobile-menu.js',

@@ -2,7 +2,394 @@
 	 "title": "Backgrounds"
 })
 
-@TODO ...
+<p>Background sections can be useful for landing pages and other places you need content to really stand out.  And instead of just standard background images, these sections can include special background components included with Front Street like background <a href="#bg-shade" title="Background Shades">shading</a>, <a href="#bg-slider" title="Background Sliders">sliders</a>, <a href="#bg-parallax" title="Background Parallax">parallax effects</a>, and <a href="#bg-video" title="Background Video">video</a>.</p>
+
+<p>In order for the background components and your section's inner content to be all z-index'ed and positioned properly, we need to follow a basic markup structure. Your wrapping section element should have the class <code>fs-section</code>. And any content within should be wrapped in an element with class <code>fs-element</code>.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<section class="fs-section bg-dark">
+
+	<div class="fs-element">
+		<!-- Any content to sit above background components. -->
+	</div>
+
+	<!-- Background components go here. -->
+
+</section>
+</pre>
+
+<p>Take note that we also added classes <code>bg-dark</code> to <code>.fs-section</code>. Adding a <a href="colors.html" title="Colors" target="_blank">background color class</a> can be helpful to establish a base color, before background components are initially loaded.</p>
+
+<h3 class="heading-sm">Component Stacking</h3>
+
+<p>The following table helps to illustrate how your content and background components are stacked within a <code>.fs-section</code> element.</p>
+
+<div class="table-responsive">
+	<table class="table-bordered table-condensed table-grid-overview">
+		<tr>
+			<th width="20%">Element</th>
+			<th width="65%">Description</th>
+			<th width="15%" class="text-center">Z-Index</th>
+		</tr>
+		<tr>
+			<td><code>.fs-bg-slider</code></td>
+			<td>Auto-rotating, slow-fading slider images.</td>
+			<td class="text-center">0</td>
+		</tr>
+		<tr>
+			<td><code>.fs-bg-parallax</code></td>
+			<td>Parallax images that animate as the user scrolls.</td>
+			<td class="text-center">0</td>
+		</tr>
+		<tr>
+			<td><code>.fs-bg-video</code></td>
+			<td>Auto-playing background video.</td>
+			<td class="text-center">0</td>
+		</tr>
+		<tr>
+			<td><code>.fs-loader</code></td>
+			<td>Optional <a href="loader.html" title="Loader" target="_blank">loader component</a>; this can be helpful when working with background media that might need time to load.</td>
+			<td class="text-center">1</td>
+		</tr>
+		<tr>
+			<td><code>.fs-bg-shade</code></td>
+			<td>Sits between other background components and content, to add a layer of any opaque color.</td>
+			<td class="text-center">2</td>
+		</tr>
+		<tr>
+			<td><code>.fs-element</code></td>
+			<td>Contains any top-level content; it's okay to have multiple <code>.fs-element</code> within a section, too.</td>
+			<td class="text-center">3</td>
+		</tr>
+	</table>
+</div>
+
+<h3 class="heading-sm">Base Example</h3>
+
+<p>Here's the base example we'll be building on throughout this document. We've just got some basic elements added to a blank section to create hero-like thingy.</p>
+
+<section class="fs-section bg-dark text-center">
+	<div class="fs-element">
+		<h1 class="heading-lg">Lorem Ipsum Dolor</h1>
+		<p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
+		<a href="#" class="btn btn-white btn-trans">Learn More</a>
+	</div>
+</section>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<section class="fs-section bg-dark text-center">
+
+	<div class="fs-element">
+		<h1 class="heading-lg">Lorem Ipsum Dolor</h1>
+		<p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
+		<a href="#" class="btn btn-white btn-trans">Learn More</a>
+	</div>
+
+	<!-- Background components go here. -->
+
+</section>
+</pre>
+
+<p><span class="label-inline info">Important</span> Keep in mind that <code>.fs-section</code> and <code>.fs-element</code> do not include any visual styling by default. So you'd need to add any padding, height, or other visual styling in your stylesheet. The padding and margin you see attached to <code>.fs-section</code> of this document are added from our documentation's styling.</p>
+
+<h2 id="bg-shade">Background Shade</h2>
+
+<p>Background shading can prevent your content from being overpowered by your background components. In other words, just because your section has a cool, fancy background component, we still probably want the user's attention to be drawn to our primary message, sitting on top. And in a lot of cases, this can also simply help any text to just be more readable over top a busy background element.</p>
+
+<p>In the following example, we've got a section with a background image applied with some simple inline CSS (for demo purposes). Then we add our <code>.fs-bg-shade.{color}</code> background component. You can use any <a href="colors.html" title="Colors" target="_blank">color class</a> for your shade color, but you must add a color class.</p>
+
+<section class="fs-section bg-dark text-center" style="background: url(assets/img/image-1.jpg) center center no-repeat; background-size: cover;">
+
+	<div class="fs-element">
+		<h1 class="heading-lg">Lorem Ipsum Dolor</h1>
+		<p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
+		<a href="#" class="btn btn-white btn-trans">Learn More</a>
+	</div>
+
+	<div class="fs-bg-shade black"></div>
+
+</section>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<section class="fs-section bg-dark text-center" style="background: url(assets/img/image-1.jpg) center center no-repeat; background-size: cover;">
+
+	<div class="fs-element">
+		<!-- Any content to sit above background components. -->
+	</div>
+
+	<div class="fs-bg-shade black"></div>
+
+</section>
+</pre>
+
+<p>The following <code>shade-*</code> classes can also be combined with the <code>.fs-bg-shade</code> component to adjust the opacity. In the following example, we're adding class <code>shade-85</code> to make the shade color more prominent, and thus wash out the background image more.</p>
+
+<section class="fs-section bg-dark text-center" style="background: url(assets/img/image-1.jpg) center center no-repeat; background-size: cover;">
+
+	<div class="fs-element">
+		<h1 class="heading-lg">Lorem Ipsum Dolor</h1>
+		<p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
+		<a href="#" class="btn btn-white btn-trans">Learn More</a>
+	</div>
+
+	<div class="fs-bg-shade shade-85 royal"></div>
+
+</section>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<section class="fs-sectio bg-dark text-centern">
+
+	<div class="fs-element">
+		<!-- Any content to sit above background components. -->
+	</div>
+
+	<div class="fs-bg-shade shade-85 royal"></div>
+
+</section>
+</pre>
+
+<div class="table-responsive">
+	<table class="table-bordered table-condensed table-grid-overview">
+		<tr>
+			<th>Element</th>
+			<th>Shade Opacity</th>
+		</tr>
+		<tr>
+			<td><code>.fs-bg-shade.shade-05.{color}</code></td>
+			<td>5%</td>
+		</tr>
+		<tr>
+			<td><code>.fs-bg-shade.shade-15.{color}</code></td>
+			<td>15%</td>
+		</tr>
+		<tr>
+			<td><code>.fs-bg-shade.shade-25.{color}</code></td>
+			<td>25%</td>
+		</tr>
+		<tr>
+			<td><code>.fs-bg-shade.shade-50.{color}</code></td>
+			<td>50%</td>
+		</tr>
+		<tr>
+			<td><code>.fs-bg-shade.shade-75.{color}</code></td>
+			<td>75%</td>
+		</tr>
+		<tr>
+			<td><code>.fs-bg-shade.shade-85.{color}</code></td>
+			<td>85%</td>
+		</tr>
+		<tr>
+			<td><code>.fs-bg-shade.shade-95.{color}</code></td>
+			<td>95%</td>
+		</tr>
+	</table>
+</div>
+
+<h2 id="bg-slider">Background Slider</h2>
+
+<p>For a slow-fading, auto-rotating background slider, we can add the <code>.fs-bg-slider</code> component to our sections. The background slider will automatically stretch images to fill the <code>.fs-section</code>; this is really helpful when implementing a section that stretches full width of the browser window.</p>
+
+<p><span class="label-inline info">Important</span> This is completely separate functionality from our other <a href="sliders.html" title="Sliders" target="_blank">slider components</a>, which are implmented with OwlCarousel.</p>
+
+<section class="fs-section bg-dark text-center">
+
+	<div class="fs-element">
+		<h1 class="heading-lg">Lorem Ipsum Dolor</h1>
+		<p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
+		<a href="#" class="btn btn-white btn-trans">Learn More</a>
+	</div>
+
+	<div class="fs-bg-slider">
+		<img src="assets/img/image-1.jpg" width="960">
+		<img src="assets/img/image-2.jpg" width="960">
+		<img src="assets/img/image-3.jpg" width="960">
+		<img src="assets/img/image-4.jpg" width="960">
+	</div>
+
+	<div class="fs-loader">
+		<span>Loading</span>
+	</div>
+
+</section>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<section class="fs-section bg-dark text-center">
+
+	<div class="fs-element">
+		<!-- Any content to sit above background components. -->
+	</div>
+
+	&lt;div class="fs-bg-slider"&gt;
+		&lt;img src="image-1.jpg"&gt;
+		&lt;img src="image-2.jpg"&gt;
+		&lt;img src="image-3.jpg"&gt;
+		&lt;img src="image-4.jpg"&gt;
+	&lt;/div&gt;
+
+	<div class="fs-loader">
+		<span>Loading</span>
+	</div>
+
+</section>
+</pre>
+
+<p>You may have noticed that the above example is a little busy and our hero message is difficult to read. To fix that, we can pair our background slider with a <a href="#bg-shade" title="Background Shade">background shade</a>.</p>
+
+<section class="fs-section bg-dark text-center">
+
+	<div class="fs-element">
+		<h1 class="heading-lg">Lorem Ipsum Dolor</h1>
+		<p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
+		<a href="#" class="btn btn-white btn-trans">Learn More</a>
+	</div>
+
+	<div class="fs-bg-slider">
+		<img src="assets/img/image-1.jpg" width="960">
+		<img src="assets/img/image-2.jpg" width="960">
+		<img src="assets/img/image-3.jpg" width="960">
+		<img src="assets/img/image-4.jpg" width="960">
+	</div>
+
+	<div class="fs-bg-shade shade-75 crimson"></div>
+
+	<div class="fs-loader">
+		<span>Loading</span>
+	</div>
+
+</section>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<section class="fs-section bg-dark text-center">
+
+	<div class="fs-element">
+		<!-- Any content to sit above background components. -->
+	</div>
+
+	&lt;div class="fs-bg-slider"&gt;
+		&lt;img src="image-1.jpg"&gt;
+		&lt;img src="image-2.jpg"&gt;
+		&lt;img src="image-3.jpg"&gt;
+		&lt;img src="image-4.jpg"&gt;
+	&lt;/div&gt;
+
+	<div class="fs-bg-shade shade-75 crimson"></div>
+
+	<div class="fs-loader">
+		<span>Loading</span>
+	</div>
+
+</section>
+</pre>
+
+<p>By default, the background slider component will rotate images every four seconds (i.e. 4000ms). You can change that by passing a new millisecond value through a <code>data-autoplay</code> parameter. Keep in mind that this value must be <code>1000</code> or higher.</p>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<section class="fs-section bg-dark text-center">
+
+	<div class="fs-element">
+		<!-- Any content to sit above background components. -->
+	</div>
+
+	&lt;div class="fs-bg-slider" data-autoplay="2000"&gt;
+		<!-- Slider images. -->
+	&lt;/div&gt;
+
+	<div class="fs-loader">
+		<span>Loading</span>
+	</div>
+
+</section>
+</pre>
+
+<h2 id="bg-parallax">Background Parallax</h2>
+
+<p>If you're looking for a smoothe parallax background effect, we've got you covered. &mdash;</p>
+
+<p>Many other parallax scripts out there will dynamically adjust the <code>background-position</code> property of a background image as the user scrolls. But this produces an often janky effect, depending on the screen. So instead we use JavaScript to adjust the CSS transform property of an absolute-positioned image. Using CSS 3D transforms in this way creates a more consisntely smoother effect in modern browsers, even on Hi-DPI screens like your Retina Macbook.</p>
+
+<p><span class="label-inline info">Important</span> To keep fighting the good fight towards mobile optimization, the parallax script will not run on mobile devices. Intead, the image will just get positioned absolutely, resulting in a similar effect to just adding a background image.</p>
+
+<section class="fs-section bg-dark text-center">
+
+	<div class="fs-element">
+		<h1 class="heading-lg">Lorem Ipsum Dolor</h1>
+		<p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
+		<a href="#" class="btn btn-white btn-trans">Learn More</a>
+	</div>
+
+	<figure class="fs-bg-parallax">
+		<img src="assets/img/image-7.jpg" width="960">
+	</figure>
+
+	<div class="fs-loader">
+		<span>Loading</span>
+	</div>
+
+</section>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<section class="fs-section bg-dark text-center">
+
+	<div class="fs-element">
+		<h1 class="heading-lg">Lorem Ipsum Dolor</h1>
+		<p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
+		<a href="#" class="btn btn-white btn-trans">Learn More</a>
+	</div>
+
+	&lt;figure class="fs-bg-parallax"&gt;
+		&lt;img src="image.jpg"&gt;
+	&lt;/figure&gt;
+
+	<div class="fs-loader">
+		<span>Loading</span>
+	</div>
+
+</section>
+</pre>
+
+<p>And of course, background shading works great here, too.</p>
+
+<section class="fs-section bg-dark text-center">
+
+	<div class="fs-element">
+		<h1 class="heading-lg">Lorem Ipsum Dolor</h1>
+		<p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
+		<a href="#" class="btn btn-white btn-trans">Learn More</a>
+	</div>
+
+	<figure class="fs-bg-parallax">
+		<img src="assets/img/image-7.jpg" width="960" />
+	</figure>
+
+	<div class="fs-bg-shade shade-50 black"></div>
+
+	<div class="fs-loader">
+		<span>Loading</span>
+	</div>
+
+</section>
+
+<pre class="brush: xml; gutter: false; toolbar: false;">
+<section class="fs-section bg-dark text-center">
+
+	<div class="fs-element">
+		<h1 class="heading-lg">Lorem Ipsum Dolor</h1>
+		<p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
+		<a href="#" class="btn btn-white btn-trans">Learn More</a>
+	</div>
+
+	&lt;figure class="fs-bg-parallax"&gt;
+		&lt;img src="image.jpg"&gt;
+	&lt;/figure&gt;
+
+	<div class="fs-bg-shade shade-50 black"></div>
+
+	<div class="fs-loader">
+		<span>Loading</span>
+	</div>
+
+</section>
+</pre>
 
 @@include('../layout/footer.html', {
 	"page": "backgrounds"
