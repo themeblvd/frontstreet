@@ -317,6 +317,20 @@ pre .fs-slider-arrows,
 pre .fs-slider-thumbs {
   display: none; }
 
+/* Background Sections */
+.fs-section {
+  margin: 0 -120px 30px -120px;
+  padding: 110px 80px; }
+
+@media (max-width: 767px) {
+  .fs-section {
+    margin-right: -40px;
+    margin-left: -40px;
+    padding: 30px; } }
+
+.fs-section.no-margin {
+  margin-bottom: 0; }
+
 /* Mini Slider */
 @media (min-width: 36em) {
   .mini-slider-example {
