@@ -46,7 +46,7 @@
 //
 
 @mixin blend-links() {
-	a {
+	a:not(.btn) {
 		color: inherit;
 		@if ($style == 'inverse') {
 			border-bottom: 1px solid $clr-text-base;
