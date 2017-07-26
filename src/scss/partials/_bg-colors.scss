@@ -6,9 +6,9 @@
 // General
 //
 
-@include bg-variant('.bg-light', $clr-lightest, $clr-text-base);
+@include bg-variant('.bg-light', $clr-bg-light, $clr-text-base);
 
-@include bg-variant('.bg-dark', $clr-dark, $clr-text-inv-base);
+@include bg-variant('.bg-dark', $clr-bg-dark, $clr-text-inv-base);
 
 //
 // Branding Background
