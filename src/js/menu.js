@@ -167,10 +167,6 @@
 				$this.data('fs.menu', (data = new Menu(this, options)));
 			}
 
-			if (typeof option == 'string') {
-				data[option].call($this);
-			}
-
 		})
 	}
 
