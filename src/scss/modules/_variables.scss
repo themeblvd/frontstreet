@@ -1028,8 +1028,8 @@ $tooltip-z-index					: $modal-z-index-base + 10 !default;
 $tooltip-opacity					: 1 !default;
 $tooltip-arrow-width				: 5px !default;
 $tooltip-max-width					: 200px !default;
-$tooltip-radius						: 1px;
-$tooltip-padding					: 10px 14px;
+$tooltip-radius						: 1px !default;
+$tooltip-padding					: 10px 14px !default;
 
 $tooltip-bg							: map-deep-get($clr-branding, secondary, base) !default;
 $tooltip-text						: map-deep-get($clr-branding, secondary, contrast) !default;
@@ -1069,5 +1069,5 @@ $loader-z-index						: $modal-z-index-base - 10 !default;
 $loader-padding						: 20px !default;
 $loader-gutter						: 9px !default;
 
-$loader-width						: ($loader-padding * 2) + ($loader-gutter * 2) + ($loader-icon-size * 3);
+$loader-width						: ($loader-padding * 2) + ($loader-gutter * 2) + ($loader-icon-size * 3) !default;
 $loader-height						: $loader-width / 2 !default;
