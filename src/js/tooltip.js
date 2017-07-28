@@ -166,9 +166,7 @@
 
 			$tip.addClass('fade');
 
-			var placement = typeof this.options.placement == 'function' ?
-				this.options.placement.call(this, $tip[0], this.$element[0]) :
-				this.options.placement;
+			var placement = this.options.placement;
 
 			var autoToken = /\s?auto?\s?/i;
 			var autoPlace = autoToken.test(placement);
