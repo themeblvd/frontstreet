@@ -525,15 +525,17 @@ var FrontStreet = {
 				return false;
 			});
 
+		$menu.height( $menu.prop('scrollHeight') );
+
 	}
 
 	MobileMenu.DEFAULTS = {
-		direction : 'ltr',
+		// direction : 'ltr'
 	}
 
 	MobileMenu.prototype.show = function($trigger, options) {
 
-		$trigger.closest('li').children('ul').stop(true, true).addClass('on');
+		$trigger.closest('li').children('ul').addClass('on');
 
 	}
 
@@ -1330,9 +1332,7 @@ var FrontStreet = {
 
 			$tip.addClass('fade');
 
-			var placement = typeof this.options.placement == 'function' ?
-				this.options.placement.call(this, $tip[0], this.$element[0]) :
-				this.options.placement;
+			var placement = this.options.placement;
 
 			var autoToken = /\s?auto?\s?/i;
 			var autoPlace = autoToken.test(placement);

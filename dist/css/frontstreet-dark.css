@@ -2035,14 +2035,14 @@ a:focus {
   color: #2a6496;
 }
 
-.text-dark a:not(.btn) {
+.text-dark a:not(.btn):not(.menu-btn) {
   color: inherit;
   border-bottom: 1px solid rgba(50, 50, 50, 0.7);
   padding-bottom: 1px;
   text-decoration: none;
 }
 
-.text-dark a:not(.btn):hover, .text-dark a:not(.btn):focus {
+.text-dark a:not(.btn):not(.menu-btn):hover, .text-dark a:not(.btn):not(.menu-btn):focus {
   border-color: #333;
   color: #333;
 }
