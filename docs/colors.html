@@ -34,23 +34,62 @@
 		</script>
 
 
-		<div id="wrapper" class="row-container">
-			<div id="container" class="row">
+		<div id="wrapper">
+			<div id="container">
 
-				<div class="site-content col col-lg-10">
-					<div class="wrap">
+				<header class="site-header">
 
-						<article id="main">
+					<div class="site-logo primary">
+						<a href="http://frontstreet.io" title="Front Street - Frontend CSS Framework">
+							<img src="assets/img/logo.png" srcset="assets/img/logo.png 1x, assets/img/logo@2x.png 2x">
+						</a>
+					</div><!-- .site-logo -->
 
-							<h1 class="heading-lg">
-								Colors
-								
-							</h1>
+					<div class="site-search">
+						<div class="field-icon fa-search">
+						    <input id="site-search-field" type="text" placeholder="Search the site...">
+						</div>
+					</div><!-- .site-search -->
+
+					<div class="site-follow">
+						<ul class="list-unstyled">
+							<li>
+								<a href="https://twitter.com/jasonbobich" title="Follow Jason Bobich on Twitter" target="_blank">
+									<i class="fa fa-twitter"></i>
+								</a>
+							</li>
+							<li>
+								<a href="https://github.com/themeblvd/frontstreet" title="Follow Front Street on Github" target="_blank">
+									<i class="fa fa-github"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<div id="search-results" class="site-search-results">
+						<ul class="list-unstyled">
+							<!-- JS inserts here. -->
+						</ul>
+					</div>
+
+				</header><!-- .site-header -->
+
+				<div class="site-main">
+
+					<div class="site-content">
+						<div class="wrap">
+
+							<article>
+
+								<h1 class="heading-lg">
+									Colors
+									
+								</h1>
 
 
 <!-- BRANDING COLORS -->
 
-<h2 id="contextual-bg-colors">Branding Colors</h2>
+<h2 id="branding">Branding Colors</h2>
 
 <p>Below are branding background color classes you can add to any element.</p>
 
@@ -75,44 +114,145 @@
 
 <!-- COLOR LIBRARY -->
 
-<h2 id="color-library">Color Library</h2>
+<h2 id="library">Color Library</h2>
 
-<p>Below are general background color classes you can add to any element.</p>
+<p>Below are general background color classes you can add to any element. &mdash;</p>
+
+<p><span class="label-inline info">Important</span> Remember that the color library is not compiled with the core Front Street framework. So if you'd to use the color library, remember to include <code>frontstreet-colors.css</code> in your project (see <a href="install.html#color-library" title="Installation: Color Library" target="_blank">Installation</a>). And if you'd like to create a few custom color classes of your own, see <a href="customize.html#colors" title="Customizations: Color Classes" target="_blank">Customizations</a>.</p>
 
 <ul class="demo-colors list-unstyled clearfix">
-	<li class="bg-light"><code>.bg-light</code></li>
-	<li class="bg-dark"><code>.bg-dark</code></li>
-	<li class="asphalt"><code>.asphalt</code></li>
-	<li class="black"><code>.black</code></li>
-	<li class="blue"><code>.blue</code></li>
-	<li class="brown"><code>.brown</code></li>
-	<li class="concrete"><code>.concrete</code></li>
-	<li class="cream"><code>.cream</code></li>
-	<li class="crimson"><code>.crimson</code></li>
-	<li class="dark-blue"><code>.dark-blue</code></li>
-	<li class="dark-brown"><code>.dark-brown</code></li>
-	<li class="dark-green"><code>.dark-green</code></li>
-	<li class="dark-purple"><code>.dark-purple</code></li>
-	<li class="forest"><code>.forest</code></li>
-	<li class="green"><code>.green</code></li>
-	<li class="jungle"><code>.jungle</code></li>
-	<li class="mauve"><code>.mauve</code></li>
-	<li class="orange"><code>.orange</code></li>
-	<li class="peach"><code>.peach</code></li>
-	<li class="pearl"><code>.pearl</code></li>
-	<li class="pink"><code>.pink</code></li>
-	<li class="pomegranate"><code>.pomegranate</code></li>
-	<li class="purple"><code>.purple</code></li>
-	<li class="red"><code>.red</code></li>
-	<li class="royal"><code>.royal</code></li>
-	<li class="slate-grey"><code>.slate-grey</code></li>
-	<li class="silver"><code>.silver</code></li>
-	<li class="steel-blue"><code>.steel-blue</code></li>
-	<li class="teal"><code>.teal</code></li>
-	<li class="turquoise"><code>.turquoise</code></li>
-	<li class="yellow"><code>.yellow</code></li>
-	<li class="wheat"><code>.wheat</code></li>
-	<li class="white"><code>.white</code></li>
+	<li class="bg-light">
+		<code>.bg-light</code>
+		<code>#f8f8f8</code>
+	</li>
+	<li class="bg-dark">
+		<code>.bg-dark</code>
+		<code>#1b1b1b</code>
+	</li>
+	<li class="asphalt">
+		<code>.asphalt</code>
+		<code>#34495e</code>
+	</li>
+	<li class="black">
+		<code>.black</code>
+		<code>#000000</code>
+	</li>
+	<li class="blue">
+		<code>.blue</code>
+		<code>#00437f</code>
+	</li>
+	<li class="brown">
+		<code>.brown</code>
+		<code>#825a2c</code>
+	</li>
+	<li class="concrete">
+		<code>.concrete</code>
+		<code>#95a5a6</code>
+	</li>
+	<li class="cream">
+		<code>.cream</code>
+		<code>#f5d76e</code>
+	</li>
+	<li class="crimson">
+		<code>.crimson</code>
+		<code>#c3272b</code>
+	</li>
+	<li class="dark-blue">
+		<code>.dark-blue</code>
+		<code>#153f5a</code>
+	</li>
+	<li class="dark-brown">
+		<code>.dark-brown</code>
+		<code>#572f05</code>
+	</li>
+	<li class="dark-green">
+		<code>.dark-green</code>
+		<code>#485a21</code>
+	</li>
+	<li class="dark-purple">
+		<code>.dark-purple</code>
+		<code>#5d3f6A</code>
+	</li>
+	<li class="forest">
+		<code>.forest</code>
+		<code>#006442</code>
+	</li>
+	<li class="green">
+		<code>.green</code>
+		<code>#26a65b</code>
+	</li>
+	<li class="jungle">
+		<code>.jungle</code>
+		<code>#36b3a8</code>
+	</li>
+	<li class="mauve">
+		<code>.mauve</code>
+		<code>#7b726c</code>
+	</li>
+	<li class="orange">
+		<code>.orange</code>
+		<code>#ff9624</code>
+	</li>
+	<li class="peach">
+		<code>.peach</code>
+		<code>#f47983</code>
+	</li>
+	<li class="pearl">
+		<code>.pearl</code>
+		<code>#bca89d</code>
+	</li>
+	<li class="pink">
+		<code>.pink</code>
+		<code>#de2e81</code>
+	</li>
+	<li class="pomegranate">
+		<code>.pomegranate</code>
+		<code>#e74c3c</code>
+	</li>
+	<li class="purple">
+		<code>.purple</code>
+		<code>#78498e</code>
+	</li>
+	<li class="red">
+		<code>.red</code>
+		<code>#8f1d21</code>
+	</li>
+	<li class="royal">
+		<code>.royal</code>
+		<code>#428bca</code>
+	</li>
+	<li class="slate-grey">
+		<code>.slate-grey</code>
+		<code>#7f8d9c</code>
+	</li>
+	<li class="silver">
+		<code>.silver</code>
+		<code>#bdc3c7</code>
+	</li>
+	<li class="steel-blue">
+		<code>.steel-blue</code>
+		<code>#4b77Be</code>
+	</li>
+	<li class="teal">
+		<code>.teal</code>
+		<code>#008080</code>
+	</li>
+	<li class="turquoise">
+		<code>.turquoise</code>
+		<code>#36d7b7</code>
+	</li>
+	<li class="yellow">
+		<code>.yellow</code>
+		<code>#ecc11B</code>
+	</li>
+	<li class="wheat">
+		<code>.wheat</code>
+		<code>#b4ad8b</code>
+	</li>
+	<li class="white">
+		<code>.white</code>
+		<code>#ffffff</code>
+	</li>
 </ul>
 
 <p>These colors can also be applied to text with the <code>text-{color}</code> classes.</p>
@@ -131,7 +271,7 @@
 
 <!-- CONTEXTUAL COLORS -->
 
-<h2 id="contextual-colors">Contextual Colors</h2>
+<h2 id="contextual">Contextual Colors</h2>
 
 <p>Below are contextual background color classes you can add to any element.</p>
 
@@ -175,139 +315,135 @@
 </pre>
 
 
-						</article><!-- #main -->
+							</article><!-- #main -->
 
-						<footer>
-							<p>&copy; <a href="http://frontstreet.io" title="Frontend CSS Framework">Front Street</a> - A Frontend Framework by <a href="http://themeblvd.com" title="WordPress Themes and Website Templates" target="_blank">Theme Blvd</a>, proudly powering <a href="https://wpjumpstart.com" title="Jump Start WordPress Theme" target="_blank">Jump Start</a>.</p>
-						</footer>
+							<footer>
+								<p>&copy; <a href="http://frontstreet.io" title="Frontend CSS Framework">Front Street</a> - A Frontend Framework by <a href="http://themeblvd.com" title="WordPress Themes and Website Templates" target="_blank">Theme Blvd</a> and <a href="http://jasonbobich.com" title="WordPress Developer" target="_blank">Jason Bobich</a>, proudly powering <a href="https://wpjumpstart.com" title="Jump Start WordPress Theme" target="_blank">Jump Start</a>.</p>
+							</footer>
 
-					</div><!-- .wrap -->
-				</div><!-- .site-content -->
+						</div><!-- .wrap -->
+					</div><!-- .site-content -->
 
-				<div class="site-sidebar col col-lg-2 col-lg-order-first primary">
-					<div class="wrap">
+					<div class="site-sidebar primary">
+						<div class="wrap">
 
-						<header>
-							<a href="http://frontstreet.io" title="Front Street - Frontend CSS Framework">
-								<img src="assets/img/logo.png" srcset="assets/img/logo.png 1x, assets/img/logo@2x.png 2x">
-							</a>
-						</header>
+							<h4 class="heading-sm">About</h4>
 
-						<h4 class="heading-sm">About</h4>
+							<ul>
+								<li>
+									<a href="install.html" title="Installation">Installation</a>
+								</li>
+								<li>
+									<a href="customize.html" title="Customization">Customization</a>
+								</li>
+								<li>
+									<a href="plugins.html" title="Plugins">Plugins</a>
+								</li>
+								<li>
+									<a href="javascript.html" title="JavaScript">JavaScript</a>
+								</li>
+							</ul>
 
-						<ul>
-							<li>
-								<a href="install.html" title="Installation">Installation</a>
-							</li>
-							<li>
-								<a href="customize.html" title="Customization">Customization</a>
-							</li>
-							<li>
-								<a href="plgins.html" title="Plugins">Plugins</a>
-							</li>
-							<li>
-								<a href="javascript.html" title="JavaScript">JavaScript</a>
-							</li>
-						</ul>
+							<h4 class="heading-sm">Core</h4>
 
-						<h4 class="heading-sm">Core</h4>
+							<ul>
+								<li>
+									<a href="type.html" title="Typography">Typography</a>
+								</li>
+								<li>
+									<a href="grid.html" title="Grid">Grid</a>
+								</li>
+								<li>
+									<a href="media.html" title="Media">Media</a>
+								</li>
+								<li>
+									<a href="forms.html" title="Forms">Forms</a>
+								</li>
+								<li>
+									<a href="buttons.html" title="Buttons">Buttons</a>
+								</li>
+								<li>
+									<a href="lists.html" title="Lists">Lists</a>
+								</li>
+								<li>
+									<a href="quotes.html" title="Quotes">Quotes</a>
+								</li>
+								<li>
+									<a href="tables.html" title="Tables">Tables</a>
+								</li>
+							</ul>
 
-						<ul>
-							<li>
-								<a href="type.html" title="Typography">Typography</a>
-							</li>
-							<li>
-								<a href="grid.html" title="Grid">Grid</a>
-							</li>
-							<li>
-								<a href="media.html" title="Media">Media</a>
-							</li>
-							<li>
-								<a href="forms.html" title="Forms">Forms</a>
-							</li>
-							<li>
-								<a href="buttons.html" title="Buttons">Buttons</a>
-							</li>
-							<li>
-								<a href="lists.html" title="Lists">Lists</a>
-							</li>
-							<li>
-								<a href="quotes.html" title="Quotes">Quotes</a>
-							</li>
-							<li>
-								<a href="tables.html" title="Tables">Tables</a>
-							</li>
-						</ul>
+							<h4 class="heading-sm">Utilities</h4>
 
-						<h4 class="heading-sm">Utilities</h4>
+							<ul>
+								<li>
+									<a href="utilities.html" title="Core Utilities">Core Utilities</a>
+								</li>
+								<li class="active">
+									<a href="colors.html" title="Colors">Colors</a>
+								</li>
+								<li>
+									<a href="helpers.html" title="Helpers">Helpers</a>
+								</li>
+							</ul>
 
-						<ul>
-							<li>
-								<a href="utilities.html" title="Core Utilities">Core Utilities</a>
-							</li>
-							<li class="active">
-								<a href="colors.html" title="Colors">Colors</a>
-							</li>
-							<li>
-								<a href="helpers.html" title="Helpers">Helpers</a>
-							</li>
-						</ul>
+							<h4 class="heading-sm">Components</h4>
 
-						<h4 class="heading-sm">Components</h4>
-
-						<ul>
-							<li>
-								<a href="alerts.html" title="Alerts">Alerts</a>
-							</li>
-							<li>
-								<a href="backgrounds.html" title="Backgrounds">Backgrounds</a>
-							</li>
-							<li>
-								<a href="breadcrumbs.html" title="Breadcrumbs">Breadcrumbs</a>
-							</li>
-							<li>
-								<a href="dividers.html" title="Dividers">Dividers</a>
-							</li>
-							<li>
-								<a href="loader.html" title="Loader">Loader</a>
-							</li>
-							<li>
-								<a href="modal.html" title="Modals">Modals</a>
-							</li>
-							<li>
-								<a href="nav.html" title="Navigation">Navigation</a>
-							</li>
-							<li>
-								<a href="mobile-nav.html" title="Mobile Navigation">Nav Mobile</a>
-							</li>
-							<li>
-								<a href="progress.html" title="Progress Bars">Progress Bars</a>
-							</li>
-							<li>
-								<a href="sliders.html" title="Sliders">Sliders</a>
-							</li>
-							<li>
-								<a href="tabs.html" title="Tabs">Tabs</a>
-							</li>
-							<li>
-								<a href="testimonials.html" title="Testimonials">Testimonials</a>
-							</li>
-							<li>
-								<a href="toggles.html" title="Toggles">Toggles</a>
-							</li>
-							<li>
-								<a href="tooltips.html" title="Tooltips">Tooltips</a>
-							</li>
-							<li>
-								<a href="widgets.html" title="Widgets">Widgets</a>
-							</li>
-						</ul>
+							<ul>
+								<li>
+									<a href="alerts.html" title="Alerts">Alerts</a>
+								</li>
+								<li>
+									<a href="backgrounds.html" title="Backgrounds">Backgrounds</a>
+								</li>
+								<li>
+									<a href="breadcrumbs.html" title="Breadcrumbs">Breadcrumbs</a>
+								</li>
+								<li>
+									<a href="dividers.html" title="Dividers">Dividers</a>
+								</li>
+								<li>
+									<a href="loader.html" title="Loader">Loader</a>
+								</li>
+								<li>
+									<a href="modal.html" title="Modals">Modals</a>
+								</li>
+								<li>
+									<a href="nav.html" title="Navigation">Navigation</a>
+								</li>
+								<li>
+									<a href="mobile-nav.html" title="Mobile Navigation">Nav Mobile</a>
+								</li>
+								<li>
+									<a href="progress.html" title="Progress Bars">Progress Bars</a>
+								</li>
+								<li>
+									<a href="sliders.html" title="Sliders">Sliders</a>
+								</li>
+								<li>
+									<a href="tabs.html" title="Tabs">Tabs</a>
+								</li>
+								<li>
+									<a href="testimonials.html" title="Testimonials">Testimonials</a>
+								</li>
+								<li>
+									<a href="toggles.html" title="Toggles">Toggles</a>
+								</li>
+								<li>
+									<a href="tooltips.html" title="Tooltips">Tooltips</a>
+								</li>
+								<li>
+									<a href="widgets.html" title="Widgets">Widgets</a>
+								</li>
+							</ul>
 
 
-					</div><!-- .wrap -->
-				</div><!-- .site-sidebar -->
+						</div><!-- .wrap -->
+					</div><!-- .site-sidebar -->
 
-			</div><!-- #container.row -->
+				</div><!-- #main -->
+
+			</div><!-- #container -->
 		</div><!-- #wrapper -->
 
 		<script type='text/javascript'>

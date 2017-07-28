@@ -19,17 +19,56 @@
 
 		@@include('../partials/analytics.html')
 
-		<div id="wrapper" class="row-container">
-			<div id="container" class="row">
+		<div id="wrapper">
+			<div id="container">
 
-				<div class="site-content col col-lg-10">
-					<div class="wrap">
+				<header class="site-header">
 
-						<article id="main">
+					<div class="site-logo primary">
+						<a href="http://frontstreet.io" title="Front Street - Frontend CSS Framework">
+							<img src="assets/img/logo.png" srcset="assets/img/logo.png 1x, assets/img/logo@2x.png 2x">
+						</a>
+					</div><!-- .site-logo -->
 
-							<h1 class="heading-lg">
-								@@title
-								@@if ( context.subtitle ) {
-									<small class="text-muted">@@subtitle</small>
-								}
-							</h1>
+					<div class="site-search">
+						<div class="field-icon fa-search">
+						    <input id="site-search-field" type="text" placeholder="Search the site...">
+						</div>
+					</div><!-- .site-search -->
+
+					<div class="site-follow">
+						<ul class="list-unstyled">
+							<li>
+								<a href="https://twitter.com/jasonbobich" title="Follow Jason Bobich on Twitter" target="_blank">
+									<i class="fa fa-twitter"></i>
+								</a>
+							</li>
+							<li>
+								<a href="https://github.com/themeblvd/frontstreet" title="Follow Front Street on Github" target="_blank">
+									<i class="fa fa-github"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<div id="search-results" class="site-search-results">
+						<ul class="list-unstyled">
+							<!-- JS inserts here. -->
+						</ul>
+					</div>
+
+				</header><!-- .site-header -->
+
+				<div class="site-main">
+
+					<div class="site-content">
+						<div class="wrap">
+
+							<article>
+
+								<h1 class="heading-lg">
+									@@title
+									@@if ( context.subtitle ) {
+										<small class="text-muted">@@subtitle</small>
+									}
+								</h1>

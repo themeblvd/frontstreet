@@ -1,10 +1,21 @@
-<header>
-	<a href="http://frontstreet.io" title="Front Street - Frontend CSS Framework">
-		<img src="assets/img/logo.png" srcset="assets/img/logo.png 1x, assets/img/logo@2x.png 2x">
-	</a>
-</header>
+<h4 class="heading-sm">About</h4>
 
-<h4 class="heading-xxs">Core</h4>
+<ul>
+	<li@@if (page == 'install') { class="active"}>
+		<a href="install.html" title="Installation">Installation</a>
+	</li>
+	<li@@if (page == 'customize') { class="active"}>
+		<a href="customize.html" title="Customization">Customization</a>
+	</li>
+	<li@@if (page == 'plugins') { class="active"}>
+		<a href="plugins.html" title="Plugins">Plugins</a>
+	</li>
+	<li@@if (page == 'javascript') { class="active"}>
+		<a href="javascript.html" title="JavaScript">JavaScript</a>
+	</li>
+</ul>
+
+<h4 class="heading-sm">Core</h4>
 
 <ul>
 	<li@@if (page == 'type') { class="active"}>
@@ -33,7 +44,7 @@
 	</li>
 </ul>
 
-<h4 class="heading-xxs">Utilities</h4>
+<h4 class="heading-sm">Utilities</h4>
 
 <ul>
 	<li@@if (page == 'utilities') { class="active"}>
@@ -47,7 +58,7 @@
 	</li>
 </ul>
 
-<h4 class="heading-xxs">Components</h4>
+<h4 class="heading-sm">Components</h4>
 
 <ul>
 	<li@@if (page == 'alerts') { class="active"}>
