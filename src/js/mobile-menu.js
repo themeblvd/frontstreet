@@ -39,15 +39,17 @@
 				return false;
 			});
 
+		$menu.height( $menu.prop('scrollHeight') );
+
 	}
 
 	MobileMenu.DEFAULTS = {
-		direction : 'ltr',
+		// direction : 'ltr'
 	}
 
 	MobileMenu.prototype.show = function($trigger, options) {
 
-		$trigger.closest('li').children('ul').stop(true, true).addClass('on');
+		$trigger.closest('li').children('ul').addClass('on');
 
 	}
 
