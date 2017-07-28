@@ -94,6 +94,8 @@ gulp.task('render-docs-js', function() {
 		'src/docs/assets/js/shBrushXml.js',
 		'src/docs/assets/js/shBrushCss.js',
 		'src/docs/assets/js/shBrushJScript.js',
+		'src/docs/assets/js/fuse.js',
+		'src/docs/assets/js/search-index.js',
 		'src/docs/assets/js/docs.js'
 	];
 
