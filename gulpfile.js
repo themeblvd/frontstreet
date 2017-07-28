@@ -54,6 +54,10 @@ gulp.task('compile-docs-scss', function() {
 
 	return gulp.src('src/docs/assets/scss/docs.scss')
 		.pipe(sass().on('error', sass.logError))
+		.pipe(autoprefixer({
+			browsers: browsers,
+			cascade: false
+		}))
 		.pipe(gulp.dest('src/docs/assets/css'));
 
 });
