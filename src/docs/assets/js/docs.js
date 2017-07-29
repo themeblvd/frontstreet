@@ -114,6 +114,27 @@ jQuery(document).ready(function($){
 		$resultsList.stop(true, true).fadeOut(100);
 	});
 
+	// Scroll To Top
+	var $toTop = $('.to-top');
+
+	$toTop.on('click', function() {
+		$('html, body').animate({scrollTop : 0}, 400);
+		return false;
+	});
+
+	$(window).on('scroll load', function() {
+
+		var sidebarHeight = $('.site-sidebar > .wrap').outerHeight();
+			btnHeight = $toTop.outerHeight();
+
+		if ( $(this).scrollTop() >= (sidebarHeight - btnHeight) ) {
+			$toTop.addClass('stick');
+		} else {
+			$toTop.removeClass('stick');
+		}
+
+	});
+
 	// Menu Toggle examples
 
 	$('.fs-menu-toggle').on('click', function(){
