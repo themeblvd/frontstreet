@@ -288,11 +288,12 @@ body {
 // When linking to h2 hashtag ID, give some space below
 // the fixed position header, so that the user lands
 // at the right spot.
-h2:before {
+h2:before,
+h3:before {
 	display: block;
 	content: " ";
-	margin-top: -70px;
-	height: 70px;
+	margin-top: -1 * ($header-height + 10px);
+	height: $header-height + 10px;
 	visibility: hidden;
 }
 

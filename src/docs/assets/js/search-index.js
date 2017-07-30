@@ -665,6 +665,11 @@ var FrontStreetIndex = [
 		tags: ['owl-carousel', 'slideshow', 'carousel', 'image', 'photo', 'picture']
 	},
 	{
+		title: 'Sliders: Slider Data Attributes',
+		url: 'sliders.html#data-atts',
+		tags: ['slideshow', 'carousel', 'options', 'atts']
+	},
+	{
 		title: 'Sliders: Simple Slider',
 		url: 'sliders.html#simple-slider',
 		tags: ['owl-carousel', 'slideshow', 'carousel', 'image', 'photo', 'picture']

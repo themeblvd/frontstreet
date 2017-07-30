@@ -229,11 +229,12 @@ body {
     padding: 40px; } }
 
 /* Content */
-h2:before {
+h2:before,
+h3:before {
   display: block;
   content: " ";
-  margin-top: -70px;
-  height: 70px;
+  margin-top: -71px;
+  height: 71px;
   visibility: hidden; }
 
 /* =Examples

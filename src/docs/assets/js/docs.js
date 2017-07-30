@@ -111,7 +111,9 @@ jQuery(document).ready(function($){
 	});
 
 	$searchField.on('focusout', function() {
-		$resultsList.stop(true, true).fadeOut(100);
+		setTimeout(function() {
+			$resultsList.stop(true, true).fadeOut(100);
+		}, 500);
 	});
 
 	// Scroll To Top
