@@ -199,15 +199,15 @@
 	 */
 	frontStreet.background.parallaxCalc = function( $figure, $img ) {
 
-		var imgHeight		= $img.height(),
+		var imgHeight       = $img.height(),
 			containerHeight	= $figure.height() > 0 ? $figure.height() : 500,
-			parallaxDist	= imgHeight - containerHeight,
-			bottom			= $figure.offset().top + containerHeight,
-			top				= $figure.offset().top,
-			scrollTop		= $window.scrollTop(),
-			windowHeight	= window.innerHeight, // Using `window`, NOT `$window`; we need a fresh calculation here.
-			windowBottom	= scrollTop + windowHeight,
-			percentScrolled	= ( windowBottom - top ) / ( containerHeight + windowHeight );
+			parallaxDist    = imgHeight - containerHeight,
+			bottom          = $figure.offset().top + containerHeight,
+			top             = $figure.offset().top,
+			scrollTop       = $window.scrollTop(),
+			windowHeight    = window.innerHeight, // Using `window`, NOT `$window`; we need a fresh calculation here.
+			windowBottom    = scrollTop + windowHeight,
+			percentScrolled = ( windowBottom - top ) / ( containerHeight + windowHeight );
 
 		if ( ( bottom > scrollTop ) && ( top < ( scrollTop + windowHeight ) ) ) {
 			return Math.round( ( parallaxDist * percentScrolled ) );
