@@ -622,7 +622,7 @@ To edit settings, press <kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd></p>
 		 * Optional configuration object that can be used to
 		 * disable individiual JavaScript components.
 		 */
-		var FrontStreetConfig = {
+		var fsConfig = {
 			'background'  		: true,
 			'menu'  			: true,
 			'mobile-menu'		: true,
@@ -630,15 +630,15 @@ To edit settings, press <kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd></p>
 			'jump-menu'			: true,
 			'slider'  			: true,
 			'tabs'				: true,
-			'tooltip'			: true,
-			'toggles'			: true
+			'toggle'			: true,
+			'tooltip'			: true
 		};
 
 		/**
 		 * Optional configuration object that can adjust how
 		 * Magnific Popup is configured.
 		 */
-		var FrontStreetModalConfig = {
+		var fsModal = {
 			'animation'			: 'fade',	// 'fade', 'slide' or 'none'
 			'mobile'			: 0,		// Image modals will work at all viewports.
 			'mobileIframe'		: 768,		// Iframe modals will only work when viewport >= 768.
@@ -653,13 +653,14 @@ To edit settings, press <kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd></p>
 		/* ]]> */
 		</script>
 
-		<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"></script>
 		<script type="text/javascript" src="assets/frontstreet/plugins/magnific-popup/magnific-popup.min.js"></script>
 		<script type="text/javascript" src="assets/frontstreet/plugins/owl-carousel/owl-carousel.min.js"></script>
 		<script type="text/javascript" src="assets/frontstreet/js/frontstreet.js"></script>
 		<script type="text/javascript" src="assets/js/docs.min.js"></script>
 
 		<script type="text/javascript">
+			// @TODO replace with highlight.js
 			SyntaxHighlighter.all()
 		</script>
 
