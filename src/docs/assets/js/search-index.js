@@ -177,7 +177,7 @@ var FrontStreetIndex = [
 	{
 		title: 'Forms: Select Menus',
 		url: 'forms.html#select',
-		tags: []
+		tags: ['jump', 'menu']
 	},
 	{
 		title: 'Forms: Checkboxes',
