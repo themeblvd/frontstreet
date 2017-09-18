@@ -44,7 +44,7 @@
 	 */
 	frontStreet.background.defaults = {
 		type: 'parallax',
-		autoplay : 4000,
+		autoplay: 4000,
 		section: '.fs-section, .has-bg-slider, .has-bg-parallax, .has-bg-video'
 	};
 

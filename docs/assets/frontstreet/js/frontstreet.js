@@ -221,7 +221,7 @@ window.frontStreet = {};
 	 */
 	frontStreet.background.defaults = {
 		type: 'parallax',
-		autoplay : 4000,
+		autoplay: 4000,
 		section: '.fs-section, .has-bg-slider, .has-bg-parallax, .has-bg-video'
 	};
 
@@ -1337,9 +1337,9 @@ window.frontStreet = {};
 	 * @var {object}
 	 */
 	frontStreet.tabs.defaults = {
-		navSelector : '.menu-bar, .submenu-bar, .submenu-tabs, .submenu-pills',
-		height      : false,
-		deepLink    : false
+		navSelector: '.menu-bar, .submenu-bar, .submenu-tabs, .submenu-pills',
+		height: false,
+		deepLink: false
 	};
 
 	/**
@@ -1565,8 +1565,8 @@ window.frontStreet = {};
 	 * @var {object}
 	 */
 	frontStreet.toggle.defaults = {
-		speed     : 200,
-		accordion : false
+		speed: 200,
+		accordion: false
 	};
 
 	/**

@@ -38,8 +38,8 @@
 	 * @var {object}
 	 */
 	frontStreet.toggle.defaults = {
-		speed     : 200,
-		accordion : false
+		speed: 200,
+		accordion: false
 	};
 
 	/**

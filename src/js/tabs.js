@@ -39,9 +39,9 @@
 	 * @var {object}
 	 */
 	frontStreet.tabs.defaults = {
-		navSelector : '.menu-bar, .submenu-bar, .submenu-tabs, .submenu-pills',
-		height      : false,
-		deepLink    : false
+		navSelector: '.menu-bar, .submenu-bar, .submenu-tabs, .submenu-pills',
+		height: false,
+		deepLink: false
 	};
 
 	/**
