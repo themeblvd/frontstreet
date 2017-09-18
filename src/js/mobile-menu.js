@@ -1,96 +1,89 @@
-/* ========================================================================
- * Front Street: mobile-menu.js v1.0.0
- * ========================================================================
- * Copyright 2017 Theme Blvd
- * Licensed under MIT
- * ======================================================================== */
-
-+function ($) {
+/**
+ * Adds submenu navigation to mobile menus.
+ *
+ * @summary  Mobile Menus
+ *
+ * @author   Jason Bobich
+ * @link     http://frontstreet.io
+ * @since    1.0.0
+ * @module   mobile-menu.js
+ * @requires init.js
+ */
++function( $, frontStreet ) {
 
 	'use strict';
 
-	if ( ! FrontStreet.doComponent('mobile-menu') ) {
+	if ( 'undefined' === typeof frontStreet ) {
 		return;
 	}
 
-	// MOBILE MENU CLASS DEFINITION
-	// ============================
+	if ( 'undefined' === typeof frontStreet.doComponent ) {
+		return;
+	}
 
-	var MobileMenu = function(element, options) {
+	if ( ! frontStreet.doComponent( 'mobile-menu' ) ) {
+		return;
+	}
 
-		var $this = this,
-			$menu = $(element),
-			$triggers = $menu.find('li').has('ul');
+	frontStreet.mobileMenu = {};
 
-		$this.options = $.extend({}, MobileMenu.DEFAULTS, options);
+	/**
+	 * Initialize the `mobile-menu` component on a DOM element,
+	 * when binded through jQuery.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param {object} element this
+	 * @param {object} options Component options (currently not used).
+	 */
+	frontStreet.mobileMenu.init = function( element, options ) {
+
+		var $menu     = $( element ),
+			$triggers = $menu.find( 'li' ).has( 'ul' );
 
 		$triggers
-			.addClass('menu-item-has-children')
-			.children('.menu-btn').on('click.fs.mobile-menu', function() {
-				$this.show( $(this), $this.options );
+			.addClass( 'menu-item-has-children' )
+			.children( '.menu-btn' ).on( 'click.fs.mobile-menu', function() {
+				frontStreet.mobileMenu.show( $(this) );
 				return false;
-			});
+			} );
 
 		$triggers
-			.find('ul')
-			.prepend('<li><a href="#" class="menu-btn back"></a></li>')
-			.find('.back').on('click.fs.mobile-menu-back', function() {
-				$this.hide( $(this), $this.options );
+			.find( 'ul' )
+			.prepend( '<li><a href="#" class="menu-btn back"></a></li>' )
+			.find( '.back' ).on('click.fs.mobile-menu-back', function() {
+				frontStreet.mobileMenu.hide( $( this ) );
 				return false;
-			});
+			} );
 
-		$menu.height( $menu.prop('scrollHeight') );
+		$menu.height( $menu.prop( 'scrollHeight' ) );
 
-	}
+	};
 
-	MobileMenu.DEFAULTS = {
-		// direction : 'ltr'
-	}
+	/**
+	 * Show a submenu.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param {object} $trigger Parent menu item triggering submenu.
+	 */
+	frontStreet.mobileMenu.show = function( $trigger ) {
 
-	MobileMenu.prototype.show = function($trigger, options) {
+		$trigger.closest( 'li' ).children( 'ul' ).addClass( 'on' );
 
-		$trigger.closest('li').children('ul').addClass('on');
+	};
 
-	}
+	/**
+	 * Hide a submenu.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param {object} $trigger Parent menu item triggering submenu.
+	 */
+	frontStreet.mobileMenu.hide = function( $trigger ) {
 
-	MobileMenu.prototype.hide = function($trigger, options) {
+		$trigger.closest( 'ul' ).removeClass( 'on' );
 
-		$trigger.closest('ul').removeClass('on');
+	};
 
-	}
-
-	// MOBILE MENU PLUGIN DEFINITION
-	// =============================
-
-	function Plugin(option) {
-		return this.each(function () {
-
-			var $this 	= $(this),
-				data  	= $this.data('fs.mobile-menu'),
-				options = $.extend({}, MobileMenu.DEFAULTS, $this.data(), typeof option == 'object' && option);
-
-			if (!data) {
-				$this.data('fs.mobile-menu', (data = new MobileMenu(this, options)));
-			}
-
-			if (typeof option == 'string') {
-				data[option].call($this);
-			}
-
-		})
-	}
-
-	var old = $.fn.FrontStreetMobileMenu;
-
-	$.fn.FrontStreetMobileMenu = Plugin;
-	$.fn.FrontStreetMobileMenu.Constructor = MobileMenu;
-
-	// MOBILE MENU NO CONFLICT
-	// =======================
-
-	$.fn.FrontStreetMobileMenu.noConflict = function () {
-		$.fn.FrontStreetMobileMenu = old;
-		return this;
-	}
-
-}(jQuery);
+}( jQuery, window.frontStreet );

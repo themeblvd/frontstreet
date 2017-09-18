@@ -16,6 +16,7 @@ var gulp			= require('gulp'),
  */
 var serve = [
 	'render-docs-css',
+	'render-docs-jquery',
 	'render-docs-js',
 	'render-docs-html',
 	'render-docs-img',
@@ -25,6 +26,11 @@ var serve = [
 	'render-project-img',
 	'render-project-plugins'
 ];
+
+/**
+ * jQuery version included for docs.
+ */
+var jQueryVersion = '1.12.4';
 
 /**
  * Supported browsers for CSS autoprefixer.
@@ -80,6 +86,17 @@ gulp.task('render-docs-css', ['compile-docs-scss'], function() {
 		.pipe(minifycss())
 		.pipe(rename({ suffix: '.min' }))
     	.pipe(gulp.dest('docs/assets/css'));
+
+});
+
+/**
+ * Concat and minify all JavaScript files for
+ * documentation.
+ */
+gulp.task('render-docs-jquery', function() {
+
+	return gulp.src('src/docs/assets/js/jquery-' + jQueryVersion + '.min.js')
+    	.pipe(gulp.dest('docs/assets/js'));
 
 });
 
@@ -191,6 +208,7 @@ gulp.task('render-project-css', ['render-project-clean'], function() {
 gulp.task('render-project-js', ['render-project-clean'], function() {
 
 	var files = [
+		'src/js/info.js',
 		'src/js/init.js',
 		'src/js/background.js',
 		'src/js/jump-menu.js',
@@ -199,15 +217,15 @@ gulp.task('render-project-js', ['render-project-clean'], function() {
 		'src/js/modal.js',
 		'src/js/slider.js',
 		'src/js/tabs.js',
-		'src/js/tooltip.js',
-		'src/js/toggles.js'
+		'src/js/toggle.js',
+		'src/js/tooltip.js'
 	];
 
 	return gulp.src(files)
 		.pipe(concat('frontstreet.js'))
 		.pipe(gulp.dest('dist/js'))
 		.pipe(gulp.dest('docs/assets/frontstreet/js'))
-		.pipe(minifyjs())
+		.pipe(minifyjs({output: {comments: /^!|@license/i}}))
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(gulp.dest('dist/js'))
 		.pipe(gulp.dest('docs/assets/frontstreet/js'));

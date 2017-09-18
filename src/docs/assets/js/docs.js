@@ -1,4 +1,4 @@
-jQuery(document).ready(function($){
+jQuery( document ).ready( function( $ ) {
 
 	// Site Search
 	var options = {
@@ -162,7 +162,6 @@ jQuery(document).ready(function($){
 	});
 
 	// Moble Menu examples
-
-	$('.mobile-menu-bar').FrontStreetMobileMenu();
+	$( '.mobile-menu-bar' ).frontStreet( 'mobile-menu' );
 
 });

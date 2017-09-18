@@ -1,15 +1,32 @@
-/* ========================================================================
- * Front Street: modal.js v1.0.0
- * ========================================================================
- * Copyright 2017 Theme Blvd
- * Licensed under MIT
- * ======================================================================== */
-
-+function ($) {
+/**
+ * This file binds preset instances of Magnific Popup.
+ *
+ * Magnific Popup is an open source lightbox script
+ * by Dmitry Semenov.
+ *
+ * @link http://dimsemenov.com/plugins/magnific-popup/
+ *
+ * @summary  Modals
+ *
+ * @author   Jason Bobich
+ * @link     http://frontstreet.io
+ * @since    1.0.0
+ * @module   modal.js
+ * @requires magnific-popup.js, init.js
+ */
++function( $, frontStreet ) {
 
 	'use strict';
 
-	if ( ! FrontStreet.doComponent('modal') ) {
+	if ( 'undefined' === typeof frontStreet ) {
+		return;
+	}
+
+	if ( 'undefined' === typeof frontStreet.doComponent ) {
+		return;
+	}
+
+	if ( ! frontStreet.doComponent( 'modal' ) ) {
 		return;
 	}
 
@@ -17,30 +34,32 @@
 		return;
 	}
 
-	$(document).ready(function() {
+	var $document = frontStreet.dom.document;
 
-		var mainClass = 'fs-modal',
+	$document.ready( function( $ ) {
+
+		var mainClass    = 'fs-modal',
 			removalDelay = 0;
 
 		var config = {
-			'animation'			: 'fade',
-			'mobile'			: 0,
-			'mobileIframe'		: 768,
-			'mobileGallery'		: 0,
-			'error'				: 'The modal media could not be loaded.',
-			'close'				: 'Close',
-			'loading'			: 'Loading...',
-			'counter'			: '%curr% of %total%',
-			'next'				: 'Next',
-			'previous'			: 'Previous',
-			'closeMarkup'		: '<button type="button" class="mfp-close fs-close close-light close-md">%title%</button>'
+			'animation'     : 'fade',
+			'mobile'        : 0,
+			'mobileIframe'  : 768,
+			'mobileGallery' : 0,
+			'error'         : 'The modal media could not be loaded.',
+			'close'         : 'Close',
+			'loading'       : 'Loading...',
+			'counter'       : '%curr% of %total%',
+			'next'          : 'Next',
+			'previous'      : 'Previous',
+			'closeMarkup'   : '<button type="button" class="mfp-close fs-close close-light close-md">%title%</button>'
 		};
 
-		if ( typeof FrontStreetModalConfig !== 'undefined' ) {
-			config = $.extend({}, config, FrontStreetModalConfig);
+		if ( 'undefined' !== typeof fsModal ) {
+			config = $.extend( {}, config, fsModal );
 		}
 
-		if ( config['animation'] && config['animation'] !== 'none' ) {
+		if ( config.animation && 'none' !== config.animation ) {
 			mainClass = mainClass + ' fs-modal-' + config['animation'];
 			removalDelay = 150;
 		}
@@ -59,14 +78,17 @@
 			ajax: {
 				tError: config.error
 			}
-		});
+		} );
 
-		$('.fs-modal-close').on('click', function() {
+		$( '.fs-modal-close' ).on( 'click', function() {
+
 			$.magnificPopup.close();
-			return false;
-		});
 
-		$('.fs-content-modal-link').magnificPopup({
+			return false;
+
+		} );
+
+		$( '.fs-content-modal-link' ).magnificPopup( {
 			type: 'inline',
 			mainClass: mainClass,
 			alignTop: true,
@@ -74,15 +96,15 @@
 			removalDelay: removalDelay,
 			callbacks: {
 				open: function() {
-					$('.mfp-wrap .fs-modal').attr('aria-hidden', false);
+					$( '.mfp-wrap .fs-modal' ).attr( 'aria-hidden', false );
 				},
 				beforeClose: function() {
-					$('.mfp-wrap .fs-modal').attr('aria-hidden', true);
+					$( '.mfp-wrap .fs-modal' ).attr( 'aria-hidden', true );
 				}
 			}
-		});
+		} );
 
-		$('.fs-search-modal-link').magnificPopup({
+		$( '.fs-search-modal-link' ).magnificPopup( {
 			type: 'inline',
 			mainClass: mainClass + ' mfp-search',
 			closeBtnInside: false,
@@ -91,22 +113,22 @@
 			callbacks: {
 				open: function() {
 
-					$('.mfp-wrap .fs-search-modal').attr('aria-hidden', false);
+					$( '.mfp-wrap .fs-search-modal' ).attr( 'aria-hidden', false);
 
-					$.magnificPopup.instance.wrap[0].addEventListener('focus', function (e) {
+					$.magnificPopup.instance.wrap[0].addEventListener( 'focus', function (e) {
 
-						$('.mfp-search .fs-search-modal input[type="search"]').focus();
+						$( '.mfp-search .fs-search-modal input[type="search"]' ).focus();
 
-					});
+					} );
 
 				},
 				beforeClose: function() {
-					$('.mfp-wrap .fs-search-modal').attr('aria-hidden', true);
+					$( '.mfp-wrap .fs-search-modal' ).attr( 'aria-hidden', true);
 				}
 			}
-		});
+		} );
 
-		$('.fs-modal-gallery, .themeblvd-gallery').each(function() {
+		$( '.fs-modal-gallery, .themeblvd-gallery' ).each( function() {
 
 			var $gallery = $(this),
 				selector = '',
@@ -126,34 +148,28 @@
 				}
 			}
 
-			$gallery.find(selector).each(function() {
+			$gallery.find(selector).each( function() {
 
 				var $link = $(this),
 					linkClass = '';
 
-				if ( $link.hasClass('fs-content-modal-link') ) {
-
+				if ( $link.hasClass( 'fs-content-modal-link' ) ) {
 					linkClass = 'mfp-inline';
-
-				} else if ( $link.hasClass('fs-image-modal-link') ) {
-
+				} else if ( $link.hasClass( 'fs-image-modal-link' ) ) {
 					linkClass = 'mfp-image';
-
-				} else if ( $link.hasClass('fs-iframe-modal-link') ) {
-
+				} else if ( $link.hasClass( 'fs-iframe-modal-link' ) ) {
 					linkClass = 'mfp-iframe';
-
 				}
 
 				linkClass = 'fs-gallery-modal-link ' + linkClass;
 
 				$link
-					.removeClass( classes.join(' ') )
+					.removeClass( classes.join( ' ' ) )
 					.addClass(linkClass);
 
-			});
+			} );
 
-			$gallery.magnificPopup({
+			$gallery.magnificPopup( {
 				mainClass: mainClass,
 				closeMarkup: config.closeMarkup,
 				removalDelay: removalDelay,
@@ -178,14 +194,14 @@
 				},
 				callbacks: {
 					markupParse: function(template, values, item) {
-						values.title = item.el.attr('title');
+						values.title = item.el.attr( 'title' );
 					}
   				}
-			});
+			} );
 
-		});
+		} );
 
-		$('.fs-image-modal-link').magnificPopup({
+		$( '.fs-image-modal-link' ).magnificPopup( {
 			type: 'image',
 			mainClass: mainClass,
 			closeMarkup: config.closeMarkup,
@@ -194,9 +210,9 @@
 			image: {
 				cursor: null
 			}
-		});
+		} );
 
-		$('.fs-iframe-modal-link').magnificPopup({
+		$( '.fs-iframe-modal-link' ).magnificPopup( {
 			type: 'iframe',
 			mainClass: mainClass,
 			closeMarkup: config.closeMarkup,
@@ -215,11 +231,11 @@
 			},
 			callbacks: {
 				markupParse: function(template, values, item) {
-					values.title = item.el.attr('title');
+					values.title = item.el.attr( 'title' );
 				}
 			}
-		});
+		} );
 
-	});
+	} );
 
-}(jQuery);
+}( jQuery, window.frontStreet );

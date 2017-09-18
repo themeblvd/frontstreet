@@ -1,125 +1,171 @@
-/* ========================================================================
- * Front Street: tabs.js v1.0.0
- * ========================================================================
- * Copyright 2017 Theme Blvd
- * Licensed under MIT
- * ======================================================================== */
-
-+function ($) {
+/**
+ * Adds tabs component functionality, which allows
+ * toggling between tab content panes.
+ *
+ * @summary  Tabs
+ *
+ * @author   Jason Bobich
+ * @link     http://frontstreet.io
+ * @since    1.0.0
+ * @module   tabs.js
+ * @requires init.js
+ */
++function( $, frontStreet ) {
 
 	'use strict';
 
-	if ( ! FrontStreet.doComponent('tabs') ) {
+	if ( 'undefined' === typeof frontStreet ) {
 		return;
 	}
 
-	// TABS CLASS DEFINITION
-	// ============================
+	if ( 'undefined' === typeof frontStreet.doComponent ) {
+		return;
+	}
 
-	var Tabs = function(element, options) {
+	if ( ! frontStreet.doComponent( 'tabs' ) ) {
+		return;
+	}
 
-		var $this = this,
-			$element = $(element);
+	var $window   = frontStreet.dom.window,
+		$document = frontStreet.dom.document;
 
-		$this.options = $.extend({}, Tabs.DEFAULTS, options);
+	frontStreet.tabs = {};
 
-		if ( $element.hasClass('tabs-fixed-height') ) { // Override option when CSS class exists.
-			$this.options.height = true;
+	/**
+	 * Default tabs options.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @var {object}
+	 */
+	frontStreet.tabs.defaults = {
+		navSelector : '.menu-bar, .submenu-bar, .submenu-tabs, .submenu-pills',
+		height      : false,
+		deepLink    : false
+	};
+
+	/**
+	 * Initialize the `tabs` component on a DOM element,
+	 * when binded through jQuery.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param {object} element this
+	 * @param {object} options Component options (currently not used).
+	 */
+	frontStreet.tabs.init = function( element, options ) {
+
+		var $tabs    = $( element ),
+			settings = $.extend( {}, frontStreet.tabs.defaults, options );
+
+		/*
+		 * The following classes being added to the tabs element
+		 * can override the height and deepLink options.
+		 */
+		if ( $tabs.hasClass( 'tabs-fixed-height' ) ) {
+			settings.height = true;
 		}
 
-		if ( $element.hasClass('tabs-deep-link') ) { // Override option when CSS class exists.
-			$this.options.deepLink = true;
+		if ( $tabs.hasClass( 'tabs-deep-link' ) ) {
+			settings.deepLink = true;
 		}
 
 		// Setup accessiblity.
+		$tabs.find( '.tab-pane' ).each( function() {
 
-		$element
-			.find('.tab-pane')
-			.each(function() {
+			var $pane = $( this );
 
-				var $pane = $(this);
+			if ( $pane.hasClass( 'active' ) ) {
+				$pane.attr( 'aria-expanded', true );
+			} else {
+				$pane.attr( 'aria-expanded', false );
+			}
 
-				if ( $pane.hasClass('active') ) {
-					$pane.attr('aria-expanded', true);
-				} else {
-					$pane.attr('aria-expanded', false);
-				}
-
-			});
+		} );
 
 		// Toggle tab content.
+		$tabs
+			.find( settings.navSelector )
+			.find( 'a' )
+			.on( 'click', function( event ) {
+				event.preventDefault();
+				frontStreet.tabs.show( $tabs, $(this), settings );
+			} );
 
-		$element
-			.find($this.options.nav)
-			.find('a')
-			.on('click.fs.tabs', function() {
-				$this.show( $element, $(this), $this.options );
-				return false;
-			});
+		// Setup fixed height and/or deep-linking.
+		if ( settings.height || settings.deepLink ) {
 
-		if ( $this.options.height || $this.options.deepLink ) {
-
-			$(window).on('load', function() {
+			$window.on( 'load', function() {
 
 				// Match height of all tabs to tallest.
-
-				if ( $this.options.height ) {
-					$this.height($element);
+				if ( settings.height ) {
+					frontStreet.tabs.matchHeight( $tabs );
 				}
 
 				// Watch for deep-linking.
-
-				if ( $this.options.deepLink ) {
-					$this.deepLink($this, $element, options);
+				if ( settings.deepLink ) {
+					frontStreet.tabs.deepLink( $tabs, settings );
 				}
 
-			});
+			} );
 
 		}
 
 	};
 
-	Tabs.DEFAULTS = {
-		nav			: '.menu-bar, .submenu-bar, .submenu-tabs, .submenu-pills',
-		height		: false,
-		deepLink	: false
-	};
+	/**
+	 * Show a tab.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param {object} $tabs    The binded jQuery DOM element.
+	 * @param {object} $trigger Link (tab) which is triggering new content.
+	 * @param {object} settings Component settings.
+	 */
+	frontStreet.tabs.show = function( $tabs, $trigger, settings ) {
 
-	Tabs.prototype.show = function($element, $btn, options) {
+		var $nav   = $trigger.closest( settings.navSelector ),
+			target = $trigger.attr( 'href' ).split( '#' )[1];
 
-		var $nav = $btn.closest(options.nav),
-			target = $btn.attr('href').split('#')[1];
+		$nav.find( 'li' ).removeClass( 'active' );
 
-		$nav.find('li').removeClass('active');
-		$btn.closest('li').addClass('active');
+		$trigger.closest( 'li' ).addClass( 'active' );
 
-		$element
-			.find('.tab-pane')
-			.attr('aria-expanded', false)
-			.removeClass('in')
+		$tabs
+			.find( '.tab-pane' )
+			.attr( 'aria-expanded', false )
+			.removeClass( 'in' )
 			.hide()
-			.removeClass('fade');
+			.removeClass( 'fade' );
 
-		$element
-			.find('#' + target)
-			.attr('aria-expanded', true)
-			.addClass('fade')
-			.show(0, function() {
-				$(this).addClass('in');
-			});
+		$tabs
+			.find( '#' + target )
+			.attr( 'aria-expanded', true )
+			.addClass( 'fade' )
+			.show( 0, function() {
+				$( this ).addClass( 'in' );
+			} );
 
 	};
 
-	Tabs.prototype.height = function($element) {
+	/**
+	 * Set all tab content panes to have equal height, to
+	 * the tallest one.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param {object} $tabs The binded jQuery DOM element.
+	 */
+	frontStreet.tabs.matchHeight = function( $tabs ) {
 
 		var tallest = 0;
 
-		$element.find('.tab-pane').each(function() {
+		$tabs.find( '.tab-pane' ).each(function() {
 
-			var $pane = $(this),
+			var $pane         = $( this ),
 				currentHeight = $pane.show().outerHeight();
 
-			if ( ! $pane.hasClass('active') ) {
+			if ( ! $pane.hasClass( 'active' ) ) {
 				$pane.hide();
 			}
 
@@ -127,75 +173,56 @@
 				tallest = currentHeight;
 			}
 
-		});
+		} );
 
-		$element.find('.tab-pane').height(tallest);
+		$tabs.find( '.tab-pane' ).height( tallest );
 
 	};
 
-	Tabs.prototype.deepLink = function($this, $element, options) {
-
-		// Note: To deep link to a tab, you need to prefix
-		// the ID of the tab with "tab_" like this:
-		// http://your-site.com/page-with-tabs/#tab_id_of_tab
+	/**
+	 * Watch for tab deep-linking.
+	 *
+	 * Tab deep-linking is when the user passes a tab ID
+	 * through the URL of the webpage to trigger opening
+	 * a specific tab pane.
+	 *
+	 * To deep link to a tab, you need to prefix
+	 * the ID of the tab with "tab_" like this:
+	 *
+	 * `http://your-site.com/page-with-tabs/#tab_id_of_tab`
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param {object} $tabs    The binded jQuery DOM element.
+	 * @param {object} settings Component settings.
+	 */
+	frontStreet.tabs.deepLink = function( $tabs, settings ) {
 
 		var hash = document.location.hash;
 
-		if ( hash && hash.indexOf('tab_') != -1 ) {
+		if ( hash && -1 != hash.indexOf( 'tab_' ) ) {
 
-			hash = hash.replace('tab_', '');
+			hash = hash.replace( 'tab_', '' );
 
-			$this.show( $element, $element.find('a[href="' + hash + '"]'), options );
+			frontStreet.tabs.show( $tabs, $tabs.find( 'a[href="' + hash + '"] '), settings );
 
-			$('html, body').animate({
-				scrollTop: $element.offset().top - 20
-			}, 800);
+			$( 'html, body' ).animate({
+				scrollTop: $tabs.offset().top - 20
+			}, 800 );
 
 		}
 
 	};
 
-	// TABS PLUGIN DEFINITION
-	// =============================
+	$document.ready( function( $ ) {
 
-	function Plugin(option) {
-		return this.each(function () {
+		/**
+		 * Self-invokes the `tabs` component.
+		 *
+		 * @since 1.0.0
+		 */
+		$( '.fs-tabs' ).frontStreet( 'tabs' );
 
-			var $this 	= $(this),
-				data  	= $this.data('fs.tabs'),
-				options = $.extend({}, Tabs.DEFAULTS, $this.data(), typeof option == 'object' && option);
+	} );
 
-			if ( ! data ) {
-				$this.data('fs.tabs', (data = new Tabs(this, options)));
-			}
-
-			if ( typeof option == 'string' ) {
-				data[option].call($this);
-			}
-
-		})
-	}
-
-	var old = $.fn.FrontStreetTabs;
-
-	$.fn.FrontStreetTabs = Plugin;
-	$.fn.FrontStreetTabs.Constructor = Tabs;
-
-	// TABS NO CONFLICT
-	// =======================
-
-	$.fn.FrontStreetTabs.noConflict = function () {
-		$.fn.FrontStreetTabs = old;
-		return this;
-	}
-
-	// SELF-INVOKING
-	// =============
-
-	$(document).ready(function() {
-
-		$('.fs-tabs').FrontStreetTabs();
-
-	});
-
-}(jQuery);
+}( jQuery, window.frontStreet );
