@@ -37,20 +37,11 @@
 
 }
 
-@include tab-content-variant($style);
+@include tab-content-variant;
 
-@if ($style == 'inverse') {
-	.text-dark {
-		@include tab-content-variant;
-	}
-	.text-light {
-		@include tab-content-variant('inverse');
-	}
-} @else {
-	.text-light {
-		@include tab-content-variant('inverse');
-	}
-	.text-dark {
-		@include tab-content-variant;
-	}
+.text-light {
+	@include tab-content-variant('inverse');
+}
+.text-dark {
+	@include tab-content-variant;
 }

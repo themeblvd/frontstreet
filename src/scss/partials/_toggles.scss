@@ -60,22 +60,13 @@
 
 }
 
-@include toggle-variant($style);
+@include toggle-variant;
 
-@if ($style == 'inverse') {
-	.text-dark {
-		@include toggle-variant('default');
-	}
-	.text-light {
-		@include toggle-variant('inverse');
-	}
-} @else {
-	.text-light {
-		@include toggle-variant('inverse');
-	}
-	.text-dark {
-		@include toggle-variant('default');
-	}
+.text-light {
+	@include toggle-variant('inverse');
+}
+.text-dark {
+	@include toggle-variant;
 }
 
 //

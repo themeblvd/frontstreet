@@ -37,7 +37,7 @@
 
 	li {
 		background-color: transparent;
-		border: 2px solid if($style == 'inverse', $clr-black, $clr-lighter);
+		border: 2px solid $clr-lighter;
 		border-radius: $slider-nav-btn-size;
 		cursor: pointer;
 		display: block;
@@ -46,7 +46,7 @@
 		height: $slider-nav-btn-size;
 	}
 	li.active {
-		background-color: if($style == 'inverse', $clr-black, $clr-lighter);
+		background-color: $clr-lighter;
 	}
 }
 

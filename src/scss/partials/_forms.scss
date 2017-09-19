@@ -33,7 +33,7 @@ fieldset {
 label,
 .label {
 
-	color: if($style == 'inverse', $clr-text-inv-darken, $clr-text-darken);
+	color: $clr-text-darken;
 	display: inline-block;
 	font-weight: $font-weight-bold;
 	font-size: $font-size-field-label;
@@ -50,8 +50,7 @@ label,
 }
 legend,
 .legend {
-
-	color: if($style == 'inverse', $clr-text-inv-darken, $clr-text-darken);
+	color: $clr-text-darken;
 	display: block;
 	font-size: $font-size-field-legend;
 	font-weight: $font-weight-bold;
@@ -62,27 +61,16 @@ legend,
 	width: 100%;
 	@include margin-vert-flush;
 }
-@if ($style == 'inverse') {
-	.text-dark  {
-		label, legend {
-			color: $clr-text-darken;
-		}
+.text-light {
+	label,
+	legend {
+		color: $clr-text-inv-darken;
 	}
-	.text-light {
-		label, legend {
-			color: $clr-text-inv-darken;
-		}
-	}
-} @else {
-	.text-light {
-		label, legend {
-			color: $clr-text-inv-darken;
-		}
-	}
-	.text-dark  {
-		label, legend {
-			color: $clr-text-darken;
-		}
+}
+.text-dark  {
+	label,
+	legend {
+		color: $clr-text-darken;
 	}
 }
 
@@ -128,10 +116,10 @@ label,
 
 @include field-selector {
 	-webkit-appearance: none;
-	background-color: if($style == 'inverse', $clr-bg-inv-field, $clr-bg-field);
+	background-color: $clr-bg-field;
 	border-radius: $field-radius;
-	border: $field-border-width solid if($style == 'inverse', $clr-border-inv, $clr-border);
-	color: if($style == 'inverse', $clr-text-inv-base, $clr-text-base);
+	border: $field-border-width solid $clr-border;
+	color: $clr-text-base;
 	display: block;
 	font-size: $font-size-field;
 	height: $field-base-height;
@@ -142,75 +130,39 @@ label,
 }
 @include field-selector {
 	&:focus {
-		border-color: if($style == 'inverse', $clr-border-inv-active, $clr-border-active);
-		box-shadow: 0 0 8px if($style == 'inverse', rgba($clr-black, 0.2), $clr-trans-lightest);
+		border-color: $clr-border-active;
+		box-shadow: 0 0 8px $clr-trans-lightest;
 		outline: 0;
 	}
 }
 @include field-selector {
 	@include margin-vert-flush;
 }
-
-@if ($style == 'inverse') {
-
-	.text-dark {
-		@include field-selector {
-			background-color: $clr-bg-field;
-			border-color: $clr-border;
-			color: $clr-text-base;
-		}
-		@include field-selector {
-			&:focus {
-				border-color: $clr-border-active;
-				box-shadow: 0 0 8px $clr-trans-lightest;
-			}
+.text-light {
+	@include field-selector {
+		background-color: $clr-bg-inv-field;
+		border-color: $clr-border-inv;
+		color: $clr-text-inv-base;
+	}
+	@include field-selector {
+		&:focus {
+			border-color: $clr-border-inv-active;
+			box-shadow: 0 0 8px rgba($clr-black, 0.2);
 		}
 	}
-
-	.text-light {
-		@include field-selector {
-			background-color: $clr-bg-inv-field;
-			border-color: $clr-border-inv;
-			color: $clr-text-inv-base;
-		}
-		@include field-selector {
-			&:focus {
-				border-color: $clr-border-inv-active;
-				box-shadow: 0 0 8px rgba($clr-black, 0.2);
-			}
+}
+.text-dark {
+	@include field-selector {
+		background-color: $clr-bg-field;
+		border-color: $clr-border;
+		color: $clr-text-base;
+	}
+	@include field-selector {
+		&:focus {
+			border-color: $clr-border-active;
+			box-shadow: 0 0 8px $clr-trans-lightest;
 		}
 	}
-
-} @else {
-
-	.text-light {
-		@include field-selector {
-			background-color: $clr-bg-inv-field;
-			border-color: $clr-border-inv;
-			color: $clr-text-inv-base;
-		}
-		@include field-selector {
-			&:focus {
-				border-color: $clr-border-inv-active;
-				box-shadow: 0 0 8px rgba($clr-black, 0.2);
-			}
-		}
-	}
-
-	.text-dark {
-		@include field-selector {
-			background-color: $clr-bg-field;
-			border-color: $clr-border;
-			color: $clr-text-base;
-		}
-		@include field-selector {
-			&:focus {
-				border-color: $clr-border-active;
-				box-shadow: 0 0 8px $clr-trans-lightest;
-			}
-		}
-	}
-
 }
 
 //
@@ -226,12 +178,10 @@ textarea {
 // Select
 //
 
-$select-color : if($style == 'inverse', $clr-svg-inv, $clr-svg);
-
 select {
 	appearance: none;
     background-origin: content-box;
-	@include background-triangle($select-color);
+	@include background-triangle($clr-svg);
 	background-position: if($direction == 'rtl', left -.25rem center, right -.25rem center);
 	background-size: 9px 6px;
 }
@@ -242,21 +192,11 @@ select[multiple] {
 select[multiple] option {
 	padding: 4px;
 }
-
-@if ($style == 'inverse') {
-	.text-dark select {
-		@include background-triangle($clr-svg);
-	}
-	.text-light select{
-		@include background-triangle($clr-svg-inv);
-	}
-} @else {
-	.text-light select {
-		@include background-triangle($clr-svg-inv);
-	}
-	.text-dark select {
-		@include background-triangle($clr-svg);
-	}
+.text-light select {
+	@include background-triangle($clr-svg-inv);
+}
+.text-dark select {
+	@include background-triangle($clr-svg);
 }
 
 //
@@ -402,33 +342,18 @@ input[type="file"] {
 input,
 textarea {
 	&::placeholder {
-		color: if($style == 'inverse', $clr-text-inv-placeholder, $clr-text-placeholder);
+		color: $clr-text-placeholder;
 	}
 }
-@if ($style == 'inverse') {
-	.text-dark input,
-	.text-dark textarea {
-		&::placeholder {
-			color: $clr-text-placeholder;
-		}
+.text-light input,
+.text-light textarea {
+	&::placeholder {
+		color: $clr-text-inv-placeholder;
 	}
-	.text-light input,
-	.text-light textarea {
-		&::placeholder {
-			color: $clr-text-inv-placeholder;
-		}
-	}
-} @else {
-	.text-light input,
-	.text-light textarea {
-		&::placeholder {
-			color: $clr-text-inv-placeholder;
-		}
-	}
-	.text-dark input,
-	.text-dark textarea {
-		&::placeholder {
-			color: $clr-text-placeholder;
-		}
+}
+.text-dark input,
+.text-dark textarea {
+	&::placeholder {
+		color: $clr-text-placeholder;
 	}
 }

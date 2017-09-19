@@ -850,7 +850,6 @@ $modal-content-border-color			: rgba($clr-black, 0.5) !default;
 
 $modal-header-border-width			: 1px !default;
 $modal-header-border-color			: $clr-border !default;
-$modal-header-border-inv-color		: $clr-border-inv !default;
 
 $modal-sizes : (
 	xs : ( // Mobile viewport version for all sizes
@@ -1016,7 +1015,6 @@ $testimonial-lg-font-size			: $font-size-xl + 4px !default;
 
 $progress-height					: 6px !default;
 $progress-bg						: darken($clr-bg-light, 2%) !default;
-$progress-inv-bg					: $clr-bg-black !default;
 $progress-radius					: 2px !default;
 $progress-label-spacing				: 2.15em !default;
 

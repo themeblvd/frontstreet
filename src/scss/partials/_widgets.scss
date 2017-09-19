@@ -4,7 +4,7 @@
 
 .widget {
 
- 	background: if($style == 'inverse', $clr-bg-inv-content, $clr-bg-content);
+ 	background: $clr-bg-content;
 	font-size: $font-size-widget;
 	margin: $margin-widget;
 	padding: $padding-widget;
@@ -12,7 +12,7 @@
 	@include margin-vert-flush;
 
 	&.over-bg-content {
-		background: if($style == 'inverse', $clr-bg-inv-body, $clr-bg-body );
+		background: $clr-bg-body;
 	}
 
 }
@@ -66,8 +66,8 @@
 // This is a bit of a hack so that we can override color library
 // for content area of widget, but avoid using !important.
 body .panel-classic {
-	background-color: if($style == 'inverse', $tab-content-inv-bg, $tab-content-bg);
-	color: if($style == 'inverse', $clr-text-inv-base, $clr-text-base);
+	background-color: $tab-content-bg;
+	color: $clr-text-base;
 }
 
 //
@@ -77,7 +77,7 @@ body .panel-classic {
 .panel-modern {
 	.widget-title {
 
-		border-bottom: 2px solid if($style == 'inverse', $clr-bg-inv-body, $clr-bg-body);
+		border-bottom: 2px solid $clr-bg-body;
 		font-size: $widget-panel-modern-title-size;
 		margin: -$padding-widget;
 		margin-bottom: 20px;
@@ -92,7 +92,7 @@ body .panel-classic {
 	}
 	&.over-bg-content {
 		.widget-title {
-			border-bottom-color: if($style == 'inverse', $clr-bg-inv-content, $clr-bg-content);
+			border-bottom-color: $clr-bg-content;
 		}
 	}
 }

@@ -11,22 +11,13 @@ hr,
     margin: $margin-divider 0;
 }
 hr:not(.fs-divider) {
-	background-color: if($style == 'inverse', $clr-bg-inv-hr, $clr-bg-hr);
+	background-color: $clr-bg-hr;
 }
-@if ($style == 'inverse') {
-	.text-dark hr:not(.fs-divider) {
-		background: $clr-bg-hr;
-	}
-	.text-light hr:not(.fs-divider) {
-		background: $clr-bg-inv-hr;
-	}
-} @else {
-	.text-light hr:not(.fs-divider) {
-		background: $clr-bg-inv-hr;
-	}
-	.text-dark hr:not(.fs-divider) {
-		background: $clr-bg-hr;
-	}
+.text-light hr:not(.fs-divider) {
+	background: $clr-bg-inv-hr;
+}
+.text-dark hr:not(.fs-divider) {
+	background: $clr-bg-hr;
 }
 
 //

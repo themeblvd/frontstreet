@@ -129,7 +129,9 @@
 
 @mixin nav-pills-horz {
 	&.fs-menu ul {
-		background-color: if($style == 'inverse', $pills-flyout-inv-bg, $pills-flyout-bg);
+
+		background-color: $pills-flyout-bg;
+
 		@if ($direction == 'rtl') {
 			margin: $pills-spacing $pills-spacing 0 0;
 		} @else {

@@ -1,12 +1,11 @@
 /*!
  * Front Street v1.0.0 (http://frontstreet.io)
- * Light, Right-to-Left
+ * Direction: Right-to-Left
  * Copyright 2017 Theme Blvd
  * Copyright 2017 Jason Bobich
  */
 
-$style 		: 'default';
-$direction 	: 'rtl';
+$direction : 'rtl';
 
 @import "modules/index";
 @import "partials/index";

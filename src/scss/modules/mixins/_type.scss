@@ -45,26 +45,17 @@
 // Used with sections, which shift text to opposite of default style.
 //
 
-@mixin blend-links() {
+@mixin blend-links {
 	a:not(.btn):not(.menu-btn) {
 		color: inherit;
-		@if ($style == 'inverse') {
-			border-bottom: 1px solid $clr-text-base;
-		} @else {
-			border-bottom: 1px solid rgba($clr-text-inv-base, 0.8);
-		}
+		border-bottom: 1px solid rgba($clr-text-inv-base, 0.8);
 		padding-bottom: 1px;
 		text-decoration: none;
 
 		&:hover,
 		&:focus {
-			@if ($style == 'inverse') {
-				border-color: $clr-text-darken;
-				color: $clr-text-darken;
-			} @else {
-				border-color: $clr-text-inv-base;
-				color: $clr-text-inv-base;
-			}
+			border-color: $clr-text-inv-base;
+			color: $clr-text-inv-base;
 		}
 	}
 }

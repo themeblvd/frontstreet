@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*!
  * Front Street v1.0.0 (http://frontstreet.io)
- * Light, Right-to-Left
+ * Direction: Right-to-Left
  * Copyright 2017 Theme Blvd
  * Copyright 2017 Jason Bobich
  */
@@ -2390,6 +2390,18 @@ kbd kbd {
   box-shadow: none;
 }
 
+.text-light pre,
+.text-light code {
+  background-color: #000;
+  color: #fff;
+}
+
+.text-dark pre,
+.text-dark code {
+  background-color: #f8f8f8;
+  color: rgba(50, 50, 50, 0.7);
+}
+
 small,
 .small {
   font-size: 0.8em;
@@ -2908,11 +2920,13 @@ legend:last-child,
   margin-bottom: 0;
 }
 
-.text-light label, .text-light legend {
+.text-light label,
+.text-light legend {
   color: #fff;
 }
 
-.text-dark label, .text-dark legend {
+.text-dark label,
+.text-dark legend {
   color: #333;
 }
 

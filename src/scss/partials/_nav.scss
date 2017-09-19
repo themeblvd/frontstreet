@@ -387,8 +387,9 @@
 
 .submenu-tabs {
 
-	border-color: if($style == 'inverse', $tabs-border-inv-color, $tabs-border-color);
+	border-color: $tabs-border-color;
 	border-style: solid;
+
 	@if ($direction == 'rtl') {
 		border-width: $tabs-border-width $tabs-border-width 0 0;
 	} @else {
@@ -397,8 +398,8 @@
 
 	> li > .menu-btn {
 
-		background: if($style == 'inverse', $tabs-inv-bg, $tabs-bg);
-		border-color: if($style == 'inverse', $tabs-border-inv-color, $tabs-border-color);
+		background: $tabs-bg;
+		border-color: $tabs-border-color;
 		border-style: solid;
 		@if ($direction == 'rtl') {
 			border-width: 0 0 $tabs-border-width $tabs-border-width;
@@ -411,14 +412,14 @@
 
 		&:hover,
 		&:focus {
-			background-color: if($style == 'inverse', $tabs-hover-inv-bg, $tabs-hover-bg);
+			background-color: $tabs-hover-bg;
 		}
 	}
 	> li.active,
 	> li.current-menu-item,
 	> li.current-menu-ancestor {
 		> .menu-btn {
-			background: if($style == 'inverse', $tabs-active-inv-bg, $tabs-active-bg);
+			background: $tabs-active-bg;
 			border-bottom-color: transparent;
 			cursor: default;
 		}
@@ -438,34 +439,33 @@
 	// Level 2+
 	ul {
 
-		background: if($style == 'inverse', $tabs-active-inv-bg, $tabs-active-bg);
+		background: $tabs-active-bg;
 		padding-top: $flyout-vert-spacing;
 		padding-bottom: $flyout-vert-spacing;
 
 		.menu-btn {
 
-			color: if($style == 'inverse', rgba($clr-text-inv-darken, .8), $clr-text-base);
+			color: $clr-text-base;
 
 			&:hover,
 			&:focus {
-				color: if($style == 'inverse', $clr-text-inv-darken, $clr-text-darken);
+				color: $clr-text-darken;
 			}
 		}
 	}
 	> li > ul {
 		@if ($direction == 'rtl') {
-			border-left-color: if($style == 'inverse', $tabs-border-inv-color, $tabs-border-color);
+			border-left-color: $tabs-border-color;
 			border-left-style: solid;
 			border-left-width: $tabs-border-width;
 		} @else {
-			border-right-color: if($style == 'inverse', $tabs-border-inv-color, $tabs-border-color);
+			border-right-color: $tabs-border-color;
 			border-right-style: solid;
 			border-right-width: $tabs-border-width;
 		}
 	}
 
 }
-
 @each $breakpoint in map-keys($breakpoints) {
 	@if $breakpoint != xl { // skip xl
 		@include min-width($breakpoint) {
@@ -475,21 +475,11 @@
 		}
 	}
 }
-
-@if ($style == 'inverse') {
-	.text-dark {
-		@include tabs-variant;
-	}
-	.text-light {
-		@include tabs-variant('inverse');
-	}
-} @else {
-	.text-light {
-		@include tabs-variant('inverse');
-	}
-	.text-dark {
-		@include tabs-variant;
-	}
+.text-light {
+	@include tabs-variant('inverse');
+}
+.text-dark {
+	@include tabs-variant;
 }
 
 //
@@ -506,7 +496,7 @@
 	> li > .menu-btn {
 
 		background: $pills-bg;
-		border-color: if($style == 'inverse', $pills-border-inv-color, $pills-border-color);
+		border-color: $pills-border-color;
 		border-style: solid;
 		border-width: $pills-border-width;
 		color: inherit;
@@ -515,7 +505,7 @@
 
 		&:hover,
 		&:focus {
-			background: if($style == 'inverse', $pills-hover-inv-bg, $pills-hover-bg);
+			background: $pills-hover-bg;
 		}
 	}
 
@@ -531,18 +521,17 @@
 
 		.menu-btn {
 
-			color: if($style == 'inverse', rgba($clr-text-inv-darken, .8), $clr-text-base);
+			color: $clr-text-base;
 			padding-right: 10px;
 			padding-left: 10px;
 
 			&:hover,
 			&:focus {
-				color: if($style == 'inverse', $clr-text-inv-darken, $clr-text-darken);
+				color: $clr-text-darken;
 			}
 		}
 	}
 }
-
 @each $breakpoint in map-keys($breakpoints) {
 	@if $breakpoint != xl { // skip xl
 		@include min-width($breakpoint) {
@@ -552,23 +541,12 @@
 		}
 	}
 }
-
-@if ($style == 'inverse') {
-	.text-dark {
-		@include pills-variant;
-	}
-	.text-light {
-		@include pills-variant('inverse');
-	}
-} @else {
-	.text-light {
-		@include pills-variant('inverse');
-	}
-	.text-dark {
-		@include pills-variant;
-	}
+.text-light {
+	@include pills-variant('inverse');
 }
-
+.text-dark {
+	@include pills-variant;
+}
 .submenu-pills {
 	> li.active,
 	> li.current-menu-item,

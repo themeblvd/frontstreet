@@ -3,7 +3,8 @@
 // --------------------------------------------------
 
 .progress {
-	background-color: if($style == 'inverse', $progress-inv-bg, $progress-bg);
+
+	background-color: $progress-bg;
 	border-radius: $progress-radius;
 	display: flex;
 	margin: $margin-progress;
@@ -11,7 +12,9 @@
 	position: relative;
 	line-height: $progress-height;
 	text-align: center;
+
 	@include margin-vert-flush;
+
 }
 .progress-bar {
 	height: $progress-height;
@@ -23,6 +26,7 @@
 	margin: $margin-progress;
 	padding-top: $progress-label-spacing;
 	position: relative;
+
 	@include margin-vert-flush;
 
 	.progress-label,

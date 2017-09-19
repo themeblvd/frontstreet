@@ -9,7 +9,7 @@
 body,
 html {
 	color: $clr-text-base-fallback;
-	color: if($style == 'inverse', $clr-text-inv-base, $clr-text-base);
+	color: $clr-text-base;
 	font-family: $font-fam-base;
 	font-size: $font-size-base;
 	font-weight: $font-weight-base;
@@ -23,20 +23,11 @@ html {
 		unicode-bidi: embed;
 	}
 }
-@if ($style == 'inverse') {
-	.text-dark {
-		color: $clr-text-base;
-	}
-	.text-light {
-		color: rgba($clr-text-inv-base, 0.8);
-	}
-} @else {
-	.text-light {
-		color: rgba($clr-text-inv-base, 0.8);
-	}
-	.text-dark {
-		color: $clr-text-base;
-	}
+.text-light {
+	color: rgba($clr-text-inv-base, 0.8);
+}
+.text-dark {
+	color: $clr-text-base;
 }
 
 //
@@ -52,30 +43,16 @@ a:active,
 a:focus {
 	color: $clr-link-hover;
 }
-@if ($style == 'inverse') {
-	.text-dark {
-		@include blend-links();
-	}
-	.text-light a {
-		color: $clr-link;
-	}
-	.text-light a:hover,
-	.text-light a:active,
-	.text-light a:focus {
-		color: $clr-link-hover;
-	}
-} @else {
-	.text-light {
-		@include blend-links();
-	}
-	.text-dark a {
-		color: $clr-link;
-	}
-	.text-dark a:hover,
-	.text-dark a:active,
-	.text-dark a:focus {
-		color: $clr-link-hover;
-	}
+.text-light {
+	@include blend-links();
+}
+.text-dark a {
+	color: $clr-link;
+}
+.text-dark a:hover,
+.text-dark a:active,
+.text-dark a:focus {
+	color: $clr-link-hover;
 }
 
 //
@@ -163,12 +140,15 @@ h6, .h6 {
 .heading-xl,
 .heading-xxl,
 .heading-xxxl {
-	color: if($style == 'inverse', $clr-text-inv-darken, $clr-text-darken);
+
+	color: $clr-text-darken;
 	font-weight: $font-weight-heading-lg;
 	letter-spacing: $font-ls-heading-lg;
 	margin: $margin-heading-lg;
 	text-transform: $font-transform-heading-sm;
+
 	@include margin-vert-flush;
+
 }
 @each $tag, $map in $font-size-headings-bigger {
 	.heading-#{$tag} {
@@ -191,12 +171,15 @@ h6, .h6 {
 .heading-xs,
 .heading-xxs,
 .heading-xxxs {
-	color: if($style == 'inverse', $clr-text-inv-darken, $clr-text-darken);
+
+	color: $clr-text-darken;
 	font-weight: $font-weight-heading-sm;
 	letter-spacing: $font-ls-heading-sm;
 	margin: $margin-heading-sm;
 	text-transform: $font-transform-heading-sm;
+
 	@include margin-vert-flush;
+
 }
 @each $tag, $map in $font-size-headings-smaller {
 	.heading-#{$tag} {
@@ -208,22 +191,13 @@ h6, .h6 {
 // Heading Color
 //
 
-@include heading-variant($style);
+@include heading-variant;
 
-@if ($style == 'inverse') {
-	.text-dark {
-		@include heading-variant('default');
-	}
-	.text-light {
-		@include heading-variant('inverse');
-	}
-} @else {
-	.text-light {
-		@include heading-variant('inverse');
-	}
-	.text-dark {
-		@include heading-variant('default');
-	}
+.text-light {
+	@include heading-variant('inverse');
+}
+.text-dark {
+	@include heading-variant;
 }
 
 //
@@ -232,7 +206,7 @@ h6, .h6 {
 
 .heading-underline {
 
-    border-bottom: 2px solid if($style == 'inverse', rgba($clr-darkest, 0.5), $clr-trans-lightest);
+    border-bottom: 2px solid $clr-trans-lightest;
     padding-bottom: .8em;
     position: relative;
 
@@ -264,20 +238,11 @@ h6, .h6 {
 		transform: translate(-50%, 0);
 	}
 }
-@if ($style == 'inverse') {
-	.text-dark .heading-underline {
-		border-bottom-color: $clr-trans-lightest;
-	}
-	.text-light .heading-underline {
-		border-bottom-color: rgba($clr-darkest, 0.5);
-	}
-} @else {
-	.text-light .heading-underline {
-		border-bottom-color: rgba($clr-darkest, 0.5);
-	}
-	.text-dark .heading-underline {
-		border-bottom-color: $clr-trans-lightest;
-	}
+.text-light .heading-underline {
+	border-bottom-color: rgba($clr-darkest, 0.5);
+}
+.text-dark .heading-underline {
+	border-bottom-color: $clr-trans-lightest;
 }
 
 //
@@ -303,9 +268,9 @@ code, kbd, tt, var {
 	font-weight: $font-weight-bold;
 }
 code {
-	background-color: if($style == 'inverse', $clr-bg-inv-code, $clr-bg-code);
+	background-color: $clr-bg-code;
     border-radius: 1px;
-	color: if($style == 'inverse', $clr-text-inv-base, $clr-text-base);
+	color: $clr-text-base;
 	font-size: 90%;
 	padding: 0.125em 0.25em;
 }
@@ -328,6 +293,20 @@ kbd {
 		font-size: 100%;
 		font-weight: $font-weight-bold;
 		box-shadow: none;
+	}
+}
+.text-light {
+	pre,
+	code {
+		background-color: $clr-bg-inv-code;
+		color: $clr-text-inv-base;
+	}
+}
+.text-dark {
+	pre,
+	code {
+		background-color: $clr-bg-code;
+		color: $clr-text-base;
 	}
 }
 
@@ -361,28 +340,17 @@ address {
 	@include margin-vert-flush;
 }
 abbr, acronym {
-    border-bottom: 1px dotted if($style == 'inverse', $clr-border-inv, $clr-border);
+    border-bottom: 1px dotted $clr-border;
     cursor: help;
-	text-decoration: inherit ;
+	text-decoration: inherit;
 }
-@if ($style == 'inverse') {
-	.text-dark abbr,
-	.text-dark acronym {
-		border-color: $clr-border;
-	}
-	.text-light abbr,
-	.text-light acronym {
-		border-color: $clr-border-inv;
-	}
-} @else {
-	.text-light abbr,
-	.text-light acronym {
-		border-color: $clr-border-inv;
-	}
-	.text-dark abbr,
-	.text-dark acronym {
-		border-color: $clr-border;
-	}
+.text-light abbr,
+.text-light acronym {
+	border-color: $clr-border-inv;
+}
+.text-dark abbr,
+.text-dark acronym {
+	border-color: $clr-border;
 }
 
 //
@@ -390,7 +358,8 @@ abbr, acronym {
 //
 
 blockquote {
-    color: if($style == 'inverse', $clr-text-inv-darken, $clr-text-darken);
+
+    color: $clr-text-darken;
     font-size: $font-size-quote;
     font-style: $font-style-quote;
     line-height: $font-lh-quote;
@@ -418,20 +387,11 @@ blockquote {
 		margin-left: 0;
 	}
 }
-@if ($style == 'inverse') {
-	.text-dark blockquote {
-		color: $clr-text-darken;
-	}
-	.text-light blockquote {
-		color: $clr-text-inv-darken;
-	}
-} @else {
-	.text-light blockquote {
-		color: $clr-text-inv-darken;
-	}
-	.text-dark blockquote {
-		color: $clr-text-darken;
-	}
+.text-light blockquote {
+	color: $clr-text-inv-darken;
+}
+.text-dark blockquote {
+	color: $clr-text-darken;
 }
 blockquote.pull-left
 blockquote.alignleft {
@@ -452,7 +412,7 @@ blockquote {
 	}
 	cite,
 	cite:before {
-		color: if($style == 'inverse', $clr-text-inv-lighten, $clr-text-lighten);
+		color: $clr-text-lighten;
 		font-size: $font-size-cite;
 	    line-height: $font-lh-cite;
 	}
@@ -460,22 +420,11 @@ blockquote {
 	    content: '\2014 \00A0';
 	}
 }
-@if ($style == 'inverse') {
-	.text-dark blockquote cite,
-	.text-dark blockquote cite:before {
-		color: $clr-text-lighten;
-	}
-	.text-light blockquote cite,
-	.text-light blockquote cite:before {
-		color: $clr-text-inv-lighten;
-	}
-} @else {
-	.text-light blockquote cite,
-	.text-light blockquote cite:before {
-		color: $clr-text-inv-lighten;
-	}
-	.text-dark blockquote cite,
-	.text-dark blockquote cite:before {
-		color: $clr-text-lighten;
-	}
+.text-light blockquote cite,
+.text-light blockquote cite:before {
+	color: $clr-text-inv-lighten;
+}
+.text-dark blockquote cite,
+.text-dark blockquote cite:before {
+	color: $clr-text-lighten;
 }
