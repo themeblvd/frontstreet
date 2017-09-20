@@ -272,7 +272,7 @@
     	font-size: $font-size-menu-bar-btn;
 		font-weight: $font-weight-menu-bar-btn;
 		letter-spacing: $font-ls-menu-bar-btn;
-    	padding: em(18px, $font-size-menu-bar-btn) em(20px, $font-size-menu-bar-btn);
+    	padding: fs-em(18px, $font-size-menu-bar-btn) fs-em(20px, $font-size-menu-bar-btn);
 		text-transform: $font-transform-menu-bar-btn;
 	}
 	&.text-dark {
@@ -370,7 +370,7 @@
 		font-weight: $font-weight-submenu-btn;
     	font-size: $font-size-submenu-btn;
 		letter-spacing: $font-ls-submenu-btn;
-    	padding: em(10px, $font-size-submenu-btn) em(16px, $font-size-submenu-btn);
+    	padding: fs-em(10px, $font-size-submenu-btn) fs-em(16px, $font-size-submenu-btn);
 		text-transform: $font-transform-submenu-btn;
 	}
 

@@ -9,7 +9,7 @@
 // @param {String} $context - Closest specified font size in px
 //
 
-@function em($target, $context) {
+@function fs-em($target, $context) {
 	@return ($target / $context) * 1em;
 }
 
@@ -19,7 +19,7 @@
 // @param {String} $target - Initial value in px
 //
 
-@function rem($target, $context) {
+@function fs-rem($target, $context) {
 	@return ($target / $context) * 1rem;
 }
 
@@ -30,7 +30,7 @@
 // @param {String} $keys - Keys where nested maps are located
 //
 
-@function map-deep-get($map, $keys...) {
+@function fs-map-deep-get($map, $keys...) {
 
     @each $key in $keys {
         $map: map-get($map, $key);
@@ -46,7 +46,7 @@
 // @return {Number} $val - Original number with unit suffix removed
 //
 
-@function strip-unit($val) {
+@function fs-strip-unit($val) {
 
 	@if type-of($val) == 'number' and not unitless($val) {
 		@return $val / ($val * 0 + 1);
@@ -65,7 +65,7 @@
 // @return {String} - Updated string
 //
 
-@function str-replace($string, $search, $replace: '') {
+@function fs-str-replace($string, $search, $replace: '') {
 
 	$string: "#{$string}";
 	$search: "#{$search}";
@@ -74,7 +74,7 @@
 	$index: str-index($string, $search);
 
 	@if $index {
-		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+		@return str-slice($string, 1, $index - 1) + $replace + fs-str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
 	}
 
 	@return $string;
@@ -90,9 +90,9 @@
 // @return {String} - Color hex code with '#' replaced with `%23`.
 //
 
-@function url-friendly-clr($clr) {
+@function fs-url-friendly-clr($clr) {
 
-	@return str-replace($clr, "#", "%23");
+	@return fs-str-replace($clr, "#", "%23");
 
 }
 
@@ -106,7 +106,7 @@
 // @return {Number} - Padding used for top and bottom of element.
 //
 
-@function padding-y($height, $line-height, $border-width: 0) {
+@function fs-padding-y($height, $line-height, $border-width: 0) {
 
 	@return (($height - $line-height - ($border-width * 2)) / 2 );
 
@@ -123,7 +123,7 @@
 // @return {String} - Next largest breakpoint name.
 //
 
-@function breakpoint-next($name, $breakpoints) {
+@function fs-breakpoint-next($name, $breakpoints) {
 
 	$breakpoint-names: map-keys($breakpoints);
 
@@ -142,6 +142,6 @@
 // @return {Number} - Next largest breakpoint name.
 //
 
-@function ratio-to-percentage($ratio: 1 1) {
+@function fs-ratio-to-percentage($ratio: 1 1) {
 	@return percentage(nth($ratio, 2) / nth($ratio, 1));
 }

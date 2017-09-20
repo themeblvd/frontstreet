@@ -68,10 +68,10 @@ dd {
 .list-icon.fa-ul li > .fa-li {
 	top: 50%;
 	@if ($direction == 'rtl') {
-		right: (-30em / strip-unit($font-size-base));
+		right: (-30em / fs-strip-unit($font-size-base));
 	} @else  {
-		left: (-30em / strip-unit($font-size-base));
+		left: (-30em / fs-strip-unit($font-size-base));
 	}
-	width: 30em / strip-unit($font-size-base);
+	width: 30em / fs-strip-unit($font-size-base);
 	transform: translate(0, -50%);
 }

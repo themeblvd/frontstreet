@@ -42,7 +42,7 @@
 	letter-spacing: $font-ls-btn;
 	line-height: $btn-base-lh;
 	margin-bottom: 0; // For input.btn
-	padding: padding-y($btn-base-height, $btn-base-lh, $btn-border-width) $btn-base-padding;
+	padding: fs-padding-y($btn-base-height, $btn-base-lh, $btn-border-width) $btn-base-padding;
 	text-align: center;
 	text-transform: $font-transform-btn;
 	touch-action: manipulation;
@@ -80,7 +80,7 @@
 
 	// Standard Buttons
 
-	$clr-selector: str-replace( $btn-selector, ",", ".btn-#{$clr}," );
+	$clr-selector: fs-str-replace( $btn-selector, ",", ".btn-#{$clr}," );
 	$clr-selector: "#{$clr-selector}.btn-#{$clr}";
 
 	#{$clr-selector} {
@@ -109,7 +109,7 @@
 
 	// Transparent Buttons
 
-	$trans-selector: str-replace( $clr-selector, "#{$clr}", "#{$clr}.btn-trans" );
+	$trans-selector: fs-str-replace( $clr-selector, "#{$clr}", "#{$clr}.btn-trans" );
 
 	#{$trans-selector} {
 

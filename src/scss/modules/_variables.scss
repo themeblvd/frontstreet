@@ -653,42 +653,42 @@ $btn-sizes : (
 		letter-spacing 				: $font-ls-btn,
 		line-height					: $btn-base-lh,
 		padding						: 10px,
-		height						: map-deep-get($field-sizes, xs, height)
+		height						: fs-map-deep-get($field-sizes, xs, height)
 	),
 	sm : (
 		font-size					: 10px,
 		letter-spacing 				: $font-ls-btn,
 		line-height					: $btn-base-lh,
 		padding						: 15px,
-		height						: map-deep-get($field-sizes, sm, height)
+		height						: fs-map-deep-get($field-sizes, sm, height)
 	),
 	lg : (
 		font-size					: 12px,
 		letter-spacing 				: $font-ls-btn,
 		line-height					: $btn-base-lh,
 		padding						: 30px,
-		height						: map-deep-get($field-sizes, lg, height)
+		height						: fs-map-deep-get($field-sizes, lg, height)
 	),
 	xl : (
 		font-size					: 14px,
 		letter-spacing 				: $font-ls-btn,
 		line-height					: $btn-base-lh,
 		padding						: 40px,
-		height						: map-deep-get($field-sizes, xl, height)
+		height						: fs-map-deep-get($field-sizes, xl, height)
 	),
 	xxl : (
 		font-size					: 15px,
 		letter-spacing 				: $font-ls-btn,
 		line-height					: $btn-base-lh,
 		padding						: 50px,
-		height						: map-deep-get($field-sizes, xxl, height)
+		height						: fs-map-deep-get($field-sizes, xxl, height)
 	),
 	xxxl : (
 		font-size					: 16px,
 		letter-spacing 				: $font-ls-btn,
 		line-height					: $btn-base-lh,
 		padding						: 64px,
-		height						: map-deep-get($field-sizes, xxxl, height)
+		height						: fs-map-deep-get($field-sizes, xxxl, height)
 	)
 ) !default;
 
@@ -764,8 +764,8 @@ $pills-bg							: transparent !default;
 $pills-hover-bg						: $tabs-hover-bg !default;
 $pills-hover-inv-bg					: $tabs-hover-inv-bg !default;
 
-$pills-active-bg					: map-deep-get($clr-branding, primary, base) !default;
-$pills-active-text					: map-deep-get($clr-branding, primary, contrast) !default;
+$pills-active-bg					: fs-map-deep-get($clr-branding, primary, base) !default;
+$pills-active-text					: fs-map-deep-get($clr-branding, primary, contrast) !default;
 
 $pills-spacing						: 2px !default;
 
@@ -884,7 +884,7 @@ $modal-sizes : (
 
 // Search Modal
 
-$modal-search-border-clr			: map-deep-get($clr-branding, secondary, base) !default;
+$modal-search-border-clr			: fs-map-deep-get($clr-branding, secondary, base) !default;
 
 // ==========================================================================
 // Widgets
@@ -892,20 +892,20 @@ $modal-search-border-clr			: map-deep-get($clr-branding, secondary, base) !defau
 
 // Default
 
-$widget-default-title-size			: em(18px, $font-size-widget) !default;
-$widget-default-sm-title-size		: em(15px, $font-size-widget) !default;
+$widget-default-title-size			: fs-em(18px, $font-size-widget) !default;
+$widget-default-sm-title-size		: fs-em(15px, $font-size-widget) !default;
 
 // Classic Panel
 
-$widget-panel-classic-title-size	: em(16px, $font-size-widget) !default;
-$widget-panel-classic-sm-title-size	: em(15px, $font-size-widget) !default;
+$widget-panel-classic-title-size	: fs-em(16px, $font-size-widget) !default;
+$widget-panel-classic-sm-title-size	: fs-em(15px, $font-size-widget) !default;
 
 $widget-classic-panel-title-bg-clr	: darken($clr-lightest, 2%) !default;
 
 // Modern Panel
 
-$widget-panel-modern-title-size		: em(15px, $font-size-widget) !default;
-$widget-panel-modern-sm-title-size	: em(13px, $font-size-widget) !default;
+$widget-panel-modern-title-size		: fs-em(15px, $font-size-widget) !default;
+$widget-panel-modern-sm-title-size	: fs-em(13px, $font-size-widget) !default;
 
 // ==========================================================================
 // Media
@@ -929,8 +929,8 @@ $thumb-link-icon-w					: 4em !default;
 $thumb-link-icon-h					: 4em !default;
 $thumb-link-icon-radius				: 100% !default;
 
-$thumb-link-icon-clr				: map-deep-get($clr-branding, primary, contrast) !default;
-$thumb-link-icon-bg-clr				: map-deep-get($clr-branding, primary, base) !default;
+$thumb-link-icon-clr				: fs-map-deep-get($clr-branding, primary, contrast) !default;
+$thumb-link-icon-bg-clr				: fs-map-deep-get($clr-branding, primary, base) !default;
 
 // Gallery
 
@@ -1029,8 +1029,8 @@ $tooltip-max-width					: 200px !default;
 $tooltip-radius						: 1px !default;
 $tooltip-padding					: 10px 14px !default;
 
-$tooltip-bg							: map-deep-get($clr-branding, secondary, base) !default;
-$tooltip-text						: map-deep-get($clr-branding, secondary, contrast) !default;
+$tooltip-bg							: fs-map-deep-get($clr-branding, secondary, base) !default;
+$tooltip-text						: fs-map-deep-get($clr-branding, secondary, contrast) !default;
 
 // ==========================================================================
 // Dividers

@@ -12,7 +12,7 @@
 	background-color: $clr-bg-content;
 	border: $modal-content-border-width solid $modal-content-border-color;
 	display: none;
-	font-size: map-deep-get($modal-sizes, xs, font-size);
+	font-size: fs-map-deep-get($modal-sizes, xs, font-size);
 	margin: $margin-modal-mobile;
 	outline: 0; // Remove focus outline from opened modal
 	width: 100%;
@@ -22,16 +22,16 @@
 		border-color: $modal-header-border-color;
 		border-style: solid;
 		border-width: 0 0 $modal-header-border-width 0;
-		padding: map-deep-get($modal-sizes, xs, padding-header) map-deep-get($modal-sizes, xs, padding-horz);
+		padding: fs-map-deep-get($modal-sizes, xs, padding-header) fs-map-deep-get($modal-sizes, xs, padding-horz);
 		position: relative;
 
 		.fs-close {
 			position: absolute;
 			top: 50%;
 			@if ($direction == 'rtl') {
-				left: map-deep-get($modal-sizes, xs, padding-horz);
+				left: fs-map-deep-get($modal-sizes, xs, padding-horz);
 			} @else {
-				right: map-deep-get($modal-sizes, xs, padding-horz);
+				right: fs-map-deep-get($modal-sizes, xs, padding-horz);
 			}
 			transform: translate(0, -50%);
 		}
@@ -40,7 +40,7 @@
 		}
 	}
 	.modal-content {
-		padding: map-deep-get($modal-sizes, xs, padding-content) map-deep-get($modal-sizes, xs, padding-horz);
+		padding: fs-map-deep-get($modal-sizes, xs, padding-content) fs-map-deep-get($modal-sizes, xs, padding-horz);
 	}
 }
 .mfp-content .fs-content-modal {

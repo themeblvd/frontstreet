@@ -12,7 +12,7 @@
 	height: 0;
 	margin: $margin-embed;
 	padding: 0;
-	padding-bottom: ratio-to-percentage($embed-default-ratio);
+	padding-bottom: fs-ratio-to-percentage($embed-default-ratio);
 	position: relative;
     overflow: hidden;
 	width: 100%;
@@ -21,7 +21,7 @@
 
 	@each $name, $ratio in $embed-ratios {
 		&.#{$name} {
-			padding-bottom: ratio-to-percentage($ratio);
+			padding-bottom: fs-ratio-to-percentage($ratio);
 		}
 	}
 

@@ -212,7 +212,7 @@ h6, .h6 {
 
 	&:before {
 		content: "";
-		background: map-deep-get($clr-branding, secondary, base);
+		background: fs-map-deep-get($clr-branding, secondary, base);
 		position: absolute;
 		bottom: -$heading-underline-h;
 		@if ($direction == 'rtl') {

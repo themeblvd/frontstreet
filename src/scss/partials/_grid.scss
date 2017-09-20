@@ -41,7 +41,7 @@
 
 	@if ($breakpoint != 'xl') { // Skip xl.
 
-		$name: breakpoint-next($breakpoint, $breakpoints);
+		$name: fs-breakpoint-next($breakpoint, $breakpoints);
 
 		@include fs-min-width($breakpoint) {
 			.row-#{$name}-reverse {
@@ -65,7 +65,7 @@
 
 	@if ($breakpoint != 'xl') { // Skip xl.
 
-		$name: breakpoint-next($breakpoint, $breakpoints);
+		$name: fs-breakpoint-next($breakpoint, $breakpoints);
 
 		@include fs-min-width($breakpoint) {
 			@include fs-make-cols($name);
@@ -85,7 +85,7 @@
 
 	@if ($breakpoint != 'xl') { // Skip xl.
 
-		$name: breakpoint-next($breakpoint, $breakpoints);
+		$name: fs-breakpoint-next($breakpoint, $breakpoints);
 
 		@include fs-min-width($breakpoint) {
 			.col-#{$name} {
@@ -105,7 +105,7 @@
 
 	@if ($breakpoint != 'xl') { // Skip xl.
 
-		$name: breakpoint-next($breakpoint, $breakpoints);
+		$name: fs-breakpoint-next($breakpoint, $breakpoints);
 
 		@include fs-min-width($breakpoint) {
 			@include fs-make-col-widths($name);
@@ -203,7 +203,7 @@
 
 	@if ($breakpoint != 'xl') { // Skip xl.
 
-		$name: breakpoint-next($breakpoint, $breakpoints);
+		$name: fs-breakpoint-next($breakpoint, $breakpoints);
 
 		@include fs-min-width($breakpoint) {
 			@include fs-make-col-offsets($name);
@@ -223,7 +223,7 @@
 
 	@if ($breakpoint != 'xl') { // Skip xl.
 
-		$name: breakpoint-next($breakpoint, $breakpoints);
+		$name: fs-breakpoint-next($breakpoint, $breakpoints);
 
 		@include fs-min-width($breakpoint) {
 			.col-#{$name}-order-first {
@@ -241,7 +241,7 @@
 
 	@if ($breakpoint != 'xl') { // Skip xl.
 
-		$name: breakpoint-next($breakpoint, $breakpoints);
+		$name: fs-breakpoint-next($breakpoint, $breakpoints);
 
 		@include fs-min-width($breakpoint) {
 			.col-#{$name}-order-last {

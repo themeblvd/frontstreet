@@ -14,7 +14,7 @@
 		font-size: $font-size-mobile-menu-bar-btn;
 		font-weight: $font-weight-mobile-menu-bar-btn;
 		letter-spacing: $font-ls-mobile-menu-bar-btn;
-		padding: em(18px, $font-size-mobile-menu-bar-btn) em(20px, $font-size-mobile-menu-bar-btn);
+		padding: fs-em(18px, $font-size-mobile-menu-bar-btn) fs-em(20px, $font-size-mobile-menu-bar-btn);
 		text-transform: $font-transform-mobile-menu-bar-btn;
 	}
 	&.text-dark .menu-btn {

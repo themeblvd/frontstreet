@@ -8,29 +8,29 @@
 
 @mixin fs-max-width($size) {
 	@if ($size == 'xl') {
-		@media (max-width: em(map-get($breakpoints, xl) - 1, $font-size-base)) {
+		@media (max-width: fs-em(map-get($breakpoints, xl) - 1, $font-size-base)) {
 			@content;
 		}
 	} @else if ($size == 'lg') {
-		@media (max-width: em(map-get($breakpoints, lg) - 1, $font-size-base)) {
+		@media (max-width: fs-em(map-get($breakpoints, lg) - 1, $font-size-base)) {
 			@content;
 		}
 	} @else if ($size == 'md') {
-		@media (max-width: em(map-get($breakpoints, md) - 1, $font-size-base)) {
+		@media (max-width: fs-em(map-get($breakpoints, md) - 1, $font-size-base)) {
 			@content;
 		}
 	} @else if ($size == 'sm') {
-		@media (max-width: em(map-get($breakpoints, sm) - 1, $font-size-base)) {
+		@media (max-width: fs-em(map-get($breakpoints, sm) - 1, $font-size-base)) {
 			@content;
 		}
 	} @else if ($size == 'xs') {
-		@media (max-width: em(map-get($breakpoints, xs) - 1, $font-size-base)) {
+		@media (max-width: fs-em(map-get($breakpoints, xs) - 1, $font-size-base)) {
 			@content;
 		}
 	} @else if ($size == '') {
 		@content;
 	} @else {
-		@media (max-width: em($size, $font-size-base)) {
+		@media (max-width: fs-em($size, $font-size-base)) {
 			@content;
 		}
 	}
@@ -42,29 +42,29 @@
 
 @mixin fs-min-width($size) {
 	@if ($size == 'xl') {
-		@media (min-width: em(map-get($breakpoints, xl), $font-size-base)) {
+		@media (min-width: fs-em(map-get($breakpoints, xl), $font-size-base)) {
 			@content;
 		}
 	} @else if ($size == 'lg') {
-		@media (min-width: em(map-get($breakpoints, lg), $font-size-base)) {
+		@media (min-width: fs-em(map-get($breakpoints, lg), $font-size-base)) {
 			@content;
 		}
 	} @else if ($size == 'md') {
-		@media (min-width: em(map-get($breakpoints, md), $font-size-base)) {
+		@media (min-width: fs-em(map-get($breakpoints, md), $font-size-base)) {
 			@content;
 		}
 	} @else if ($size == 'sm') {
-		@media (min-width: em(map-get($breakpoints, sm), $font-size-base)) {
+		@media (min-width: fs-em(map-get($breakpoints, sm), $font-size-base)) {
 			@content;
 		}
 	} @else if ($size == 'xs') {
-		@media (min-width: em(map-get($breakpoints, xs), $font-size-base)) {
+		@media (min-width: fs-em(map-get($breakpoints, xs), $font-size-base)) {
 			@content;
 		}
 	} @else if ($size == '') {
 		@content;
 	} @else {
-		@media (min-width: em($size, $font-size-base)) {
+		@media (min-width: fs-em($size, $font-size-base)) {
 			@content;
 		}
 	}

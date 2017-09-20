@@ -82,7 +82,7 @@ label,
 .label {
 	.required {
 
-		color: map-deep-get($clr-contextual, danger, contrast);
+		color: fs-map-deep-get($clr-contextual, danger, contrast);
 
 		@if ($direction == 'rtl') {
 			margin-right: 4px;
@@ -125,7 +125,7 @@ label,
 	height: $field-base-height;
 	line-height: $field-base-lh;
 	margin: $margin-field;
-	padding: padding-y($field-base-height, $field-base-lh, $field-border-width) $field-base-padding;
+	padding: fs-padding-y($field-base-height, $field-base-lh, $field-border-width) $field-base-padding;
 	width: 100%;
 }
 @include fs-field-selector {
@@ -210,7 +210,7 @@ select[multiple] option {
 			font-size: map-get($map, font-size);
 			height: map-get($map, height);
 			line-height: map-get($map, line-height);
-			padding: padding-y(map-get($map, height), map-get($map, line-height), $field-border-width) map-get($map, padding);
+			padding: fs-padding-y(map-get($map, height), map-get($map, line-height), $field-border-width) map-get($map, padding);
 		}
 	}
 }
