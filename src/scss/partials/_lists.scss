@@ -6,7 +6,7 @@ ul,
 ol {
     margin: $margin-list;
 	padding: if($direction == 'rtl', 0 $padding-list 0 0, 0 0 0 $padding-list);
-	@include margin-vert-flush;
+	@include fs-margin-vert-flush;
 }
 ul {
     list-style: disc;
@@ -29,7 +29,7 @@ dt {
 dd {
 	margin: $margin-list;
 	margin-left: 1.5em;
-	@include margin-vert-flush;
+	@include fs-margin-vert-flush;
 }
 
 //
@@ -37,7 +37,7 @@ dd {
 //
 
 .list-unstyled {
-	@include list-unstyled;
+	@include fs-list-unstyled;
 }
 
 //
@@ -47,7 +47,7 @@ dd {
 .list-inline {
 
 	margin: 0 -5px;
-	@include list-unstyled;
+	@include fs-list-unstyled;
 
 	li {
 		display: inline-block;

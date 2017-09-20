@@ -2,22 +2,22 @@
 // Responsive Utilities
 // --------------------------------------------------
 
-@include max-width(xs) {
-	@include hide('.hidden-xs');
+@include fs-max-width(xs) {
+	@include fs-hide('.hidden-xs');
 }
 
 @media (min-width: em(map-get($breakpoints, xs), $font-size-base)) and (max-width: em(map-get($breakpoints, sm) - 1, $font-size-base)) {
-	@include hide('.hidden-sm');
+	@include fs-hide('.hidden-sm');
 }
 
 @media (min-width: em(map-get($breakpoints, sm), $font-size-base)) and (max-width: em(map-get($breakpoints, md) - 1, $font-size-base)) {
-	@include hide('.hidden-md');
+	@include fs-hide('.hidden-md');
 }
 
 @media (min-width: em(map-get($breakpoints, md), $font-size-base)) and (max-width: em(map-get($breakpoints, lg) - 1, $font-size-base)) {
-	@include hide('.hidden-lg');
+	@include fs-hide('.hidden-lg');
 }
 
 @media (min-width: em(map-get($breakpoints, lg), $font-size-base)) {
-	@include hide('.hidden-xl');
+	@include fs-hide('.hidden-xl');
 }

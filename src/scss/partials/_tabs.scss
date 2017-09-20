@@ -33,15 +33,15 @@
 		}
 	}
 
-	@include margin-vert-flush;
+	@include fs-margin-vert-flush;
 
 }
 
-@include tab-content-variant;
+@include fs-tab-content-variant;
 
 .text-light {
-	@include tab-content-variant('inverse');
+	@include fs-tab-content-variant('inverse');
 }
 .text-dark {
-	@include tab-content-variant;
+	@include fs-tab-content-variant;
 }

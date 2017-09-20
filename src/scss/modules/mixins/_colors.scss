@@ -6,7 +6,7 @@
 // Text
 //
 
-@mixin text-emphasis-variant($parent, $clr) {
+@mixin fs-text-emphasis-variant($parent, $clr) {
 	#{$parent} {
 		color: $clr;
 	}
@@ -20,7 +20,7 @@
 // Backgrounds
 //
 
-@mixin bg-variant($parent, $clr, $text: null) {
+@mixin fs-bg-variant($parent, $clr, $text: null) {
 
 	#{$parent},
 	#{$parent}.over-bg-content,

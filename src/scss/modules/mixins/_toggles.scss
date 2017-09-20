@@ -19,11 +19,11 @@
 		border-color: $border-clr;
 
 		.toggle-title:after {
-			@include background-close($close-clr);
+			@include fs-background-close($close-clr);
 		}
 		.toggle-title:hover:after,
 		.toggle-title:focus:after {
-			@include background-close($close-hover-clr);
+			@include fs-background-close($close-hover-clr);
 		}
 	}
 }

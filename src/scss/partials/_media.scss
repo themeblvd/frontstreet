@@ -17,7 +17,7 @@
     overflow: hidden;
 	width: 100%;
 
-	@include margin-vert-flush;
+	@include fs-margin-vert-flush;
 
 	@each $name, $ratio in $embed-ratios {
 		&.#{$name} {
@@ -83,8 +83,8 @@
 	outline: 0;
 	position: relative;
 
-	@include margin-vert-flush;
-	@include font-icon;
+	@include fs-margin-vert-flush;
+	@include fs-font-icon;
 
 	&:before {
 		background: $thumb-link-icon-bg-clr;
@@ -99,7 +99,7 @@
 		transition: opacity 0.25s ease-in-out, transform 0.15s ease-in-out;
 		z-index: 2;
 
-		@include thumb-link-size($thumb-link-icon-size, $thumb-link-icon-w, $thumb-link-icon-h);
+		@include fs-thumb-link-size($thumb-link-icon-size, $thumb-link-icon-w, $thumb-link-icon-h);
 
 	}
 	img,
@@ -127,7 +127,7 @@
 
 .fs-modal-gallery {
 	margin: $margin-element;
-	@include margin-vert-flush;
+	@include fs-margin-vert-flush;
 }
 
 .fs-gallery {
@@ -171,11 +171,11 @@
 		text-align: center;
 	}
 	.fs-thumb-link:before {
-		@include thumb-link-size($gallery-thumb-link-icon-size, $gallery-thumb-link-icon-w, $gallery-thumb-link-icon-h);
+		@include fs-thumb-link-size($gallery-thumb-link-icon-size, $gallery-thumb-link-icon-w, $gallery-thumb-link-icon-h);
 	}
 }
 
-@include min-width(xs) {
+@include fs-min-width(xs) {
 	@for $i from 1 through 9 {
 		.fs-gallery.gallery-columns-#{$i} .gallery-item {
 			flex: 0 0 (100% / $i);

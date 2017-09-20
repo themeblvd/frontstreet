@@ -6,7 +6,7 @@
 // Text Reset
 //
 
-@mixin text-reset {
+@mixin fs-text-reset {
 	font-family: $font-fam-base;
 	font-size: $font-size-base;
 	font-weight: $font-weight-base;
@@ -17,7 +17,7 @@
 // Heading text colors.
 //
 
-@mixin heading-variant($style: "default") {
+@mixin fs-heading-variant($style: "default") {
 
 	$clr: $clr-text-darken;
 
@@ -45,7 +45,7 @@
 // Used with sections, which shift text to opposite of default style.
 //
 
-@mixin blend-links {
+@mixin fs-blend-links {
 	a:not(.btn):not(.menu-btn) {
 		color: inherit;
 		border-bottom: 1px solid rgba($clr-text-inv-base, 0.8);

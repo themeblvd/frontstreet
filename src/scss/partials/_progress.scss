@@ -13,7 +13,7 @@
 	line-height: $progress-height;
 	text-align: center;
 
-	@include margin-vert-flush;
+	@include fs-margin-vert-flush;
 
 }
 .progress-bar {
@@ -27,7 +27,7 @@
 	padding-top: $progress-label-spacing;
 	position: relative;
 
-	@include margin-vert-flush;
+	@include fs-margin-vert-flush;
 
 	.progress-label,
 	.progress-value {

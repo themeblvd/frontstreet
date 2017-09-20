@@ -6,7 +6,7 @@
 // Position slider nav over top slider.
 //
 
-@mixin slider-nav-overlaid( $pos, $z-index: $slider-nav-z-index ) {
+@mixin fs-slider-nav-overlaid( $pos, $z-index: $slider-nav-z-index ) {
 
 	margin: 0;
 	position: absolute;
@@ -30,7 +30,7 @@
 // slider, darken it.
 //
 
-@mixin slider-nav-overlaid-dark {
+@mixin fs-slider-nav-overlaid-dark {
 	> li {
 		border-color: rgba($clr-dark, 0.8);
 	}

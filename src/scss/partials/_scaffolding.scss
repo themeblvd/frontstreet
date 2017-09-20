@@ -48,7 +48,7 @@ textarea {
 
 figure {
 	margin: $margin-figure;
-	@include margin-vert-flush;
+	@include fs-margin-vert-flush;
 }
 
 //

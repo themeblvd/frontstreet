@@ -6,17 +6,17 @@
 // General
 //
 
-@include bg-variant('.bg-light', $clr-bg-light, $clr-text-base);
+@include fs-bg-variant('.bg-light', $clr-bg-light, $clr-text-base);
 
-@include bg-variant('.bg-dark', $clr-bg-dark, $clr-text-inv-base);
+@include fs-bg-variant('.bg-dark', $clr-bg-dark, $clr-text-inv-base);
 
 //
 // Branding Background
 //
 
 @each $name, $map in $clr-branding {
-	@include bg-variant('.#{$name}', map-get($map, base), map-get($map, contrast));
-	@include bg-variant('.bg-#{$name}', map-get($map, base), map-get($map, contrast)); // Include .bg-* for Theme Blvd compat.
+	@include fs-bg-variant('.#{$name}', map-get($map, base), map-get($map, contrast));
+	@include fs-bg-variant('.bg-#{$name}', map-get($map, base), map-get($map, contrast)); // Include .bg-* for Theme Blvd compat.
 }
 
 //
@@ -34,17 +34,17 @@
 //
 
 @each $name, $map in $clr-contextual {
-	@include bg-variant('.#{$name}', map-get($map, base), map-get($map, contrast));
+	@include fs-bg-variant('.#{$name}', map-get($map, base), map-get($map, contrast));
 }
 
 //
 // Contextual Text
 //
 
-@include text-emphasis-variant('.text-muted', $clr-text-lighten);
+@include fs-text-emphasis-variant('.text-muted', $clr-text-lighten);
 
-@include text-emphasis-variant('.text-light .text-muted', $clr-text-inv-lighten);
+@include fs-text-emphasis-variant('.text-light .text-muted', $clr-text-inv-lighten);
 
 @each $name, $map in $clr-contextual {
-	@include text-emphasis-variant('.text-#{$name}', darken(adjust-hue(map-get($map, base), -10), 50%));
+	@include fs-text-emphasis-variant('.text-#{$name}', darken(adjust-hue(map-get($map, base), -10), 50%));
 }

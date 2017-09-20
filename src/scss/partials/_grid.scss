@@ -7,11 +7,11 @@
 //
 
 .row-container {
-	@include make-row-container;
+	@include fs-make-row-container;
 }
 .row {
-	@include make-row;
-	@include margin-vert-flush;
+	@include fs-make-row;
+	@include fs-margin-vert-flush;
 }
 
 //
@@ -43,7 +43,7 @@
 
 		$name: breakpoint-next($breakpoint, $breakpoints);
 
-		@include min-width($breakpoint) {
+		@include fs-min-width($breakpoint) {
 			.row-#{$name}-reverse {
 				flex-direction: row-reverse;
 			}
@@ -56,10 +56,10 @@
 //
 
 .col {
-	@include make-col-base;
+	@include fs-make-col-base;
 }
 
-@include make-cols('xs'); // .col-xs-* never collapse.
+@include fs-make-cols('xs'); // .col-xs-* never collapse.
 
 @each $breakpoint in map-keys($breakpoints) {
 
@@ -67,8 +67,8 @@
 
 		$name: breakpoint-next($breakpoint, $breakpoints);
 
-		@include min-width($breakpoint) {
-			@include make-cols($name);
+		@include fs-min-width($breakpoint) {
+			@include fs-make-cols($name);
 		}
 	}
 }
@@ -87,7 +87,7 @@
 
 		$name: breakpoint-next($breakpoint, $breakpoints);
 
-		@include min-width($breakpoint) {
+		@include fs-min-width($breakpoint) {
 			.col-#{$name} {
 				flex: 1;
 			}
@@ -99,7 +99,7 @@
 // Varying column widths.
 //
 
-@include make-col-widths('xs'); // .col-xs-* never collapse.
+@include fs-make-col-widths('xs'); // .col-xs-* never collapse.
 
 @each $breakpoint in map-keys($breakpoints) {
 
@@ -107,8 +107,8 @@
 
 		$name: breakpoint-next($breakpoint, $breakpoints);
 
-		@include min-width($breakpoint) {
-			@include make-col-widths($name);
+		@include fs-min-width($breakpoint) {
+			@include fs-make-col-widths($name);
 		}
 	}
 }
@@ -197,7 +197,7 @@
 // Offset
 //
 
-@include make-cols('xs');
+@include fs-make-col-offsets('xs');
 
 @each $breakpoint in map-keys($breakpoints) {
 
@@ -205,8 +205,8 @@
 
 		$name: breakpoint-next($breakpoint, $breakpoints);
 
-		@include min-width($breakpoint) {
-			@include make-col-offsets($name);
+		@include fs-min-width($breakpoint) {
+			@include fs-make-col-offsets($name);
 		}
 	}
 }
@@ -225,7 +225,7 @@
 
 		$name: breakpoint-next($breakpoint, $breakpoints);
 
-		@include min-width($breakpoint) {
+		@include fs-min-width($breakpoint) {
 			.col-#{$name}-order-first {
 				order: -1;
 			}
@@ -243,7 +243,7 @@
 
 		$name: breakpoint-next($breakpoint, $breakpoints);
 
-		@include min-width($breakpoint) {
+		@include fs-min-width($breakpoint) {
 			.col-#{$name}-order-last {
 				order: 100;
 			}

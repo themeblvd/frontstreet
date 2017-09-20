@@ -7,7 +7,7 @@
 	overflow: hidden;
 	position: relative;
 
-	@include list-unstyled;
+	@include fs-list-unstyled;
 
  	.menu-btn {
 		border: none;
@@ -91,7 +91,7 @@
 		transform: translate3D(0, 0, 0);
 		transition: transform .4s ease-in-out;
 		z-index: 1;
-		@include list-unstyled;
+		@include fs-list-unstyled;
 	}
 	ul.on {
 		@if ($direction == 'rtl') {

@@ -6,7 +6,7 @@
 // Unstyled Lists
 //
 
-@mixin list-unstyled {
+@mixin fs-list-unstyled {
 	list-style: none;
 	@if ($direction == 'rtl') {
 		padding-right: 0;

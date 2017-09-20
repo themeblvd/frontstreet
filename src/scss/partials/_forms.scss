@@ -8,7 +8,7 @@
 
 form {
 	margin: $margin-form;
-	@include margin-vert-flush;
+	@include fs-margin-vert-flush;
 }
 
 //
@@ -23,7 +23,7 @@ fieldset {
 	// so we reset that to ensure it behaves more like a standard block element.
 	// See https://github.com/twbs/bootstrap/issues/12359.
 	min-width: 0;
-	@include margin-vert-flush;
+	@include fs-margin-vert-flush;
 }
 
 //
@@ -46,7 +46,7 @@ label,
 		margin-left: 0;
 	}
 
-	@include margin-vert-flush;
+	@include fs-margin-vert-flush;
 }
 legend,
 .legend {
@@ -59,7 +59,7 @@ legend,
 	line-height: inherit;
 	margin: $margin-field-legend;
 	width: 100%;
-	@include margin-vert-flush;
+	@include fs-margin-vert-flush;
 }
 .text-light {
 	label,
@@ -101,7 +101,7 @@ label,
 	font-size: $font-size-field-help;
 	margin: $margin-field-help;
 
-	@include margin-vert-flush;
+	@include fs-margin-vert-flush;
 
 	@each $name in $clr-contextual {
 		&.#{$name} {
@@ -114,7 +114,7 @@ label,
 // General Fields
 //
 
-@include field-selector {
+@include fs-field-selector {
 	-webkit-appearance: none;
 	background-color: $clr-bg-field;
 	border-radius: $field-radius;
@@ -128,23 +128,23 @@ label,
 	padding: padding-y($field-base-height, $field-base-lh, $field-border-width) $field-base-padding;
 	width: 100%;
 }
-@include field-selector {
+@include fs-field-selector {
 	&:focus {
 		border-color: $clr-border-active;
 		box-shadow: 0 0 8px $clr-trans-lightest;
 		outline: 0;
 	}
 }
-@include field-selector {
-	@include margin-vert-flush;
+@include fs-field-selector {
+	@include fs-margin-vert-flush;
 }
 .text-light {
-	@include field-selector {
+	@include fs-field-selector {
 		background-color: $clr-bg-inv-field;
 		border-color: $clr-border-inv;
 		color: $clr-text-inv-base;
 	}
-	@include field-selector {
+	@include fs-field-selector {
 		&:focus {
 			border-color: $clr-border-inv-active;
 			box-shadow: 0 0 8px rgba($clr-black, 0.2);
@@ -152,12 +152,12 @@ label,
 	}
 }
 .text-dark {
-	@include field-selector {
+	@include fs-field-selector {
 		background-color: $clr-bg-field;
 		border-color: $clr-border;
 		color: $clr-text-base;
 	}
-	@include field-selector {
+	@include fs-field-selector {
 		&:focus {
 			border-color: $clr-border-active;
 			box-shadow: 0 0 8px $clr-trans-lightest;
@@ -181,7 +181,7 @@ textarea {
 select {
 	appearance: none;
     background-origin: content-box;
-	@include background-triangle($clr-svg);
+	@include fs-background-triangle($clr-svg);
 	background-position: if($direction == 'rtl', left -.25rem center, right -.25rem center);
 	background-size: 9px 6px;
 }
@@ -193,17 +193,17 @@ select[multiple] option {
 	padding: 4px;
 }
 .text-light select {
-	@include background-triangle($clr-svg-inv);
+	@include fs-background-triangle($clr-svg-inv);
 }
 .text-dark select {
-	@include background-triangle($clr-svg);
+	@include fs-background-triangle($clr-svg);
 }
 
 //
 // Field Sizing
 //
 
-@include min-width(sm) {
+@include fs-min-width(sm) {
 	@each $size, $map in $field-sizes {
 		input.field-#{$size},
 		select.field-#{$size} {
@@ -233,7 +233,7 @@ input[type="checkbox"] {
 
 	margin-top: 0;
 
-	@include list-unstyled;
+	@include fs-list-unstyled;
 
 	input[type=checkbox],
 	input[type=radio] {
@@ -277,14 +277,14 @@ input[type="file"] {
 .field-group {
 
 	margin: $margin-field;
-	@include list-unstyled;
+	@include fs-list-unstyled;
 
 	> li {
 		margin: $margin-field;
-		@include margin-vert-flush;
+		@include fs-margin-vert-flush;
 	}
 }
-@include min-width(sm) {
+@include fs-min-width(sm) {
 	.field-group {
 
 		align-items: flex-end;
@@ -293,7 +293,7 @@ input[type="file"] {
 
 		> li {
 			margin: 0 5px;
-			@include margin-horz-flush;
+			@include fs-margin-horz-flush;
 		}
 		> li.has-field {
 			flex: 1;
@@ -311,8 +311,8 @@ input[type="file"] {
 	font-size: $font-size-field;
 	margin: $margin-field;
 	position: relative;
-	@include margin-vert-flush;
-	@include font-icon;
+	@include fs-margin-vert-flush;
+	@include fs-font-icon;
 
 	&:before {
 		display: block;
@@ -327,7 +327,7 @@ input[type="file"] {
 	}
 }
 
-@include min-width(sm) {
+@include fs-min-width(sm) {
 	@each $size, $map in $field-sizes {
 		.field-icon-#{$size} {
 			font-size: map-get($map, font-size);

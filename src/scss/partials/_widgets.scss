@@ -9,7 +9,7 @@
 	margin: $margin-widget;
 	padding: $padding-widget;
 
-	@include margin-vert-flush;
+	@include fs-margin-vert-flush;
 
 	&.over-bg-content {
 		background: $clr-bg-body;

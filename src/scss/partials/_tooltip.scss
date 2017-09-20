@@ -4,7 +4,7 @@
 
 .fs-tooltip {
 
-	@include text-reset;
+	@include fs-text-reset;
 	font-size: $font-size-tooltip;
 	display: block;
 	position: absolute;

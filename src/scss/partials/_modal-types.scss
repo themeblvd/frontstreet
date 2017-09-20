@@ -49,7 +49,7 @@
 
 @each $size, $map in $modal-sizes {
 	@if ($size != 'xs') { // Size 'xs' used for mobile only.
-		@include min-width('sm') {
+		@include fs-min-width('sm') {
 			.fs-content-modal.modal-#{$size} {
 
 				font-size: map-get($map, font-size);
@@ -95,7 +95,7 @@
 		width: 4vh;
     	height: 4vh;
 
-		@include background-search($clr-white);
+		@include fs-background-search($clr-white);
 
 	}
 	input[type="search"] {

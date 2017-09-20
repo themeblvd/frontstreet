@@ -7,7 +7,7 @@
 //
 
 @each $name, $map in $clr-library {
-	@include bg-variant('.#{$name}', map-get($map, base), map-get($map, contrast));
+	@include fs-bg-variant('.#{$name}', map-get($map, base), map-get($map, contrast));
 }
 
 //

@@ -49,7 +49,7 @@
 			margin-left: ($loader-icon-size / -2);
 		}
 		animation-delay: 0.2s;
-		@include hide-text;
+		@include fs-hide-text;
 	}
 	&:after {
 		@if ($direction == 'rtl') {

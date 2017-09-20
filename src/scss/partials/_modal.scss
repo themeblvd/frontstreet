@@ -301,22 +301,22 @@
 	.mfp-arrow-left {
 		@if ($direction == 'rtl') {
 
-			@include background-chevron('right', $clr-svg-inv);
+			@include fs-background-chevron('right', $clr-svg-inv);
 			right: 10px;
 
 			&:hover,
 			&:focus {
-				@include background-chevron('right', $clr-svg-inv-hover);
+				@include fs-background-chevron('right', $clr-svg-inv-hover);
 			}
 
 		} @else {
 
-			@include background-chevron('left', $clr-svg-inv);
+			@include fs-background-chevron('left', $clr-svg-inv);
 			left: 10px;
 
 			&:hover,
 			&:focus {
-				@include background-chevron('left', $clr-svg-inv-hover);
+				@include fs-background-chevron('left', $clr-svg-inv-hover);
 			}
 
 		}
@@ -324,22 +324,22 @@
 	.mfp-arrow-right {
 		@if ($direction == 'rtl') {
 
-			@include background-chevron('left', $clr-svg-inv);
+			@include fs-background-chevron('left', $clr-svg-inv);
 			left: 10px;
 
 			&:hover,
 			&:focus {
-				@include background-chevron('left', $clr-svg-inv-hover);
+				@include fs-background-chevron('left', $clr-svg-inv-hover);
 			}
 
 		} @else {
 
-			@include background-chevron('right', $clr-svg-inv);
+			@include fs-background-chevron('right', $clr-svg-inv);
 			right: 10px;
 
 			&:hover,
 			&:focus {
-				@include background-chevron('right', $clr-svg-inv-hover);
+				@include fs-background-chevron('right', $clr-svg-inv-hover);
 			}
 
 		}
@@ -453,7 +453,7 @@
 // Smaller device styling.
 //
 
-@include max-width('sm') {
+@include fs-max-width('sm') {
 	.fs-modal {
 		.mfp-arrow {
 			background-color: rgba(0, 0, 0, 0.25);
@@ -461,19 +461,19 @@
 		}
 		.mfp-arrow-left {
 			@if ($direction == 'rtl') {
-				@include background-chevron('right', $clr-text-inv-base);
+				@include fs-background-chevron('right', $clr-text-inv-base);
 				right: $modal-arrow-btn-size / -3;
 			} @else {
-				@include background-chevron('left', $clr-text-inv-base);
+				@include fs-background-chevron('left', $clr-text-inv-base);
 				left: $modal-arrow-btn-size / -3;
 			}
 		}
 		.mfp-arrow-right {
 			@if ($direction == 'rtl') {
-				@include background-chevron('left', $clr-text-inv-base);
+				@include fs-background-chevron('left', $clr-text-inv-base);
 				left: $modal-arrow-btn-size / -3;
 			} @else {
-				@include background-chevron('right', $clr-text-inv-base);
+				@include fs-background-chevron('right', $clr-text-inv-base);
 				right: $modal-arrow-btn-size / -3;
 			}
 		}

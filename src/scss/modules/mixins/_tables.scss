@@ -6,7 +6,7 @@
 // Table Row Backgrounds
 //
 
-@mixin table-row-variant($state, $background) {
+@mixin fs-table-row-variant($state, $background) {
 	// Exact selectors below required to override `.table-striped` and prevent
 	// inheritance to nested tables.
 	.table-#{$state} {

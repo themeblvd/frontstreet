@@ -6,7 +6,7 @@
 // Generate input selectors.
 //
 
-@mixin field-selector {
+@mixin fs-field-selector {
 
 	#{$field-selector} {
 		@content;
@@ -18,7 +18,7 @@
 // Generate button selectors.
 //
 
-@mixin btn-selector {
+@mixin fs-btn-selector {
 
 	#{$btn-selector} {
 		@content;
@@ -30,7 +30,7 @@
 // Generate button styles.
 //
 
-@mixin btn-styles {
+@mixin fs-btn-styles {
 
 	background-color: $clr-bg-btn;
 	border: $btn-border-width solid transparent;
@@ -54,7 +54,7 @@
 	&:active,
 	&.active {
 		&:focus {
-			@include tab-focus;
+			@include fs-tab-focus;
 		}
 	}
 	&:hover,
@@ -76,7 +76,7 @@
 // Style buttons color variations.
 //
 
-@mixin button-variant($clr, $text, $bg, $bg-hover: null) {
+@mixin fs-button-variant($clr, $text, $bg, $bg-hover: null) {
 
 	// Standard Buttons
 

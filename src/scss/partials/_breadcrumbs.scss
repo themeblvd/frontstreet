@@ -5,7 +5,7 @@
 .fs-breadcrumbs {
 
 	font-size: $font-size-breadcrumbs;
-	@include list-unstyled;
+	@include fs-list-unstyled;
 
 	li {
 		display: inline-block;

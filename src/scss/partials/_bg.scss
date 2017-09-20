@@ -116,7 +116,7 @@
 	bottom: 0;
 	z-index: $bg-z-index-base;
 
-	@include min-width(md) {
+	@include fs-min-width(md) {
 		img,
 		.img {
 			display: block;
@@ -140,7 +140,7 @@
 			opacity: 1;
 		}
 	}
-	@include max-width(md) {
+	@include fs-max-width(md) {
 		img,
 		.img {
 			// Use 101% x 101% to make sure that the browser never

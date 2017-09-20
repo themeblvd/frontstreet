@@ -6,7 +6,7 @@
 // Size a thumbnail link icon.
 //
 
-@mixin thumb-link-size($icon-size, $w, $h) {
+@mixin fs-thumb-link-size($icon-size, $w, $h) {
 	font-size: $icon-size;
 	line-height: $h;
 	margin: ($h / -2) 0 0 ($w / -2);

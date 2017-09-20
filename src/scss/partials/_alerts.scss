@@ -13,7 +13,7 @@
 	margin: $margin-alert;
 	padding: $padding-alert;
 
-	@include margin-vert-flush;
+	@include fs-margin-vert-flush;
 
 	// Provide class for links that match alerts
 	a {
@@ -37,5 +37,5 @@
 //
 
 @each $name, $map in $clr-contextual {
-	@include bg-variant('.alert-#{$name}', map-get($map, base), map-get($map, contrast));
+	@include fs-bg-variant('.alert-#{$name}', map-get($map, base), map-get($map, contrast));
 }

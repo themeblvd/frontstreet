@@ -12,7 +12,7 @@
 //
 // Source: http://nicolasgallagher.com/micro-clearfix-hack/
 
-@mixin clearfix() {
+@mixin fs-clearfix {
 	&:before,
 	&:after {
 		content: " "; // 1
@@ -27,7 +27,7 @@
 // Center-align block-level element.
 //
 
-@mixin aligncenter() {
+@mixin fs-aligncenter {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -37,12 +37,12 @@
 // Floats
 //
 
-@mixin alignleft() {
+@mixin fs-alignleft {
 	float: left !important; // @noflip
 	margin: 5px 20px 5px 0; // @noflip
 }
 
-@mixin alignright() {
+@mixin fs-alignright {
 	float: right !important; // @noflip
 	margin: 5px 0 5px 20px; // @noflip
 }
@@ -51,7 +51,7 @@
 // Hide Text
 //
 
-@mixin hide-text() {
+@mixin fs-hide-text {
 	text-indent: -9999px;
 }
 
@@ -59,7 +59,7 @@
 // Hide Element
 //
 
-@mixin hide($parent) {
+@mixin fs-hide($parent) {
 	#{$parent} {
 		display: none !important;
 	}
@@ -69,7 +69,7 @@
 // Show Block Element
 //
 
-@mixin show-block($parent) {
+@mixin fs-show-block($parent) {
 	#{$parent} {
 		display: block !important;
 	}
@@ -79,7 +79,7 @@
 // Show Flexbox Element
 //
 
-@mixin show-flex($parent) {
+@mixin fs-show-flex($parent) {
 	#{$parent} {
 		display: flex !important;
 	}
@@ -89,7 +89,7 @@
 // Visible Element
 //
 
-@mixin visible($parent) {
+@mixin fs-visible($parent) {
 	#{$parent} {
 		visibility: visible;
 	}
@@ -99,7 +99,7 @@
 // Invisible Element
 //
 
-@mixin invisible($parent) {
+@mixin fs-invisible($parent) {
 	#{$parent} {
 		visibility: hidden;
 	}

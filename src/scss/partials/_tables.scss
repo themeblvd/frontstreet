@@ -33,7 +33,7 @@ table {
 	margin: $margin-table;
 	background-color: $table-bg; // Reset for nesting within parents with `background-color`.
 
-	@include margin-vert-flush;
+	@include fs-margin-vert-flush;
 
 	th {
 		color: $clr-text-darken;
@@ -134,10 +134,10 @@ table {
 // inheritance to nested tables.
 //
 
-@include table-row-variant(active, $table-bg-active);
+@include fs-table-row-variant(active, $table-bg-active);
 
 @each $name, $map in $clr-contextual {
-	@include table-row-variant(#{$name}, map-get($map, base));
+	@include fs-table-row-variant(#{$name}, map-get($map, base));
 }
 
 //
@@ -176,7 +176,7 @@ table {
 	margin: $margin-table;
 	min-height: 0.01%; // Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837)
 
-	@include max-width(sm) {
+	@include fs-max-width(sm) {
 		width: 100%;
 		// margin-bottom: ($line-height-computed * 0.75);
 		overflow-y: hidden;

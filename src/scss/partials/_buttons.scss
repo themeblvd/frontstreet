@@ -2,15 +2,15 @@
 // Buttons
 // --------------------------------------------------
 
-@include btn-selector {
-	@include btn-styles;
+@include fs-btn-selector {
+	@include fs-btn-styles;
 }
 
 //
 // Button Sizes
 //
 
-@include min-width(sm) {
+@include fs-min-width(sm) {
 	@each $size, $map in $btn-sizes {
 		.btn-#{$size} {
 			font-size: map-get($map, font-size);
@@ -26,16 +26,16 @@
 // Default color
 //
 
-@include button-variant('default', $clr-text-darken, $clr-bg-btn, darken($clr-bg-btn, 2%) );
+@include fs-button-variant('default', $clr-text-darken, $clr-bg-btn, darken($clr-bg-btn, 2%) );
 
-@include button-variant('light', $clr-text-darken, darken($clr-bg-light, 2%), darken(darken($clr-bg-light, 2%), 2%) );
+@include fs-button-variant('light', $clr-text-darken, darken($clr-bg-light, 2%), darken(darken($clr-bg-light, 2%), 2%) );
 
 //
 // Branding Colors
 //
 
 @each $clr, $map in $clr-branding {
-	@include button-variant($clr, map-get($map, contrast), map-get($map, base) );
+	@include fs-button-variant($clr, map-get($map, contrast), map-get($map, base) );
 }
 
 //
@@ -43,7 +43,7 @@
 //
 
 @each $clr, $map in $clr-contextual {
-	@include button-variant($clr, map-get($map, contrast), map-get($map, base) );
+	@include fs-button-variant($clr, map-get($map, contrast), map-get($map, base) );
 }
 
 //

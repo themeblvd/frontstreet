@@ -6,7 +6,7 @@
 
 	margin: $margin-testimonial;
 
-	@include margin-vert-flush;
+	@include fs-margin-vert-flush;
 
 	.testimonial-text {
 		margin: 0;
@@ -16,7 +16,7 @@
 
 		line-height: 1;
 
-		@include list-unstyled;
+		@include fs-list-unstyled;
 
 		.author-image img {
 			border-radius: $testimonial-img-radius;
@@ -125,7 +125,7 @@
 			font-style: $font-style-quote;
 			padding: $testimonial-lg-spacing;
 		}
-		@include min-width(md) {
+		@include fs-min-width(md) {
 			.testimonial-text {
 				font-size: $testimonial-lg-font-size;
 				line-height: $font-lh-quote;

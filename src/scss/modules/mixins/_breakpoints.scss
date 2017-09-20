@@ -6,7 +6,7 @@
 // Max-Width Media Query
 //
 
-@mixin max-width($size) {
+@mixin fs-max-width($size) {
 	@if ($size == 'xl') {
 		@media (max-width: em(map-get($breakpoints, xl) - 1, $font-size-base)) {
 			@content;
@@ -40,7 +40,7 @@
 // Min-Width Media Query
 //
 
-@mixin min-width($size) {
+@mixin fs-min-width($size) {
 	@if ($size == 'xl') {
 		@media (min-width: em(map-get($breakpoints, xl), $font-size-base)) {
 			@content;

@@ -44,7 +44,7 @@ a:focus {
 	color: $clr-link-hover;
 }
 .text-light {
-	@include blend-links();
+	@include fs-blend-links;
 }
 .text-dark a {
 	color: $clr-link;
@@ -61,14 +61,14 @@ a:focus {
 
 p {
 	margin: $margin-paragraph;
-	@include margin-vert-flush;
+	@include fs-margin-vert-flush;
 }
 .lead {
-	@include min-width(sm) {
+	@include fs-min-width(sm) {
 		font-size: $font-size-lead;
 		line-height: $font-lh-lead;
 		margin: $margin-lead;
-		@include margin-vert-flush;
+		@include fs-margin-vert-flush;
 	}
 }
 
@@ -86,7 +86,7 @@ h1, h2, h3, h4, h5, h6,
 	margin: $margin-heading;
 	text-transform: $font-transform-heading;
 
-	@include margin-vert-flush;
+	@include fs-margin-vert-flush;
 
 	.fs-divider {
 		margin-top: $margin-divider - 10px;
@@ -97,7 +97,7 @@ h1, h2, h3, h4, h5, h6,
 		font-size: map-get($map, base);
 	}
 }
-@include max-width(sm) {
+@include fs-max-width(sm) {
 	@each $tag, $map in $font-size-headings {
 		#{$tag}, .#{$tag} {
 			font-size: map-get($map, mobile);
@@ -147,7 +147,7 @@ h6, .h6 {
 	margin: $margin-heading-lg;
 	text-transform: $font-transform-heading-sm;
 
-	@include margin-vert-flush;
+	@include fs-margin-vert-flush;
 
 }
 @each $tag, $map in $font-size-headings-bigger {
@@ -155,7 +155,7 @@ h6, .h6 {
 		font-size: map-get($map, base);
 	}
 }
-@include max-width(sm) {
+@include fs-max-width(sm) {
 	@each $tag, $map in $font-size-headings-bigger {
 		.heading-#{$tag} {
 			font-size: map-get($map, mobile);
@@ -178,7 +178,7 @@ h6, .h6 {
 	margin: $margin-heading-sm;
 	text-transform: $font-transform-heading-sm;
 
-	@include margin-vert-flush;
+	@include fs-margin-vert-flush;
 
 }
 @each $tag, $map in $font-size-headings-smaller {
@@ -191,13 +191,13 @@ h6, .h6 {
 // Heading Color
 //
 
-@include heading-variant;
+@include fs-heading-variant;
 
 .text-light {
-	@include heading-variant('inverse');
+	@include fs-heading-variant('inverse');
 }
 .text-dark {
-	@include heading-variant;
+	@include fs-heading-variant;
 }
 
 //
@@ -260,7 +260,7 @@ pre {
     max-width: 100%;
     overflow: auto;
     padding: 1em;
-	@include margin-vert-flush;
+	@include fs-margin-vert-flush;
 }
 code, kbd, tt, var {
     font-family: $font-fam-code;
@@ -337,7 +337,7 @@ address {
 	font-style: $font-style-address;
 	line-height: $font-lh-base;
     margin: $margin-element;
-	@include margin-vert-flush;
+	@include fs-margin-vert-flush;
 }
 abbr, acronym {
     border-bottom: 1px dotted $clr-border;
@@ -366,7 +366,7 @@ blockquote {
     margin: $margin-quote;
 	text-transform: $font-transform-quote;
 
-	@include margin-vert-flush;
+	@include fs-margin-vert-flush;
 
 	&.alignleft,
 	&.pull-left,
@@ -377,7 +377,7 @@ blockquote {
 		margin-bottom: $spacing-element;
 	}
 }
-@include max-width(sm) {
+@include fs-max-width(sm) {
 	blockquote,
 	blockquote.alignleft,
 	blockquote.pull-left,

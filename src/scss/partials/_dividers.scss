@@ -71,7 +71,7 @@ hr:not(.fs-divider) {
 
 .fs-divider.divider-icon {
 
-	@include font-icon;
+	@include fs-font-icon;
 
 	&:before {
 

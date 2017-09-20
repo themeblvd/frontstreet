@@ -15,7 +15,7 @@
 //
 
 .clearfix {
-	@include clearfix;
+	@include fs-clearfix;
 }
 .aligncenter,
 .align-center,
@@ -28,19 +28,19 @@
 
 	margin: $margin-figure;
 
-	@include margin-vert-flush;
-	@include aligncenter;
+	@include fs-margin-vert-flush;
+	@include fs-aligncenter;
 }
-@include min-width(xs) {
+@include fs-min-width(xs) {
 	.alignleft,
 	.align-left,
 	.pull-left {
-		@include alignleft;
+		@include fs-alignleft;
 	}
 	.alignright,
 	.align-right,
 	.pull-right {
-		@include alignright;
+		@include fs-alignright;
 	}
 }
 
@@ -48,24 +48,24 @@
 // Toggling content
 //
 
-@include hide('.hide');
+@include fs-hide('.hide');
 
-@include show-block('.show-block');
+@include fs-show-block('.show-block');
 
-@include show-flex('.show-flex');
+@include fs-show-flex('.show-flex');
 
-@include invisible('.invisible');
+@include fs-invisible('.invisible');
 
-@include visible('.visible');
+@include fs-visible('.visible');
 
-@include hide('.hidden');
+@include fs-hide('.hidden');
 
 //
 // Hide Text
 //
 
 .text-hide {
-	@include hide-text;
+	@include fs-hide-text;
 }
 
 //
