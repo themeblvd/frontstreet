@@ -4,7 +4,7 @@
 
 .fs-breadcrumbs {
 
-	font-size: $font-size-breadcrumbs;
+	font-size: $fs-font-size-breadcrumbs;
 	@include fs-list-unstyled;
 
 	li {
@@ -16,36 +16,36 @@
 	}
 	> li + li:before,
 	a:not(:hover) {
-		color: $clr-text-lighten;
+		color: $fs-clr-text-lighten;
 	}
 	li.active span {
-		color: $clr-text-darken;
+		color: $fs-clr-text-darken;
 	}
 	&.has-bg {
-		padding: $padding-breadcrumbs;
+		padding: $fs-padding-breadcrumbs;
 	}
 	&.text-light {
 		> li + li:before,
 		a:not(:hover) {
-			color: $clr-text-inv-lighten;
+			color: $fs-clr-text-inv-lighten;
 		}
 		a {
 			border: none;
 		}
 		li.active span {
-			color: $clr-text-inv-darken;
+			color: $fs-clr-text-inv-darken;
 		}
 	}
 	&.text-dark {
 		> li + li:before,
 		a:not(:hover) {
-			color: $clr-text-lighten;
+			color: $fs-clr-text-lighten;
 		}
 		a {
 			border: none;
 		}
 		li.active span {
-			color: $clr-text-darken;
+			color: $fs-clr-text-darken;
 		}
 	}
 }

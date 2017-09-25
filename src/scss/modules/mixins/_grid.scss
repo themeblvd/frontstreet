@@ -6,7 +6,7 @@
 // Row Container
 //
 
-@mixin fs-make-row-container($gutter: $grid-gutters) {
+@mixin fs-make-row-container($gutter: $fs-grid-gutters) {
 	padding: 0 ($gutter / 2);
 }
 
@@ -14,13 +14,13 @@
 // Rows
 //
 
-@mixin fs-make-row($gutter: $grid-gutters) {
+@mixin fs-make-row($gutter: $fs-grid-gutters) {
 	display: flex;
 	flex: 0 1 auto;
 	flex-direction: row;
 	flex-wrap: wrap;
 	margin-right: ($gutter / -2);
-	margin-bottom: $margin-column;
+	margin-bottom: $fs-margin-column;
 	margin-left: ($gutter / -2);
 }
 
@@ -31,10 +31,10 @@
 @mixin fs-make-col-base {
 
 	position: relative;
-	margin-bottom: $margin-column;
+	margin-bottom: $fs-margin-column;
 	min-height: 1px; // Prevent collapsing.
-	padding-left: ceil(($grid-gutters / 2));
-	padding-right: floor(($grid-gutters / 2));
+	padding-left: ceil(($fs-grid-gutters / 2));
+	padding-right: floor(($fs-grid-gutters / 2));
 	// Prevent columns from becoming too narrow when at smaller grid tiers by
 	// always setting `width: 100%;`. This works because we use `flex` values
 	// later on to override this initial width.

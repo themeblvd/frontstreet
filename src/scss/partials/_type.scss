@@ -8,12 +8,12 @@
 
 body,
 html {
-	color: $clr-text-base-fallback;
-	color: $clr-text-base;
-	font-family: $font-fam-base;
-	font-size: $font-size-base;
-	font-weight: $font-weight-base;
-	line-height: $font-lh-base;
+	color: $fs-clr-text-base-fallback;
+	color: $fs-clr-text-base;
+	font-family: $fs-font-fam-base;
+	font-size: $fs-font-size-base;
+	font-weight: $fs-font-weight-base;
+	line-height: $fs-font-lh-base;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -24,10 +24,10 @@ html {
 	}
 }
 .text-light {
-	color: rgba($clr-text-inv-base, 0.8);
+	color: rgba($fs-clr-text-inv-base, 0.8);
 }
 .text-dark {
-	color: $clr-text-base;
+	color: $fs-clr-text-base;
 }
 
 //
@@ -35,24 +35,24 @@ html {
 //
 
 a {
-	color: $clr-link;
+	color: $fs-clr-link;
 	text-decoration: none;
 }
 a:hover,
 a:active,
 a:focus {
-	color: $clr-link-hover;
+	color: $fs-clr-link-hover;
 }
 .text-light {
 	@include fs-blend-links;
 }
 .text-dark a {
-	color: $clr-link;
+	color: $fs-clr-link;
 }
 .text-dark a:hover,
 .text-dark a:active,
 .text-dark a:focus {
-	color: $clr-link-hover;
+	color: $fs-clr-link-hover;
 }
 
 //
@@ -60,14 +60,14 @@ a:focus {
 //
 
 p {
-	margin: $margin-paragraph;
+	margin: $fs-margin-paragraph;
 	@include fs-margin-vert-flush;
 }
 .lead {
 	@include fs-min-width(sm) {
-		font-size: $font-size-lead;
-		line-height: $font-lh-lead;
-		margin: $margin-lead;
+		font-size: $fs-font-size-lead;
+		line-height: $fs-font-lh-lead;
+		margin: $fs-margin-lead;
 		@include fs-margin-vert-flush;
 	}
 }
@@ -78,27 +78,27 @@ p {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-	font-weight: $font-weight-heading;
-	font-family: $font-fam-headings;
-	font-weight: $font-weight-heading;
-	letter-spacing: $font-ls-heading;
-	line-height: $font-lh-heading;
-	margin: $margin-heading;
-	text-transform: $font-transform-heading;
+	font-weight: $fs-font-weight-heading;
+	font-family: $fs-font-fam-headings;
+	font-weight: $fs-font-weight-heading;
+	letter-spacing: $fs-font-ls-heading;
+	line-height: $fs-font-lh-heading;
+	margin: $fs-margin-heading;
+	text-transform: $fs-font-transform-heading;
 
 	@include fs-margin-vert-flush;
 
 	.fs-divider {
-		margin-top: $margin-divider - 10px;
+		margin-top: $fs-margin-divider - 10px;
 	}
 }
-@each $tag, $map in $font-size-headings {
+@each $tag, $map in $fs-font-size-headings {
 	#{$tag}, .#{$tag} {
 		font-size: map-get($map, base);
 	}
 }
 @include fs-max-width(sm) {
-	@each $tag, $map in $font-size-headings {
+	@each $tag, $map in $fs-font-size-headings {
 		#{$tag}, .#{$tag} {
 			font-size: map-get($map, mobile);
 		}
@@ -118,9 +118,9 @@ h6, .h6 {
 	small {
 		display: block;
 		font-size: .45em;
-		letter-spacing: $font-ls-subtitles;
+		letter-spacing: $fs-font-ls-subtitles;
 		margin: .6em 0 0 .1em;
-		text-transform: $font-transform-subtitles;
+		text-transform: $fs-font-transform-subtitles;
 	}
 }
 h3, .h3,
@@ -128,7 +128,7 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
 	small {
-		font-size: $font-size-subtitle-sm;
+		font-size: $fs-font-size-subtitle-sm;
 	}
 }
 
@@ -141,22 +141,22 @@ h6, .h6 {
 .heading-xxl,
 .heading-xxxl {
 
-	color: $clr-text-darken;
-	font-weight: $font-weight-heading-lg;
-	letter-spacing: $font-ls-heading-lg;
-	margin: $margin-heading-lg;
-	text-transform: $font-transform-heading-sm;
+	color: $fs-clr-text-darken;
+	font-weight: $fs-font-weight-heading-lg;
+	letter-spacing: $fs-font-ls-heading-lg;
+	margin: $fs-margin-heading-lg;
+	text-transform: $fs-font-transform-heading-sm;
 
 	@include fs-margin-vert-flush;
 
 }
-@each $tag, $map in $font-size-headings-bigger {
+@each $tag, $map in $fs-font-size-headings-bigger {
 	.heading-#{$tag} {
 		font-size: map-get($map, base);
 	}
 }
 @include fs-max-width(sm) {
-	@each $tag, $map in $font-size-headings-bigger {
+	@each $tag, $map in $fs-font-size-headings-bigger {
 		.heading-#{$tag} {
 			font-size: map-get($map, mobile);
 		}
@@ -172,16 +172,16 @@ h6, .h6 {
 .heading-xxs,
 .heading-xxxs {
 
-	color: $clr-text-darken;
-	font-weight: $font-weight-heading-sm;
-	letter-spacing: $font-ls-heading-sm;
-	margin: $margin-heading-sm;
-	text-transform: $font-transform-heading-sm;
+	color: $fs-clr-text-darken;
+	font-weight: $fs-font-weight-heading-sm;
+	letter-spacing: $fs-font-ls-heading-sm;
+	margin: $fs-margin-heading-sm;
+	text-transform: $fs-font-transform-heading-sm;
 
 	@include fs-margin-vert-flush;
 
 }
-@each $tag, $map in $font-size-headings-smaller {
+@each $tag, $map in $fs-font-size-headings-smaller {
 	.heading-#{$tag} {
 		font-size: map-get($map, base);
 	}
@@ -206,22 +206,22 @@ h6, .h6 {
 
 .heading-underline {
 
-    border-bottom: 2px solid $clr-trans-lightest;
+    border-bottom: 2px solid $fs-clr-trans-lightest;
     padding-bottom: .8em;
     position: relative;
 
 	&:before {
 		content: "";
-		background: fs-map-deep-get($clr-branding, secondary, base);
+		background: fs-map-deep-get($fs-clr-branding, secondary, base);
 		position: absolute;
-		bottom: -$heading-underline-h;
+		bottom: -$fs-heading-underline-h;
 		@if ($direction == 'rtl') {
 			right: 0;
 		} @else {
 			left: 0;
 		}
-		width: $heading-underline-w;
-		height: $heading-underline-h;
+		width: $fs-heading-underline-w;
+		height: $fs-heading-underline-h;
 		z-index: 2;
 	}
 	&.text-left:before {
@@ -239,10 +239,10 @@ h6, .h6 {
 	}
 }
 .text-light .heading-underline {
-	border-bottom-color: rgba($clr-darkest, 0.5);
+	border-bottom-color: rgba($fs-clr-darkest, 0.5);
 }
 .text-dark .heading-underline {
-	border-bottom-color: $clr-trans-lightest;
+	border-bottom-color: $fs-clr-trans-lightest;
 }
 
 //
@@ -250,27 +250,27 @@ h6, .h6 {
 //
 
 pre {
-    background-color: $clr-bg-code;
+    background-color: $fs-clr-bg-code;
     border: none;
 	border-radius: 2px;
-    font-family: $font-fam-code;
-    font-size: $font-size-pre;
-    line-height: $font-lh-base;
-    margin: $margin-element;
+    font-family: $fs-font-fam-code;
+    font-size: $fs-font-size-pre;
+    line-height: $fs-font-lh-base;
+    margin: $fs-margin-element;
     max-width: 100%;
     overflow: auto;
     padding: 1em;
 	@include fs-margin-vert-flush;
 }
 code, kbd, tt, var {
-    font-family: $font-fam-code;
-    font-size: $font-size-code;
-	font-weight: $font-weight-bold;
+    font-family: $fs-font-fam-code;
+    font-size: $fs-font-size-code;
+	font-weight: $fs-font-weight-bold;
 }
 code {
-	background-color: $clr-bg-code;
+	background-color: $fs-clr-bg-code;
     border-radius: 1px;
-	color: $clr-text-base;
+	color: $fs-clr-text-base;
 	font-size: 90%;
 	padding: 0.125em 0.25em;
 }
@@ -281,32 +281,32 @@ pre code {
 }
 kbd {
 
-	background-color: $clr-bg-kbd;
-	box-shadow: inset 0 -1px 0 rgba($clr-black, 0.25);
+	background-color: $fs-clr-bg-kbd;
+	box-shadow: inset 0 -1px 0 rgba($fs-clr-black, 0.25);
 	border-radius: 2px;
 	font-size: 90%;
-	color: $clr-text-inv-base;
+	color: $fs-clr-text-inv-base;
 	padding: 2px 4px;
 
 	kbd {
 		padding: 0;
 		font-size: 100%;
-		font-weight: $font-weight-bold;
+		font-weight: $fs-font-weight-bold;
 		box-shadow: none;
 	}
 }
 .text-light {
 	pre,
 	code {
-		background-color: $clr-bg-inv-code;
-		color: $clr-text-inv-base;
+		background-color: $fs-clr-bg-inv-code;
+		color: $fs-clr-text-inv-base;
 	}
 }
 .text-dark {
 	pre,
 	code {
-		background-color: $clr-bg-code;
-		color: $clr-text-base;
+		background-color: $fs-clr-bg-code;
+		color: $fs-clr-text-base;
 	}
 }
 
@@ -316,17 +316,17 @@ kbd {
 
 small,
 .small {
-	font-size: $font-size-small;
+	font-size: $fs-font-size-small;
 }
 big,
 .big {
-    font-size: $font-size-big;
+    font-size: $fs-font-size-big;
 }
 mark,
 .mark,
 ins,
 .ins {
-	background-color: $clr-highlight;
+	background-color: $fs-clr-highlight;
 	padding: .2em;
 	text-decoration: none;
 }
@@ -334,23 +334,23 @@ dfn, cite, em, i {
     font-style: italic;
 }
 address {
-	font-style: $font-style-address;
-	line-height: $font-lh-base;
-    margin: $margin-element;
+	font-style: $fs-font-style-address;
+	line-height: $fs-font-lh-base;
+    margin: $fs-margin-element;
 	@include fs-margin-vert-flush;
 }
 abbr, acronym {
-    border-bottom: 1px dotted $clr-border;
+    border-bottom: 1px dotted $fs-clr-border;
     cursor: help;
 	text-decoration: inherit;
 }
 .text-light abbr,
 .text-light acronym {
-	border-color: $clr-border-inv;
+	border-color: $fs-clr-border-inv;
 }
 .text-dark abbr,
 .text-dark acronym {
-	border-color: $clr-border;
+	border-color: $fs-clr-border;
 }
 
 //
@@ -359,12 +359,12 @@ abbr, acronym {
 
 blockquote {
 
-    color: $clr-text-darken;
-    font-size: $font-size-quote;
-    font-style: $font-style-quote;
-    line-height: $font-lh-quote;
-    margin: $margin-quote;
-	text-transform: $font-transform-quote;
+    color: $fs-clr-text-darken;
+    font-size: $fs-font-size-quote;
+    font-style: $fs-font-style-quote;
+    line-height: $fs-font-lh-quote;
+    margin: $fs-margin-quote;
+	text-transform: $fs-font-transform-quote;
 
 	@include fs-margin-vert-flush;
 
@@ -372,9 +372,9 @@ blockquote {
 	&.pull-left,
 	&.alignright,
 	&.pull-right {
-		margin: $margin-quote;
-		margin-top: $spacing-element;
-		margin-bottom: $spacing-element;
+		margin: $fs-margin-quote;
+		margin-top: $fs-spacing-element;
+		margin-bottom: $fs-spacing-element;
 	}
 }
 @include fs-max-width(sm) {
@@ -388,10 +388,10 @@ blockquote {
 	}
 }
 .text-light blockquote {
-	color: $clr-text-inv-darken;
+	color: $fs-clr-text-inv-darken;
 }
 .text-dark blockquote {
-	color: $clr-text-darken;
+	color: $fs-clr-text-darken;
 }
 blockquote.pull-left
 blockquote.alignleft {
@@ -406,15 +406,15 @@ blockquote {
 	cite {
 		display: block;
 		font-style: normal;
-		font-weight: $font-weight-bold;
+		font-weight: $fs-font-weight-bold;
 		margin-top: .8em;
 		text-transform: uppercase;
 	}
 	cite,
 	cite:before {
-		color: $clr-text-lighten;
-		font-size: $font-size-cite;
-	    line-height: $font-lh-cite;
+		color: $fs-clr-text-lighten;
+		font-size: $fs-font-size-cite;
+	    line-height: $fs-font-lh-cite;
 	}
 	cite:before {
 	    content: '\2014 \00A0';
@@ -422,9 +422,9 @@ blockquote {
 }
 .text-light blockquote cite,
 .text-light blockquote cite:before {
-	color: $clr-text-inv-lighten;
+	color: $fs-clr-text-inv-lighten;
 }
 .text-dark blockquote cite,
 .text-dark blockquote cite:before {
-	color: $clr-text-lighten;
+	color: $fs-clr-text-lighten;
 }

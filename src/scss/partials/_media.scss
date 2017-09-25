@@ -10,16 +10,16 @@
 
 	display: block;
 	height: 0;
-	margin: $margin-embed;
+	margin: $fs-margin-embed;
 	padding: 0;
-	padding-bottom: fs-ratio-to-percentage($embed-default-ratio);
+	padding-bottom: fs-ratio-to-percentage($fs-embed-default-ratio);
 	position: relative;
     overflow: hidden;
 	width: 100%;
 
 	@include fs-margin-vert-flush;
 
-	@each $name, $ratio in $embed-ratios {
+	@each $name, $ratio in $fs-embed-ratios {
 		&.#{$name} {
 			padding-bottom: fs-ratio-to-percentage($ratio);
 		}
@@ -55,20 +55,20 @@
 		width: 100%;
 	}
 	.caption-text {
-		background: $clr-bg-caption;
-		font-size: $font-size-caption;
-    	line-height: $font-lh-caption;
-    	padding: $padding-caption;
+		background: $fs-clr-bg-caption;
+		font-size: $fs-font-size-caption;
+    	line-height: $fs-font-lh-caption;
+    	padding: $fs-padding-caption;
 	}
 	.fs-embed {
 		margin: 0;
 	}
 }
 .text-light .fs-caption .caption-text {
-	background: $clr-bg-inv-caption;
+	background: $fs-clr-bg-inv-caption;
 }
 .text-dark .fs-caption .caption-text {
-	background: $clr-bg-caption;
+	background: $fs-clr-bg-caption;
 }
 
 //
@@ -78,7 +78,7 @@
 .fs-thumb-link {
 
 	display: inline-block;
-	margin: $margin-thumb;
+	margin: $fs-margin-thumb;
 	max-width: 100%; // Needed for IE 10-11
 	outline: 0;
 	position: relative;
@@ -87,9 +87,9 @@
 	@include fs-font-icon;
 
 	&:before {
-		background: $thumb-link-icon-bg-clr;
-		border-radius: $thumb-link-icon-radius;
-		color: $thumb-link-icon-clr;
+		background: $fs-thumb-link-icon-bg-clr;
+		border-radius: $fs-thumb-link-icon-radius;
+		color: $fs-thumb-link-icon-clr;
 		display: block;
 		opacity: 0;
 	    position: absolute;
@@ -99,7 +99,7 @@
 		transition: opacity 0.25s ease-in-out, transform 0.15s ease-in-out;
 		z-index: 2;
 
-		@include fs-thumb-link-size($thumb-link-icon-size, $thumb-link-icon-w, $thumb-link-icon-h);
+		@include fs-thumb-link-size($fs-thumb-link-icon-size, $fs-thumb-link-icon-w, $fs-thumb-link-icon-h);
 
 	}
 	img,
@@ -126,7 +126,7 @@
 //
 
 .fs-modal-gallery {
-	margin: $margin-element;
+	margin: $fs-margin-element;
 	@include fs-margin-vert-flush;
 }
 
@@ -134,14 +134,14 @@
 
 	display: flex;
 	flex-wrap: wrap;
-	margin-top: ($spacing-element - ($gallery-gutters / 2));
-	margin-right: ($gallery-gutters / -2);
-	margin-bottom: ($spacing-element - ($gallery-gutters / 2));
-	margin-left: ($gallery-gutters / -2);
+	margin-top: ($fs-spacing-element - ($fs-gallery-gutters / 2));
+	margin-right: ($fs-gallery-gutters / -2);
+	margin-bottom: ($fs-spacing-element - ($fs-gallery-gutters / 2));
+	margin-left: ($fs-gallery-gutters / -2);
 
 	.gallery-item {
 		margin: 0;
-		padding: ($gallery-gutters / 2);
+		padding: ($fs-gallery-gutters / 2);
 	}
 	&.gallery-columns-1 .gallery-item {
 		flex: 0 0 100%;
@@ -163,15 +163,15 @@
 		justify-content: center;
 	}
 	.gallery-caption {
-		background: $clr-bg-caption;
-		font-size: $font-size-caption-gallery;
-		font-weight: $font-weight-base;
-    	line-height: $font-lh-caption;
-    	padding: $padding-caption-gallery;
+		background: $fs-clr-bg-caption;
+		font-size: $fs-font-size-caption-gallery;
+		font-weight: $fs-font-weight-base;
+    	line-height: $fs-font-lh-caption;
+    	padding: $fs-padding-caption-gallery;
 		text-align: center;
 	}
 	.fs-thumb-link:before {
-		@include fs-thumb-link-size($gallery-thumb-link-icon-size, $gallery-thumb-link-icon-w, $gallery-thumb-link-icon-h);
+		@include fs-thumb-link-size($fs-gallery-thumb-link-icon-size, $fs-gallery-thumb-link-icon-w, $fs-gallery-thumb-link-icon-h);
 	}
 }
 

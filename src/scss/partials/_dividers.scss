@@ -5,19 +5,19 @@
 hr,
 .fs-divider {
     border: none;
-	border-radius: $divider-radius;
+	border-radius: $fs-divider-radius;
 	display: block;
-    height: $divider-height;
-    margin: $margin-divider 0;
+    height: $fs-divider-height;
+    margin: $fs-margin-divider 0;
 }
 hr:not(.fs-divider) {
-	background-color: $clr-bg-hr;
+	background-color: $fs-clr-bg-hr;
 }
 .text-light hr:not(.fs-divider) {
-	background: $clr-bg-inv-hr;
+	background: $fs-clr-bg-inv-hr;
 }
 .text-dark hr:not(.fs-divider) {
-	background: $clr-bg-hr;
+	background: $fs-clr-bg-hr;
 }
 
 //
@@ -26,13 +26,13 @@ hr:not(.fs-divider) {
 
 .fs-divider {
 	&.divider-thick {
-		height: $divider-height * 2;
+		height: $fs-divider-height * 2;
 	}
 	&.divider-thicker {
-		height: $divider-height * 3;
+		height: $fs-divider-height * 3;
 	}
 	&.divider-thickest {
-		height: $divider-height * 4;
+		height: $fs-divider-height * 4;
 	}
 }
 
@@ -41,7 +41,7 @@ hr:not(.fs-divider) {
 //
 
 .fs-divider {
-	@each $size, $width in $divider-sizes {
+	@each $size, $width in $fs-divider-sizes {
 		&.divider-#{$size} {
 			width: $width;
 		}

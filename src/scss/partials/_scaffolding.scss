@@ -23,7 +23,7 @@ html {
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 body {
-	background-color: $clr-bg-body;
+	background-color: $fs-clr-bg-body;
 }
 
 //
@@ -47,7 +47,7 @@ textarea {
 //
 
 figure {
-	margin: $margin-figure;
+	margin: $fs-margin-figure;
 	@include fs-margin-vert-flush;
 }
 

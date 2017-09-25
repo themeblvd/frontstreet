@@ -9,7 +9,7 @@
 .fade {
 
 	opacity: 0;
-	transition: $transition-fade;
+	transition: $fs-transition-fade;
 
 	&.in {
 		opacity: 1;

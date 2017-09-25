@@ -24,7 +24,7 @@
 // Background triangle icon.
 //
 
-@mixin fs-background-triangle($clr: $clr-dark) {
+@mixin fs-background-triangle($clr: $fs-clr-dark) {
 
 	$clr: fs-url-friendly-clr($clr);
 
@@ -38,7 +38,7 @@
 // "X" button.
 //
 
-@mixin fs-background-close($clr: $clr-dark) {
+@mixin fs-background-close($clr: $fs-clr-dark) {
 
 	$url-clr: fs-url-friendly-clr($clr);
 
@@ -59,7 +59,7 @@
 // button.
 //
 
-@mixin fs-background-play($clr: $clr-dark) {
+@mixin fs-background-play($clr: $fs-clr-dark) {
 
 	$url-clr: fs-url-friendly-clr($clr);
 
@@ -81,7 +81,7 @@
 // button; it can be up, down, right, or left.
 //
 
-@mixin fs-background-chevron($direction, $clr: $clr-dark) {
+@mixin fs-background-chevron($direction, $clr: $fs-clr-dark) {
 
 	$points: '';
 	$url-clr: fs-url-friendly-clr($clr);
@@ -123,7 +123,7 @@
 // Background search icon.
 //
 
-@mixin fs-background-search($clr: $clr-dark) {
+@mixin fs-background-search($clr: $fs-clr-dark) {
 
 	$url-clr: fs-url-friendly-clr($clr);
 

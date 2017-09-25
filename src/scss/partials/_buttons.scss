@@ -11,12 +11,12 @@
 //
 
 @include fs-min-width(sm) {
-	@each $size, $map in $btn-sizes {
+	@each $size, $map in $fs-btn-sizes {
 		.btn-#{$size} {
 			font-size: map-get($map, font-size);
 			letter-spacing: map-get($map, letter-spacing);
 			line-height: map-get($map, line-height);
-			padding: fs-padding-y(map-get($map, height), map-get($map, line-height), $btn-border-width) map-get($map, padding);
+			padding: fs-padding-y(map-get($map, height), map-get($map, line-height), $fs-btn-border-width) map-get($map, padding);
 		}
 	}
 }
@@ -26,15 +26,15 @@
 // Default color
 //
 
-@include fs-button-variant('default', $clr-text-darken, $clr-bg-btn, darken($clr-bg-btn, 2%) );
+@include fs-button-variant('default', $fs-clr-text-darken, $fs-clr-bg-btn, darken($fs-clr-bg-btn, 2%) );
 
-@include fs-button-variant('light', $clr-text-darken, darken($clr-bg-light, 2%), darken(darken($clr-bg-light, 2%), 2%) );
+@include fs-button-variant('light', $fs-clr-text-darken, darken($fs-clr-bg-light, 2%), darken(darken($fs-clr-bg-light, 2%), 2%) );
 
 //
 // Branding Colors
 //
 
-@each $clr, $map in $clr-branding {
+@each $clr, $map in $fs-clr-branding {
 	@include fs-button-variant($clr, map-get($map, contrast), map-get($map, base) );
 }
 
@@ -42,7 +42,7 @@
 // Contextual Colors
 //
 
-@each $clr, $map in $clr-contextual {
+@each $clr, $map in $fs-clr-contextual {
 	@include fs-button-variant($clr, map-get($map, contrast), map-get($map, base) );
 }
 

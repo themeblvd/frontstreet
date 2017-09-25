@@ -8,7 +8,7 @@
 
 @mixin fs-tab-content-variant($style: "default") {
 	.fs-tabs.tabs-framed .tab-content {
-		background: if($style == 'inverse', $tab-content-inv-bg, $tab-content-bg);
-		border-color: if($style == 'inverse', $tab-content-border-inv-color, $tab-content-border-color);
+		background: if($style == 'inverse', $fs-tab-content-inv-bg, $fs-tab-content-bg);
+		border-color: if($style == 'inverse', $fs-tab-content-border-inv-color, $fs-tab-content-border-color);
 	}
 }

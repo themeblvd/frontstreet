@@ -7,7 +7,7 @@
 //
 
 table {
-	background-color: $table-bg;
+	background-color: $fs-table-bg;
 }
 caption,
 th {
@@ -18,9 +18,9 @@ th {
 	}
 }
 caption {
-	padding-top: $table-cell-padding;
-	padding-bottom: $table-cell-padding;
-	color: $clr-text-lighten;
+	padding-top: $fs-table-cell-padding;
+	padding-bottom: $fs-table-cell-padding;
+	color: $fs-clr-text-lighten;
 }
 
 //
@@ -30,30 +30,30 @@ caption {
 table {
 	width: 100%;
 	max-width: 100%;
-	margin: $margin-table;
-	background-color: $table-bg; // Reset for nesting within parents with `background-color`.
+	margin: $fs-margin-table;
+	background-color: $fs-table-bg; // Reset for nesting within parents with `background-color`.
 
 	@include fs-margin-vert-flush;
 
 	th {
-		color: $clr-text-darken;
-		font-weight: $font-weight-bold;
+		color: $fs-clr-text-darken;
+		font-weight: $fs-font-weight-bold;
 	}
 	th,
 	td {
-		padding: $table-cell-padding;
+		padding: $fs-table-cell-padding;
 		vertical-align: top;
-		border-top: $table-border-width solid $table-border-color;
+		border-top: $fs-table-border-width solid $fs-table-border-color;
 	}
 	thead th {
 		vertical-align: bottom;
-		border-bottom: (2 * $table-border-width) solid $table-border-color;
+		border-bottom: (2 * $fs-table-border-width) solid $fs-table-border-color;
 	}
 	tbody + tbody {
-		border-top: (2 * $table-border-width) solid $table-border-color;
+		border-top: (2 * $fs-table-border-width) solid $fs-table-border-color;
 	}
 	table {
-		background-color: $clr-bg-body;
+		background-color: $fs-clr-bg-body;
 	}
 }
 
@@ -67,11 +67,11 @@ table {
 .table-sm,
 .table-condensed {
 
-	font-size: $table-sm-font-size;
+	font-size: $fs-table-sm-font-size;
 
 	th,
 	td {
-		padding: $table-sm-cell-padding;
+		padding: $fs-table-sm-cell-padding;
 	}
 }
 
@@ -84,16 +84,16 @@ table {
 //
 
 .table-bordered {
-	border: $table-border-width solid $table-border-color;
+	border: $fs-table-border-width solid $fs-table-border-color;
 
 	th,
 	td {
-		border: $table-border-width solid $table-border-color;
+		border: $fs-table-border-width solid $fs-table-border-color;
 	}
 	thead {
 		th,
 		td {
-			border-bottom-width: (2 * $table-border-width);
+			border-bottom-width: (2 * $fs-table-border-width);
 		}
 	}
 }
@@ -107,7 +107,7 @@ table {
 
 .table-striped {
 	tbody tr:nth-of-type(odd) {
-		background-color: $table-bg-accent;
+		background-color: $fs-table-bg-accent;
 	}
 }
 
@@ -121,7 +121,7 @@ table {
 .table-hover {
 	tbody tr {
 		&:hover {
-			background-color: $table-bg-hover;
+			background-color: $fs-table-bg-hover;
 		}
 	}
 }
@@ -134,9 +134,9 @@ table {
 // inheritance to nested tables.
 //
 
-@include fs-table-row-variant(active, $table-bg-active);
+@include fs-table-row-variant(active, $fs-table-bg-active);
 
-@each $name, $map in $clr-contextual {
+@each $name, $map in $fs-clr-contextual {
 	@include fs-table-row-variant(#{$name}, map-get($map, base));
 }
 
@@ -149,17 +149,17 @@ table {
 
 .table-inverse {
 
-	color: $clr-text-inv-base;
-	background-color: $table-inv-bg;
+	color: $fs-clr-text-inv-base;
+	background-color: $fs-table-inv-bg;
 
 	th,
 	td,
 	thead th {
-		border-color: $table-border-inv-color;
-		color: $clr-text-inv-darken;
+		border-color: $fs-table-border-inv-color;
+		color: $fs-clr-text-inv-darken;
 	}
 	&.table-bordered {
-		border-color: $table-border-inv-color;
+		border-color: $fs-table-border-inv-color;
 	}
 }
 
@@ -173,7 +173,7 @@ table {
 
 .table-responsive {
 	overflow-x: auto;
-	margin: $margin-table;
+	margin: $fs-margin-table;
 	min-height: 0.01%; // Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837)
 
 	@include fs-max-width(sm) {
@@ -181,7 +181,7 @@ table {
 		// margin-bottom: ($line-height-computed * 0.75);
 		overflow-y: hidden;
 		-ms-overflow-style: -ms-autohiding-scrollbar;
-		border: 1px solid $table-border-color;
+		border: 1px solid $fs-table-border-color;
 
 		// Tighten up spacing
 		> table {

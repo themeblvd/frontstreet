@@ -7,10 +7,10 @@
 //
 
 @mixin fs-text-reset {
-	font-family: $font-fam-base;
-	font-size: $font-size-base;
-	font-weight: $font-weight-base;
-	line-height: $font-lh-base;
+	font-family: $fs-font-fam-base;
+	font-size: $fs-font-size-base;
+	font-weight: $fs-font-weight-base;
+	line-height: $fs-font-lh-base;
 }
 
 //
@@ -19,19 +19,19 @@
 
 @mixin fs-heading-variant($style: "default") {
 
-	$clr: $clr-text-darken;
+	$clr: $fs-clr-text-darken;
 
 	@if ( $style == 'inverse' ) {
-		$clr: $clr-text-inv-darken;
+		$clr: $fs-clr-text-inv-darken;
 	}
 
 	$selector: "h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6";
 
-	@each $tag, $map in $font-size-headings-bigger {
+	@each $tag, $map in $fs-font-size-headings-bigger {
 		$selector: "#{$selector}, .heading-#{$tag}";
 	}
 
-	@each $tag, $map in $font-size-headings-smaller {
+	@each $tag, $map in $fs-font-size-headings-smaller {
 		$selector: "#{$selector}, .heading-#{$tag}";
 	}
 
@@ -48,14 +48,14 @@
 @mixin fs-blend-links {
 	a:not(.btn):not(.menu-btn) {
 		color: inherit;
-		border-bottom: 1px solid rgba($clr-text-inv-base, 0.8);
+		border-bottom: 1px solid rgba($fs-clr-text-inv-base, 0.8);
 		padding-bottom: 1px;
 		text-decoration: none;
 
 		&:hover,
 		&:focus {
-			border-color: $clr-text-inv-base;
-			color: $clr-text-inv-base;
+			border-color: $fs-clr-text-inv-base;
+			color: $fs-clr-text-inv-base;
 		}
 	}
 }

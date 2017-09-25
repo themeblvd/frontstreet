@@ -14,15 +14,15 @@
 .fs-modal {
 
 	&.mfp-bg {
-		background: $modal-overlay-color;
-		opacity: $modal-overlay-opacity;
+		background: $fs-modal-overlay-color;
+		opacity: $fs-modal-overlay-opacity;
 		overflow: hidden;
 		position: fixed;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
-		z-index: $modal-z-index-base + 2;
+		z-index: $fs-modal-z-index-base + 2;
 	}
 	&.mfp-wrap {
 		-webkit-backface-visibility: hidden; // fixes webkit bug that can cause "false" scrollbar
@@ -32,7 +32,7 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		z-index: $modal-z-index-base + 3;
+		z-index: $fs-modal-z-index-base + 3;
 	}
 	.mfp-container {
 		text-align: center;
@@ -41,11 +41,11 @@
 		height: 100%;
 		left: 0;
 		top: 0;
-		padding: 0 $padding-modal-bg;
+		padding: 0 $fs-padding-modal-bg;
 		box-sizing: border-box;
 	}
 	.mfp-container.mfp-inline-holder {
-		padding: $padding-modal-bg;
+		padding: $fs-padding-modal-bg;
 	}
 
 	// Vertical centerer helper
@@ -78,7 +78,7 @@
 			text-align: left;
 		}
 		vertical-align: middle;
-		z-index: $modal-z-index-base + 5;
+		z-index: $fs-modal-z-index-base + 5;
 	}
 	.mfp-inline-holder,
 	.mfp-ajax-holder {
@@ -142,7 +142,7 @@
 		transition: opacity 0.15s ease-out;
 	}
 	&.mfp-bg.mfp-ready {
-		opacity: $modal-overlay-opacity;
+		opacity: $fs-modal-overlay-opacity;
 	}
 	&.mfp-bg.mfp-removing {
 		opacity: 0;
@@ -210,7 +210,7 @@
 
 	.mfp-preloader {
 
-		color: $modal-controls-text-color;
+		color: $fs-modal-controls-text-color;
 		margin-top: -0.8em;
 		position: absolute;
 		top: 50%;
@@ -218,14 +218,14 @@
 		right: 8px;
 		text-align: center;
 		width: auto;
-		z-index: $modal-z-index-base + 4;
+		z-index: $fs-modal-z-index-base + 4;
 
 		a {
 
-			color: $modal-controls-text-color;
+			color: $fs-modal-controls-text-color;
 
 			&:hover {
-				color: $modal-controls-text-color-hover;
+				color: $fs-modal-controls-text-color-hover;
 			}
 		}
 	}
@@ -244,7 +244,7 @@
 		&.mfp-arrow {
 			overflow: visible;
 			-webkit-appearance: none;
-			z-index: $modal-z-index-base + 6;
+			z-index: $fs-modal-z-index-base + 6;
 			touch-action: manipulation;
 		}
 		&::-moz-focus-inner {
@@ -254,7 +254,7 @@
 	}
 	.mfp-close {
 
-		background-size: $modal-close-btn-size $modal-close-btn-size;
+		background-size: $fs-modal-close-btn-size $fs-modal-close-btn-size;
 		position: absolute;
 		right: 0;
 		top: 10px;
@@ -266,15 +266,15 @@
 
 	// "1 of X" counter
 	.mfp-counter {
-		color: $modal-caption-text-color;
-		font-size: $modal-caption-font-size;
-		line-height: $font-lh-base;
+		color: $fs-modal-caption-text-color;
+		font-size: $fs-modal-caption-font-size;
+		line-height: $fs-font-lh-base;
 		position: absolute;
-		top: $modal-caption-spacing;
+		top: $fs-modal-caption-spacing;
 		@if ($direction == 'rtl') {
-			left: $modal-caption-spacing;
+			left: $fs-modal-caption-spacing;
 		} @else {
-			right: $modal-caption-spacing;
+			right: $fs-modal-caption-spacing;
 		}
 		white-space: nowrap;
 	}
@@ -283,7 +283,7 @@
 	.mfp-arrow {
 
 		background-color: transparent;
-		background-size: $modal-arrow-btn-img-size;
+		background-size: $fs-modal-arrow-btn-img-size;
 		border: none;
 		margin: 0;
 		padding: 0;
@@ -291,8 +291,8 @@
 		position: absolute;
 		top: 50%;
 		transform: translate(0, -50%);
-		width: $modal-arrow-btn-size * 2;
-		height: $modal-arrow-btn-size * 2;
+		width: $fs-modal-arrow-btn-size * 2;
+		height: $fs-modal-arrow-btn-size * 2;
 
 		&:active {
 			margin-top: 1px;
@@ -301,22 +301,22 @@
 	.mfp-arrow-left {
 		@if ($direction == 'rtl') {
 
-			@include fs-background-chevron('right', $clr-svg-inv);
+			@include fs-background-chevron('right', $fs-clr-svg-inv);
 			right: 10px;
 
 			&:hover,
 			&:focus {
-				@include fs-background-chevron('right', $clr-svg-inv-hover);
+				@include fs-background-chevron('right', $fs-clr-svg-inv-hover);
 			}
 
 		} @else {
 
-			@include fs-background-chevron('left', $clr-svg-inv);
+			@include fs-background-chevron('left', $fs-clr-svg-inv);
 			left: 10px;
 
 			&:hover,
 			&:focus {
-				@include fs-background-chevron('left', $clr-svg-inv-hover);
+				@include fs-background-chevron('left', $fs-clr-svg-inv-hover);
 			}
 
 		}
@@ -324,34 +324,34 @@
 	.mfp-arrow-right {
 		@if ($direction == 'rtl') {
 
-			@include fs-background-chevron('left', $clr-svg-inv);
+			@include fs-background-chevron('left', $fs-clr-svg-inv);
 			left: 10px;
 
 			&:hover,
 			&:focus {
-				@include fs-background-chevron('left', $clr-svg-inv-hover);
+				@include fs-background-chevron('left', $fs-clr-svg-inv-hover);
 			}
 
 		} @else {
 
-			@include fs-background-chevron('right', $clr-svg-inv);
+			@include fs-background-chevron('right', $fs-clr-svg-inv);
 			right: 10px;
 
 			&:hover,
 			&:focus {
-				@include fs-background-chevron('right', $clr-svg-inv-hover);
+				@include fs-background-chevron('right', $fs-clr-svg-inv-hover);
 			}
 
 		}
 	}
 	.mfp-iframe-holder {
 
-		padding-top: $modal-iframe-spacing;
-		padding-bottom: $modal-iframe-spacing;
+		padding-top: $fs-modal-iframe-spacing;
+		padding-bottom: $fs-modal-iframe-spacing;
 
 		.mfp-content {
 			line-height: 0;
-			max-width: $modal-iframe-width;
+			max-width: $fs-modal-iframe-width;
 			width: 100%;
 		}
 		.mfp-close {
@@ -360,14 +360,14 @@
 	}
 	.mfp-iframe-scaler {
 
-		padding-top: $modal-iframe-ratio * 100%;
+		padding-top: $fs-modal-iframe-ratio * 100%;
 		overflow: hidden;
 		width: 100%;
 		height: 0;
 
 		iframe {
-			background: $modal-iframe-bg;
-			box-shadow: $modal-shadow;
+			background: $fs-modal-iframe-bg;
+			box-shadow: $fs-modal-shadow;
 			display: block;
 			position: absolute;
 			top: 0;
@@ -382,7 +382,7 @@
 			display: block;
 			line-height: 0;
 			margin: 0 auto;
-			padding: $modal-img-spacing 0;
+			padding: $fs-modal-img-spacing 0;
 			max-width: 100%;
 			width: auto;
 			height: auto;
@@ -394,23 +394,23 @@
 
 		&:after {
 			content: "";
-			background: $modal-img-bg;
-			box-shadow: $modal-shadow;
+			background: $fs-modal-img-bg;
+			box-shadow: $fs-modal-shadow;
 			display: block;
 			position: absolute;
-			top: $modal-img-spacing;
+			top: $fs-modal-img-spacing;
 			right: 0;
-			bottom: $modal-img-spacing;
+			bottom: $fs-modal-img-spacing;
 			left: 0;
 			width: auto;
 			height: auto;
 			z-index: -1;
 		}
 		small {
-			color: $modal-caption-text-color;
+			color: $fs-modal-caption-text-color;
 			display: block;
-			font-size: $modal-caption-font-size;
-			line-height: $font-lh-base;
+			font-size: $fs-modal-caption-font-size;
+			line-height: $fs-font-lh-base;
 		}
 		figure {
 			margin: 0;
@@ -418,8 +418,8 @@
 	}
 	.mfp-bottom-bar {
 		cursor: auto;
-		margin-top: -$modal-img-spacing + 4;
-		padding: $modal-caption-spacing;
+		margin-top: -$fs-modal-img-spacing + 4;
+		padding: $fs-modal-caption-spacing;
 		position: absolute;
 		top: 100%;
 		left: 0;
@@ -429,14 +429,14 @@
 		margin-top: 4px;
 	}
 	.mfp-title {
-		color: $modal-caption-text-color;
-		font-size: $modal-caption-font-size;
+		color: $fs-modal-caption-text-color;
+		font-size: $fs-modal-caption-font-size;
 		@if ($direction == 'rtl') {
 			padding-left: 36px; // leave some space for counter at left side
 		} @else {
 			padding-right: 36px; // leave some space for counter at right side
 		}
-		line-height: $font-lh-base;
+		line-height: $fs-font-lh-base;
 		text-align: if($direction == 'rtl', right, left);
 		word-wrap: break-word;
 	}
@@ -461,27 +461,27 @@
 		}
 		.mfp-arrow-left {
 			@if ($direction == 'rtl') {
-				@include fs-background-chevron('right', $clr-text-inv-base);
-				right: $modal-arrow-btn-size / -3;
+				@include fs-background-chevron('right', $fs-clr-text-inv-base);
+				right: $fs-modal-arrow-btn-size / -3;
 			} @else {
-				@include fs-background-chevron('left', $clr-text-inv-base);
-				left: $modal-arrow-btn-size / -3;
+				@include fs-background-chevron('left', $fs-clr-text-inv-base);
+				left: $fs-modal-arrow-btn-size / -3;
 			}
 		}
 		.mfp-arrow-right {
 			@if ($direction == 'rtl') {
-				@include fs-background-chevron('left', $clr-text-inv-base);
-				left: $modal-arrow-btn-size / -3;
+				@include fs-background-chevron('left', $fs-clr-text-inv-base);
+				left: $fs-modal-arrow-btn-size / -3;
 			} @else {
-				@include fs-background-chevron('right', $clr-text-inv-base);
-				right: $modal-arrow-btn-size / -3;
+				@include fs-background-chevron('right', $fs-clr-text-inv-base);
+				right: $fs-modal-arrow-btn-size / -3;
 			}
 		}
 		.mfp-container {
-			padding: 0 $padding-modal-bg-mobile;
+			padding: 0 $fs-padding-modal-bg-mobile;
 		}
 		.mfp-container.mfp-inline-holder {
-			padding: $padding-modal-bg;
+			padding: $fs-padding-modal-bg;
 		}
 	}
 }

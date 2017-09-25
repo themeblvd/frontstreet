@@ -4,16 +4,16 @@
 
 .fs-loader {
 
-	background-color: $loader-clr;
-	border-radius: $loader-radius;
-	box-shadow: $loader-shadow;
+	background-color: $fs-loader-clr;
+	border-radius: $fs-loader-radius;
+	box-shadow: $fs-loader-shadow;
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	width: $loader-width;
-	height: $loader-height;
+	width: $fs-loader-width;
+	height: $fs-loader-height;
 	transform: translate(-50%, -50%);
-	z-index: $loader-z-index;
+	z-index: $fs-loader-z-index;
 
 	&:before,
 	&:after {
@@ -22,40 +22,40 @@
 	&:before,
 	&:after,
 	span {
-		border: $loader-icon-bdr-size solid $loader-icon-clr;
+		border: $fs-loader-icon-bdr-size solid $fs-loader-icon-clr;
 	    border-radius: 100%;
-		margin-top: ($loader-icon-size / -2);
+		margin-top: ($fs-loader-icon-size / -2);
 	    position: absolute;
 	    top: 50%;
-		width: $loader-icon-size;
-	    height: $loader-icon-size;
+		width: $fs-loader-icon-size;
+	    height: $fs-loader-icon-size;
 	    transform: transformZ(0);
 	    animation: LOADING 2s infinite;
 	}
 	&:before {
 		@if ($direction == 'rtl') {
-			right: $loader-padding;
+			right: $fs-loader-padding;
 		} @else {
-			left: $loader-padding;
+			left: $fs-loader-padding;
 		}
 		animation-delay: 0s;
 	}
 	span {
 		@if ($direction == 'rtl') {
 			right: 50%;
-			margin-right: ($loader-icon-size / -2);
+			margin-right: ($fs-loader-icon-size / -2);
 		} @else {
 			left: 50%;
-			margin-left: ($loader-icon-size / -2);
+			margin-left: ($fs-loader-icon-size / -2);
 		}
 		animation-delay: 0.2s;
 		@include fs-hide-text;
 	}
 	&:after {
 		@if ($direction == 'rtl') {
-			left: $loader-padding;
+			left: $fs-loader-padding;
 		} @else {
-			right: $loader-padding;
+			right: $fs-loader-padding;
 		}
 		animation-delay: 0.4s;
 	}
@@ -64,7 +64,7 @@
 @keyframes LOADING {
 	0% {
 		transform: scale(0.5);
-		background: $loader-icon-clr;
+		background: $fs-loader-icon-clr;
 	}
 	50% {
 		transform: scale(1);
@@ -72,6 +72,6 @@
 	}
 	100% {
 		transform: scale(0.5);
-		background: $loader-icon-clr;
+		background: $fs-loader-icon-clr;
 	}
 }

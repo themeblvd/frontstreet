@@ -3,16 +3,16 @@
 // --------------------------------------------------
 
 .label-inline {
-	background: $clr-bg-label;
+	background: $fs-clr-bg-label;
 	border-radius: 2px;
-	color: $clr-text-inv-base;
+	color: $fs-clr-text-inv-base;
 	display: inline-block;
-	font-size: $font-size-label;
-	font-weight: $font-weight-bold;
+	font-size: $fs-font-size-label;
+	font-weight: $fs-font-weight-bold;
 	line-height: 1;
-	padding: $padding-label;
+	padding: $fs-padding-label;
 	text-align: center;
-	text-transform: $font-transform-label;
+	text-transform: $fs-font-transform-label;
 	white-space: nowrap;
 	vertical-align: baseline;
 }

@@ -32,9 +32,9 @@
 		@if $parent == '.info' or $parent == '.success' or $parent == '.warning' or $parent == '.danger' {
 			border-color: darken(adjust-hue($clr, -10), 50%);
 		} @else if $parent == '.bg-light' {
-			border-color: $clr-border;
+			border-color: $fs-clr-border;
 		} @else if $parent == '.bg-dark' {
-			border-color: $clr-border-inv;
+			border-color: $fs-clr-border-inv;
 		} @else {
 			border-color: darken($clr, 20%);
 		}
@@ -47,9 +47,9 @@
 		@if $parent == info or $parent == success or $parent == warning or $parent == danger {
 			background-color: darken(adjust-hue($clr, -10), 30%);
 		} @else if $parent == '.bg-light' {
-			background-color: darken($clr-bg-light, 2%); // @TODO
+			background-color: darken($fs-clr-bg-light, 2%); // @TODO
 		} @else if $parent == '.bg-dark' {
-			background-color: $clr-border-inv; // @TODO
+			background-color: $fs-clr-border-inv; // @TODO
 		} @else {
 			background-color: darken($clr, 10%);
 		}
@@ -61,7 +61,7 @@
 		border-right-color: $clr;
 		border-left-color: $clr;
 	}
-	@if $text != null and $text != $clr-text-base {
+	@if $text != null and $text != $fs-clr-text-base {
 		#{$parent} h1,
 		#{$parent} h2,
 		#{$parent} h3,

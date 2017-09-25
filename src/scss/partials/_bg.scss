@@ -15,7 +15,7 @@
 }
 .fs-element {
 	position: relative;
-	z-index: $bg-z-index-base + 4;
+	z-index: $fs-bg-z-index-base + 4;
 }
 
 //
@@ -23,7 +23,7 @@
 //
 
 .fs-section .fs-loader {
-	z-index: $bg-z-index-base + 1;
+	z-index: $fs-bg-z-index-base + 1;
 }
 
 //
@@ -39,7 +39,7 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
-	z-index: $bg-z-index-base + 2;
+	z-index: $fs-bg-z-index-base + 2;
 
 	&.shade-05 {
 		opacity: 0.05;
@@ -78,7 +78,7 @@
 	bottom: 0;
 	left: 0;
 	transition: opacity 0.25s ease-in-out;
-	z-index: $bg-z-index-base;
+	z-index: $fs-bg-z-index-base;
 
 	&.in {
 		opacity: 1;
@@ -114,7 +114,7 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	z-index: $bg-z-index-base;
+	z-index: $fs-bg-z-index-base;
 
 	@include fs-min-width(md) {
 		img,
@@ -166,5 +166,5 @@
 //
 
 .fs-bg-video {
-	z-index: $bg-z-index-base;
+	z-index: $fs-bg-z-index-base;
 }

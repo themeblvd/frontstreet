@@ -4,15 +4,15 @@
 
 .widget {
 
- 	background: $clr-bg-content;
-	font-size: $font-size-widget;
-	margin: $margin-widget;
-	padding: $padding-widget;
+ 	background: $fs-clr-bg-content;
+	font-size: $fs-font-size-widget;
+	margin: $fs-margin-widget;
+	padding: $fs-padding-widget;
 
 	@include fs-margin-vert-flush;
 
 	&.over-bg-content {
-		background: $clr-bg-body;
+		background: $fs-clr-bg-body;
 	}
 
 }
@@ -24,13 +24,13 @@
 .widget-default {
 	.widget-title {
 
-		font-size: $widget-default-title-size;
+		font-size: $fs-widget-default-title-size;
 
 		&.heading-sm,
 		&.heading-xs,
 		&.heading-xxs,
 		&.heading-xxxs {
-			font-size: $widget-default-sm-title-size;
+			font-size: $fs-widget-default-sm-title-size;
 		}
 	}
 }
@@ -43,20 +43,20 @@
 .panel-color {
 	.widget-title {
 
-		background: $widget-classic-panel-title-bg-clr;
-		font-size: $widget-panel-classic-title-size;
-		margin: -$padding-widget;
+		background: $fs-widget-classic-panel-title-bg-clr;
+		font-size: $fs-widget-panel-classic-title-size;
+		margin: -$fs-padding-widget;
 		margin-bottom: 24px;
-		padding: 24px $padding-widget;
+		padding: 24px $fs-padding-widget;
 
 		&.heading-sm,
 		&.heading-xs,
 		&.heading-xxs,
 		&.heading-xxxs {
-			font-size: $widget-panel-classic-sm-title-size;
+			font-size: $fs-widget-panel-classic-sm-title-size;
 		}
 	}
-	@each $name, $map in $border-utils {
+	@each $name, $map in $fs-border-utils {
 		&.border-#{$name} .widget-title {
 			border-bottom: map-get($map, width) map-get($map, style) map-get($map, color);
 		}
@@ -66,8 +66,8 @@
 // This is a bit of a hack so that we can override color library
 // for content area of widget, but avoid using !important.
 body .panel-classic {
-	background-color: $tab-content-bg;
-	color: $clr-text-base;
+	background-color: $fs-tab-content-bg;
+	color: $fs-clr-text-base;
 }
 
 //
@@ -77,22 +77,22 @@ body .panel-classic {
 .panel-modern {
 	.widget-title {
 
-		border-bottom: 2px solid $clr-bg-body;
-		font-size: $widget-panel-modern-title-size;
-		margin: -$padding-widget;
+		border-bottom: 2px solid $fs-clr-bg-body;
+		font-size: $fs-widget-panel-modern-title-size;
+		margin: -$fs-padding-widget;
 		margin-bottom: 20px;
-		padding: 20px $padding-widget;
+		padding: 20px $fs-padding-widget;
 
 		&.heading-sm,
 		&.heading-xs,
 		&.heading-xxs,
 		&.heading-xxxs {
-			font-size: $widget-panel-modern-sm-title-size;
+			font-size: $fs-widget-panel-modern-sm-title-size;
 		}
 	}
 	&.over-bg-content {
 		.widget-title {
-			border-bottom-color: $clr-bg-content;
+			border-bottom-color: $fs-clr-bg-content;
 		}
 	}
 }

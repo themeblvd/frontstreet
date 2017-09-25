@@ -17,15 +17,15 @@
 
 @mixin nav-tabs-horz {
 	> li > .menu-btn {
-		border-bottom-width: $tabs-border-width;
-		margin-bottom: -$tabs-border-width;
+		border-bottom-width: $fs-tabs-border-width;
+		margin-bottom: -$fs-tabs-border-width;
 	}
 	> li.active > .menu-btn {
 		border-bottom-color: transparent;
 	}
 	&.fs-menu > li > ul {
 		border: none;
-		margin-top: $tabs-border-width;
+		margin-top: $fs-tabs-border-width;
 	}
 }
 
@@ -37,86 +37,86 @@
 	.submenu-tabs {
 		@if ( $style == 'inverse' ) {
 
-			border-color: $tabs-border-inv-color;
+			border-color: $fs-tabs-border-inv-color;
 
 			> li > .menu-btn {
-				background: $tabs-inv-bg;
-				border-color: $tabs-border-inv-color;
+				background: $fs-tabs-inv-bg;
+				border-color: $fs-tabs-border-inv-color;
 
 				&:hover,
 				&:focus {
-					background-color: $tabs-hover-inv-bg;
+					background-color: $fs-tabs-hover-inv-bg;
 				}
 			}
 			> li.active,
 			> li.current-menu-item,
 			> li.current-menu-ancestor {
 				> .menu-btn {
-					background: $tabs-active-inv-bg;
+					background: $fs-tabs-active-inv-bg;
 				}
 			}
 			ul {
 
-				background: $tabs-active-inv-bg;
+				background: $fs-tabs-active-inv-bg;
 
 				.menu-btn {
 
-					color: rgba($clr-text-inv-darken, .8);
+					color: rgba($fs-clr-text-inv-darken, .8);
 
 					&:hover,
 					&:focus {
-						color: $clr-text-inv-darken;
+						color: $fs-clr-text-inv-darken;
 					}
 				}
 
 			}
 			> li > ul {
 				@if ($direction == 'rtl') {
-					border-left-color: $tabs-border-inv-color;
+					border-left-color: $fs-tabs-border-inv-color;
 				} @else {
-					border-right-color: $tabs-border-inv-color;
+					border-right-color: $fs-tabs-border-inv-color;
 				}
 			}
 
 		} @else {
 
-			border-color: $tabs-border-color;
+			border-color: $fs-tabs-border-color;
 
 			> li > .menu-btn {
-				background: $tabs-bg;
-				border-color: $tabs-border-color;
+				background: $fs-tabs-bg;
+				border-color: $fs-tabs-border-color;
 
 				&:hover,
 				&:focus {
-					background-color: $tabs-hover-bg;
+					background-color: $fs-tabs-hover-bg;
 				}
 			}
 			> li.active,
 			> li.current-menu-item,
 			> li.current-menu-ancestor {
 				> .menu-btn {
-					background: $tabs-active-bg;
+					background: $fs-tabs-active-bg;
 				}
 			}
 			ul {
 
-				background: $tabs-active-bg;
+				background: $fs-tabs-active-bg;
 
 				.menu-btn {
 
-					color: $clr-text-base;
+					color: $fs-clr-text-base;
 
 					&:hover,
 					&:focus {
-						color: $clr-text-darken;
+						color: $fs-clr-text-darken;
 					}
 				}
 			}
 			> li > ul {
 				@if ($direction == 'rtl') {
-					border-right-color: $tabs-border-color;
+					border-right-color: $fs-tabs-border-color;
 				} @else {
-					border-left-color: $tabs-border-color;
+					border-left-color: $fs-tabs-border-color;
 				}
 			}
 		}
@@ -130,12 +130,12 @@
 @mixin nav-pills-horz {
 	&.fs-menu ul {
 
-		background-color: $pills-flyout-bg;
+		background-color: $fs-pills-flyout-bg;
 
 		@if ($direction == 'rtl') {
-			margin: $pills-spacing $pills-spacing 0 0;
+			margin: $fs-pills-spacing $fs-pills-spacing 0 0;
 		} @else {
-			margin: $pills-spacing 0 0 $pills-spacing;
+			margin: $fs-pills-spacing 0 0 $fs-pills-spacing;
 		}
 	}
 }
@@ -150,11 +150,11 @@
 
 			> li > .menu-btn {
 
-				border-color: $pills-border-inv-color;
+				border-color: $fs-pills-border-inv-color;
 
 				&:hover,
 				&:focus {
-					background: $pills-hover-inv-bg;
+					background: $fs-pills-hover-inv-bg;
 				}
 			}
 
@@ -162,11 +162,11 @@
 
 			> li > .menu-btn {
 
-				border-color: $pills-border-color;
+				border-color: $fs-pills-border-color;
 
 				&:hover,
 				&:focus {
-					background: $pills-hover-bg;
+					background: $fs-pills-hover-bg;
 				}
 			}
 
@@ -181,7 +181,7 @@
 @mixin nav-dropdown {
 	ul,
 	.fs-mega {
-		box-shadow: $flyout-shadow;
+		box-shadow: $fs-flyout-shadow;
 		position: absolute;
 	}
 	ul li.menu-item-has-children > .menu-btn:after {
@@ -205,7 +205,7 @@
 	// Mega Menu
 	.fs-mega {
 
-		padding: $mega-menu-padding;
+		padding: $fs-mega-menu-padding;
 
 		ul {
 			// display: block;

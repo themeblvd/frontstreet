@@ -4,7 +4,7 @@
 
 .fs-testimonial {
 
-	margin: $margin-testimonial;
+	margin: $fs-margin-testimonial;
 
 	@include fs-margin-vert-flush;
 
@@ -19,7 +19,7 @@
 		@include fs-list-unstyled;
 
 		.author-image img {
-			border-radius: $testimonial-img-radius;
+			border-radius: $fs-testimonial-img-radius;
 			display: inline-block;
 		}
 	}
@@ -31,20 +31,20 @@
 	&.testimonial-sm {
 		.testimonial-text {
 
-			border-radius: $testimonial-sm-radius;
-			font-size: $testimonial-sm-font-size;
-			padding: $testimonial-sm-spacing;
+			border-radius: $fs-testimonial-sm-radius;
+			font-size: $fs-testimonial-sm-font-size;
+			padding: $fs-testimonial-sm-spacing;
 
 			&:before {
 				content: "";
-				border-left: $testimonial-sm-triangle solid transparent;
-				border-right: $testimonial-sm-triangle solid transparent;
-				border-top-width: $testimonial-sm-triangle;
+				border-left: $fs-testimonial-sm-triangle solid transparent;
+				border-right: $fs-testimonial-sm-triangle solid transparent;
+				border-top-width: $fs-testimonial-sm-triangle;
 				border-top-style: solid;
 				display: block;
 				position: absolute;
-				bottom: -$testimonial-sm-triangle;
-				left: $testimonial-sm-img-spacing + ($testimonial-sm-img / 2) - $testimonial-sm-triangle;
+				bottom: -$fs-testimonial-sm-triangle;
+				left: $fs-testimonial-sm-img-spacing + ($fs-testimonial-sm-img / 2) - $fs-testimonial-sm-triangle;
 				width: 0;
 				height: 0;
 			}
@@ -56,17 +56,17 @@
 			margin-top: 15px;
 
 			.author-image {
-				padding: 0 $testimonial-sm-img-spacing;
+				padding: 0 $fs-testimonial-sm-img-spacing;
 			}
 			.author-image img {
-				width: $testimonial-sm-img;
+				width: $fs-testimonial-sm-img;
 			}
 			.author-name {
-				font-size: $testimonial-sm-font-size + 1px;
+				font-size: $fs-testimonial-sm-font-size + 1px;
 				margin: 0 0 2px 0;
 			}
 			.author-tagline {
-				font-size: $testimonial-sm-font-size - 1px;
+				font-size: $fs-testimonial-sm-font-size - 1px;
 			}
 		}
 	}
@@ -78,9 +78,9 @@
 	&.testimonial-md {
 		.testimonial-text {
 
-			border-radius: $testimonial-md-radius;
-			font-size: $testimonial-md-font-size;
-    		padding: $testimonial-md-spacing;
+			border-radius: $fs-testimonial-md-radius;
+			font-size: $fs-testimonial-md-font-size;
+    		padding: $fs-testimonial-md-spacing;
 
 			&:before {
 
@@ -88,15 +88,15 @@
 				border-style: solid;
 
 				@if ($direction == 'rtl') {
-					border-width: 0 0 $testimonial-md-triangle $testimonial-md-triangle;
+					border-width: 0 0 $fs-testimonial-md-triangle $fs-testimonial-md-triangle;
 				} @else {
-					border-width: 0 $testimonial-md-triangle $testimonial-md-triangle 0;
+					border-width: 0 $fs-testimonial-md-triangle $fs-testimonial-md-triangle 0;
 				}
 
 				border-bottom-color: transparent;
 				display: block;
 				position: absolute;
-				bottom: -$testimonial-md-triangle;
+				bottom: -$fs-testimonial-md-triangle;
 
 				@if ($direction == 'rtl') {
 					right: 10%;
@@ -110,7 +110,7 @@
 		}
 		.testimonial-author {
 			.author-image img {
-				width: $testimonial-md-img;
+				width: $fs-testimonial-md-img;
 			}
 		}
 	}
@@ -122,18 +122,18 @@
 	&.testimonial-lg {
 
 		.testimonial-text {
-			font-style: $font-style-quote;
-			padding: $testimonial-lg-spacing;
+			font-style: $fs-font-style-quote;
+			padding: $fs-testimonial-lg-spacing;
 		}
 		@include fs-min-width(md) {
 			.testimonial-text {
-				font-size: $testimonial-lg-font-size;
-				line-height: $font-lh-quote;
+				font-size: $fs-testimonial-lg-font-size;
+				line-height: $fs-font-lh-quote;
 			}
 		}
 		.testimonial-author {
 			.author-image img {
-				width: $testimonial-lg-img;
+				width: $fs-testimonial-lg-img;
 			}
 		}
 	}
@@ -152,11 +152,11 @@
 			margin-top: 25px;
 
 			.author-name {
-				font-size: $testimonial-md-font-size - 2px;
+				font-size: $fs-testimonial-md-font-size - 2px;
 				margin: 20px 0 8px 0;
 			}
 			.author-tagline {
-				font-size: $testimonial-md-font-size - 3px;
+				font-size: $fs-testimonial-md-font-size - 3px;
 			}
 		}
 	}

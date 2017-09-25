@@ -6,31 +6,32 @@
 // Table Row Backgrounds
 //
 
-@mixin fs-table-row-variant($state, $background) {
-	// Exact selectors below required to override `.table-striped` and prevent
-	// inheritance to nested tables.
+@mixin fs-table-row-variant($state, $bg) {
+
+	// Exact selectors below required to override `.table-striped`
+	// and prevent inheritance to nested tables.
+
 	.table-#{$state} {
 		&,
 		> th,
 		> td {
-			background-color: $background;
+			background-color: $bg;
 		}
 	}
 
 	// Hover states for `.table-hover`
-	// Note: this is not available for cells or rows within `thead` or `tfoot`.
-	.table-hover {
-		$hover-background: darken($background, 5%);
+	// Note: this is not available for cells or rows
+	// within `thead` or `tfoot`.
 
-		.table-#{$state} {
-			&:hover {
-				background-color: $hover-background;
+	$hover-bg: darken($bg, 5%);
 
-				> td,
-				> th {
-					background-color: $hover-background;
-				}
-			}
+	.table-hover .table-#{$state}:hover {
+
+		background-color: $hover-bg;
+
+		> td,
+		> th {
+			background-color: $hover-bg;
 		}
 	}
 }

@@ -4,8 +4,8 @@
 
 ul,
 ol {
-    margin: $margin-list;
-	padding: if($direction == 'rtl', 0 $padding-list 0 0, 0 0 0 $padding-list);
+    margin: $fs-margin-list;
+	padding: if($direction == 'rtl', 0 $fs-padding-list 0 0, 0 0 0 $fs-padding-list);
 	@include fs-margin-vert-flush;
 }
 ul {
@@ -24,10 +24,10 @@ li > ol {
 //
 
 dt {
-    font-weight: $font-weight-bold;
+    font-weight: $fs-font-weight-bold;
 }
 dd {
-	margin: $margin-list;
+	margin: $fs-margin-list;
 	margin-left: 1.5em;
 	@include fs-margin-vert-flush;
 }
@@ -63,15 +63,15 @@ dd {
 //
 
 .list-icon.fa-ul li {
-    line-height: $font-lh-base;
+    line-height: $fs-font-lh-base;
 }
 .list-icon.fa-ul li > .fa-li {
 	top: 50%;
 	@if ($direction == 'rtl') {
-		right: (-30em / fs-strip-unit($font-size-base));
+		right: (-30em / fs-strip-unit($fs-font-size-base));
 	} @else  {
-		left: (-30em / fs-strip-unit($font-size-base));
+		left: (-30em / fs-strip-unit($fs-font-size-base));
 	}
-	width: 30em / fs-strip-unit($font-size-base);
+	width: 30em / fs-strip-unit($fs-font-size-base);
 	transform: translate(0, -50%);
 }

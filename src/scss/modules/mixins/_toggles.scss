@@ -4,14 +4,14 @@
 
 @mixin toggle-variant($style: "default") {
 
-	$border-clr: $toggle-border-color;
-	$close-clr: $clr-svg;
-	$close-hover-clr: $clr-svg-hover;
+	$border-clr      : $fs-toggle-border-color;
+	$close-clr       : $fs-clr-svg;
+	$close-hover-clr : $fs-clr-svg-hover;
 
 	@if ($style == 'inverse') {
-		$border-clr: $toggle-border-inv-color;
-		$close-clr: $clr-svg-inv;
-		$close-hover-clr: $clr-svg-inv-hover;
+		$border-clr      : $fs-toggle-border-inv-color;
+		$close-clr       : $fs-clr-svg-inv;
+		$close-hover-clr : $fs-clr-svg-inv-hover;
 	}
 
 	.fs-toggle {

@@ -8,7 +8,7 @@
 
 @mixin fs-field-selector {
 
-	#{$field-selector} {
+	#{$fs-field-selector} {
 		@content;
 	}
 
@@ -20,7 +20,7 @@
 
 @mixin fs-btn-selector {
 
-	#{$btn-selector} {
+	#{$fs-btn-selector} {
 		@content;
 	}
 
@@ -32,21 +32,21 @@
 
 @mixin fs-btn-styles {
 
-	background-color: $clr-bg-btn;
-	border: $btn-border-width solid transparent;
-	color: $clr-text-darken;
+	background-color: $fs-clr-bg-btn;
+	border: $fs-btn-border-width solid transparent;
+	color: $fs-clr-text-darken;
 	cursor: pointer;
 	display: inline-block;
-	font-size: $font-size-btn;
-	font-weight: $font-weight-btn;
-	letter-spacing: $font-ls-btn;
-	line-height: $btn-base-lh;
+	font-size: $fs-font-size-btn;
+	font-weight: $fs-font-weight-btn;
+	letter-spacing: $fs-font-ls-btn;
+	line-height: $fs-btn-base-lh;
 	margin-bottom: 0; // For input.btn
-	padding: fs-padding-y($btn-base-height, $btn-base-lh, $btn-border-width) $btn-base-padding;
+	padding: fs-padding-y($fs-btn-base-height, $fs-btn-base-lh, $fs-btn-border-width) $fs-btn-base-padding;
 	text-align: center;
-	text-transform: $font-transform-btn;
+	text-transform: $fs-font-transform-btn;
 	touch-action: manipulation;
-	transition: $btn-transition;
+	transition: $fs-btn-transition;
 	user-select: none;
 	vertical-align: middle;
 	white-space: nowrap;
@@ -59,8 +59,8 @@
 	}
 	&:hover,
 	&:focus {
-		background-color: darken($clr-bg-btn, 2%);
-		color: $clr-text-base;
+		background-color: darken($fs-clr-bg-btn, 2%);
+		color: $fs-clr-text-base;
 		text-decoration: none;
 	}
 	&:active,
@@ -80,10 +80,10 @@
 
 	// Standard Buttons
 
-	$clr-selector: fs-str-replace( $btn-selector, ",", ".btn-#{$clr}," );
-	$clr-selector: "#{$clr-selector}.btn-#{$clr}";
+	$fs-clr-selector: fs-str-replace( $fs-btn-selector, ",", ".btn-#{$clr}," );
+	$fs-clr-selector: "#{$fs-clr-selector}.btn-#{$clr}";
 
-	#{$clr-selector} {
+	#{$fs-clr-selector} {
 
 		background-color: $bg;
 		color: $text;
@@ -109,7 +109,7 @@
 
 	// Transparent Buttons
 
-	$trans-selector: fs-str-replace( $clr-selector, "#{$clr}", "#{$clr}.btn-trans" );
+	$trans-selector: fs-str-replace( $fs-clr-selector, "#{$clr}", "#{$clr}.btn-trans" );
 
 	#{$trans-selector} {
 

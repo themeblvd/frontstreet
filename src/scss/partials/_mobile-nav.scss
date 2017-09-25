@@ -11,28 +11,28 @@
 
  	.menu-btn {
 		border: none;
-		font-size: $font-size-mobile-menu-bar-btn;
-		font-weight: $font-weight-mobile-menu-bar-btn;
-		letter-spacing: $font-ls-mobile-menu-bar-btn;
-		padding: fs-em(18px, $font-size-mobile-menu-bar-btn) fs-em(20px, $font-size-mobile-menu-bar-btn);
-		text-transform: $font-transform-mobile-menu-bar-btn;
+		font-size: $fs-font-size-mobile-menu-bar-btn;
+		font-weight: $fs-font-weight-mobile-menu-bar-btn;
+		letter-spacing: $fs-font-ls-mobile-menu-bar-btn;
+		padding: fs-em(18px, $fs-font-size-mobile-menu-bar-btn) fs-em(20px, $fs-font-size-mobile-menu-bar-btn);
+		text-transform: $fs-font-transform-mobile-menu-bar-btn;
 	}
 	&.text-dark .menu-btn {
 
-		color: $clr-text-darken;
+		color: $fs-clr-text-darken;
 
 		&:hover,
 		&:focus {
-			background-color: rgba($clr-light, .3);
+			background-color: rgba($fs-clr-light, .3);
 		}
 	}
 	&.text-light .menu-btn {
 
-		color: $clr-text-inv-darken;
+		color: $fs-clr-text-inv-darken;
 
 		&:hover,
 		&:focus {
-			background-color: rgba($clr-black, .3);
+			background-color: rgba($fs-clr-black, .3);
 		}
 	}
 

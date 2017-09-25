@@ -9,16 +9,16 @@
 	} @else {
 		border-left: 10px solid transparent;
 	}
-	font-size: $font-size-alert;
-	margin: $margin-alert;
-	padding: $padding-alert;
+	font-size: $fs-font-size-alert;
+	margin: $fs-margin-alert;
+	padding: $fs-padding-alert;
 
 	@include fs-margin-vert-flush;
 
 	// Provide class for links that match alerts
 	a {
 		color: inherit;
-		font-weight: $font-weight-bold;
+		font-weight: $fs-font-weight-bold;
 
 		&:hover,
 		&:focus {
@@ -36,6 +36,6 @@
 // Backwards Compat
 //
 
-@each $name, $map in $clr-contextual {
+@each $name, $map in $fs-clr-contextual {
 	@include fs-bg-variant('.alert-#{$name}', map-get($map, base), map-get($map, contrast));
 }

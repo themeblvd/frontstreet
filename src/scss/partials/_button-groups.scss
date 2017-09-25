@@ -7,12 +7,12 @@
 	display: flex;
 	flex-wrap: wrap;
 	list-style: none;
-	margin: $margin-btn-group;
+	margin: $fs-margin-btn-group;
 	padding: 0;
 	@include fs-margin-vert-flush;
 
 	> .btn {
-		margin: $margin-btn-group-btn;
+		margin: $fs-margin-btn-group-btn;
 	}
 }
 

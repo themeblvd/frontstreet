@@ -4,14 +4,14 @@
 
 .fs-menu-toggle {
 
-	color: $clr-text-darken;
+	color: $fs-clr-text-darken;
 	display: inline-block;
 	opacity: .7;
 	padding: 9px 5px;
 
 	&:hover,
 	&:focus {
-		color: $clr-text-darken;
+		color: $fs-clr-text-darken;
 		opacity: 1;
 	}
 }
@@ -34,7 +34,7 @@
 	&:before,
 	&:after,
 	span {
-		background-color: $clr-text-darken;
+		background-color: $fs-clr-text-darken;
 		border-radius: 1px;
 		display: block;
 		opacity: 1;
@@ -83,16 +83,16 @@
 .menu-toggle-light {
 
 	border: none;
-	color: $clr-text-inv-darken;
+	color: $fs-clr-text-inv-darken;
 
 	&:hover,
 	&:focus {
-		color: $clr-text-inv-darken;
+		color: $fs-clr-text-inv-darken;
 	}
 	.hamburger:before,
 	.hamburger:after,
 	.hamburger span {
-		background-color: $clr-text-inv-darken;
+		background-color: $fs-clr-text-inv-darken;
 	}
 }
 
@@ -109,7 +109,7 @@
 		display: block;
 		float: left;
 		font-size: 14px;
-		letter-spacing: $font-ls-btn;
+		letter-spacing: $fs-font-ls-btn;
 		line-height: 1;
 		text-transform: uppercase;
 	}
