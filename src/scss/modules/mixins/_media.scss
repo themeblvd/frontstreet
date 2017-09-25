@@ -1,11 +1,20 @@
-// --------------------------------------------------
-// Mixins: Media
-// --------------------------------------------------
+////
+/// Mixins: Media
+///
+/// @access public
+/// @group fs-mixins
+/// @author Jason Bobich
+////
 
-//
-// Size a thumbnail link icon.
-//
-
+///
+/// Inner styling for sizing a thumbnail link icon.
+///
+/// @since 1.0.0
+///
+/// @param {Number} $icon-size - Size of icon in px.
+/// @param {Number} $w - Width of icon container in px.
+/// @param {Number} $h - Height of icon container in px.
+///
 @mixin fs-thumb-link-size($icon-size, $w, $h) {
 	font-size: $icon-size;
 	line-height: $h;

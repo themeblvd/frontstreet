@@ -1,7 +1,18 @@
-// --------------------------------------------------
-// Mixins: Toggles
-// --------------------------------------------------
+////
+/// Mixins: Toggles
+///
+/// @access public
+/// @group fs-mixins
+/// @author Jason Bobich
+////
 
+///
+/// Toggle content coloring.
+///
+/// @since 1.0.0
+///
+/// @param {String} $style - Style of scenario, `default` or `inverse`.
+///
 @mixin toggle-variant($style: "default") {
 
 	$border-clr      : $fs-toggle-border-color;

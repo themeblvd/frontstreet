@@ -1,11 +1,19 @@
-// --------------------------------------------------
-// Mixins: Colors
-// --------------------------------------------------
+////
+/// Mixins: Colors
+///
+/// @access public
+/// @group fs-mixins
+/// @author Jason Bobich
+////
 
-//
-// Text
-//
-
+///
+/// Text coloring.
+///
+/// @since 1.0.0
+///
+/// @param {String} $parent - Parent selector.
+/// @param {Color} $clr - Color of text.
+///
 @mixin fs-text-emphasis-variant($parent, $clr) {
 	#{$parent} {
 		color: $clr;
@@ -16,10 +24,15 @@
 	}
 }
 
-//
-// Backgrounds
-//
-
+///
+/// Background coloring.
+///
+/// @since 1.0.0
+///
+/// @param {String} $parent - Parent selector.
+/// @param {Color} $clr - Color of backgrounds.
+/// @param {Color} $text - Color of text.
+///
 @mixin fs-bg-variant($parent, $clr, $text: null) {
 
 	#{$parent},

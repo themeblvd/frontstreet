@@ -1,12 +1,17 @@
-// --------------------------------------------------
-// Mixins: Icons
-// --------------------------------------------------
+////
+/// Mixins: Icons
+///
+/// @access public
+/// @group fs-mixins
+/// @author Jason Bobich
+////
 
-//
-// Add FontAwesome Icon to custom element,
-// without inheriting other .fa icon styles.
-//
-
+///
+/// Add FontAwesome Icon to custom element,
+/// without inheriting other .fa icon styles.
+///
+/// @since 1.0.0
+///
 @mixin fs-font-icon {
 	&:before {
 		font-family: "FontAwesome";
@@ -20,10 +25,11 @@
 	}
 }
 
-//
-// Background triangle icon.
-//
-
+///
+/// Background triangle icon.
+///
+/// @since 1.0.0
+///
 @mixin fs-background-triangle($clr: $fs-clr-dark) {
 
 	$clr: fs-url-friendly-clr($clr);
@@ -33,11 +39,14 @@
 
 }
 
-//
-// Background image property for close
-// "X" button.
-//
-
+///
+/// Background image property for close
+/// "X" button.
+///
+/// @since 1.0.0
+///
+/// @param {Color} $clr - Color of icon.
+///
 @mixin fs-background-close($clr: $fs-clr-dark) {
 
 	$url-clr: fs-url-friendly-clr($clr);
@@ -54,11 +63,14 @@
 
 }
 
-//
-// Background image property for play
-// button.
-//
-
+///
+/// Background image property for play
+/// button.
+///
+/// @since 1.0.0
+///
+/// @param {Color} $clr - Color of icon.
+///
 @mixin fs-background-play($clr: $fs-clr-dark) {
 
 	$url-clr: fs-url-friendly-clr($clr);
@@ -76,11 +88,15 @@
 
 }
 
-//
-// Background image property for chevron
-// button; it can be up, down, right, or left.
-//
-
+///
+/// Background image property for chevron
+/// button; it can be up, down, right, or left.
+///
+/// @since 1.0.0
+///
+/// @param {String} $clr - Direction chevron icon will point to, `up`, `right`, `down` or `left`.
+/// @param {Color} $clr - Color of icon.
+///
 @mixin fs-background-chevron($direction, $clr: $fs-clr-dark) {
 
 	$points: '';
@@ -119,10 +135,13 @@
 
 }
 
-//
-// Background search icon.
-//
-
+///
+/// Background search icon.
+///
+/// @since 1.0.0
+///
+/// @param {Color} $clr - Color of icon.
+///
 @mixin fs-background-search($clr: $fs-clr-dark) {
 
 	$url-clr: fs-url-friendly-clr($clr);

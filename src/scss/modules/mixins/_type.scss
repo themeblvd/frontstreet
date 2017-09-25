@@ -1,11 +1,16 @@
-// --------------------------------------------------
-// Mixins: Typography
-// --------------------------------------------------
+////
+/// Mixins: Typography
+///
+/// @access public
+/// @group fs-mixins
+/// @author Jason Bobich
+////
 
-//
-// Text Reset
-//
-
+///
+/// Reset text styling.
+///
+/// @since 1.0.0
+///
 @mixin fs-text-reset {
 	font-family: $fs-font-fam-base;
 	font-size: $fs-font-size-base;
@@ -13,10 +18,13 @@
 	line-height: $fs-font-lh-base;
 }
 
-//
-// Heading text colors.
-//
-
+///
+/// Heading text colors.
+///
+/// @since 1.0.0
+///
+/// @param {String} $style - Style of scenario, `default` or `inverse`.
+///
 @mixin fs-heading-variant($style: "default") {
 
 	$clr: $fs-clr-text-darken;
@@ -40,11 +48,14 @@
 	}
 }
 
-//
-// Colorless links, meant to blend into content.
-// Used with sections, which shift text to opposite of default style.
-//
-
+///
+/// Colorless links, meant to blend into content.
+///
+/// Used with sections, which shift text to opposite of
+/// default style.
+///
+/// @since 1.0.0
+///
 @mixin fs-blend-links {
 	a:not(.btn):not(.menu-btn) {
 		color: inherit;

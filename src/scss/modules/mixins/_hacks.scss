@@ -1,11 +1,16 @@
-// --------------------------------------------------
-// Mixins: Browser Hacks
-// --------------------------------------------------
+////
+/// Mixins: Browser Hacks
+///
+/// @access public
+/// @group fs-mixins
+/// @author Jason Bobich
+////
 
-//
-// WebKit-style focus
-//
-
+///
+/// WebKit-style focus.
+///
+/// @since 1.0.0
+///
 @mixin fs-tab-focus {
 	// WebKit-specific. Other browsers will keep their default outline style.
 	// (Initially tried to also force default via `outline: initial`,

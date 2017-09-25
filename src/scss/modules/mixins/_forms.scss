@@ -1,11 +1,16 @@
-// --------------------------------------------------
-// Mixins: Forms & Buttons
-// --------------------------------------------------
+////
+/// Mixins: Forms & Buttons
+///
+/// @access public
+/// @group fs-mixins
+/// @author Jason Bobich
+////
 
-//
-// Generate input selectors.
-//
-
+///
+/// Generate input selectors.
+///
+/// @since 1.0.0
+///
 @mixin fs-field-selector {
 
 	#{$fs-field-selector} {
@@ -14,10 +19,11 @@
 
 }
 
-//
-// Generate button selectors.
-//
-
+///
+/// Generate button selectors.
+///
+/// @since 1.0.0
+///
 @mixin fs-btn-selector {
 
 	#{$fs-btn-selector} {
@@ -26,10 +32,11 @@
 
 }
 
-//
-// Generate button styles.
-//
-
+///
+/// Generate button styles.
+///
+/// @since 1.0.0
+///
 @mixin fs-btn-styles {
 
 	background-color: $fs-clr-bg-btn;
@@ -72,18 +79,24 @@
 	}
 }
 
-//
-// Style buttons color variations.
-//
-
+///
+/// Style buttons color variations.
+///
+/// @since 1.0.0
+///
+/// @param {String} $clr - Color name like `teal`.
+/// @param {String} $text - Text color hex value.
+/// @param {Color} $bg - Background color hex value.
+/// @param {Color} $bg-hover - Background color hex value when hovered.
+///
 @mixin fs-button-variant($clr, $text, $bg, $bg-hover: null) {
 
 	// Standard Buttons
 
-	$fs-clr-selector: fs-str-replace( $fs-btn-selector, ",", ".btn-#{$clr}," );
-	$fs-clr-selector: "#{$fs-clr-selector}.btn-#{$clr}";
+	$clr-selector: fs-str-replace( $fs-btn-selector, ",", ".btn-#{$clr}," );
+	$clr-selector: "#{$clr-selector}.btn-#{$clr}";
 
-	#{$fs-clr-selector} {
+	#{$clr-selector} {
 
 		background-color: $bg;
 		color: $text;
@@ -109,7 +122,7 @@
 
 	// Transparent Buttons
 
-	$trans-selector: fs-str-replace( $fs-clr-selector, "#{$clr}", "#{$clr}.btn-trans" );
+	$trans-selector: fs-str-replace( $clr-selector, "#{$clr}", "#{$clr}.btn-trans" );
 
 	#{$trans-selector} {
 

@@ -1,13 +1,18 @@
-// --------------------------------------------------
-// Mixins: Spacing
-// --------------------------------------------------
+////
+/// Mixins: Spacing
+///
+/// @access public
+/// @group fs-mixins
+/// @author Jason Bobich
+////
 
-//
-// Elements vertically spaced within a document should
-// sit flush against the top and bottom of their
-// outter containers.
-//
-
+///
+/// Elements vertically spaced within a document should
+/// sit flush against the top and bottom of their
+/// outter containers.
+///
+/// @since 1.0.0
+///
 @mixin fs-margin-vert-flush {
 	&:first-child {
 		margin-top: 0;
@@ -17,12 +22,13 @@
 	}
 }
 
-//
-// Elements horizontally spaced within a document should
-// sit flush against the left and right of their
-// outter containers.
-//
-
+///
+/// Elements horizontally spaced within a document should
+/// sit flush against the left and right of their
+/// outter containers.
+///
+/// @since 1.0.0
+///
 @mixin fs-margin-horz-flush {
 	&:first-child {
 		margin-left: 0;

@@ -1,19 +1,29 @@
-// --------------------------------------------------
-// Mixins: Flexbox Grids
-// --------------------------------------------------
+////
+/// Mixins: Flexbox Grids
+///
+/// @access public
+/// @group fs-mixins
+/// @author Jason Bobich
+////
 
-//
-// Row Container
-//
-
+///
+/// Inner styling for a grid row container.
+///
+/// @since 1.0.0
+///
+/// @param {Number} $gutter - Gutter size in px between columns.
+///
 @mixin fs-make-row-container($gutter: $fs-grid-gutters) {
 	padding: 0 ($gutter / 2);
 }
 
-//
-// Rows
-//
-
+///
+/// Inner styling for a grid row.
+///
+/// @since 1.0.0
+///
+/// @param {Number} $gutter - Gutter size in px between columns.
+///
 @mixin fs-make-row($gutter: $fs-grid-gutters) {
 	display: flex;
 	flex: 0 1 auto;
@@ -24,10 +34,11 @@
 	margin-left: ($gutter / -2);
 }
 
-//
-// Column Base
-//
-
+///
+/// Inner styling for a grid column.
+///
+/// @since 1.0.0
+///
 @mixin fs-make-col-base {
 
 	position: relative;
@@ -48,11 +59,14 @@
 
 }
 
-//
-// All columns for a particular breakpoint,
-// when positioned.
-//
-
+///
+/// Inner styling for all columns for a particular
+/// breakpoint, when positioned.
+///
+/// @since 1.0.0
+///
+/// @param {String} $breakpoint - Breakpoint name like `sm`.
+///
 @mixin fs-make-cols($breakpoint) {
 
 	$selector: ".col-#{$breakpoint}";
@@ -71,10 +85,14 @@
 
 }
 
-//
-// Varying width columns.
-//
-
+///
+/// Inner styling for varying width columns.
+///
+/// @since 1.0.0
+///
+/// @param {Number} $column - Number of columns to fill from total.
+/// @param {Number} $columns - Total columns of grid system, like `10` or `12`.
+///
 @mixin fs-make-col-width($column, $columns) {
 	flex: 0 0 percentage($column / $columns);
 	// Add a `max-width` to ensure content within each column does not blow out
@@ -83,12 +101,23 @@
 	max-width: percentage($column / $columns);
 }
 
+///
+/// Make all column width styling, for each breakpoint.
+///
+/// @since 1.0.0
+///
+/// @param {String} $breakpoint - Breakpoint name like `sm`.
+///
 @mixin fs-make-col-widths($breakpoint) {
+
+	// 12 column grid system.
 	@for $i from 1 through 12 {
 		.col-#{$breakpoint}-#{$i} {
 			@include fs-make-col-width($i, 12);
 		}
 	}
+
+	// 10 column grid system.
 	@for $i from 1 through 10 {
 		.col-#{$breakpoint}-0#{$i}0 {
 			@include fs-make-col-width($i, 10);
@@ -96,10 +125,14 @@
 	}
 }
 
-//
-// Offsets
-//
-
+///
+/// Inner styling for column offsetting.
+///
+/// @since 1.0.0
+///
+/// @param {Number} $column - Number of columns to fill from total.
+/// @param {Number} $columns - Total columns of grid system, like `10` or `12`.
+///
 @mixin fs-make-col-offset($column, $columns) {
 	@if ($direction == 'rtl') {
 		margin-right: percentage(($column / $columns));
@@ -108,12 +141,23 @@
 	}
 }
 
+///
+/// Make all column offset styling, for each breakpoint.
+///
+/// @since 1.0.0
+///
+/// @param {String} $breakpoint - Breakpoint name like `sm`.
+///
 @mixin fs-make-col-offsets($breakpoint) {
+
+	// 12 column grid system.
 	@for $i from 1 through 11 {
 		.col-#{$breakpoint}-offset-#{$i} {
 			@include fs-make-col-offset($i, 12);
 		}
 	}
+
+	// 10 column grid system.
 	@for $i from 1 through 9 {
 		.col-#{$breakpoint}-offset-0#{$i}0 {
 			@include fs-make-col-offset($i, 10);

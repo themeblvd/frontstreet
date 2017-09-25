@@ -1,11 +1,18 @@
-// --------------------------------------------------
-// Mixins: Responsive Breakpoints
-// --------------------------------------------------
+////
+/// Mixins: Responsive Breakpoints
+///
+/// @access public
+/// @group fs-mixins
+/// @author Jason Bobich
+////
 
-//
-// Max-Width Media Query
-//
-
+///
+/// Max-width media query.
+///
+/// @since 1.0.0
+///
+/// @param {String} $size - Size of breakpoint.
+///
 @mixin fs-max-width($size) {
 	@if ($size == 'xl') {
 		@media (max-width: fs-em(map-get($fs-breakpoints, xl) - 1, $fs-font-size-base)) {
@@ -36,10 +43,13 @@
 	}
 }
 
-//
-// Min-Width Media Query
-//
-
+///
+/// Min-width media query.
+///
+/// @since 1.0.0
+///
+/// @param {String} $size - Size of breakpoint.
+///
 @mixin fs-min-width($size) {
 	@if ($size == 'xl') {
 		@media (min-width: fs-em(map-get($fs-breakpoints, xl), $fs-font-size-base)) {

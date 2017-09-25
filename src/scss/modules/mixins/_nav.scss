@@ -1,20 +1,26 @@
-// --------------------------------------------------
-// Mixins: Navigation
-// --------------------------------------------------
+////
+/// Mixins: Navigation
+///
+/// @access public
+/// @group fs-mixins
+/// @author Jason Bobich
+////
 
-//
-// General Horizontal Navigation
-//
-
+///
+/// General horizontal navigation.
+///
+/// @since 1.0.0
+///
 @mixin nav-horz {
 	display: flex;
 	flex-wrap: wrap;
 }
 
-//
-// Horizontal Tabs
-//
-
+///
+/// Horizontal tabs navigation.
+///
+/// @since 1.0.0
+///
 @mixin nav-tabs-horz {
 	> li > .menu-btn {
 		border-bottom-width: $fs-tabs-border-width;
@@ -29,10 +35,14 @@
 	}
 }
 
-//
-// Tabs Variant
-//
-
+///
+/// Color styling for tabs, depending on if in a
+/// light or dark background.
+///
+/// @since 1.0.0
+///
+/// @param {String} $style - Style of scenario, `default` or `inverse`.
+///
 @mixin tabs-variant($style: "default") {
 	.submenu-tabs {
 		@if ( $style == 'inverse' ) {
@@ -123,10 +133,11 @@
 	}
 }
 
-//
-// Horizontal Pills
-//
-
+///
+/// Horizontal pills navigation.
+///
+/// @since 1.0.0
+///
 @mixin nav-pills-horz {
 	&.fs-menu ul {
 
@@ -140,10 +151,14 @@
 	}
 }
 
-//
-// Pills Variant
-//
-
+///
+/// Color styling for pills, depending on if in a
+/// light or dark background.
+///
+/// @since 1.0.0
+///
+/// @param {String} $style - Style of scenario, `default` or `inverse`.
+///
 @mixin pills-variant($style: "default") {
 	.submenu-pills {
 		@if ( $style == 'inverse' ) {
@@ -174,10 +189,11 @@
 	}
 }
 
-//
-// Dropdown Menus
-//
-
+///
+/// Dropdown menu styling.
+///
+/// @since 1.0.0
+///
 @mixin nav-dropdown {
 	ul,
 	.fs-mega {
