@@ -1,2 +1,2 @@
 # Front Street
-A frontend framework by Theme Blvd
+A frontend framework by [Jason Bobich](http://jasonbobich.com)
