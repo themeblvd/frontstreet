@@ -2432,7 +2432,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .heading-lg, .heading-xl, 
   position: relative;
 }
 
-.heading-underline:before {
+.heading-underline:after {
   content: "";
   background: #2ea3f2;
   position: absolute;
@@ -2443,17 +2443,17 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .heading-lg, .heading-xl, 
   z-index: 2;
 }
 
-.heading-underline.text-left:before {
+.heading-underline.text-left:after {
   right: auto;
   left: 0;
 }
 
-.heading-underline.text-right:before {
+.heading-underline.text-right:after {
   right: 0;
   left: auto;
 }
 
-.heading-underline.text-center:before {
+.heading-underline.text-center:after {
   right: auto;
   left: 50%;
   -webkit-transform: translate(-50%, 0);

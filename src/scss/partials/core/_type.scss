@@ -233,7 +233,7 @@ h6,
     padding-bottom: 0.8em;
     position: relative;
 
-    &:before {
+    &:after {
         content: "";
         background: fs-map-deep-get($fs-clr-branding, secondary, base);
         position: absolute;
@@ -247,15 +247,15 @@ h6,
         height: $fs-heading-underline-h;
         z-index: 2;
     }
-    &.text-left:before {
+    &.text-left:after {
         right: auto;
         left: 0;
     }
-    &.text-right:before {
+    &.text-right:after {
         right: 0;
         left: auto;
     }
-    &.text-center:before {
+    &.text-center:after {
         right: auto;
         left: 50%;
         transform: translate(-50%, 0);
