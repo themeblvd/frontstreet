@@ -62,11 +62,13 @@
         margin: 0;
     }
 }
-.text-light .fs-caption .caption-text {
-    background: $fs-clr-bg-inv-caption;
-}
-.text-dark .fs-caption .caption-text {
-    background: $fs-clr-bg-caption;
+@if ($version == "full") {
+    .text-light .fs-caption .caption-text {
+        background: $fs-clr-bg-inv-caption;
+    }
+    .text-dark .fs-caption .caption-text {
+        background: $fs-clr-bg-caption;
+    }
 }
 
 //

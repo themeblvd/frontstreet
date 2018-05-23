@@ -60,16 +60,18 @@ legend,
     width: 100%;
     @include fs-margin-vert-flush;
 }
-.text-light {
-    label,
-    legend {
-        color: $fs-clr-text-inv-darken;
+@if ($version == "full") {
+    .text-light {
+        label,
+        legend {
+            color: $fs-clr-text-inv-darken;
+        }
     }
-}
-.text-dark {
-    label,
-    legend {
-        color: $fs-clr-text-darken;
+    .text-dark {
+        label,
+        legend {
+            color: $fs-clr-text-darken;
+        }
     }
 }
 
@@ -140,29 +142,31 @@ label,
 @include fs-field-selector {
     @include fs-margin-vert-flush;
 }
-.text-light {
-    @include fs-field-selector {
-        background-color: $fs-clr-bg-inv-field;
-        border-color: $fs-clr-border-inv;
-        color: $fs-clr-text-inv-base;
-    }
-    @include fs-field-selector {
-        &:focus {
-            border-color: $fs-clr-border-inv-active;
-            box-shadow: 0 0 8px rgba($fs-clr-black, 0.2);
+@if ($version == "full") {
+    .text-light {
+        @include fs-field-selector {
+            background-color: $fs-clr-bg-inv-field;
+            border-color: $fs-clr-border-inv;
+            color: $fs-clr-text-inv-base;
+        }
+        @include fs-field-selector {
+            &:focus {
+                border-color: $fs-clr-border-inv-active;
+                box-shadow: 0 0 8px rgba($fs-clr-black, 0.2);
+            }
         }
     }
-}
-.text-dark {
-    @include fs-field-selector {
-        background-color: $fs-clr-bg-field;
-        border-color: $fs-clr-border;
-        color: $fs-clr-text-base;
-    }
-    @include fs-field-selector {
-        &:focus {
-            border-color: $fs-clr-border-active;
-            box-shadow: 0 0 8px $fs-clr-trans-lightest;
+    .text-dark {
+        @include fs-field-selector {
+            background-color: $fs-clr-bg-field;
+            border-color: $fs-clr-border;
+            color: $fs-clr-text-base;
+        }
+        @include fs-field-selector {
+            &:focus {
+                border-color: $fs-clr-border-active;
+                box-shadow: 0 0 8px $fs-clr-trans-lightest;
+            }
         }
     }
 }
@@ -198,11 +202,13 @@ select[multiple] {
 select[multiple] option {
     padding: 4px;
 }
-.text-light select {
-    @include fs-background-triangle($fs-clr-svg-inv);
-}
-.text-dark select {
-    @include fs-background-triangle($fs-clr-svg);
+@if ($version == "full") {
+    .text-light select {
+        @include fs-background-triangle($fs-clr-svg-inv);
+    }
+    .text-dark select {
+        @include fs-background-triangle($fs-clr-svg);
+    }
 }
 
 //
@@ -351,15 +357,17 @@ textarea {
         color: $fs-clr-text-placeholder;
     }
 }
-.text-light input,
-.text-light textarea {
-    &::placeholder {
-        color: $fs-clr-text-inv-placeholder;
+@if ($version == "full") {
+    .text-light input,
+    .text-light textarea {
+        &::placeholder {
+            color: $fs-clr-text-inv-placeholder;
+        }
     }
-}
-.text-dark input,
-.text-dark textarea {
-    &::placeholder {
-        color: $fs-clr-text-placeholder;
+    .text-dark input,
+    .text-dark textarea {
+        &::placeholder {
+            color: $fs-clr-text-placeholder;
+        }
     }
 }

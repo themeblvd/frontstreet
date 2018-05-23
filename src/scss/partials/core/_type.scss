@@ -23,11 +23,13 @@ html {
         unicode-bidi: embed;
     }
 }
-.text-light {
-    color: rgba($fs-clr-text-inv-base, 0.8);
-}
-.text-dark {
-    color: $fs-clr-text-base;
+@if ($version == "full") {
+    .text-light {
+        color: rgba($fs-clr-text-inv-base, 0.8);
+    }
+    .text-dark {
+        color: $fs-clr-text-base;
+    }
 }
 
 //
@@ -43,16 +45,18 @@ a:active,
 a:focus {
     color: $fs-clr-link-hover;
 }
-.text-light {
-    @include fs-blend-links;
-}
-.text-dark a {
-    color: $fs-clr-link;
-}
-.text-dark a:hover,
-.text-dark a:active,
-.text-dark a:focus {
-    color: $fs-clr-link-hover;
+@if ($version == "full") {
+    .text-light {
+        @include fs-blend-links;
+    }
+    .text-dark a {
+        color: $fs-clr-link;
+    }
+    .text-dark a:hover,
+    .text-dark a:active,
+    .text-dark a:focus {
+        color: $fs-clr-link-hover;
+    }
 }
 
 //
@@ -211,11 +215,13 @@ h6,
 
 @include fs-heading-variant;
 
-.text-light {
-    @include fs-heading-variant("inverse");
-}
-.text-dark {
-    @include fs-heading-variant;
+@if ($version == "full") {
+    .text-light {
+        @include fs-heading-variant("inverse");
+    }
+    .text-dark {
+        @include fs-heading-variant;
+    }
 }
 
 //
@@ -255,11 +261,13 @@ h6,
         transform: translate(-50%, 0);
     }
 }
-.text-light .heading-underline {
-    border-bottom-color: rgba($fs-clr-darkest, 0.5);
-}
-.text-dark .heading-underline {
-    border-bottom-color: $fs-clr-trans-lightest;
+@if ($version == "full") {
+    .text-light .heading-underline {
+        border-bottom-color: rgba($fs-clr-darkest, 0.5);
+    }
+    .text-dark .heading-underline {
+        border-bottom-color: $fs-clr-trans-lightest;
+    }
 }
 
 //
@@ -314,18 +322,20 @@ kbd {
         box-shadow: none;
     }
 }
-.text-light {
-    pre,
-    code {
-        background-color: $fs-clr-bg-inv-code;
-        color: $fs-clr-text-inv-base;
+@if ($version == "full") {
+    .text-light {
+        pre,
+        code {
+            background-color: $fs-clr-bg-inv-code;
+            color: $fs-clr-text-inv-base;
+        }
     }
-}
-.text-dark {
-    pre,
-    code {
-        background-color: $fs-clr-bg-code;
-        color: $fs-clr-text-base;
+    .text-dark {
+        pre,
+        code {
+            background-color: $fs-clr-bg-code;
+            color: $fs-clr-text-base;
+        }
     }
 }
 
@@ -367,13 +377,15 @@ acronym {
     cursor: help;
     text-decoration: inherit;
 }
-.text-light abbr,
-.text-light acronym {
-    border-color: $fs-clr-border-inv;
-}
-.text-dark abbr,
-.text-dark acronym {
-    border-color: $fs-clr-border;
+@if ($version == "full") {
+    .text-light abbr,
+    .text-light acronym {
+        border-color: $fs-clr-border-inv;
+    }
+    .text-dark abbr,
+    .text-dark acronym {
+        border-color: $fs-clr-border;
+    }
 }
 
 //
@@ -409,11 +421,13 @@ blockquote {
         margin-left: 0;
     }
 }
-.text-light blockquote {
-    color: $fs-clr-text-inv-darken;
-}
-.text-dark blockquote {
-    color: $fs-clr-text-darken;
+@if ($version == "full") {
+    .text-light blockquote {
+        color: $fs-clr-text-inv-darken;
+    }
+    .text-dark blockquote {
+        color: $fs-clr-text-darken;
+    }
 }
 blockquote.pull-left blockquote.alignleft {
     text-align: left;
@@ -439,11 +453,13 @@ blockquote {
         content: "\2014 \00A0";
     }
 }
-.text-light blockquote cite,
-.text-light blockquote cite:before {
-    color: $fs-clr-text-inv-lighten;
-}
-.text-dark blockquote cite,
-.text-dark blockquote cite:before {
-    color: $fs-clr-text-lighten;
+@if ($version == "full") {
+    .text-light blockquote cite,
+    .text-light blockquote cite:before {
+        color: $fs-clr-text-inv-lighten;
+    }
+    .text-dark blockquote cite,
+    .text-dark blockquote cite:before {
+        color: $fs-clr-text-lighten;
+    }
 }
