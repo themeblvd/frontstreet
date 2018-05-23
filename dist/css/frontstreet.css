@@ -4171,6 +4171,21 @@ input[type="button"].btn-block {
   }
 }
 
+.label-inline {
+  background: #666;
+  border-radius: 2px;
+  color: #fff;
+  display: inline-block;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 1;
+  padding: 6px 10px;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+
 .clearfix:before, .clearfix:after {
   content: " ";
   display: table;
@@ -6238,21 +6253,6 @@ button.close {
 
 .alert-danger.mobile-menu-bar ul {
   background-color: #f2dede;
-}
-
-.label-inline {
-  background: #666;
-  border-radius: 2px;
-  color: #fff;
-  display: inline-block;
-  font-size: 10px;
-  font-weight: bold;
-  line-height: 1;
-  padding: 6px 10px;
-  text-align: center;
-  text-transform: uppercase;
-  white-space: nowrap;
-  vertical-align: baseline;
 }
 
 .fs-tabs {

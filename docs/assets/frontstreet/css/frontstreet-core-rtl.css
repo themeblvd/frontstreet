@@ -3761,3 +3761,18 @@ input[type="button"].btn-block {
     max-width: 11.11111%;
   }
 }
+
+.label-inline {
+  background: #666;
+  border-radius: 2px;
+  color: #fff;
+  display: inline-block;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 1;
+  padding: 6px 10px;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
