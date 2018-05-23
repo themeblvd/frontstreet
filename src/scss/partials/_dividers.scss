@@ -5,19 +5,19 @@
 hr,
 .fs-divider {
     border: none;
-	border-radius: $fs-divider-radius;
-	display: block;
+    border-radius: $fs-divider-radius;
+    display: block;
     height: $fs-divider-height;
     margin: $fs-margin-divider 0;
 }
 hr:not(.fs-divider) {
-	background-color: $fs-clr-bg-hr;
+    background-color: $fs-clr-bg-hr;
 }
 .text-light hr:not(.fs-divider) {
-	background: $fs-clr-bg-inv-hr;
+    background: $fs-clr-bg-inv-hr;
 }
 .text-dark hr:not(.fs-divider) {
-	background: $fs-clr-bg-hr;
+    background: $fs-clr-bg-hr;
 }
 
 //
@@ -25,15 +25,15 @@ hr:not(.fs-divider) {
 //
 
 .fs-divider {
-	&.divider-thick {
-		height: $fs-divider-height * 2;
-	}
-	&.divider-thicker {
-		height: $fs-divider-height * 3;
-	}
-	&.divider-thickest {
-		height: $fs-divider-height * 4;
-	}
+    &.divider-thick {
+        height: $fs-divider-height * 2;
+    }
+    &.divider-thicker {
+        height: $fs-divider-height * 3;
+    }
+    &.divider-thickest {
+        height: $fs-divider-height * 4;
+    }
 }
 
 //
@@ -41,11 +41,11 @@ hr:not(.fs-divider) {
 //
 
 .fs-divider {
-	@each $size, $width in $fs-divider-sizes {
-		&.divider-#{$size} {
-			width: $width;
-		}
-	}
+    @each $size, $width in $fs-divider-sizes {
+        &.divider-#{$size} {
+            width: $width;
+        }
+    }
 }
 
 //
@@ -53,16 +53,16 @@ hr:not(.fs-divider) {
 //
 
 .fs-divider {
-	&.divider-left {
-		margin-right: auto;
-	}
-	&.divider-right {
-		margin-left: auto;
-	}
-	&.divider-center {
-		margin-right: auto;
-		margin-left: auto;
-	}
+    &.divider-left {
+        margin-right: auto;
+    }
+    &.divider-right {
+        margin-left: auto;
+    }
+    &.divider-center {
+        margin-right: auto;
+        margin-left: auto;
+    }
 }
 
 //
@@ -70,10 +70,8 @@ hr:not(.fs-divider) {
 //
 
 .fs-divider.divider-icon {
+    @include fs-font-icon;
 
-	@include fs-font-icon;
-
-	&:before {
-
-	}
+    &:before {
+    }
 }

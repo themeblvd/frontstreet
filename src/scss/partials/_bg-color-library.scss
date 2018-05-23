@@ -7,7 +7,11 @@
 //
 
 @each $name, $map in $fs-clr-library {
-	@include fs-bg-variant('.#{$name}', map-get($map, base), map-get($map, contrast));
+    @include fs-bg-variant(
+        ".#{$name}",
+        map-get($map, base),
+        map-get($map, contrast)
+    );
 }
 
 //
@@ -15,7 +19,7 @@
 //
 
 @each $name, $map in $fs-clr-library {
-	.text-#{$name} {
-		color: map-get($map, base);
-	}
+    .text-#{$name} {
+        color: map-get($map, base);
+    }
 }

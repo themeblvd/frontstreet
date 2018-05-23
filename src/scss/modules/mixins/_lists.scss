@@ -12,12 +12,11 @@
 /// @since 1.0.0
 ///
 @mixin fs-list-unstyled {
+    list-style: none;
 
-	list-style: none;
-
-	@if ($direction == 'rtl') {
-		padding-right: 0;
-	} @else {
-		padding-left: 0;
-	}
+    @if ($direction == "rtl") {
+        padding-right: 0;
+    } @else {
+        padding-left: 0;
+    }
 }

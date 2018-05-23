@@ -15,29 +15,27 @@
 /// @param {Color} $clr - Color of text.
 ///
 @mixin fs-table-row-variant($state, $bg) {
+    // Exact selectors below required to override `.table-striped`
+    // and prevent inheritance to nested tables.
+    .table-#{$state} {
+        &,
+        > th,
+        > td {
+            background-color: $bg;
+        }
+    }
 
-	// Exact selectors below required to override `.table-striped`
-	// and prevent inheritance to nested tables.
-	.table-#{$state} {
-		&,
-		> th,
-		> td {
-			background-color: $bg;
-		}
-	}
+    // Hover states for `.table-hover`
+    // Note: this is not available for cells or rows
+    // within `thead` or `tfoot`.
+    $hover-bg: darken($bg, 5%);
 
-	// Hover states for `.table-hover`
-	// Note: this is not available for cells or rows
-	// within `thead` or `tfoot`.
-	$hover-bg: darken($bg, 5%);
+    .table-hover .table-#{$state}:hover {
+        background-color: $hover-bg;
 
-	.table-hover .table-#{$state}:hover {
-
-		background-color: $hover-bg;
-
-		> td,
-		> th {
-			background-color: $hover-bg;
-		}
-	}
+        > td,
+        > th {
+            background-color: $hover-bg;
+        }
+    }
 }

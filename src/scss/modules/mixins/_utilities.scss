@@ -21,14 +21,14 @@
 /// @since 1.0.0
 ///
 @mixin fs-clearfix {
-	&:before,
-	&:after {
-		content: " "; // 1
-		display: table; // 2
-	}
-	&:after {
-		clear: both;
-	}
+    &:before,
+    &:after {
+        content: " "; // 1
+        display: table; // 2
+    }
+    &:after {
+        clear: both;
+    }
 }
 
 ///
@@ -37,9 +37,9 @@
 /// @since 1.0.0
 ///
 @mixin fs-aligncenter {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 ///
@@ -48,8 +48,8 @@
 /// @since 1.0.0
 ///
 @mixin fs-alignleft {
-	float: left !important; // @noflip
-	margin: 5px 20px 5px 0; // @noflip
+    float: left !important; // @noflip
+    margin: 5px 20px 5px 0; // @noflip
 }
 
 ///
@@ -58,8 +58,8 @@
 /// @since 1.0.0
 ///
 @mixin fs-alignright {
-	float: right !important; // @noflip
-	margin: 5px 0 5px 20px; // @noflip
+    float: right !important; // @noflip
+    margin: 5px 0 5px 20px; // @noflip
 }
 
 ///
@@ -68,7 +68,7 @@
 /// @since 1.0.0
 ///
 @mixin fs-hide-text {
-	text-indent: -9999px;
+    text-indent: -9999px;
 }
 
 ///
@@ -77,9 +77,9 @@
 /// @since 1.0.0
 ///
 @mixin fs-hide($parent) {
-	#{$parent} {
-		display: none !important;
-	}
+    #{$parent} {
+        display: none !important;
+    }
 }
 
 ///
@@ -88,9 +88,9 @@
 /// @since 1.0.0
 ///
 @mixin fs-show-block($parent) {
-	#{$parent} {
-		display: block !important;
-	}
+    #{$parent} {
+        display: block !important;
+    }
 }
 
 ///
@@ -99,9 +99,9 @@
 /// @since 1.0.0
 ///
 @mixin fs-show-flex($parent) {
-	#{$parent} {
-		display: flex !important;
-	}
+    #{$parent} {
+        display: flex !important;
+    }
 }
 
 ///
@@ -110,9 +110,9 @@
 /// @since 1.0.0
 ///
 @mixin fs-visible($parent) {
-	#{$parent} {
-		visibility: visible;
-	}
+    #{$parent} {
+        visibility: visible;
+    }
 }
 
 ///
@@ -121,7 +121,7 @@
 /// @since 1.0.0
 ///
 @mixin fs-invisible($parent) {
-	#{$parent} {
-		visibility: hidden;
-	}
+    #{$parent} {
+        visibility: hidden;
+    }
 }

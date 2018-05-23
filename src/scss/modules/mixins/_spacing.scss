@@ -14,12 +14,12 @@
 /// @since 1.0.0
 ///
 @mixin fs-margin-vert-flush {
-	&:first-child {
-		margin-top: 0;
-	}
-	&:last-child {
-		margin-bottom: 0;
-	}
+    &:first-child {
+        margin-top: 0;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
 ///
@@ -30,10 +30,10 @@
 /// @since 1.0.0
 ///
 @mixin fs-margin-horz-flush {
-	&:first-child {
-		margin-left: 0;
-	}
-	&:last-child {
-		margin-right: 0;
-	}
+    &:first-child {
+        margin-left: 0;
+    }
+    &:last-child {
+        margin-right: 0;
+    }
 }
