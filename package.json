@@ -4,7 +4,7 @@
   "description": "Front Street Front-End Framework",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "browser-sync start --server 'docs' --files *"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/themeblvd/frontstreet",
   "devDependencies": {
+    "browser-sync": "latest",
     "escape-html": "latest",
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
