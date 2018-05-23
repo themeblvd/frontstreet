@@ -171,6 +171,8 @@ gulp.task("render-project-css", ["render-project-clean"], function() {
     var files = [
         "src/scss/frontstreet.scss",
         "src/scss/frontstreet-rtl.scss",
+        "src/scss/frontstreet-core.scss",
+        "src/scss/frontstreet-core-rtl.scss",
         "src/scss/frontstreet-colors.scss"
     ];
 
