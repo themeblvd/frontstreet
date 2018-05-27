@@ -13,7 +13,7 @@
   background-color: #22303d;
 }
 
-.btn.btn-asphalt:active, .btn.btn-asphalt.active, [type=submit].btn-asphalt:active, [type=submit].btn-asphalt.active {
+.btn.btn-asphalt:active, .btn.btn-asphalt.active, .btn.btn-asphalt.loading, [type=submit].btn-asphalt:active, [type=submit].btn-asphalt.active, [type=submit].btn-asphalt.loading {
   background-color: #19232d;
 }
 
@@ -37,7 +37,7 @@
   background-color: #00284c;
 }
 
-.btn.btn-blue:active, .btn.btn-blue.active, [type=submit].btn-blue:active, [type=submit].btn-blue.active {
+.btn.btn-blue:active, .btn.btn-blue.active, .btn.btn-blue.loading, [type=submit].btn-blue:active, [type=submit].btn-blue.active, [type=submit].btn-blue.loading {
   background-color: #001b33;
 }
 
@@ -61,7 +61,7 @@
   background-color: black;
 }
 
-.btn.btn-black:active, .btn.btn-black.active, [type=submit].btn-black:active, [type=submit].btn-black.active {
+.btn.btn-black:active, .btn.btn-black.active, .btn.btn-black.loading, [type=submit].btn-black:active, [type=submit].btn-black.active, [type=submit].btn-black.loading {
   background-color: black;
 }
 
@@ -85,7 +85,7 @@
   background-color: #5c401f;
 }
 
-.btn.btn-brown:active, .btn.btn-brown.active, [type=submit].btn-brown:active, [type=submit].btn-brown.active {
+.btn.btn-brown:active, .btn.btn-brown.active, .btn.btn-brown.loading, [type=submit].btn-brown:active, [type=submit].btn-brown.active, [type=submit].btn-brown.loading {
   background-color: #493219;
 }
 
@@ -109,7 +109,7 @@
   background-color: #798d8f;
 }
 
-.btn.btn-concrete:active, .btn.btn-concrete.active, [type=submit].btn-concrete:active, [type=submit].btn-concrete.active {
+.btn.btn-concrete:active, .btn.btn-concrete.active, .btn.btn-concrete.loading, [type=submit].btn-concrete:active, [type=submit].btn-concrete.active, [type=submit].btn-concrete.loading {
   background-color: #6d8082;
 }
 
@@ -133,7 +133,7 @@
   background-color: #f2ca3e;
 }
 
-.btn.btn-cream:active, .btn.btn-cream.active, [type=submit].btn-cream:active, [type=submit].btn-cream.active {
+.btn.btn-cream:active, .btn.btn-cream.active, .btn.btn-cream.loading, [type=submit].btn-cream:active, [type=submit].btn-cream.active, [type=submit].btn-cream.loading {
   background-color: #f0c326;
 }
 
@@ -157,7 +157,7 @@
   background-color: #991f22;
 }
 
-.btn.btn-crimson:active, .btn.btn-crimson.active, [type=submit].btn-crimson:active, [type=submit].btn-crimson.active {
+.btn.btn-crimson:active, .btn.btn-crimson.active, .btn.btn-crimson.loading, [type=submit].btn-crimson:active, [type=submit].btn-crimson.active, [type=submit].btn-crimson.loading {
   background-color: #831a1d;
 }
 
@@ -181,7 +181,7 @@
   background-color: #0b2231;
 }
 
-.btn.btn-dark-blue:active, .btn.btn-dark-blue.active, [type=submit].btn-dark-blue:active, [type=submit].btn-dark-blue.active {
+.btn.btn-dark-blue:active, .btn.btn-dark-blue.active, .btn.btn-dark-blue.loading, [type=submit].btn-dark-blue:active, [type=submit].btn-dark-blue.active, [type=submit].btn-dark-blue.loading {
   background-color: #07141c;
 }
 
@@ -205,7 +205,7 @@
   background-color: #271502;
 }
 
-.btn.btn-dark-brown:active, .btn.btn-dark-brown.active, [type=submit].btn-dark-brown:active, [type=submit].btn-dark-brown.active {
+.btn.btn-dark-brown:active, .btn.btn-dark-brown.active, .btn.btn-dark-brown.loading, [type=submit].btn-dark-brown:active, [type=submit].btn-dark-brown.active, [type=submit].btn-dark-brown.loading {
   background-color: #0f0801;
 }
 
@@ -229,7 +229,7 @@
   background-color: #2a3513;
 }
 
-.btn.btn-dark-green:active, .btn.btn-dark-green.active, [type=submit].btn-dark-green:active, [type=submit].btn-dark-green.active {
+.btn.btn-dark-green:active, .btn.btn-dark-green.active, .btn.btn-dark-green.loading, [type=submit].btn-dark-green:active, [type=submit].btn-dark-green.active, [type=submit].btn-dark-green.loading {
   background-color: #1b220c;
 }
 
@@ -253,7 +253,7 @@
   background-color: #412c4a;
 }
 
-.btn.btn-dark-purple:active, .btn.btn-dark-purple.active, [type=submit].btn-dark-purple:active, [type=submit].btn-dark-purple.active {
+.btn.btn-dark-purple:active, .btn.btn-dark-purple.active, .btn.btn-dark-purple.loading, [type=submit].btn-dark-purple:active, [type=submit].btn-dark-purple.active, [type=submit].btn-dark-purple.loading {
   background-color: #33223a;
 }
 
@@ -277,7 +277,7 @@
   background-color: #003120;
 }
 
-.btn.btn-forest:active, .btn.btn-forest.active, [type=submit].btn-forest:active, [type=submit].btn-forest.active {
+.btn.btn-forest:active, .btn.btn-forest.active, .btn.btn-forest.loading, [type=submit].btn-forest:active, [type=submit].btn-forest.active, [type=submit].btn-forest.loading {
   background-color: #001810;
 }
 
@@ -301,7 +301,7 @@
   background-color: #1d7d44;
 }
 
-.btn.btn-green:active, .btn.btn-green.active, [type=submit].btn-green:active, [type=submit].btn-green.active {
+.btn.btn-green:active, .btn.btn-green.active, .btn.btn-green.loading, [type=submit].btn-green:active, [type=submit].btn-green.active, [type=submit].btn-green.loading {
   background-color: #186839;
 }
 
@@ -325,7 +325,7 @@
   background-color: #2a8c83;
 }
 
-.btn.btn-jungle:active, .btn.btn-jungle.active, [type=submit].btn-jungle:active, [type=submit].btn-jungle.active {
+.btn.btn-jungle:active, .btn.btn-jungle.active, .btn.btn-jungle.loading, [type=submit].btn-jungle:active, [type=submit].btn-jungle.active, [type=submit].btn-jungle.loading {
   background-color: #247871;
 }
 
@@ -349,7 +349,7 @@
   background-color: #605954;
 }
 
-.btn.btn-mauve:active, .btn.btn-mauve.active, [type=submit].btn-mauve:active, [type=submit].btn-mauve.active {
+.btn.btn-mauve:active, .btn.btn-mauve.active, .btn.btn-mauve.loading, [type=submit].btn-mauve:active, [type=submit].btn-mauve.active, [type=submit].btn-mauve.loading {
   background-color: #524c48;
 }
 
@@ -373,7 +373,7 @@
   background-color: #f07d00;
 }
 
-.btn.btn-orange:active, .btn.btn-orange.active, [type=submit].btn-orange:active, [type=submit].btn-orange.active {
+.btn.btn-orange:active, .btn.btn-orange.active, .btn.btn-orange.loading, [type=submit].btn-orange:active, [type=submit].btn-orange.active, [type=submit].btn-orange.loading {
   background-color: #d77000;
 }
 
@@ -397,7 +397,7 @@
   background-color: #f04a57;
 }
 
-.btn.btn-peach:active, .btn.btn-peach.active, [type=submit].btn-peach:active, [type=submit].btn-peach.active {
+.btn.btn-peach:active, .btn.btn-peach.active, .btn.btn-peach.loading, [type=submit].btn-peach:active, [type=submit].btn-peach.active, [type=submit].btn-peach.loading {
   background-color: #ee3242;
 }
 
@@ -421,7 +421,7 @@
   background-color: #a78d7f;
 }
 
-.btn.btn-pearl:active, .btn.btn-pearl.active, [type=submit].btn-pearl:active, [type=submit].btn-pearl.active {
+.btn.btn-pearl:active, .btn.btn-pearl.active, .btn.btn-pearl.loading, [type=submit].btn-pearl:active, [type=submit].btn-pearl.active, [type=submit].btn-pearl.loading {
   background-color: #9d8070;
 }
 
@@ -445,7 +445,7 @@
   background-color: #bb1e68;
 }
 
-.btn.btn-pink:active, .btn.btn-pink.active, [type=submit].btn-pink:active, [type=submit].btn-pink.active {
+.btn.btn-pink:active, .btn.btn-pink.active, .btn.btn-pink.loading, [type=submit].btn-pink:active, [type=submit].btn-pink.active, [type=submit].btn-pink.loading {
   background-color: #a51a5c;
 }
 
@@ -469,7 +469,7 @@
   background-color: #d62c1a;
 }
 
-.btn.btn-pomegranate:active, .btn.btn-pomegranate.active, [type=submit].btn-pomegranate:active, [type=submit].btn-pomegranate.active {
+.btn.btn-pomegranate:active, .btn.btn-pomegranate.active, .btn.btn-pomegranate.loading, [type=submit].btn-pomegranate:active, [type=submit].btn-pomegranate.active, [type=submit].btn-pomegranate.loading {
   background-color: #bf2718;
 }
 
@@ -493,7 +493,7 @@
   background-color: #5c386c;
 }
 
-.btn.btn-purple:active, .btn.btn-purple.active, [type=submit].btn-purple:active, [type=submit].btn-purple.active {
+.btn.btn-purple:active, .btn.btn-purple.active, .btn.btn-purple.loading, [type=submit].btn-purple:active, [type=submit].btn-purple.active, [type=submit].btn-purple.loading {
   background-color: #4d2f5b;
 }
 
@@ -517,7 +517,7 @@
   background-color: #651417;
 }
 
-.btn.btn-red:active, .btn.btn-red.active, [type=submit].btn-red:active, [type=submit].btn-red.active {
+.btn.btn-red:active, .btn.btn-red.active, .btn.btn-red.loading, [type=submit].btn-red:active, [type=submit].btn-red.active, [type=submit].btn-red.loading {
   background-color: #4f1012;
 }
 
@@ -541,7 +541,7 @@
   background-color: #3071a9;
 }
 
-.btn.btn-royal:active, .btn.btn-royal.active, [type=submit].btn-royal:active, [type=submit].btn-royal.active {
+.btn.btn-royal:active, .btn.btn-royal.active, .btn.btn-royal.loading, [type=submit].btn-royal:active, [type=submit].btn-royal.active, [type=submit].btn-royal.loading {
   background-color: #2a6496;
 }
 
@@ -565,7 +565,7 @@
   background-color: #657383;
 }
 
-.btn.btn-slate-grey:active, .btn.btn-slate-grey.active, [type=submit].btn-slate-grey:active, [type=submit].btn-slate-grey.active {
+.btn.btn-slate-grey:active, .btn.btn-slate-grey.active, .btn.btn-slate-grey.loading, [type=submit].btn-slate-grey:active, [type=submit].btn-slate-grey.active, [type=submit].btn-slate-grey.loading {
   background-color: #5a6774;
 }
 
@@ -589,7 +589,7 @@
   background-color: #a1aab0;
 }
 
-.btn.btn-silver:active, .btn.btn-silver.active, [type=submit].btn-silver:active, [type=submit].btn-silver.active {
+.btn.btn-silver:active, .btn.btn-silver.active, .btn.btn-silver.loading, [type=submit].btn-silver:active, [type=submit].btn-silver.active, [type=submit].btn-silver.loading {
   background-color: #949da4;
 }
 
@@ -613,7 +613,7 @@
   background-color: #395f9d;
 }
 
-.btn.btn-steel-blue:active, .btn.btn-steel-blue.active, [type=submit].btn-steel-blue:active, [type=submit].btn-steel-blue.active {
+.btn.btn-steel-blue:active, .btn.btn-steel-blue.active, .btn.btn-steel-blue.loading, [type=submit].btn-steel-blue:active, [type=submit].btn-steel-blue.active, [type=submit].btn-steel-blue.loading {
   background-color: #32548a;
 }
 
@@ -637,7 +637,7 @@
   background-color: #004d4d;
 }
 
-.btn.btn-teal:active, .btn.btn-teal.active, [type=submit].btn-teal:active, [type=submit].btn-teal.active {
+.btn.btn-teal:active, .btn.btn-teal.active, .btn.btn-teal.loading, [type=submit].btn-teal:active, [type=submit].btn-teal.active, [type=submit].btn-teal.loading {
   background-color: #003434;
 }
 
@@ -661,7 +661,7 @@
   background-color: #24b699;
 }
 
-.btn.btn-turquoise:active, .btn.btn-turquoise.active, [type=submit].btn-turquoise:active, [type=submit].btn-turquoise.active {
+.btn.btn-turquoise:active, .btn.btn-turquoise.active, .btn.btn-turquoise.loading, [type=submit].btn-turquoise:active, [type=submit].btn-turquoise.active, [type=submit].btn-turquoise.loading {
   background-color: #20a187;
 }
 
@@ -685,7 +685,7 @@
   background-color: #c49f10;
 }
 
-.btn.btn-yellow:active, .btn.btn-yellow.active, [type=submit].btn-yellow:active, [type=submit].btn-yellow.active {
+.btn.btn-yellow:active, .btn.btn-yellow.active, .btn.btn-yellow.loading, [type=submit].btn-yellow:active, [type=submit].btn-yellow.active, [type=submit].btn-yellow.loading {
   background-color: #ac8c0e;
 }
 
@@ -709,7 +709,7 @@
   background-color: #a0976c;
 }
 
-.btn.btn-wheat:active, .btn.btn-wheat.active, [type=submit].btn-wheat:active, [type=submit].btn-wheat.active {
+.btn.btn-wheat:active, .btn.btn-wheat.active, .btn.btn-wheat.loading, [type=submit].btn-wheat:active, [type=submit].btn-wheat.active, [type=submit].btn-wheat.loading {
   background-color: #938a5f;
 }
 
@@ -733,7 +733,7 @@
   background-color: #e6e6e6;
 }
 
-.btn.btn-white:active, .btn.btn-white.active, [type=submit].btn-white:active, [type=submit].btn-white.active {
+.btn.btn-white:active, .btn.btn-white.active, .btn.btn-white.loading, [type=submit].btn-white:active, [type=submit].btn-white.active, [type=submit].btn-white.loading {
   background-color: #d9d9d9;
 }
 

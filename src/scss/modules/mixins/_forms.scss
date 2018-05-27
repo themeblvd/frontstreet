@@ -109,7 +109,8 @@
         }
 
         &:active,
-        &.active {
+        &.active,
+        &.loading {
             @if $bg-hover != null {
                 background-color: darken($bg-hover, 5%);
             } @else {

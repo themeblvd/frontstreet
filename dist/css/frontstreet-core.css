@@ -3258,7 +3258,7 @@ textarea::placeholder {
   background-color: #eeeeee;
 }
 
-.btn.btn-default:active, .btn.btn-default.active, [type=submit].btn-default:active, [type=submit].btn-default.active {
+.btn.btn-default:active, .btn.btn-default.active, .btn.btn-default.loading, [type=submit].btn-default:active, [type=submit].btn-default.active, [type=submit].btn-default.loading {
   background-color: #e1e1e1;
 }
 
@@ -3282,7 +3282,7 @@ textarea::placeholder {
   background-color: #eeeeee;
 }
 
-.btn.btn-light:active, .btn.btn-light.active, [type=submit].btn-light:active, [type=submit].btn-light.active {
+.btn.btn-light:active, .btn.btn-light.active, .btn.btn-light.loading, [type=submit].btn-light:active, [type=submit].btn-light.active, [type=submit].btn-light.loading {
   background-color: #e1e1e1;
 }
 
@@ -3306,7 +3306,7 @@ textarea::placeholder {
   background-color: #020202;
 }
 
-.btn.btn-primary:active, .btn.btn-primary.active, [type=submit].btn-primary:active, [type=submit].btn-primary.active {
+.btn.btn-primary:active, .btn.btn-primary.active, .btn.btn-primary.loading, [type=submit].btn-primary:active, [type=submit].btn-primary.active, [type=submit].btn-primary.loading {
   background-color: black;
 }
 
@@ -3330,7 +3330,7 @@ textarea::placeholder {
   background-color: #0e8bdf;
 }
 
-.btn.btn-secondary:active, .btn.btn-secondary.active, [type=submit].btn-secondary:active, [type=submit].btn-secondary.active {
+.btn.btn-secondary:active, .btn.btn-secondary.active, .btn.btn-secondary.loading, [type=submit].btn-secondary:active, [type=submit].btn-secondary.active, [type=submit].btn-secondary.loading {
   background-color: #0c7cc7;
 }
 
@@ -3354,7 +3354,7 @@ textarea::placeholder {
   background-color: #c1e2b3;
 }
 
-.btn.btn-success:active, .btn.btn-success.active, [type=submit].btn-success:active, [type=submit].btn-success.active {
+.btn.btn-success:active, .btn.btn-success.active, .btn.btn-success.loading, [type=submit].btn-success:active, [type=submit].btn-success.active, [type=submit].btn-success.loading {
   background-color: #b2dba1;
 }
 
@@ -3378,7 +3378,7 @@ textarea::placeholder {
   background-color: #afd9ee;
 }
 
-.btn.btn-info:active, .btn.btn-info.active, [type=submit].btn-info:active, [type=submit].btn-info.active {
+.btn.btn-info:active, .btn.btn-info.active, .btn.btn-info.loading, [type=submit].btn-info:active, [type=submit].btn-info.active, [type=submit].btn-info.loading {
   background-color: #9acfea;
 }
 
@@ -3402,7 +3402,7 @@ textarea::placeholder {
   background-color: #f7ecb5;
 }
 
-.btn.btn-warning:active, .btn.btn-warning.active, [type=submit].btn-warning:active, [type=submit].btn-warning.active {
+.btn.btn-warning:active, .btn.btn-warning.active, .btn.btn-warning.loading, [type=submit].btn-warning:active, [type=submit].btn-warning.active, [type=submit].btn-warning.loading {
   background-color: #f5e79e;
 }
 
@@ -3426,7 +3426,7 @@ textarea::placeholder {
   background-color: #e4b9b9;
 }
 
-.btn.btn-danger:active, .btn.btn-danger.active, [type=submit].btn-danger:active, [type=submit].btn-danger.active {
+.btn.btn-danger:active, .btn.btn-danger.active, .btn.btn-danger.loading, [type=submit].btn-danger:active, [type=submit].btn-danger.active, [type=submit].btn-danger.loading {
   background-color: #dca7a7;
 }
 
