@@ -65,7 +65,7 @@ abbr[title] {
 
 b,
 strong {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 dfn {
@@ -211,7 +211,7 @@ textarea {
 }
 
 optgroup {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 table {
@@ -2265,7 +2265,7 @@ tt,
 var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 code {
@@ -2295,7 +2295,7 @@ kbd {
 kbd kbd {
   padding: 0;
   font-size: 100%;
-  font-weight: bold;
+  font-weight: 700;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
@@ -2392,7 +2392,7 @@ blockquote.pull-right blockquote.alignright {
 blockquote cite {
   display: block;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 700;
   margin-top: 0.8em;
   text-transform: uppercase;
 }
@@ -2438,7 +2438,7 @@ li > ol {
 }
 
 dt {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 dd {
@@ -2515,7 +2515,7 @@ table:last-child {
 
 table th {
   color: #333;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 table th,
@@ -2745,7 +2745,7 @@ label,
 .label {
   color: #333;
   display: inline-block;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 14px;
   margin: 0 4px 15px 4px;
   max-width: 100%;
@@ -2774,7 +2774,7 @@ legend,
   color: #333;
   display: block;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 700;
   border: 0;
   padding: 0;
   line-height: inherit;
@@ -3171,7 +3171,7 @@ textarea::placeholder {
   cursor: pointer;
   display: inline-block;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0.12em;
   line-height: 16px;
   margin-bottom: 0;
@@ -3830,7 +3830,7 @@ input[type="button"].btn-block {
   color: #fff;
   display: inline-block;
   font-size: 10px;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 1;
   padding: 6px 10px;
   text-align: center;

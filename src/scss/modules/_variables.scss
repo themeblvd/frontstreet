@@ -159,11 +159,11 @@ $fs-font-style-address					: normal !default;
 // Font Weights
 
 $fs-font-weight-base					: 300 !default;
-$fs-font-weight-bold					: bold !default;
-$fs-font-weight-heading					: 700 !default;
-$fs-font-weight-heading-lg				: 700 !default;
-$fs-font-weight-heading-sm				: 700 !default;
-$fs-font-weight-btn						: 500 !default;
+$fs-font-weight-bold					: 700 !default;
+$fs-font-weight-heading					: $fs-font-weight-bold !default;
+$fs-font-weight-heading-lg				: $fs-font-weight-bold !default;
+$fs-font-weight-heading-sm				: $fs-font-weight-bold !default;
+$fs-font-weight-btn						: $fs-font-weight-bold !default;
 $fs-font-weight-menu-bar-btn			: $fs-font-weight-base !default;
 $fs-font-weight-submenu-btn				: $fs-font-weight-btn !default;
 $fs-font-weight-mobile-menu-bar-btn		: $fs-font-weight-menu-bar-btn !default;
