@@ -645,6 +645,9 @@ $fs-btn-border-width					: 2px !default; // Transparent on standard .btn
 
 $fs-btn-selector						: ".btn, [type=submit]" !default;
 
+$fs-btn-loading-gradient-size			: 20px;
+$fs-btn-loading-animation-duration		: 1s;
+
 // Button Sizes
 
 $fs-btn-sizes : (

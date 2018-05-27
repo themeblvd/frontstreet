@@ -3875,6 +3875,73 @@ input[type="button"].btn-block {
   margin-left: 0.8em;
 }
 
+.btn.loading {
+  cursor: wait;
+  overflow: hidden;
+  position: relative;
+}
+
+.btn.loading:after {
+  content: "";
+  -webkit-animation-name: fs-btn-loading;
+  -o-animation-name: fs-btn-loading;
+  animation-name: fs-btn-loading;
+  -webkit-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  background: -webkit-repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.25) 0, rgba(255, 255, 255, 0.25) 10px, transparent 10px, transparent 20px);
+  background: -o-repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.25) 0, rgba(255, 255, 255, 0.25) 10px, transparent 10px, transparent 20px);
+  background: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.25) 0, rgba(255, 255, 255, 0.25) 10px, transparent 10px, transparent 20px);
+  display: block;
+  position: absolute;
+  left: -30px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+@-webkit-keyframes fs-btn-loading {
+  from {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  to {
+    -webkit-transform: translate(28px, 0);
+    transform: translate(28px, 0);
+  }
+}
+
+@-o-keyframes fs-btn-loading {
+  from {
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  to {
+    -o-transform: translate(28px, 0);
+    transform: translate(28px, 0);
+  }
+}
+
+@keyframes fs-btn-loading {
+  from {
+    -webkit-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  to {
+    -webkit-transform: translate(28px, 0);
+    -o-transform: translate(28px, 0);
+    transform: translate(28px, 0);
+  }
+}
+
 .fs-embed {
   display: block;
   height: 0;
