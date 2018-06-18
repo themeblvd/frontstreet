@@ -102,7 +102,7 @@ label,
 
     @include fs-margin-vert-flush;
 
-    @each $name in $fs-clr-contextual {
+    @each $name, $map in $fs-clr-contextual {
         &.#{$name} {
             background-color: transparent;
         }
