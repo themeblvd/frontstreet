@@ -19,14 +19,6 @@
     return;
   }
 
-  if ('undefined' === typeof frontStreet.doComponent) {
-    return;
-  }
-
-  if (!frontStreet.doComponent('tooltip')) {
-    return;
-  }
-
   var $document = frontStreet.dom.document;
 
   frontStreet.tooltip = {};

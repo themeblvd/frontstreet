@@ -23,14 +23,6 @@
     return;
   }
 
-  if ('undefined' === typeof frontStreet.doComponent) {
-    return;
-  }
-
-  if (!frontStreet.doComponent('menu')) {
-    return;
-  }
-
   var $body = frontStreet.dom.body,
     $document = frontStreet.dom.document;
 

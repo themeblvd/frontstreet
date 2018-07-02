@@ -23,14 +23,6 @@
     return;
   }
 
-  if ('undefined' === typeof frontStreet.doComponent) {
-    return;
-  }
-
-  if (!frontStreet.doComponent('slider')) {
-    return;
-  }
-
   if (!$.fn.owlCarousel) {
     return;
   }

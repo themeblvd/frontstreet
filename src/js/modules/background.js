@@ -22,14 +22,6 @@
     return;
   }
 
-  if ('undefined' === typeof frontStreet.doComponent) {
-    return;
-  }
-
-  if (!frontStreet.doComponent('background')) {
-    return;
-  }
-
   var $window = frontStreet.dom.window;
 
   frontStreet.background = {};

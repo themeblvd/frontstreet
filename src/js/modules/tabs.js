@@ -17,14 +17,6 @@
     return;
   }
 
-  if ('undefined' === typeof frontStreet.doComponent) {
-    return;
-  }
-
-  if (!frontStreet.doComponent('tabs')) {
-    return;
-  }
-
   var $window = frontStreet.dom.window,
     $document = frontStreet.dom.document;
 

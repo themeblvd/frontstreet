@@ -21,14 +21,6 @@
     return;
   }
 
-  if ('undefined' === typeof frontStreet.doComponent) {
-    return;
-  }
-
-  if (!frontStreet.doComponent('modal')) {
-    return;
-  }
-
   if (!$.fn.magnificPopup) {
     return;
   }

@@ -72,30 +72,6 @@ window.frontStreet = {};
   };
 
   /**
-   * Checks if a framework component should be loaded.
-   *
-   * @since 1.0.0
-   *
-   * @param  {string} component Framework component ID.
-   * @return {bool}             Whether to include component.
-   */
-  frontStreet.doComponent = function(component) {
-    if ('undefined' === typeof frontStreet.config[component]) {
-      return true; // All components are true by default.
-    }
-
-    if (false === frontStreet.config[component]) {
-      return false;
-    }
-
-    if ('false' === frontStreet.config[component]) {
-      return false;
-    }
-
-    return true;
-  };
-
-  /**
    * Checks if website is being loaded from a mobile
    * device.
    *

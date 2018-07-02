@@ -17,14 +17,6 @@
     return;
   }
 
-  if ('undefined' === typeof frontStreet.doComponent) {
-    return;
-  }
-
-  if (!frontStreet.doComponent('toggle')) {
-    return;
-  }
-
   var $document = frontStreet.dom.document;
 
   frontStreet.toggle = {};

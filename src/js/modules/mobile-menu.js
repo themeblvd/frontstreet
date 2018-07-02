@@ -16,14 +16,6 @@
     return;
   }
 
-  if ('undefined' === typeof frontStreet.doComponent) {
-    return;
-  }
-
-  if (!frontStreet.doComponent('mobile-menu')) {
-    return;
-  }
-
   frontStreet.mobileMenu = {};
 
   /**
