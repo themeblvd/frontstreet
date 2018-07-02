@@ -2,7 +2,7 @@ import $ from 'jquery';
 import { dom } from './modules/utils';
 import Background from './modules/background';
 import Menu from './modules/menu';
-// import './modules/mobile-menu';
+import MobileMenu from './modules/mobile-menu';
 // import './modules/modal';
 // import './modules/slider';
 import Tabs from './modules/tabs';
@@ -23,6 +23,8 @@ $.fn.frontstreet = function(component, options) {
     switch (component) {
       case 'background':
         return new Background(this, options);
+      case 'mobile-menu':
+        return new MobileMenu(this, options);
       case 'menu':
         return new Menu(this, options);
       case 'tabs':
