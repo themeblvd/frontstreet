@@ -3,7 +3,7 @@ import { dom } from './modules/utils';
 
 // import './modules/info';
 // import './modules/init';
-// import './modules/background';
+import Background from './modules/background';
 // import './modules/menu';
 // import './modules/mobile-menu';
 // import './modules/modal';
@@ -18,12 +18,14 @@ import Toggle from './modules/toggle';
  *
  * @since 1.0.0
  *
- * @param {string} component Framework component ID.
- * @param {object} options   Options for component.
+ * @param {String} component Framework component ID.
+ * @param {Object} options   Options for component.
  */
 $.fn.frontstreet = function(component, options) {
   return this.each(function() {
     switch (component) {
+      case 'background':
+        return new Background(this, options);
       case 'tabs':
         return new Tabs(this, options);
       case 'toggle':
@@ -32,7 +34,7 @@ $.fn.frontstreet = function(component, options) {
   });
 };
 
-const { $document } = dom;
+const { $document, $window } = dom;
 
 $document.ready(function($) {
   /**
@@ -48,4 +50,22 @@ $document.ready(function($) {
    * @since 1.0.0
    */
   $('.fs-toggle').frontstreet('toggle');
+});
+
+$window.on('load', function() {
+  /**
+   * Self-invokes the background slider of the
+   * `background` component.
+   *
+   * @since 1.0.0
+   */
+  $('.fs-bg-slider').frontstreet('background', { type: 'slider' });
+
+  /**
+   * Self-invokes the parallax effect of the
+   * `background` component.
+   *
+   * @since 1.0.0
+   */
+  $('.fs-bg-parallax').frontstreet('background', { type: 'parallax' });
 });
