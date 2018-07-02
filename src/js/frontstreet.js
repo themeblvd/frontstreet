@@ -7,7 +7,7 @@ import MobileMenu from './modules/mobile-menu';
 // import './modules/slider';
 import Tabs from './modules/tabs';
 import Toggle from './modules/toggle';
-// import './modules/tooltip';
+import Tooltip from './modules/tooltip';
 
 /**
  * Adds all components as one item to the jQuery
@@ -31,6 +31,8 @@ $.fn.frontstreet = function(component, options) {
         return new Tabs(this, options);
       case 'toggle':
         return new Toggle(this, options);
+      case 'tooltip':
+        return new Tooltip(this, options);
     }
   });
 };
@@ -88,6 +90,13 @@ $document.ready(function($) {
    * @since 1.0.0
    */
   $('.fs-toggle').frontstreet('toggle');
+
+  /**
+   * Binds the default `tooltip` component.
+   *
+   * @since 1.0.0
+   */
+  $('.fs-tooltip-trigger').frontstreet('tooltip');
 });
 
 $window.on('load', function() {

@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 /**
  * Adds tooltip component functionality.
  *
@@ -9,86 +11,34 @@
  * @author   Jason Bobich
  * @link     http://frontstreet.io
  * @since    1.0.0
- * @module   toggles.js
- * @requires init.js
+ * @module   tooltip.js
  */
-+(function($, frontStreet) {
-  'use strict';
-
-  if ('undefined' === typeof frontStreet) {
-    return;
-  }
-
-  var $document = frontStreet.dom.document;
-
-  frontStreet.tooltip = {};
-
+class Tooltip {
   /**
-   * Default tooltip options.
+   * Initialize the `tooltip` component on a DOM element,
+   * when binded through jQuery.
    *
    * @since 1.0.0
    *
-   * @var {object}
+   * @param {Object} element jQuery DOM element.
+   * @param {Object} options Component options.
    */
-  frontStreet.tooltip.defaults = {
-    placement: 'top',
-    template:
-      '<div class="fs-tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
-    title: '',
-    container: false,
-    viewport: {
-      selector: 'body',
-      padding: 0
-    }
-  };
-
-  /**
-   * Initialize the `tooltip` component.
-   *
-   * @since 1.0.0
-   *
-   * @param {object} element this
-   * @param {object} options Component options.
-   */
-  frontStreet.tooltip.init = function(element, options) {
-    var data = new Tooltip(element, options);
-  };
-
-  $document.ready(function($) {
-    /**
-     * Self-invokes the `tooltip` component.
-     *
-     * @since 1.0.0
-     */
-    $('.fs-tooltip-trigger').frontStreet('tooltip');
-  });
-
-  /**
-   * Tooltip class definition.
-   *
-   * @since 1.0.0
-   */
-  var Tooltip = function(element, options) {
-    this.options = null;
+  constructor(element, options) {
+    this.settings = null;
     this.enabled = null;
     this.timeout = null;
     this.hoverState = null;
     this.$element = null;
     this.inState = null;
-
-    this.init(element, options);
-  };
-
-  Tooltip.prototype.init = function(element, options) {
     this.enabled = true;
     this.$element = $(element);
-    this.options = this.getOptions(options);
+    this.settings = $.extend({}, this.defaults, this.$element.data(), options);
     this.$viewport =
-      this.options.viewport &&
+      this.settings.viewport &&
       $(
-        $.isFunction(this.options.viewport)
-          ? this.options.viewport.call(this, this.$element)
-          : this.options.viewport.selector || this.options.viewport
+        $.isFunction(this.settings.viewport)
+          ? this.settings.viewport.call(this, this.$element)
+          : this.settings.viewport.selector || this.settings.viewport
       );
     this.inState = { click: false, hover: false, focus: false };
 
@@ -97,36 +47,68 @@
 
     this.$element.on('focusin.tooltip', false, $.proxy(this.enter, this));
     this.$element.on('focusout.tooltip', false, $.proxy(this.leave, this));
-  };
 
-  Tooltip.prototype.getDefaults = function() {
-    return frontStreet.tooltip.defaults;
-  };
+    this.getDelegateSettings = this.getDelegateSettings.bind(this);
+    this.enter = this.enter.bind(this);
+    this.isInStateTrue = this.isInStateTrue.bind(this);
+    this.leave = this.leave.bind(this);
+    this.show = this.show.bind(this);
+    this.applyPlacement = this.applyPlacement.bind(this);
+    this.setContent = this.setContent.bind(this);
+    this.hide = this.hide.bind(this);
+    this.hasContent = this.hasContent.bind(this);
+    this.getPosition = this.getPosition.bind(this);
+    this.getCalculatedOffset = this.getCalculatedOffset.bind(this);
+    this.getTitle = this.getTitle.bind(this);
+    this.getUID = this.getUID.bind(this);
+    this.tip = this.tip.bind(this);
+    this.arrow = this.arrow.bind(this);
+    this.enable = this.enable.bind(this);
+    this.disable = this.disable.bind(this);
+    this.toggleEnabled = this.toggleEnabled.bind(this);
+    this.toggle = this.toggle.bind(this);
+    this.destroy = this.destroy.bind(this);
+  }
 
-  Tooltip.prototype.getOptions = function(options) {
-    options = $.extend({}, this.getDefaults(), this.$element.data(), options);
-    return options;
-  };
+  /**
+   * Default tooltip options.
+   *
+   * @since 1.0.0
+   *
+   * @return {Object}
+   */
+  get defaults() {
+    return {
+      placement: 'top',
+      template:
+        '<div class="fs-tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
+      title: '',
+      container: false,
+      viewport: {
+        selector: 'body',
+        padding: 0
+      }
+    };
+  }
 
-  Tooltip.prototype.getDelegateOptions = function() {
-    var options = {},
-      defaults = this.getDefaults();
+  getDelegateSettings() {
+    const settings = {};
 
-    this._options &&
-      $.each(this._options, function(key, value) {
-        if (value != defaults[key]) {
-          options[key] = value;
+    this._settings &&
+      $.each(this._settings, function(key, value) {
+        if (value != this.defaults[key]) {
+          settings[key] = value;
         }
       });
 
-    return options;
-  };
+    return settings;
+  }
 
-  Tooltip.prototype.enter = function(obj) {
+  enter(obj) {
     var self = obj instanceof this.constructor ? obj : $(obj.currentTarget).data('fs.tooltip');
 
     if (!self) {
-      self = new this.constructor(obj.currentTarget, this.getDelegateOptions());
+      self = new this.constructor(obj.currentTarget, this.getDelegateSettings());
       $(obj.currentTarget).data('fs.tooltip', self);
     }
 
@@ -142,9 +124,9 @@
     self.hoverState = 'in';
 
     return self.show();
-  };
+  }
 
-  Tooltip.prototype.isInStateTrue = function() {
+  isInStateTrue() {
     for (var key in this.inState) {
       if (this.inState[key]) {
         return true;
@@ -152,13 +134,13 @@
     }
 
     return false;
-  };
+  }
 
-  Tooltip.prototype.leave = function(obj) {
+  leave(obj) {
     var self = obj instanceof this.constructor ? obj : $(obj.currentTarget).data('fs.tooltip');
 
     if (!self) {
-      self = new this.constructor(obj.currentTarget, this.getDelegateOptions());
+      self = new this.constructor(obj.currentTarget, this.getDelegateSettings());
       $(obj.currentTarget).data('fs.tooltip', self);
     }
 
@@ -173,9 +155,9 @@
     self.hoverState = 'out';
 
     return self.hide();
-  };
+  }
 
-  Tooltip.prototype.show = function() {
+  show() {
     var e = $.Event('show.fs.tooltip');
 
     if (this.hasContent() && this.enabled) {
@@ -197,7 +179,7 @@
 
       $tip.addClass('fade');
 
-      var placement = this.options.placement,
+      var placement = this.settings.placement,
         autoToken = /\s?auto?\s?/i,
         autoPlace = autoToken.test(placement);
 
@@ -211,8 +193,8 @@
         .addClass(placement)
         .data('fs.tooltip', this);
 
-      if (this.options.container) {
-        $tip.appendTo(this.options.container);
+      if (this.settings.container) {
+        $tip.appendTo(this.settings.container);
       } else {
         $tip.insertAfter(this.$element);
       }
@@ -251,9 +233,9 @@
         }
       };
     }
-  };
+  }
 
-  Tooltip.prototype.applyPlacement = function(offset, placement) {
+  applyPlacement(offset, placement) {
     var $tip = this.tip(),
       width = $tip[0].offsetWidth,
       height = $tip[0].offsetHeight,
@@ -295,18 +277,18 @@
     if ('top' == placement && actualHeight != height) {
       offset.top = offset.top + height - actualHeight;
     }
-  };
+  }
 
-  Tooltip.prototype.setContent = function() {
+  setContent() {
     var $tip = this.tip(),
       title = this.getTitle();
 
     $tip.find('.tooltip-inner')['text'](title);
 
     $tip.removeClass('fade in top bottom');
-  };
+  }
 
-  Tooltip.prototype.hide = function(callback) {
+  hide(callback) {
     var that = this,
       $tip = $(this.$tip),
       event = $.Event('hide.fs.tooltip');
@@ -336,13 +318,13 @@
     this.hoverState = null;
 
     return this;
-  };
+  }
 
-  Tooltip.prototype.hasContent = function() {
+  hasContent() {
     return this.getTitle();
-  };
+  }
 
-  Tooltip.prototype.getPosition = function($element) {
+  getPosition($element) {
     if (!$element) {
       $element = this.$element;
     }
@@ -368,9 +350,9 @@
       outerDims = isBody ? { width: $(window).width(), height: $(window).height() } : null;
 
     return $.extend({}, elRect, scroll, outerDims, elOffset);
-  };
+  }
 
-  Tooltip.prototype.getCalculatedOffset = function(placement, pos, actualWidth, actualHeight) {
+  getCalculatedOffset(placement, pos, actualWidth, actualHeight) {
     var offset = {};
 
     if ('bottom' == placement) {
@@ -386,10 +368,10 @@
     }
 
     return offset;
-  };
+  }
 
-  Tooltip.prototype.getTitle = function() {
-    var title = this.options.title;
+  getTitle() {
+    var title = this.settings.title;
 
     if (!title) {
       var $el = this.$element;
@@ -397,19 +379,19 @@
     }
 
     return title;
-  };
+  }
 
-  Tooltip.prototype.getUID = function(prefix) {
+  getUID(prefix) {
     do {
       prefix += ~~(Math.random() * 1000000);
     } while (document.getElementById(prefix));
 
     return prefix;
-  };
+  }
 
-  Tooltip.prototype.tip = function() {
+  tip() {
     if (!this.$tip) {
-      this.$tip = $(this.options.template);
+      this.$tip = $(this.settings.template);
 
       if (this.$tip.length != 1) {
         throw new Error('tooltip `template` option must consist of exactly 1 top-level element!');
@@ -417,32 +399,32 @@
     }
 
     return this.$tip;
-  };
+  }
 
-  Tooltip.prototype.arrow = function() {
+  arrow() {
     return (this.$arrow = this.$arrow || this.tip().find('.tooltip-arrow'));
-  };
+  }
 
-  Tooltip.prototype.enable = function() {
+  enable() {
     this.enabled = true;
-  };
+  }
 
-  Tooltip.prototype.disable = function() {
+  disable() {
     this.enabled = false;
-  };
+  }
 
-  Tooltip.prototype.toggleEnabled = function() {
+  toggleEnabled() {
     this.enabled = !this.enabled;
-  };
+  }
 
-  Tooltip.prototype.toggle = function(event) {
+  toggle(event) {
     var self = this;
 
     if (event) {
       self = $(event.currentTarget).data('fs.tooltip');
 
       if (!self) {
-        self = new this.constructor(event.currentTarget, this.getDelegateOptions());
+        self = new this.constructor(event.currentTarget, this.getDelegateSettings());
         $(event.currentTarget).data('fs.tooltip', self);
       }
     }
@@ -462,9 +444,9 @@
         self.enter(self);
       }
     }
-  };
+  }
 
-  Tooltip.prototype.destroy = function() {
+  destroy() {
     var that = this;
 
     clearTimeout(this.timeout);
@@ -481,5 +463,7 @@
       that.$viewport = null;
       that.$element = null;
     });
-  };
-})(jQuery, window.frontStreet);
+  }
+}
+
+export default Tooltip;
