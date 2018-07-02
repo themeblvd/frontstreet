@@ -3,7 +3,7 @@ import Fuse from 'fuse.js';
 import searchIndex from './search-index';
 import 'owl.carousel';
 import 'magnific-popup';
-import '../../../js/main';
+import '../../../js/frontstreet';
 
 $(document).ready(function($) {
   // Site Search
