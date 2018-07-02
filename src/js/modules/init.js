@@ -46,19 +46,6 @@ window.frontStreet = {};
   }
 
   /**
-   * Global Front Street configuration.
-   *
-   * This configuration can be overridden by
-   * creating an fsConfig object before we
-   * get to this point in the loading process.
-   *
-   * @since 1.0.0
-   *
-   * @var {object}
-   */
-  frontStreet.config = 'undefined' !== typeof fsConfig ? fsConfig : {};
-
-  /**
    * Adds all components as one item to the jQuery
    * namespace.
    *
