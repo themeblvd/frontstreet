@@ -1,3 +1,5 @@
+import { isMobile } from './utils';
+
 /**
  * This file includes the functionality for dropdown
  * menus.
@@ -120,7 +122,7 @@
     });
 
     // Add mobile touch support.
-    if (frontStreet.isMobile()) {
+    if (isMobile()) {
       // Tap anywhere on iOS to unfocus a submenu.
       $('html')
         .css('cursor', 'pointer')

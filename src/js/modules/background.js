@@ -1,3 +1,5 @@
+import { isMobile } from './utils';
+
 /**
  * This file includes the functionality for section
  * parallax background image effects and background
@@ -128,7 +130,7 @@
 		 *
 		 * @see isMobile() function in init.js
 		 */
-    if (!frontStreet.isMobile(true)) {
+    if (!isMobile(true)) {
       // Passing `true` denotes checking viewport size.
 
       parallax = frontStreet.background.parallaxCalc($figure, $img);
@@ -153,7 +155,7 @@
 			 *
 			 * @see isMobile() function in init.js
 			 */
-      if (!frontStreet.isMobile(true)) {
+      if (!isMobile(true)) {
         // Passing `true` denotes checking viewport size.
 
         parallax = frontStreet.background.parallaxCalc($figure, $img);

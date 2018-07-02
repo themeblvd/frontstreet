@@ -59,54 +59,6 @@ window.frontStreet = {};
   frontStreet.config = 'undefined' !== typeof fsConfig ? fsConfig : {};
 
   /**
-   * Store and cache re-usable DOM elements.
-   *
-   * @since 1.0.0
-   *
-   * @var {object}
-   */
-  frontStreet.dom = {
-    window: $(window),
-    document: $(document),
-    body: $('body')
-  };
-
-  /**
-   * Checks if website is being loaded from a mobile
-   * device.
-   *
-   * @since 1.0.0
-   *
-   * @param  {bool} viewportCheck Whether to let viewport size help determine.
-   * @return {bool}               Whether we're on a mobile device.
-   */
-  frontStreet.isMobile = function(viewportCheck) {
-    var $body = frontStreet.dom.body;
-
-    if ($body.hasClass('mobile')) {
-      return true;
-    }
-
-    var agentCheck = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent
-    );
-
-    if (agentCheck) {
-      return true;
-    }
-
-    if (viewportCheck) {
-      var $window = $(window);
-
-      if ($window.width() < 992 || $window.height() < 500) {
-        return true;
-      }
-    }
-
-    return false;
-  };
-
-  /**
    * Adds all components as one item to the jQuery
    * namespace.
    *
