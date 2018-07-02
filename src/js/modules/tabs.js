@@ -1,3 +1,6 @@
+import $ from 'jquery';
+import { dom } from './utils';
+
 /**
  * Adds tabs component functionality, which allows
  * toggling between tab content panes.
@@ -8,45 +11,25 @@
  * @link     http://frontstreet.io
  * @since    1.0.0
  * @module   tabs.js
- * @requires init.js
  */
-+(function($, frontStreet) {
-  'use strict';
-
-  if ('undefined' === typeof frontStreet) {
-    return;
-  }
-
-  var $window = frontStreet.dom.window,
-    $document = frontStreet.dom.document;
-
-  frontStreet.tabs = {};
-
-  /**
-   * Default tabs options.
-   *
-   * @since 1.0.0
-   *
-   * @var {object}
-   */
-  frontStreet.tabs.defaults = {
-    navSelector: '.menu-bar, .submenu-bar, .submenu-tabs, .submenu-pills',
-    height: false,
-    deepLink: false
-  };
-
+class Tabs {
   /**
    * Initialize the `tabs` component on a DOM element,
    * when binded through jQuery.
    *
    * @since 1.0.0
    *
-   * @param {object} element this
-   * @param {object} options Component options (currently not used).
+   * @param {Object} element jQuery DOM element.
+   * @param {Object} options Component options (currently not used).
    */
-  frontStreet.tabs.init = function(element, options) {
-    var $tabs = $(element),
-      settings = $.extend({}, frontStreet.tabs.defaults, options);
+  constructor(element, options) {
+    const $tabs = $(element);
+    const settings = $.extend({}, this.defaults, options);
+    const { $window } = dom;
+
+    this.deepLink = this.deepLink.bind(this);
+
+    const { show, matchHeight, deepLink } = this;
 
     /*
 		 * The following classes being added to the tabs element
@@ -77,7 +60,7 @@
       .find('a')
       .on('click', function(event) {
         event.preventDefault();
-        frontStreet.tabs.show($tabs, $(this), settings);
+        show($tabs, $(this), settings);
       });
 
     // Setup fixed height and/or deep-linking.
@@ -85,29 +68,44 @@
       $window.on('load', function() {
         // Match height of all tabs to tallest.
         if (settings.height) {
-          frontStreet.tabs.matchHeight($tabs);
+          matchHeight($tabs);
         }
 
         // Watch for deep-linking.
         if (settings.deepLink) {
-          frontStreet.tabs.deepLink($tabs, settings);
+          deepLink($tabs, settings);
         }
       });
     }
-  };
+  }
+
+  /**
+   * Default tabs options.
+   *
+   * @since 1.0.0
+   *
+   * @return {Object}
+   */
+  get defaults() {
+    return {
+      navSelector: '.menu-bar, .submenu-bar, .submenu-tabs, .submenu-pills',
+      height: false,
+      deepLink: false
+    };
+  }
 
   /**
    * Show a tab.
    *
    * @since 1.0.0
    *
-   * @param {object} $tabs    The binded jQuery DOM element.
-   * @param {object} $trigger Link (tab) which is triggering new content.
-   * @param {object} settings Component settings.
+   * @param {Object} $tabs    The binded jQuery DOM element.
+   * @param {Object} $trigger Link (tab) which is triggering new content.
+   * @param {Object} settings Component settings.
    */
-  frontStreet.tabs.show = function($tabs, $trigger, settings) {
-    var $nav = $trigger.closest(settings.navSelector),
-      target = $trigger.attr('href').split('#')[1];
+  show($tabs, $trigger, settings) {
+    const $nav = $trigger.closest(settings.navSelector);
+    const target = $trigger.attr('href').split('#')[1];
 
     $nav.find('li').removeClass('active');
 
@@ -127,7 +125,7 @@
       .show(0, function() {
         $(this).addClass('in');
       });
-  };
+  }
 
   /**
    * Set all tab content panes to have equal height, to
@@ -135,14 +133,14 @@
    *
    * @since 1.0.0
    *
-   * @param {object} $tabs The binded jQuery DOM element.
+   * @param {Object} $tabs The binded jQuery DOM element.
    */
-  frontStreet.tabs.matchHeight = function($tabs) {
+  matchHeight($tabs) {
     var tallest = 0;
 
     $tabs.find('.tab-pane').each(function() {
-      var $pane = $(this),
-        currentHeight = $pane.show().outerHeight();
+      const $pane = $(this);
+      const currentHeight = $pane.show().outerHeight();
 
       if (!$pane.hasClass('active')) {
         $pane.hide();
@@ -154,7 +152,7 @@
     });
 
     $tabs.find('.tab-pane').height(tallest);
-  };
+  }
 
   /**
    * Watch for tab deep-linking.
@@ -170,16 +168,16 @@
    *
    * @since 1.0.0
    *
-   * @param {object} $tabs    The binded jQuery DOM element.
-   * @param {object} settings Component settings.
+   * @param {Object} $tabs    The binded jQuery DOM element.
+   * @param {Object} settings Component settings.
    */
-  frontStreet.tabs.deepLink = function($tabs, settings) {
+  deepLink($tabs, settings) {
     var hash = document.location.hash;
 
     if (hash && -1 != hash.indexOf('tab_')) {
       hash = hash.replace('tab_', '');
 
-      frontStreet.tabs.show($tabs, $tabs.find('a[href="' + hash + '"] '), settings);
+      this.show($tabs, $tabs.find('a[href="' + hash + '"] '), settings);
 
       $('html, body').animate(
         {
@@ -188,14 +186,7 @@
         800
       );
     }
-  };
+  }
+}
 
-  $document.ready(function($) {
-    /**
-     * Self-invokes the `tabs` component.
-     *
-     * @since 1.0.0
-     */
-    $('.fs-tabs').frontStreet('tabs');
-  });
-})(jQuery, window.frontStreet);
+export default Tabs;
