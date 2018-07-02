@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 /**
  * Adds toggles component functionality, which allows
  * toggle display of content.
@@ -7,45 +9,24 @@
  * @author   Jason Bobich
  * @link     http://frontstreet.io
  * @since    1.0.0
- * @module   toggles.js
- * @requires init.js
+ * @module   toggle.js
  */
-+(function($, frontStreet) {
-  'use strict';
-
-  if ('undefined' === typeof frontStreet) {
-    return;
-  }
-
-  var $document = frontStreet.dom.document;
-
-  frontStreet.toggle = {};
-
-  /**
-   * Default toggle options.
-   *
-   * @since 1.0.0
-   *
-   * @var {object}
-   */
-  frontStreet.toggle.defaults = {
-    speed: 200,
-    accordion: false
-  };
-
+class Toggle {
   /**
    * Initialize the `tabs` component on a DOM element,
    * when binded through jQuery.
    *
    * @since 1.0.0
    *
-   * @param {object} element this
-   * @param {object} options Component options.
+   * @param {Object} element jQuery DOM element.
+   * @param {Object} options Component options.
    */
-  frontStreet.toggle.init = function(element, options) {
-    var $toggle = $(element),
-      settings = $.extend({}, frontStreet.toggle.defaults, options),
-      $group = null;
+  constructor(element, options) {
+    const $toggle = $(element);
+    const settings = $.extend({}, this.defaults, options);
+    const { open, close } = this;
+
+    var $group = null;
 
     if ($toggle.parents('.toggle-group').length > 0) {
       $group = $toggle.closest('.toggle-group');
@@ -55,15 +36,15 @@
       settings.accordion = true;
     }
 
-    // Setup accessiblity.
+    // Set up accessiblity.
     $toggle.find('.toggle-content').attr('aria-expanded', false);
 
     // Open initially if has class `toggle-expanded`.
     if ($toggle.hasClass('toggle-expanded')) {
-      frontStreet.toggle.open($toggle, settings.speed);
+      open($toggle, settings.speed);
     }
 
-    // Setup toggle click.
+    // Set up toggle click.
     $toggle.find('.toggle-title').on('click', function(event) {
       event.preventDefault();
 
@@ -71,60 +52,67 @@
 
       if ($toggle.hasClass('toggle-expanded')) {
         // Toggle is open; so close it.
-        frontStreet.toggle.close($toggle, settings.speed);
+        close($toggle, settings.speed);
       } else {
         if ($group && settings.accordion) {
           $group.find('.fs-toggle').each(function() {
-            frontStreet.toggle.close($(this), settings.speed);
+            close($(this), settings.speed);
           });
         }
 
         // Toggle is closed; so open it.
-        frontStreet.toggle.open($toggle, settings.speed);
+        open($toggle, settings.speed);
       }
     });
-  };
+  }
+
+  /**
+   * Default toggle options.
+   *
+   * @since 1.0.0
+   *
+   * @return {Object}
+   */
+  get defaults() {
+    return {
+      speed: 200,
+      accordion: false
+    };
+  }
 
   /**
    * Open a toggle.
    *
    * @since 1.0.0
    *
-   * @param {object} $toggle The binded jQuery DOM element.
-   * @param {number} speed   Animation speed in milliseconds.
+   * @param {Object} $toggle The binded jQuery DOM element.
+   * @param {Number} speed   Animation speed in milliseconds.
    */
-  frontStreet.toggle.open = function($toggle, speed) {
+  open($toggle, speed) {
     $toggle
       .addClass('toggle-expanded')
       .find('.toggle-content')
       .stop(true, true)
       .attr('aria-expanded', true)
       .slideDown(speed);
-  };
+  }
 
   /**
    * Close a toggle.
    *
    * @since 1.0.0
    *
-   * @param {object} $toggle The binded jQuery DOM element.
-   * @param {number} speed   Animation speed in milliseconds.
+   * @param {Object} $toggle The binded jQuery DOM element.
+   * @param {Number} speed   Animation speed in milliseconds.
    */
-  frontStreet.toggle.close = function($toggle, speed) {
+  close($toggle, speed) {
     $toggle
       .removeClass('toggle-expanded')
       .find('.toggle-content')
       .stop(true, true)
       .attr('aria-expanded', false)
       .slideUp(speed);
-  };
+  }
+}
 
-  $document.ready(function($) {
-    /**
-     * Self-invokes the `toggle` component.
-     *
-     * @since 1.0.0
-     */
-    $('.fs-toggle').frontStreet('toggle');
-  });
-})(jQuery, window.frontStreet);
+export default Toggle;

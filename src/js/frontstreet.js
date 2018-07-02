@@ -9,7 +9,7 @@ import { dom } from './modules/utils';
 // import './modules/modal';
 // import './modules/slider';
 // import './modules/tabs';
-// import './modules/toggle';
+import Toggle from './modules/toggle';
 // import './modules/tooltip';
 
 /**
@@ -24,6 +24,8 @@ import { dom } from './modules/utils';
 $.fn.frontstreet = function(component, options) {
   return this.each(function() {
     switch (component) {
+      case 'toggle':
+        return new Toggle(this, options);
     }
   });
 };
@@ -31,5 +33,10 @@ $.fn.frontstreet = function(component, options) {
 const { $document } = dom;
 
 $document.ready(function($) {
-  // ...
+  /**
+   * Binds the default the `toggle` component.
+   *
+   * @since 1.0.0
+   */
+  $('.fs-toggle').frontstreet('toggle');
 });
