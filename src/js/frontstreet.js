@@ -1,10 +1,7 @@
 import $ from 'jquery';
 import { dom } from './modules/utils';
-
-// import './modules/info';
-// import './modules/init';
 import Background from './modules/background';
-// import './modules/menu';
+import Menu from './modules/menu';
 // import './modules/mobile-menu';
 // import './modules/modal';
 // import './modules/slider';
@@ -26,6 +23,8 @@ $.fn.frontstreet = function(component, options) {
     switch (component) {
       case 'background':
         return new Background(this, options);
+      case 'menu':
+        return new Menu(this, options);
       case 'tabs':
         return new Tabs(this, options);
       case 'toggle':
@@ -37,6 +36,43 @@ $.fn.frontstreet = function(component, options) {
 const { $document, $window } = dom;
 
 $document.ready(function($) {
+  /**
+   * Binds the default `menu` component.
+   *
+   * @since 1.0.0
+   */
+  $('.fs-menu').frontstreet('menu');
+
+  /**
+   * Adds no-click functionaltiy to any link by
+   * adding class "no-click".
+   *
+   * @since 1.0.0
+   *
+   * @param {Event} event Event interface.
+   */
+  $('a.no-click').on('click', function(event) {
+    event.preventDefault();
+  });
+
+  /**
+   * Adds no-click functionaltiy to any link directly
+   * within an li with class `no-click`.
+   *
+   * Note: This is mainly here to accmodate interfaces
+   * like WordPress which allow building menus, but only
+   * allow adding CSS classes to the menu list items.
+   *
+   * @since 1.0.0
+   *
+   * @param {Event} event Event interface.
+   */
+  $('li.no-click')
+    .find('a:first')
+    .on('click', function(event) {
+      event.preventDefault();
+    });
+
   /**
    * Binds the default `tabs` component.
    *

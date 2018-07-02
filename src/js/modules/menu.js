@@ -1,4 +1,5 @@
-import { isMobile } from './utils';
+import $ from 'jquery';
+import { dom, isMobile } from './utils';
 
 /**
  * This file includes the functionality for dropdown
@@ -16,92 +17,50 @@ import { isMobile } from './utils';
  * @link     http://frontstreet.io
  * @since    1.0.0
  * @module   menu.js
- * @requires init.js
  */
-+(function($, frontStreet) {
-  'use strict';
-
-  if ('undefined' === typeof frontStreet) {
-    return;
-  }
-
-  var $body = frontStreet.dom.body,
-    $document = frontStreet.dom.document;
-
-  frontStreet.menu = {};
-
-  /**
-   * Default menu options.
-   *
-   * @since 1.0.0
-   *
-   * @var {object}
-   */
-  frontStreet.menu.defaults = {
-    delay: 500,
-    dropDownSelector: 'ul:not(.mega-sub-menu), .fs-mega'
-  };
-
-  /**
-   * Assign a unique ID to each menu.
-   *
-   * @since 1.0.0
-   *
-   * @var {number}
-   */
-  frontStreet.menu.count = 0;
-
-  /**
-   * Help with delayed effects between handlers.
-   *
-   * @since 1.0.0
-   *
-   * @var {Array}
-   */
-  frontStreet.menu.timer = [];
-
+class Menu {
   /**
    * Initialize the `menu` component on a DOM element,
    * when binded through jQuery.
    *
    * @since 1.0.0
    *
-   * @param {object} element this
-   * @param {object} options Component options.
+   * @param {Object} element jQuery DOM element.
+   * @param {Object} options Component options.
    */
-  frontStreet.menu.init = function(element, options) {
-    var $menu = $(element),
-      settings = $.extend(
-        {
-          menuID: frontStreet.menu.count++
-        },
-        frontStreet.menu.defaults,
-        options
-      );
+  constructor(element, options) {
+    const $menu = $(element);
+
+    this.settings = $.extend(this.defaults, options);
 
     if ($menu.data('delay') || 0 === $menu.data('delay')) {
-      settings.delay = $menu.data('delay');
+      this.settings.delay = $menu.data('delay');
     }
 
-    frontStreet.menu.timer[settings.menuID] = [];
+    this.timer = {}; // Keep track of delayed transitions.
+    this.flyout = this.flyout.bind(this);
+    this.show = this.show.bind(this);
+    this.hide = this.hide.bind(this);
+
+    const { flyout, show, hide } = this;
 
     $menu.removeClass('no-js');
 
     /*
-		 * Triggers dropdown show and hide, upon mouseenter
-		 * and mouseleave.
-		 */
+     * Triggers dropdown show and hide, upon mouseenter
+     * and mouseleave.
+     */
     $menu
       .find('li')
-      .has(settings.dropDownSelector)
+      .has(this.settings.dropDownSelector)
       .addClass('menu-item-has-children')
       .on('mouseenter', function() {
-        var $trigger = $(this);
-        frontStreet.menu.flyout($trigger, settings); // Determine flyout direction.
-        frontStreet.menu.show($trigger, settings);
+        const $trigger = $(this);
+        flyout($trigger); // Determine and adds class for flyout direction.
+        show($trigger);
       })
       .on('mouseleave', function() {
-        frontStreet.menu.hide($(this), settings);
+        hide($(this));
       });
 
     // Adds CSS classes to each level of the menu, 1-3.
@@ -128,7 +87,21 @@ import { isMobile } from './utils';
         .css('cursor', 'pointer')
         .on('click', $.noop);
     }
-  };
+  }
+
+  /**
+   * Default menu options.
+   *
+   * @since 1.0.0
+   *
+   * @return {Object}
+   */
+  get defaults() {
+    return {
+      delay: 500,
+      dropDownSelector: 'ul:not(.mega-sub-menu), .fs-mega'
+    };
+  }
 
   /**
    * Determines the direction the dropdown menu should
@@ -136,17 +109,18 @@ import { isMobile } from './utils';
    *
    * @since 1.0.0
    *
-   * @param {object} $trigger The parent menu item, for which the dropdown belongs to.
-   * @param {object} settings Current settings.
+   * @param {Object} $trigger The parent menu item, for which the dropdown belongs to.
    */
-  frontStreet.menu.flyout = function($trigger, settings) {
+  flyout($trigger) {
     if (!$trigger.hasClass('level-1')) {
       return;
     }
 
-    var $flyout = $trigger.children(settings.dropDownSelector),
-      location = $trigger.offset(),
-      space = 200;
+    const { dropDownSelector } = this.settings;
+    const { $body } = dom;
+    const $flyout = $trigger.children(dropDownSelector);
+    var location = $trigger.offset();
+    var space = 200;
 
     if ($body.hasClass('rtl')) {
       location = location['right'];
@@ -158,61 +132,61 @@ import { isMobile } from './utils';
       space += space; // Space doubles for level 3.
     }
 
+    // Can't used cached window here.
     if ($(window).width() - location <= space) {
       $flyout.addClass('reverse');
     } else {
       $flyout.removeClass('reverse');
     }
-  };
+  }
 
   /**
    * Shows a dropdown menu.
    *
    * @since 1.0.0
    *
-   * @param {object} $trigger The parent menu item, for which the dropdown belongs to.
-   * @param {object} settings Current settings.
+   * @param {Object} $trigger The parent menu item, for which the dropdown belongs to.
    */
-  frontStreet.menu.show = function($trigger, settings) {
-    var level = frontStreet.menu.getLevel($trigger),
-      $siblings = $trigger.siblings().find(settings.dropDownSelector),
-      $target = $trigger.children(settings.dropDownSelector);
+  show($trigger) {
+    const { dropDownSelector } = this.settings;
+    const level = this.getLevel($trigger);
+    const $siblings = $trigger.siblings().find(dropDownSelector);
+    const $target = $trigger.children(dropDownSelector);
 
-    clearTimeout(frontStreet.menu.timer[settings.menuID][level]);
+    clearTimeout(this.timer[level]);
 
     $siblings.removeClass('in');
 
     $target.addClass('show fade');
 
-    frontStreet.menu.timer[settings.menuID][level] = setTimeout(function() {
+    this.timer[level] = setTimeout(function() {
       $siblings.removeClass('show fade');
-
       $target.addClass('in');
     }, 200);
-  };
+  }
 
   /**
    * Hides a dropdown menu.
    *
    * @since 1.0.0
    *
-   * @param {object} $trigger The parent menu item, for which the dropdown belongs to.
-   * @param {object} settings Current settings.
+   * @param {Object} $trigger The parent menu item, for which the dropdown belongs to.
    */
-  frontStreet.menu.hide = function($trigger, settings) {
-    var level = frontStreet.menu.getLevel($trigger),
-      $flyout = $trigger.children(settings.dropDownSelector);
+  hide($trigger, settings) {
+    const { dropDownSelector, delay } = this.settings;
+    const level = this.getLevel($trigger);
+    const $flyout = $trigger.children(dropDownSelector);
 
-    clearTimeout(frontStreet.menu.timer[settings.menuID][level]);
+    clearTimeout(this.timer[level]);
 
-    frontStreet.menu.timer[settings.menuID][level] = setTimeout(function() {
+    this.timer[level] = setTimeout(function() {
       $flyout.removeClass('in');
 
       setTimeout(function() {
         $flyout.removeClass('show fade');
       }, 200);
-    }, settings.delay);
-  };
+    }, delay);
+  }
 
   /**
    * Determines the current level of the dropdown parent
@@ -220,57 +194,17 @@ import { isMobile } from './utils';
    *
    * @since 1.0.0
    *
-   * @param  {object} $trigger The parent menu item, for which the dropdown belongs to.
-   * @return {string} level    Current menu level, `level-1`, `level-2` or `level-3`.
+   * @param  {Object} $trigger The parent menu item, for which the dropdown belongs to.
+   * @return {String} Current menu level, `level-1`, `level-2` or `level-3`.
    */
-  frontStreet.menu.getLevel = function($trigger) {
-    var level = 'level-1';
-
-    if ($trigger.hasClass('level-2')) {
-      level = 'level-2';
-    } else if ($trigger.hasClass('level-3')) {
-      level = 'level-3';
+  getLevel($trigger) {
+    if ($trigger.hasClass('level-3')) {
+      return 'level-3';
+    } else if ($trigger.hasClass('level-2')) {
+      return 'level-2';
     }
+    return 'level-1';
+  }
+}
 
-    return level;
-  };
-
-  $document.ready(function($) {
-    /**
-     * Self-invokes the `menu` component.
-     *
-     * @since 1.0.0
-     */
-    $('.fs-menu').frontStreet('menu');
-
-    /**
-     * Adds no-click functionaltiy to any link by
-     * adding class "no-click".
-     *
-     * @since 1.0.0
-     *
-     * @param {Event} event Event interface.
-     */
-    $('a.no-click').on('click', function(event) {
-      event.preventDefault();
-    });
-
-    /**
-     * Adds no-click functionaltiy to any link directly
-     * within an li with class "no-click".
-     *
-     * Note: This is mainly here to accmodate interfaces
-     * like WordPress which allow building menus, but only
-     * allow adding CSS classes to the menu list items.
-     *
-     * @since 1.0.0
-     *
-     * @param {Event} event Event interface.
-     */
-    $('li.no-click')
-      .find('a:first')
-      .on('click', function(event) {
-        event.preventDefault();
-      });
-  });
-})(jQuery, window.frontStreet);
+export default Menu;
