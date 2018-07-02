@@ -15,134 +15,119 @@
  * @module   background.js
  * @requires init.js
  */
-+function( $, frontStreet ) {
++(function($, frontStreet) {
+  'use strict';
 
-	'use strict';
+  if ('undefined' === typeof frontStreet) {
+    return;
+  }
 
-	if ( 'undefined' === typeof frontStreet ) {
-		return;
-	}
+  if ('undefined' === typeof frontStreet.doComponent) {
+    return;
+  }
 
-	if ( 'undefined' === typeof frontStreet.doComponent ) {
-		return;
-	}
+  if (!frontStreet.doComponent('background')) {
+    return;
+  }
 
-	if ( ! frontStreet.doComponent( 'background' ) ) {
-		return;
-	}
+  var $window = frontStreet.dom.window;
 
-	var $window = frontStreet.dom.window;
+  frontStreet.background = {};
 
-	frontStreet.background = {};
+  /**
+   * Default background options.
+   *
+   * @since 1.0.0
+   *
+   * @var {object}
+   */
+  frontStreet.background.defaults = {
+    type: 'parallax',
+    autoplay: 4000,
+    section: '.fs-section, .has-bg-slider, .has-bg-parallax, .has-bg-video'
+  };
 
-	/**
-	 * Default background options.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @var {object}
-	 */
-	frontStreet.background.defaults = {
-		type: 'parallax',
-		autoplay: 4000,
-		section: '.fs-section, .has-bg-slider, .has-bg-parallax, .has-bg-video'
-	};
+  /**
+   * Initialize the `background` component on a DOM element,
+   * when binded through jQuery.
+   *
+   * @since 1.0.0
+   *
+   * @param {object} element this
+   * @param {object} options Component options.
+   */
+  frontStreet.background.init = function(element, options) {
+    var $element = $(element),
+      settings = $.extend({}, frontStreet.background.defaults, options),
+      $section = $element.closest(settings.section);
 
-	/**
-	 * Initialize the `background` component on a DOM element,
-	 * when binded through jQuery.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param {object} element this
-	 * @param {object} options Component options.
-	 */
-	frontStreet.background.init = function( element, options ) {
+    switch (settings.type) {
+      case 'slider':
+        frontStreet.background.slider($element, $section, settings);
+        break;
 
-		var $element = $( element ),
-			settings = $.extend( {}, frontStreet.background.defaults, options ),
-			$section = $element.closest( settings.section );
+      case 'parallax':
+        frontStreet.background.parallax($element, $section, settings);
+    }
+  };
 
-		switch ( settings.type ) {
+  /**
+   * Setup a background slider.
+   *
+   * @since 1.0.0
+   *
+   * @param {object} $element The background slider element.
+   * @param {object} $section Section containing element.
+   * @param {object} settings Current settings.
+   */
+  frontStreet.background.slider = function($slider, $section, settings) {
+    var autoplay = settings.autoplay;
 
-			case 'slider' :
-				frontStreet.background.slider( $element, $section, settings );
-				break;
+    if ($slider.data('autoplay') && $slider.data('autoplay') >= 1000) {
+      autoplay = $slider.data('autoplay');
+    }
 
-			case 'parallax' :
-				frontStreet.background.parallax( $element, $section, settings );
-
-		}
-
-	};
-
-	/**
-	 * Setup a background slider.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param {object} $element The background slider element.
-	 * @param {object} $section Section containing element.
-	 * @param {object} settings Current settings.
-	 */
-	frontStreet.background.slider = function( $slider, $section, settings ) {
-
-		var autoplay = settings.autoplay;
-
-		if ( $slider.data( 'autoplay' ) && $slider.data( 'autoplay' ) >= 1000 ) {
-			autoplay = $slider.data( 'autoplay' );
-		}
-
-		/*
+    /*
 		 * Reverse order of images so the top of stack
 		 * will be the first image.
 		 */
-		$slider.find( 'img' ).each( function() {
+    $slider.find('img').each(function() {
+      var $img = $(this);
 
-			var $img = $(this);
+      $img.addClass('fade in');
 
-			$img.addClass( 'fade in' );
+      $slider.prepend($img);
+    });
 
-			$slider.prepend( $img );
+    $slider.addClass('in');
 
-		} );
+    $section.find('.fs-loader').fadeOut();
 
-		$slider.addClass( 'in' );
+    setInterval(function() {
+      var $lastImg = $slider.find('img:last-child');
 
-		$section.find( '.fs-loader' ).fadeOut();
+      $lastImg.removeClass('in');
 
-		setInterval( function() {
+      setTimeout(function() {
+        $lastImg.prependTo($slider).addClass('in');
+      }, autoplay);
+    }, autoplay);
+  };
 
-			var $lastImg = $slider.find( 'img:last-child' );
+  /**
+   * Setup a background image parallax effect.
+   *
+   * @since 1.0.0
+   *
+   * @param {object} $element The background element.
+   * @param {object} $section Section containing element.
+   * @param {object} settings Current settings.
+   */
+  frontStreet.background.parallax = function($figure, $section, settings) {
+    var $img = $figure.find('img, .img'),
+      parallax = null;
 
-			$lastImg.removeClass( 'in' );
-
-			setTimeout(function() {
-
-				$lastImg.prependTo( $slider ).addClass( 'in' );
-
-			}, autoplay );
-
-		}, autoplay );
-
-
-	};
-
-	/**
-	 * Setup a background image parallax effect.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param {object} $element The background element.
-	 * @param {object} $section Section containing element.
-	 * @param {object} settings Current settings.
-	 */
-	frontStreet.background.parallax = function( $figure, $section, settings ) {
-
-		var $img     = $figure.find( 'img, .img' ),
-			parallax = null;
-
-		/*
+    /*
 		 * Will only calculate if all are true:
 		 *
 		 * 1. Not a true mobile device (looking at user agent).
@@ -151,23 +136,23 @@
 		 *
 		 * @see isMobile() function in init.js
 		 */
-		if ( ! frontStreet.isMobile( true ) ) { // Passing `true` denotes checking viewport size.
+    if (!frontStreet.isMobile(true)) {
+      // Passing `true` denotes checking viewport size.
 
-			parallax = frontStreet.background.parallaxCalc( $figure, $img );
+      parallax = frontStreet.background.parallaxCalc($figure, $img);
 
-			if ( parallax ) {
-				$img.css( 'transform', "translate3D(-50%," + parallax + "px, 0)" );
-			}
-		}
+      if (parallax) {
+        $img.css('transform', 'translate3D(-50%,' + parallax + 'px, 0)');
+      }
+    }
 
-		$figure.addClass( 'in' );
+    $figure.addClass('in');
 
-		$section.find( '.fs-loader' ).fadeOut();
+    $section.find('.fs-loader').fadeOut();
 
-		// Adjust parallax positioning if window is resized.
-		$window.on( 'scroll resize', function() {
-
-			/*
+    // Adjust parallax positioning if window is resized.
+    $window.on('scroll resize', function() {
+      /*
 			 * Will only calculate if all are true:
 			 *
 			 * 1. Not a true mobile device (looking at user agent).
@@ -176,70 +161,64 @@
 			 *
 			 * @see isMobile() function in init.js
 			 */
-			if ( ! frontStreet.isMobile( true ) ) { // Passing `true` denotes checking viewport size.
+      if (!frontStreet.isMobile(true)) {
+        // Passing `true` denotes checking viewport size.
 
-				parallax = frontStreet.background.parallaxCalc($figure, $img);
+        parallax = frontStreet.background.parallaxCalc($figure, $img);
 
-				if ( parallax ) {
-					$img.css( 'transform', "translate3D(-50%," + parallax + "px, 0)" );
-				}
-			}
+        if (parallax) {
+          $img.css('transform', 'translate3D(-50%,' + parallax + 'px, 0)');
+        }
+      }
+    });
+  };
 
-		} );
+  /**
+   * Calculate parallax position of element.
+   *
+   * @since 1.0.0
+   *
+   * @param {object} $figure The background element.
+   * @param {object} $img    Image to position within element.
+   */
+  frontStreet.background.parallaxCalc = function($figure, $img) {
+    var imgHeight = $img.height(),
+      containerHeight = $figure.height() > 0 ? $figure.height() : 500,
+      parallaxDist = imgHeight - containerHeight,
+      bottom = $figure.offset().top + containerHeight,
+      top = $figure.offset().top,
+      scrollTop = $window.scrollTop(),
+      windowHeight = window.innerHeight, // Using `window`, NOT `$window`; we need a fresh calculation here.
+      windowBottom = scrollTop + windowHeight,
+      percentScrolled = (windowBottom - top) / (containerHeight + windowHeight);
 
-	};
+    if (bottom > scrollTop && top < scrollTop + windowHeight) {
+      return Math.round(parallaxDist * percentScrolled);
+    }
 
-	/**
-	 * Calculate parallax position of element.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param {object} $figure The background element.
-	 * @param {object} $img    Image to position within element.
-	 */
-	frontStreet.background.parallaxCalc = function( $figure, $img ) {
+    return null;
+  };
 
-		var imgHeight       = $img.height(),
-			containerHeight	= $figure.height() > 0 ? $figure.height() : 500,
-			parallaxDist    = imgHeight - containerHeight,
-			bottom          = $figure.offset().top + containerHeight,
-			top             = $figure.offset().top,
-			scrollTop       = $window.scrollTop(),
-			windowHeight    = window.innerHeight, // Using `window`, NOT `$window`; we need a fresh calculation here.
-			windowBottom    = scrollTop + windowHeight,
-			percentScrolled = ( windowBottom - top ) / ( containerHeight + windowHeight );
+  /**
+   * Wait until .on('load') to bind our background objects
+   * because we need images to be fully loaded before making
+   * calculations with them.
+   */
+  $window.on('load', function() {
+    /**
+     * Self-invokes the background slider of the
+     * `background` component.
+     *
+     * @since 1.0.0
+     */
+    $('.fs-bg-slider').frontStreet('background', { type: 'slider' });
 
-		if ( ( bottom > scrollTop ) && ( top < ( scrollTop + windowHeight ) ) ) {
-			return Math.round( ( parallaxDist * percentScrolled ) );
-		}
-
-		return null;
-
-	};
-
-	/**
-	 * Wait until .on('load') to bind our background objects
-	 * because we need images to be fully loaded before making
-	 * calculations with them.
-	 */
-	$window.on( 'load', function() {
-
-		/**
-		 * Self-invokes the background slider of the
-		 * `background` component.
-		 *
-		 * @since 1.0.0
-		 */
-		$( '.fs-bg-slider' ).frontStreet( 'background', { type: 'slider' } );
-
-		/**
-		 * Self-invokes the parallax effect of the
-		 * `background` component.
-		 *
-		 * @since 1.0.0
-		 */
-		$( '.fs-bg-parallax' ).frontStreet( 'background', { type: 'parallax' } );
-
-	} );
-
-}( jQuery, window.frontStreet );
+    /**
+     * Self-invokes the parallax effect of the
+     * `background` component.
+     *
+     * @since 1.0.0
+     */
+    $('.fs-bg-parallax').frontStreet('background', { type: 'parallax' });
+  });
+})(jQuery, window.frontStreet);
