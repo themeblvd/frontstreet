@@ -17,12 +17,12 @@ var gulp = require("gulp"),
 var serve = [
     "render-docs-css",
     "render-docs-jquery",
-    "render-docs-js",
+    // "render-docs-js",
     "render-docs-html",
     "render-docs-img",
     "render-project-clean",
     "render-project-css",
-    "render-project-js",
+    // "render-project-js",
     "render-project-img",
     "render-project-plugins"
 ];
@@ -103,6 +103,7 @@ gulp.task("render-docs-jquery", function() {
  * Concat and minify all JavaScript files for
  * documentation.
  */
+/*
 gulp.task("render-docs-js", function() {
     var files = [
         "src/docs/assets/js/shCore.js",
@@ -121,6 +122,7 @@ gulp.task("render-docs-js", function() {
         .pipe(rename({ suffix: ".min" }))
         .pipe(gulp.dest("docs/assets/js"));
 });
+*/
 
 /**
  * Combine all HTML partials and content into final
@@ -198,6 +200,7 @@ gulp.task("render-project-css", ["render-project-clean"], function() {
  * for distribution. Then, minify that for project
  * distribution and docs.
  */
+/*
 gulp.task("render-project-js", ["render-project-clean"], function() {
     var files = [
         "src/js/info.js",
@@ -223,6 +226,7 @@ gulp.task("render-project-js", ["render-project-clean"], function() {
         .pipe(gulp.dest("dist/js"))
         .pipe(gulp.dest("docs/assets/frontstreet/js"));
 });
+*/
 
 /**
  * Copy any svg files to distributed docs and project.
@@ -268,9 +272,9 @@ gulp.task("watch", function() {
         ["render-docs-css"]
     );
 
-    gulp.watch(["src/docs/assets/js/*.js"], ["render-docs-js"]);
+    // gulp.watch(["src/docs/assets/js/*.js"], ["render-docs-js"]);
 
-    gulp.watch(["src/docs/**/*.html"], ["render-docs-html"]);
+    // gulp.watch(["src/docs/**/*.html"], ["render-docs-html"]);
 
     // Render project.
 
