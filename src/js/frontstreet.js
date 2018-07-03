@@ -3,11 +3,11 @@ import { dom } from './modules/utils';
 import Background from './modules/background';
 import Menu from './modules/menu';
 import MobileMenu from './modules/mobile-menu';
-// import './modules/modal';
-// import './modules/slider';
 import Tabs from './modules/tabs';
 import Toggle from './modules/toggle';
 import Tooltip from './modules/tooltip';
+import './modules/modal';
+import './modules/slider';
 
 /**
  * Adds all components as one item to the jQuery

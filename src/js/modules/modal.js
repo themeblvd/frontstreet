@@ -1,3 +1,6 @@
+import $ from 'jquery';
+import { dom } from './utils';
+
 /**
  * This file binds preset instances of Magnific Popup.
  *
@@ -12,24 +15,18 @@
  * @link     http://frontstreet.io
  * @since    1.0.0
  * @module   modal.js
- * @requires magnific-popup.js, init.js
+ * @requires magnific-popup.js
  */
-+(function($, frontStreet) {
-  'use strict';
-
-  if ('undefined' === typeof frontStreet) {
-    return;
-  }
-
+export default (function($) {
   if (!$.fn.magnificPopup) {
     return;
   }
 
-  var $document = frontStreet.dom.document;
+  const { $document } = dom;
 
   $document.ready(function($) {
-    var mainClass = 'fs-modal',
-      removalDelay = 0;
+    var mainClass = 'fs-modal';
+    var removalDelay = 0;
 
     var config = {
       animation: 'fade',
@@ -46,18 +43,18 @@
         '<button type="button" class="mfp-close fs-close close-light close-md">%title%</button>'
     };
 
-    if ('undefined' !== typeof fsModal) {
-      config = $.extend({}, config, fsModal);
+    if (typeof window.fsModal !== 'undefined') {
+      config = $.extend({}, config, window.fsModal); // An optional configuration object you could declare.
     }
 
-    if (config.animation && 'none' !== config.animation) {
-      mainClass = mainClass + ' fs-modal-' + config['animation'];
+    if (config.animation && config.animation !== 'none') {
+      mainClass = `${mainClass} fs-modal-${config['animation']}`;
       removalDelay = 150;
     }
 
     $.extend(true, $.magnificPopup.defaults, {
       tClose: config.close,
-      tLoading: '<div class="fs-loader"><span>' + config.loading + '</span></div>',
+      tLoading: `<div class="fs-loader"><span>${config.loading}</span></div>`,
       gallery: {
         tPrev: config.previous,
         tNext: config.next,
@@ -71,9 +68,9 @@
       }
     });
 
-    $('.fs-modal-close').on('click', function() {
+    $('.fs-modal-close').on('click', function(event) {
+      event.preventDefault();
       $.magnificPopup.close();
-
       return false;
     });
 
@@ -102,7 +99,6 @@
       callbacks: {
         open: function() {
           $('.mfp-wrap .fs-search-modal').attr('aria-hidden', false);
-
           $.magnificPopup.instance.wrap[0].addEventListener('focus', function(e) {
             $('.mfp-search .fs-search-modal input[type="search"]').focus();
           });
@@ -114,26 +110,18 @@
     });
 
     $('.fs-modal-gallery, .themeblvd-gallery').each(function() {
-      var $gallery = $(this),
-        selector = '',
-        classes = [
-          'themeblvd-lightbox',
-          'fs-content-modal-link',
-          'fs-image-modal-link',
-          'fs-iframe-modal-link'
-        ];
-
-      for (var i = 0; i < classes.length; i++) {
-        selector += '.' + classes[i];
-
-        if (i != classes.length - 1) {
-          selector += ', ';
-        }
-      }
+      const $gallery = $(this);
+      const classes = [
+        'themeblvd-lightbox',
+        'fs-content-modal-link',
+        'fs-image-modal-link',
+        'fs-iframe-modal-link'
+      ];
+      const selector = '.' + classes.join(', .');
 
       $gallery.find(selector).each(function() {
-        var $link = $(this),
-          linkClass = '';
+        const $link = $(this);
+        var linkClass = '';
 
         if ($link.hasClass('fs-content-modal-link')) {
           linkClass = 'mfp-inline';
@@ -143,7 +131,7 @@
           linkClass = 'mfp-iframe';
         }
 
-        linkClass = 'fs-gallery-modal-link ' + linkClass;
+        linkClass = `fs-gallery-modal-link ${linkClass}`;
 
         $link.removeClass(classes.join(' ')).addClass(linkClass);
       });
@@ -162,15 +150,14 @@
         delegate: 'a.fs-gallery-modal-link',
         iframe: {
           // Add bottom bar for iframes
-          markup:
-            '<div class="mfp-iframe-scaler">' +
-            '<div class="mfp-close"></div>' +
-            '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>' +
-            '<div class="mfp-bottom-bar">' +
-            '<div class="mfp-title"></div>' +
-            '<div class="mfp-counter"></div>' +
-            '</div>' +
-            '</div>'
+          markup: `<div class="mfp-iframe-scaler">
+              <div class="mfp-close"></div>
+              <iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>
+              <div class="mfp-bottom-bar">
+                <div class="mfp-title"></div>
+                <div class="mfp-counter"></div>
+              </div>
+            </div>`
         },
         callbacks: {
           markupParse: function(template, values, item) {
@@ -216,4 +203,4 @@
       }
     });
   });
-})(jQuery, window.frontStreet);
+})($);

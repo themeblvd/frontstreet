@@ -1,3 +1,6 @@
+import $ from 'jquery';
+import { dom } from './utils';
+
 /**
  * This file binds preset instances of OwlCarousel,
  * allowing for those to be configured through the
@@ -14,21 +17,15 @@
  * @link     http://frontstreet.io
  * @since    1.0.0
  * @module   modal.js
- * @requires owl-carousel.js, init.js
+ * @requires owl-carousel.js
  */
-+(function($, frontStreet) {
-  'use strict';
 
-  if ('undefined' === typeof frontStreet) {
-    return;
-  }
-
+export default (function($) {
   if (!$.fn.owlCarousel) {
     return;
   }
 
-  var $window = frontStreet.dom.window,
-    $body = frontStreet.dom.body;
+  const { $window, $body } = dom;
 
   $window.on('load', function() {
     $('.fs-simple-slider, .fs-gallery-slider, .fs-block-slider').each(function() {
@@ -88,21 +85,17 @@
         onInitialized: function(e) {
           $nav.find('li:first-child').addClass('active');
           $wrap.removeClass('loading').addClass('loaded');
-
-          if (!loop) {
-            $arrows.find('li').addClass('fade');
-          }
-
+          if (!loop) $arrows.find('li').addClass('fade');
           $wrap.find('.fs-loader').fadeOut();
         },
         onChanged: function(e) {
           /*
-					 * Make sure next and prev buttons don't show
-					 * when at start and end of cycle, if there's
-					 * no looping.
-					 */
+           * Make sure next and prev buttons don't show
+           * when at start and end of cycle, if there's
+           * no looping.
+           */
           if (!loop) {
-            var index = $wrap.hasClass('fs-block-slider') ? e.item.index : e.page.index;
+            const index = $wrap.hasClass('fs-block-slider') ? e.item.index : e.page.index;
 
             if (index == 0 || index == -1) {
               $arrows.find('li.prev').removeClass('in');
@@ -123,23 +116,21 @@
 
       // Bind standard slider nav and thumb nav.
       $nav.find('li').on('click', function() {
-        var $current = $(this);
+        const $current = $(this);
 
-        $slider
-          // .trigger( 'stop.owl.autoplay' ) // Doesn't work right as of v2.2.1 OwlCarousel.
-          .trigger('to.owl.carousel', $current.data('slide-to'));
+        $slider.trigger('to.owl.carousel', $current.data('slide-to'));
 
         $current
           .closest('ul, ol')
           .find('li')
           .removeClass('active');
+
         $current.addClass('active');
       });
 
       // Bind slider arrow next/prev nav.
       $arrows.find('li').on('click', function() {
         // $slider.trigger( 'stop.owl.autoplay' ); // Doesn't work right as of v2.2.1.
-
         if ($(this).hasClass('next')) {
           $slider.trigger('next.owl.carousel');
         } else {
@@ -148,4 +139,4 @@
       });
     }); // End .each()
   }); // End .on( 'load' )
-})(jQuery, window.frontStreet);
+})($);
