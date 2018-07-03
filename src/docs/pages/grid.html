@@ -1,20 +1,20 @@
 @@include('../layout/header.html', {
-	 "title": "Grids"
+     "title": "Grids"
 })
 
 <p>Throughout this article, we'll build on the pieces you'll put together to create columns using the Front Street grid system and how to overcome various real-world layout problems. Our grid system uses Flexbox CSS to create fluid layout columns. And we include classes for both a 10-column and 12-column grid system to give you the ultimate flexibility in building the different layouts within your website.</p>
 
 <ol class="table-of-contents">
-	<li><a href="#usage" title="General Overview">General Overview</a></li>
-	<li><a href="#responsiveness" title="Responsiveness">Responsiveness</a></li>
-	<li><a href="#widths" title="Column Widths">Column Widths</a></li>
-	<li><a href="#row-container" title="Row Containers">Row Containers</a></li>
-	<li><a href="#no-gutters" title="No Gutters">No Gutters</a></li>
-	<li><a href="#nested" title="Nested Columns">Nested Columns</a></li>
-	<li><a href="#has-bg" title="Columns With Backgrounds">Columns With Backgrounds</a></li>
-	<li><a href="#alignment" title="Column Alignment">Column Alignment</a></li>
-	<li><a href="#order" title="Column Ordering">Column Ordering</a></li>
-	<li><a href="#offset" title="Column Offsetting">Column Offsetting</a></li>
+    <li><a href="#usage" title="General Overview">General Overview</a></li>
+    <li><a href="#responsiveness" title="Responsiveness">Responsiveness</a></li>
+    <li><a href="#widths" title="Column Widths">Column Widths</a></li>
+    <li><a href="#row-container" title="Row Containers">Row Containers</a></li>
+    <li><a href="#no-gutters" title="No Gutters">No Gutters</a></li>
+    <li><a href="#nested" title="Nested Columns">Nested Columns</a></li>
+    <li><a href="#has-bg" title="Columns With Backgrounds">Columns With Backgrounds</a></li>
+    <li><a href="#alignment" title="Column Alignment">Column Alignment</a></li>
+    <li><a href="#order" title="Column Ordering">Column Ordering</a></li>
+    <li><a href="#offset" title="Column Offsetting">Column Offsetting</a></li>
 </ol>
 
 <!-- GENERAL USAGE -->
@@ -31,12 +31,12 @@
 
 <pre class="highlight html">
 <div class="row">
-	<div class="col col-md-3">
-		<div class="wrap">
-			...
-		</div>
-	</div>
-	...
+    <div class="col col-md-3">
+        <div class="wrap">
+            ...
+        </div>
+    </div>
+    ...
 </div>
 </pre>
 
@@ -45,43 +45,43 @@
 <p>When <em>not</em> including a specifc column size, all <code>.col-{breakpoint}</code> elements will automatically adjust to be equal width, depending on the number of columns. Below is a basic example of a single row of three, equal-width columns. Each <code>.col</code> element has class <code>col-md</code> added to it, meaning they will be equal in width and stack responsively below the <code>md</code> breakpoint.</p>
 
 <div class="row row-example">
-	<div class="col col-md">
-		<div class="wrap">
-			<h6>Column #1</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		</div>
-	</div>
-	<div class="col col-md">
-		<div class="wrap">
-			<h6>Column #2</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		</div>
-	</div>
-	<div class="col col-md">
-		<div class="wrap">
-			<h6>Column #3</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		</div>
-	</div>
+    <div class="col col-md">
+        <div class="wrap">
+            <h6>Column #1</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+        </div>
+    </div>
+    <div class="col col-md">
+        <div class="wrap">
+            <h6>Column #2</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+        </div>
+    </div>
+    <div class="col col-md">
+        <div class="wrap">
+            <h6>Column #3</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+        </div>
+    </div>
 </div>
 
 <pre class="highlight html">
 <div class="row">
-	<div class="col col-md">
-		<div class="wrap">
-			...
-		</div>
-	</div>
-	<div class="col col-md">
-		<div class="wrap">
-			...
-		</div>
-	</div>
-	<div class="col col-md">
-		<div class="wrap">
-			...
-		</div>
-	</div>
+    <div class="col col-md">
+        <div class="wrap">
+            ...
+        </div>
+    </div>
+    <div class="col col-md">
+        <div class="wrap">
+            ...
+        </div>
+    </div>
+    <div class="col col-md">
+        <div class="wrap">
+            ...
+        </div>
+    </div>
 </div>
 </pre>
 
@@ -92,32 +92,32 @@
 <p>In the following example, we have two columns sized at <code>4/12</code> and <code>8/12</code>, which will responsively stack when the viewport is less than the <code>md</code> breakpoint.</p>
 
 <div class="row row-example">
-	<div class="col col-md-4">
-		<div class="wrap">
-			<h6>Column #1</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		</div>
-	</div>
-	<div class="col col-md-8">
-		<div class="wrap">
-			<h6>Column #2</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum. Mauris tempus convallis lectus, placerat hendrerit ligula auctor id.</p>
-		</div>
-	</div>
+    <div class="col col-md-4">
+        <div class="wrap">
+            <h6>Column #1</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+        </div>
+    </div>
+    <div class="col col-md-8">
+        <div class="wrap">
+            <h6>Column #2</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum. Mauris tempus convallis lectus, placerat hendrerit ligula auctor id.</p>
+        </div>
+    </div>
 </div>
 
 <pre class="highlight html">
 <div class="row">
-	<div class="col col-md-4">
-		<div class="wrap">
-			...
-		</div>
-	</div>
-	<div class="col col-md-8">
-		<div class="wrap">
-			...
-		</div>
-	</div>
+    <div class="col col-md-4">
+        <div class="wrap">
+            ...
+        </div>
+    </div>
+    <div class="col col-md-8">
+        <div class="wrap">
+            ...
+        </div>
+    </div>
 </div>
 </pre>
 
@@ -126,76 +126,76 @@
 <p>Multiple rows of columns can simply be stacked one after the next, as well. Separating multiple rows into separate <code>.row</code> elements is necessary primarily because the <code>.row</code> element is what will space the columns vertically from each other. And additionally in the following scenario, it's necessary also because our first row is using auto-sizing <code>.col-md</code> elements that are intended to be 1/3 each.</p>
 
 <div class="row row-example">
-	<div class="col col-md">
-		<div class="wrap">
-			<h6>Column #1</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		</div>
-	</div>
-	<div class="col col-md">
-		<div class="wrap">
-			<h6>Column #2</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		</div>
-	</div>
-	<div class="col col-md">
-		<div class="wrap">
-			<h6>Column #3</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		</div>
-	</div>
+    <div class="col col-md">
+        <div class="wrap">
+            <h6>Column #1</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+        </div>
+    </div>
+    <div class="col col-md">
+        <div class="wrap">
+            <h6>Column #2</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+        </div>
+    </div>
+    <div class="col col-md">
+        <div class="wrap">
+            <h6>Column #3</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+        </div>
+    </div>
 </div>
 
 <div class="row row-example">
-	<div class="col col-md-4">
-		<div class="wrap">
-			<h6>Column #5</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		</div>
-	</div>
-	<div class="col col-md-8">
-		<div class="wrap">
-			<h6>Column #6</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum. Mauris tempus convallis lectus, placerat hendrerit ligula auctor id.</p>
-		</div>
-	</div>
+    <div class="col col-md-4">
+        <div class="wrap">
+            <h6>Column #5</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+        </div>
+    </div>
+    <div class="col col-md-8">
+        <div class="wrap">
+            <h6>Column #6</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum. Mauris tempus convallis lectus, placerat hendrerit ligula auctor id.</p>
+        </div>
+    </div>
 </div>
 
 <pre class="highlight html">
 <div class="row">
-	<div class="col col-md">
-		<div class="wrap">
-			...
-		</div>
-	</div>
-	<div class="col col-md">
-		<div class="wrap">
-			...
-		</div>
-	</div>
-	<div class="col col-md">
-		<div class="wrap">
-			...
-		</div>
-	</div>
+    <div class="col col-md">
+        <div class="wrap">
+            ...
+        </div>
+    </div>
+    <div class="col col-md">
+        <div class="wrap">
+            ...
+        </div>
+    </div>
+    <div class="col col-md">
+        <div class="wrap">
+            ...
+        </div>
+    </div>
 </div>
 
 <div class="row">
-	<div class="col col-md-4">
-		<div class="wrap">
-			...
-		</div>
-	</div>
-	<div class="col col-md-8">
-		<div class="wrap">
-			...
-		</div>
-	</div>
+    <div class="col col-md-4">
+        <div class="wrap">
+            ...
+        </div>
+    </div>
+    <div class="col col-md-8">
+        <div class="wrap">
+            ...
+        </div>
+    </div>
 </div>
 </pre>
 
 <div class="alert alert-info">
-	<p><strong>Note:</strong> A <code>.row</code> element will have margin on the bottom to separate it from the next <code>.row</code> element. However, you don't need to separate multiple rows of columns into separate <code>.row</code> elements if you don't need that spacing. Having several rows within a single <code>.row.row-no-gutters</code> element is <a href="#layered-row" title="Columns With Backgrounds">a good example</a> when you might do this.</p>
+    <p><strong>Note:</strong> A <code>.row</code> element will have margin on the bottom to separate it from the next <code>.row</code> element. However, you don't need to separate multiple rows of columns into separate <code>.row</code> elements if you don't need that spacing. Having several rows within a single <code>.row.row-no-gutters</code> element is <a href="#layered-row" title="Columns With Backgrounds">a good example</a> when you might do this.</p>
 </div>
 
 <!-- RESPONSIVENESS -->
@@ -205,127 +205,127 @@
 <p>When setting up any grid, it's important to decide what viewport you want those columns to collapse at (i.e. stack). To do this, you'll pick either <code>xs</code>, <code>sm</code>, <code>md</code>, or <code>lg</code>, to use within your grid classes.</p>
 
 <div class="table-responsive">
-	<table class="table-bordered table-condensed">
-		<tr>
-			<td width="30%"><code>.col-xs</code></td>
-			<td rowspan="6">Classes containing <code>xs</code> will never collapse.</td>
-		</tr>
-		<tr>
-			<td width="30%"><code>.col-xs-{size}</code></td>
-		</tr>
-		<tr>
-			<td width="30%"><code>.col-xs-offset-{size}</code></td>
-		</tr>
-		<tr>
-			<td width="30%"><code>.col-xs-order-first</code></td>
-		</tr>
-		<tr>
-			<td width="30%"><code>.col-xs-order-last</code></td>
-		</tr>
-		<tr>
-			<td width="30%"><code>.row-xs-reverse</code></td>
-		</tr>
-	</table>
+    <table class="table-bordered table-condensed">
+        <tr>
+            <td width="30%"><code>.col-xs</code></td>
+            <td rowspan="6">Classes containing <code>xs</code> will never collapse.</td>
+        </tr>
+        <tr>
+            <td width="30%"><code>.col-xs-{size}</code></td>
+        </tr>
+        <tr>
+            <td width="30%"><code>.col-xs-offset-{size}</code></td>
+        </tr>
+        <tr>
+            <td width="30%"><code>.col-xs-order-first</code></td>
+        </tr>
+        <tr>
+            <td width="30%"><code>.col-xs-order-last</code></td>
+        </tr>
+        <tr>
+            <td width="30%"><code>.row-xs-reverse</code></td>
+        </tr>
+    </table>
 </div>
 
 <div class="table-responsive">
-	<table class="table-bordered table-condensed">
-		<tr>
-			<td width="30%"><code>.col-sm</code></td>
-			<td rowspan="6">Classes containing <code>sm</code> will collapse and begin to stack when viewport is less than 576px. This will generally include smaller mobile devices.</td>
-		</tr>
-		<tr>
-			<td width="30%"><code>.col-sm-{size}</code></td>
-		</tr>
-		<tr>
-			<td width="30%"><code>.col-sm-offset-{size}</code></td>
-		</tr>
-		<tr>
-			<td width="30%"><code>.col-sm-order-first</code></td>
-		</tr>
-		<tr>
-			<td width="30%"><code>.col-sm-order-last</code></td>
-		</tr>
-		<tr>
-			<td width="30%"><code>.row-sm-reverse</code></td>
-		</tr>
-	</table>
+    <table class="table-bordered table-condensed">
+        <tr>
+            <td width="30%"><code>.col-sm</code></td>
+            <td rowspan="6">Classes containing <code>sm</code> will collapse and begin to stack when viewport is less than 576px. This will generally include smaller mobile devices.</td>
+        </tr>
+        <tr>
+            <td width="30%"><code>.col-sm-{size}</code></td>
+        </tr>
+        <tr>
+            <td width="30%"><code>.col-sm-offset-{size}</code></td>
+        </tr>
+        <tr>
+            <td width="30%"><code>.col-sm-order-first</code></td>
+        </tr>
+        <tr>
+            <td width="30%"><code>.col-sm-order-last</code></td>
+        </tr>
+        <tr>
+            <td width="30%"><code>.row-sm-reverse</code></td>
+        </tr>
+    </table>
 </div>
 
 <div class="table-responsive">
-	<table class="table-bordered table-condensed">
-		<tr>
-			<td width="30%"><code>.col-md</code></td>
-			<td rowspan="6">Classes containing <code>md</code> will collapse and begin to stack when viewport is less than 768px. This will generally include slightly larger mobile devices (or those in the landscape orientation) and smaller mobile devices.</td>
-		</tr>
-		<tr>
-			<td width="30%"><code>.col-md-{size}</code></td>
-		</tr>
-		<tr>
-			<td width="30%"><code>.col-md-offset-{size}</code></td>
-		</tr>
-		<tr>
-			<td width="30%"><code>.col-md-order-first</code></td>
-		</tr>
-		<tr>
-			<td width="30%"><code>.col-md-order-last</code></td>
-		</tr>
-		<tr>
-			<td width="30%"><code>.row-md-reverse</code></td>
-		</tr>
-	</table>
+    <table class="table-bordered table-condensed">
+        <tr>
+            <td width="30%"><code>.col-md</code></td>
+            <td rowspan="6">Classes containing <code>md</code> will collapse and begin to stack when viewport is less than 768px. This will generally include slightly larger mobile devices (or those in the landscape orientation) and smaller mobile devices.</td>
+        </tr>
+        <tr>
+            <td width="30%"><code>.col-md-{size}</code></td>
+        </tr>
+        <tr>
+            <td width="30%"><code>.col-md-offset-{size}</code></td>
+        </tr>
+        <tr>
+            <td width="30%"><code>.col-md-order-first</code></td>
+        </tr>
+        <tr>
+            <td width="30%"><code>.col-md-order-last</code></td>
+        </tr>
+        <tr>
+            <td width="30%"><code>.row-md-reverse</code></td>
+        </tr>
+    </table>
 </div>
 
 <div class="table-responsive">
-	<table class="table-bordered table-condensed">
-		<tr>
-			<td width="30%"><code>.col-lg</code></td>
-			<td rowspan="6">Classes containing <code>lg</code> will collapse and begin to stack when viewport is less than 992px. This will generally include tablets (in portrait orientation) and any mobile device smaller than that.</td>
-		</tr>
-		<tr>
-			<td width="30%"><code>.col-lg-{size}</code></td>
-		</tr>
-		<tr>
-			<td width="30%"><code>.col-lg-offset-{size}</code></td>
-		</tr>
-		<tr>
-			<td width="30%"><code>.col-lg-order-first</code></td>
-		</tr>
-		<tr>
-			<td width="30%"><code>.col-lg-order-last</code></td>
-		</tr>
-		<tr>
-			<td width="30%"><code>.row-lg-reverse</code></td>
-		</tr>
-	</table>
+    <table class="table-bordered table-condensed">
+        <tr>
+            <td width="30%"><code>.col-lg</code></td>
+            <td rowspan="6">Classes containing <code>lg</code> will collapse and begin to stack when viewport is less than 992px. This will generally include tablets (in portrait orientation) and any mobile device smaller than that.</td>
+        </tr>
+        <tr>
+            <td width="30%"><code>.col-lg-{size}</code></td>
+        </tr>
+        <tr>
+            <td width="30%"><code>.col-lg-offset-{size}</code></td>
+        </tr>
+        <tr>
+            <td width="30%"><code>.col-lg-order-first</code></td>
+        </tr>
+        <tr>
+            <td width="30%"><code>.col-lg-order-last</code></td>
+        </tr>
+        <tr>
+            <td width="30%"><code>.row-lg-reverse</code></td>
+        </tr>
+    </table>
 </div>
 
 <div class="table-responsive">
-	<table class="table-bordered table-condensed">
-		<tr>
-			<td width="30%"><code>.col-xl</code></td>
-			<td rowspan="6">Classes containing <code>xl</code> will collapse and begin to stack when viewport is less than 1200px. This will generally include smaller desktop computers, and all tablets and mobile devices.</td>
-		</tr>
-		<tr>
-			<td width="30%"><code>.col-xl-{size}</code></td>
-		</tr>
-		<tr>
-			<td width="30%"><code>.col-xl-offset-{size}</code></td>
-		</tr>
-		<tr>
-			<td width="30%"><code>.col-xl-order-first</code></td>
-		</tr>
-		<tr>
-			<td width="30%"><code>.col-xl-order-last</code></td>
-		</tr>
-		<tr>
-			<td width="30%"><code>.row-xl-reverse</code></td>
-		</tr>
-	</table>
+    <table class="table-bordered table-condensed">
+        <tr>
+            <td width="30%"><code>.col-xl</code></td>
+            <td rowspan="6">Classes containing <code>xl</code> will collapse and begin to stack when viewport is less than 1200px. This will generally include smaller desktop computers, and all tablets and mobile devices.</td>
+        </tr>
+        <tr>
+            <td width="30%"><code>.col-xl-{size}</code></td>
+        </tr>
+        <tr>
+            <td width="30%"><code>.col-xl-offset-{size}</code></td>
+        </tr>
+        <tr>
+            <td width="30%"><code>.col-xl-order-first</code></td>
+        </tr>
+        <tr>
+            <td width="30%"><code>.col-xl-order-last</code></td>
+        </tr>
+        <tr>
+            <td width="30%"><code>.row-xl-reverse</code></td>
+        </tr>
+    </table>
 </div>
 
 <div class="alert alert-info">
-	<p><strong>Note:</strong> Responsive breakpoints can also be mixed for some more complex layouts. See <a href="#mixing-column-widths">mixing column widths below</a>.</p>
+    <p><strong>Note:</strong> Responsive breakpoints can also be mixed for some more complex layouts. See <a href="#mixing-column-widths">mixing column widths below</a>.</p>
 </div>
 
 <!-- COLUMN WIDTHS -->
@@ -339,236 +339,236 @@
 <p>When grouping classes in a 12-column grid system, you want to make sure the integers all add up to <code>12</code>.</p>
 
 <div class="row row-width-example">
-	<div class="col col-sm-12">
-		<div class="wrap">12</div>
-	</div>
+    <div class="col col-sm-12">
+        <div class="wrap">12</div>
+    </div>
 </div>
 
 <div class="row row-width-example">
-	<div class="col col-sm-1">
-		<div class="wrap">1</div>
-	</div>
-	<div class="col col-sm-11">
-		<div class="wrap">11</div>
-	</div>
+    <div class="col col-sm-1">
+        <div class="wrap">1</div>
+    </div>
+    <div class="col col-sm-11">
+        <div class="wrap">11</div>
+    </div>
 </div>
 
 <div class="row row-width-example">
-	<div class="col col-sm-2">
-		<div class="wrap">2</div>
-	</div>
-	<div class="col col-sm-10">
-		<div class="wrap">10</div>
-	</div>
+    <div class="col col-sm-2">
+        <div class="wrap">2</div>
+    </div>
+    <div class="col col-sm-10">
+        <div class="wrap">10</div>
+    </div>
 </div>
 
 <div class="row row-width-example">
-	<div class="col col-sm-3">
-		<div class="wrap">3</div>
-	</div>
-	<div class="col col-sm-9">
-		<div class="wrap">9</div>
-	</div>
+    <div class="col col-sm-3">
+        <div class="wrap">3</div>
+    </div>
+    <div class="col col-sm-9">
+        <div class="wrap">9</div>
+    </div>
 </div>
 
 <div class="row row-width-example">
-	<div class="col col-sm-4">
-		<div class="wrap">4</div>
-	</div>
-	<div class="col col-sm-8">
-		<div class="wrap">8</div>
-	</div>
+    <div class="col col-sm-4">
+        <div class="wrap">4</div>
+    </div>
+    <div class="col col-sm-8">
+        <div class="wrap">8</div>
+    </div>
 </div>
 
 <div class="row row-width-example">
-	<div class="col col-sm-5">
-		<div class="wrap">5</div>
-	</div>
-	<div class="col col-sm-7">
-		<div class="wrap">7</div>
-	</div>
+    <div class="col col-sm-5">
+        <div class="wrap">5</div>
+    </div>
+    <div class="col col-sm-7">
+        <div class="wrap">7</div>
+    </div>
 </div>
 
 <div class="row row-width-example">
-	<div class="col col-sm-6">
-		<div class="wrap">6</div>
-	</div>
-	<div class="col col-sm-6">
-		<div class="wrap">6</div>
-	</div>
+    <div class="col col-sm-6">
+        <div class="wrap">6</div>
+    </div>
+    <div class="col col-sm-6">
+        <div class="wrap">6</div>
+    </div>
 </div>
 
 <div class="row row-width-example">
-	<div class="col col-sm-7">
-		<div class="wrap">7</div>
-	</div>
-	<div class="col col-sm-5">
-		<div class="wrap">5</div>
-	</div>
+    <div class="col col-sm-7">
+        <div class="wrap">7</div>
+    </div>
+    <div class="col col-sm-5">
+        <div class="wrap">5</div>
+    </div>
 </div>
 
 <div class="row row-width-example">
-	<div class="col col-sm-8">
-		<div class="wrap">8</div>
-	</div>
-	<div class="col col-sm-4">
-		<div class="wrap">4</div>
-	</div>
+    <div class="col col-sm-8">
+        <div class="wrap">8</div>
+    </div>
+    <div class="col col-sm-4">
+        <div class="wrap">4</div>
+    </div>
 </div>
 
 <div class="row row-width-example">
-	<div class="col col-sm-9">
-		<div class="wrap">9</div>
-	</div>
-	<div class="col col-sm-3">
-		<div class="wrap">3</div>
-	</div>
+    <div class="col col-sm-9">
+        <div class="wrap">9</div>
+    </div>
+    <div class="col col-sm-3">
+        <div class="wrap">3</div>
+    </div>
 </div>
 
 <div class="row row-width-example">
-	<div class="col col-sm-10">
-		<div class="wrap">10</div>
-	</div>
-	<div class="col col-sm-2">
-		<div class="wrap">2</div>
-	</div>
+    <div class="col col-sm-10">
+        <div class="wrap">10</div>
+    </div>
+    <div class="col col-sm-2">
+        <div class="wrap">2</div>
+    </div>
 </div>
 
 <div class="row row-width-example">
-	<div class="col col-sm-11">
-		<div class="wrap">11</div>
-	</div>
-	<div class="col col-sm-1">
-		<div class="wrap">1</div>
-	</div>
+    <div class="col col-sm-11">
+        <div class="wrap">11</div>
+    </div>
+    <div class="col col-sm-1">
+        <div class="wrap">1</div>
+    </div>
 </div>
 
 <div class="row row-width-example">
-	<div class="col col-sm-12">
-		<div class="wrap">12</div>
-	</div>
+    <div class="col col-sm-12">
+        <div class="wrap">12</div>
+    </div>
 </div>
 
 <div class="table-responsive">
-	<table class="table-bordered table-condensed table-grid-overview">
-		<tr>
-			<th>Fraction</th>
-			<th>Percentage</th>
-			<th>Never Collapse</th>
-			<th>Collapse @576px</th>
-			<th>Collapse @767px</th>
-			<th>Collapse @991px</th>
-			<th>Collapse @1199px</th>
-		</tr>
-		<tr>
-			<td>1/12</td>
-			<td>8.33%</td>
-			<td><code>.col-xs-1</code></td>
-			<td><code>.col-sm-1</code></td>
-			<td><code>.col-md-1</code></td>
-			<td><code>.col-lg-1</code></td>
-			<td><code>.col-xl-1</code></td>
-		</tr>
-		<tr>
-			<td>1/6</td>
-			<td>16.66%</td>
-			<td><code>.col-xs-2</code></td>
-			<td><code>.col-sm-2</code></td>
-			<td><code>.col-md-2</code></td>
-			<td><code>.col-lg-2</code></td>
-			<td><code>.col-xl-2</code></td>
-		</tr>
-		<tr>
-			<td>1/4</td>
-			<td>25%</td>
-			<td><code>.col-xs-3</td>
-			<td><code>.col-sm-3</td>
-			<td><code>.col-md-3</td>
-			<td><code>.col-lg-3</td>
-			<td><code>.col-xl-3</td>
-		</tr>
-		<tr>
-			<td>1/3</td>
-			<td>33.33%</td>
-			<td><code>.col-xs-4</code></td>
-			<td><code>.col-sm-4</code></td>
-			<td><code>.col-md-4</code></td>
-			<td><code>.col-lg-4</code></td>
-			<td><code>.col-xl-4</code></td>
-		</tr>
-		<tr>
-			<td>5/12</td>
-			<td>41.66%</td>
-			<td><code>.col-xs-5</code></td>
-			<td><code>.col-sm-5</code></td>
-			<td><code>.col-md-5</code></td>
-			<td><code>.col-lg-5</code></td>
-			<td><code>.col-xl-5</code></td>
-		</tr>
-		<tr>
-			<td>1/2</td>
-			<td>50%</td>
-			<td><code>.col-xs-6</code></td>
-			<td><code>.col-sm-6</code></td>
-			<td><code>.col-md-6</code></td>
-			<td><code>.col-lg-6</code></td>
-			<td><code>.col-xl-6</code></td>
-		</tr>
-		<tr>
-			<td>7/12</td>
-			<td>58.33%</td>
-			<td><code>.col-xs-7</code></td>
-			<td><code>.col-sm-7</code></td>
-			<td><code>.col-md-7</code></td>
-			<td><code>.col-lg-7</code></td>
-			<td><code>.col-xl-7</code></td>
-		</tr>
-		<tr>
-			<td>2/3</td>
-			<td>66.66%</td>
-			<td><code>.col-xs-8</code></td>
-			<td><code>.col-sm-8</code></td>
-			<td><code>.col-md-8</code></td>
-			<td><code>.col-lg-8</code></td>
-			<td><code>.col-xl-8</code></td>
-		</tr>
-		<tr>
-			<td>3/4</td>
-			<td>75%</td>
-			<td><code>.col-xs-9</code></td>
-			<td><code>.col-sm-9</code></td>
-			<td><code>.col-md-9</code></td>
-			<td><code>.col-lg-9</code></td>
-			<td><code>.col-xl-9</code></td>
-		</tr>
-		<tr>
-			<td>5/6</td>
-			<td>83.33%</td>
-			<td><code>.col-xs-10</code></td>
-			<td><code>.col-sm-10</code></td>
-			<td><code>.col-md-10</code></td>
-			<td><code>.col-lg-10</code></td>
-			<td><code>.col-xl-10</code></td>
-		</tr>
-		<tr>
-			<td>11/12</td>
-			<td>91.66%</td>
-			<td><code>.col-xs-11</code></td>
-			<td><code>.col-sm-11</code></td>
-			<td><code>.col-md-11</code></td>
-			<td><code>.col-lg-11</code></td>
-			<td><code>.col-xl-11</code></td>
-		</tr>
-		<tr>
-			<td>12/12</td>
-			<td>100%</td>
-			<td><code>.col-xs-12</code></td>
-			<td><code>.col-sm-12</code></td>
-			<td><code>.col-md-12</code></td>
-			<td><code>.col-lg-12</code></td>
-			<td><code>.col-xl-12</code></td>
-		</tr>
-	</table>
+    <table class="table-bordered table-condensed table-grid-overview">
+        <tr>
+            <th>Fraction</th>
+            <th>Percentage</th>
+            <th>Never Collapse</th>
+            <th>Collapse @576px</th>
+            <th>Collapse @767px</th>
+            <th>Collapse @991px</th>
+            <th>Collapse @1199px</th>
+        </tr>
+        <tr>
+            <td>1/12</td>
+            <td>8.33%</td>
+            <td><code>.col-xs-1</code></td>
+            <td><code>.col-sm-1</code></td>
+            <td><code>.col-md-1</code></td>
+            <td><code>.col-lg-1</code></td>
+            <td><code>.col-xl-1</code></td>
+        </tr>
+        <tr>
+            <td>1/6</td>
+            <td>16.66%</td>
+            <td><code>.col-xs-2</code></td>
+            <td><code>.col-sm-2</code></td>
+            <td><code>.col-md-2</code></td>
+            <td><code>.col-lg-2</code></td>
+            <td><code>.col-xl-2</code></td>
+        </tr>
+        <tr>
+            <td>1/4</td>
+            <td>25%</td>
+            <td><code>.col-xs-3</td>
+            <td><code>.col-sm-3</td>
+            <td><code>.col-md-3</td>
+            <td><code>.col-lg-3</td>
+            <td><code>.col-xl-3</td>
+        </tr>
+        <tr>
+            <td>1/3</td>
+            <td>33.33%</td>
+            <td><code>.col-xs-4</code></td>
+            <td><code>.col-sm-4</code></td>
+            <td><code>.col-md-4</code></td>
+            <td><code>.col-lg-4</code></td>
+            <td><code>.col-xl-4</code></td>
+        </tr>
+        <tr>
+            <td>5/12</td>
+            <td>41.66%</td>
+            <td><code>.col-xs-5</code></td>
+            <td><code>.col-sm-5</code></td>
+            <td><code>.col-md-5</code></td>
+            <td><code>.col-lg-5</code></td>
+            <td><code>.col-xl-5</code></td>
+        </tr>
+        <tr>
+            <td>1/2</td>
+            <td>50%</td>
+            <td><code>.col-xs-6</code></td>
+            <td><code>.col-sm-6</code></td>
+            <td><code>.col-md-6</code></td>
+            <td><code>.col-lg-6</code></td>
+            <td><code>.col-xl-6</code></td>
+        </tr>
+        <tr>
+            <td>7/12</td>
+            <td>58.33%</td>
+            <td><code>.col-xs-7</code></td>
+            <td><code>.col-sm-7</code></td>
+            <td><code>.col-md-7</code></td>
+            <td><code>.col-lg-7</code></td>
+            <td><code>.col-xl-7</code></td>
+        </tr>
+        <tr>
+            <td>2/3</td>
+            <td>66.66%</td>
+            <td><code>.col-xs-8</code></td>
+            <td><code>.col-sm-8</code></td>
+            <td><code>.col-md-8</code></td>
+            <td><code>.col-lg-8</code></td>
+            <td><code>.col-xl-8</code></td>
+        </tr>
+        <tr>
+            <td>3/4</td>
+            <td>75%</td>
+            <td><code>.col-xs-9</code></td>
+            <td><code>.col-sm-9</code></td>
+            <td><code>.col-md-9</code></td>
+            <td><code>.col-lg-9</code></td>
+            <td><code>.col-xl-9</code></td>
+        </tr>
+        <tr>
+            <td>5/6</td>
+            <td>83.33%</td>
+            <td><code>.col-xs-10</code></td>
+            <td><code>.col-sm-10</code></td>
+            <td><code>.col-md-10</code></td>
+            <td><code>.col-lg-10</code></td>
+            <td><code>.col-xl-10</code></td>
+        </tr>
+        <tr>
+            <td>11/12</td>
+            <td>91.66%</td>
+            <td><code>.col-xs-11</code></td>
+            <td><code>.col-sm-11</code></td>
+            <td><code>.col-md-11</code></td>
+            <td><code>.col-lg-11</code></td>
+            <td><code>.col-xl-11</code></td>
+        </tr>
+        <tr>
+            <td>12/12</td>
+            <td>100%</td>
+            <td><code>.col-xs-12</code></td>
+            <td><code>.col-sm-12</code></td>
+            <td><code>.col-md-12</code></td>
+            <td><code>.col-lg-12</code></td>
+            <td><code>.col-xl-12</code></td>
+        </tr>
+    </table>
 </div>
 
 <h3 id="10-col" class="heading-sm">10-Column Grid</h3>
@@ -576,200 +576,200 @@
 <p>To separate this 10-column grid system, the column integers used in the classes are formatted like <code>010</code>, <code>020</code>, <code>030</code>, <code>040</code>, etc. However, conceptually everything is still the same; you'll want the integers to add up to <code>10</code>. Below are a few examples.</p>
 
 <div class="row row-width-example">
-	<div class="col col-sm-0100">
-		<div class="wrap">0100</div>
-	</div>
+    <div class="col col-sm-0100">
+        <div class="wrap">0100</div>
+    </div>
 </div>
 
 <div class="row row-width-example">
-	<div class="col col-sm-010">
-		<div class="wrap">010</div>
-	</div>
-	<div class="col col-sm-090">
-		<div class="wrap">090</div>
-	</div>
+    <div class="col col-sm-010">
+        <div class="wrap">010</div>
+    </div>
+    <div class="col col-sm-090">
+        <div class="wrap">090</div>
+    </div>
 </div>
 
 <div class="row row-width-example">
-	<div class="col col-sm-020">
-		<div class="wrap">020</div>
-	</div>
-	<div class="col col-sm-080">
-		<div class="wrap">080</div>
-	</div>
+    <div class="col col-sm-020">
+        <div class="wrap">020</div>
+    </div>
+    <div class="col col-sm-080">
+        <div class="wrap">080</div>
+    </div>
 </div>
 
 <div class="row row-width-example">
-	<div class="col col-sm-030">
-		<div class="wrap">030</div>
-	</div>
-	<div class="col col-sm-070">
-		<div class="wrap">070</div>
-	</div>
+    <div class="col col-sm-030">
+        <div class="wrap">030</div>
+    </div>
+    <div class="col col-sm-070">
+        <div class="wrap">070</div>
+    </div>
 </div>
 
 <div class="row row-width-example">
-	<div class="col col-sm-040">
-		<div class="wrap">040</div>
-	</div>
-	<div class="col col-sm-060">
-		<div class="wrap">060</div>
-	</div>
+    <div class="col col-sm-040">
+        <div class="wrap">040</div>
+    </div>
+    <div class="col col-sm-060">
+        <div class="wrap">060</div>
+    </div>
 </div>
 
 <div class="row row-width-example">
-	<div class="col col-sm-050">
-		<div class="wrap">050</div>
-	</div>
-	<div class="col col-sm-050">
-		<div class="wrap">050</div>
-	</div>
+    <div class="col col-sm-050">
+        <div class="wrap">050</div>
+    </div>
+    <div class="col col-sm-050">
+        <div class="wrap">050</div>
+    </div>
 </div>
 
 <div class="row row-width-example">
-	<div class="col col-sm-060">
-		<div class="wrap">060</div>
-	</div>
-	<div class="col col-sm-040">
-		<div class="wrap">040</div>
-	</div>
+    <div class="col col-sm-060">
+        <div class="wrap">060</div>
+    </div>
+    <div class="col col-sm-040">
+        <div class="wrap">040</div>
+    </div>
 </div>
 
 <div class="row row-width-example">
-	<div class="col col-sm-070">
-		<div class="wrap">070</div>
-	</div>
-	<div class="col col-sm-030">
-		<div class="wrap">030</div>
-	</div>
+    <div class="col col-sm-070">
+        <div class="wrap">070</div>
+    </div>
+    <div class="col col-sm-030">
+        <div class="wrap">030</div>
+    </div>
 </div>
 
 <div class="row row-width-example">
-	<div class="col col-sm-080">
-		<div class="wrap">080</div>
-	</div>
-	<div class="col col-sm-020">
-		<div class="wrap">020</div>
-	</div>
+    <div class="col col-sm-080">
+        <div class="wrap">080</div>
+    </div>
+    <div class="col col-sm-020">
+        <div class="wrap">020</div>
+    </div>
 </div>
 
 <div class="row row-width-example">
-	<div class="col col-sm-090">
-		<div class="wrap">090</div>
-	</div>
-	<div class="col col-sm-010">
-		<div class="wrap">010</div>
-	</div>
+    <div class="col col-sm-090">
+        <div class="wrap">090</div>
+    </div>
+    <div class="col col-sm-010">
+        <div class="wrap">010</div>
+    </div>
 </div>
 
 <div class="row row-width-example">
-	<div class="col col-sm-0100">
-		<div class="wrap">0100</div>
-	</div>
+    <div class="col col-sm-0100">
+        <div class="wrap">0100</div>
+    </div>
 </div>
 
 <div class="table-responsive">
-	<table class="table-bordered table-condensed table-grid-overview">
-		<tr>
-			<th>Fraction</th>
-			<th>Percentage</th>
-			<th>Never Collapse</th>
-			<th>Collapse @576px</th>
-			<th>Collapse @767px</th>
-			<th>Collapse @991px</th>
-			<th>Collapse @1199px</th>
-		</tr>
-		<tr>
-			<td>1/10</td>
-			<td>10%</td>
-			<td><code>.col-xs-010</code></td>
-			<td><code>.col-sm-010</code></td>
-			<td><code>.col-md-010</code></td>
-			<td><code>.col-lg-010</code></td>
-			<td><code>.col-xl-010</code></td>
-		</tr>
-		<tr>
-			<td>1/5</td>
-			<td>20%</td>
-			<td><code>.col-xs-020</code></td>
-			<td><code>.col-sm-020</code></td>
-			<td><code>.col-md-020</code></td>
-			<td><code>.col-lg-020</code></td>
-			<td><code>.col-xl-020</code></td>
-		</tr>
-		<tr>
-			<td>3/10</td>
-			<td>30%</td>
-			<td><code>.col-xs-030</code></td>
-			<td><code>.col-sm-030</code></td>
-			<td><code>.col-md-030</code></td>
-			<td><code>.col-lg-030</code></td>
-			<td><code>.col-xl-030</code></td>
-		</tr>
-		<tr>
-			<td>2/5</td>
-			<td>40%</td>
-			<td><code>.col-xs-040</code></td>
-			<td><code>.col-sm-040</code></td>
-			<td><code>.col-md-040</code></td>
-			<td><code>.col-lg-040</code></td>
-			<td><code>.col-xl-040</code></td>
-		</tr>
-		<tr>
-			<td>1/2</td>
-			<td>50%</td>
-			<td><code>.col-xs-050</code></td>
-			<td><code>.col-sm-050</code></td>
-			<td><code>.col-md-050</code></td>
-			<td><code>.col-lg-050</code></td>
-			<td><code>.col-xl-050</code></td>
-		</tr>
-		<tr>
-			<td>3/5</td>
-			<td>60%</td>
-			<td><code>.col-xs-060</code></td>
-			<td><code>.col-sm-060</code></td>
-			<td><code>.col-md-060</code></td>
-			<td><code>.col-lg-060</code></td>
-			<td><code>.col-xl-060</code></td>
-		</tr>
-		<tr>
-			<td>7/10</td>
-			<td>70%</td>
-			<td><code>.col-xs-070</code></td>
-			<td><code>.col-sm-070</code></td>
-			<td><code>.col-md-070</code></td>
-			<td><code>.col-lg-070</code></td>
-			<td><code>.col-xl-070</code></td>
-		</tr>
-		<tr>
-			<td>4/5</td>
-			<td>80%</td>
-			<td><code>.col-xs-080</code></td>
-			<td><code>.col-sm-080</code></td>
-			<td><code>.col-md-080</code></td>
-			<td><code>.col-lg-080</code></td>
-			<td><code>.col-xl-080</code></td>
-		</tr>
-		<tr>
-			<td>9/10</td>
-			<td>90%</td>
-			<td><code>.col-xs-090</code></td>
-			<td><code>.col-sm-090</code></td>
-			<td><code>.col-md-090</code></td>
-			<td><code>.col-lg-090</code></td>
-			<td><code>.col-xl-090</code></td>
-		</tr>
-		<tr>
-			<td>10/10</td>
-			<td>100%</td>
-			<td><code>.col-xs-0100</code></td>
-			<td><code>.col-sm-0100</code></td>
-			<td><code>.col-md-0100</code></td>
-			<td><code>.col-lg-0100</code></td>
-			<td><code>.col-xl-0100</code></td>
-		</tr>
-	</table>
+    <table class="table-bordered table-condensed table-grid-overview">
+        <tr>
+            <th>Fraction</th>
+            <th>Percentage</th>
+            <th>Never Collapse</th>
+            <th>Collapse @576px</th>
+            <th>Collapse @767px</th>
+            <th>Collapse @991px</th>
+            <th>Collapse @1199px</th>
+        </tr>
+        <tr>
+            <td>1/10</td>
+            <td>10%</td>
+            <td><code>.col-xs-010</code></td>
+            <td><code>.col-sm-010</code></td>
+            <td><code>.col-md-010</code></td>
+            <td><code>.col-lg-010</code></td>
+            <td><code>.col-xl-010</code></td>
+        </tr>
+        <tr>
+            <td>1/5</td>
+            <td>20%</td>
+            <td><code>.col-xs-020</code></td>
+            <td><code>.col-sm-020</code></td>
+            <td><code>.col-md-020</code></td>
+            <td><code>.col-lg-020</code></td>
+            <td><code>.col-xl-020</code></td>
+        </tr>
+        <tr>
+            <td>3/10</td>
+            <td>30%</td>
+            <td><code>.col-xs-030</code></td>
+            <td><code>.col-sm-030</code></td>
+            <td><code>.col-md-030</code></td>
+            <td><code>.col-lg-030</code></td>
+            <td><code>.col-xl-030</code></td>
+        </tr>
+        <tr>
+            <td>2/5</td>
+            <td>40%</td>
+            <td><code>.col-xs-040</code></td>
+            <td><code>.col-sm-040</code></td>
+            <td><code>.col-md-040</code></td>
+            <td><code>.col-lg-040</code></td>
+            <td><code>.col-xl-040</code></td>
+        </tr>
+        <tr>
+            <td>1/2</td>
+            <td>50%</td>
+            <td><code>.col-xs-050</code></td>
+            <td><code>.col-sm-050</code></td>
+            <td><code>.col-md-050</code></td>
+            <td><code>.col-lg-050</code></td>
+            <td><code>.col-xl-050</code></td>
+        </tr>
+        <tr>
+            <td>3/5</td>
+            <td>60%</td>
+            <td><code>.col-xs-060</code></td>
+            <td><code>.col-sm-060</code></td>
+            <td><code>.col-md-060</code></td>
+            <td><code>.col-lg-060</code></td>
+            <td><code>.col-xl-060</code></td>
+        </tr>
+        <tr>
+            <td>7/10</td>
+            <td>70%</td>
+            <td><code>.col-xs-070</code></td>
+            <td><code>.col-sm-070</code></td>
+            <td><code>.col-md-070</code></td>
+            <td><code>.col-lg-070</code></td>
+            <td><code>.col-xl-070</code></td>
+        </tr>
+        <tr>
+            <td>4/5</td>
+            <td>80%</td>
+            <td><code>.col-xs-080</code></td>
+            <td><code>.col-sm-080</code></td>
+            <td><code>.col-md-080</code></td>
+            <td><code>.col-lg-080</code></td>
+            <td><code>.col-xl-080</code></td>
+        </tr>
+        <tr>
+            <td>9/10</td>
+            <td>90%</td>
+            <td><code>.col-xs-090</code></td>
+            <td><code>.col-sm-090</code></td>
+            <td><code>.col-md-090</code></td>
+            <td><code>.col-lg-090</code></td>
+            <td><code>.col-xl-090</code></td>
+        </tr>
+        <tr>
+            <td>10/10</td>
+            <td>100%</td>
+            <td><code>.col-xs-0100</code></td>
+            <td><code>.col-sm-0100</code></td>
+            <td><code>.col-md-0100</code></td>
+            <td><code>.col-lg-0100</code></td>
+            <td><code>.col-xl-0100</code></td>
+        </tr>
+    </table>
 </div>
 
 <h3 id="mixing-column-widths" class="heading-sm">Mixing Columns Widths</h3>
@@ -781,37 +781,37 @@
 <p>The following example has our three-column layout, with the columns setup for the <code>xl</code> breakpoint and above, distributed as <code>3/12 - 6/12 - 3/12</code>.</p>
 
 <div class="row row-example">
-	<div class="col col-xl-3">
-		<h6>Left Sidebar</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-	</div>
-	<div class="col col-xl-6">
-		<h6>Content</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
-	</div>
-	<div class="col col-xl-3">
-		<h6>Right Sidebar</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-	</div>
+    <div class="col col-xl-3">
+        <h6>Left Sidebar</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div class="col col-xl-6">
+        <h6>Content</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+    </div>
+    <div class="col col-xl-3">
+        <h6>Right Sidebar</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
 </div>
 
 <pre class="highlight html">
 <div class="row">
-	<div class="col col-xl-4">
-		<div class="wrap">
-			...
-		</div>
-	</div>
-	<div class="col col-xl-6">
-		<div class="wrap">
-			...
-		</div>
-	</div>
-	<div class="col col-xl-4">
-		<div class="wrap">
-			...
-		</div>
-	</div>
+    <div class="col col-xl-4">
+        <div class="wrap">
+            ...
+        </div>
+    </div>
+    <div class="col col-xl-6">
+        <div class="wrap">
+            ...
+        </div>
+    </div>
+    <div class="col col-xl-4">
+        <div class="wrap">
+            ...
+        </div>
+    </div>
 </div>
 </pre>
 
@@ -820,37 +820,37 @@
 <p>So now let's build on our above example and add a new set of classes to adjust the widths to be distributed evenly (i.e. three equal-width columns) when at the <code>lg</code> and <code>md</code> viewport sizes.</p>
 
 <div class="row row-example">
-	<div class="col col-xl-3 col-md">
-		<h6>Left Sidebar</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-	</div>
-	<div class="col col-xl-6 col-md">
-		<h6>Content</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
-	</div>
-	<div class="col col-xl-3 col-md">
-		<h6>Right Sidebar</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-	</div>
+    <div class="col col-xl-3 col-md">
+        <h6>Left Sidebar</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div class="col col-xl-6 col-md">
+        <h6>Content</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+    </div>
+    <div class="col col-xl-3 col-md">
+        <h6>Right Sidebar</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
 </div>
 
 <pre class="highlight html">
 <div class="row">
-	<div class="col col-xl-4 col-md">
-		<div class="wrap">
-			...
-		</div>
-	</div>
-	<div class="col col-xl-6 col-md">
-		<div class="wrap">
-			...
-		</div>
-	</div>
-	<div class="col col-xl-4 col-md">
-		<div class="wrap">
-			...
-		</div>
-	</div>
+    <div class="col col-xl-4 col-md">
+        <div class="wrap">
+            ...
+        </div>
+    </div>
+    <div class="col col-xl-6 col-md">
+        <div class="wrap">
+            ...
+        </div>
+    </div>
+    <div class="col col-xl-4 col-md">
+        <div class="wrap">
+            ...
+        </div>
+    </div>
 </div>
 </pre>
 
@@ -865,70 +865,70 @@
 <p>Consider the following example with a standard row of three columns, where you can see the negative margins of the row pushing the content flush against the sides of the container.</p>
 
 <div class="row-container-example bg-light">
-	<div class="wrap">
-		<div class="row row-example">
-			<div class="col col-md">
-				<div class="wrap">
-					<h6>Column #1</h6>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-				</div>
-			</div>
-			<div class="col col-md">
-				<div class="wrap">
-					<h6>Column #2</h6>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-				</div>
-			</div>
-			<div class="col col-md">
-				<div class="wrap">
-					<h6>Column #3</h6>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="wrap">
+        <div class="row row-example">
+            <div class="col col-md">
+                <div class="wrap">
+                    <h6>Column #1</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+                </div>
+            </div>
+            <div class="col col-md">
+                <div class="wrap">
+                    <h6>Column #2</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+                </div>
+            </div>
+            <div class="col col-md">
+                <div class="wrap">
+                    <h6>Column #3</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <pre class="highlight html">
 <div class="row">
-	...
+    ...
 </div>
 </pre>
 
 <p>But if we wanted to the outer edge of our row to sit naturally without any negative margin, we can wrap it in an element with class <code>row-container</code>.</p>
 
 <div class="row-container-example bg-light">
-	<div class="wrap">
-		<div class="row-container">
-			<div class="row row-example">
-				<div class="col col-md">
-					<div class="wrap">
-						<h6>Column #1</h6>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-					</div>
-				</div>
-				<div class="col col-md">
-					<div class="wrap">
-						<h6>Column #2</h6>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-					</div>
-				</div>
-				<div class="col col-md">
-					<div class="wrap">
-						<h6>Column #3</h6>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="wrap">
+        <div class="row-container">
+            <div class="row row-example">
+                <div class="col col-md">
+                    <div class="wrap">
+                        <h6>Column #1</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+                    </div>
+                </div>
+                <div class="col col-md">
+                    <div class="wrap">
+                        <h6>Column #2</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+                    </div>
+                </div>
+                <div class="col col-md">
+                    <div class="wrap">
+                        <h6>Column #3</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <pre class="highlight html">
 <div class="row-container">
-	<div class="row">
-		...
-	</div>
+    <div class="row">
+        ...
+    </div>
 </div>
 </pre>
 
@@ -941,53 +941,53 @@
 <p>The example below has two matching columns, with the second row having the <code>row-no-gutters</code> class applied.</p>
 
 <div class="row row-width-example">
-	<div class="col col-md">
-		<div class="wrap">
-			First
-		</div>
-	</div>
-	<div class="col col-md">
-		<div class="wrap">
-			Second
-		</div>
-	</div>
-	<div class="col col-md">
-		<div class="wrap">
-			Third
-		</div>
-	</div>
+    <div class="col col-md">
+        <div class="wrap">
+            First
+        </div>
+    </div>
+    <div class="col col-md">
+        <div class="wrap">
+            Second
+        </div>
+    </div>
+    <div class="col col-md">
+        <div class="wrap">
+            Third
+        </div>
+    </div>
 </div>
 
 <div class="row row-no-gutters row-width-example">
-	<div class="col col-md">
-		<div class="wrap">
-			First
-		</div>
-	</div>
-	<div class="col col-md">
-		<div class="wrap">
-			Second
-		</div>
-	</div>
-	<div class="col col-md">
-		<div class="wrap">
-			Third
-		</div>
-	</div>
+    <div class="col col-md">
+        <div class="wrap">
+            First
+        </div>
+    </div>
+    <div class="col col-md">
+        <div class="wrap">
+            Second
+        </div>
+    </div>
+    <div class="col col-md">
+        <div class="wrap">
+            Third
+        </div>
+    </div>
 </div>
 
 <pre class="highlight html">
 <div class="row">
-	...
+    ...
 </div>
 
 <div class="row row-no-gutters">
-	...
+    ...
 </div>
 </pre>
 
 <div class="alert alert-info">
-	<p><strong>Note:</strong> If you're wanting to maintain your column gutters, but simply counteract the negative side margins of a <code>.row</code> element, remember that you can use <a href="#row-container" title="Row Containers">row containers from above</a>.</p>
+    <p><strong>Note:</strong> If you're wanting to maintain your column gutters, but simply counteract the negative side margins of a <code>.row</code> element, remember that you can use <a href="#row-container" title="Row Containers">row containers from above</a>.</p>
 </div>
 
 <!-- NESTED COLUMNS -->
@@ -998,68 +998,68 @@
 
 <div class="row row-example">
 
-	<div class="col col-md">
-		<div class="wrap">
+    <div class="col col-md">
+        <div class="wrap">
 
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
 
-			<div class="row">
-				<div class="col col-md">
-					<div class="wrap">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
-					</div><!-- .wrap -->
-				</div><!-- .col.col-md -->
-				<div class="col col-md">
-					<div class="wrap">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
-					</div><!-- .wrap -->
-				</div><!-- .col.col-md -->
-			</div><!-- .row -->
+            <div class="row">
+                <div class="col col-md">
+                    <div class="wrap">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+                    </div><!-- .wrap -->
+                </div><!-- .col.col-md -->
+                <div class="col col-md">
+                    <div class="wrap">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+                    </div><!-- .wrap -->
+                </div><!-- .col.col-md -->
+            </div><!-- .row -->
 
-		</div><!-- .wrap -->
-	</div><!-- .col.col-md -->
+        </div><!-- .wrap -->
+    </div><!-- .col.col-md -->
 
-	<div class="col col-md">
-		<div class="wrap">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
-			<p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id. Donec sodales ultrices leo, vel tempor libero. Donec maximus faucibus scelerisque.</p>
-			<p>Maecenas pharetra augue risus, eu pretium arcu rhoncus eget.</p>
-		</div><!-- .wrap -->
-	</div><!-- .col.col-md -->
+    <div class="col col-md">
+        <div class="wrap">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+            <p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id. Donec sodales ultrices leo, vel tempor libero. Donec maximus faucibus scelerisque.</p>
+            <p>Maecenas pharetra augue risus, eu pretium arcu rhoncus eget.</p>
+        </div><!-- .wrap -->
+    </div><!-- .col.col-md -->
 
 </div><!-- .row -->
 
 <pre class="highlight html">
 <div class="row">
 
-	<div class="col col-md">
-		<div class="wrap">
+    <div class="col col-md">
+        <div class="wrap">
 
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
 
-			<div class="row">
-				<div class="col col-md">
-					<div class="wrap">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
-					</div><!-- .wrap -->
-				</div><!-- .col.col-md -->
-				<div class="col col-md">
-					<div class="wrap">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
-					</div><!-- .wrap -->
-				</div><!-- .col.col-md -->
-			</div><!-- .row -->
+            <div class="row">
+                <div class="col col-md">
+                    <div class="wrap">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+                    </div><!-- .wrap -->
+                </div><!-- .col.col-md -->
+                <div class="col col-md">
+                    <div class="wrap">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+                    </div><!-- .wrap -->
+                </div><!-- .col.col-md -->
+            </div><!-- .row -->
 
-		</div><!-- .wrap -->
-	</div><!-- .col.col-md -->
+        </div><!-- .wrap -->
+    </div><!-- .col.col-md -->
 
-	<div class="col col-md">
-		<div class="wrap">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
-			<p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id. Donec sodales ultrices leo, vel tempor libero. Donec maximus faucibus scelerisque.</p>
-			<p>Maecenas pharetra augue risus, eu pretium arcu rhoncus eget.</p>
-		</div><!-- .wrap -->
-	</div><!-- .col.col-md -->
+    <div class="col col-md">
+        <div class="wrap">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+            <p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id. Donec sodales ultrices leo, vel tempor libero. Donec maximus faucibus scelerisque.</p>
+            <p>Maecenas pharetra augue risus, eu pretium arcu rhoncus eget.</p>
+        </div><!-- .wrap -->
+    </div><!-- .col.col-md -->
 
 </div><!-- .row -->
 </pre>
@@ -1073,43 +1073,43 @@
 <p>Consider the following example. &mdash; We've got a basic row of three columns and have simply added classes from the <a href="colors.html#color-library" title="Color Library Classes">color library</a> to give <code>.wrap</code> content elements background colors.</p>
 
 <div class="row row-example">
-	<div class="col col-md">
-		<div class="wrap green">
-			<h6>Column #1</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		</div>
-	</div>
-	<div class="col col-md">
-		<div class="wrap forest">
-			<h6>Column #2</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		</div>
-	</div>
-	<div class="col col-md">
-		<div class="wrap jungle">
-			<h6>Column #3</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		</div>
-	</div>
+    <div class="col col-md">
+        <div class="wrap green">
+            <h6>Column #1</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+        </div>
+    </div>
+    <div class="col col-md">
+        <div class="wrap forest">
+            <h6>Column #2</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+        </div>
+    </div>
+    <div class="col col-md">
+        <div class="wrap jungle">
+            <h6>Column #3</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+        </div>
+    </div>
 </div>
 
 <pre class="highlight html">
 <div class="row">
-	<div class="col col-md">
-		<div class="wrap green">
-			...
-		</div>
-	</div>
-	<div class="col col-md">
-		<div class="wrap forest">
-			...
-		</div>
-	</div>
-	<div class="col col-md">
-		<div class="wrap jungle">
-			...
-		</div>
-	</div>
+    <div class="col col-md">
+        <div class="wrap green">
+            ...
+        </div>
+    </div>
+    <div class="col col-md">
+        <div class="wrap forest">
+            ...
+        </div>
+    </div>
+    <div class="col col-md">
+        <div class="wrap jungle">
+            ...
+        </div>
+    </div>
 </div>
 </pre>
 
@@ -1118,86 +1118,86 @@
 <p>So next we can add the class <code>has-bg</code> to our columns, which will add padding to the <code>.wrap</code> elements within.</p>
 
 <div class="row row-example">
-	<div class="col col-md has-bg">
-		<div class="wrap green">
-			<h6>Column #1</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		</div>
-	</div>
-	<div class="col col-md has-bg">
-		<div class="wrap forest">
-			<h6>Column #2</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		</div>
-	</div>
-	<div class="col col-md has-bg">
-		<div class="wrap jungle">
-			<h6>Column #3</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		</div>
-	</div>
+    <div class="col col-md has-bg">
+        <div class="wrap green">
+            <h6>Column #1</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+        </div>
+    </div>
+    <div class="col col-md has-bg">
+        <div class="wrap forest">
+            <h6>Column #2</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+        </div>
+    </div>
+    <div class="col col-md has-bg">
+        <div class="wrap jungle">
+            <h6>Column #3</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+        </div>
+    </div>
 </div>
 
 <pre class="highlight html">
 <div class="row">
-	<div class="col col-md has-bg">
-		<div class="wrap green">
-			...
-		</div>
-	</div>
-	<div class="col col-md has-bg">
-		<div class="wrap forest">
-			...
-		</div>
-	</div>
-	<div class="col col-md has-bg">
-		<div class="wrap jungle">
-			...
-		</div>
-	</div>
+    <div class="col col-md has-bg">
+        <div class="wrap green">
+            ...
+        </div>
+    </div>
+    <div class="col col-md has-bg">
+        <div class="wrap forest">
+            ...
+        </div>
+    </div>
+    <div class="col col-md has-bg">
+        <div class="wrap jungle">
+            ...
+        </div>
+    </div>
 </div>
 </pre>
 
 <p>This will also go nicely with the <code>row-no-gutters</code> class <a href="#no-gutters" title="No Gutters">discussed above</a>.</p>
 
 <div class="row row-no-gutters row-example">
-	<div class="col col-md has-bg">
-		<div class="wrap green">
-			<h6>Column #1</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		</div>
-	</div>
-	<div class="col col-md has-bg">
-		<div class="wrap forest">
-			<h6>Column #2</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		</div>
-	</div>
-	<div class="col col-md has-bg">
-		<div class="wrap jungle">
-			<h6>Column #3</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		</div>
-	</div>
+    <div class="col col-md has-bg">
+        <div class="wrap green">
+            <h6>Column #1</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+        </div>
+    </div>
+    <div class="col col-md has-bg">
+        <div class="wrap forest">
+            <h6>Column #2</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+        </div>
+    </div>
+    <div class="col col-md has-bg">
+        <div class="wrap jungle">
+            <h6>Column #3</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+        </div>
+    </div>
 </div>
 
 <pre class="highlight html">
 <div class="row row-no-gutters">
-	<div class="col col-md has-bg">
-		<div class="wrap green">
-			...
-		</div>
-	</div>
-	<div class="col col-md has-bg">
-		<div class="wrap forest">
-			...
-		</div>
-	</div>
-	<div class="col col-md has-bg">
-		<div class="wrap jungle">
-			...
-		</div>
-	</div>
+    <div class="col col-md has-bg">
+        <div class="wrap green">
+            ...
+        </div>
+    </div>
+    <div class="col col-md has-bg">
+        <div class="wrap forest">
+            ...
+        </div>
+    </div>
+    <div class="col col-md has-bg">
+        <div class="wrap jungle">
+            ...
+        </div>
+    </div>
 </div>
 </pre>
 
@@ -1206,143 +1206,143 @@
 <p>So, the following example takes nine columns all specified to be <code>4/12</code>, but contained in the same <code>.row</code> element.</p>
 
 <div class="row row-no-gutters row-example">
-	<div class="col col-lg-4 has-bg">
-		<div class="wrap asphalt">
-			<h6>Column #1</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		</div>
-	</div>
-	<div class="col col-lg-4 has-bg">
-		<div class="wrap red">
-			<h6>Column #2</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		</div>
-	</div>
-	<div class="col col-lg-4 has-bg">
-		<div class="wrap purple">
-			<h6>Column #3</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		</div>
-	</div>
-	<div class="col col-lg-4 has-bg">
-		<div class="wrap blue">
-			<h6>Column #4</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		</div>
-	</div>
-	<div class="col col-lg-4 has-bg">
-		<div class="wrap forest">
-			<h6>Column #5</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		</div>
-	</div>
-	<div class="col col-lg-4 has-bg">
-		<div class="wrap jungle">
-			<h6>Column #6</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		</div>
-	</div>
-	<div class="col col-lg-4 has-bg">
-		<div class="wrap pomegranate">
-			<h6>Column #7</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		</div>
-	</div>
-	<div class="col col-lg-4 has-bg">
-		<div class="wrap peach">
-			<h6>Column #8</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		</div>
-	</div>
-	<div class="col col-lg-4 has-bg">
-		<div class="wrap brown">
-			<h6>Column #9</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		</div>
-	</div>
+    <div class="col col-lg-4 has-bg">
+        <div class="wrap asphalt">
+            <h6>Column #1</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+        </div>
+    </div>
+    <div class="col col-lg-4 has-bg">
+        <div class="wrap red">
+            <h6>Column #2</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+        </div>
+    </div>
+    <div class="col col-lg-4 has-bg">
+        <div class="wrap purple">
+            <h6>Column #3</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+        </div>
+    </div>
+    <div class="col col-lg-4 has-bg">
+        <div class="wrap blue">
+            <h6>Column #4</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+        </div>
+    </div>
+    <div class="col col-lg-4 has-bg">
+        <div class="wrap forest">
+            <h6>Column #5</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+        </div>
+    </div>
+    <div class="col col-lg-4 has-bg">
+        <div class="wrap jungle">
+            <h6>Column #6</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+        </div>
+    </div>
+    <div class="col col-lg-4 has-bg">
+        <div class="wrap pomegranate">
+            <h6>Column #7</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+        </div>
+    </div>
+    <div class="col col-lg-4 has-bg">
+        <div class="wrap peach">
+            <h6>Column #8</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+        </div>
+    </div>
+    <div class="col col-lg-4 has-bg">
+        <div class="wrap brown">
+            <h6>Column #9</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+        </div>
+    </div>
 </div>
 
 <pre class="highlight html">
 <div class="row row-no-gutters">
-	<div class="col col-lg-4 has-bg">
-		<div class="wrap asphalt">
-			...
-		</div>
-	</div>
-	<div class="col col-lg-4 has-bg">
-		<div class="wrap red">
-			...
-		</div>
-	</div>
-	<div class="col col-lg-4 has-bg">
-		<div class="wrap purple">
-			...
-		</div>
-	</div>
-	<div class="col col-lg-4 has-bg">
-		<div class="wrap blue">
-			...
-		</div>
-	</div>
-	<div class="col col-lg-4 has-bg">
-		<div class="wrap forest">
-			...
-		</div>
-	</div>
-	<div class="col col-lg-4 has-bg">
-		<div class="wrap jungle">
-			...
-		</div>
-	</div>
-	<div class="col col-lg-4 has-bg">
-		<div class="wrap pomegranate">
-			...
-		</div>
-	</div>
-	<div class="col col-lg-4 has-bg">
-		<div class="wrap peach">
-			...
-		</div>
-	</div>
-	<div class="col col-lg-4 has-bg">
-		<div class="wrap brown">
-			...
-		</div>
-	</div>
+    <div class="col col-lg-4 has-bg">
+        <div class="wrap asphalt">
+            ...
+        </div>
+    </div>
+    <div class="col col-lg-4 has-bg">
+        <div class="wrap red">
+            ...
+        </div>
+    </div>
+    <div class="col col-lg-4 has-bg">
+        <div class="wrap purple">
+            ...
+        </div>
+    </div>
+    <div class="col col-lg-4 has-bg">
+        <div class="wrap blue">
+            ...
+        </div>
+    </div>
+    <div class="col col-lg-4 has-bg">
+        <div class="wrap forest">
+            ...
+        </div>
+    </div>
+    <div class="col col-lg-4 has-bg">
+        <div class="wrap jungle">
+            ...
+        </div>
+    </div>
+    <div class="col col-lg-4 has-bg">
+        <div class="wrap pomegranate">
+            ...
+        </div>
+    </div>
+    <div class="col col-lg-4 has-bg">
+        <div class="wrap peach">
+            ...
+        </div>
+    </div>
+    <div class="col col-lg-4 has-bg">
+        <div class="wrap brown">
+            ...
+        </div>
+    </div>
 </div>
 </pre>
 
 <p><em>Can I mix and match?</em> &mdash; Sure! Not every column in a row needs a background color. Below is an example where we just want the second column to have a background color, and so only the second column will need the <code>has-bg</code> helper class.</p>
 
 <div class="row row-example">
-	<div class="col col-md-8">
-		<div class="wrap">
-			<h6>Column #1</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
-			<p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id. Donec sodales ultrices leo, vel tempor libero. Donec maximus faucibus scelerisque.</p>
-			<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni.</p>
-		</div>
-	</div>
-	<div class="col col-md-4 has-bg">
-		<div class="wrap green">
-			<h6>Column #2</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
-		</div>
-	</div>
+    <div class="col col-md-8">
+        <div class="wrap">
+            <h6>Column #1</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum vulputate dignissim. Integer suscipit lacinia fringilla.</p>
+            <p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id. Donec sodales ultrices leo, vel tempor libero. Donec maximus faucibus scelerisque.</p>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni.</p>
+        </div>
+    </div>
+    <div class="col col-md-4 has-bg">
+        <div class="wrap green">
+            <h6>Column #2</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum.</p>
+        </div>
+    </div>
 </div>
 
 <pre class="highlight html">
 <div class="row">
-	<div class="col col-md-8">
-		<div class="wrap">
-			...
-		</div>
-	</div>
-	<div class="col col-md-4 has-bg">
-		<div class="wrap green">
-			...
-		</div>
-	</div>
+    <div class="col col-md-8">
+        <div class="wrap">
+            ...
+        </div>
+    </div>
+    <div class="col col-md-4 has-bg">
+        <div class="wrap green">
+            ...
+        </div>
+    </div>
 </div>
 </pre>
 
@@ -1357,157 +1357,157 @@
 <p>By default columns will stretch vertically to fill the height of their row.</p>
 
 <div class="row row-example row-example-align bg-light">
-	<div class="col col-md has-bg">
-		<div class="wrap blue">
-			<h6>Column #1</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-	</div>
-	<div class="col col-md has-bg">
-		<div class="wrap steel-blue">
-			<h6>Column #2</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-	</div>
-	<div class="col col-md has-bg">
-		<div class="wrap royal">
-			<h6>Column #3</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-			<p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id.</p>
-		</div>
-	</div>
+    <div class="col col-md has-bg">
+        <div class="wrap blue">
+            <h6>Column #1</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+    <div class="col col-md has-bg">
+        <div class="wrap steel-blue">
+            <h6>Column #2</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+    <div class="col col-md has-bg">
+        <div class="wrap royal">
+            <h6>Column #3</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id.</p>
+        </div>
+    </div>
 </div>
 
 <p>To align your columns vertically to the top of a row, you can add class <code>row-align-top</code> to the wrapping <code>.row</code> element.</p>
 
 <div class="row row-align-top row-example row-example-align bg-light">
-	<div class="col col-md has-bg">
-		<div class="wrap blue">
-			<h6>Column #1</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-	</div>
-	<div class="col col-md has-bg">
-		<div class="wrap steel-blue">
-			<h6>Column #2</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-	</div>
-	<div class="col col-md has-bg">
-		<div class="wrap royal">
-			<h6>Column #3</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-			<p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id.</p>
-		</div>
-	</div>
+    <div class="col col-md has-bg">
+        <div class="wrap blue">
+            <h6>Column #1</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+    <div class="col col-md has-bg">
+        <div class="wrap steel-blue">
+            <h6>Column #2</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+    <div class="col col-md has-bg">
+        <div class="wrap royal">
+            <h6>Column #3</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id.</p>
+        </div>
+    </div>
 </div>
 
 <pre class="highlight html">
 <div class="row row-align-top">
-	...
+    ...
 </div>
 </pre>
 
 <p>To align your columns vertically to the middle of a row, you can add class <code>row-align-middle</code> to the wrapping <code>.row</code> element.</p>
 
 <div class="row row-align-middle row-example row-example-align bg-light">
-	<div class="col col-md has-bg">
-		<div class="wrap blue">
-			<h6>Column #1</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-	</div>
-	<div class="col col-md has-bg">
-		<div class="wrap steel-blue">
-			<h6>Column #2</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-	</div>
-	<div class="col col-md has-bg">
-		<div class="wrap royal">
-			<h6>Column #3</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-			<p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id.</p>
-		</div>
-	</div>
+    <div class="col col-md has-bg">
+        <div class="wrap blue">
+            <h6>Column #1</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+    <div class="col col-md has-bg">
+        <div class="wrap steel-blue">
+            <h6>Column #2</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+    <div class="col col-md has-bg">
+        <div class="wrap royal">
+            <h6>Column #3</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id.</p>
+        </div>
+    </div>
 </div>
 
 <pre class="highlight html">
 <div class="row row-align-middle">
-	...
+    ...
 </div>
 </pre>
 
 <p>To align your columns vertically to the bottom of a row, you can add class <code>row-align-bottom</code> to the wrapping <code>.row</code> element.</p>
 
 <div class="row row-align-bottom row-example row-example-align bg-light">
-	<div class="col col-md has-bg">
-		<div class="wrap blue">
-			<h6>Column #1</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-	</div>
-	<div class="col col-md has-bg">
-		<div class="wrap steel-blue">
-			<h6>Column #2</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-	</div>
-	<div class="col col-md has-bg">
-		<div class="wrap royal">
-			<h6>Column #3</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-			<p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id.</p>
-		</div>
-	</div>
+    <div class="col col-md has-bg">
+        <div class="wrap blue">
+            <h6>Column #1</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+    <div class="col col-md has-bg">
+        <div class="wrap steel-blue">
+            <h6>Column #2</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+    <div class="col col-md has-bg">
+        <div class="wrap royal">
+            <h6>Column #3</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Mauris tempus convallis lectus, placerat hendrerit ligula auctor id.</p>
+        </div>
+    </div>
 </div>
 
 <pre class="highlight html">
 <div class="row row-align-bottom">
-	...
+    ...
 </div>
 </pre>
 
 <p>You can also align individual columns within a row, by adding the <code>col-align-top</code>, <code>col-align-middle</code>, and <code>col-align-bottom</code> classes to the individual columns.</p>
 
 <div class="row row-example row-example-align row-example-align-single-col bg-light">
-	<div class="col col-align-top col-md has-bg">
-		<div class="wrap blue">
-			<h6>Column #1</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-	</div>
-	<div class="col col-align-middle col-md has-bg">
-		<div class="wrap steel-blue">
-			<h6>Column #2</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-	</div>
-	<div class="col col-align-bottom col-md has-bg">
-		<div class="wrap royal">
-			<h6>Column #3</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-	</div>
+    <div class="col col-align-top col-md has-bg">
+        <div class="wrap blue">
+            <h6>Column #1</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+    <div class="col col-align-middle col-md has-bg">
+        <div class="wrap steel-blue">
+            <h6>Column #2</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+    <div class="col col-align-bottom col-md has-bg">
+        <div class="wrap royal">
+            <h6>Column #3</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
 </div>
 
 <pre class="highlight html">
 <div class="row">
-	<div class="col col-align-top col-md has-bg">
-		<div class="wrap blue">
-			...
-		</div>
-	</div>
-	<div class="col col-align-middle col-md has-bg">
-		<div class="wrap steel-blue">
-			...
-		</div>
-	</div>
-	<div class="col col-align-bottom col-md has-bg">
-		<div class="wrap royal">
-			...
-		</div>
-	</div>
+    <div class="col col-align-top col-md has-bg">
+        <div class="wrap blue">
+            ...
+        </div>
+    </div>
+    <div class="col col-align-middle col-md has-bg">
+        <div class="wrap steel-blue">
+            ...
+        </div>
+    </div>
+    <div class="col col-align-bottom col-md has-bg">
+        <div class="wrap royal">
+            ...
+        </div>
+    </div>
 </div>
 </pre>
 
@@ -1516,103 +1516,103 @@
 <p>By default columns will be aligned to the start of their row.</p>
 
 <div class="row row-example row-example-align bg-light">
-	<div class="col col-md-4 has-bg">
-		<div class="wrap blue">
-			<h6>Column #1</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-	</div>
-	<div class="col col-md-4 has-bg">
-		<div class="wrap steel-blue">
-			<h6>Column #2</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-	</div>
+    <div class="col col-md-4 has-bg">
+        <div class="wrap blue">
+            <h6>Column #1</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+    <div class="col col-md-4 has-bg">
+        <div class="wrap steel-blue">
+            <h6>Column #2</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
 </div>
 
 <p>To align your columns horizontally to the end of a row, you can add class <code>row-align-end</code> to the wrapping <code>.row</code> element.</p>
 
 <div class="row row-align-end row-example row-example-align bg-light">
-	<div class="col col-md-4 has-bg">
-		<div class="wrap blue">
-			<h6>Column #1</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-	</div>
-	<div class="col col-md-4 has-bg">
-		<div class="wrap steel-blue">
-			<h6>Column #2</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-	</div>
+    <div class="col col-md-4 has-bg">
+        <div class="wrap blue">
+            <h6>Column #1</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+    <div class="col col-md-4 has-bg">
+        <div class="wrap steel-blue">
+            <h6>Column #2</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
 </div>
 
 <pre class="highlight html">
 <div class="row row-align-end">
-	...
+    ...
 </div>
 </pre>
 
 <p>To align your columns horizontally to the center of a row, you can add class <code>row-align-center</code> to the wrapping <code>.row</code> element.</p>
 
 <div class="row row-align-center row-example row-example-align bg-light">
-	<div class="col col-md-4 has-bg">
-		<div class="wrap blue">
-			<h6>Column #1</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-	</div>
-	<div class="col col-md-4 has-bg">
-		<div class="wrap steel-blue">
-			<h6>Column #2</h6>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-	</div>
+    <div class="col col-md-4 has-bg">
+        <div class="wrap blue">
+            <h6>Column #1</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+    <div class="col col-md-4 has-bg">
+        <div class="wrap steel-blue">
+            <h6>Column #2</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
 </div>
 
 <pre class="highlight html">
 <div class="row row-align-center">
-	...
+    ...
 </div>
 </pre>
 
 <p>You can also align individual columns within a row, by adding the <code>col-align-start</code>, <code>col-align-center</code>, and <code>col-align-end</code> classes to the individual columns instead of the wrapping row.</p>
 
 <div class="row row-example row-example-align bg-light">
-	<div class="col col-align-start col-md-3 has-bg">
-		<div class="wrap blue">
-			<h6>Column #1</h6>
-		</div>
-	</div>
-	<div class="col col-align-center col-md-3 has-bg">
-		<div class="wrap steel-blue">
-			<h6>Column #2</h6>
-		</div>
-	</div>
-	<div class="col col-align-end col-md-3 has-bg">
-		<div class="wrap royal">
-			<h6>Column #3</h6>
-		</div>
-	</div>
+    <div class="col col-align-start col-md-3 has-bg">
+        <div class="wrap blue">
+            <h6>Column #1</h6>
+        </div>
+    </div>
+    <div class="col col-align-center col-md-3 has-bg">
+        <div class="wrap steel-blue">
+            <h6>Column #2</h6>
+        </div>
+    </div>
+    <div class="col col-align-end col-md-3 has-bg">
+        <div class="wrap royal">
+            <h6>Column #3</h6>
+        </div>
+    </div>
 </div>
 
 <pre class="highlight html">
 <div class="row">
-	<div class="col col-align-start col-md-3 has-bg">
-		<div class="wrap blue">
-			...
-		</div>
-	</div>
-	<div class="col col-align-center col-md-3 has-bg">
-		<div class="wrap steel-blue">
-			...
-		</div>
-	</div>
-	<div class="col col-align-end col-md-3 has-bg">
-		<div class="wrap royal">
-			...
-		</div>
-	</div>
+    <div class="col col-align-start col-md-3 has-bg">
+        <div class="wrap blue">
+            ...
+        </div>
+    </div>
+    <div class="col col-align-center col-md-3 has-bg">
+        <div class="wrap steel-blue">
+            ...
+        </div>
+    </div>
+    <div class="col col-align-end col-md-3 has-bg">
+        <div class="wrap royal">
+            ...
+        </div>
+    </div>
 </div>
 </pre>
 
@@ -1623,55 +1623,55 @@
 <p>For example, combining <code>row-align-center</code> and <code>row-align-middle</code> can help us to achieve a common scenario of placing a column perfectly centered within a row that's been given a specific height larger than the column, itself.</p>
 
 <div class="row row-align-center row-align-middle row-example row-example-align row-example-align-single-col bg-light">
-	<div class="col col-md-4 has-bg">
-		<div class="wrap blue">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-	</div>
+    <div class="col col-md-4 has-bg">
+        <div class="wrap blue">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
 </div>
 
 <pre class="highlight html">
 <div class="row row-align-center row-align-middle">
-	<div class="col col-md-4 has-bg">
-		<div class="wrap blue">
-			...
-		</div>
-	</div>
+    <div class="col col-md-4 has-bg">
+        <div class="wrap blue">
+            ...
+        </div>
+    </div>
 </div>
 </pre>
 
 <p>And for fun, below is a less practical example, but just showing how we can apply this concept to indvidual columns within.</p>
 
 <div class="row row-example row-example-align row-example-align-single-col bg-light">
-	<div class="col col-align-start col-align-bottom col-md-4 has-bg">
-		<div class="wrap blue">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-	</div>
-	<div class="col col-align-end row-align-top col-md-4 has-bg">
-		<div class="wrap royal">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-	</div>
+    <div class="col col-align-start col-align-bottom col-md-4 has-bg">
+        <div class="wrap blue">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+    <div class="col col-align-end row-align-top col-md-4 has-bg">
+        <div class="wrap royal">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
 </div>
 
 <pre class="highlight html">
 <div class="row">
-	<div class="col col-align-start col-align-bottom col-md-4 has-bg">
-		<div class="wrap blue">
-			...
-		</div>
-	</div>
-	<div class="col col-align-end row-align-top col-md-4 has-bg">
-		<div class="wrap royal">
-			...
-		</div>
-	</div>
+    <div class="col col-align-start col-align-bottom col-md-4 has-bg">
+        <div class="wrap blue">
+            ...
+        </div>
+    </div>
+    <div class="col col-align-end row-align-top col-md-4 has-bg">
+        <div class="wrap royal">
+            ...
+        </div>
+    </div>
 </div>
 </pre>
 
 <div class="alert alert-info">
-	<p><strong>Note:</strong> IE 10-11 have issues with vertical alignment, when a <code>.row</code> relies <em>only</em> on <code>min-height</code>. So make sure to set a CSS <code>height</code> on your <code>.row</code> element, if you want it to be taller than all columns within, like the two examples above.</p>
+    <p><strong>Note:</strong> IE 10-11 have issues with vertical alignment, when a <code>.row</code> relies <em>only</em> on <code>min-height</code>. So make sure to set a CSS <code>height</code> on your <code>.row</code> element, if you want it to be taller than all columns within, like the two examples above.</p>
 </div>
 
 <h3 id="distribution" class="heading-sm">Distribution</h3>
@@ -1679,165 +1679,165 @@
 <p>When your columns don't all add up to 100%, you can evenly distribute the space around them by adding class <code>row-space-around</code> to the <code>.row</code> element.</p>
 
 <div class="row row-space-around row-example row-example-align bg-light">
-	<div class="col col-md-3 has-bg">
-		<div class="wrap blue">
-			<h6>Column #1</h6>
-		</div>
-	</div>
-	<div class="col col-md-3 has-bg">
-		<div class="wrap steel-blue">
-			<h6>Column #2</h6>
-		</div>
-	</div>
-	<div class="col col-md-3 has-bg">
-		<div class="wrap royal">
-			<h6>Column #3</h6>
-		</div>
-	</div>
+    <div class="col col-md-3 has-bg">
+        <div class="wrap blue">
+            <h6>Column #1</h6>
+        </div>
+    </div>
+    <div class="col col-md-3 has-bg">
+        <div class="wrap steel-blue">
+            <h6>Column #2</h6>
+        </div>
+    </div>
+    <div class="col col-md-3 has-bg">
+        <div class="wrap royal">
+            <h6>Column #3</h6>
+        </div>
+    </div>
 </div>
 
 <pre class="highlight html">
 <div class="row row-space-around">
-	...
+    ...
 </div>
 </pre>
 
 <p>And similarly, you can evenly distribute the space around, but with the first and last columns against the row edges, by adding class <code>row-space-between</code> to the <code>.row</code> element.</p>
 
 <div class="row row-space-between row-example row-example-align bg-light">
-	<div class="col col-md-3 has-bg">
-		<div class="wrap blue">
-			<h6>Column #1</h6>
-		</div>
-	</div>
-	<div class="col col-md-3 has-bg">
-		<div class="wrap steel-blue">
-			<h6>Column #2</h6>
-		</div>
-	</div>
-	<div class="col col-md-3 has-bg">
-		<div class="wrap royal">
-			<h6>Column #3</h6>
-		</div>
-	</div>
+    <div class="col col-md-3 has-bg">
+        <div class="wrap blue">
+            <h6>Column #1</h6>
+        </div>
+    </div>
+    <div class="col col-md-3 has-bg">
+        <div class="wrap steel-blue">
+            <h6>Column #2</h6>
+        </div>
+    </div>
+    <div class="col col-md-3 has-bg">
+        <div class="wrap royal">
+            <h6>Column #3</h6>
+        </div>
+    </div>
 </div>
 
 <pre class="highlight html">
 <div class="row row-space-between">
-	...
+    ...
 </div>
 </pre>
 
 <h3 id="alignment-overview" class="heading-sm">Alignment Overview</h3>
 
 <div class="table-responsive">
-	<table class="table-bordered table-condensed table-grid-overview">
-		<tr>
-			<th>Element</th>
-			<th>Orientation</th>
-			<th>Alignment</th>
-			<th class="text-center">Use with <code>.row</code></th>
-			<th class="text-center">Use with <code>.col</code></th>
-		</tr>
-		<tr>
-			<td><code>.row-align-top</code></td>
-			<td>Vertical</td>
-			<td>Top</td>
-			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
-		</tr>
-		<tr>
-			<td><code>.row-align-middle</code></td>
-			<td>Vertical</td>
-			<td>Middle</td>
-			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
-		</tr>
-		<tr>
-			<td><code>.row-align-bottom</code></td>
-			<td>Vertical</td>
-			<td>Bottom</td>
-			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
-		</tr>
-		<tr>
-			<td><code>.row-align-start</code></td>
-			<td>Horizontal</td>
-			<td>Start</td>
-			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
-		</tr>
-		<tr>
-			<td><code>.row-align-center</code></td>
-			<td>Horizontal</td>
-			<td>Center</td>
-			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
-		</tr>
-		<tr>
-			<td><code>.row-align-end</code></td>
-			<td>Horizontal</td>
-			<td>End</td>
-			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
-		</tr>
-		<tr>
-			<td><code>.row-space-around</code></td>
-			<td>Horizontal</td>
-			<td>Even distribution, all around</td>
-			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
-		</tr>
-		<tr>
-			<td><code>.row-space-between</code></td>
-			<td>Horizontal</td>
-			<td>Even distribution, against outer edges</td>
-			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
-		</tr>
-		<tr>
-			<td><code>.col-align-top</code></td>
-			<td>Vertical</td>
-			<td>Top</td>
-			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
-			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-		</tr>
-		<tr>
-			<td><code>.col-align-middle</code></td>
-			<td>Vertical</td>
-			<td>Middle</td>
-			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
-			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-		</tr>
-		<tr>
-			<td><code>.col-align-bottom</code></td>
-			<td>Vertical</td>
-			<td>Bottom</td>
-			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
-			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-		</tr>
-		<tr>
-			<td><code>.col-align-start</code></td>
-			<td>Horizontal</td>
-			<td>Start</td>
-			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
-			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-		</tr>
-		<tr>
-			<td><code>.col-align-center</code></td>
-			<td>Horizontal</td>
-			<td>Center</td>
-			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
-			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-		</tr>
-		<tr>
-			<td><code>.col-align-end</code></td>
-			<td>Horizontal</td>
-			<td>End</td>
-			<td class="text-center"><i class="fa fa-close text-danger"></i></td>
-			<td class="text-center"><i class="fa fa-check text-success"></i></td>
-		</tr>
-	</table>
+    <table class="table-bordered table-condensed table-grid-overview">
+        <tr>
+            <th>Element</th>
+            <th>Orientation</th>
+            <th>Alignment</th>
+            <th class="text-center">Use with <code>.row</code></th>
+            <th class="text-center">Use with <code>.col</code></th>
+        </tr>
+        <tr>
+            <td><code>.row-align-top</code></td>
+            <td>Vertical</td>
+            <td>Top</td>
+            <td class="text-center"><i class="fa fa-check text-success"></i></td>
+            <td class="text-center"><i class="fa fa-close text-danger"></i></td>
+        </tr>
+        <tr>
+            <td><code>.row-align-middle</code></td>
+            <td>Vertical</td>
+            <td>Middle</td>
+            <td class="text-center"><i class="fa fa-check text-success"></i></td>
+            <td class="text-center"><i class="fa fa-close text-danger"></i></td>
+        </tr>
+        <tr>
+            <td><code>.row-align-bottom</code></td>
+            <td>Vertical</td>
+            <td>Bottom</td>
+            <td class="text-center"><i class="fa fa-check text-success"></i></td>
+            <td class="text-center"><i class="fa fa-close text-danger"></i></td>
+        </tr>
+        <tr>
+            <td><code>.row-align-start</code></td>
+            <td>Horizontal</td>
+            <td>Start</td>
+            <td class="text-center"><i class="fa fa-check text-success"></i></td>
+            <td class="text-center"><i class="fa fa-close text-danger"></i></td>
+        </tr>
+        <tr>
+            <td><code>.row-align-center</code></td>
+            <td>Horizontal</td>
+            <td>Center</td>
+            <td class="text-center"><i class="fa fa-check text-success"></i></td>
+            <td class="text-center"><i class="fa fa-close text-danger"></i></td>
+        </tr>
+        <tr>
+            <td><code>.row-align-end</code></td>
+            <td>Horizontal</td>
+            <td>End</td>
+            <td class="text-center"><i class="fa fa-check text-success"></i></td>
+            <td class="text-center"><i class="fa fa-close text-danger"></i></td>
+        </tr>
+        <tr>
+            <td><code>.row-space-around</code></td>
+            <td>Horizontal</td>
+            <td>Even distribution, all around</td>
+            <td class="text-center"><i class="fa fa-check text-success"></i></td>
+            <td class="text-center"><i class="fa fa-close text-danger"></i></td>
+        </tr>
+        <tr>
+            <td><code>.row-space-between</code></td>
+            <td>Horizontal</td>
+            <td>Even distribution, against outer edges</td>
+            <td class="text-center"><i class="fa fa-check text-success"></i></td>
+            <td class="text-center"><i class="fa fa-close text-danger"></i></td>
+        </tr>
+        <tr>
+            <td><code>.col-align-top</code></td>
+            <td>Vertical</td>
+            <td>Top</td>
+            <td class="text-center"><i class="fa fa-close text-danger"></i></td>
+            <td class="text-center"><i class="fa fa-check text-success"></i></td>
+        </tr>
+        <tr>
+            <td><code>.col-align-middle</code></td>
+            <td>Vertical</td>
+            <td>Middle</td>
+            <td class="text-center"><i class="fa fa-close text-danger"></i></td>
+            <td class="text-center"><i class="fa fa-check text-success"></i></td>
+        </tr>
+        <tr>
+            <td><code>.col-align-bottom</code></td>
+            <td>Vertical</td>
+            <td>Bottom</td>
+            <td class="text-center"><i class="fa fa-close text-danger"></i></td>
+            <td class="text-center"><i class="fa fa-check text-success"></i></td>
+        </tr>
+        <tr>
+            <td><code>.col-align-start</code></td>
+            <td>Horizontal</td>
+            <td>Start</td>
+            <td class="text-center"><i class="fa fa-close text-danger"></i></td>
+            <td class="text-center"><i class="fa fa-check text-success"></i></td>
+        </tr>
+        <tr>
+            <td><code>.col-align-center</code></td>
+            <td>Horizontal</td>
+            <td>Center</td>
+            <td class="text-center"><i class="fa fa-close text-danger"></i></td>
+            <td class="text-center"><i class="fa fa-check text-success"></i></td>
+        </tr>
+        <tr>
+            <td><code>.col-align-end</code></td>
+            <td>Horizontal</td>
+            <td>End</td>
+            <td class="text-center"><i class="fa fa-close text-danger"></i></td>
+            <td class="text-center"><i class="fa fa-check text-success"></i></td>
+        </tr>
+    </table>
 </div>
 
 <!-- COLUMN ORDERING -->
@@ -1853,40 +1853,40 @@
 <p>To reverse the order of all columns in a row, use one of the <code>row-{breakpoint}-reverse</code> classes on your <code>.row</code> element.</p>
 
 <div class="row row-md-reverse row-width-example">
-	<div class="col col-md">
-		<div class="wrap">
-			First
-		</div>
-	</div>
-	<div class="col col-md">
-		<div class="wrap">
-			Second
-		</div>
-	</div>
-	<div class="col col-md">
-		<div class="wrap">
-			Third
-		</div>
-	</div>
+    <div class="col col-md">
+        <div class="wrap">
+            First
+        </div>
+    </div>
+    <div class="col col-md">
+        <div class="wrap">
+            Second
+        </div>
+    </div>
+    <div class="col col-md">
+        <div class="wrap">
+            Third
+        </div>
+    </div>
 </div>
 
 <pre class="highlight html">
 <div class="row row-md-reverse">
-	<div class="col col-md">
-		<div class="wrap">
-			First
-		</div>
-	</div>
-	<div class="col col-md">
-		<div class="wrap">
-			Second
-		</div>
-	</div>
-	<div class="col col-md">
-		<div class="wrap">
-			Third
-		</div>
-	</div>
+    <div class="col col-md">
+        <div class="wrap">
+            First
+        </div>
+    </div>
+    <div class="col col-md">
+        <div class="wrap">
+            Second
+        </div>
+    </div>
+    <div class="col col-md">
+        <div class="wrap">
+            Third
+        </div>
+    </div>
 </div>
 </pre>
 
@@ -1895,116 +1895,116 @@
 <p>To bump a single column into the first position of a row, add class <code>col-{breakpoint}-order-first</code> to the column.</p>
 
 <div class="row row-width-example">
-	<div class="col col-md">
-		<div class="wrap">
-			First
-		</div>
-	</div>
-	<div class="col col-md">
-		<div class="wrap">
-			Second
-		</div>
-	</div>
-	<div class="col col-md col-md-order-first">
-		<div class="wrap">
-			Third
-		</div>
-	</div>
+    <div class="col col-md">
+        <div class="wrap">
+            First
+        </div>
+    </div>
+    <div class="col col-md">
+        <div class="wrap">
+            Second
+        </div>
+    </div>
+    <div class="col col-md col-md-order-first">
+        <div class="wrap">
+            Third
+        </div>
+    </div>
 </div>
 
 <pre class="highlight html">
 <div class="row">
-	<div class="col col-md">
-		<div class="wrap">
-			First
-		</div>
-	</div>
-	<div class="col col-md">
-		<div class="wrap">
-			Second
-		</div>
-	</div>
-	<div class="col col-md col-md-order-first">
-		<div class="wrap">
-			Third
-		</div>
-	</div>
+    <div class="col col-md">
+        <div class="wrap">
+            First
+        </div>
+    </div>
+    <div class="col col-md">
+        <div class="wrap">
+            Second
+        </div>
+    </div>
+    <div class="col col-md col-md-order-first">
+        <div class="wrap">
+            Third
+        </div>
+    </div>
 </div>
 </pre>
 
 <p>And similarly, to bump a single column into the last position of a row, add class <code>col-{breakpoint}-order-last</code> to the column.</p>
 
 <div class="row row-width-example">
-	<div class="col col-md col-md-order-last">
-		<div class="wrap">
-			First
-		</div>
-	</div>
-	<div class="col col-md">
-		<div class="wrap">
-			Second
-		</div>
-	</div>
-	<div class="col col-md">
-		<div class="wrap">
-			Third
-		</div>
-	</div>
+    <div class="col col-md col-md-order-last">
+        <div class="wrap">
+            First
+        </div>
+    </div>
+    <div class="col col-md">
+        <div class="wrap">
+            Second
+        </div>
+    </div>
+    <div class="col col-md">
+        <div class="wrap">
+            Third
+        </div>
+    </div>
 </div>
 
 <pre class="highlight html">
 <div class="row">
-	<div class="col col-md col-md-order-last">
-		<div class="wrap">
-			First
-		</div>
-	</div>
-	<div class="col col-md">
-		<div class="wrap">
-			Second
-		</div>
-	</div>
-	<div class="col col-md">
-		<div class="wrap">
-			Third
-		</div>
-	</div>
+    <div class="col col-md col-md-order-last">
+        <div class="wrap">
+            First
+        </div>
+    </div>
+    <div class="col col-md">
+        <div class="wrap">
+            Second
+        </div>
+    </div>
+    <div class="col col-md">
+        <div class="wrap">
+            Third
+        </div>
+    </div>
 </div>
 </pre>
 
 <h3 id="order-overview" class="heading-sm">Ordering Overview</h3>
 
 <div class="table-responsive">
-	<table class="table-bordered table-condensed table-grid-overview">
-		<tr>
-			<th>Always Ordered</th>
-			<th>Ordered Above 576px</th>
-			<th>Ordered Above 767px</th>
-			<th>Ordered Above 991px</th>
-			<th>Ordered Above 1199px</th>
-		</tr>
-		<tr>
-			<td><code>.row-xs-reverse</code></td>
-			<td><code>.row-sm-reverse</code></td>
-			<td><code>.row-md-reverse</code></td>
-			<td><code>.row-lg-reverse</code></td>
-			<td><code>.row-xl-reverse</code></td>
-		</tr>
-		<tr>
-			<td><code>.col-xs-first-order</code></td>
-			<td><code>.col-sm-first-order</code></td>
-			<td><code>.col-md-first-order</code></td>
-			<td><code>.col-lg-first-order</code></td>
-			<td><code>.col-xl-first-order</code></td>
-		</tr>
-		<tr>
-			<td><code>.col-xs-last-order</code></td>
-			<td><code>.col-sm-last-order</code></td>
-			<td><code>.col-md-last-order</code></td>
-			<td><code>.col-lg-last-order</code></td>
-			<td><code>.col-xl-last-order</code></td>
-		</tr>
-	</table>
+    <table class="table-bordered table-condensed table-grid-overview">
+        <tr>
+            <th>Always Ordered</th>
+            <th>Ordered Above 576px</th>
+            <th>Ordered Above 767px</th>
+            <th>Ordered Above 991px</th>
+            <th>Ordered Above 1199px</th>
+        </tr>
+        <tr>
+            <td><code>.row-xs-reverse</code></td>
+            <td><code>.row-sm-reverse</code></td>
+            <td><code>.row-md-reverse</code></td>
+            <td><code>.row-lg-reverse</code></td>
+            <td><code>.row-xl-reverse</code></td>
+        </tr>
+        <tr>
+            <td><code>.col-xs-first-order</code></td>
+            <td><code>.col-sm-first-order</code></td>
+            <td><code>.col-md-first-order</code></td>
+            <td><code>.col-lg-first-order</code></td>
+            <td><code>.col-xl-first-order</code></td>
+        </tr>
+        <tr>
+            <td><code>.col-xs-last-order</code></td>
+            <td><code>.col-sm-last-order</code></td>
+            <td><code>.col-md-last-order</code></td>
+            <td><code>.col-lg-last-order</code></td>
+            <td><code>.col-xl-last-order</code></td>
+        </tr>
+    </table>
 </div>
 
 <!-- COLUMN OFFSET -->
@@ -2015,249 +2015,249 @@
 
 <div class="row-container offset-examples bg-light">
 
-	<div class="row row-example row-width-example row-no-gutters">
-		<span class="label">11</span>
-		<div class="col col-md-1 col-md-offset-11">
-			<div class="wrap">1</div>
-		</div>
-	</div>
+    <div class="row row-example row-width-example row-no-gutters">
+        <span class="label">11</span>
+        <div class="col col-md-1 col-md-offset-11">
+            <div class="wrap">1</div>
+        </div>
+    </div>
 
-	<div class="row row-example row-width-example row-no-gutters">
-		<span class="label">10</span>
-		<div class="col col-md-2 col-md-offset-10">
-			<div class="wrap">2</div>
-		</div>
-	</div>
+    <div class="row row-example row-width-example row-no-gutters">
+        <span class="label">10</span>
+        <div class="col col-md-2 col-md-offset-10">
+            <div class="wrap">2</div>
+        </div>
+    </div>
 
-	<div class="row row-example row-width-example row-no-gutters">
-		<span class="label">9</span>
-		<div class="col col-md-3 col-md-offset-9">
-			<div class="wrap">3</div>
-		</div>
-	</div>
+    <div class="row row-example row-width-example row-no-gutters">
+        <span class="label">9</span>
+        <div class="col col-md-3 col-md-offset-9">
+            <div class="wrap">3</div>
+        </div>
+    </div>
 
-	<div class="row row-example row-width-example row-no-gutters">
-		<span class="label">8</span>
-		<div class="col col-md-4 col-md-offset-8">
-			<div class="wrap">4</div>
-		</div>
-	</div>
+    <div class="row row-example row-width-example row-no-gutters">
+        <span class="label">8</span>
+        <div class="col col-md-4 col-md-offset-8">
+            <div class="wrap">4</div>
+        </div>
+    </div>
 
-	<div class="row row-example row-width-example row-no-gutters">
-		<span class="label">7</span>
-		<div class="col col-md-5 col-md-offset-7">
-			<div class="wrap">7</div>
-		</div>
-	</div>
+    <div class="row row-example row-width-example row-no-gutters">
+        <span class="label">7</span>
+        <div class="col col-md-5 col-md-offset-7">
+            <div class="wrap">7</div>
+        </div>
+    </div>
 
-	<div class="row row-example row-width-example row-no-gutters">
-		<span class="label">6</span>
-		<div class="col col-md-6 col-md-offset-6">
-			<div class="wrap">6</div>
-		</div>
-	</div>
+    <div class="row row-example row-width-example row-no-gutters">
+        <span class="label">6</span>
+        <div class="col col-md-6 col-md-offset-6">
+            <div class="wrap">6</div>
+        </div>
+    </div>
 
-	<div class="row row-example row-width-example row-no-gutters">
-		<span class="label">5</span>
-		<div class="col col-md-7 col-md-offset-5">
-			<div class="wrap">7</div>
-		</div>
-	</div>
+    <div class="row row-example row-width-example row-no-gutters">
+        <span class="label">5</span>
+        <div class="col col-md-7 col-md-offset-5">
+            <div class="wrap">7</div>
+        </div>
+    </div>
 
-	<div class="row row-example row-width-example row-no-gutters">
-		<span class="label">4</span>
-		<div class="col col-md-8 col-md-offset-4">
-			<div class="wrap">8</div>
-		</div>
-	</div>
+    <div class="row row-example row-width-example row-no-gutters">
+        <span class="label">4</span>
+        <div class="col col-md-8 col-md-offset-4">
+            <div class="wrap">8</div>
+        </div>
+    </div>
 
-	<div class="row row-example row-width-example row-no-gutters">
-		<span class="label">3</span>
-		<div class="col col-md-9 col-md-offset-3">
-			<div class="wrap">9</div>
-		</div>
-	</div>
+    <div class="row row-example row-width-example row-no-gutters">
+        <span class="label">3</span>
+        <div class="col col-md-9 col-md-offset-3">
+            <div class="wrap">9</div>
+        </div>
+    </div>
 
-	<div class="row row-example row-width-example row-no-gutters">
-		<span class="label">2</span>
-		<div class="col col-md-10 col-md-offset-2">
-			<div class="wrap">10</div>
-		</div>
-	</div>
+    <div class="row row-example row-width-example row-no-gutters">
+        <span class="label">2</span>
+        <div class="col col-md-10 col-md-offset-2">
+            <div class="wrap">10</div>
+        </div>
+    </div>
 
-	<div class="row row-example row-width-example row-no-gutters">
-		<span class="label">1</span>
-		<div class="col col-md-11 col-md-offset-1">
-			<div class="wrap">11</div>
-		</div>
-	</div>
+    <div class="row row-example row-width-example row-no-gutters">
+        <span class="label">1</span>
+        <div class="col col-md-11 col-md-offset-1">
+            <div class="wrap">11</div>
+        </div>
+    </div>
 
 </div>
 
 <div class="table-responsive">
-	<table class="table-bordered table-condensed table-grid-overview">
-		<tr>
-			<th colspan="2">Offset Distance</th>
-			<th>Collapse @576px</th>
-			<th>Collapse @767px</th>
-			<th>Collapse @991px</th>
-			<th>Collapse @1199px</th>
-		</tr>
-		<tr>
-			<td>1/12</td>
-			<td>8.33%</td>
-			<td><code>.col-xs-offset-1</code></td>
-			<td><code>.col-sm-offset-1</code></td>
-			<td><code>.col-md-offset-1</code></td>
-			<td><code>.col-lg-offset-1</code></td>
-		</tr>
-		<tr>
-			<td>1/10</td>
-			<td>10%</td>
-			<td><code>.col-xs-offset-010</code></td>
-			<td><code>.col-sm-offset-010</code></td>
-			<td><code>.col-ms-offset-010</code></td>
-			<td><code>.col-lg-offset-010</code></td>
-		</tr>
-		<tr>
-			<td>1/6</td>
-			<td>16.66%</td>
-			<td><code>.col-xs-offset-2</code></td>
-			<td><code>.col-sm-offset-2</code></td>
-			<td><code>.col-md-offset-2</code></td>
-			<td><code>.col-lg-offset-2</code></td>
-		</tr>
-		<tr>
-			<td>1/5</td>
-			<td>20%</td>
-			<td><code>.col-xs-offset-020</code></td>
-			<td><code>.col-sm-offset-020</code></td>
-			<td><code>.col-md-offset-020</code></td>
-			<td><code>.col-lg-offset-020</code></td>
-		</tr>
-		<tr>
-			<td>1/4</td>
-			<td>25%</td>
-			<td><code>.col-xs-offset-3</code></td>
-			<td><code>.col-sm-offset-3</code></td>
-			<td><code>.col-md-offset-3</code></td>
-			<td><code>.col-lg-offset-3</code></td>
-		</tr>
-		<tr>
-			<td>3/10</td>
-			<td>30%</td>
-			<td><code>.col-xs-offset-030</code></td>
-			<td><code>.col-sm-offset-030</code></td>
-			<td><code>.col-md-offset-030</code></td>
-			<td><code>.col-lg-offset-030</code></td>
-		</tr>
-		<tr>
-			<td>1/3</td>
-			<td>33.33%</td>
-			<td><code>.col-xs-offset-4</code></td>
-			<td><code>.col-sm-offset-4</code></td>
-			<td><code>.col-md-offset-4</code></td>
-			<td><code>.col-lg-offset-4</code></td>
-		</tr>
-		<tr>
-			<td>2/5</td>
-			<td>40%</td>
-			<td><code>.col-xs-offset-040</code></td>
-			<td><code>.col-sm-offset-040</code></td>
-			<td><code>.col-md-offset-040</code></td>
-			<td><code>.col-lg-offset-040</code></td>
-		</tr>
-		<tr>
-			<td>5/12</td>
-			<td>41.66%</td>
-			<td><code>.col-xs-offset-5</code></td>
-			<td><code>.col-sm-offset-5</code></td>
-			<td><code>.col-md-offset-5</code></td>
-			<td><code>.col-lg-offset-5</code></td>
-		</tr>
-		<tr>
-			<td>1/2</td>
-			<td>50%</td>
-			<td><code>.col-xs-offset-6</code></td>
-			<td><code>.col-sm-offset-6</code></td>
-			<td><code>.col-md-offset-6</code></td>
-			<td><code>.col-lg-offset-6</code></td>
-		</tr>
-		<tr>
-			<td>7/12</td>
-			<td>58.33%</td>
-			<td><code>.col-xs-offset-7</code></td>
-			<td><code>.col-sm-offset-7</code></td>
-			<td><code>.col-md-offset-7</code></td>
-			<td><code>.col-lg-offset-7</code></td>
-		</tr>
-		<tr>
-			<td>3/5</td>
-			<td>60%</td>
-			<td><code>.col-xs-offset-060</code></td>
-			<td><code>.col-sm-offset-060</code></td>
-			<td><code>.col-md-offset-060</code></td>
-			<td><code>.col-lg-offset-060</code></td>
-		</tr>
-		<tr>
-			<td>2/3</td>
-			<td>66.66%</td>
-			<td><code>.col-xs-offset-8</code></td>
-			<td><code>.col-sm-offset-8</code></td>
-			<td><code>.col-md-offset-8</code></td>
-			<td><code>.col-lg-offset-8</code></td>
-		</tr>
-		<tr>
-			<td>7/10</td>
-			<td>70%</td>
-			<td><code>.col-xs-offset-070</code></td>
-			<td><code>.col-sm-offset-070</code></td>
-			<td><code>.col-md-offset-070</code></td>
-			<td><code>.col-lg-offset-070</code></td>
-		</tr>
-		<tr>
-			<td>3/4</td>
-			<td>75%</td>
-			<td><code>.col-xs-offset-9</code></td>
-			<td><code>.col-sm-offset-9</code></td>
-			<td><code>.col-md-offset-9</code></td>
-			<td><code>.col-lg-offset-9</code></td>
-		</tr>
-		<tr>
-			<td>4/5</td>
-			<td>80%</td>
-			<td><code>.col-xs-offset-080</code></td>
-			<td><code>.col-sm-offset-080</code></td>
-			<td><code>.col-md-offset-080</code></td>
-			<td><code>.col-lg-offset-080</code></td>
-		</tr>
-		<tr>
-			<td>5/6</td>
-			<td>83.33%</td>
-			<td><code>.col-xs-offset-10</code></td>
-			<td><code>.col-sm-offset-10</code></td>
-			<td><code>.col-md-offset-10</code></td>
-			<td><code>.col-lg-offset-10</code></td>
-		</tr>
-		<tr>
-			<td>9/10</td>
-			<td>90%</td>
-			<td><code>.col-xs-offset-090</code></td>
-			<td><code>.col-sm-offset-090</code></td>
-			<td><code>.col-md-offset-090</code></td>
-			<td><code>.col-lg-offset-090</code></td>
-		</tr>
-		<tr>
-			<td>11/12</td>
-			<td>91.66%</td>
-			<td><code>.col-xs-offset-11</code></td>
-			<td><code>.col-sm-offset-11</code></td>
-			<td><code>.col-md-offset-11</code></td>
-			<td><code>.col-lg-offset-11</code></td>
-		</tr>
-	</table>
+    <table class="table-bordered table-condensed table-grid-overview">
+        <tr>
+            <th colspan="2">Offset Distance</th>
+            <th>Collapse @576px</th>
+            <th>Collapse @767px</th>
+            <th>Collapse @991px</th>
+            <th>Collapse @1199px</th>
+        </tr>
+        <tr>
+            <td>1/12</td>
+            <td>8.33%</td>
+            <td><code>.col-xs-offset-1</code></td>
+            <td><code>.col-sm-offset-1</code></td>
+            <td><code>.col-md-offset-1</code></td>
+            <td><code>.col-lg-offset-1</code></td>
+        </tr>
+        <tr>
+            <td>1/10</td>
+            <td>10%</td>
+            <td><code>.col-xs-offset-010</code></td>
+            <td><code>.col-sm-offset-010</code></td>
+            <td><code>.col-ms-offset-010</code></td>
+            <td><code>.col-lg-offset-010</code></td>
+        </tr>
+        <tr>
+            <td>1/6</td>
+            <td>16.66%</td>
+            <td><code>.col-xs-offset-2</code></td>
+            <td><code>.col-sm-offset-2</code></td>
+            <td><code>.col-md-offset-2</code></td>
+            <td><code>.col-lg-offset-2</code></td>
+        </tr>
+        <tr>
+            <td>1/5</td>
+            <td>20%</td>
+            <td><code>.col-xs-offset-020</code></td>
+            <td><code>.col-sm-offset-020</code></td>
+            <td><code>.col-md-offset-020</code></td>
+            <td><code>.col-lg-offset-020</code></td>
+        </tr>
+        <tr>
+            <td>1/4</td>
+            <td>25%</td>
+            <td><code>.col-xs-offset-3</code></td>
+            <td><code>.col-sm-offset-3</code></td>
+            <td><code>.col-md-offset-3</code></td>
+            <td><code>.col-lg-offset-3</code></td>
+        </tr>
+        <tr>
+            <td>3/10</td>
+            <td>30%</td>
+            <td><code>.col-xs-offset-030</code></td>
+            <td><code>.col-sm-offset-030</code></td>
+            <td><code>.col-md-offset-030</code></td>
+            <td><code>.col-lg-offset-030</code></td>
+        </tr>
+        <tr>
+            <td>1/3</td>
+            <td>33.33%</td>
+            <td><code>.col-xs-offset-4</code></td>
+            <td><code>.col-sm-offset-4</code></td>
+            <td><code>.col-md-offset-4</code></td>
+            <td><code>.col-lg-offset-4</code></td>
+        </tr>
+        <tr>
+            <td>2/5</td>
+            <td>40%</td>
+            <td><code>.col-xs-offset-040</code></td>
+            <td><code>.col-sm-offset-040</code></td>
+            <td><code>.col-md-offset-040</code></td>
+            <td><code>.col-lg-offset-040</code></td>
+        </tr>
+        <tr>
+            <td>5/12</td>
+            <td>41.66%</td>
+            <td><code>.col-xs-offset-5</code></td>
+            <td><code>.col-sm-offset-5</code></td>
+            <td><code>.col-md-offset-5</code></td>
+            <td><code>.col-lg-offset-5</code></td>
+        </tr>
+        <tr>
+            <td>1/2</td>
+            <td>50%</td>
+            <td><code>.col-xs-offset-6</code></td>
+            <td><code>.col-sm-offset-6</code></td>
+            <td><code>.col-md-offset-6</code></td>
+            <td><code>.col-lg-offset-6</code></td>
+        </tr>
+        <tr>
+            <td>7/12</td>
+            <td>58.33%</td>
+            <td><code>.col-xs-offset-7</code></td>
+            <td><code>.col-sm-offset-7</code></td>
+            <td><code>.col-md-offset-7</code></td>
+            <td><code>.col-lg-offset-7</code></td>
+        </tr>
+        <tr>
+            <td>3/5</td>
+            <td>60%</td>
+            <td><code>.col-xs-offset-060</code></td>
+            <td><code>.col-sm-offset-060</code></td>
+            <td><code>.col-md-offset-060</code></td>
+            <td><code>.col-lg-offset-060</code></td>
+        </tr>
+        <tr>
+            <td>2/3</td>
+            <td>66.66%</td>
+            <td><code>.col-xs-offset-8</code></td>
+            <td><code>.col-sm-offset-8</code></td>
+            <td><code>.col-md-offset-8</code></td>
+            <td><code>.col-lg-offset-8</code></td>
+        </tr>
+        <tr>
+            <td>7/10</td>
+            <td>70%</td>
+            <td><code>.col-xs-offset-070</code></td>
+            <td><code>.col-sm-offset-070</code></td>
+            <td><code>.col-md-offset-070</code></td>
+            <td><code>.col-lg-offset-070</code></td>
+        </tr>
+        <tr>
+            <td>3/4</td>
+            <td>75%</td>
+            <td><code>.col-xs-offset-9</code></td>
+            <td><code>.col-sm-offset-9</code></td>
+            <td><code>.col-md-offset-9</code></td>
+            <td><code>.col-lg-offset-9</code></td>
+        </tr>
+        <tr>
+            <td>4/5</td>
+            <td>80%</td>
+            <td><code>.col-xs-offset-080</code></td>
+            <td><code>.col-sm-offset-080</code></td>
+            <td><code>.col-md-offset-080</code></td>
+            <td><code>.col-lg-offset-080</code></td>
+        </tr>
+        <tr>
+            <td>5/6</td>
+            <td>83.33%</td>
+            <td><code>.col-xs-offset-10</code></td>
+            <td><code>.col-sm-offset-10</code></td>
+            <td><code>.col-md-offset-10</code></td>
+            <td><code>.col-lg-offset-10</code></td>
+        </tr>
+        <tr>
+            <td>9/10</td>
+            <td>90%</td>
+            <td><code>.col-xs-offset-090</code></td>
+            <td><code>.col-sm-offset-090</code></td>
+            <td><code>.col-md-offset-090</code></td>
+            <td><code>.col-lg-offset-090</code></td>
+        </tr>
+        <tr>
+            <td>11/12</td>
+            <td>91.66%</td>
+            <td><code>.col-xs-offset-11</code></td>
+            <td><code>.col-sm-offset-11</code></td>
+            <td><code>.col-md-offset-11</code></td>
+            <td><code>.col-lg-offset-11</code></td>
+        </tr>
+    </table>
 </div>
 
 @@include('../layout/footer.html', {
-	"page": "grid"
+    "page": "grid"
 })

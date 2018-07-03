@@ -1,5 +1,5 @@
 @@include('../layout/header.html', {
-	 "title": "Backgrounds"
+     "title": "Backgrounds"
 })
 
 <p>Background sections can be useful for landing pages and other places you need content to really stand out.  And instead of just standard background images, these sections can include special background components included with Front Street like background <a href="#bg-shade" title="Background Shades">shading</a>, <a href="#bg-slider" title="Background Sliders">sliders</a>, and <a href="#bg-parallax" title="Background Parallax">parallax effects</a>.</p>
@@ -9,11 +9,11 @@
 <pre class="highlight html">
 <section class="fs-section bg-dark">
 
-	<div class="fs-element">
-		<!-- Any content to sit above background components. -->
-	</div>
+    <div class="fs-element">
+        <!-- Any content to sit above background components. -->
+    </div>
 
-	<!-- Background components go here. -->
+    <!-- Background components go here. -->
 
 </section>
 </pre>
@@ -25,43 +25,43 @@
 <p>The following table helps to illustrate how your content and background components are stacked within a <code>.fs-section</code> element.</p>
 
 <div class="table-responsive">
-	<table class="table-bordered table-condensed table-grid-overview">
-		<tr>
-			<th width="20%">Element</th>
-			<th width="65%">Description</th>
-			<th width="15%" class="text-center">Z-Index</th>
-		</tr>
-		<tr>
-			<td><code>.fs-bg-slider</code></td>
-			<td>Auto-rotating, slow-fading slider images.</td>
-			<td class="text-center">0</td>
-		</tr>
-		<tr>
-			<td><code>.fs-bg-parallax</code></td>
-			<td>Parallax images that animate as the user scrolls.</td>
-			<td class="text-center">0</td>
-		</tr>
-		<tr>
-			<td><code>.fs-bg-video</code></td>
-			<td>Auto-playing background video.</td>
-			<td class="text-center">0</td>
-		</tr>
-		<tr>
-			<td><code>.fs-loader</code></td>
-			<td>Optional <a href="loader.html" title="Loader" target="_blank">loader component</a>; this can be helpful when working with background media that might need time to load.</td>
-			<td class="text-center">1</td>
-		</tr>
-		<tr>
-			<td><code>.fs-bg-shade</code></td>
-			<td>Sits between other background components and content, to add a layer of any opaque color.</td>
-			<td class="text-center">2</td>
-		</tr>
-		<tr>
-			<td><code>.fs-element</code></td>
-			<td>Contains any top-level content; it's okay to have multiple <code>.fs-element</code> within a section, too.</td>
-			<td class="text-center">3</td>
-		</tr>
-	</table>
+    <table class="table-bordered table-condensed table-grid-overview">
+        <tr>
+            <th width="20%">Element</th>
+            <th width="65%">Description</th>
+            <th width="15%" class="text-center">Z-Index</th>
+        </tr>
+        <tr>
+            <td><code>.fs-bg-slider</code></td>
+            <td>Auto-rotating, slow-fading slider images.</td>
+            <td class="text-center">0</td>
+        </tr>
+        <tr>
+            <td><code>.fs-bg-parallax</code></td>
+            <td>Parallax images that animate as the user scrolls.</td>
+            <td class="text-center">0</td>
+        </tr>
+        <tr>
+            <td><code>.fs-bg-video</code></td>
+            <td>Auto-playing background video.</td>
+            <td class="text-center">0</td>
+        </tr>
+        <tr>
+            <td><code>.fs-loader</code></td>
+            <td>Optional <a href="loader.html" title="Loader" target="_blank">loader component</a>; this can be helpful when working with background media that might need time to load.</td>
+            <td class="text-center">1</td>
+        </tr>
+        <tr>
+            <td><code>.fs-bg-shade</code></td>
+            <td>Sits between other background components and content, to add a layer of any opaque color.</td>
+            <td class="text-center">2</td>
+        </tr>
+        <tr>
+            <td><code>.fs-element</code></td>
+            <td>Contains any top-level content; it's okay to have multiple <code>.fs-element</code> within a section, too.</td>
+            <td class="text-center">3</td>
+        </tr>
+    </table>
 </div>
 
 <h3 class="heading-sm">Base Example</h3>
@@ -69,23 +69,23 @@
 <p>Here's the base example we'll be building on throughout this document. We've just got some basic elements added to a blank section to create hero-like thingy.</p>
 
 <section class="fs-section bg-dark text-center">
-	<div class="fs-element">
-		<h1 class="heading-lg">Lorem Ipsum Dolor</h1>
-		<p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
-		<a href="#" class="btn btn-white btn-trans">Learn More</a>
-	</div>
+    <div class="fs-element">
+        <h1 class="heading-lg">Lorem Ipsum Dolor</h1>
+        <p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
+        <a href="#" class="btn btn-white btn-trans">Learn More</a>
+    </div>
 </section>
 
 <pre class="highlight html">
 <section class="fs-section bg-dark text-center">
 
-	<div class="fs-element">
-		<h1 class="heading-lg">Lorem Ipsum Dolor</h1>
-		<p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
-		<a href="#" class="btn btn-white btn-trans">Learn More</a>
-	</div>
+    <div class="fs-element">
+        <h1 class="heading-lg">Lorem Ipsum Dolor</h1>
+        <p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
+        <a href="#" class="btn btn-white btn-trans">Learn More</a>
+    </div>
 
-	<!-- Background components go here. -->
+    <!-- Background components go here. -->
 
 </section>
 </pre>
@@ -100,24 +100,24 @@
 
 <section class="fs-section bg-dark text-center" style="background: url(assets/img/image-1.jpg) center center no-repeat; background-size: cover;">
 
-	<div class="fs-element">
-		<h1 class="heading-lg">Lorem Ipsum Dolor</h1>
-		<p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
-		<a href="#" class="btn btn-white btn-trans">Learn More</a>
-	</div>
+    <div class="fs-element">
+        <h1 class="heading-lg">Lorem Ipsum Dolor</h1>
+        <p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
+        <a href="#" class="btn btn-white btn-trans">Learn More</a>
+    </div>
 
-	<div class="fs-bg-shade black"></div>
+    <div class="fs-bg-shade black"></div>
 
 </section>
 
 <pre class="highlight html">
 <section class="fs-section bg-dark text-center" style="background: url(assets/img/image-1.jpg) center center no-repeat; background-size: cover;">
 
-	<div class="fs-element">
-		<!-- Any content to sit above background components. -->
-	</div>
+    <div class="fs-element">
+        <!-- Any content to sit above background components. -->
+    </div>
 
-	<div class="fs-bg-shade black"></div>
+    <div class="fs-bg-shade black"></div>
 
 </section>
 </pre>
@@ -126,63 +126,63 @@
 
 <section class="fs-section bg-dark text-center" style="background: url(assets/img/image-1.jpg) center center no-repeat; background-size: cover;">
 
-	<div class="fs-element">
-		<h1 class="heading-lg">Lorem Ipsum Dolor</h1>
-		<p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
-		<a href="#" class="btn btn-white btn-trans">Learn More</a>
-	</div>
+    <div class="fs-element">
+        <h1 class="heading-lg">Lorem Ipsum Dolor</h1>
+        <p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
+        <a href="#" class="btn btn-white btn-trans">Learn More</a>
+    </div>
 
-	<div class="fs-bg-shade shade-85 royal"></div>
+    <div class="fs-bg-shade shade-85 royal"></div>
 
 </section>
 
 <pre class="highlight html">
 <section class="fs-sectio bg-dark text-centern">
 
-	<div class="fs-element">
-		<!-- Any content to sit above background components. -->
-	</div>
+    <div class="fs-element">
+        <!-- Any content to sit above background components. -->
+    </div>
 
-	<div class="fs-bg-shade shade-85 royal"></div>
+    <div class="fs-bg-shade shade-85 royal"></div>
 
 </section>
 </pre>
 
 <div class="table-responsive">
-	<table class="table-bordered table-condensed table-grid-overview">
-		<tr>
-			<th>Element</th>
-			<th>Shade Opacity</th>
-		</tr>
-		<tr>
-			<td><code>.fs-bg-shade.shade-05.{color}</code></td>
-			<td>5%</td>
-		</tr>
-		<tr>
-			<td><code>.fs-bg-shade.shade-15.{color}</code></td>
-			<td>15%</td>
-		</tr>
-		<tr>
-			<td><code>.fs-bg-shade.shade-25.{color}</code></td>
-			<td>25%</td>
-		</tr>
-		<tr>
-			<td><code>.fs-bg-shade.shade-50.{color}</code></td>
-			<td>50%</td>
-		</tr>
-		<tr>
-			<td><code>.fs-bg-shade.shade-75.{color}</code></td>
-			<td>75%</td>
-		</tr>
-		<tr>
-			<td><code>.fs-bg-shade.shade-85.{color}</code></td>
-			<td>85%</td>
-		</tr>
-		<tr>
-			<td><code>.fs-bg-shade.shade-95.{color}</code></td>
-			<td>95%</td>
-		</tr>
-	</table>
+    <table class="table-bordered table-condensed table-grid-overview">
+        <tr>
+            <th>Element</th>
+            <th>Shade Opacity</th>
+        </tr>
+        <tr>
+            <td><code>.fs-bg-shade.shade-05.{color}</code></td>
+            <td>5%</td>
+        </tr>
+        <tr>
+            <td><code>.fs-bg-shade.shade-15.{color}</code></td>
+            <td>15%</td>
+        </tr>
+        <tr>
+            <td><code>.fs-bg-shade.shade-25.{color}</code></td>
+            <td>25%</td>
+        </tr>
+        <tr>
+            <td><code>.fs-bg-shade.shade-50.{color}</code></td>
+            <td>50%</td>
+        </tr>
+        <tr>
+            <td><code>.fs-bg-shade.shade-75.{color}</code></td>
+            <td>75%</td>
+        </tr>
+        <tr>
+            <td><code>.fs-bg-shade.shade-85.{color}</code></td>
+            <td>85%</td>
+        </tr>
+        <tr>
+            <td><code>.fs-bg-shade.shade-95.{color}</code></td>
+            <td>95%</td>
+        </tr>
+    </table>
 </div>
 
 <h2 id="bg-slider">Background Slider</h2>
@@ -193,42 +193,42 @@
 
 <section class="fs-section bg-dark text-center">
 
-	<div class="fs-element">
-		<h1 class="heading-lg">Lorem Ipsum Dolor</h1>
-		<p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
-		<a href="#" class="btn btn-white btn-trans">Learn More</a>
-	</div>
+    <div class="fs-element">
+        <h1 class="heading-lg">Lorem Ipsum Dolor</h1>
+        <p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
+        <a href="#" class="btn btn-white btn-trans">Learn More</a>
+    </div>
 
-	<div class="fs-bg-slider">
-		<img src="assets/img/image-1.jpg" width="960">
-		<img src="assets/img/image-2.jpg" width="960">
-		<img src="assets/img/image-3.jpg" width="960">
-		<img src="assets/img/image-4.jpg" width="960">
-	</div>
+    <div class="fs-bg-slider">
+        <img src="assets/img/image-1.jpg" width="960">
+        <img src="assets/img/image-2.jpg" width="960">
+        <img src="assets/img/image-3.jpg" width="960">
+        <img src="assets/img/image-4.jpg" width="960">
+    </div>
 
-	<div class="fs-loader">
-		<span>Loading</span>
-	</div>
+    <div class="fs-loader">
+        <span>Loading</span>
+    </div>
 
 </section>
 
 <pre class="highlight html">
 <section class="fs-section bg-dark text-center">
 
-	<div class="fs-element">
-		<!-- Any content to sit above background components. -->
-	</div>
+    <div class="fs-element">
+        <!-- Any content to sit above background components. -->
+    </div>
 
-	<div class="fs-bg-slider">
-		<img src="image-1.jpg">
-		<img src="image-2.jpg">
-		<img src="image-3.jpg">
-		<img src="image-4.jpg">
-	</div>
+    <div class="fs-bg-slider">
+        <img src="image-1.jpg">
+        <img src="image-2.jpg">
+        <img src="image-3.jpg">
+        <img src="image-4.jpg">
+    </div>
 
-	<div class="fs-loader">
-		<span>Loading</span>
-	</div>
+    <div class="fs-loader">
+        <span>Loading</span>
+    </div>
 
 </section>
 </pre>
@@ -237,46 +237,46 @@
 
 <section class="fs-section bg-dark text-center">
 
-	<div class="fs-element">
-		<h1 class="heading-lg">Lorem Ipsum Dolor</h1>
-		<p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
-		<a href="#" class="btn btn-white btn-trans">Learn More</a>
-	</div>
+    <div class="fs-element">
+        <h1 class="heading-lg">Lorem Ipsum Dolor</h1>
+        <p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
+        <a href="#" class="btn btn-white btn-trans">Learn More</a>
+    </div>
 
-	<div class="fs-bg-slider">
-		<img src="assets/img/image-1.jpg" width="960">
-		<img src="assets/img/image-2.jpg" width="960">
-		<img src="assets/img/image-3.jpg" width="960">
-		<img src="assets/img/image-4.jpg" width="960">
-	</div>
+    <div class="fs-bg-slider">
+        <img src="assets/img/image-1.jpg" width="960">
+        <img src="assets/img/image-2.jpg" width="960">
+        <img src="assets/img/image-3.jpg" width="960">
+        <img src="assets/img/image-4.jpg" width="960">
+    </div>
 
-	<div class="fs-bg-shade shade-75 crimson"></div>
+    <div class="fs-bg-shade shade-75 crimson"></div>
 
-	<div class="fs-loader">
-		<span>Loading</span>
-	</div>
+    <div class="fs-loader">
+        <span>Loading</span>
+    </div>
 
 </section>
 
 <pre class="highlight html">
 <section class="fs-section bg-dark text-center">
 
-	<div class="fs-element">
-		<!-- Any content to sit above background components. -->
-	</div>
+    <div class="fs-element">
+        <!-- Any content to sit above background components. -->
+    </div>
 
-	<div class="fs-bg-slider">
-		<img src="image-1.jpg">
-		<img src="image-2.jpg">
-		<img src="image-3.jpg">
-		<img src="image-4.jpg">
-	</div>
+    <div class="fs-bg-slider">
+        <img src="image-1.jpg">
+        <img src="image-2.jpg">
+        <img src="image-3.jpg">
+        <img src="image-4.jpg">
+    </div>
 
-	<div class="fs-bg-shade shade-75 crimson"></div>
+    <div class="fs-bg-shade shade-75 crimson"></div>
 
-	<div class="fs-loader">
-		<span>Loading</span>
-	</div>
+    <div class="fs-loader">
+        <span>Loading</span>
+    </div>
 
 </section>
 </pre>
@@ -286,17 +286,17 @@
 <pre class="highlight html">
 <section class="fs-section bg-dark text-center">
 
-	<div class="fs-element">
-		<!-- Any content to sit above background components. -->
-	</div>
+    <div class="fs-element">
+        <!-- Any content to sit above background components. -->
+    </div>
 
-	<div class="fs-bg-slider" data-autoplay="2000">
-		<!-- Slider images. -->
-	</div>
+    <div class="fs-bg-slider" data-autoplay="2000">
+        <!-- Slider images. -->
+    </div>
 
-	<div class="fs-loader">
-		<span>Loading</span>
-	</div>
+    <div class="fs-loader">
+        <span>Loading</span>
+    </div>
 
 </section>
 </pre>
@@ -311,38 +311,38 @@
 
 <section class="fs-section bg-dark text-center">
 
-	<div class="fs-element">
-		<h1 class="heading-lg">Lorem Ipsum Dolor</h1>
-		<p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
-		<a href="#" class="btn btn-white btn-trans">Learn More</a>
-	</div>
+    <div class="fs-element">
+        <h1 class="heading-lg">Lorem Ipsum Dolor</h1>
+        <p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
+        <a href="#" class="btn btn-white btn-trans">Learn More</a>
+    </div>
 
-	<figure class="fs-bg-parallax">
-		<img src="assets/img/image-7.jpg" width="960">
-	</figure>
+    <figure class="fs-bg-parallax">
+        <img src="assets/img/image-7.jpg" width="960">
+    </figure>
 
-	<div class="fs-loader">
-		<span>Loading</span>
-	</div>
+    <div class="fs-loader">
+        <span>Loading</span>
+    </div>
 
 </section>
 
 <pre class="highlight html">
 <section class="fs-section bg-dark text-center">
 
-	<div class="fs-element">
-		<h1 class="heading-lg">Lorem Ipsum Dolor</h1>
-		<p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
-		<a href="#" class="btn btn-white btn-trans">Learn More</a>
-	</div>
+    <div class="fs-element">
+        <h1 class="heading-lg">Lorem Ipsum Dolor</h1>
+        <p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
+        <a href="#" class="btn btn-white btn-trans">Learn More</a>
+    </div>
 
-	<figure class="fs-bg-parallax">
-		<img src="image.jpg">
-	</figure>
+    <figure class="fs-bg-parallax">
+        <img src="image.jpg">
+    </figure>
 
-	<div class="fs-loader">
-		<span>Loading</span>
-	</div>
+    <div class="fs-loader">
+        <span>Loading</span>
+    </div>
 
 </section>
 </pre>
@@ -351,46 +351,46 @@
 
 <section class="fs-section bg-dark text-center">
 
-	<div class="fs-element">
-		<h1 class="heading-lg">Lorem Ipsum Dolor</h1>
-		<p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
-		<a href="#" class="btn btn-white btn-trans">Learn More</a>
-	</div>
+    <div class="fs-element">
+        <h1 class="heading-lg">Lorem Ipsum Dolor</h1>
+        <p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
+        <a href="#" class="btn btn-white btn-trans">Learn More</a>
+    </div>
 
-	<figure class="fs-bg-parallax">
-		<img src="assets/img/image-7.jpg" width="960" />
-	</figure>
+    <figure class="fs-bg-parallax">
+        <img src="assets/img/image-7.jpg" width="960" />
+    </figure>
 
-	<div class="fs-bg-shade shade-50 black"></div>
+    <div class="fs-bg-shade shade-50 black"></div>
 
-	<div class="fs-loader">
-		<span>Loading</span>
-	</div>
+    <div class="fs-loader">
+        <span>Loading</span>
+    </div>
 
 </section>
 
 <pre class="highlight html">
 <section class="fs-section bg-dark text-center">
 
-	<div class="fs-element">
-		<h1 class="heading-lg">Lorem Ipsum Dolor</h1>
-		<p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
-		<a href="#" class="btn btn-white btn-trans">Learn More</a>
-	</div>
+    <div class="fs-element">
+        <h1 class="heading-lg">Lorem Ipsum Dolor</h1>
+        <p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
+        <a href="#" class="btn btn-white btn-trans">Learn More</a>
+    </div>
 
-	<figure class="fs-bg-parallax">
-		<img src="image.jpg">
-	</figure>
+    <figure class="fs-bg-parallax">
+        <img src="image.jpg">
+    </figure>
 
-	<div class="fs-bg-shade shade-50 black"></div>
+    <div class="fs-bg-shade shade-50 black"></div>
 
-	<div class="fs-loader">
-		<span>Loading</span>
-	</div>
+    <div class="fs-loader">
+        <span>Loading</span>
+    </div>
 
 </section>
 </pre>
 
 @@include('../layout/footer.html', {
-	"page": "backgrounds"
+    "page": "backgrounds"
 })
