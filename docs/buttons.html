@@ -1446,11 +1446,13 @@
 <p>In order for the menu button to actually change states and perform any kind of action, you'd need to use JavaScript. The following is the JavaScript used in the above examples, which utilizes jQuery. &mdash; You can see that by simply toggling the class <code>collapse</code> on and off of the <code>.fs-menu-toggle</code> button, that we can achieve the button's animation since it's done with CSS.</p>
 
 <pre class="brush: js; gutter: false; toolbar: false;">
-$('.fs-menu-toggle').on('click', function(){
+$('.fs-menu-toggle').on('click', function(event){
+
+	event.preventDefault();
 
 	var $el = $(this);
 
-	if ( $el.hasClass('collapse') ) {
+	if ($el.hasClass('collapse')) {
 
 		$el.removeClass('collapse');
 
@@ -1463,8 +1465,6 @@ $('.fs-menu-toggle').on('click', function(){
 		// Code to open your menu...
 
 	}
-
-	return false;
 
 });
 </pre>
@@ -1606,22 +1606,6 @@ $('.fs-menu-toggle').on('click', function(){
 		<script type='text/javascript'>
 		/* <![CDATA[ */
 		/**
-		 * Optional configuration object that can be used to
-		 * disable individiual JavaScript components.
-		 */
-		var fsConfig = {
-			'background'  		: true,
-			'menu'  			: true,
-			'mobile-menu'		: true,
-			'modal'				: true,
-			'jump-menu'			: true,
-			'slider'  			: true,
-			'tabs'				: true,
-			'toggle'			: true,
-			'tooltip'			: true
-		};
-
-		/**
 		 * Optional configuration object that can adjust how
 		 * Magnific Popup is configured.
 		 */
@@ -1640,16 +1624,8 @@ $('.fs-menu-toggle').on('click', function(){
 		/* ]]> */
 		</script>
 
-		<script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"></script>
-		<script type="text/javascript" src="assets/frontstreet/plugins/magnific-popup/magnific-popup.min.js"></script>
-		<script type="text/javascript" src="assets/frontstreet/plugins/owl-carousel/owl-carousel.min.js"></script>
-		<script type="text/javascript" src="assets/frontstreet/js/frontstreet.js"></script>
-		<script type="text/javascript" src="assets/js/docs.min.js"></script>
-
-		<script type="text/javascript">
-			// @TODO replace with highlight.js
-			SyntaxHighlighter.all()
-		</script>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="assets/js/docs.bundle.js"></script>
 
 
 	</body>
