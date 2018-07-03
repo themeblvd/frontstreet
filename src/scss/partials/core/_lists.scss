@@ -4,23 +4,19 @@
 
 ul,
 ol {
-    margin: $fs-margin-list;
-    padding: if(
-        $direction == "rtl",
-        0 $fs-padding-list 0 0,
-        0 0 0 $fs-padding-list
-    );
-    @include fs-margin-vert-flush;
+  margin: $fs-margin-list;
+  padding: if($direction == 'rtl', 0 $fs-padding-list 0 0, 0 0 0 $fs-padding-list);
+  @include fs-margin-vert-flush;
 }
 ul {
-    list-style: disc;
+  list-style: disc;
 }
 ol {
-    list-style: decimal;
+  list-style: decimal;
 }
 li > ul,
 li > ol {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 //
@@ -28,12 +24,12 @@ li > ol {
 //
 
 dt {
-    font-weight: $fs-font-weight-bold;
+  font-weight: $fs-font-weight-bold;
 }
 dd {
-    margin: $fs-margin-list;
-    margin-left: 1.5em;
-    @include fs-margin-vert-flush;
+  margin: $fs-margin-list;
+  margin-left: 1.5em;
+  @include fs-margin-vert-flush;
 }
 
 //
@@ -41,7 +37,7 @@ dd {
 //
 
 .list-unstyled {
-    @include fs-list-unstyled;
+  @include fs-list-unstyled;
 }
 
 //
@@ -49,13 +45,13 @@ dd {
 //
 
 .list-inline {
-    margin: 0 -5px;
-    @include fs-list-unstyled;
+  margin: 0 -5px;
+  @include fs-list-unstyled;
 
-    li {
-        display: inline-block;
-        padding: 0 5px;
-    }
+  li {
+    display: inline-block;
+    padding: 0 5px;
+  }
 }
 
 //
@@ -66,15 +62,15 @@ dd {
 //
 
 .list-icon.fa-ul li {
-    line-height: $fs-font-lh-base;
+  line-height: $fs-font-lh-base;
 }
 .list-icon.fa-ul li > .fa-li {
-    top: 50%;
-    @if ($direction == "rtl") {
-        right: (-30em / fs-strip-unit($fs-font-size-base));
-    } @else {
-        left: (-30em / fs-strip-unit($fs-font-size-base));
-    }
-    width: 30em / fs-strip-unit($fs-font-size-base);
-    transform: translate(0, -50%);
+  top: 50%;
+  @if ($direction == 'rtl') {
+    right: (-30em / fs-strip-unit($fs-font-size-base));
+  } @else {
+    left: (-30em / fs-strip-unit($fs-font-size-base));
+  }
+  width: 30em / fs-strip-unit($fs-font-size-base);
+  transform: translate(0, -50%);
 }

@@ -1,9 +1,9 @@
 /*!
- * Front Street v1.0.0 (http://frontstreet.io)
+ * Front Street 1.0.0 (http://frontstreet.io)
  * Core Library Only, for minimal integration.
  * Direction: Left-to-Right
- * Copyright 2017 Theme Blvd
- * Copyright 2017 Jason Bobich
+ * Copyright 2018 Theme Blvd
+ * Copyright 2018 Jason Bobich
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
@@ -174,24 +174,24 @@ input {
   line-height: normal;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
+input[type='checkbox'],
+input[type='radio'] {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
   height: auto;
 }
 
-input[type="search"] {
+input[type='search'] {
   -webkit-appearance: textfield;
 }
 
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -245,9 +245,9 @@ th {
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
-  a[href^="#"]:after,
-  a[href^="javascript:"]:after {
-    content: "";
+  a[href^='#']:after,
+  a[href^='javascript:']:after {
+    content: '';
   }
   pre,
   blockquote {
@@ -310,7 +310,7 @@ th {
 
 html {
   font-size: 10px;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body {
@@ -350,14 +350,14 @@ img {
 }
 
 .sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
   position: absolute;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
   width: 1px;
   height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
 }
 
 .sr-only-focusable:active, .sr-only-focusable:focus {
@@ -369,7 +369,7 @@ img {
   clip: auto;
 }
 
-[role="button"] {
+[role='button'] {
   cursor: pointer;
 }
 
@@ -2210,7 +2210,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .heading-lg, .heading-xl, 
 }
 
 .heading-underline:after {
-  content: "";
+  content: '';
   background: #2ea3f2;
   position: absolute;
   bottom: -2px;
@@ -2405,7 +2405,7 @@ blockquote cite:before {
 }
 
 blockquote cite:before {
-  content: "\2014 \00A0";
+  content: '\2014 \00A0';
 }
 
 ul,
@@ -2985,8 +2985,8 @@ select[multiple] option {
   }
 }
 
-input[type="radio"],
-input[type="checkbox"] {
+input[type='radio'],
+input[type='checkbox'] {
   line-height: normal;
   margin: 4px 0 0;
 }
@@ -3003,10 +3003,10 @@ input[type="checkbox"] {
   padding-left: 0;
 }
 
-.checkbox-group input[type="checkbox"],
-.checkbox-group input[type="radio"],
-.radio-group input[type="checkbox"],
-.radio-group input[type="radio"] {
+.checkbox-group input[type='checkbox'],
+.checkbox-group input[type='radio'],
+.radio-group input[type='checkbox'],
+.radio-group input[type='radio'] {
   margin: 0 4px;
 }
 
@@ -3028,7 +3028,7 @@ input[type="checkbox"] {
   margin: 0;
 }
 
-input[type="file"] {
+input[type='file'] {
   display: block;
 }
 
@@ -3098,7 +3098,7 @@ input[type="file"] {
 }
 
 .field-icon:before {
-  font-family: "FontAwesome";
+  font-family: 'FontAwesome';
   line-height: 1em;
   text-align: center;
   text-rendering: auto;
@@ -3156,6 +3156,11 @@ textarea::-moz-placeholder {
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
+  color: rgba(152, 152, 152, 0.7);
+}
+
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
   color: rgba(152, 152, 152, 0.7);
 }
 
@@ -3450,9 +3455,9 @@ textarea::placeholder {
   margin-top: 5px;
 }
 
-input[type="submit"].btn-block,
-input[type="reset"].btn-block,
-input[type="button"].btn-block {
+input[type='submit'].btn-block,
+input[type='reset'].btn-block,
+input[type='button'].btn-block {
   width: 100%;
 }
 
@@ -3471,7 +3476,7 @@ input[type="button"].btn-block {
 }
 
 .btn.loading:after {
-  content: "";
+  content: '';
   -webkit-animation-name: fs-btn-loading;
   -o-animation-name: fs-btn-loading;
   animation-name: fs-btn-loading;
@@ -3484,9 +3489,9 @@ input[type="button"].btn-block {
   -webkit-animation-iteration-count: infinite;
   -o-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
-  background: -webkit-repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.25) 0, rgba(255, 255, 255, 0.25) 10px, transparent 10px, transparent 20px);
-  background: -o-repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.25) 0, rgba(255, 255, 255, 0.25) 10px, transparent 10px, transparent 20px);
-  background: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.25) 0, rgba(255, 255, 255, 0.25) 10px, transparent 10px, transparent 20px);
+  background: -webkit-repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.25) 0, rgba(255, 255, 255, 0.25) 10px, rgba(0, 0, 0, 0) 10px, rgba(0, 0, 0, 0) 20px);
+  background: -o-repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.25) 0, rgba(255, 255, 255, 0.25) 10px, rgba(0, 0, 0, 0) 10px, rgba(0, 0, 0, 0) 20px);
+  background: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.25) 0, rgba(255, 255, 255, 0.25) 10px, rgba(0, 0, 0, 0) 10px, rgba(0, 0, 0, 0) 20px);
   display: block;
   position: absolute;
   left: -30px;
@@ -3615,7 +3620,7 @@ input[type="button"].btn-block {
 }
 
 .fs-thumb-link:before {
-  font-family: "FontAwesome";
+  font-family: 'FontAwesome';
   line-height: 1em;
   text-align: center;
   text-rendering: auto;

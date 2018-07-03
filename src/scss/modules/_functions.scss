@@ -15,7 +15,7 @@
 /// @param {String} $context - Closest specified font size in px
 ///
 @function fs-em($target, $context) {
-    @return ($target / $context) * 1em;
+  @return ($target / $context) * 1em;
 }
 
 ///
@@ -26,7 +26,7 @@
 /// @param {String} $target - Initial value in px
 ///
 @function fs-rem($target, $context) {
-    @return ($target / $context) * 1rem;
+  @return ($target / $context) * 1rem;
 }
 
 ///
@@ -38,11 +38,11 @@
 /// @param {String} $keys - Keys where nested maps are located
 ///
 @function fs-map-deep-get($map, $keys...) {
-    @each $key in $keys {
-        $map: map-get($map, $key);
-    }
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
 
-    @return $map;
+  @return $map;
 }
 
 ///
@@ -54,11 +54,11 @@
 /// @return {Number} $val - Original number with unit suffix removed
 ///
 @function fs-strip-unit($val) {
-    @if type-of($val) == "number" and not unitless($val) {
-        @return $val / ($val * 0 + 1);
-    }
+  @if type-of($val) == 'number' and not unitless($val) {
+    @return $val / ($val * 0 + 1);
+  }
 
-    @return $val;
+  @return $val;
 }
 
 ///
@@ -72,23 +72,19 @@
 /// @param {String} $replace - New value
 /// @return {String} - Updated string
 ///
-@function fs-str-replace($string, $search, $replace: "") {
-    $string: "#{$string}";
-    $search: "#{$search}";
-    $replace: "#{$replace}";
+@function fs-str-replace($string, $search, $replace: '') {
+  $string: '#{$string}';
+  $search: '#{$search}';
+  $replace: '#{$replace}';
 
-    $index: str-index($string, $search);
+  $index: str-index($string, $search);
 
-    @if $index {
-        @return str-slice($string, 1, $index - 1) + $replace +
-            fs-str-replace(
-                str-slice($string, $index + str-length($search)),
-                $search,
-                $replace
-            );
-    }
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace +
+      fs-str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
 
-    @return $string;
+  @return $string;
 }
 
 ///
@@ -102,7 +98,7 @@
 /// @return {String} - Color hex code with '#' replaced with `%23`.
 ///
 @function fs-url-friendly-clr($clr) {
-    @return fs-str-replace($clr, "#", "%23");
+  @return fs-str-replace($clr, '#', '%23');
 }
 
 ///
@@ -117,7 +113,7 @@
 /// @return {Number} - Padding used for top and bottom of element.
 ///
 @function fs-padding-y($height, $line-height, $border-width: 0) {
-    @return (($height - $line-height - ($border-width * 2)) / 2);
+  @return (($height - $line-height - ($border-width * 2)) / 2);
 }
 
 ///
@@ -133,15 +129,11 @@
 /// @return {String} - Next largest breakpoint name.
 ///
 @function fs-breakpoint-next($name, $breakpoints) {
-    $breakpoint-names: map-keys($breakpoints);
+  $breakpoint-names: map-keys($breakpoints);
 
-    $n: index($breakpoint-names, $name);
+  $n: index($breakpoint-names, $name);
 
-    @return if(
-        $n < length($breakpoint-names),
-        nth($breakpoint-names, $n + 1),
-        ""
-    );
+  @return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), '');
 }
 
 ///
@@ -155,5 +147,5 @@
 /// @return {Number} - Next largest breakpoint name.
 ///
 @function fs-ratio-to-percentage($ratio: 1 1) {
-    @return percentage(nth($ratio, 2) / nth($ratio, 1));
+  @return percentage(nth($ratio, 2) / nth($ratio, 1));
 }

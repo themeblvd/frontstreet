@@ -7,9 +7,5 @@
 //
 
 @each $clr, $map in $fs-clr-library {
-    @include fs-button-variant(
-        $clr,
-        map-get($map, contrast),
-        map-get($map, base)
-    );
+  @include fs-button-variant($clr, map-get($map, contrast), map-get($map, base));
 }

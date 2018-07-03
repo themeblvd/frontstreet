@@ -7,10 +7,10 @@
 //
 
 .fade {
-    opacity: 0;
-    transition: $fs-transition-fade;
+  opacity: 0;
+  transition: $fs-transition-fade;
 
-    &.in {
-        opacity: 1;
-    }
+  &.in {
+    opacity: 1;
+  }
 }

@@ -15,7 +15,7 @@
 //
 
 .clearfix {
-    @include fs-clearfix;
+  @include fs-clearfix;
 }
 .aligncenter,
 .align-center,
@@ -25,46 +25,46 @@
 .lignright,
 .align-right,
 .pull-right {
-    margin: $fs-margin-figure;
+  margin: $fs-margin-figure;
 
-    @include fs-margin-vert-flush;
-    @include fs-aligncenter;
+  @include fs-margin-vert-flush;
+  @include fs-aligncenter;
 }
 @include fs-min-width(xs) {
-    .alignleft,
-    .align-left,
-    .pull-left {
-        @include fs-alignleft;
-    }
-    .alignright,
-    .align-right,
-    .pull-right {
-        @include fs-alignright;
-    }
+  .alignleft,
+  .align-left,
+  .pull-left {
+    @include fs-alignleft;
+  }
+  .alignright,
+  .align-right,
+  .pull-right {
+    @include fs-alignright;
+  }
 }
 
 //
 // Toggling content
 //
 
-@include fs-hide(".hide");
+@include fs-hide('.hide');
 
-@include fs-show-block(".show-block");
+@include fs-show-block('.show-block');
 
-@include fs-show-flex(".show-flex");
+@include fs-show-flex('.show-flex');
 
-@include fs-invisible(".invisible");
+@include fs-invisible('.invisible');
 
-@include fs-visible(".visible");
+@include fs-visible('.visible');
 
-@include fs-hide(".hidden");
+@include fs-hide('.hidden');
 
 //
 // Hide Text
 //
 
 .text-hide {
-    @include fs-hide-text;
+  @include fs-hide-text;
 }
 
 //
@@ -72,19 +72,19 @@
 //
 
 .text-left {
-    text-align: left;
+  text-align: left;
 }
 .text-right {
-    text-align: right;
+  text-align: right;
 }
 .text-center {
-    text-align: center;
+  text-align: center;
 }
 .text-justify {
-    text-align: justify;
+  text-align: justify;
 }
 .text-nowrap {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 //
@@ -92,13 +92,13 @@
 //
 
 .text-lowercase {
-    text-transform: lowercase;
+  text-transform: lowercase;
 }
 .text-uppercase {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 .text-capitalize {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 //
@@ -106,7 +106,7 @@
 //
 
 @each $name, $map in $fs-border-utils {
-    .border-#{$name} {
-        border: map-get($map, width) map-get($map, style) map-get($map, color);
-    }
+  .border-#{$name} {
+    border: map-get($map, width) map-get($map, style) map-get($map, color);
+  }
 }
