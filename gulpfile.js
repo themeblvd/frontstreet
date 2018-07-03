@@ -16,7 +16,6 @@ var gulp = require("gulp"),
  */
 var serve = [
     "render-docs-css",
-    "render-docs-jquery",
     // "render-docs-js",
     "render-docs-html",
     "render-docs-img",
@@ -52,21 +51,19 @@ var browsers = [
 ];
 
 /**
- * Compile SASS files for documentation. This still needs
- * to get merged into other third-party CSS files before
- * getting sent for distribution (task render-docs-css).
+ * Compile SASS files for documentation.
  */
-gulp.task("compile-docs-scss", function() {
+gulp.task("render-docs-css", function() {
     return gulp
         .src("src/docs/assets/scss/docs.scss")
-        .pipe(sass().on("error", sass.logError))
+        .pipe(sass({ outputStyle: 'compressed'} ).on("error", sass.logError))
         .pipe(
             autoprefixer({
                 browsers: browsers,
                 cascade: false
             })
         )
-        .pipe(gulp.dest("src/docs/assets/css"));
+        .pipe(gulp.dest("docs/assets/css"));
 });
 
 /**
@@ -74,6 +71,7 @@ gulp.task("compile-docs-scss", function() {
  * This includes first creating our main docs.css,
  * compiled from the scss folder.
  */
+/*
 gulp.task("render-docs-css", ["compile-docs-scss"], function() {
     var files = [
         "src/docs/assets/css/shCore.css",
@@ -88,16 +86,7 @@ gulp.task("render-docs-css", ["compile-docs-scss"], function() {
         .pipe(rename({ suffix: ".min" }))
         .pipe(gulp.dest("docs/assets/css"));
 });
-
-/**
- * Concat and minify all JavaScript files for
- * documentation.
- */
-gulp.task("render-docs-jquery", function() {
-    return gulp
-        .src("src/docs/assets/js/jquery-" + jQueryVersion + ".min.js")
-        .pipe(gulp.dest("docs/assets/js"));
-});
+*/
 
 /**
  * Concat and minify all JavaScript files for
