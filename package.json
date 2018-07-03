@@ -36,6 +36,7 @@
     "gulp-sass": "latest",
     "gulp-uglify": "latest",
     "gulp-watch": "latest",
+    "highlight.js": "^9.12.0",
     "magnific-popup": "^1.1.0",
     "marky-markdown": "latest",
     "owl.carousel": "^2.3.4",

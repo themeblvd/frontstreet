@@ -1,9 +1,37 @@
 import $ from 'jquery';
+import hljs from 'highlight.js/lib/highlight';
 import Fuse from 'fuse.js';
 import searchIndex from './search-index';
 import 'owl.carousel';
 import 'magnific-popup';
 import '../../../js/frontstreet';
+
+// Register language syntaxes
+hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'));
+hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'));
+hljs.registerLanguage('css', require('highlight.js/lib/languages/css'));
+
+/**
+ * Escape HTML.
+ *
+ * @param {String} html HTML code.
+ * @return {String} Escaped html.
+ */
+function escape(html) {
+  const replace = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;'
+  };
+
+  return html.replace(/[&<>]/g, tag => replace[tag]);
+}
+
+// Apply syntax highlighting.
+document.querySelectorAll('pre.highlight').forEach(function(block) {
+  block.innerHTML = escape(block.innerHTML);
+  hljs.highlightBlock(block);
+});
 
 $(document).ready(function($) {
   // Site Search
