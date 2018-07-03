@@ -9,10 +9,11 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/googlecode.min.css">
 		<link rel="stylesheet" href='assets/frontstreet/plugins/font-awesome/css/font-awesome.min.css' type='text/css' media='all' />
 		<link rel="stylesheet" href='assets/frontstreet/css/frontstreet.min.css' type='text/css' media='all' />
 		<link rel="stylesheet" href='assets/frontstreet/css/frontstreet-colors.min.css' type='text/css' media='all' />
-		<link rel="stylesheet" href='assets/css/docs.min.css' type='text/css' media='all' />
+		<link rel="stylesheet" href='assets/css/docs.css' type='text/css' media='all' />
 
 	</head>
 	<body>
@@ -134,7 +135,7 @@
 
 <p>Below is an overview of the basic, outer HTML structure.</p>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <div class="fs-{type}-slider loading">
 	<div class="wrap">
 
@@ -167,7 +168,7 @@
 
 <p>For all slider types, your actual slides will go in an element with class <code>fs-slider</code> <em>and</em> <code>owl-carousel</code>. The <code>fs-slider</code> class is what triggers our JavaScript and recieves any custom styling for the specific slider type. And the <code>owl-carousel</code> class is what actually receives the styling from the included Owl Carousel CSS, compiled with Front Street. Then within, you'll have an element for each slide with class <code>slider-item</code>.</p>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <div class="fs-slider owl-carousel">
 	<div class="slider-item">
 		...
@@ -187,7 +188,7 @@
 
 <p>The first type of navigation is the standard navigation dots. Create a list with class <code>fs-slider-nav</code>. Make sure to include a list item for each slide you create. For example, if there are three slides, there should be three list items in your <code>.fs-slider-nav</code> element.</p>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <ol class="fs-slider-nav">
 	<li>1</li>
 	<li>2</li>
@@ -197,7 +198,7 @@
 
 <p>The second type of navigation are the absolute-positioned arrows, to move the slider to next or previous slide. Create a list with class <code>fs-slider-arrows</code> and two list items within with classes <code>next</code> and <code>prev</code>. You can also add the class <code>trans</code> to each list item to give it a transparent look.</p>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <ol class="fs-slider-arrows">
 	<li class="prev trans">Previous</li>
 	<li class="next trans">Next</li>
@@ -206,7 +207,7 @@
 
 <p>You can also use any <a href="colors.html" target="_blank" title="Color Library">color library class</a> on the list items to give them a specific color.</p>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <ol class="fs-slider-arrows">
 	<li class="prev royal">Previous</li>
 	<li class="next ryoal">Next</li>
@@ -219,11 +220,11 @@
 
 <p><span class="label-inline info">Important!</span> Different from the two previous navigation types, make sure the <code>.fs-slider-thumbs</code> element comes outside of the <code>.wrap</code> element.</p>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <ol class="fs-slider-thumbs thumbs-md">
-	<li>&lt;img src="thumb-1.jpg"&gt;</li>
-	<li>&lt;img src="thumb-2.jpg"&gt;</li>
-	<li>&lt;img src="thumb-3.jpg"&gt;</li>
+	<li><img src="thumb-1.jpg"></li>
+	<li><img src="thumb-2.jpg"></li>
+	<li><img src="thumb-3.jpg"></li>
 </ol>
 </pre>
 
@@ -231,7 +232,7 @@
 
 <p>To implement the <a href="loader.html" title="Loader" target="_blank">loader component</a>, add it within your <code>.wrap</code> element. Also make sure to add the class <code>loading</code> to your top-level <code>.fs-{type}-slider</code> element.</p>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <div class="fs-{type}-slider loading">
 	<div class="wrap">
 
@@ -249,7 +250,7 @@
 
 <p>Even though the JavaScript is setup for you with these pre-configured slider types, we've included some optional <code>data-*</code> attributes you can add to customize some of the slider settings. To utilize them, just add them into your wrapping <code>.fs-{type}-slider</code> element.</p>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <div class="fs-{type}-slider" data-autoplay="3000" data-speed="250">
 	<div class="wrap">
 		...
@@ -384,22 +385,22 @@
 	</div><!-- .wrap -->
 </div><!-- .fs-simple-slider -->
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;div class="fs-simple-slider loading"&gt;
+<pre class="highlight html">
+<div class="fs-simple-slider loading">
 	<div class="wrap">
 
 		<div class="fs-slider owl-carousel">
 
 			<div class="slider-item">
-				&lt;img src="image-1.jpg"&gt;
+				<img src="image-1.jpg">
 			</div><!-- .slider-item -->
 
 			<div class="slider-item">
-				&lt;img src="image-2.jpg"&gt;
+				<img src="image-2.jpg">
 			</div><!-- .slider-item -->
 
 			<div class="slider-item">
-				&lt;img src="image-3.jpg"&gt;
+				<img src="image-3.jpg">
 				<div class="slider-caption">
 					<h3 class="slider-heading">Donec Rutrum</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
@@ -424,14 +425,14 @@
 		</div>
 
 	</div><!-- .wrap -->
-&lt;/div&gt;<!-- .fs-simple-slider -->
+</div><!-- .fs-simple-slider -->
 </pre>
 
 <h3 id="simple-slider-captions" class="heading-sm">Slide Captions</h3>
 
 <p>You may have noticed in the third slide above, we included some caption text. Here's the basic structure for a caption included within each <code>.slider-item</code> element.</p>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <div class="slider-caption">
 	<h3 class="slider-heading">Donec Rutrum</h3>
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
@@ -480,8 +481,8 @@
 
 </div><!-- .fs-simple-slider -->
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;div class="fs-simple-slider loading"&gt;
+<pre class="highlight html">
+<div class="fs-simple-slider loading">
 
 	<div class="wrap">
 		...
@@ -493,7 +494,7 @@
 		<li>3</li>
 	</ol>
 
-&lt;/div&gt;<!-- .fs-simple-slider -->
+</div><!-- .fs-simple-slider -->
 </pre>
 
 <h3 id="simple-slider-thumbs" class="heading-sm">Thumbnail Navigation</h3>
@@ -538,20 +539,20 @@
 
 </div><!-- .fs-simple-slider -->
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;div class="fs-simple-slider loading"&gt;
+<pre class="highlight html">
+<div class="fs-simple-slider loading">
 
 	<div class="wrap">
 		...
 	</div><!-- .wrap -->
 
 	<ul class="fs-slider-thumbs thumbs-md">
-		<li>&lt;img src="thumb-1.jpg"&gt;</li>
-		<li>&lt;img src="thumb-2.jpg"&gt;</li>
-		<li>&lt;img src="thumb-3.jpg"&gt;</li>
+		<li><img src="thumb-1.jpg"></li>
+		<li><img src="thumb-2.jpg"></li>
+		<li><img src="thumb-3.jpg"></li>
 	</ul>
 
-&lt;/div&gt;<!-- .fs-simple-slider -->
+</div><!-- .fs-simple-slider -->
 </pre>
 
 <h3 id="simple-slider-fade" class="heading-sm">Fade Transition</h3>
@@ -595,12 +596,12 @@
 	</div><!-- .wrap -->
 </div><!-- .fs-simple-slider -->
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;div class="fs-simple-slider loading" data-fade="true"&gt;
+<pre class="highlight html">
+<div class="fs-simple-slider loading" data-fade="true">
     <div class="wrap">
         ...
     </div><!-- .wrap -->
-&lt;/div&gt;<!-- .fs-simple-slider -->
+</div><!-- .fs-simple-slider -->
 </pre>
 
 <h3 id="simple-slider-dark" class="heading-sm">Dark Text</h3>
@@ -656,12 +657,12 @@
 	</div><!-- .wrap -->
 </div><!-- .fs-simple-slider -->
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;div class="fs-simple-slider loading text-dark"&gt;
+<pre class="highlight html">
+<div class="fs-simple-slider loading text-dark">
 	<div class="wrap">
 		...
 	</div><!-- .wrap -->
-&lt;/div&gt;<!-- .fs-simple-slider -->
+</div><!-- .fs-simple-slider -->
 </pre>
 
 <h3 id="simple-slider-mini" class="heading-sm">Mini Simple Slider</h3>
@@ -698,12 +699,12 @@
 	</div><!-- .fs-simple-slider -->
 </div><!-- .mini-slider-example (end) -->
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;div class="fs-simple-slider slider-mini"&gt;
+<pre class="highlight html">
+<div class="fs-simple-slider slider-mini">
 	<div class="wrap">
 		...
 	</div><!-- .wrap -->
-&lt;/div&gt;<!-- .fs-simple-slider -->
+</div><!-- .fs-simple-slider -->
 </pre>
 
 <h2 id="gallery-slider">Gallery Slider</h2>
@@ -757,30 +758,30 @@
 	</div><!-- .wrap -->
 </div><!-- .fs-gallery-slider -->
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;div class="fs-gallery-slider loading"&gt;
+<pre class="highlight html">
+<div class="fs-gallery-slider loading">
 	<div class="wrap">
 
 		<div class="fs-slider owl-carousel">
 
 			<div class="slider-item">
-				&lt;img src="image-1.jpg"&gt;
+				<img src="image-1.jpg">
 			</div><!-- .slider-item -->
 
 			<div class="slider-item">
-				&lt;img src="image-2.jpg"&gt;
+				<img src="image-2.jpg">
 			</div><!-- .slider-item -->
 
 			<div class="slider-item">
-				&lt;img src="image-3.jpg"&gt;
+				<img src="image-3.jpg">
 			</div><!-- .slider-item -->
 
 			<div class="slider-item">
-				&lt;img src="image-4.jpg"&gt;
+				<img src="image-4.jpg">
 			</div><!-- .slider-item -->
 
 			<div class="slider-item">
-				&lt;img src="image-5.jpg"&gt;
+				<img src="image-5.jpg">
 			</div><!-- .slider-item -->
 
 		</div><!-- .owl-carousel -->
@@ -803,7 +804,7 @@
 		</div>
 
 	</div><!-- .wrap -->
-&lt;/div&gt;<!-- .fs-gallery-slider -->
+</div><!-- .fs-gallery-slider -->
 </pre>
 
 <h3 id="gallery-slider-dots" class="heading-sm">Dots Navigation</h3>
@@ -858,8 +859,8 @@
 
 </div><!-- .fs-gallery-slider -->
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;div class="fs-gallery-slider loading"&gt;
+<pre class="highlight html">
+<div class="fs-gallery-slider loading">
 
 	<div class="wrap">
 		...
@@ -873,7 +874,7 @@
 		<li>5</li>
 	</ol>
 
-&lt;/div&gt;<!-- .fs-simple-slider -->
+</div><!-- .fs-simple-slider -->
 </pre>
 
 <h3 id="gallery-slider-thumbs" class="heading-sm">Thumbnail Navigation</h3>
@@ -928,22 +929,22 @@
 
 </div><!-- .fs-gallery-slider -->
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;div class="fs-gallery-slider loading"&gt;
+<pre class="highlight html">
+<div class="fs-gallery-slider loading">
 
 	<div class="wrap">
 		...
 	</div><!-- .wrap -->
 
 	<ul class="fs-slider-thumbs thumbs-md">
-		<li>&lt;img src="thumb-1.jpg"&gt;</li>
-		<li>&lt;img src="thumb-2.jpg"&gt;</li>
-		<li>&lt;img src="thumb-3.jpg"&gt;</li>
-		<li>&lt;img src="thumb-4.jpg"&gt;</li>
-		<li>&lt;img src="thumb-5.jpg"&gt;</li>
+		<li><img src="thumb-1.jpg"></li>
+		<li><img src="thumb-2.jpg"></li>
+		<li><img src="thumb-3.jpg"></li>
+		<li><img src="thumb-4.jpg"></li>
+		<li><img src="thumb-5.jpg"></li>
 	</ul>
 
-&lt;/div&gt;<!-- .fs-simple-slider -->
+</div><!-- .fs-simple-slider -->
 </pre>
 
 <h3 id="gallery-slider-height" class="heading-sm">Gallery Slider Height</h3>
@@ -954,15 +955,15 @@
 
 <p>By default we've set this at <code>400px</code>, with the height shrinking at smaller viewports. But through your own CSS customizations, you could create your own height specifications. Below is an example.</p>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;div class="fs-gallery-slider my-slider"&gt;
+<pre class="highlight html">
+<div class="fs-gallery-slider my-slider">
 	<div class="wrap">
 		...
 	</div><!-- .wrap -->
-&lt;/div&gt;<!-- .fs-simple-slider -->
+</div><!-- .fs-simple-slider -->
 </pre>
 
-<pre class="brush: css; gutter: false; toolbar: false;">
+<pre class="highlight css">
 .my-slider .fs-slider,
 .my-slider .slider-item {
 	height: 400px;
@@ -1043,42 +1044,42 @@
 
 </div><!-- .fs-block-slider -->
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;div class="fs-block-slider loading"&gt;
+<pre class="highlight html">
+<div class="fs-block-slider loading">
 	<div class="wrap">
 
 		<div class="fs-slider owl-carousel">
 
 			<div class="slider-item">
-				&lt;img src="image-1.jpg"&gt;
+				<img src="image-1.jpg">
 			</div><!-- .slider-item -->
 
 			<div class="slider-item">
-				&lt;img src="image-2.jpg"&gt;
+				<img src="image-2.jpg">
 			</div><!-- .slider-item -->
 
 			<div class="slider-item">
-				&lt;img src="image-3.jpg"&gt;
+				<img src="image-3.jpg">
 			</div><!-- .slider-item -->
 
 			<div class="slider-item">
-				&lt;img src="image-4.jpg"&gt;
+				<img src="image-4.jpg">
 			</div><!-- .slider-item -->
 
 			<div class="slider-item">
-				&lt;img src="image-5.jpg"&gt;
+				<img src="image-5.jpg">
 			</div><!-- .slider-item -->
 
 			<div class="slider-item">
-				&lt;img src="image-6.jpg"&gt;
+				<img src="image-6.jpg">
 			</div><!-- .slider-item -->
 
 			<div class="slider-item">
-				&lt;img src="image-7.jpg"&gt;
+				<img src="image-7.jpg">
 			</div><!-- .slider-item -->
 
 			<div class="slider-item">
-				&lt;img src="image-8.jpg"&gt;
+				<img src="image-8.jpg">
 			</div><!-- .slider-item -->
 
 		</div><!-- .owl-carousel -->
@@ -1093,7 +1094,7 @@
 		</div>
 
 	</div><!-- .wrap -->
-&lt;/div&gt;<!-- .fs-block-slider -->
+</div><!-- .fs-block-slider -->
 </pre>
 
 <p>The following example changes up some things. &mdash; First we've added some data attributes (<a href="data-atts" title="Sliders: Data Attributes">see full table of data attributes above</a>). We've got <code>data-items="3"</code> to adjust how many items show per slide, <code>data-margin="15"</code> to add some gutters between items, and <code>data-loop="false"</code> to not allow the carousel to continuously cycle. And last, we've added the standard dot navigation outside of the <code>.wrap</code> element so that it appears below the carousel.</p>
@@ -1156,8 +1157,8 @@
 
 </div><!-- .fs-block-slider -->
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;div class="fs-block-slider loading" data-items="3" data-margin="15" data-loop="false"&gt;
+<pre class="highlight html">
+<div class="fs-block-slider loading" data-items="3" data-margin="15" data-loop="false">
 
 	<div class="wrap">
 		...
@@ -1169,7 +1170,7 @@
 		<li>3</li>
 	</ol>
 
-&lt;/div&gt;<!-- .fs-block-slider -->
+</div><!-- .fs-block-slider -->
 </pre>
 
 <div class="alert info">
@@ -1241,17 +1242,17 @@
 
 </div><!-- .fs-block-slider -->
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;div class="fs-block-slider loading"&gt;
+<pre class="highlight html">
+<div class="fs-block-slider loading">
 
 	<div class="wrap">
 
 		<div class="fs-slider fs-modal-gallery owl-carousel">
 
 			<div class="slider-item">
-				&lt;a href="image-1.jpg" class="fs-image-modal-link fs-thumb-link fa-expand"&gt;
-					&lt;img src="image-1-thumb.jpg"&gt;
-				&lt;/a&gt;
+				<a href="image-1.jpg" class="fs-image-modal-link fs-thumb-link fa-expand">
+					<img src="image-1-thumb.jpg">
+				</a>
 			</div><!-- .slider-item -->
 
 			...
@@ -1275,7 +1276,7 @@
 		<li>3</li>
 	</ol>
 
-&lt;/div&gt;<!-- .fs-block-slider -->
+</div><!-- .fs-block-slider -->
 </pre>
 
 

@@ -9,10 +9,11 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/googlecode.min.css">
 		<link rel="stylesheet" href='assets/frontstreet/plugins/font-awesome/css/font-awesome.min.css' type='text/css' media='all' />
 		<link rel="stylesheet" href='assets/frontstreet/css/frontstreet.min.css' type='text/css' media='all' />
 		<link rel="stylesheet" href='assets/frontstreet/css/frontstreet-colors.min.css' type='text/css' media='all' />
-		<link rel="stylesheet" href='assets/css/docs.min.css' type='text/css' media='all' />
+		<link rel="stylesheet" href='assets/css/docs.css' type='text/css' media='all' />
 
 	</head>
 	<body>
@@ -111,7 +112,7 @@
 
 </div><!-- .fs-content-modal (end) -->
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <a href="#modal-example" title="View Medium Modal" class="fs-content-modal-link btn btn-default">View Medium Modal</a>
 
 <div id="modal-example" class="fs-content-modal modal-md" aria-hidden="true">
@@ -135,7 +136,7 @@
 
 <p>A content modal element and <code>&lt;a&gt;</code> tag are linked together by a unique ID. Your <code>&lt;a&gt;</code> tag will link to the ID of the modal element and will need the class <code>fs-modal-content-link</code> to invoke the JavaScript.</p>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <a href="#my-modal" class="fs-modal-content-link">Open Modal</a>
 
 <div id="my-modal" class="fs-content-modal" aria-hidden="true">
@@ -147,7 +148,7 @@
 
 <p>If you want your modal to have a header, you can wrap any heading in a <code>.modal-header</code> element like the following.</p>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <div id="my-modal" class="fs-content-modal">
 
 	<div class="modal-header">
@@ -163,7 +164,7 @@
 
 <p>To get matching padding and styling within your modal window's content, place it within an element with class <code>modal-content</code> like the following.</p>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <div id="my-modal" class="fs-content-modal">
 
 	<!-- Header here... -->
@@ -179,7 +180,7 @@
 
 <p>If you add one of the framework's <a href="buttons.html#close-buttons" title="Close Buttons" target="_blank">close buttons</a> within your header, it'll automatically get styled and placed in the top right corner. You can use any of the four sizes, as well. The only thing to note is that you must add the class <code>fs-modal-close</code> to invoke the JavaScript required for closing the modal.</p>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <div id="my-modal" class="fs-content-modal">
 
 	<div class="modal-header">
@@ -210,7 +211,7 @@
 
 </div><!-- .fs-content-modal (end) -->
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <a href="#modal-with-btn" title="Open Modal" class="fs-content-modal-link">Open Modal With Alternate Button</a>
 
 <div id="modal-with-btn"  class="fs-content-modal modal-md" aria-hidden="true">
@@ -251,7 +252,7 @@
 
 </div><!-- .fs-content-modal (end) -->
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <a href="#modal-sm" title="View Small Modal" class="fs-content-modal-link">View Small Modal</a>
 
 <div id="modal-sm" class="fs-content-modal modal-sm" aria-hidden="true">
@@ -286,7 +287,7 @@
 
 </div><!-- .fs-content-modal (end) -->
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <a href="#modal-md" title="View Medium Modal" class="fs-content-modal-link">View Medium Modal</a>
 
 <div id="modal-md" class="fs-content-modal modal-md" aria-hidden="true">
@@ -324,7 +325,7 @@
 
 </div><!-- .fs-content-modal (end) -->
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <a href="#modal-lg" title="View Large Modal" class="fs-content-modal-link">View Large Modal</a>
 
 <div id="modal-lg" class="fs-content-modal modal-lg" aria-hidden="true">
@@ -354,7 +355,7 @@
 	<p>Okay, you've opened me; now <a href="#" class="fs-modal-close">close me</a>.</p>
 </div>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <a href="#modal-naked" class="fs-content-modal-link">Open Naked Content Modal</a>
 
 <div id="modal-naked" class="fs-content-modal modal-md" aria-hidden="true">
@@ -368,7 +369,7 @@
 
 <p><a href="assets/img/image-1.jpg" class="fs-image-modal-link" title="A Quiet Beach">Open Image Modal</a></p>
 
-<pre class="brush: xml; gutter: false; toolbar: false; class-name: no-wrap;">
+<pre class="highlight html soft-wrap">
 <a href="assets/img/image-1.jpg" class="fs-image-modal-link" title="A Quiet Beach">Open Image</a>
 </pre>
 
@@ -380,7 +381,7 @@
 
 <p><a href="https://wpjumpstart.com" title="Jump Start" class="fs-iframe-modal-link">Open Webpage Modal</a></p>
 
-<pre class="brush: xml; gutter: false; toolbar: false; class-name: no-wrap;">
+<pre class="highlight html soft-wrap">
 <a href="https://wpjumpstart.com" title="Jump Start" class="fs-iframe-modal-link">Open YouTube Webpage Modal</a>
 </pre>
 
@@ -388,7 +389,7 @@
 
 <p><a href="https://videopress.com/embed/IYfHX4jN" class="fs-iframe-modal-link" title="State of the Word 2016">Open WordPress.tv Embed</a></p>
 
-<pre class="brush: xml; gutter: false; toolbar: false; class-name: no-wrap;">
+<pre class="highlight html soft-wrap">
 <a href="https://videopress.com/embed/IYfHX4jN" class="fs-iframe-modal-link" title="State of the Word 2016">Open WordPress.tv Embed</a>
 </pre>
 
@@ -396,7 +397,7 @@
 
 <p><a href="https://www.funnyordie.com/embed/ca9b942215" class="fs-iframe-modal-link" title="Handman's Tale">Open Funny or Die Embed</a></p>
 
-<pre class="brush: xml; gutter: false; toolbar: false; class-name: no-wrap;">
+<pre class="highlight html soft-wrap">
 <a href="https://www.funnyordie.com/embed/ca9b942215" class="fs-iframe-modal-link" title="Handman's Tale">Open Funny or Die Embed</a>
 </pre>
 
@@ -404,7 +405,7 @@
 
 <p><a href="https://www.youtube.com/watch?v=2Tx3wm8mN6g" class="fs-iframe-modal-link" title="Who We Are">Open YouTube Video Modal</a></p>
 
-<pre class="brush: xml; gutter: false; toolbar: false; class-name: no-wrap;">
+<pre class="highlight html soft-wrap">
 <a href="https://www.youtube.com/watch?v=2Tx3wm8mN6g" class="fs-iframe-modal-link" title="Who We Are">Open YouTube Video Modal</a>
 </pre>
 
@@ -412,7 +413,7 @@
 
 <p><a href="https://vimeo.com/126340425" class="fs-iframe-modal-link" title="Jump Start Promo">Open Vimeo Video Modal</a></p>
 
-<pre class="brush: xml; gutter: false; toolbar: false; class-name: no-wrap;">
+<pre class="highlight html soft-wrap">
 <a href="https://vimeo.com/126340425" class="fs-iframe-modal-link" title="Jump Start Promo">Open Vimeo Video Modal</a>
 </pre>
 
@@ -432,7 +433,7 @@
 	</p>
 </div>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <div class="fs-modal-gallery">
 	<a href="assets/img/image-1.jpg" class="fs-image-modal-link" title="A Quiet Beach">Open Item #1 (image)</a>
 	<a href="assets/img/image-2.jpg" class="fs-image-modal-link" title="A Lone Mountain">Open Item #2 (image)</a>
@@ -462,7 +463,7 @@
 	</div>
 </form>
 
-<pre class="brush: xml; gutter: false; toolbar: false; class-name: no-wrap;">
+<pre class="highlight html soft-wrap">
 <a href="#search" class="fs-search-modal-link" title="Search the Website">Open Search Modal</a>
 
 <form id="search" class="fs-search-modal" method="get" aria-hidden="true">

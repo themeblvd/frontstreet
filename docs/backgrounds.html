@@ -9,10 +9,11 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/googlecode.min.css">
 		<link rel="stylesheet" href='assets/frontstreet/plugins/font-awesome/css/font-awesome.min.css' type='text/css' media='all' />
 		<link rel="stylesheet" href='assets/frontstreet/css/frontstreet.min.css' type='text/css' media='all' />
 		<link rel="stylesheet" href='assets/frontstreet/css/frontstreet-colors.min.css' type='text/css' media='all' />
-		<link rel="stylesheet" href='assets/css/docs.min.css' type='text/css' media='all' />
+		<link rel="stylesheet" href='assets/css/docs.css' type='text/css' media='all' />
 
 	</head>
 	<body>
@@ -91,7 +92,7 @@
 
 <p>In order for the background components and your section's inner content to be all z-index'ed and positioned properly, we need to follow a basic markup structure. Your wrapping section element should have the class <code>fs-section</code>. And any content within should be wrapped in an element with class <code>fs-element</code>.</p>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <section class="fs-section bg-dark">
 
 	<div class="fs-element">
@@ -161,7 +162,7 @@
 	</div>
 </section>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <section class="fs-section bg-dark text-center">
 
 	<div class="fs-element">
@@ -195,7 +196,7 @@
 
 </section>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <section class="fs-section bg-dark text-center" style="background: url(assets/img/image-1.jpg) center center no-repeat; background-size: cover;">
 
 	<div class="fs-element">
@@ -221,7 +222,7 @@
 
 </section>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <section class="fs-sectio bg-dark text-centern">
 
 	<div class="fs-element">
@@ -297,19 +298,19 @@
 
 </section>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <section class="fs-section bg-dark text-center">
 
 	<div class="fs-element">
 		<!-- Any content to sit above background components. -->
 	</div>
 
-	&lt;div class="fs-bg-slider"&gt;
-		&lt;img src="image-1.jpg"&gt;
-		&lt;img src="image-2.jpg"&gt;
-		&lt;img src="image-3.jpg"&gt;
-		&lt;img src="image-4.jpg"&gt;
-	&lt;/div&gt;
+	<div class="fs-bg-slider">
+		<img src="image-1.jpg">
+		<img src="image-2.jpg">
+		<img src="image-3.jpg">
+		<img src="image-4.jpg">
+	</div>
 
 	<div class="fs-loader">
 		<span>Loading</span>
@@ -343,19 +344,19 @@
 
 </section>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <section class="fs-section bg-dark text-center">
 
 	<div class="fs-element">
 		<!-- Any content to sit above background components. -->
 	</div>
 
-	&lt;div class="fs-bg-slider"&gt;
-		&lt;img src="image-1.jpg"&gt;
-		&lt;img src="image-2.jpg"&gt;
-		&lt;img src="image-3.jpg"&gt;
-		&lt;img src="image-4.jpg"&gt;
-	&lt;/div&gt;
+	<div class="fs-bg-slider">
+		<img src="image-1.jpg">
+		<img src="image-2.jpg">
+		<img src="image-3.jpg">
+		<img src="image-4.jpg">
+	</div>
 
 	<div class="fs-bg-shade shade-75 crimson"></div>
 
@@ -368,16 +369,16 @@
 
 <p>By default, the background slider component will rotate images every four seconds (i.e. 4000ms). You can change that by passing a new millisecond value through a <code>data-autoplay</code> parameter. Keep in mind that this value must be <code>1000</code> or higher.</p>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <section class="fs-section bg-dark text-center">
 
 	<div class="fs-element">
 		<!-- Any content to sit above background components. -->
 	</div>
 
-	&lt;div class="fs-bg-slider" data-autoplay="2000"&gt;
+	<div class="fs-bg-slider" data-autoplay="2000">
 		<!-- Slider images. -->
-	&lt;/div&gt;
+	</div>
 
 	<div class="fs-loader">
 		<span>Loading</span>
@@ -412,7 +413,7 @@
 
 </section>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <section class="fs-section bg-dark text-center">
 
 	<div class="fs-element">
@@ -421,9 +422,9 @@
 		<a href="#" class="btn btn-white btn-trans">Learn More</a>
 	</div>
 
-	&lt;figure class="fs-bg-parallax"&gt;
-		&lt;img src="image.jpg"&gt;
-	&lt;/figure&gt;
+	<figure class="fs-bg-parallax">
+		<img src="image.jpg">
+	</figure>
 
 	<div class="fs-loader">
 		<span>Loading</span>
@@ -454,7 +455,7 @@
 
 </section>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <section class="fs-section bg-dark text-center">
 
 	<div class="fs-element">
@@ -463,9 +464,9 @@
 		<a href="#" class="btn btn-white btn-trans">Learn More</a>
 	</div>
 
-	&lt;figure class="fs-bg-parallax"&gt;
-		&lt;img src="image.jpg"&gt;
-	&lt;/figure&gt;
+	<figure class="fs-bg-parallax">
+		<img src="image.jpg">
+	</figure>
 
 	<div class="fs-bg-shade shade-50 black"></div>
 
