@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import { isMobile, dom } from './utils';
 
 /**
@@ -46,7 +47,7 @@ class Background {
   }
 
   /**
-   * Default tabs options.
+   * Default background options.
    *
    * @since 1.0.0
    *

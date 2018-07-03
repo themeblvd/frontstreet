@@ -1361,11 +1361,13 @@
 <p>In order for the menu button to actually change states and perform any kind of action, you'd need to use JavaScript. The following is the JavaScript used in the above examples, which utilizes jQuery. &mdash; You can see that by simply toggling the class <code>collapse</code> on and off of the <code>.fs-menu-toggle</code> button, that we can achieve the button's animation since it's done with CSS.</p>
 
 <pre class="brush: js; gutter: false; toolbar: false;">
-$('.fs-menu-toggle').on('click', function(){
+$('.fs-menu-toggle').on('click', function(event){
+
+	event.preventDefault();
 
 	var $el = $(this);
 
-	if ( $el.hasClass('collapse') ) {
+	if ($el.hasClass('collapse')) {
 
 		$el.removeClass('collapse');
 
@@ -1378,8 +1380,6 @@ $('.fs-menu-toggle').on('click', function(){
 		// Code to open your menu...
 
 	}
-
-	return false;
 
 });
 </pre>

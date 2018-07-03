@@ -29,41 +29,35 @@ $(document).ready(function($) {
     ]
   };
 
-  var fuse = new Fuse(searchIndex, options),
-    $searchField = $('#site-search-field'),
-    $resultsList = $('#search-results > ul'),
-    $selected = null;
+  const fuse = new Fuse(searchIndex, options);
+  const $searchField = $('#site-search-field');
+  const $resultsList = $('#search-results > ul');
+  var $selected = null;
 
-  $searchField.on('keyup', function(e) {
+  $searchField.on('keyup', function(event) {
     // Is up, down, or enter being pressed?
-    if (e.which == 13 || e.which == 38 || e.which == 40) {
+    if (event.which === 13 || event.which === 38 || event.which === 40) {
       return;
     }
 
-    // $selection = null;
-
-    var $el = $(this),
-      results = fuse.search($el.val());
+    const $el = $(this);
+    const results = fuse.search($el.val());
 
     $resultsList.empty();
 
-    for (var i = 0; i < results.length; i++) {
+    results.forEach(function(result) {
       $resultsList.append(
-        '<li><a href="' +
-          results[i].item.url +
-          '" data-score="' +
-          results[i].score +
-          '">' +
-          results[i].item.title +
-          '</a></li>'
+        `<li><a href="${result.item.url}" data-score="${result.score}">${
+          result.item.title
+        }</a></li>`
       );
-    }
+    });
   });
 
-  $searchField.on('keydown', function(e) {
-    var enter = e.which == 13,
-      up = e.which == 38,
-      down = e.which == 40;
+  $searchField.on('keydown', function(event) {
+    const enter = event.which == 13;
+    const up = event.which == 38;
+    const down = event.which == 40;
 
     if (down) {
       if (!$selected) {
@@ -89,12 +83,10 @@ $(document).ready(function($) {
       }
     } else if (enter) {
       if ($selected) {
-        var url = $selected.find('a').attr('href');
-
+        const url = $selected.find('a').attr('href');
         $selected = null;
         $resultsList.empty();
         $searchField.val('');
-
         window.location.href = url;
       }
     }
@@ -121,7 +113,7 @@ $(document).ready(function($) {
   });
 
   // Scroll To Top
-  var $toTop = $('.to-top');
+  const $toTop = $('.to-top');
 
   $toTop.on('click', function() {
     $('html, body').animate({ scrollTop: 0 }, 400);
@@ -129,8 +121,8 @@ $(document).ready(function($) {
   });
 
   $(window).on('scroll load', function() {
-    var sidebarHeight = $('.site-sidebar > .wrap').outerHeight();
-    var btnHeight = $toTop.outerHeight();
+    const sidebarHeight = $('.site-sidebar > .wrap').outerHeight();
+    const btnHeight = $toTop.outerHeight();
 
     if ($(this).scrollTop() >= sidebarHeight - btnHeight) {
       $toTop.addClass('stick');
@@ -146,11 +138,9 @@ $(document).ready(function($) {
 
     if ($el.hasClass('collapse')) {
       $el.removeClass('collapse');
-
       // Code to close your menu...
     } else {
       $el.addClass('collapse');
-
       // Code to open your menu...
     }
 
@@ -158,5 +148,5 @@ $(document).ready(function($) {
   });
 
   // Moble Menu examples
-  $('.mobile-menu-bar').frontStreet('mobile-menu');
+  $('.mobile-menu-bar').frontstreet('mobile-menu');
 });
