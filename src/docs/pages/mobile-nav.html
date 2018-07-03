@@ -33,8 +33,8 @@
 	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
 </ul>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;ul class="mobile-menu-bar bg-light text-dark"&gt;
+<pre class="highlight html">
+<ul class="mobile-menu-bar bg-light text-dark">
 	<li><a href="#" class="menu-btn" title="Home">Home</a></li>
 	<li>
 		<a href="#" class="menu-btn" title="About">About</a>
@@ -55,7 +55,7 @@
 	<li><a href="#" class="menu-btn" title="Services">Services</a></li>
 	<li><a href="#" class="menu-btn" title="News">News</a></li>
 	<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
-&lt;/ul&gt;
+</ul>
 </pre>
 
 <p>In cases where the sub-level menu have more items than the top-level, the overall height of the component will be adjusted with JavaScript so that everything fits.</p>
@@ -113,10 +113,10 @@
 			<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
 		</ul>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;ul class="mobile-menu-bar primary text-light"&gt;
+<pre class="highlight html">
+<ul class="mobile-menu-bar primary text-light">
 	...
-&lt;/ul&gt;
+</ul>
 </pre>
 
 	</div>
@@ -146,10 +146,10 @@
 			<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
 		</ul>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;ul class="mobile-menu-bar secondary text-light"&gt;
+<pre class="highlight html">
+<ul class="mobile-menu-bar secondary text-light">
 	...
-&lt;/ul&gt;
+</ul>
 </pre>
 
 	</div>
@@ -183,10 +183,10 @@
 			<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
 		</ul>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;ul class="mobile-menu-bar blue text-light"&gt;
+<pre class="highlight html">
+<ul class="mobile-menu-bar blue text-light">
 	...
-&lt;/ul&gt;
+</ul>
 </pre>
 
 	</div>
@@ -216,10 +216,10 @@
 			<li><a href="#" class="menu-btn" title="Contact">Contact</a></li>
 		</ul>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
-&lt;ul class="mobile-menu-bar red text-light"&gt;
+<pre class="highlight html">
+<ul class="mobile-menu-bar red text-light">
 	...
-&lt;/ul&gt;
+</ul>
 </pre>
 
 	</div>
@@ -232,12 +232,8 @@
 
 <p>Below is a basic example that shows how the examples in this demo page were setup. We simply bind the <code>FrontStreetMobileMenu()</code> method to our <code>.mobile-menu-bar</code> elements with jQuery.</p>
 
-<pre class="brush: js; gutter: false; toolbar: false;">
-jQuery( document ).ready(function( $ ){
-
-	$( '.mobile-menu-bar' ).frontStreet( 'mobile-menu' );
-
-});
+<pre class="highlight javascript">
+$('.mobile-menu-bar').frontstreet('mobile-menu');
 </pre>
 
 <p><em>Why not invoke the JavaScript by default?</em> &mdash; With an element like mobile navigation, we don't want to assume it exists on the intial page load. </p>

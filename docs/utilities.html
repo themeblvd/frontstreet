@@ -9,10 +9,11 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/googlecode.min.css">
 		<link rel="stylesheet" href='assets/frontstreet/plugins/font-awesome/css/font-awesome.min.css' type='text/css' media='all' />
 		<link rel="stylesheet" href='assets/frontstreet/css/frontstreet.min.css' type='text/css' media='all' />
 		<link rel="stylesheet" href='assets/frontstreet/css/frontstreet-colors.min.css' type='text/css' media='all' />
-		<link rel="stylesheet" href='assets/css/docs.min.css' type='text/css' media='all' />
+		<link rel="stylesheet" href='assets/css/docs.css' type='text/css' media='all' />
 
 	</head>
 	<body>
@@ -93,7 +94,7 @@
 
 <p>Set an element to <code>display: block</code> and center with <code>margin</code>. &mdash; Remember that block-level elements are 100% width of their container, by default. So in most cases for the element to be centered, it will also need a width assigned that is is narrower than its container.</p>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <div class="align-center">...</div>
 </pre>
 
@@ -103,7 +104,7 @@
 
 <p>Float an element to the left or right with a class. <code>!important</code> is included to avoid specificity issues.</p>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <div class="align-left">...</div>
 <div class="align-right">...</div>
 </pre>
@@ -114,7 +115,7 @@
 
 <p>Use the <code>clearfix</code> class on a container to clear floated elements within.</p>
 
-<pre class="brush: xml; gutter: false; toolbar: false; class-name: no-wrap;">
+<pre class="highlight html soft-wrap">
 <div class="my-element clearfix">
 	<img src="my-tall-pic.jpg" class="alignleft" />
 	<p>Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui. Cras sed lacus tellus, in porttitor tortor. Vivamus auctor mattis nunc, quis mattis justo vulputate at. Nam rhoncus mollis convallis.</p>
@@ -127,7 +128,7 @@
 
 <p>With the following classes you can show or hide an element with the <code>display</code> CSS propery. This means the element will not display and won't take up any space on the page.</p>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <div class="show-block">...</div>
 <div class="show-flex">...</div>
 <div class="hide">...</div>
@@ -139,7 +140,7 @@
 
 <p>With the following classes you can show or hide an element with the <code>visibility</code> CSS propery. This means that while the element won't be visible, it will still take up the allocated space on the page.</p>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <div class="visible">...</div>
 <div class="invisible">...</div>
 </pre>
@@ -150,7 +151,7 @@
 
 <p>Use classes <code>text-left</code>, <code>text-right</code>, <code>text-center</code>, <code>text-justify</code> and <code>text-nowrap</code> to modify text alignment.</p>
 
-<pre class="brush: xml; gutter: false; toolbar: false; class-name: no-wrap;">
+<pre class="highlight html soft-wrap">
 <p class="text-left">...</p>
 <p class="text-right">...</p>
 <p class="text-center">...</p>
@@ -164,7 +165,7 @@
 
 <p>Use classes <code>text-lowercase</code>, <code>text-uppercase</code> and <code>text-capitalize</code> to transform text.</p>
 
-<pre class="brush: xml; gutter: false; toolbar: false; class-name: no-wrap;">
+<pre class="highlight html soft-wrap">
 <p class="text-lowercase">...</p>
 <p class="text-uppercase">...</p>
 <p class="text-capitalize">...</p>
@@ -176,7 +177,7 @@
 
 <p>Use the class <code>text-hide</code> to hide text from an element, for the purpose of replacing it with a background image.</p>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <h1 class="site-logo text-hide">My Site</h1>
 </pre>
 
@@ -186,7 +187,7 @@
 
 <p>Hide an element to all devices except screen readers by adding the <code>sr-only</code> class to an element. Combine <code>sr-only</code> with <code>sr-only-focusable</code> to show the element again when it's focused (e.g. by a keyboard-only user). This is necessary for following accessibility best practices.</p>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 </pre>
 
@@ -253,7 +254,7 @@
 	</table>
 </div>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <div class="hidden-sm hidden-md hidden-lg hidden-xl">
     <p>You'll see me on extra small devices only.</p>
 </div>
@@ -408,22 +409,6 @@
 		<script type='text/javascript'>
 		/* <![CDATA[ */
 		/**
-		 * Optional configuration object that can be used to
-		 * disable individiual JavaScript components.
-		 */
-		var fsConfig = {
-			'background'  		: true,
-			'menu'  			: true,
-			'mobile-menu'		: true,
-			'modal'				: true,
-			'jump-menu'			: true,
-			'slider'  			: true,
-			'tabs'				: true,
-			'toggle'			: true,
-			'tooltip'			: true
-		};
-
-		/**
 		 * Optional configuration object that can adjust how
 		 * Magnific Popup is configured.
 		 */
@@ -442,16 +427,8 @@
 		/* ]]> */
 		</script>
 
-		<script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"></script>
-		<script type="text/javascript" src="assets/frontstreet/plugins/magnific-popup/magnific-popup.min.js"></script>
-		<script type="text/javascript" src="assets/frontstreet/plugins/owl-carousel/owl-carousel.min.js"></script>
-		<script type="text/javascript" src="assets/frontstreet/js/frontstreet.js"></script>
-		<script type="text/javascript" src="assets/js/docs.min.js"></script>
-
-		<script type="text/javascript">
-			// @TODO replace with highlight.js
-			SyntaxHighlighter.all()
-		</script>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="assets/js/docs.bundle.js"></script>
 
 
 	</body>

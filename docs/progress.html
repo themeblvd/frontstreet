@@ -9,10 +9,11 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/googlecode.min.css">
 		<link rel="stylesheet" href='assets/frontstreet/plugins/font-awesome/css/font-awesome.min.css' type='text/css' media='all' />
 		<link rel="stylesheet" href='assets/frontstreet/css/frontstreet.min.css' type='text/css' media='all' />
 		<link rel="stylesheet" href='assets/frontstreet/css/frontstreet-colors.min.css' type='text/css' media='all' />
-		<link rel="stylesheet" href='assets/css/docs.min.css' type='text/css' media='all' />
+		<link rel="stylesheet" href='assets/css/docs.css' type='text/css' media='all' />
 
 	</head>
 	<body>
@@ -136,7 +137,7 @@
 <li>And lastly, make sure to also give your <code>.progress-bar</code> element an inline style width percentage like <code>style="width: 50%"</code>.</li>
 </ol>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <div class="fs-progress">
 
 	<span class="progress-label heading-sm">Web Design</span>
@@ -171,7 +172,7 @@
 	</div>
 </div>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <div class="progress">
 	<div class="progress-bar dark-blue" style="width: 25%;">
 		<span class="sr-only">25% Complete</span>
@@ -316,22 +317,6 @@
 		<script type='text/javascript'>
 		/* <![CDATA[ */
 		/**
-		 * Optional configuration object that can be used to
-		 * disable individiual JavaScript components.
-		 */
-		var fsConfig = {
-			'background'  		: true,
-			'menu'  			: true,
-			'mobile-menu'		: true,
-			'modal'				: true,
-			'jump-menu'			: true,
-			'slider'  			: true,
-			'tabs'				: true,
-			'toggle'			: true,
-			'tooltip'			: true
-		};
-
-		/**
 		 * Optional configuration object that can adjust how
 		 * Magnific Popup is configured.
 		 */
@@ -350,16 +335,8 @@
 		/* ]]> */
 		</script>
 
-		<script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"></script>
-		<script type="text/javascript" src="assets/frontstreet/plugins/magnific-popup/magnific-popup.min.js"></script>
-		<script type="text/javascript" src="assets/frontstreet/plugins/owl-carousel/owl-carousel.min.js"></script>
-		<script type="text/javascript" src="assets/frontstreet/js/frontstreet.js"></script>
-		<script type="text/javascript" src="assets/js/docs.min.js"></script>
-
-		<script type="text/javascript">
-			// @TODO replace with highlight.js
-			SyntaxHighlighter.all()
-		</script>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="assets/js/docs.bundle.js"></script>
 
 
 	</body>

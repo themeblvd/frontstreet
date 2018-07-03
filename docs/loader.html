@@ -9,10 +9,11 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/googlecode.min.css">
 		<link rel="stylesheet" href='assets/frontstreet/plugins/font-awesome/css/font-awesome.min.css' type='text/css' media='all' />
 		<link rel="stylesheet" href='assets/frontstreet/css/frontstreet.min.css' type='text/css' media='all' />
 		<link rel="stylesheet" href='assets/frontstreet/css/frontstreet-colors.min.css' type='text/css' media='all' />
-		<link rel="stylesheet" href='assets/css/docs.min.css' type='text/css' media='all' />
+		<link rel="stylesheet" href='assets/css/docs.css' type='text/css' media='all' />
 
 	</head>
 	<body>
@@ -89,7 +90,7 @@
 
 <p>The <code>.fs-loader</code> is a simple, but stylish UI element that you can add on top of any background to indicate that something is loading. Also see the <a href="buttons.html#loading-buttons" title="Loading Buttons">Loading Buttons</a>.</p>
 
-<pre class="brush: xml; gutter: false; toolbar: false;">
+<pre class="highlight html">
 <div class="fs-loader">
 	<span>Loading</span>
 </div>
@@ -256,22 +257,6 @@
 		<script type='text/javascript'>
 		/* <![CDATA[ */
 		/**
-		 * Optional configuration object that can be used to
-		 * disable individiual JavaScript components.
-		 */
-		var fsConfig = {
-			'background'  		: true,
-			'menu'  			: true,
-			'mobile-menu'		: true,
-			'modal'				: true,
-			'jump-menu'			: true,
-			'slider'  			: true,
-			'tabs'				: true,
-			'toggle'			: true,
-			'tooltip'			: true
-		};
-
-		/**
 		 * Optional configuration object that can adjust how
 		 * Magnific Popup is configured.
 		 */
@@ -290,16 +275,8 @@
 		/* ]]> */
 		</script>
 
-		<script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"></script>
-		<script type="text/javascript" src="assets/frontstreet/plugins/magnific-popup/magnific-popup.min.js"></script>
-		<script type="text/javascript" src="assets/frontstreet/plugins/owl-carousel/owl-carousel.min.js"></script>
-		<script type="text/javascript" src="assets/frontstreet/js/frontstreet.js"></script>
-		<script type="text/javascript" src="assets/js/docs.min.js"></script>
-
-		<script type="text/javascript">
-			// @TODO replace with highlight.js
-			SyntaxHighlighter.all()
-		</script>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="assets/js/docs.bundle.js"></script>
 
 
 	</body>
