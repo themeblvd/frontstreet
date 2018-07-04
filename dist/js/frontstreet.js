@@ -537,7 +537,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
- * Adds tooltip component functionality.
+ * Adds tooltip block functionality.
  *
  * Inspired by Bootstrap 3's tooltips.js, which was inspired
  * by the original jQuery.tipsy by Jason Frame.
@@ -551,13 +551,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  */
 var Tooltip = function () {
   /**
-   * Initialize the `tooltip` component on a DOM element,
+   * Initialize the `tooltip` block on a DOM element,
    * when binded through jQuery.
    *
    * @since 1.0.0
    *
    * @param {Object} element jQuery DOM element.
-   * @param {Object} options Component options.
+   * @param {Object} options Block options.
    */
   function Tooltip(element, options) {
     _classCallCheck(this, Tooltip);
@@ -1034,7 +1034,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
- * Adds toggles component functionality, which allows
+ * Adds toggles block functionality, which allows
  * toggle display of content.
  *
  * @summary  Toggle
@@ -1046,13 +1046,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  */
 var Toggle = function () {
   /**
-   * Initialize the `tabs` component on a DOM element,
+   * Initialize the `tabs` block on a DOM element,
    * when binded through jQuery.
    *
    * @since 1.0.0
    *
    * @param {Object} element jQuery DOM element.
-   * @param {Object} options Component options.
+   * @param {Object} options Block options.
    */
   function Toggle(element, options) {
     _classCallCheck(this, Toggle);
@@ -1181,7 +1181,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
- * Adds tabs component functionality, which allows
+ * Adds tabs block functionality, which allows
  * toggling between tab content panes.
  *
  * @summary  Tabs
@@ -1193,13 +1193,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  */
 var Tabs = function () {
   /**
-   * Initialize the `tabs` component on a DOM element,
+   * Initialize the `tabs` block on a DOM element,
    * when binded through jQuery.
    *
    * @since 1.0.0
    *
    * @param {Object} element jQuery DOM element.
-   * @param {Object} options Component options (currently not used).
+   * @param {Object} options Block options (currently not used).
    */
   function Tabs(element, options) {
     _classCallCheck(this, Tabs);
@@ -1216,9 +1216,9 @@ var Tabs = function () {
         deepLink = this.deepLink;
 
     /*
-    * The following classes being added to the tabs element
-    * can override the height and deepLink options.
-    */
+     * The following classes being added to the tabs element
+     * can override the height and deepLink options.
+     */
 
     if ($tabs.hasClass('tabs-fixed-height')) {
       settings.height = true;
@@ -1281,7 +1281,7 @@ var Tabs = function () {
      *
      * @param {Object} $tabs    The binded jQuery DOM element.
      * @param {Object} $trigger Link (tab) which is triggering new content.
-     * @param {Object} settings Component settings.
+     * @param {Object} settings Block settings.
      */
     value: function show($tabs, $trigger, settings) {
       var $nav = $trigger.closest(settings.navSelector);
@@ -1343,7 +1343,7 @@ var Tabs = function () {
      * @since 1.0.0
      *
      * @param {Object} $tabs    The binded jQuery DOM element.
-     * @param {Object} settings Component settings.
+     * @param {Object} settings Block settings.
      */
 
   }, {
@@ -1404,13 +1404,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  */
 var MobileMenu = function () {
   /**
-   * Initialize the `mobile-menu` component on a DOM element,
+   * Initialize the `mobile-menu` block on a DOM element,
    * when binded through jQuery.
    *
    * @since 1.0.0
    *
    * @param {Object} element jQuery DOM element.
-   * @param {Object} options Component options (currently not used).
+   * @param {Object} options Block options (currently not used).
    */
   function MobileMenu(element, options) {
     _classCallCheck(this, MobileMenu);
@@ -1513,13 +1513,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  */
 var Menu = function () {
   /**
-   * Initialize the `menu` component on a DOM element,
+   * Initialize the `menu` block on a DOM element,
    * when binded through jQuery.
    *
    * @since 1.0.0
    *
    * @param {Object} element jQuery DOM element.
-   * @param {Object} options Component options.
+   * @param {Object} options Block options.
    */
   function Menu(element, options) {
     _classCallCheck(this, Menu);
@@ -1757,13 +1757,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  */
 var Background = function () {
   /**
-   * Initialize the `background` component on a DOM element,
+   * Initialize the `background` block on a DOM element,
    * when binded through jQuery.
    *
    * @since 1.0.0
    *
    * @param {Object} element jQuery DOM element.
-   * @param {Object} options Component options.
+   * @param {Object} options Block options.
    */
   function Background(element, options) {
     _classCallCheck(this, Background);
@@ -1994,17 +1994,20 @@ __webpack_require__(2);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * Adds all components as one item to the jQuery
- * namespace.
+ * Add blocks to the jQuery namespace.
+ *
+ * Note: This doesn't include blocks meant to
+ * implement optional third-party plugins, Owl
+ * Carousel and Magnific Popup.
  *
  * @since 1.0.0
  *
- * @param {String} component Framework component ID.
- * @param {Object} options   Options for component.
+ * @param {String} block   Framework block ID.
+ * @param {Object} options Options for block.
  */
-_jquery2.default.fn.frontstreet = function (component, options) {
+_jquery2.default.fn.frontstreet = function (block, options) {
   return this.each(function () {
-    switch (component) {
+    switch (block) {
       case 'background':
         return new _background2.default(this, options);
       case 'mobile-menu':
@@ -2027,7 +2030,7 @@ var $document = _utils.dom.$document,
 
 $document.ready(function ($) {
   /**
-   * Binds the default `menu` component.
+   * Binds the default `menu` block.
    *
    * @since 1.0.0
    */
@@ -2062,21 +2065,21 @@ $document.ready(function ($) {
   });
 
   /**
-   * Binds the default `tabs` component.
+   * Binds the default `tabs` block.
    *
    * @since 1.0.0
    */
   $('.fs-tabs').frontstreet('tabs');
 
   /**
-   * Binds the default `toggle` component.
+   * Binds the default `toggle` block.
    *
    * @since 1.0.0
    */
   $('.fs-toggle').frontstreet('toggle');
 
   /**
-   * Binds the default `tooltip` component.
+   * Binds the default `tooltip` block.
    *
    * @since 1.0.0
    */
@@ -2086,7 +2089,7 @@ $document.ready(function ($) {
 $window.on('load', function () {
   /**
    * Self-invokes the background slider of the
-   * `background` component.
+   * `background` block.
    *
    * @since 1.0.0
    */
@@ -2094,7 +2097,7 @@ $window.on('load', function () {
 
   /**
    * Self-invokes the parallax effect of the
-   * `background` component.
+   * `background` block.
    *
    * @since 1.0.0
    */

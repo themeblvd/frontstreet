@@ -88,27 +88,27 @@
                                 </h1>
 
 
-<p>Background sections can be useful for landing pages and other places you need content to really stand out.  And instead of just standard background images, these sections can include special background components included with Front Street like background <a href="#bg-shade" title="Background Shades">shading</a>, <a href="#bg-slider" title="Background Sliders">sliders</a>, and <a href="#bg-parallax" title="Background Parallax">parallax effects</a>.</p>
+<p>Background sections can be useful for landing pages and other places you need content to really stand out.  And instead of just standard background images, these sections can include special background blocks included with Front Street like background <a href="#bg-shade" title="Background Shades">shading</a>, <a href="#bg-slider" title="Background Sliders">sliders</a>, and <a href="#bg-parallax" title="Background Parallax">parallax effects</a>.</p>
 
-<p>In order for the background components and your section's inner content to be all z-index'ed and positioned properly, we need to follow a basic markup structure. Your wrapping section element should have the class <code>fs-section</code>. And any content within should be wrapped in an element with class <code>fs-element</code>.</p>
+<p>In order for the background blocks and your section's inner content to be all z-index'ed and positioned properly, we need to follow a basic markup structure. Your wrapping section element should have the class <code>fs-section</code>. And any content within should be wrapped in an element with class <code>fs-element</code>.</p>
 
 <pre class="highlight html">
 <section class="fs-section bg-dark">
 
     <div class="fs-element">
-        <!-- Any content to sit above background components. -->
+        <!-- Any content to sit above background blocks. -->
     </div>
 
-    <!-- Background components go here. -->
+    <!-- Background blocks go here. -->
 
 </section>
 </pre>
 
-<p>Take note that we also added classes <code>bg-dark</code> to <code>.fs-section</code>. Adding a <a href="colors.html" title="Colors" target="_blank">background color class</a> can be helpful to establish a base color, before background components are initially loaded.</p>
+<p>Take note that we also added classes <code>bg-dark</code> to <code>.fs-section</code>. Adding a <a href="colors.html" title="Colors" target="_blank">background color class</a> can be helpful to establish a base color, before background blocks are initially loaded.</p>
 
-<h3 class="heading-sm">Component Stacking</h3>
+<h3 class="heading-sm">Stacking</h3>
 
-<p>The following table helps to illustrate how your content and background components are stacked within a <code>.fs-section</code> element.</p>
+<p>The following table helps to illustrate how your content and background blocks are stacked within a <code>.fs-section</code> element.</p>
 
 <div class="table-responsive">
     <table class="table-bordered table-condensed table-grid-overview">
@@ -134,12 +134,12 @@
         </tr>
         <tr>
             <td><code>.fs-loader</code></td>
-            <td>Optional <a href="loader.html" title="Loader" target="_blank">loader component</a>; this can be helpful when working with background media that might need time to load.</td>
+            <td>Optional <a href="loader.html" title="Loader" target="_blank">loader block</a>; this can be helpful when working with background media that might need time to load.</td>
             <td class="text-center">1</td>
         </tr>
         <tr>
             <td><code>.fs-bg-shade</code></td>
-            <td>Sits between other background components and content, to add a layer of any opaque color.</td>
+            <td>Sits between other background blocks and content, to add a layer of any opaque color.</td>
             <td class="text-center">2</td>
         </tr>
         <tr>
@@ -171,7 +171,7 @@
         <a href="#" class="btn btn-white btn-trans">Learn More</a>
     </div>
 
-    <!-- Background components go here. -->
+    <!-- Background blocks go here. -->
 
 </section>
 </pre>
@@ -180,9 +180,9 @@
 
 <h2 id="bg-shade">Background Shade</h2>
 
-<p>Background shading can prevent your content from being overpowered by your background components. In other words, just because your section has a cool, fancy background component, we still probably want the user's attention to be drawn to our primary message, sitting on top. And in a lot of cases, this can also simply help any text to just be more readable over top a busy background element.</p>
+<p>Background shading can prevent your content from being overpowered by your background blocks. In other words, just because your section has a cool, fancy background block, we still probably want the user's attention to be drawn to our primary message, sitting on top. And in a lot of cases, this can also simply help any text to just be more readable over top a busy background element.</p>
 
-<p>In the following example, we've got a section with a background image applied with some simple inline CSS (for demo purposes). Then we add our <code>.fs-bg-shade.{color}</code> background component. You can use any <a href="colors.html" title="Colors" target="_blank">color class</a> for your shade color, but you must add a color class.</p>
+<p>In the following example, we've got a section with a background image applied with some simple inline CSS (for demo purposes). Then we add our <code>.fs-bg-shade.{color}</code> background block. You can use any <a href="colors.html" title="Colors" target="_blank">color class</a> for your shade color, but you must add a color class.</p>
 
 <section class="fs-section bg-dark text-center" style="background: url(assets/img/image-1.jpg) center center no-repeat; background-size: cover;">
 
@@ -200,7 +200,7 @@
 <section class="fs-section bg-dark text-center" style="background: url(assets/img/image-1.jpg) center center no-repeat; background-size: cover;">
 
     <div class="fs-element">
-        <!-- Any content to sit above background components. -->
+        <!-- Any content to sit above background blocks. -->
     </div>
 
     <div class="fs-bg-shade black"></div>
@@ -208,7 +208,7 @@
 </section>
 </pre>
 
-<p>The following <code>shade-*</code> classes can also be combined with the <code>.fs-bg-shade</code> component to adjust the opacity. In the following example, we're adding class <code>shade-85</code> to make the shade color more prominent, and thus wash out the background image more.</p>
+<p>The following <code>shade-*</code> classes can also be combined with the <code>.fs-bg-shade</code> block to adjust the opacity. In the following example, we're adding class <code>shade-85</code> to make the shade color more prominent, and thus wash out the background image more.</p>
 
 <section class="fs-section bg-dark text-center" style="background: url(assets/img/image-1.jpg) center center no-repeat; background-size: cover;">
 
@@ -226,7 +226,7 @@
 <section class="fs-sectio bg-dark text-centern">
 
     <div class="fs-element">
-        <!-- Any content to sit above background components. -->
+        <!-- Any content to sit above background blocks. -->
     </div>
 
     <div class="fs-bg-shade shade-85 royal"></div>
@@ -273,9 +273,9 @@
 
 <h2 id="bg-slider">Background Slider</h2>
 
-<p>For a slow-fading, auto-rotating background slider, we can add the <code>.fs-bg-slider</code> component to our sections. The background slider will automatically stretch images to fill the <code>.fs-section</code>; this is really helpful when implementing a section that stretches full width of the browser window.</p>
+<p>For a slow-fading, auto-rotating background slider, we can add the <code>.fs-bg-slider</code> block to our sections. The background slider will automatically stretch images to fill the <code>.fs-section</code>; this is really helpful when implementing a section that stretches full width of the browser window.</p>
 
-<p><span class="label-inline info">Important</span> This is completely separate functionality from our other <a href="sliders.html" title="Sliders" target="_blank">slider components</a>, which are implmented with OwlCarousel.</p>
+<p><span class="label-inline info">Important</span> This is completely separate functionality from our other <a href="sliders.html" title="Sliders" target="_blank">slider blocks</a>, which are implmented with OwlCarousel.</p>
 
 <section class="fs-section bg-dark text-center">
 
@@ -302,7 +302,7 @@
 <section class="fs-section bg-dark text-center">
 
     <div class="fs-element">
-        <!-- Any content to sit above background components. -->
+        <!-- Any content to sit above background blocks. -->
     </div>
 
     <div class="fs-bg-slider">
@@ -348,7 +348,7 @@
 <section class="fs-section bg-dark text-center">
 
     <div class="fs-element">
-        <!-- Any content to sit above background components. -->
+        <!-- Any content to sit above background blocks. -->
     </div>
 
     <div class="fs-bg-slider">
@@ -367,13 +367,13 @@
 </section>
 </pre>
 
-<p>By default, the background slider component will rotate images every four seconds (i.e. 4000ms). You can change that by passing a new millisecond value through a <code>data-autoplay</code> parameter. Keep in mind that this value must be <code>1000</code> or higher.</p>
+<p>By default, the background slider block will rotate images every four seconds (i.e. 4000ms). You can change that by passing a new millisecond value through a <code>data-autoplay</code> parameter. Keep in mind that this value must be <code>1000</code> or higher.</p>
 
 <pre class="highlight html">
 <section class="fs-section bg-dark text-center">
 
     <div class="fs-element">
-        <!-- Any content to sit above background components. -->
+        <!-- Any content to sit above background blocks. -->
     </div>
 
     <div class="fs-bg-slider" data-autoplay="2000">
@@ -550,7 +550,7 @@
                                 </li>
                             </ul>
 
-                            <h4 class="heading-sm">Components</h4>
+                            <h4 class="heading-sm">Blocks</h4>
 
                             <ul>
                                 <li>
