@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 /**
- * Adds toggles component functionality, which allows
+ * Adds toggles block functionality, which allows
  * toggle display of content.
  *
  * @summary  Toggle
@@ -13,13 +13,13 @@ import $ from 'jquery';
  */
 class Toggle {
   /**
-   * Initialize the `tabs` component on a DOM element,
+   * Initialize the `tabs` block on a DOM element,
    * when binded through jQuery.
    *
    * @since 1.0.0
    *
    * @param {Object} element jQuery DOM element.
-   * @param {Object} options Component options.
+   * @param {Object} options Block options.
    */
   constructor(element, options) {
     const $toggle = $(element);

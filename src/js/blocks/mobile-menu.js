@@ -10,13 +10,13 @@
  */
 class MobileMenu {
   /**
-   * Initialize the `mobile-menu` component on a DOM element,
+   * Initialize the `mobile-menu` block on a DOM element,
    * when binded through jQuery.
    *
    * @since 1.0.0
    *
    * @param {Object} element jQuery DOM element.
-   * @param {Object} options Component options (currently not used).
+   * @param {Object} options Block options (currently not used).
    */
   constructor(element, options) {
     const $menu = $(element);

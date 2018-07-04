@@ -522,7 +522,7 @@ const searchIndex = [
   },
 
   //
-  // Components > Alerts
+  // Blocks > Alerts
   //
 
   {
@@ -532,7 +532,7 @@ const searchIndex = [
   },
 
   //
-  // Components > Backgrounds
+  // Blocks > Backgrounds
   //
 
   {
@@ -557,7 +557,7 @@ const searchIndex = [
   },
 
   //
-  // Components > Breadcrumbs
+  // Blocks > Breadcrumbs
   //
 
   {
@@ -567,7 +567,7 @@ const searchIndex = [
   },
 
   //
-  // Components > Dividers
+  // Blocks > Dividers
   //
 
   {
@@ -577,7 +577,7 @@ const searchIndex = [
   },
 
   //
-  // Components > Loader
+  // Blocks > Loader
   //
 
   {
@@ -587,7 +587,7 @@ const searchIndex = [
   },
 
   //
-  // Components > Modals
+  // Blocks > Modals
   //
 
   {
@@ -622,7 +622,7 @@ const searchIndex = [
   },
 
   //
-  // Components > Navigation
+  // Blocks > Navigation
   //
 
   {
@@ -657,7 +657,7 @@ const searchIndex = [
   },
 
   //
-  // Components > Nav Mobile
+  // Blocks > Nav Mobile
   //
 
   {
@@ -667,7 +667,7 @@ const searchIndex = [
   },
 
   //
-  // Components > Progress Bars
+  // Blocks > Progress Bars
   //
 
   {
@@ -677,7 +677,7 @@ const searchIndex = [
   },
 
   //
-  // Components > Sliders
+  // Blocks > Sliders
   //
 
   {
@@ -707,7 +707,7 @@ const searchIndex = [
   },
 
   //
-  // Components > Tabs
+  // Blocks > Tabs
   //
 
   {
@@ -717,7 +717,7 @@ const searchIndex = [
   },
 
   //
-  // Components > Testimonials
+  // Blocks > Testimonials
   //
 
   {
@@ -742,7 +742,7 @@ const searchIndex = [
   },
 
   //
-  // Components > Toggles
+  // Blocks > Toggles
   //
 
   {
@@ -757,7 +757,7 @@ const searchIndex = [
   },
 
   //
-  // Components > Tooltips
+  // Blocks > Tooltips
   //
 
   {
@@ -767,7 +767,7 @@ const searchIndex = [
   },
 
   //
-  // Components > Widgets
+  // Blocks > Widgets
   //
 
   {

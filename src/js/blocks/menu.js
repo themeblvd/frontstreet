@@ -20,13 +20,13 @@ import { dom, isMobile } from '../utils';
  */
 class Menu {
   /**
-   * Initialize the `menu` component on a DOM element,
+   * Initialize the `menu` block on a DOM element,
    * when binded through jQuery.
    *
    * @since 1.0.0
    *
    * @param {Object} element jQuery DOM element.
-   * @param {Object} options Component options.
+   * @param {Object} options Block options.
    */
   constructor(element, options) {
     const $menu = $(element);

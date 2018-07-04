@@ -19,13 +19,13 @@ import { isMobile, dom } from '../utils';
  */
 class Background {
   /**
-   * Initialize the `background` component on a DOM element,
+   * Initialize the `background` block on a DOM element,
    * when binded through jQuery.
    *
    * @since 1.0.0
    *
    * @param {Object} element jQuery DOM element.
-   * @param {Object} options Component options.
+   * @param {Object} options Block options.
    */
   constructor(element, options) {
     const $element = $(element);

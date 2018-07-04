@@ -10,17 +10,20 @@ import './blocks/modal';
 import './blocks/slider';
 
 /**
- * Adds all components as one item to the jQuery
- * namespace.
+ * Add blocks to the jQuery namespace.
+ *
+ * Note: This doesn't include blocks meant to
+ * implement optional third-party plugins, Owl
+ * Carousel and Magnific Popup.
  *
  * @since 1.0.0
  *
- * @param {String} component Framework component ID.
- * @param {Object} options   Options for component.
+ * @param {String} block   Framework block ID.
+ * @param {Object} options Options for block.
  */
-$.fn.frontstreet = function(component, options) {
+$.fn.frontstreet = function(block, options) {
   return this.each(function() {
-    switch (component) {
+    switch (block) {
       case 'background':
         return new Background(this, options);
       case 'mobile-menu':
@@ -41,7 +44,7 @@ const { $document, $window } = dom;
 
 $document.ready(function($) {
   /**
-   * Binds the default `menu` component.
+   * Binds the default `menu` block.
    *
    * @since 1.0.0
    */
@@ -78,21 +81,21 @@ $document.ready(function($) {
     });
 
   /**
-   * Binds the default `tabs` component.
+   * Binds the default `tabs` block.
    *
    * @since 1.0.0
    */
   $('.fs-tabs').frontstreet('tabs');
 
   /**
-   * Binds the default `toggle` component.
+   * Binds the default `toggle` block.
    *
    * @since 1.0.0
    */
   $('.fs-toggle').frontstreet('toggle');
 
   /**
-   * Binds the default `tooltip` component.
+   * Binds the default `tooltip` block.
    *
    * @since 1.0.0
    */
@@ -102,7 +105,7 @@ $document.ready(function($) {
 $window.on('load', function() {
   /**
    * Self-invokes the background slider of the
-   * `background` component.
+   * `background` block.
    *
    * @since 1.0.0
    */
@@ -110,7 +113,7 @@ $window.on('load', function() {
 
   /**
    * Self-invokes the parallax effect of the
-   * `background` component.
+   * `background` block.
    *
    * @since 1.0.0
    */

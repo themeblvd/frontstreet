@@ -2,7 +2,7 @@ import $ from 'jquery';
 import { dom } from '../utils';
 
 /**
- * Adds tabs component functionality, which allows
+ * Adds tabs block functionality, which allows
  * toggling between tab content panes.
  *
  * @summary  Tabs
@@ -14,13 +14,13 @@ import { dom } from '../utils';
  */
 class Tabs {
   /**
-   * Initialize the `tabs` component on a DOM element,
+   * Initialize the `tabs` block on a DOM element,
    * when binded through jQuery.
    *
    * @since 1.0.0
    *
    * @param {Object} element jQuery DOM element.
-   * @param {Object} options Component options (currently not used).
+   * @param {Object} options Block options (currently not used).
    */
   constructor(element, options) {
     const $tabs = $(element);
@@ -32,9 +32,9 @@ class Tabs {
     const { show, matchHeight, deepLink } = this;
 
     /*
-		 * The following classes being added to the tabs element
-		 * can override the height and deepLink options.
-		 */
+     * The following classes being added to the tabs element
+     * can override the height and deepLink options.
+     */
     if ($tabs.hasClass('tabs-fixed-height')) {
       settings.height = true;
     }
@@ -101,7 +101,7 @@ class Tabs {
    *
    * @param {Object} $tabs    The binded jQuery DOM element.
    * @param {Object} $trigger Link (tab) which is triggering new content.
-   * @param {Object} settings Component settings.
+   * @param {Object} settings Block settings.
    */
   show($tabs, $trigger, settings) {
     const $nav = $trigger.closest(settings.navSelector);
@@ -169,7 +169,7 @@ class Tabs {
    * @since 1.0.0
    *
    * @param {Object} $tabs    The binded jQuery DOM element.
-   * @param {Object} settings Component settings.
+   * @param {Object} settings Block settings.
    */
   deepLink($tabs, settings) {
     var hash = document.location.hash;

@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 /**
- * Adds tooltip component functionality.
+ * Adds tooltip block functionality.
  *
  * Inspired by Bootstrap 3's tooltips.js, which was inspired
  * by the original jQuery.tipsy by Jason Frame.
@@ -15,13 +15,13 @@ import $ from 'jquery';
  */
 class Tooltip {
   /**
-   * Initialize the `tooltip` component on a DOM element,
+   * Initialize the `tooltip` block on a DOM element,
    * when binded through jQuery.
    *
    * @since 1.0.0
    *
    * @param {Object} element jQuery DOM element.
-   * @param {Object} options Component options.
+   * @param {Object} options Block options.
    */
   constructor(element, options) {
     this.settings = null;
