@@ -27,13 +27,15 @@ function escape(html) {
   return html.replace(/[&<>]/g, tag => replace[tag]);
 }
 
-// Apply syntax highlighting.
-document.querySelectorAll('pre.highlight').forEach(function(block) {
-  block.innerHTML = escape(block.innerHTML);
-  hljs.highlightBlock(block);
-});
-
 $(document).ready(function($) {
+  // Code highlighting
+  $('pre.highlight').each(function(i, block) {
+    var $block = $(this);
+    block.innerHTML = escape(block.innerHTML);
+    hljs.highlightBlock(block);
+    $block.addClass('show');
+  });
+
   // Site Search
   var options = {
     shouldSort: true,

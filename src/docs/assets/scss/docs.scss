@@ -696,10 +696,15 @@ div.fs-tooltip-trigger {
 
 .highlight {
   font-size: 14px;
+  opacity: 0;
   padding: 20px 24px;
   border: 1px solid #ddd;
   tab-size: 2;
+  transition: opacity 0.2s ease-in-out;
 
+  &.show {
+    opacity: 1;
+  }
   &.soft-wrap {
     white-space: normal;
   }
