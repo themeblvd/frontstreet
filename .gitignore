@@ -1,4 +1,5 @@
 .DS_Store
-.sass-cache
+.tags
+.tags1
 npm-debug.log
 node_modules
