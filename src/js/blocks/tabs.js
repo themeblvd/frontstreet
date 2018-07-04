@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { dom } from './utils';
+import { dom } from '../utils';
 
 /**
  * Adds tabs component functionality, which allows

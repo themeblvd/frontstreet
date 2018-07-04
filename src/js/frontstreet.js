@@ -1,13 +1,13 @@
 import $ from 'jquery';
-import { dom } from './modules/utils';
-import Background from './modules/background';
-import Menu from './modules/menu';
-import MobileMenu from './modules/mobile-menu';
-import Tabs from './modules/tabs';
-import Toggle from './modules/toggle';
-import Tooltip from './modules/tooltip';
-import './modules/modal';
-import './modules/slider';
+import { dom } from './utils';
+import Background from './blocks/background';
+import Menu from './blocks/menu';
+import MobileMenu from './blocks/mobile-menu';
+import Tabs from './blocks/tabs';
+import Toggle from './blocks/toggle';
+import Tooltip from './blocks/tooltip';
+import './blocks/modal';
+import './blocks/slider';
 
 /**
  * Adds all components as one item to the jQuery

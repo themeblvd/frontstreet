@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { dom } from './utils';
+import { dom } from '../utils';
 
 /**
  * This file binds preset instances of OwlCarousel,

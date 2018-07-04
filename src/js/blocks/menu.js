@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { dom, isMobile } from './utils';
+import { dom, isMobile } from '../utils';
 
 /**
  * This file includes the functionality for dropdown

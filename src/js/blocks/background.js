@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { isMobile, dom } from './utils';
+import { isMobile, dom } from '../utils';
 
 /**
  * This file includes the functionality for section
