@@ -5,8 +5,8 @@
   "main": "gulpfile.js",
   "scripts": {
     "server": "browser-sync start --server 'docs' --files *",
-    "js:dist": "concurrently \"webpack --env dist.dev\" \"webpack --env dist.prod\"",
-    "js:docs": "webpack --env docs"
+    "js:dist": "concurrently \"webpack --env.mode dist.dev\" \"webpack --env.mode dist.prod\"",
+    "js:docs": "webpack --env.mode docs"
   },
   "repository": {
     "type": "git",

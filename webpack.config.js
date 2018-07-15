@@ -1,11 +1,12 @@
 const path = require('path');
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
-const modeConfig = env => require(`./build-utils/webpack.${env}`);
+const modeConfig = mode => require(`./build-utils/webpack.${mode}`);
 
-module.exports = env => {
+module.exports = ({ mode }) => {
   return webpackMerge(
     {
+      plugins: [],
       externals: {
         jquery: 'jQuery'
       },
@@ -19,6 +20,6 @@ module.exports = env => {
         ]
       }
     },
-    modeConfig(env)
+    modeConfig(mode)
   );
 };
