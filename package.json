@@ -29,6 +29,7 @@
     "gulp-autoprefixer": "latest",
     "gulp-clean": "latest",
     "gulp-clean-css": "latest",
+    "gulp-cli": "^2.0.1",
     "gulp-concat": "latest",
     "gulp-file-include": "latest",
     "gulp-imagemin": "latest",
