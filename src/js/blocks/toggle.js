@@ -86,7 +86,7 @@ class Toggle {
    * @since 1.0.0
    *
    * @param {Object} $toggle The binded jQuery DOM element.
-   * @param {Number} speed   Animation speed in milliseconds.
+   * @param {number} speed   Animation speed in milliseconds.
    */
   open($toggle, speed) {
     $toggle
@@ -103,7 +103,7 @@ class Toggle {
    * @since 1.0.0
    *
    * @param {Object} $toggle The binded jQuery DOM element.
-   * @param {Number} speed   Animation speed in milliseconds.
+   * @param {number} speed   Animation speed in milliseconds.
    */
   close($toggle, speed) {
     $toggle
