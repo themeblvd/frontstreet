@@ -8,6 +8,6 @@ max_line_length = 100
 indent_size = 2
 max_line_length = 100
 
-[*.json]
+[*.{json,babelrc}]
 indent_size = 2
 max_line_length = 200
