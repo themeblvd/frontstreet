@@ -5,8 +5,8 @@
   "main": "gulpfile.js",
   "scripts": {
     "server": "browser-sync start --server 'docs' --files *",
-    "js:dist": "webpack --config webpack.config.dist.js",
-    "js:docs": "webpack --config webpack.config.docs.js"
+    "js:dist": "concurrently \"webpack --env dist.dev\" \"webpack --env dist.prod\"",
+    "js:docs": "webpack --env docs"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.24.4",
+    "concurrently": "^3.6.0",
     "escape-html": "latest",
     "fuse.js": "^3.0.4",
     "gulp": "latest",
@@ -43,18 +44,7 @@
     "owl.carousel": "^2.3.4",
     "unminified-webpack-plugin": "^2.0.0",
     "webpack": "^4.14.0",
-    "webpack-cli": "^3.0.8"
-  },
-  "browserslist": [
-    "last 1 major version",
-    ">= 1%",
-    "Chrome >= 45",
-    "Firefox >= 38",
-    "Edge >= 12",
-    "Explorer >= 10",
-    "iOS >= 9",
-    "Safari >= 9",
-    "Android >= 4.4",
-    "Opera >= 30"
-  ]
+    "webpack-cli": "^3.0.8",
+    "webpack-merge": "^4.1.3"
+  }
 }
