@@ -18,7 +18,7 @@ import './blocks/slider';
  *
  * @since 1.0.0
  *
- * @param {String} block   Framework block ID.
+ * @param {string} block   Framework block ID.
  * @param {Object} options Options for block.
  */
 $.fn.frontstreet = function(block, options) {

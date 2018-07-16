@@ -195,7 +195,7 @@ class Menu {
    * @since 1.0.0
    *
    * @param  {Object} $trigger The parent menu item, for which the dropdown belongs to.
-   * @return {String} Current menu level, `level-1`, `level-2` or `level-3`.
+   * @return {string} Current menu level, `level-1`, `level-2` or `level-3`.
    */
   getLevel($trigger) {
     if ($trigger.hasClass('level-3')) {

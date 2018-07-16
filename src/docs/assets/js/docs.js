@@ -14,8 +14,8 @@ hljs.registerLanguage('css', require('highlight.js/lib/languages/css'));
 /**
  * Escape HTML.
  *
- * @param {String} html HTML code.
- * @return {String} Escaped html.
+ * @param {string} html HTML code.
+ * @return {string} Escaped html.
  */
 function escape(html) {
   const replace = {

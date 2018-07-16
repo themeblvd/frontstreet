@@ -12,6 +12,7 @@
 	.owl-stage {
 		position: relative;
 		-ms-touch-action: pan-Y;
+		touch-action: manipulation;
 		-moz-backface-visibility: hidden; /* fix firefox animation glitch */
 	}
 
@@ -63,12 +64,21 @@
 	.owl-nav .owl-next,
 	.owl-dot {
 		cursor: pointer;
-		cursor: hand;
 		-webkit-user-select: none;
 		-khtml-user-select: none;
 		-moz-user-select: none;
 		-ms-user-select: none;
 		user-select: none;
+	}
+
+	.owl-nav button.owl-prev,
+	.owl-nav button.owl-next,
+	button.owl-dot {
+		background: none;
+		color: inherit;
+		border: none;
+		padding:0!important;
+		font: inherit;
 	}
 
 	&.owl-loaded {
@@ -89,6 +99,7 @@
 	}
 
 	&.owl-drag .owl-item {
+		touch-action: pan-y;
 		-webkit-user-select: none;
 		-moz-user-select: none;
 		-ms-user-select: none;
