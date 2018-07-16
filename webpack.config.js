@@ -6,7 +6,6 @@ const modeConfig = mode => require(`./build-utils/webpack.${mode}`);
 module.exports = ({ mode }) => {
   return webpackMerge(
     {
-      plugins: [],
       externals: {
         jquery: 'jQuery'
       },
