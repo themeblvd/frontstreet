@@ -1,34 +1,19 @@
-# Owl Carousel Inclusion
+# Owl Carousel Integration
 
-* Version: 2.2.1
+* Version: 2.3.4
 * Author: David Deutsch
 * Website: https://owlcarousel2.github.io/OwlCarousel2/
 
 ## How to Include
 
-From Front Street's `/dist` directory, include the JavaScript file, `plugins/owl-carousel/owl-carousel.min.js` in your website. You don't need to include any CSS files for Owl Carousel.
+Front Street takes care of all the styling for Owl Carousel, which is an extension of the SCSS files included from Owl Carousel, here in this directory.
 
-## JavaScript
-
-To lighten things up, we've compiled a custom owl-carousel.js file to go with Front Street. Below is a list of all plugins that come with Owl Carousel by default. We've left out the LazyLoad, Video, and Hashtag URL Link plugins in our custom-compiled version.
-
-* owl.carousel.js - yes
-* owl.autorefresh.js - yes
-* ~~owl.lazyload.js~~ - no
-* owl.autoheight.js - yes
-* ~~owl.video.js~~ - no
-* owl.animate.js - yes
-* owl.autoplay.js - yes
-* owl.navigation.js - yes
-* ~~owl.hash.js~~ - no
-* owl.support.js - yes
+So, to utilize Owl Carousel and the "slider" block of Front Street, you just need to include the Owl Carousel script. And from there, Front Street also takes care of implementing custom scripts to get Owl Carousel binded and running.
 
 ## CSS
 
-In our package we've included only the Sass files from Owl Carousel that we're using.
+In our package we've included only the SCSS files from Owl Carousel that we're using, which Front Street implements and then extends.
 
-* core - yes
-* animate - yes
-* autoheight - yes
-* ~~lazyload~~ - no
-* ~~video~~ - no
+* `core.scss`
+* `animate.scss`
+* `autoheight.scss`

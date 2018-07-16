@@ -309,6 +309,7 @@ th {
 .owl-carousel .owl-stage {
   position: relative;
   -ms-touch-action: pan-Y;
+  touch-action: manipulation;
   -moz-backface-visibility: hidden;
   /* fix firefox animation glitch */
 }
@@ -362,11 +363,20 @@ th {
 .owl-carousel .owl-nav .owl-next,
 .owl-carousel .owl-dot {
   cursor: pointer;
-  cursor: hand;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel button.owl-dot {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0 !important;
+  font: inherit;
 }
 
 .owl-carousel.owl-loaded {
@@ -387,6 +397,8 @@ th {
 }
 
 .owl-carousel.owl-drag .owl-item {
+  -ms-touch-action: pan-y;
+      touch-action: pan-y;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
