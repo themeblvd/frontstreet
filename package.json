@@ -10,7 +10,6 @@
     "build": "npm run clean && gulp --gulpfile ./build-utils/gulpfile.js build",
     "project:css": "gulp --gulpfile ./build-utils/gulpfile.js build-project-css",
     "project:js": "gulp --gulpfile ./build-utils/gulpfile.js build-project-js",
-    "project:img": "gulp --gulpfile ./build-utils/gulpfile.js build-project-img",
     "docs:css": "gulp --gulpfile ./build-utils/gulpfile.js build-docs-css",
     "docs:js": "gulp --gulpfile ./build-utils/gulpfile.js build-docs-js",
     "docs:html": "gulp --gulpfile ./build-utils/gulpfile.js build-docs-html",
