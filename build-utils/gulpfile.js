@@ -21,7 +21,9 @@ gulp.task('build-project-js', ['build-project-js-dev', 'build-project-js-prod'])
 
 gulp.task('build-project-img', require('./tasks/build-project-img'));
 
-// Full Build
+// Build
+
+gulp.task('watch', require('./tasks/watch'));
 
 gulp.task('clean', require('./tasks/clean'));
 
