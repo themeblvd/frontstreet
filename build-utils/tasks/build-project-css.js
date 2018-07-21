@@ -4,6 +4,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const browserslist = require('../browserslist');
 const minifycss = require('gulp-clean-css');
 const rename = require('gulp-rename');
+const tildeImporter = require('node-sass-tilde-importer');
 
 /**
  * Compile the distributed development version
@@ -25,7 +26,7 @@ function buildProjectCss() {
 
   return gulp
     .src(files)
-    .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
+    .pipe(sass({ outputStyle: 'expanded', importer: tildeImporter }).on('error', sass.logError))
     .pipe(autoprefixer({ browsers: browserslist }))
     .pipe(gulp.dest('../dist/css'))
     .pipe(gulp.dest('../docs/assets/frontstreet/css'))

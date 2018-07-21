@@ -3,9 +3,16 @@
 // --------------------------------------------------
 
 //
-// Owl Carousel adjustments.
+// Owl Carousel
 //
 
+@import '~owl.carousel/src/scss/core';
+@import '~owl.carousel/src/scss/animate';
+@import '~owl.carousel/src/scss/autoheight';
+
+//
+// Owl Carousel adjustments.
+//
 .fs-slider {
   margin: 0;
 
