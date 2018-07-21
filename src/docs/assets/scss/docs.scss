@@ -29,6 +29,7 @@ body {
   .site-sidebar {
     order: 1;
     flex: 0 0 $sidebar-width;
+    max-width: $sidebar-width; // Needed for IE 11.
   }
   .site-search,
   .site-content {
