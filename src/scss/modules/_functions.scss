@@ -88,17 +88,35 @@
 }
 
 ///
-/// When given a color hex like #000, the `#` will
-/// be replaced by a `%23` for using withing a
-/// URL string.
+/// A small function allowing skipping base64 encoding
+/// and simply pasting the SVG markup right in the CSS.
 ///
 /// @since 1.0.0
 ///
-/// @param {Color} $clr - Color hex.
-/// @return {String} - Color hex code with '#' replaced with `%23`.
+/// @author Jakob Eriksen
+/// @link http://codepen.io/jakob-e/pen/doMoML
 ///
-@function fs-url-friendly-clr($clr) {
-  @return fs-str-replace($clr, '#', '%23');
+/// @param {String} $svg - SVG image to encode
+/// @return {String} - Encoded SVG data uri
+///
+@function fs-svg-uri($svg) {
+  $encoded: '';
+  $slice: 2000;
+  $index: 0;
+  $loops: ceil(str-length($svg) / $slice);
+
+  @for $i from 1 through $loops {
+    $chunk: str-slice($svg, $index, $index + $slice - 1);
+    $chunk: fs-str-replace($chunk, '"', "'");
+    $chunk: fs-str-replace($chunk, '<', '%3C');
+    $chunk: fs-str-replace($chunk, '>', '%3E');
+    $chunk: fs-str-replace($chunk, '&', '%26');
+    $chunk: fs-str-replace($chunk, '#', '%23');
+    $encoded: #{$encoded}#{$chunk};
+    $index: $index + $slice;
+  }
+
+  @return url('data:image/svg+xml;charset=utf8,#{$encoded}');
 }
 
 ///
