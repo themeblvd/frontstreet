@@ -46,7 +46,8 @@
                     </div><!-- .site-logo -->
 
                     <div class="site-search">
-                        <div class="field-icon fa-search">
+                        <div class="field-icon">
+                            <i class="fas fa-search"></i>
                             <input id="site-search-field" type="text" placeholder="Search the site...">
                         </div>
                     </div><!-- .site-search -->
@@ -256,28 +257,32 @@
 
 <h2 id="thumb-links">Thumbnail Links</h2>
 
-<p>Thumbnail links can be useful to add a hover animation and icon to images. When an image is linked, add class <code>fs-thumb-link</code> to the wrapping <code>&lt;a&gt;</code> along with a <a href="http://fontawesome.io/icons" title="FontAwesome Icons" target="_blank">FontAwesome icon class</a> to designate which icon to show.</p>
+<p>Thumbnail links can be useful to add a hover animation and icon to images. When an image is linked, add class <code>fs-thumb-link</code> to the wrapping <code>&lt;a&gt;</code> along with a <a href="http://fontawesome.io/icons" title="FontAwesome Icons" target="_blank">FontAwesome icon</a>.</p>
 
-<p>In the following example, we've got an image wrapped in a link, and we've added class <code>fs-thumb-link</code> to give it the animation and the class <code>fa-long-arrow-right</code> to designate the right-facing arrow icon. Hover your mouse on the image to see the effect.</p>
+<p>In the following example, we've got an image wrapped in a link, and we've added class <code>fs-thumb-link</code> to give it the animation and added a Font Awesome icon. Hover your mouse on the image to see the effect.</p>
 
-<a href="http://google.com" class="fs-thumb-link fa-long-arrow-right">
+<a href="http://google.com" class="fs-thumb-link">
+    <i class="fas fa-long-arrow-alt-right"></i>
     <img src="assets/img/image-1.jpg" alt="Beach">
 </a>
 
 <pre class="highlight html">
-<a href="http://google.com" class="fs-thumb-link fa-long-arrow-right">
+<a href="http://google.com" class="fs-thumb-link">
+    <i class="fas fa-long-arrow-alt-right"></i>
     <img src="assets/img/image-1-thumb.jpg" alt="Beach">
 </a>
 </pre>
 
 <p>These thumbnail links pair really nicely with <a href="modal.html#image-modals" title="Image Modals" target="_blank">modal functionality</a>. In the following example we've linked to the image file and added class <code>fs-image-modal-link</code> to the <code>.fs-thumb-link</code> element. We're also now using the <code>fa-expand</code> icon.</p>
 
-<a href="assets/img/image-2.jpg" class="fs-image-modal-link fs-thumb-link fa-expand">
+<a href="assets/img/image-2.jpg" class="fs-image-modal-link fs-thumb-link">
+    <i class="fas fa-expand"></i>
     <img src="assets/img/image-2.jpg" alt="Mountain">
 </a>
 
 <pre class="highlight html">
-<a href="assets/img/image-2.jpg" class="fs-image-modal-link fs-thumb-link fa-expand">
+<a href="assets/img/image-2.jpg" class="fs-image-modal-link fs-thumb-link">
+    <i class="fas fa-expand"></i>
     <img src="assets/img/image-2-thumb.jpg" alt="Mountain">
 </a>
 </pre>
@@ -442,56 +447,64 @@
 <div class="fs-modal-gallery fs-gallery gallery-columns-4">
     <dl class="gallery-item">
         <dt class="gallery-icon">
-            <a href="assets/img/image-1.jpg" class="fs-image-modal-link fs-thumb-link fa-expand" title="A Quiet Beach">
+            <a href="assets/img/image-1.jpg" class="fs-image-modal-link fs-thumb-link" title="A Quiet Beach">
+                <i class="fas fa-expand"></i>
                 <img src="assets/img/image-1-thumb.jpg" alt="A Quiet Beach">
             </a>
         </dt>
     </dl>
     <dl class="gallery-item">
         <dt class="gallery-icon">
-            <a href="assets/img/image-2.jpg" class="fs-image-modal-link fs-thumb-link fa-expand" title="Lone Mountain Top">
+            <a href="assets/img/image-2.jpg" class="fs-image-modal-link fs-thumb-link" title="Lone Mountain Top">
+                <i class="fas fa-expand"></i>
                 <img src="assets/img/image-2-thumb.jpg" alt="Lone Mountain Top">
             </a>
         </dt>
     </dl>
     <dl class="gallery-item">
         <dt class="gallery-icon">
-            <a href="assets/img/image-3.jpg" class="fs-image-modal-link fs-thumb-link fa-expand" title="Long Path to Zen">
+            <a href="assets/img/image-3.jpg" class="fs-image-modal-link fs-thumb-link" title="Long Path to Zen">
+                <i class="fas fa-expand"></i>
                 <img src="assets/img/image-3-thumb.jpg" alt="Long Path to Zen">
             </a>
         </dt>
     </dl>
     <dl class="gallery-item">
         <dt class="gallery-icon">
-            <a href="assets/img/image-4.jpg" class="fs-image-modal-link fs-thumb-link fa-expand" title="Waterfall Closeup">
+            <a href="assets/img/image-4.jpg" class="fs-image-modal-link fs-thumb-link" title="Waterfall Closeup">
+                <i class="fas fa-expand"></i>
                 <img src="assets/img/image-4-thumb.jpg" alt="Waterfall Closeup">
             </a>
         </dt>
     </dl>
     <dl class="gallery-item">
         <dt class="gallery-icon">
-            <a href="assets/img/image-5.jpg" class="fs-image-modal-link fs-thumb-link fa-expand" title="Our Swimming Hole">
+            <a href="assets/img/image-5.jpg" class="fs-image-modal-link fs-thumb-link" title="Our Swimming Hole">
+                <i class="fas fa-expand"></i>
                 <img src="assets/img/image-5-thumb.jpg" alt="Our Swimming Hole">
             </a>
         </dt>
     </dl>
     <dl class="gallery-item">
         <dt class="gallery-icon">
-            <a href="assets/img/image-6.jpg" class="fs-image-modal-link fs-thumb-link fa-expand" title="From Up Above">
+            <a href="assets/img/image-6.jpg" class="fs-image-modal-link fs-thumb-link" title="From Up Above">
+                <i class="fas fa-expand"></i>
                 <img src="assets/img/image-6-thumb.jpg" alt="From Up Above">
             </a>
         </dt>
     </dl>
     <dl class="gallery-item">
         <dt class="gallery-icon">
-            <a href="assets/img/image-7.jpg" class="fs-image-modal-link fs-thumb-link fa-expand" title="Rocky Beach">
+            <a href="assets/img/image-7.jpg" class="fs-image-modal-link fs-thumb-link" title="Rocky Beach">
+                <i class="fas fa-expand"></i>
                 <img src="assets/img/image-7-thumb.jpg" alt="Rocky Beach">
             </a>
         </dt>
     </dl>
     <dl class="gallery-item">
         <dt class="gallery-icon">
-            <a href="assets/img/image-8.jpg" class="fs-image-modal-link fs-thumb-link fa-expand" title="Water Hitting Rocks">
+            <a href="assets/img/image-8.jpg" class="fs-image-modal-link fs-thumb-link" title="Water Hitting Rocks">
+                <i class="fas fa-expand"></i>
                 <img src="assets/img/image-8-thumb.jpg" alt="Water Hitting Rocks">
             </a>
         </dt>
@@ -502,7 +515,8 @@
 <div class="fs-modal-gallery fs-gallery gallery-columns-3">
     <dl class="gallery-item">
         <dt class="gallery-icon">
-            <a href="assets/img/image-1.jpg" class="fs-image-modal-link fs-thumb-link fa-expand" title="A Quiet Beach">
+            <a href="assets/img/image-1.jpg" class="fs-image-modal-link fs-thumb-link" title="A Quiet Beach">
+                <i class="fas fa-expand"></i>
                 <img src="assets/img/image-1-thumb.jpg" alt="A Quiet Beach">
             </a>
         </dt>
