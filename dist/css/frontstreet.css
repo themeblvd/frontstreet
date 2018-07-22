@@ -2641,10 +2641,14 @@ select {
      -moz-appearance: none;
           appearance: none;
   background-origin: content-box;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'><polygon points='0,0 32,0 16,24' fill='fs-url-friendly-clr(#666)'></polygon></svg>");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'%3E%3Cpolygon points='0,0 32,0 16,24' fill='%23666'%3E%3C/polygon%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right -0.25rem center;
   background-size: 9px 6px;
+}
+
+select::-ms-expand {
+  display: none;
 }
 
 select[multiple] {
@@ -2657,12 +2661,12 @@ select[multiple] option {
 }
 
 .text-light select {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'><polygon points='0,0 32,0 16,24' fill='fs-url-friendly-clr(#ccc)'></polygon></svg>");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'%3E%3Cpolygon points='0,0 32,0 16,24' fill='%23ccc'%3E%3C/polygon%3E%3C/svg%3E");
   background-repeat: no-repeat;
 }
 
 .text-dark select {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'><polygon points='0,0 32,0 16,24' fill='fs-url-friendly-clr(#666)'></polygon></svg>");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'%3E%3Cpolygon points='0,0 32,0 16,24' fill='%23666'%3E%3C/polygon%3E%3C/svg%3E");
   background-repeat: no-repeat;
 }
 
@@ -2811,18 +2815,12 @@ input[type='file'] {
   margin-bottom: 0;
 }
 
-.field-icon:before {
-  font-family: 'FontAwesome';
-  line-height: 1em;
-  text-align: center;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  width: 1em;
-  height: 1em;
-}
-
-.field-icon:before {
+.field-icon .svg-inline--fa,
+.field-icon .fa,
+.field-icon .fas,
+.field-icon .far,
+.field-icon .fal,
+.field-icon .fab {
   display: block;
   position: absolute;
   top: 50%;
@@ -3368,18 +3366,12 @@ input[type='button'].btn-block {
   margin-bottom: 0;
 }
 
-.fs-thumb-link:before {
-  font-family: 'FontAwesome';
-  line-height: 1em;
-  text-align: center;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  width: 1em;
-  height: 1em;
-}
-
-.fs-thumb-link:before {
+.fs-thumb-link .svg-inline--fa,
+.fs-thumb-link .fa,
+.fs-thumb-link .fas,
+.fs-thumb-link .far,
+.fs-thumb-link .fal,
+.fs-thumb-link .fab {
   background: #1b1b1b;
   border-radius: 100%;
   color: #fff;
@@ -3397,6 +3389,7 @@ input[type='button'].btn-block {
   font-size: 20px;
   line-height: 4em;
   margin: -2em 0 0 -2em;
+  padding: 1.5em;
   width: 4em;
   height: 4em;
 }
@@ -3409,7 +3402,17 @@ input[type='button'].btn-block {
   z-index: 1;
 }
 
-.fs-thumb-link:hover:before, .fs-thumb-link:focus:before {
+.fs-thumb-link:hover .svg-inline--fa,
+.fs-thumb-link:hover .fa,
+.fs-thumb-link:hover .fas,
+.fs-thumb-link:hover .far,
+.fs-thumb-link:hover .fal,
+.fs-thumb-link:hover .fab, .fs-thumb-link:focus .svg-inline--fa,
+.fs-thumb-link:focus .fa,
+.fs-thumb-link:focus .fas,
+.fs-thumb-link:focus .far,
+.fs-thumb-link:focus .fal,
+.fs-thumb-link:focus .fab {
   opacity: 1;
   -webkit-transform: scale(1, 1);
           transform: scale(1, 1);
@@ -3478,10 +3481,16 @@ input[type='button'].btn-block {
   text-align: center;
 }
 
-.fs-gallery .fs-thumb-link:before {
+.fs-gallery .fs-thumb-link .svg-inline--fa,
+.fs-gallery .fs-thumb-link .fa,
+.fs-gallery .fs-thumb-link .fas,
+.fs-gallery .fs-thumb-link .far,
+.fs-gallery .fs-thumb-link .fal,
+.fs-gallery .fs-thumb-link .fab {
   font-size: 18px;
   line-height: 3em;
   margin: -1.5em 0 0 -1.5em;
+  padding: 1em;
   width: 3em;
   height: 3em;
 }
@@ -7197,17 +7206,6 @@ hr:not(.fs-divider) {
 .fs-divider.divider-center {
   margin-right: auto;
   margin-left: auto;
-}
-
-.fs-divider.divider-icon:before {
-  font-family: 'FontAwesome';
-  line-height: 1em;
-  text-align: center;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  width: 1em;
-  height: 1em;
 }
 
 .fs-loader {
