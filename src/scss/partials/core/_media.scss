@@ -81,11 +81,14 @@
   max-width: 100%; // Needed for IE 10-11
   outline: 0;
   position: relative;
-
   @include fs-margin-vert-flush;
-  @include fs-font-icon;
 
-  &:before {
+  .svg-inline--fa,
+  .fa,
+  .fas,
+  .far,
+  .fal,
+  .fab {
     background: $fs-thumb-link-icon-bg-clr;
     border-radius: $fs-thumb-link-icon-radius;
     color: $fs-thumb-link-icon-clr;
@@ -112,7 +115,12 @@
   }
   &:hover,
   &:focus {
-    &:before {
+    .svg-inline--fa,
+    .fa,
+    .fas,
+    .far,
+    .fal,
+    .fab {
       opacity: 1;
       transform: scale(1, 1);
     }
@@ -171,12 +179,19 @@
     padding: $fs-padding-caption-gallery;
     text-align: center;
   }
-  .fs-thumb-link:before {
-    @include fs-thumb-link-size(
-      $fs-gallery-thumb-link-icon-size,
-      $fs-gallery-thumb-link-icon-w,
-      $fs-gallery-thumb-link-icon-h
-    );
+  .fs-thumb-link {
+    .svg-inline--fa,
+    .fa,
+    .fas,
+    .far,
+    .fal,
+    .fab {
+      @include fs-thumb-link-size(
+        $fs-gallery-thumb-link-icon-size,
+        $fs-gallery-thumb-link-icon-w,
+        $fs-gallery-thumb-link-icon-h
+      );
+    }
   }
 }
 

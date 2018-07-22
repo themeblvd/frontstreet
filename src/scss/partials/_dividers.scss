@@ -64,14 +64,3 @@ hr:not(.fs-divider) {
     margin-left: auto;
   }
 }
-
-//
-// Icons
-//
-
-.fs-divider.divider-icon {
-  @include fs-font-icon;
-
-  &:before {
-  }
-}

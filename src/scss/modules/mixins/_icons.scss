@@ -7,33 +7,14 @@
 ////
 
 ///
-/// Add FontAwesome Icon to custom element,
-/// without inheriting other .fa icon styles.
-///
-/// @since 1.0.0
-///
-@mixin fs-font-icon {
-  &:before {
-    font-family: 'FontAwesome';
-    line-height: 1em;
-    text-align: center;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    width: 1em;
-    height: 1em;
-  }
-}
-
-///
 /// Background triangle icon.
 ///
 /// @since 1.0.0
 ///
 @mixin fs-background-triangle($clr: $fs-clr-dark) {
-  $clr: fs-url-friendly-clr($clr);
-
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'><polygon points='0,0 32,0 16,24' fill='#{$clr}'></polygon></svg>");
+  background-image: fs-svg-uri(
+    "<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'><polygon points='0,0 32,0 16,24' fill='#{$clr}'></polygon></svg>"
+  );
   background-repeat: no-repeat;
 }
 

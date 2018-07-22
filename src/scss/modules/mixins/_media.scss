@@ -16,9 +16,13 @@
 /// @param {Number} $h - Height of icon container in px.
 ///
 @mixin fs-thumb-link-size($icon-size, $w, $h) {
+  $width: fs-em($w, $icon-size);
+  $height: fs-em($h, $icon-size);
+
   font-size: $icon-size;
-  line-height: $h;
-  margin: ($h / -2) 0 0 ($w / -2);
-  width: $w;
-  height: $h;
+  line-height: $height;
+  margin: ($height / -2) 0 0 ($width / -2);
+  padding: fs-em(($w - $icon-size) / 2, $icon-size);
+  width: $width;
+  height: $height;
 }

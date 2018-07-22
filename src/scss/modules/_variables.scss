@@ -928,8 +928,8 @@ $fs-embed-ratios : (
 // Thumbnail Links
 
 $fs-thumb-link-icon-size: 20px !default;
-$fs-thumb-link-icon-w: 4em !default;
-$fs-thumb-link-icon-h: 4em !default;
+$fs-thumb-link-icon-w: $fs-thumb-link-icon-size * 4 !default;
+$fs-thumb-link-icon-h: $fs-thumb-link-icon-size * 4 !default;
 $fs-thumb-link-icon-radius: 100% !default;
 
 $fs-thumb-link-icon-clr: fs-map-deep-get($fs-clr-branding, primary, contrast) !default;
@@ -939,8 +939,8 @@ $fs-thumb-link-icon-bg-clr: fs-map-deep-get($fs-clr-branding, primary, base) !de
 
 $fs-gallery-gutters: 10px !default;
 $fs-gallery-thumb-link-icon-size: 18px !default;
-$fs-gallery-thumb-link-icon-w: 3em !default;
-$fs-gallery-thumb-link-icon-h: 3em !default;
+$fs-gallery-thumb-link-icon-w: $fs-gallery-thumb-link-icon-size * 3 !default;
+$fs-gallery-thumb-link-icon-h: $fs-gallery-thumb-link-icon-size * 3 !default;
 
 // ==========================================================================
 // Sliders
