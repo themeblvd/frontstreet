@@ -2,9 +2,6 @@ import $ from 'jquery';
 import hljs from 'highlight.js/lib/highlight';
 import Fuse from 'fuse.js';
 import searchIndex from './search-index';
-import 'owl.carousel';
-import 'magnific-popup';
-import '../../../js/frontstreet';
 
 // Register language syntaxes
 hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'));
