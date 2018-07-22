@@ -2344,6 +2344,7 @@ label .required,
 }
 
 .help-text {
+  display: block;
   font-size: 0.8em;
   margin: 0 4px 15px 4px;
 }
