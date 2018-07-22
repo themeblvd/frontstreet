@@ -1247,23 +1247,26 @@
 
 <h2 id="field-icons">Field Icons</h2>
 
-<p>Adding <a href="http://fontawesome.io" title="FontAwesome" target="_blank">FontAwesome</a> icons into your form fields is easy. Wrap a form field <code>&lt;input&gt;</code> or <code>&lt;select&gt;</code> menu in an element with class <code>field-icon</code> and then also add the FontAwesome icon class you want like <code>fa-search</code>, <code>fa-user</code>, etc.</p>
+<p>Adding <a href="http://fontawesome.io" title="Font Awesome" target="_blank">Font Awesome</a> icons into your form fields is easy. Wrap a form field <code>&lt;input&gt;</code> or <code>&lt;select&gt;</code> menu in an element with class <code>field-icon</code> and add your icon within.</p>
 
-<p>Below is a practical example of an <code>&lt;input&gt;</code> meant to serve as a simple search field. We've taken a standard <code>&lt;input&gt;</code> and wrapped it in a <code>&lt;div&gt;</code> with classes <code>field-icon</code> and <code>fa-search</code>.</p>
+<p>Below is a practical example of an <code>&lt;input&gt;</code> meant to serve as a simple search field. We've taken a standard <code>&lt;input&gt;</code> and wrapped it in a <code>&lt;div&gt;</code> with class <code>field-icon</code>. And then, we just add the Font Awesome icon in, as normal.</p>
 
-<div class="field-icon fa-search">
+<div class="field-icon">
+    <i class="fas fa-search"></i>
     <input type="search" placeholder="Search the site...">
 </div>
 
 <pre class="highlight html">
-<div class="field-icon fa-search">
+<div class="field-icon">
+    <i class="fas fa-search"></i>
     <input type="search" placeholder="Search the site...">
 </div>
 </pre>
 
-<p>And next is an example of a <code>&lt;select&gt;</code> menu. Again, we've just wrapped it in a <code>&lt;div&gt;</code> with classes <code>field-icon</code> and <code>fa-user</code>.</p>
+<p>And next is an example of a <code>&lt;select&gt;</code> menu. Again, we've just wrapped it in a <code>&lt;div&gt;</code> with class <code>field-icon</code> and added the icon within.</p>
 
-<div class="field-icon fa-user">
+<div class="field-icon">
+    <i class="fas fa-user"></i>
     <select>
         <option value="crosby">Crosby</option>
         <option value="mcdavid">McDavid</option>
@@ -1273,7 +1276,8 @@
 </div>
 
 <pre class="highlight html">
-<div class="field-icon fa-user">
+<div class="field-icon">
+    <i class="fas fa-user"></i>
     <select>
         <option value="crosby">Crosby</option>
         <option value="mcdavid">McDavid</option>
@@ -1285,67 +1289,82 @@
 
 <p>Your <code>.field-icon</code> elements can also contain different <a href="#sizing" title="Field Sizing">field sizes</a>. However in addition to your properly sized field, on your <code>.field-icon</code> wrapper, you need to also add the matching size class &mdash; <code>field-icon-xs</code>, <code>field-icon-sm</code>, <code>field-icon-lg</code>, <code>field-icon-xl</code>, <code>field-icon-xxl</code> or <code>field-icon-xxl</code>.</p>
 
-<div class="field-icon field-icon-xs fa-search">
+<div class="field-icon field-icon-xs">
+    <i class="fas fa-search"></i>
     <input type="search" class="field-xs" placeholder="Search the site...">
 </div>
 
-<div class="field-icon field-icon-sm fa-search">
+<div class="field-icon field-icon-sm">
+    <i class="fas fa-search"></i>
     <input type="search" class="field-sm" placeholder="Search the site...">
 </div>
 
-<div class="field-icon fa-search">
+<div class="field-icon">
+    <i class="fas fa-search"></i>
     <input type="search" placeholder="Search the site...">
 </div>
 
-<div class="field-icon field-icon-lg fa-search">
+<div class="field-icon field-icon-lg">
+    <i class="fas fa-search"></i>
     <input type="search" class="field-lg" placeholder="Search the site...">
 </div>
 
-<div class="field-icon field-icon-xl fa-search">
+<div class="field-icon field-icon-xl">
+    <i class="fas fa-search"></i>
     <input type="search" class="field-xl" placeholder="Search the site...">
 </div>
 
-<div class="field-icon field-icon-xxl fa-search">
+<div class="field-icon field-icon-xxl">
+    <i class="fas fa-search"></i>
     <input type="search" class="field-xxl" placeholder="Search the site...">
 </div>
 
-<div class="field-icon field-icon-xxxl fa-search">
+<div class="field-icon field-icon-xxxl">
+    <i class="fas fa-search"></i>
     <input type="search" class="field-xxxl" placeholder="Search the site...">
 </div>
 
 <pre class="highlight html">
-<div class="field-icon field-icon-xs fa-search">
+<div class="field-icon field-icon-xs">
+    <i class="fas fa-search"></i>
     <input type="search" class="field-xs" placeholder="Search the site...">
 </div>
 
-<div class="field-icon field-icon-sm fa-search">
+<div class="field-icon field-icon-sm">
+    <i class="fas fa-search"></i>
     <input type="search" class="field-sm" placeholder="Search the site...">
 </div>
 
-<div class="field-icon fa-search">
+<div class="field-icon">
+    <i class="fas fa-search"></i>
     <input type="search" placeholder="Search the site...">
 </div>
 
-<div class="field-icon field-icon-lg fa-search">
+<div class="field-icon field-icon-lg">
+    <i class="fas fa-search"></i>
     <input type="search" class="field-lg" placeholder="Search the site...">
 </div>
 
-<div class="field-icon field-icon-xl fa-search">
+<div class="field-icon field-icon-xl">
+    <i class="fas fa-search"></i>
     <input type="search" class="field-xl" placeholder="Search the site...">
 </div>
 
-<div class="field-icon field-icon-xxl fa-search">
+<div class="field-icon field-icon-xxl">
+    <i class="fas fa-search"></i>
     <input type="search" class="field-xxl" placeholder="Search the site...">
 </div>
 
-<div class="field-icon field-icon-xxxl fa-search">
+<div class="field-icon field-icon-xxxl">
+    <i class="fas fa-search"></i>
     <input type="search" class="field-xxxl" placeholder="Search the site...">
 </div>
 </pre>
 
 <p>And of course, sizing works with <code>&lt;select&gt;</code> menus, too.</p>
 
-<div class="field-icon field-icon-xs fa-user">
+<div class="field-icon field-icon-xs">
+    <i class="fas fa-user"></i>
     <select class="field-xs">
         <option value="crosby">Crosby</option>
         <option value="mcdavid">McDavid</option>
@@ -1354,7 +1373,8 @@
     </select>
 </div>
 
-<div class="field-icon field-icon-sm fa-user">
+<div class="field-icon field-icon-sm">
+    <i class="fas fa-user"></i>
     <select class="field-sm">
         <option value="crosby">Crosby</option>
         <option value="mcdavid">McDavid</option>
@@ -1363,7 +1383,8 @@
     </select>
 </div>
 
-<div class="field-icon fa-user">
+<div class="field-icon">
+    <i class="fas fa-user"></i>
     <select>
         <option value="crosby">Crosby</option>
         <option value="mcdavid">McDavid</option>
@@ -1372,7 +1393,8 @@
     </select>
 </div>
 
-<div class="field-icon field-icon-lg fa-user">
+<div class="field-icon field-icon-lg">
+    <i class="fas fa-user"></i>
     <select class="field-lg">
         <option value="crosby">Crosby</option>
         <option value="mcdavid">McDavid</option>
@@ -1381,7 +1403,8 @@
     </select>
 </div>
 
-<div class="field-icon field-icon-xl fa-user">
+<div class="field-icon field-icon-xl">
+    <i class="fas fa-user"></i>
     <select class="field-xl">
         <option value="crosby">Crosby</option>
         <option value="mcdavid">McDavid</option>
@@ -1390,7 +1413,8 @@
     </select>
 </div>
 
-<div class="field-icon field-icon-xxl fa-user">
+<div class="field-icon field-icon-xxl">
+    <i class="fas fa-user"></i>
     <select class="field-xxl">
         <option value="crosby">Crosby</option>
         <option value="mcdavid">McDavid</option>
@@ -1399,7 +1423,8 @@
     </select>
 </div>
 
-<div class="field-icon field-icon-xxxl fa-user">
+<div class="field-icon field-icon-xxxl">
+    <i class="fas fa-user"></i>
     <select class="field-xxxl">
         <option value="crosby">Crosby</option>
         <option value="mcdavid">McDavid</option>
@@ -1409,7 +1434,8 @@
 </div>
 
 <pre class="highlight html">
-<div class="field-icon field-icon-xs fa-user">
+<div class="field-icon field-icon-xs">
+    <i class="fas fa-user"></i>
     <select class="field-xs">
         <option value="crosby">Crosby</option>
         <option value="mcdavid">McDavid</option>
@@ -1418,7 +1444,8 @@
     </select>
 </div>
 
-<div class="field-icon field-icon-sm fa-user">
+<div class="field-icon field-icon-sm">
+    <i class="fas fa-user"></i>
     <select class="field-sm">
         <option value="crosby">Crosby</option>
         <option value="mcdavid">McDavid</option>
@@ -1427,7 +1454,8 @@
     </select>
 </div>
 
-<div class="field-icon fa-user">
+<div class="field-icon">
+    <i class="fas fa-user"></i>
     <select>
         <option value="crosby">Crosby</option>
         <option value="mcdavid">McDavid</option>
@@ -1436,7 +1464,8 @@
     </select>
 </div>
 
-<div class="field-icon field-icon-lg fa-user">
+<div class="field-icon field-icon-lg">
+    <i class="fas fa-user"></i>
     <select class="field-lg">
         <option value="crosby">Crosby</option>
         <option value="mcdavid">McDavid</option>
@@ -1445,7 +1474,8 @@
     </select>
 </div>
 
-<div class="field-icon field-icon-xl fa-user">
+<div class="field-icon field-icon-xl">
+    <i class="fas fa-user"></i>
     <select class="field-xl">
         <option value="crosby">Crosby</option>
         <option value="mcdavid">McDavid</option>
@@ -1454,7 +1484,8 @@
     </select>
 </div>
 
-<div class="field-icon field-icon-xxl fa-user">
+<div class="field-icon field-icon-xxl">
+    <i class="fas fa-user"></i>
     <select class="field-xxl">
         <option value="crosby">Crosby</option>
         <option value="mcdavid">McDavid</option>
@@ -1463,7 +1494,8 @@
     </select>
 </div>
 
-<div class="field-icon field-icon-xxxl fa-user">
+<div class="field-icon field-icon-xxxl">
+    <i class="fas fa-user"></i>
     <select class="field-xxxl">
         <option value="crosby">Crosby</option>
         <option value="mcdavid">McDavid</option>
@@ -1477,7 +1509,8 @@
 
 <ul class="field-group">
     <li class="has-field">
-        <div class="field-icon fa-search">
+        <div class="field-icon">
+            <i class="fas fa-search"></i>
             <input type="search" placeholder="Search the site...">
         </div>
     </li>
@@ -1489,7 +1522,8 @@
 <pre class="highlight html">
 <ul class="field-group">
     <li class="has-field">
-        <div class="field-icon fa-search">
+        <div class="field-icon">
+            <i class="fas fa-search"></i>
             <input type="search" placeholder="Search the site...">
         </div>
     </li>
@@ -1503,12 +1537,14 @@
 
 <ul class="field-group">
     <li class="has-field">
-        <div class="field-icon fa-user">
+        <div class="field-icon">
+            <i class="fas fa-search"></i>
             <input type="text" placeholder="Name">
         </div>
     </li>
     <li class="has-field">
-        <div class="field-icon fa-envelope">
+        <div class="field-icon">
+            <i class="fas fa-envelope"></i>
             <input type="email" placeholder="you@youremail.com">
         </div>
     </li>
@@ -1520,12 +1556,14 @@
 <pre class="highlight html">
 <ul class="field-group">
     <li class="has-field">
-        <div class="field-icon fa-user">
+        <div class="field-icon">
+            <i class="fas fa-user"></i>
             <input type="text" placeholder="Name">
         </div>
     </li>
     <li class="has-field">
-        <div class="field-icon fa-envelope">
+        <div class="field-icon">
+            <i class="fas fa-envelope"></i>
             <input type="email" placeholder="you@youremail.com">
         </div>
     </li>
