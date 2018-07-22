@@ -3307,3 +3307,173 @@ input[type='button'].btn-block {
   white-space: nowrap;
   vertical-align: baseline;
 }
+
+.clearfix:before, .clearfix:after {
+  content: ' ';
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.aligncenter,
+.align-center,
+.alignleft,
+.align-left,
+.pull-left,
+.lignright,
+.align-right,
+.pull-right {
+  margin: 0 0 24px 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.aligncenter:first-child,
+.align-center:first-child,
+.alignleft:first-child,
+.align-left:first-child,
+.pull-left:first-child,
+.lignright:first-child,
+.align-right:first-child,
+.pull-right:first-child {
+  margin-top: 0;
+}
+
+.aligncenter:last-child,
+.align-center:last-child,
+.alignleft:last-child,
+.align-left:last-child,
+.pull-left:last-child,
+.lignright:last-child,
+.align-right:last-child,
+.pull-right:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 36em) {
+  .alignleft,
+  .align-left,
+  .pull-left {
+    float: left !important;
+    margin: 5px 20px 5px 0;
+  }
+  .alignright,
+  .align-right,
+  .pull-right {
+    float: right !important;
+    margin: 5px 0 5px 20px;
+  }
+}
+
+.hide {
+  display: none !important;
+}
+
+.show-block {
+  display: block !important;
+}
+
+.show-flex {
+  display: flex !important;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.text-hide {
+  text-indent: -9999px;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.border-xs {
+  border: 1px solid #ddd;
+}
+
+.border-sm {
+  border: 2px solid #ddd;
+}
+
+.border-md {
+  border: 5px solid #ddd;
+}
+
+.border-lg {
+  border: 10px solid #ddd;
+}
+
+.border-xl {
+  border: 15px solid #ddd;
+}
+
+@media (max-width: 35.9375em) {
+  .hidden-xs {
+    display: none !important;
+  }
+}
+
+@media (min-width: 36em) and (max-width: 47.9375em) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+
+@media (min-width: 48em) and (max-width: 61.9375em) {
+  .hidden-md {
+    display: none !important;
+  }
+}
+
+@media (min-width: 62em) and (max-width: 74.9375em) {
+  .hidden-lg {
+    display: none !important;
+  }
+}
+
+@media (min-width: 75em) {
+  .hidden-xl {
+    display: none !important;
+  }
+}
