@@ -30,11 +30,12 @@ class MobileMenu {
         event.preventDefault();
         show($(this));
         return false;
-      });
+      })
+      .append('<span class="sub-indicator"></span>');
 
     $triggers
       .find('ul')
-      .prepend('<li><a href="#" class="menu-btn back"></a></li>')
+      .prepend('<li><a href="#" class="menu-btn back"><span class="sub-indicator"></span></a></li>')
       .find('.back')
       .on('click.fs.mobile-menu-back', function(event) {
         event.preventDefault();

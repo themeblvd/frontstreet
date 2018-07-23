@@ -61,7 +61,9 @@ class Menu {
       })
       .on('mouseleave', function() {
         hide($(this));
-      });
+      })
+      .find('> a')
+      .append('<span class="sub-indicator"></span>');
 
     // Adds CSS classes to each level of the menu, 1-3.
     $menu.children('li').each(function() {

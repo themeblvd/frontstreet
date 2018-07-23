@@ -42,36 +42,32 @@
       padding-right: 2.5em;
     }
   }
-  li.menu-item-has-children > .menu-btn:after {
+  li.menu-item-has-children > .menu-btn .sub-indicator {
+    background-size: 0.8em 0.8em;
     @if ($direction == 'rtl') {
-      content: '\f104'; // point left
+      transform: rotate(90deg) translate(-50%, 0); // point left
     } @else {
-      content: '\f105'; // point right
+      transform: rotate(270deg) translate(50%, 0); // point right
     }
-    font-family: 'FontAwesome';
-    position: absolute;
-    top: 50%;
-    @if ($direction == 'rtl') {
-      left: 1em;
-    } @else {
-      right: 1em;
-    }
-    text-align: center;
-    transform: translate(0, -50%);
-    transition: transform 0.2s cubic-bezier(0.04, 0.78, 0.35, 0.92), top 0.2s ease-in-out;
-    width: 1em;
-    height: 1em;
+    width: 0.8em;
+    height: 0.8em;
   }
 
   // Back buttons
-  .menu-btn.back:after {
-    content: if ($direction == 'rtl', '\f105', '\f104');
+  .menu-btn.back .sub-indicator {
+    background-size: 0.8em 0.8em;
+    display: block;
+    position: relative;
     @if ($direction == 'rtl') {
-      content: '\f105'; // point right
+      transform: rotate(270deg); // point right
     } @else {
-      content: '\f104'; // point left
+      transform: rotate(90deg); // point left
     }
-    font-family: 'FontAwesome';
+    top: initial;
+    right: initial;
+    left: initial;
+    width: 1em;
+    height: 1em;
   }
 
   // Sub-levels

@@ -86,6 +86,28 @@
 }
 
 //
+// Sub-Indicator Icons
+//
+
+.sub-indicator {
+  @include fs-background-mini-chevron($fs-clr-text-base);
+  background-size: 0.571428em 0.571428em;
+  position: absolute;
+  top: 50%;
+  @if ($direction == 'rtl') {
+    left: 1em;
+  } @else {
+    right: 1em;
+  }
+  transform: translate(0, -50%);
+  width: 0.571428em;
+  height: 0.571428em;
+}
+.text-light .sub-indicator {
+  @include fs-background-mini-chevron(rgba($fs-clr-text-inv-darken, 0.8));
+}
+
+//
 // Dropdown Menus
 //
 
@@ -100,25 +122,10 @@
   // Drop indicator icons
   li.menu-item-has-children > .menu-btn {
     @if ($direction == 'rtl') {
-      padding-left: 2.5em;
+      padding-left: 2.25em;
     } @else {
-      padding-right: 2.5em;
+      padding-right: 2.25em;
     }
-  }
-  li.menu-item-has-children > .menu-btn:after {
-    content: '\f107';
-    font-family: 'FontAwesome';
-    position: absolute;
-    top: 50%;
-    @if ($direction == 'rtl') {
-      left: 1em;
-    } @else {
-      right: 1em;
-    }
-    text-align: center;
-    transform: translate(0, -50%);
-    width: 1em;
-    height: 1em;
   }
 
   // Flyout menu

@@ -16,12 +16,12 @@ hljs.registerLanguage('css', require('highlight.js/lib/languages/css'));
  */
 function escape(html) {
   const replace = {
-    '&': '&amp;',
+    // '&': '&amp;',
     '<': '&lt;',
     '>': '&gt;'
   };
 
-  return html.replace(/[&<>]/g, tag => replace[tag]);
+  return html.replace(/[<>]/g, tag => replace[tag]);
 }
 
 $(document).ready(function($) {

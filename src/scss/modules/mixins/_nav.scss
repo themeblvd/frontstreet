@@ -185,18 +185,18 @@
     box-shadow: $fs-flyout-shadow;
     position: absolute;
   }
-  ul li.menu-item-has-children > .menu-btn:after {
+  ul li.menu-item-has-children > .menu-btn .sub-indicator {
     @if ($direction == 'rtl') {
-      content: '\f104';
+      transform: rotate(90deg) translate(-50%, 0);
     } @else {
-      content: '\f105';
+      transform: rotate(270deg) translate(50%, 0);
     }
   }
-  ul.reverse li.menu-item-has-children > .menu-btn:after {
+  ul.reverse li.menu-item-has-children > .menu-btn .sub-indicator {
     @if ($direction == 'rtl') {
-      content: '\f105';
+      transform: rotate(270deg) translate(50%, 0);
     } @else {
-      content: '\f104';
+      transform: rotate(90deg) translate(-50%, 0);
     }
   }
   ul ul {
