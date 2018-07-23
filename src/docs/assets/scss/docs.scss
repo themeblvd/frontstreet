@@ -313,6 +313,44 @@ h3:before {
   visibility: hidden;
 }
 
+/* =Homepage
+-------------------------------------------------------------- */
+
+.home-nav {
+  margin: 0 -5px 30px -5px;
+
+  li {
+    margin-bottom: 10px;
+    padding: 0 5px;
+  }
+  @media (min-width: 992px) {
+    li {
+      height: 170px;
+    }
+  }
+  a {
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out;
+  }
+  .title,
+  .description {
+    color: #fff;
+    display: block;
+    opacity: 1;
+    transition: opacity 0.1s ease-in-out;
+  }
+  .title {
+    margin-bottom: 10px;
+  }
+  .description {
+    font-size: 14px;
+  }
+  a:hover .title,
+  a:hover .description {
+    opacity: 0.1;
+  }
+}
+
 /* =Examples
 -------------------------------------------------------------- */
 
