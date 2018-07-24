@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
-const modeConfig = mode => require(`./build-utils/webpack.${mode}`);
+const modeConfig = mode => require(`./build/webpack.${mode}`);
 
 module.exports = ({ mode }) => {
   return webpackMerge(

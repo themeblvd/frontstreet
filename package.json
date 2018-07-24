@@ -6,15 +6,15 @@
   "scripts": {
     "start": "concurrently 'npm run server' 'npm run watch'",
     "server": "browser-sync start --server 'docs' --files *",
-    "watch": "gulp --gulpfile ./build-utils/gulpfile.js watch",
-    "build": "npm run clean && gulp --gulpfile ./build-utils/gulpfile.js build",
-    "project:css": "gulp --gulpfile ./build-utils/gulpfile.js build-project-css",
-    "project:js": "gulp --gulpfile ./build-utils/gulpfile.js build-project-js",
-    "docs:css": "gulp --gulpfile ./build-utils/gulpfile.js build-docs-css",
-    "docs:js": "gulp --gulpfile ./build-utils/gulpfile.js build-docs-js",
-    "docs:html": "gulp --gulpfile ./build-utils/gulpfile.js build-docs-html",
-    "docs:img": "gulp --gulpfile ./build-utils/gulpfile.js build-docs-img",
-    "clean": "gulp --gulpfile ./build-utils/gulpfile.js clean"
+    "watch": "gulp --gulpfile ./build/gulpfile.js watch",
+    "build": "npm run clean && gulp --gulpfile ./build/gulpfile.js build",
+    "project:css": "gulp --gulpfile ./build/gulpfile.js build-project-css",
+    "project:js": "gulp --gulpfile ./build/gulpfile.js build-project-js",
+    "docs:css": "gulp --gulpfile ./build/gulpfile.js build-docs-css",
+    "docs:js": "gulp --gulpfile ./build/gulpfile.js build-docs-js",
+    "docs:html": "gulp --gulpfile ./build/gulpfile.js build-docs-html",
+    "docs:img": "gulp --gulpfile ./build/gulpfile.js build-docs-img",
+    "clean": "gulp --gulpfile ./build/gulpfile.js clean"
   },
   "repository": {
     "type": "git",
