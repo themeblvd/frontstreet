@@ -1,0 +1,10 @@
+build
+docs
+src/svg
+src/docs
+.babelrc
+.editorconfig
+.prettierignore
+.tags
+.tags1
+webpack.config.js
