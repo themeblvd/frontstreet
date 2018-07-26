@@ -3,10 +3,12 @@
 // --------------------------------------------------
 
 .alert {
+  border-style: solid;
+  border-width: 0;
   @if ($direction == 'rtl') {
-    border-right: 10px solid transparent;
+    border-right-width: 10px;
   } @else {
-    border-left: 10px solid transparent;
+    border-left-width: 10px;
   }
   font-size: $fs-font-size-alert;
   margin: $fs-margin-alert;

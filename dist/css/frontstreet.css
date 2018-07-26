@@ -4104,7 +4104,9 @@ input[type='button'].btn-block {
 }
 
 .alert {
-  border-left: 10px solid transparent;
+  border-style: solid;
+  border-width: 0;
+  border-left-width: 10px;
   font-size: 0.9375rem;
   margin: 30px 0;
   padding: 15px;
