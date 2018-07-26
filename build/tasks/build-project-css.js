@@ -29,11 +29,11 @@ function buildProjectCss() {
     .pipe(sass({ outputStyle: 'expanded', importer: tildeImporter }).on('error', sass.logError))
     .pipe(autoprefixer({ browsers: browserslist }))
     .pipe(gulp.dest('../dist/css'))
-    .pipe(gulp.dest('../docs/assets/frontstreet/css'))
+    .pipe(gulp.dest('../docs/assets/css'))
     .pipe(minifycss())
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('../dist/css'))
-    .pipe(gulp.dest('../docs/assets/frontstreet/css'));
+    .pipe(gulp.dest('../docs/assets/css'));
 }
 
 module.exports = buildProjectCss;

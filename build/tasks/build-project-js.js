@@ -19,7 +19,7 @@ function buildProjectJs(mode) {
     .src('../src/js/frontstreet.js') // For Gulp reference only, actual entry file pulled from Webpack config.
     .pipe(webpackStream(webpackConfig({ mode: `project.${mode}` }), webpack))
     .pipe(gulp.dest('../dist'))
-    .pipe(gulp.dest('../docs/assets/frontstreet'));
+    .pipe(gulp.dest('../docs/assets'));
 }
 
 module.exports = buildProjectJs;
