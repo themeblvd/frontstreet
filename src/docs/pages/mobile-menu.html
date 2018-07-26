@@ -1,8 +1,8 @@
 @@include('../layout/header.html', {
-     "title": "Mobile Navigation"
+     "title": "Mobile Menu"
 })
 
-<p>If you're looking for an inherently responsive menu, you can use one of our <a href="nav.html" title="Responsive Navigation">responsive menu-bar elements</a>. But if you're looking for a mobile-only menu, the <code>.menu-bar-mobile</code> element is a solid, alternate solution.</p>
+<p>If you're looking for an inherently responsive menu, you can use one of our <a href="menu.html" title="Responsive Menus">responsive menu-bar elements</a>. But if you're looking for a mobile-only menu, the <code>.menu-bar-mobile</code> element is a solid, alternate solution.</p>
 
 <p><em>So what the heck is the difference between responsive and mobile?</em> &mdash; When we say "responsive" we mean the element will work at any viewport, adjusting to fit itself. But when we say "mobile" we mean the element is intended for the mobile view only.</p>
 
@@ -85,7 +85,7 @@
 
 <h2 id="colors">Colors</h2>
 
-<p>Similarly to the <a href="nav.html" title="Responsive Navigation">responsive menu-bar element</a>, you can add <a href="colors.html" title="Color Classes" target="_blank">color classes</a> to your <code>.mobile-navar</code> element, along with classes <code>text-dark</code> or <code>text-light</code> to adjust the color of text.</p>
+<p>Similarly to the <a href="menu.html" title="Responsive Menus">responsive menu-bar element</a>, you can add <a href="colors.html" title="Color Classes" target="_blank">color classes</a> to your <code>.mobile-navar</code> element, along with classes <code>text-dark</code> or <code>text-light</code> to adjust the color of text.</p>
 
 <div class="row">
     <div class="col col-md-6">
@@ -236,7 +236,7 @@
 $('.mobile-menu-bar').frontstreet('mobile-menu');
 </pre>
 
-<p><em>Why not invoke the JavaScript by default?</em> &mdash; With an element like mobile navigation, we don't want to assume it exists on the intial page load. </p>
+<p><em>Why not invoke the JavaScript by default?</em> &mdash; With an element like the mobile menu, we don't want to assume it exists on the intial page load. </p>
 
 <p>For example, in our <a href="https://wpjumpstart.com" title="Multi-Purpose WordPress Theme" target="_blank">Jump Start WordPress Theme</a>, we use this mobile navigation element, which is completely separate from the primary navigation the desktop user sees. However, for SEO purposes it would be better not to have a complete duplicate of the entire site's primary navigation.</p>
 <p>So instead of outputting two large duplicate menus, we generate the mobile version with JavaScript when the page loads, by copying the site's main navigation and some other elements on the page. Then after that's constructed, we then invoke the JavaScript needed for our <code>.mobile-menu-bar</code> element (which didn't originally exist on the DOM on page load).</p>

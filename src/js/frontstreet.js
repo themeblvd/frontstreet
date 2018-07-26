@@ -3,7 +3,7 @@ import { dom } from './utils';
 import Background from './blocks/background';
 import Menu from './blocks/menu';
 import MobileMenu from './blocks/mobile-menu';
-import Tabs from './blocks/tabs';
+import Tabbed from './blocks/tabbed';
 import Toggle from './blocks/toggle';
 import Tooltip from './blocks/tooltip';
 import './blocks/modal';
@@ -30,8 +30,8 @@ $.fn.frontstreet = function(block, options) {
         return new MobileMenu(this, options);
       case 'menu':
         return new Menu(this, options);
-      case 'tabs':
-        return new Tabs(this, options);
+      case 'tabbed':
+        return new Tabbed(this, options);
       case 'toggle':
         return new Toggle(this, options);
       case 'tooltip':
@@ -85,7 +85,7 @@ $document.ready(function($) {
    *
    * @since 1.0.0
    */
-  $('.fs-tabs').frontstreet('tabs');
+  $('.fs-tabbed').frontstreet('tabbed');
 
   /**
    * Binds the default `toggle` block.

@@ -1,5 +1,5 @@
 ////
-/// Mixins: Tabs
+/// Mixins: Tabbed
 ///
 /// @access public
 /// @group fs-mixins
@@ -14,7 +14,7 @@
 /// @param {String} $style - Style of scenario, `default` or `inverse`.
 ///
 @mixin fs-tab-content-variant($style: 'default') {
-  .fs-tabs.tabs-framed .tab-content {
+  .fs-tabbed.tabs-framed .tab-content {
     background: if($style == 'inverse', $fs-tab-content-inv-bg, $fs-tab-content-bg);
     border-color: if(
       $style == 'inverse',

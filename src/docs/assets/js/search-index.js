@@ -617,47 +617,47 @@ const searchIndex = [
   },
 
   //
-  // Blocks > Navigation
+  // Blocks > Menu
   //
 
   {
-    title: 'Navigation',
-    url: 'nav.html',
+    title: 'Menu',
+    url: 'menu.html',
     tags: ['menu', 'button', 'dropdown', 'flyout', 'mega']
   },
   {
-    title: 'Navigation: Primary Navigation',
-    url: 'nav.html#menu-bar',
+    title: 'Menu: Primary Menu',
+    url: 'menu.html#menu-bar',
     tags: ['menu', 'button', 'mega', 'dropdown', 'flyout']
   },
   {
-    title: 'Navigation: Secondary Navigation',
-    url: 'nav.html#submenu',
+    title: 'Menu: Secondary Menu',
+    url: 'menu.html#submenu',
     tags: ['menu', 'button', 'mega', 'dropdown', 'flyout']
   },
   {
-    title: 'Navigation: Tabs',
-    url: 'nav.html#submenu-tabs',
+    title: 'Menu: Tabs',
+    url: 'menu.html#submenu-tabs',
     tags: ['menu', 'button', 'dropdown', 'flyout']
   },
   {
-    title: 'Navigation: Pills',
-    url: 'nav.html#submenu-pills',
+    title: 'Menu: Pills',
+    url: 'menu.html#submenu-pills',
     tags: ['menu', 'button', 'dropdown', 'flyout']
   },
   {
-    title: 'Navigation: Responsiveness',
-    url: 'nav.html#responsiveness',
+    title: 'Menu: Responsiveness',
+    url: 'menu.html#responsiveness',
     tags: ['menu', 'button', 'mobile']
   },
 
   //
-  // Blocks > Nav Mobile
+  // Blocks > Mobile Menu
   //
 
   {
-    title: 'Mobile Navigation',
-    url: 'mobile-nav.html',
+    title: 'Mobile Menu',
+    url: 'mobile-menu.html',
     tags: ['menu', 'button', 'responsive']
   },
 
@@ -702,12 +702,12 @@ const searchIndex = [
   },
 
   //
-  // Blocks > Tabs
+  // Blocks > Tabbed Content
   //
 
   {
     title: 'Tabbed Content',
-    url: 'tabs.html',
+    url: 'tabbed.html',
     tags: ['toggle', 'tabs']
   },
 

@@ -1,20 +1,106 @@
-@@include('../layout/header.html', {
-     "title": "Navigation"
-})
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+
+        <meta charset="UTF-8" />
+        <link rel="profile" href="http://gmpg.org/xfn/11" />
+
+        <title>Menu - Front Street Frontend Framework</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link rel="stylesheet" href='assets/frontstreet/css/frontstreet.min.css' type='text/css' media='all' />
+        <link rel="stylesheet" href='assets/frontstreet/css/frontstreet-colors.min.css' type='text/css' media='all' />
+        <link rel="stylesheet" href='assets/css/docs.css' type='text/css' media='all' />
+
+    </head>
+    <body>
+
+        <script>
+
+            if ( document.location.hostname == 'frontstreet.io' ) {
+
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-2821782-33', 'auto');
+                ga('send', 'pageview');
+
+            }
+
+        </script>
+
+
+        <div id="wrapper">
+            <div id="container">
+
+                <header class="site-header">
+
+                    <div class="site-logo primary">
+                        <a href="http://frontstreet.io" title="Front Street - Frontend CSS Framework">
+                            <img src="assets/img/logo.png" srcset="assets/img/logo.png 1x, assets/img/logo@2x.png 2x">
+                        </a>
+                    </div><!-- .site-logo -->
+
+                    <div class="site-search">
+                        <div class="field-icon">
+                            <i class="fas fa-search"></i>
+                            <input id="site-search-field" type="text" placeholder="Search the site...">
+                        </div>
+                    </div><!-- .site-search -->
+
+                    <div class="site-follow">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="https://twitter.com/jasonbobich" title="Follow Jason Bobich on Twitter" target="_blank">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/themeblvd/frontstreet" title="Follow Front Street on Github" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="search-results" class="site-search-results">
+                        <ul class="list-unstyled">
+                            <!-- JS inserts here. -->
+                        </ul>
+                    </div>
+
+                </header><!-- .site-header -->
+
+                <div class="site-main">
+
+                    <div class="site-content">
+                        <div class="wrap">
+
+                            <article>
+
+                                <h1 class="heading-lg">
+                                    Menu
+                                    
+                                </h1>
+
 
 <p>Because the navigation of a website can be such an integral part of its unique design, we've done our best to keep top-level menu styling as simple as possible, for easy CSS extending.</p>
 
 <p>However, one of the most notable features of our navigation menus is the support for dropdown (or "fly-out") menus, which are always triggered with a <em>hover</em> state. This is done with custom styling and JavaScript from the Front Street framework. When building the navigational elements discussed in this article, you can add support for our dropdown script by simply adding the class <code>fs-menu</code>. Also add class <code>no-js</code> to allow dropdowns to function when the browser doesn't have JavaScript; this is optional.</p>
 
-<p>And for any of the navigation bars, if you'd like to utilize Front Street for coloring them, use any of the <a href="colors.html" title="Color Classes" target="_blank">color classes</a> to set a background color and classes <code>text-light</code> and <code>text-dark</code> to adjust the text.</p>
+<p>And for any of the menu bars, if you'd like to utilize Front Street for coloring them, use any of the <a href="colors.html" title="Color Classes" target="_blank">color classes</a> to set a background color and classes <code>text-light</code> and <code>text-dark</code> to adjust the text.</p>
 
-<!-- PRIMARY NAVIGATION -->
+<!-- PRIMARY MENU -->
 
-<h2 id="menu-bar">Primary Navigation</h2>
+<h2 id="menu-bar">Primary Menu</h2>
 
-<p>For a basic navigation bar, create an unordered list of links with class <code>menu-bar</code>. You can also nest additional second-level and third-level unordered lists within for submenus. And for all levels, make sure to add class <code>menu-btn</code> to any link <code>&lt;a&gt;</code> tags.</p>
+<p>For a basic menu bar, create an unordered list of links with class <code>menu-bar</code>. You can also nest additional second-level and third-level unordered lists within for submenus. And for all levels, make sure to add class <code>menu-btn</code> to any link <code>&lt;a&gt;</code> tags.</p>
 
-<h3 id="menu-bar-vert">Vertical Primary Navigation</h3>
+<h3 id="menu-bar-vert">Vertical Primary Menu</h3>
 
 <p>By default, the <code>.menu-bar</code> element is inherently vertical and will fill the width of its current container.</p>
 
@@ -220,7 +306,7 @@
 &lt;/ul&gt;
 </pre>
 
-<h3 id="menu-bar-horz">Horizontal Primary Navigation</h3>
+<h3 id="menu-bar-horz">Horizontal Primary Menu</h3>
 
 <p>Because the <code>.menu-bar</code> element is inherently vertical with stacked buttons, we need to add an additional class to align the buttons in a horizontal bar. You can use classes <code>menu-bar-horz</code>, <code>menu-bar-horz-xs</code>, <code>menu-bar-horz-sm</code>, <code>menu-bar-horz-md</code>, or <code>menu-bar-horz-lg</code> (see <a href="#responsiveness" title="menu-bar Responsiveness">responsiveness</a> below for more on which class you'd use).</p>
 
@@ -432,17 +518,17 @@
 &lt;/ul&gt;
 </pre>
 
-<!-- SUB NAVIGATION -->
+<!-- SUB MENU -->
 
-<h2 id="submenu">Secondary Navigation</h2>
+<h2 id="submenu">Secondary Menu</h2>
 
-<p>Secondary navigation elements come in three styles &mdash; <a href="#submenu-bar" title="Bar">Bar</a>, <a href="#submenu-tabs" title="Tabs">Tabs</a>, and <a href="#submenu-pills" title="Pills">Pills</a>. By default, all three styles will inherently stack vertically, but can be configured into a horizontal orientation by adding class <code>submenu-horz</code>.</p>
+<p>Secondary menu elements come in three styles &mdash; <a href="#submenu-bar" title="Bar">Bar</a>, <a href="#submenu-tabs" title="Tabs">Tabs</a>, and <a href="#submenu-pills" title="Pills">Pills</a>. By default, all three styles will inherently stack vertically, but can be configured into a horizontal orientation by adding class <code>submenu-horz</code>.</p>
 
 <p>And instead of using class <code>submenu-horz</code>, you can also use one of the responsive utility classes to make the <code>.submenu-*</code> element horizontal only at certain viewports. See the <a href="#responsiveness" title="Menu Responsiveness">Responsiveness</a> section for more details on that.</p>
 
 <h3 id="submenu-bar">Submenu Bar</h3>
 
-<p>For a basic secondary navigation bar with a slightly altered look from the primary navigation bar, create an unordered list of links with class <code>submenu-bar</code>. You can also nest additional second-level and third-level unordered lists within for submenus. And for all levels, make sure to add class <code>menu-btn</code> to any link <code>&lt;a&gt;</code> tags.</p>
+<p>For a basic secondary menu bar with a slightly altered look from the primary menu bar, create an unordered list of links with class <code>submenu-bar</code>. You can also nest additional second-level and third-level unordered lists within for submenus. And for all levels, make sure to add class <code>menu-btn</code> to any link <code>&lt;a&gt;</code> tags.</p>
 
 <p>By default, the <code>.submenu-bar</code> element is inherently vertical and will fill the width of its current container.</p>
 
@@ -774,9 +860,9 @@
 
 <h3 id="submenu-tabs">Tabs</h3>
 
-<p>To create a tabbed navigation, add class <code>submenu-tabs</code> to an unordered list.</p>
+<p>To create a tabbed menu, add class <code>submenu-tabs</code> to an unordered list.</p>
 
-<p>Note that this style of navigation is meant to be displayed as either dark or light. So you can't add color classes to it to make it any color. Below is the default light look.</p>
+<p>Note that this style of menu is meant to be displayed as either dark or light. So you can't add color classes to it to make it any color. Below is the default light look.</p>
 
 <ul class="submenu-tabs">
     <li class="active"><a href="#" class="menu-btn" title="About">About</a></li>
@@ -858,7 +944,7 @@
 
 <h4 class="heading-sm">Nested Submenus</h4>
 
-<p>Similarly to the other navigation menus mentions, you can nest unordered lists within, as well.</p>
+<p>Similarly to the other menus mentions, you can nest unordered lists within, as well.</p>
 
 <ul class="submenu-tabs">
     <li class="active"><a href="#" class="menu-btn" title="About">About</a></li>
@@ -956,9 +1042,9 @@
 
 <h3 id="submenu-pills">Pills</h3>
 
-<p>To create a similar tabbed navigation but with pills look, add class <code>submenu-pills</code> to an unordered list.</p>
+<p>To create a similar tabbed menu but with pills look, add class <code>submenu-pills</code> to an unordered list.</p>
 
-<p>Note that this style of navigation is meant to be displayed as either dark or light. So you can't add color classes to it to make it any color. Below is the default light look.</p>
+<p>Note that this style of menu is meant to be displayed as either dark or light. So you can't add color classes to it to make it any color. Below is the default light look.</p>
 
 <ul class="submenu-pills">
     <li class="active"><a href="#" class="menu-btn" title="About">About</a></li>
@@ -1040,7 +1126,7 @@
 
 <h4 class="heading-sm">Nested Submenus</h4>
 
-<p>Similarly to the other navigation menus mentions, you can nest unordered lists within, as well.</p>
+<p>Similarly to the other menus mentions, you can nest unordered lists within, as well.</p>
 
 <ul class="submenu-pills">
     <li class="active"><a href="#" class="menu-btn" title="About">About</a></li>
@@ -1288,6 +1374,187 @@
 &lt;/ul&gt;
 </pre>
 
-@@include('../layout/footer.html', {
-    "page": "nav"
-})
+
+                            </article><!-- #main -->
+
+                            <footer>
+                                <p>&copy; <a href="http://frontstreet.io" title="Front-End Web Framework">Front Street</a> - An <a href="https://github.com/themeblvd/frontstreet" title="Open Source Front-End Web Framework" target="_blank">open source</a> Front-End Web Framework by <a href="http://themeblvd.com" title="WordPress Themes and Website Templates" target="_blank">Theme Blvd</a> and <a href="http://jasonbobich.com" title="Web Developer" target="_blank">Jason Bobich</a>.</p>
+                            </footer>
+
+                        </div><!-- .wrap -->
+                    </div><!-- .site-content -->
+
+                    <div class="site-sidebar primary">
+                        <div class="wrap">
+
+                            <!--
+                            <h4 class="heading-sm">About</h4>
+
+                            <ul>
+                                <li>
+                                    <a href="install.html" title="Installation">Installation</a>
+                                </li>
+                                <li>
+                                    <a href="customize.html" title="Customization">Customization</a>
+                                </li>
+                                <li>
+                                    <a href="plugins.html" title="Plugins">Plugins</a>
+                                </li>
+                                <li>
+                                    <a href="javascript.html" title="JavaScript">JavaScript</a>
+                                </li>
+                            </ul>
+                            -->
+
+                            <h4 class="heading-sm">Core</h4>
+
+                            <ul>
+                                <li>
+                                    <a href="buttons.html" title="Buttons">Buttons</a>
+                                </li>
+                            	<li>
+                                    <a href="colors.html" title="Colors">Colors</a>
+                                </li>
+                                <li>
+                                    <a href="forms.html" title="Forms">Forms</a>
+                                </li>
+                                <li>
+                                    <a href="grid.html" title="Grid">Grid</a>
+                                </li>
+                                <li>
+                                    <a href="lists.html" title="Lists">Lists</a>
+                                </li>
+                                <li>
+                                    <a href="media.html" title="Media">Media</a>
+                                </li>
+                                <li>
+                                    <a href="quotes.html" title="Quotes">Quotes</a>
+                                </li>
+                                <li>
+                                    <a href="tables.html" title="Tables">Tables</a>
+                                </li>
+                                <li>
+                                    <a href="type.html" title="Typography">Typography</a>
+                                </li>
+                                <li>
+                                    <a href="utilities.html" title="Utilities">Utilities</a>
+                                </li>
+                            </ul>
+
+                            <h4 class="heading-sm">Blocks</h4>
+
+                            <ul>
+                                <li>
+                                    <a href="alerts.html" title="Alerts">Alerts</a>
+                                </li>
+                                <li>
+                                    <a href="backgrounds.html" title="Backgrounds">Backgrounds</a>
+                                </li>
+                                <li>
+                                    <a href="breadcrumbs.html" title="Breadcrumbs">Breadcrumbs</a>
+                                </li>
+                            	<li>
+                                    <a href="custom-buttons.html" title="Custom Buttons">Custom Buttons</a>
+                                </li>
+                                <li>
+                                    <a href="dividers.html" title="Dividers">Dividers</a>
+                                </li>
+                            	<li>
+                                    <a href="labels.html" title="Labels">Labels</a>
+                                </li>
+                                <li>
+                                    <a href="loader.html" title="Loader">Loader</a>
+                                </li>
+                                <li class="active">
+                                    <a href="menu.html" title="Menu">Menu</a>
+                                </li>
+                                <li>
+                                    <a href="mobile-menu.html" title="Mobile Menu">Mobile Menu</a>
+                                </li>
+                                <li>
+                                    <a href="modal.html" title="Modals">Modals</a>
+                                </li>
+                                <li>
+                                    <a href="progress.html" title="Progress Bars">Progress Bars</a>
+                                </li>
+                                <li>
+                                    <a href="sliders.html" title="Sliders">Sliders</a>
+                                </li>
+                                <li>
+                                    <a href="tabbed.html" title="Tabbed">Tabbed</a>
+                                </li>
+                                <li>
+                                    <a href="testimonials.html" title="Testimonials">Testimonials</a>
+                                </li>
+                                <li>
+                                    <a href="toggles.html" title="Toggles">Toggles</a>
+                                </li>
+                                <li>
+                                    <a href="tooltips.html" title="Tooltips">Tooltips</a>
+                                </li>
+                                <li>
+                                    <a href="widgets.html" title="Widgets">Widgets</a>
+                                </li>
+                            </ul>
+
+                            <h4 class="heading-sm">Extras</h4>
+
+                            <ul>
+                                <li>
+                                    <a href="color-library.html" title="Color Library">Color Library</a>
+                                </li>
+                                <li>
+                                    <a href="helpers.html" title="Helpers">Helpers</a>
+                                </li>
+                            </ul>
+
+                            <a href="#" class="to-top primary">Back to Top</a>
+
+
+                        </div><!-- .wrap -->
+                    </div><!-- .site-sidebar -->
+
+                </div><!-- #main -->
+
+            </div><!-- #container -->
+        </div><!-- #wrapper -->
+
+        <script>
+        /**
+         * Optional configuration object that can adjust how
+         * Magnific Popup is configured.
+         */
+        var fsModal = {
+            animation: 'fade', // 'fade', 'slide' or 'none'
+            mobile: 0, // Image modals will work at all viewports.
+            mobileIframe: 768, // Iframe modals will only work when viewport >= 768.
+            mobileGallery: 0, // Gallery modals will work at all viewports.
+            error: 'The modal media could not be loaded.',
+            close: 'Close',
+            loading: 'Loading...',
+            counter: '%curr% of %total%',
+            next: 'Next',
+            previous: 'Previous'
+        };
+        </script>
+
+        <!--
+        Include scripts.
+
+        Ideally, you'd bundle all of your JavaScript with a tool like Webpack, but this
+        is meant to show you more clearly what scripts are used in this demo.
+        -->
+
+        <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/solid.js" integrity="sha384-Z7p3uC4xXkxbK7/4keZjny0hTCWPXWfXl/mJ36+pW7ffAGnXzO7P+iCZ0mZv5Zt0" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/brands.js" integrity="sha384-ZqDZAkGUHrXxm3bvcTCmQWz4lt7QGLxzlqauKOyLwg8U0wYcYPDIIVTbZZXjbfsM" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/fontawesome.js" integrity="sha384-juNb2Ils/YfoXkciRFz//Bi34FN+KKL2AN4R/COdBOMD9/sV/UsxI6++NqifNitM" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+        <script src="assets/frontstreet/js/frontstreet.min.js"></script>
+        <script src="assets/js/docs.bundle.js"></script>
+
+
+    </body>
+</html>
+

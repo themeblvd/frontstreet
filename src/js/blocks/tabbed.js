@@ -10,9 +10,9 @@ import { dom } from '../utils';
  * @author   Jason Bobich
  * @link     http://frontstreet.io
  * @since    1.0.0
- * @module   tabs.js
+ * @module   tabbed.js
  */
-class Tabs {
+class Tabbed {
   /**
    * Initialize the `tabs` block on a DOM element,
    * when binded through jQuery.
@@ -189,4 +189,4 @@ class Tabs {
   }
 }
 
-export default Tabs;
+export default Tabbed;

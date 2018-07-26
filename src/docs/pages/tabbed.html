@@ -1,96 +1,12 @@
-<!DOCTYPE html>
-<html lang="en-US">
-    <head>
+@@include('../layout/header.html', {
+     "title": "Tabbed Content"
+})
 
-        <meta charset="UTF-8" />
-        <link rel="profile" href="http://gmpg.org/xfn/11" />
+<p>Below is an example of how to setup a <code>.fs-tabbed</code> tabbed content block. By default, tabbed content will display in an open style.</p>
 
-        <title>Tabbed Content - Front Street Frontend Framework</title>
+<p><span class="label-inline info">Information</span> Note that the <code>tabbed</code> type block and the <code>menu</code> type block are separate. The examples in this article combine tabbed content with the various styles of included with the <code>menu</code> block.</p>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-        <link rel="stylesheet" href='assets/frontstreet/css/frontstreet.min.css' type='text/css' media='all' />
-        <link rel="stylesheet" href='assets/frontstreet/css/frontstreet-colors.min.css' type='text/css' media='all' />
-        <link rel="stylesheet" href='assets/css/docs.css' type='text/css' media='all' />
-
-    </head>
-    <body>
-
-        <script>
-
-            if ( document.location.hostname == 'frontstreet.io' ) {
-
-                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-                ga('create', 'UA-2821782-33', 'auto');
-                ga('send', 'pageview');
-
-            }
-
-        </script>
-
-
-        <div id="wrapper">
-            <div id="container">
-
-                <header class="site-header">
-
-                    <div class="site-logo primary">
-                        <a href="http://frontstreet.io" title="Front Street - Frontend CSS Framework">
-                            <img src="assets/img/logo.png" srcset="assets/img/logo.png 1x, assets/img/logo@2x.png 2x">
-                        </a>
-                    </div><!-- .site-logo -->
-
-                    <div class="site-search">
-                        <div class="field-icon">
-                            <i class="fas fa-search"></i>
-                            <input id="site-search-field" type="text" placeholder="Search the site...">
-                        </div>
-                    </div><!-- .site-search -->
-
-                    <div class="site-follow">
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="https://twitter.com/jasonbobich" title="Follow Jason Bobich on Twitter" target="_blank">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/themeblvd/frontstreet" title="Follow Front Street on Github" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div id="search-results" class="site-search-results">
-                        <ul class="list-unstyled">
-                            <!-- JS inserts here. -->
-                        </ul>
-                    </div>
-
-                </header><!-- .site-header -->
-
-                <div class="site-main">
-
-                    <div class="site-content">
-                        <div class="wrap">
-
-                            <article>
-
-                                <h1 class="heading-lg">
-                                    Tabbed Content
-                                    
-                                </h1>
-
-
-<p>Below is an example of how to setup a <code>.fs-tabs</code> tabbed content element. By default, tabbed content will display in an open style.</p>
-
-<div class="fs-tabs">
+<div class="fs-tabbed">
 
     <ul class="submenu-tabs submenu-horz-sm">
         <li class="active"><a href="#crosby" class="menu-btn" title="Crosby">Crosby</a></li>
@@ -123,10 +39,10 @@
 
     </div><!-- .tab-content -->
 
-</div><!-- .fs-tabs -->
+</div><!-- .fs-tabbed -->
 
 <pre class="highlight html">
-<div class="fs-tabs">
+<div class="fs-tabbed">
 
     <ul class="submenu-tabs submenu-horz-sm">
         <li class="active"><a href="#crosby" class="menu-btn" title="Crosby">Crosby</a></li>
@@ -159,14 +75,14 @@
 
     </div><!-- .tab-content -->
 
-<div><!-- .fs-tabs -->
+<div><!-- .fs-tabbed -->
 </pre>
 
 <p>And below you can see how tabs respond when placed in a parent element with a dark background and class <code>text-light</code>.</p>
 
 <div class="bg-dark text-light submenu-example">
 
-    <div class="fs-tabs">
+    <div class="fs-tabbed">
 
         <ul class="submenu-tabs submenu-horz-sm">
             <li class="active"><a href="#crosby" class="menu-btn" title="Crosby">Crosby</a></li>
@@ -199,13 +115,13 @@
 
         </div><!-- .tab-content -->
 
-    </div><!-- .fs-tabs -->
+    </div><!-- .fs-tabbed -->
 
 </div><!-- .bg-dark -->
 
 <pre class="highlight html">
 <div class="bg-dark text-light">
-    <div class="fs-tabs">
+    <div class="fs-tabbed">
         <!-- Same markup from above... -->
     </div>
 </div>
@@ -213,9 +129,9 @@
 
 <h4 class="heading-sm">Alternate Navigation</h4>
 
-<p>Your <code>.fs-tabs</code> element can include any of the standard <a href="nav.html" title="Navigation Elements" target="_blank">navigation elements</a>.</p>
+<p>Your <code>.fs-tabbed</code> element can include any of the standard <a href="menu.html" title="Navigation Elements" target="_blank">navigation elements</a>.</p>
 
-<div class="fs-tabs">
+<div class="fs-tabbed">
 
     <ul class="menu-bar menu-bar-horz-sm blue text-light">
         <li class="active"><a href="#crosby" class="menu-btn" title="Crosby">Crosby</a></li>
@@ -248,10 +164,10 @@
 
     </div><!-- .tab-content -->
 
-</div><!-- .fs-tabs -->
+</div><!-- .fs-tabbed -->
 
 <pre class="highlight html">
-<div class="fs-tabs">
+<div class="fs-tabbed">
 
     <ul class="menu-bar menu-bar-horz-sm blue text-light">
         <li class="active"><a href="#crosby" class="menu-btn" title="Crosby">Crosby</a></li>
@@ -265,7 +181,7 @@
 </div>
 </pre>
 
-<div class="fs-tabs">
+<div class="fs-tabbed">
 
     <ul class="submenu-bar submenu-horz-sm bg-light text-dark">
         <li class="active"><a href="#crosby" class="menu-btn" title="Crosby">Crosby</a></li>
@@ -298,10 +214,10 @@
 
     </div><!-- .tab-content -->
 
-</div><!-- .fs-tabs -->
+</div><!-- .fs-tabbed -->
 
 <pre class="highlight html">
-<div class="fs-tabs">
+<div class="fs-tabbed">
 
     <ul class="submenu-bar submenu-horz-sm bg-light text-dark">
         <li class="active"><a href="#crosby" class="menu-btn" title="Crosby">Crosby</a></li>
@@ -315,7 +231,7 @@
 </div>
 </pre>
 
-<div class="fs-tabs">
+<div class="fs-tabbed">
 
     <ul class="submenu-pills submenu-horz-sm">
         <li class="active"><a href="#crosby" class="menu-btn" title="Crosby">Crosby</a></li>
@@ -348,10 +264,10 @@
 
     </div><!-- .tab-content -->
 
-</div><!-- .fs-tabs -->
+</div><!-- .fs-tabbed -->
 
 <pre class="highlight html">
-<div class="fs-tabs">
+<div class="fs-tabbed">
 
     <ul class="submenu-pills submenu-horz-sm">
         <li class="active"><a href="#crosby" class="menu-btn" title="Crosby">Crosby</a></li>
@@ -369,9 +285,9 @@
 
 <h3 id="tabs-framed">Framed Tabs</h3>
 
-<p>By adding class <code>tabs-framed</code> to your <code>.fs-tabs</code> element, you can bound your tabbed content within a box with a standardized background color, for better readability.</p>
+<p>By adding class <code>tabs-framed</code> to your <code>.fs-tabbed</code> element, you can bound your tabbed content within a box with a standardized background color, for better readability.</p>
 
-<div class="fs-tabs tabs-framed">
+<div class="fs-tabbed tabs-framed">
 
     <ul class="submenu-tabs submenu-horz-sm">
         <li class="active"><a href="#crosby" class="menu-btn" title="Crosby">Crosby</a></li>
@@ -404,10 +320,10 @@
 
     </div><!-- .tab-content -->
 
-</div><!-- .fs-tabs -->
+</div><!-- .fs-tabbed -->
 
 <pre class="highlight html">
-<div class="fs-tabs tabs-framed">
+<div class="fs-tabbed tabs-framed">
     <!-- Same markup from above... -->
 </div>
 </pre>
@@ -416,7 +332,7 @@
 
 <div class="bg-dark text-light submenu-example">
 
-    <div class="fs-tabs tabs-framed">
+    <div class="fs-tabbed tabs-framed">
 
         <ul class="submenu-tabs submenu-horz-sm">
             <li class="active"><a href="#crosby" class="menu-btn" title="Crosby">Crosby</a></li>
@@ -449,13 +365,13 @@
 
         </div><!-- .tab-content -->
 
-    </div><!-- .fs-tabs -->
+    </div><!-- .fs-tabbed -->
 
 </div><!-- .bg-dark -->
 
 <pre class="highlight html">
 <div class="bg-dark text-light">
-    <div class="fs-tabs tabs-framed">
+    <div class="fs-tabbed tabs-framed">
         <!-- Same markup from above... -->
     </div>
 </div>
@@ -463,9 +379,9 @@
 
 <h4 class="heading-sm">Alternate Navigation</h4>
 
-<p>Your <code>.fs-tabs.tabs-framed</code> element can also include any of the standard <a href="nav.html" title="Navigation Elements" target="_blank">navigation elements</a>.</p>
+<p>Your <code>.fs-tabbed.tabs-framed</code> element can also include any of the standard <a href="menu.html" title="Navigation Elements" target="_blank">navigation elements</a>.</p>
 
-<div class="fs-tabs tabs-framed">
+<div class="fs-tabbed tabs-framed">
 
     <ul class="menu-bar menu-bar-horz-sm blue text-light">
         <li class="active"><a href="#crosby" class="menu-btn" title="Crosby">Crosby</a></li>
@@ -498,10 +414,10 @@
 
     </div><!-- .tab-content -->
 
-</div><!-- .fs-tabs -->
+</div><!-- .fs-tabbed -->
 
 <pre class="highlight html">
-<div class="fs-tabs tabs-framed">
+<div class="fs-tabbed tabs-framed">
 
     <ul class="menu-bar menu-bar-horz-sm blue text-light">
         <li class="active"><a href="#crosby" class="menu-btn" title="Crosby">Crosby</a></li>
@@ -515,7 +431,7 @@
 </div>
 </pre>
 
-<div class="fs-tabs tabs-framed">
+<div class="fs-tabbed tabs-framed">
 
     <ul class="submenu-bar submenu-horz-sm bg-light text-dark">
         <li class="active"><a href="#crosby" class="menu-btn" title="Crosby">Crosby</a></li>
@@ -548,10 +464,10 @@
 
     </div><!-- .tab-content -->
 
-</div><!-- .fs-tabs -->
+</div><!-- .fs-tabbed -->
 
 <pre class="highlight html">
-<div class="fs-tabs tabs-framed">
+<div class="fs-tabbed tabs-framed">
 
     <ul class="submenu-bar submenu-horz-sm bg-light text-dark">
         <li class="active"><a href="#crosby" class="menu-btn" title="Crosby">Crosby</a></li>
@@ -565,7 +481,7 @@
 </div>
 </pre>
 
-<div class="fs-tabs tabs-framed">
+<div class="fs-tabbed tabs-framed">
 
     <ul class="submenu-pills submenu-horz-sm">
         <li class="active"><a href="#crosby" class="menu-btn" title="Crosby">Crosby</a></li>
@@ -598,10 +514,10 @@
 
     </div><!-- .tab-content -->
 
-</div><!-- .fs-tabs -->
+</div><!-- .fs-tabbed -->
 
 <pre class="highlight html">
-<div class="fs-tabs tabs-framed">
+<div class="fs-tabbed tabs-framed">
 
     <ul class="submenu-pills submenu-horz-sm">
         <li class="active"><a href="#crosby" class="menu-btn" title="Crosby">Crosby</a></li>
@@ -619,9 +535,9 @@
 
 <h3 id="tabs-fixed-height">Fixed Height Tabs</h3>
 
-<p>In some circumstances it can be annoying to have content on the page jumping around when switching between tabbed content that varies in length. In these cases, you can add the class <code>tabs-fixed-height</code> to your <code>.fs-tabs</code> element; this will match the height of all tabbed content to the tallest one.</p>
+<p>In some circumstances it can be annoying to have content on the page jumping around when switching between tabbed content that varies in length. In these cases, you can add the class <code>tabs-fixed-height</code> to your <code>.fs-tabbed</code> element; this will match the height of all tabbed content to the tallest one.</p>
 
-<div class="fs-tabs tabs-framed tabs-fixed-height">
+<div class="fs-tabbed tabs-framed tabs-fixed-height">
 
     <ul class="submenu-tabs submenu-horz-sm">
         <li class="active"><a href="#first" class="menu-btn" title="First Tab">First Tab</a></li>
@@ -643,10 +559,10 @@
 
     </div><!-- .tab-content -->
 
-</div><!-- .fs-tabs -->
+</div><!-- .fs-tabbed -->
 
 <pre class="highlight html">
-<div class="fs-tabs tabs-framed tabs-fixed-height">
+<div class="fs-tabbed tabs-framed tabs-fixed-height">
 
     <ul class="submenu-tabs submenu-horz-sm">
         <li class="active"><a href="#first" class="menu-btn" title="First Tab">First Tab</a></li>
@@ -668,20 +584,20 @@
 
     </div><!-- .tab-content -->
 
-</div><!-- .fs-tabs -->
+</div><!-- .fs-tabbed -->
 </pre>
 
 <!-- DEEP LINKING -->
 
 <h3 id="tabs-deep-linking">Deep Linking Tabs</h3>
 
-<p>Tab deep linking allows you to open a specific tab on page load by passing in the cooresponding hashtag in the URL. For this to work you need to add class <code>tabs-deep-link</code> to your <code>.fs-tabs</code> element. And then when you link to your page containing the tabbed content, you'll add a hash to your URL formatted like <code>#tab_{id of tab to open}</code>.</p>
+<p>Tab deep linking allows you to open a specific tab on page load by passing in the cooresponding hashtag in the URL. For this to work you need to add class <code>tabs-deep-link</code> to your <code>.fs-tabbed</code> element. And then when you link to your page containing the tabbed content, you'll add a hash to your URL formatted like <code>#tab_{id of tab to open}</code>.</p>
 
-<p>For example, the following set of tabs has three content panes with the ID's, <code>alpha</code>, <code>beta</code>, and <code>theta</code>. If we wanted to open the <code>beta</code> pane on page load, we would link to <code>tabs.html#tab_beta</code>.</p>
+<p>For example, the following set of tabs has three content panes with the ID's, <code>alpha</code>, <code>beta</code>, and <code>theta</code>. If we wanted to open the <code>beta</code> pane on page load, we would link to <code>tabbed.html#tab_beta</code>.</p>
 
-<p>As a test, <a href="tabs.html#tab_beta" target="_blank">click here</a> to reload this page with the <em>Beta</em> tab open.</p>
+<p>As a test, <a href="tabbed.html#tab_beta" target="_blank">click here</a> to reload this page with the <em>Beta</em> tab open.</p>
 
-<div class="fs-tabs tabs-framed tabs-deep-link">
+<div class="fs-tabbed tabs-framed tabs-deep-link">
 
     <ul class="submenu-tabs submenu-horz-sm">
         <li class="active"><a href="#alpha" class="menu-btn" title="Crosby">Alpha</a></li>
@@ -708,10 +624,10 @@
 
     </div><!-- .tab-content -->
 
-</div><!-- .fs-tabs -->
+</div><!-- .fs-tabbed -->
 
 <pre class="highlight html">
-<div class="fs-tabs tabs-framed tabs-fixed-height">
+<div class="fs-tabbed tabs-framed tabs-fixed-height">
 
     <ul class="submenu-tabs submenu-horz-sm">
         <li class="active"><a href="#alpha" class="menu-btn" title="Crosby">Alpha</a></li>
@@ -738,194 +654,13 @@
 
     </div><!-- .tab-content -->
 
-</div><!-- .fs-tabs -->
+</div><!-- .fs-tabbed -->
 </pre>
 
 <div class="alert alert-info">
     <p><strong>Note:</strong> If you're just trying to set one of your tabs to always open up on page load, you do NOT need to use deep linking; you can just adjust where you add the <code>active</code> classes in your HTML markup. Deep linking is only needed if you want to dynamically open different tabs, depending on the URL linked to.</p>
 </div>
 
-
-                            </article><!-- #main -->
-
-                            <footer>
-                                <p>&copy; <a href="http://frontstreet.io" title="Front-End Web Framework">Front Street</a> - An <a href="https://github.com/themeblvd/frontstreet" title="Open Source Front-End Web Framework" target="_blank">open source</a> Front-End Web Framework by <a href="http://themeblvd.com" title="WordPress Themes and Website Templates" target="_blank">Theme Blvd</a> and <a href="http://jasonbobich.com" title="Web Developer" target="_blank">Jason Bobich</a>.</p>
-                            </footer>
-
-                        </div><!-- .wrap -->
-                    </div><!-- .site-content -->
-
-                    <div class="site-sidebar primary">
-                        <div class="wrap">
-
-                            <!--
-                            <h4 class="heading-sm">About</h4>
-
-                            <ul>
-                                <li>
-                                    <a href="install.html" title="Installation">Installation</a>
-                                </li>
-                                <li>
-                                    <a href="customize.html" title="Customization">Customization</a>
-                                </li>
-                                <li>
-                                    <a href="plugins.html" title="Plugins">Plugins</a>
-                                </li>
-                                <li>
-                                    <a href="javascript.html" title="JavaScript">JavaScript</a>
-                                </li>
-                            </ul>
-                            -->
-
-                            <h4 class="heading-sm">Core</h4>
-
-                            <ul>
-                                <li>
-                                    <a href="buttons.html" title="Buttons">Buttons</a>
-                                </li>
-                            	<li>
-                                    <a href="colors.html" title="Colors">Colors</a>
-                                </li>
-                                <li>
-                                    <a href="forms.html" title="Forms">Forms</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html" title="Grid">Grid</a>
-                                </li>
-                                <li>
-                                    <a href="lists.html" title="Lists">Lists</a>
-                                </li>
-                                <li>
-                                    <a href="media.html" title="Media">Media</a>
-                                </li>
-                                <li>
-                                    <a href="quotes.html" title="Quotes">Quotes</a>
-                                </li>
-                                <li>
-                                    <a href="tables.html" title="Tables">Tables</a>
-                                </li>
-                                <li>
-                                    <a href="type.html" title="Typography">Typography</a>
-                                </li>
-                                <li>
-                                    <a href="utilities.html" title="Utilities">Utilities</a>
-                                </li>
-                            </ul>
-
-                            <h4 class="heading-sm">Blocks</h4>
-
-                            <ul>
-                                <li>
-                                    <a href="alerts.html" title="Alerts">Alerts</a>
-                                </li>
-                                <li>
-                                    <a href="backgrounds.html" title="Backgrounds">Backgrounds</a>
-                                </li>
-                                <li>
-                                    <a href="breadcrumbs.html" title="Breadcrumbs">Breadcrumbs</a>
-                                </li>
-                            	<li>
-                                    <a href="custom-buttons.html" title="Custom Buttons">Custom Buttons</a>
-                                </li>
-                                <li>
-                                    <a href="dividers.html" title="Dividers">Dividers</a>
-                                </li>
-                            	<li>
-                                    <a href="labels.html" title="Labels">Labels</a>
-                                </li>
-                                <li>
-                                    <a href="loader.html" title="Loader">Loader</a>
-                                </li>
-                                <li>
-                                    <a href="modal.html" title="Modals">Modals</a>
-                                </li>
-                                <li>
-                                    <a href="nav.html" title="Navigation">Navigation</a>
-                                </li>
-                                <li>
-                                    <a href="mobile-nav.html" title="Mobile Navigation">Nav Mobile</a>
-                                </li>
-                                <li>
-                                    <a href="progress.html" title="Progress Bars">Progress Bars</a>
-                                </li>
-                                <li>
-                                    <a href="sliders.html" title="Sliders">Sliders</a>
-                                </li>
-                                <li class="active">
-                                    <a href="tabs.html" title="Tabs">Tabs</a>
-                                </li>
-                                <li>
-                                    <a href="testimonials.html" title="Testimonials">Testimonials</a>
-                                </li>
-                                <li>
-                                    <a href="toggles.html" title="Toggles">Toggles</a>
-                                </li>
-                                <li>
-                                    <a href="tooltips.html" title="Tooltips">Tooltips</a>
-                                </li>
-                                <li>
-                                    <a href="widgets.html" title="Widgets">Widgets</a>
-                                </li>
-                            </ul>
-
-                            <h4 class="heading-sm">Extras</h4>
-
-                            <ul>
-                                <li>
-                                    <a href="color-library.html" title="Color Library">Color Library</a>
-                                </li>
-                                <li>
-                                    <a href="helpers.html" title="Helpers">Helpers</a>
-                                </li>
-                            </ul>
-
-                            <a href="#" class="to-top primary">Back to Top</a>
-
-
-                        </div><!-- .wrap -->
-                    </div><!-- .site-sidebar -->
-
-                </div><!-- #main -->
-
-            </div><!-- #container -->
-        </div><!-- #wrapper -->
-
-        <script>
-        /**
-         * Optional configuration object that can adjust how
-         * Magnific Popup is configured.
-         */
-        var fsModal = {
-            animation: 'fade', // 'fade', 'slide' or 'none'
-            mobile: 0, // Image modals will work at all viewports.
-            mobileIframe: 768, // Iframe modals will only work when viewport >= 768.
-            mobileGallery: 0, // Gallery modals will work at all viewports.
-            error: 'The modal media could not be loaded.',
-            close: 'Close',
-            loading: 'Loading...',
-            counter: '%curr% of %total%',
-            next: 'Next',
-            previous: 'Previous'
-        };
-        </script>
-
-        <!--
-        Include scripts.
-
-        Ideally, you'd bundle all of your JavaScript with a tool like Webpack, but this
-        is meant to show you more clearly what scripts are used in this demo.
-        -->
-
-        <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/solid.js" integrity="sha384-Z7p3uC4xXkxbK7/4keZjny0hTCWPXWfXl/mJ36+pW7ffAGnXzO7P+iCZ0mZv5Zt0" crossorigin="anonymous"></script>
-        <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/brands.js" integrity="sha384-ZqDZAkGUHrXxm3bvcTCmQWz4lt7QGLxzlqauKOyLwg8U0wYcYPDIIVTbZZXjbfsM" crossorigin="anonymous"></script>
-        <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/fontawesome.js" integrity="sha384-juNb2Ils/YfoXkciRFz//Bi34FN+KKL2AN4R/COdBOMD9/sV/UsxI6++NqifNitM" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-        <script src="assets/frontstreet/js/frontstreet.min.js"></script>
-        <script src="assets/js/docs.bundle.js"></script>
-
-
-    </body>
-</html>
-
+@@include('../layout/footer.html', {
+    "page": "tabs"
+})
