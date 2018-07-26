@@ -2,7 +2,18 @@
 // Core Partials
 // --------------------------------------------------
 
+//
+// Reset and Dependencies
+//
+
+@import 'normalize';
+@import 'print';
 @import 'scaffolding'; // Compiled = < 1 KB
+
+//
+// Elements
+//
+
 @import 'animations'; // Compiled = < 1 KB
 @import 'grid'; // Compiled = 21 K
 @import 'type'; // Compiled = 7 KB

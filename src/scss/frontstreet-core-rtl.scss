@@ -9,21 +9,5 @@
 $direction: 'rtl';
 $version: 'core';
 
-//
-// Functions, Variables and Mixins
-//
-
 @import 'modules/index';
-
-//
-// Reset and Dependencies
-//
-
-@import 'partials/normalize';
-@import 'partials/print';
-
-//
-// Core Styles
-//
-
-@import 'partials/core/index';
+@import 'core/index';

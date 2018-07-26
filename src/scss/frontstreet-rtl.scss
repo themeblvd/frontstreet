@@ -9,4 +9,5 @@ $direction: 'rtl';
 $version: 'full';
 
 @import 'modules/index';
-@import 'partials/index';
+@import 'core/index';
+@import 'blocks/index';

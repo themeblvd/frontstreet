@@ -1,9 +1,9 @@
 // --------------------------------------------------
-// Background and Text Colors - Color Library
+// Color Library
 // --------------------------------------------------
 
 //
-// Color Library Backgrounds
+// Backgrounds
 //
 
 @each $name, $map in $fs-clr-library {
@@ -11,11 +11,19 @@
 }
 
 //
-// Color Library Text
+// Text
 //
 
 @each $name, $map in $fs-clr-library {
   .text-#{$name} {
     color: map-get($map, base);
   }
+}
+
+//
+// Buttons
+//
+
+@each $clr, $map in $fs-clr-library {
+  @include fs-button-variant($clr, map-get($map, contrast), map-get($map, base));
 }

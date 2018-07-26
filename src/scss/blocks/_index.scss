@@ -1,23 +1,6 @@
 // --------------------------------------------------
-// Partials
-// --------------------------------------------------
-
-//
-// Reset and Dependencies
-//
-
-@import 'normalize';
-@import 'print';
-
-//
-// Core Styles
-//
-
-@import 'core/index';
-
-//
 // Blocks
-//
+// --------------------------------------------------
 
 @import 'background'; // Compiled = 2 KB
 @import 'close'; // Compiled = 3 KB
