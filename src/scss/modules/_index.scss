@@ -18,19 +18,19 @@
 // Mixins
 //
 
-@import 'mixins/hacks';
 @import 'mixins/breakpoints';
-@import 'mixins/grid';
-@import 'mixins/icons';
-@import 'mixins/type';
-@import 'mixins/media';
-@import 'mixins/spacing';
-@import 'mixins/lists';
 @import 'mixins/colors';
-@import 'mixins/utilities';
-@import 'mixins/tables';
-@import 'mixins/menu';
 @import 'mixins/forms';
+@import 'mixins/grid';
+@import 'mixins/hacks';
+@import 'mixins/icons';
+@import 'mixins/lists';
+@import 'mixins/media';
+@import 'mixins/menu';
+@import 'mixins/slider';
+@import 'mixins/spacing';
 @import 'mixins/tabbed';
+@import 'mixins/tables';
 @import 'mixins/toggle';
-@import 'mixins/sliders';
+@import 'mixins/type';
+@import 'mixins/utilities';
