@@ -102,16 +102,6 @@
 }
 
 //
-// Borders
-//
-
-@each $name, $map in $fs-border-utils {
-  .border-#{$name} {
-    border: map-get($map, width) map-get($map, style) map-get($map, color);
-  }
-}
-
-//
 // Responsive Utilities
 //
 

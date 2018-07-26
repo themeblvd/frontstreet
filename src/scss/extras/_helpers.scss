@@ -1,0 +1,21 @@
+// --------------------------------------------------
+// Helpers
+// --------------------------------------------------
+
+//
+// Light/Dark Backgrounds
+//
+
+@include fs-bg-variant('.bg-light', $fs-clr-bg-light, $fs-clr-text-base);
+
+@include fs-bg-variant('.bg-dark', $fs-clr-bg-dark, $fs-clr-text-inv-base);
+
+//
+// Borders
+//
+
+@each $name, $map in $fs-border-utils {
+  .border-#{$name} {
+    border: map-get($map, width) map-get($map, style) map-get($map, color);
+  }
+}

@@ -88,13 +88,24 @@
                                 </h1>
 
 
+<!-- BACKGROUND COLOR -->
+
+<h2 id="background-color">Background Color</h2>
+
+<p>For basic mix of layering elements with light and dark backgrounds, you can add the classes <code>bg-light</code> and <code>bg-dark</code>.</p>
+
+<ul class="demo-colors list-unstyled clearfix">
+    <li class="bg-light"><code>.bg-light</code></li>
+    <li class="bg-dark"><code>.bg-dark</code></li>
+</ul>
+
 <!-- TEXT COLOR -->
 
 <h2 id="text-color">Text Color</h2>
 
 <p>When nesting different sections within each other that contain content and various color backgrounds, it can get tricky when attempting to style the color properly for various content. So we provide the classes <code>text-light</code> and <code>text-dark</code> to help with this.</p>
 
-<div class="demo-text-color text-light">
+<div class="demo-text-color bg-dark text-light">
 
     <h3 class="heading-underline">Light Text</h3>
     <p>This is a <code>&lt;div&gt;</code> with class <code>text-light</code> added, to accomodate its dark background color.</p>
@@ -104,7 +115,7 @@
         <cite>John Smith</cite>
     </blockquote>
 
-    <div class="demo-text-color text-dark">
+    <div class="demo-text-color bg-light text-dark">
         <h3 class="heading-underline">Dark Text</h3>
         <p>And this is a nested <code>&lt;div&gt;</code> within, with the class <code>text-dark</code> added, in an attempt to override its parent styling and to accomodate its light background color.</p>
         <p>Lorem ipsum dolor sit amet, <a href="#">consectetur adipiscing elit</a>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
@@ -130,7 +141,7 @@
     <li class="border-xl"><code>.border-xl</code><span>15px</span></li>
 </ul>
 
-<p>These can be combined with classes from the <a href="colors.html#branding-colors">branding colors</a> or the <a href="colors.html#color-library">color library</a>.</p>
+<p>These can be combined with classes from the <a href="colors.html#branding-colors">branding colors</a> or the <a href="color-library.html">color library</a>.</p>
 
 <ul class="demo-borders list-unstyled">
     <li class="asphalt border-xs"><code>.asphalt.border-xs</code><span>1px</span></li>
@@ -186,6 +197,9 @@
                             <ul>
                                 <li>
                                     <a href="buttons.html" title="Buttons">Buttons</a>
+                                </li>
+                            	<li>
+                                    <a href="colors.html" title="Colors">Colors</a>
                                 </li>
                                 <li>
                                     <a href="forms.html" title="Forms">Forms</a>
@@ -270,7 +284,7 @@
 
                             <ul>
                                 <li>
-                                    <a href="colors.html" title="Colors">Colors</a>
+                                    <a href="color-library.html" title="Color Library">Color Library</a>
                                 </li>
                                 <li class="active">
                                     <a href="helpers.html" title="Helpers">Helpers</a>

@@ -34,6 +34,26 @@ const searchIndex = [
   },
 
   //
+  // Core > Colors
+  //
+
+  {
+    title: 'Colors',
+    url: 'colors.html',
+    tags: ['branding', 'contextual', 'color']
+  },
+  {
+    title: 'Colors: Branding Colors',
+    url: 'colors.html#branding',
+    tags: ['primary', 'secondary']
+  },
+  {
+    title: 'Colors: Contextual Colors',
+    url: 'colors.html#contextual',
+    tags: ['info', 'warning', 'danger', 'success']
+  },
+
+  //
   // Core > Typography
   //
 
@@ -482,46 +502,6 @@ const searchIndex = [
   },
 
   //
-  // Utilities > Colors
-  //
-
-  {
-    title: 'Colors',
-    url: 'colors.html',
-    tags: []
-  },
-  {
-    title: 'Colors: Branding Colors',
-    url: 'colors.html#branding',
-    tags: []
-  },
-  {
-    title: 'Colors: Color Library',
-    url: 'colors.html#library',
-    tags: []
-  },
-  {
-    title: 'Colors: Contextual Colors',
-    url: 'colors.html#contextual',
-    tags: ['info', 'warning', 'danger', 'success']
-  },
-
-  //
-  // Utilities > Helpers
-  //
-
-  {
-    title: 'Helpers: Text Color (Light and Dark)',
-    url: 'helpers.html#text-color',
-    tags: []
-  },
-  {
-    title: 'Helpers: Borders',
-    url: 'helpers.html#borders',
-    tags: []
-  },
-
-  //
   // Blocks > Alerts
   //
 
@@ -804,6 +784,36 @@ const searchIndex = [
     title: 'Widgets: Modern Panel',
     url: 'widgets.html#panel-modern',
     tags: ['panel', 'card', 'box', 'aside']
+  },
+
+  //
+  // Extras > Color Library
+  //
+
+  {
+    title: 'Color Library',
+    url: 'color-library.html',
+    tags: ['colors']
+  },
+
+  //
+  // Extras > Helpers
+  //
+
+  {
+    title: 'Helpers: Background Color (Light and Dark)',
+    url: 'helpers.html#background-color',
+    tags: []
+  },
+  {
+    title: 'Helpers: Text Color (Light and Dark)',
+    url: 'helpers.html#text-color',
+    tags: []
+  },
+  {
+    title: 'Helpers: Borders',
+    url: 'helpers.html#borders',
+    tags: []
   }
 ];
 
