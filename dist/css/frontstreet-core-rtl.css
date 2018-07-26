@@ -3341,6 +3341,51 @@ input[type='button'].btn-block {
   margin-left: 0.8em;
 }
 
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 24px -2px;
+  padding: 0;
+}
+
+.btn-group:first-child {
+  margin-top: 0;
+}
+
+.btn-group:last-child {
+  margin-bottom: 0;
+}
+
+.btn-group > .btn {
+  margin: 2px;
+}
+
+.btn-group-tight {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.btn-group-tight > .btn {
+  margin: 0;
+}
+
+.btn-group-justified > .btn {
+  flex: 1;
+}
+
+.btn-group-align-center {
+  justify-content: center;
+}
+
+.btn-group-align-end {
+  justify-content: flex-end;
+}
+
+.pagination .btn {
+  padding: 6px 12px;
+}
+
 .fs-embed {
   display: block;
   height: 0;
