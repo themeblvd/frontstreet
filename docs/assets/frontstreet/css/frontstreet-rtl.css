@@ -7706,9 +7706,7 @@ hr:not(.fs-divider) {
 }
 
 .label-inline {
-  background: #666;
   border-radius: 2px;
-  color: #fff;
   display: inline-block;
   font-size: 10px;
   font-weight: 700;
@@ -7718,4 +7716,9 @@ hr:not(.fs-divider) {
   text-transform: uppercase;
   white-space: nowrap;
   vertical-align: baseline;
+}
+
+.label-inline.label-default {
+  background: #666;
+  color: #fff;
 }

@@ -3,9 +3,7 @@
 // --------------------------------------------------
 
 .label-inline {
-  background: $fs-clr-bg-label;
   border-radius: 2px;
-  color: $fs-clr-text-inv-base;
   display: inline-block;
   font-size: $fs-font-size-label;
   font-weight: $fs-font-weight-bold;
@@ -15,4 +13,9 @@
   text-transform: $fs-font-transform-label;
   white-space: nowrap;
   vertical-align: baseline;
+
+  &.label-default {
+    background: $fs-clr-bg-label;
+    color: $fs-clr-text-inv-base;
+  }
 }
