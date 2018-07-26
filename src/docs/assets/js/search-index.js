@@ -305,21 +305,6 @@ const searchIndex = [
     url: 'buttons.html#groups',
     tags: []
   },
-  {
-    title: 'Buttons: Close Buttons',
-    url: 'buttons.html#close-buttons',
-    tags: ['vector', 'x']
-  },
-  {
-    title: 'Buttons: Play Button',
-    url: 'buttons.html#play-buttons',
-    tags: ['vector', 'video', 'movie']
-  },
-  {
-    title: 'Buttons: Menu Toggle Buttons',
-    url: 'buttons.html#menu-buttons',
-    tags: ['hamburger']
-  },
 
   //
   // Core > Lists
@@ -544,6 +529,26 @@ const searchIndex = [
     title: 'Breadcrumbs',
     url: 'breadcrumbs.html',
     tags: ['navigation', 'menu']
+  },
+
+  //
+  // Blocks > Custom Buttons
+  //
+
+  {
+    title: 'Custom Buttons: Close Buttons',
+    url: 'custom-buttons.html#close-buttons',
+    tags: ['vector', 'x']
+  },
+  {
+    title: 'Custom Buttons: Play Button',
+    url: 'custom-buttons.html#play-buttons',
+    tags: ['vector', 'video', 'movie']
+  },
+  {
+    title: 'Custom Buttons: Menu Toggle Buttons',
+    url: 'custom-buttons.html#menu-buttons',
+    tags: ['hamburger']
   },
 
   //

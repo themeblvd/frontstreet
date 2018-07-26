@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+
+        <meta charset="UTF-8" />
+        <link rel="profile" href="http://gmpg.org/xfn/11" />
+
+        <title>Custom Buttons - Front Street Frontend Framework</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link rel="stylesheet" href='assets/frontstreet/css/frontstreet.min.css' type='text/css' media='all' />
+        <link rel="stylesheet" href='assets/frontstreet/css/frontstreet-colors.min.css' type='text/css' media='all' />
+        <link rel="stylesheet" href='assets/css/docs.css' type='text/css' media='all' />
+
+    </head>
+    <body>
+
+        <script>
+
+            if ( document.location.hostname == 'frontstreet.io' ) {
+
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-2821782-33', 'auto');
+                ga('send', 'pageview');
+
+            }
+
+        </script>
+
+
+        <div id="wrapper">
+            <div id="container">
+
+                <header class="site-header">
+
+                    <div class="site-logo primary">
+                        <a href="http://frontstreet.io" title="Front Street - Frontend CSS Framework">
+                            <img src="assets/img/logo.png" srcset="assets/img/logo.png 1x, assets/img/logo@2x.png 2x">
+                        </a>
+                    </div><!-- .site-logo -->
+
+                    <div class="site-search">
+                        <div class="field-icon">
+                            <i class="fas fa-search"></i>
+                            <input id="site-search-field" type="text" placeholder="Search the site...">
+                        </div>
+                    </div><!-- .site-search -->
+
+                    <div class="site-follow">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="https://twitter.com/jasonbobich" title="Follow Jason Bobich on Twitter" target="_blank">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/themeblvd/frontstreet" title="Follow Front Street on Github" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="search-results" class="site-search-results">
+                        <ul class="list-unstyled">
+                            <!-- JS inserts here. -->
+                        </ul>
+                    </div>
+
+                </header><!-- .site-header -->
+
+                <div class="site-main">
+
+                    <div class="site-content">
+                        <div class="wrap">
+
+                            <article>
+
+                                <h1 class="heading-lg">
+                                    Custom Buttons
+                                    
+                                </h1>
+
+
+<!-- LOADING BUTTONS -->
+
+<h2 id="loading-buttons">Loading Buttons</h2>
+
+<p>Give any button a loading effect by adding the <code>loading</code> class to it.</p>
+
+<p><a href="#" class="btn btn-primary loading">Loading...</a></p>
+
+<pre class="highlight html">
+<a href="#" class="btn btn-primary loading">Loading...</a>
+</pre>
+
+<p>The following examples demonstrate or more common usage scenario, utilizing a submission <code>&lt;button&gt;</code> of a form that's been disabled and given the <code>loading</code> class. Also they show how the effect adapts to different sizes and colors of buttons.</p>
+
+<p>
+    <button class="btn btn-xs btn-default loading" disabled>Submit</button>
+    <button class="btn btn-xs btn-primary loading" disabled>Submit</button>
+    <button class="btn btn-xs btn-jungle loading" disabled>Submit</button>
+</p>
+
+<p>
+    <button class="btn btn-sm btn-default loading" disabled>Submit</button>
+    <button class="btn btn-sm btn-primary loading" disabled>Submit</button>
+    <button class="btn btn-sm btn-slate-grey loading" disabled>Submit</button>
+</p>
+
+<p>
+    <button class="btn btn-default loading" disabled>Submit</button>
+    <button class="btn btn-primary loading" disabled>Submit</button>
+    <button class="btn btn-teal loading" disabled>Submit</button>
+</p>
+
+<p>
+    <button class="btn btn-lg btn-default loading" disabled>Submit</button>
+    <button class="btn btn-lg btn-primary loading" disabled>Submit</button>
+    <button class="btn btn-lg btn-purple loading" disabled>Submit</button>
+</p>
+
+<p>
+    <button class="btn btn-xl btn-default loading" disabled>Submit</button>
+    <button class="btn btn-xl btn-primary loading" disabled>Submit</button>
+    <button class="btn btn-xl btn-royal loading" disabled>Submit</button>
+</p>
+
+<p>
+    <button class="btn btn-xxl btn-default loading" disabled>Submit</button>
+    <button class="btn btn-xxl btn-primary loading" disabled>Submit</button>
+    <button class="btn btn-xxl btn-pink loading" disabled>Submit</button>
+</p>
+
+<p>
+    <button class="btn btn-xxxl btn-default loading" disabled>Submit</button>
+    <button class="btn btn-xxxl btn-primary loading" disabled>Submit</button>
+    <button class="btn btn-xxxl btn-pomegranate loading" disabled>Submit</button>
+</p>
+
+<!-- CLOSE BUTTONS -->
+
+<h2 id="close-buttons">Close Buttons</h2>
+
+<div class="close-button-examples bg-light">
+
+    <button class="fs-close close-xl">Close</button>
+
+    <button class="fs-close close-lg">Close</button>
+
+    <button class="fs-close close-md">Close</button>
+
+    <button class="fs-close close-sm">Close</button>
+
+</div>
+
+<pre class="highlight html">
+<button class="fs-close close-xl">Close</button>
+
+<button class="fs-close close-lg">Close</button>
+
+<button class="fs-close close-md">Close</button>
+
+<button class="fs-close close-sm">Close</button>
+</pre>
+
+<div class="close-button-examples bg-primary">
+
+    <button class="fs-close close-xl close-light">Close</button>
+
+    <button class="fs-close close-lg close-light">Close</button>
+
+    <button class="fs-close close-md close-light">Close</button>
+
+    <button class="fs-close close-sm close-light">Close</button>
+
+</div>
+
+<pre class="highlight html">
+<button class="fs-close close-xl close-light">Close</button>
+
+<button class="fs-close close-lg close-light">Close</button>
+
+<button class="fs-close close-md close-light">Close</button>
+
+<button class="fs-close close-sm close-light">Close</button>
+</pre>
+
+<!-- PLAY BUTTONS -->
+
+<h2 id="play-buttons">Play Buttons</h2>
+
+<div class="play-button-examples bg-light">
+
+    <button class="fs-play play-xl">Play</button>
+
+    <button class="fs-play play-lg">Play</button>
+
+    <button class="fs-play play-md">Play</button>
+
+    <button class="fs-play play-sm">Play</button>
+
+</div>
+
+<pre class="highlight html">
+<button class="fs-play play-xl">Play</button>
+
+<button class="fs-play play-lg">Play</button>
+
+<button class="fs-play play-md">Play</button>
+
+<button class="fs-play play-sm">Play</button>
+</pre>
+
+<div class="play-button-examples bg-primary">
+
+    <button class="fs-play play-xl play-light">Play</button>
+
+    <button class="fs-play play-lg play-light">Play</button>
+
+    <button class="fs-play play-md play-light">Play</button>
+
+    <button class="fs-play play-sm play-light">Play</button>
+
+</div>
+
+<pre class="highlight html">
+<button class="fs-play play-xl play-light">Play</button>
+
+<button class="fs-play play-lg play-light">Play</button>
+
+<button class="fs-play play-md play-light">Play</button>
+
+<button class="fs-play play-sm play-light">Play</button>
+</pre>
+
+<!-- MENU BUTTONS -->
+
+<h2 id="menu-buttons">Menu Toggle Buttons</h2>
+
+<p>For toggling your hidden menus open and closed, you can use the menu toggle button. Buttons with class <code>fs-menu-toggle</code> use CSS animation to animate the state of the contained "hamburger" to an "X" when class <code>collapse</code> is added.</p>
+
+<p>The menu toggle buttons come in four sizes which can be utilized with the classes <code>menu-toggle-sm</code>, <code>menu-toggle-md</code>, <code>menu-toggle-lg</code> and <code>menu-toggle-xl</code>. And for using these buttons on a dark background, add the class <code>menu-toggle-light</code>.</p>
+
+<p>If you click the buttons in the following examples, you can see a sample of the button animations. To create a similar action in your website, you will need to use JavaScript; <a href="#menu-toggle-js" title="Menu toggle JavaScript example">see example here</a>.</p>
+
+<div class="menu-button-examples bg-light">
+
+    <a href="#" class="fs-menu-toggle menu-toggle-xl" title="Toggle Menu">
+        <span class="hamburger">
+            <span></span>
+        </span>
+        <span class="sr-only">Toggle Menu</span>
+    </a>
+
+    <a href="#" class="fs-menu-toggle menu-toggle-lg" title="Toggle Menu">
+        <span class="hamburger">
+            <span></span>
+        </span>
+        <span class="sr-only">Toggle Menu</span>
+    </a>
+
+    <a href="#" class="fs-menu-toggle menu-toggle-md" title="Toggle Menu">
+        <span class="hamburger">
+            <span></span>
+        </span>
+        <span class="sr-only">Toggle Menu</span>
+    </a>
+
+    <a href="#" class="fs-menu-toggle menu-toggle-sm" title="Toggle Menu">
+        <span class="hamburger">
+            <span></span>
+        </span>
+        <span class="sr-only">Toggle Menu</span>
+    </a>
+
+</div>
+
+<div class="menu-button-examples bg-primary">
+
+    <a href="#" class="fs-menu-toggle menu-toggle-light menu-toggle-xl" title="Toggle Menu">
+        <span class="hamburger">
+            <span></span>
+        </span>
+        <span class="sr-only">Toggle Menu</span>
+    </a>
+
+    <a href="#" class="fs-menu-toggle menu-toggle-light menu-toggle-lg" title="Toggle Menu">
+        <span class="hamburger">
+            <span></span>
+        </span>
+        <span class="sr-only">Toggle Menu</span>
+    </a>
+
+    <a href="#" class="fs-menu-toggle menu-toggle-light menu-toggle-md" title="Toggle Menu">
+        <span class="hamburger">
+            <span></span>
+        </span>
+        <span class="sr-only">Toggle Menu</span>
+    </a>
+
+    <a href="#" class="fs-menu-toggle menu-toggle-light menu-toggle-sm" title="Toggle Menu">
+        <span class="hamburger">
+            <span></span>
+        </span>
+        <span class="sr-only">Toggle Menu</span>
+    </a>
+
+</div>
+
+<p class="small"><em>Click menu toggle buttons above to see sample animations.</em></p>
+
+<pre class="highlight html">
+<!-- Sizes sm, md, lg, and xl - For use on light background. -->
+
+<a href="#" class="fs-menu-toggle menu-toggle-xl" title="Toggle Menu">
+    <span class="hamburger">
+        <span></span>
+    </span>
+    <span class="sr-only">Toggle Menu</span>
+</a>
+
+<a href="#" class="fs-menu-toggle menu-toggle-lg" title="Toggle Menu">
+    <span class="hamburger">
+        <span></span>
+    </span>
+    <span class="sr-only">Toggle Menu</span>
+</a>
+
+<a href="#" class="fs-menu-toggle menu-toggle-md" title="Toggle Menu">
+    <span class="hamburger">
+        <span></span>
+    </span>
+    <span class="sr-only">Toggle Menu</span>
+</a>
+
+<a href="#" class="fs-menu-toggle menu-toggle-sm" title="Toggle Menu">
+    <span class="hamburger">
+        <span></span>
+    </span>
+    <span class="sr-only">Toggle Menu</span>
+</a>
+
+<!-- Sizes sm, md, lg, and xl - For use on dark background. -->
+
+<a href="#" class="fs-menu-toggle menu-toggle-light menu-toggle-xl" title="Toggle Menu">
+    <span class="hamburger">
+        <span></span>
+    </span>
+    <span class="sr-only">Toggle Menu</span>
+</a>
+
+<a href="#" class="fs-menu-toggle menu-toggle-light menu-toggle-lg" title="Toggle Menu">
+    <span class="hamburger">
+        <span></span>
+    </span>
+    <span class="sr-only">Toggle Menu</span>
+</a>
+
+<a href="#" class="fs-menu-toggle menu-toggle-light menu-toggle-md" title="Toggle Menu">
+    <span class="hamburger">
+        <span></span>
+    </span>
+    <span class="sr-only">Toggle Menu</span>
+</a>
+
+<a href="#" class="fs-menu-toggle menu-toggle-light menu-toggle-sm" title="Toggle Menu">
+    <span class="hamburger">
+        <span></span>
+    </span>
+    <span class="sr-only">Toggle Menu</span>
+</a>
+</pre>
+
+<p>Feel free to hold your own opinion on if the "Hamburger" button should be accompanied by text to help the user. Whether you want to do this will probably depend on your website's audience.</p>
+
+<p>When using the <code>.fs-menu-toggle</code> element, you can add <code>&lt;span class=&quot;text-before&quot;&gt;Menu&lt;/span&gt;</code> for text before the icon or <code>&lt;span class=&quot;text-after&quot;&gt;Menu&lt;/span&gt;</code> for text after the icon.</p>
+
+<div class="menu-button-examples-2 bg-light">
+
+    <a href="#" class="fs-menu-toggle menu-toggle-xl" title="Toggle Menu">
+        <span class="hamburger">
+            <span></span>
+        </span>
+        <span class="text-after">Menu</span>
+    </a>
+
+    <a href="#" class="fs-menu-toggle menu-toggle-lg" title="Toggle Menu">
+        <span class="hamburger">
+            <span></span>
+        </span>
+        <span class="text-after">Menu</span>
+    </a>
+
+    <a href="#" class="fs-menu-toggle menu-toggle-md" title="Toggle Menu">
+        <span class="hamburger">
+            <span></span>
+        </span>
+        <span class="text-after">Menu</span>
+    </a>
+
+    <a href="#" class="fs-menu-toggle menu-toggle-sm" title="Toggle Menu">
+        <span class="hamburger">
+            <span></span>
+        </span>
+        <span class="text-after">Menu</span>
+    </a>
+
+</div>
+
+<div class="menu-button-examples-2 bg-primary">
+
+    <a href="#" class="fs-menu-toggle menu-toggle-light menu-toggle-xl" title="Toggle Menu">
+        <span class="hamburger">
+            <span></span>
+        </span>
+        <span class="text-after">Menu</span>
+    </a>
+
+    <a href="#" class="fs-menu-toggle menu-toggle-light menu-toggle-lg" title="Toggle Menu">
+        <span class="hamburger">
+            <span></span>
+        </span>
+        <span class="text-after">Menu</span>
+    </a>
+
+    <a href="#" class="fs-menu-toggle menu-toggle-light menu-toggle-md" title="Toggle Menu">
+        <span class="hamburger">
+            <span></span>
+        </span>
+        <span class="text-after">Menu</span>
+    </a>
+
+    <a href="#" class="fs-menu-toggle menu-toggle-light menu-toggle-sm" title="Toggle Menu">
+        <span class="hamburger">
+            <span></span>
+        </span>
+        <span class="text-after">Menu</span>
+    </a>
+
+</div>
+
+<p class="small"><em>Click menu toggle buttons above to see sample animations.</em></p>
+
+<pre class="highlight html">
+<!-- Sizes sm, md, lg, and xl - For use on light background. -->
+
+<a href="#" class="fs-menu-toggle menu-toggle-xl" title="Toggle Menu">
+    <span class="hamburger">
+        <span></span>
+    </span>
+    <span class="text-after">Menu</span>
+</a>
+
+<a href="#" class="fs-menu-toggle menu-toggle-lg" title="Toggle Menu">
+    <span class="hamburger">
+        <span></span>
+    </span>
+    <span class="text-after">Menu</span>
+</a>
+
+<a href="#" class="fs-menu-toggle menu-toggle-md" title="Toggle Menu">
+    <span class="hamburger">
+        <span></span>
+    </span>
+    <span class="text-after">Menu</span>
+</a>
+
+<a href="#" class="fs-menu-toggle menu-toggle-sm" title="Toggle Menu">
+    <span class="hamburger">
+        <span></span>
+    </span>
+    <span class="text-after">Menu</span>
+</a>
+
+<!-- Sizes sm, md, lg, and xl - For use on dark background. -->
+
+<a href="#" class="fs-menu-toggle menu-toggle-light menu-toggle-xl" title="Toggle Menu">
+    <span class="hamburger">
+        <span></span>
+    </span>
+    <span class="text-after">Menu</span>
+</a>
+
+<a href="#" class="fs-menu-toggle menu-toggle-light menu-toggle-lg" title="Toggle Menu">
+    <span class="hamburger">
+        <span></span>
+    </span>
+    <span class="text-after">Menu</span>
+</a>
+
+<a href="#" class="fs-menu-toggle menu-toggle-light menu-toggle-md" title="Toggle Menu">
+    <span class="hamburger">
+        <span></span>
+    </span>
+    <span class="text-after">Menu</span>
+</a>
+
+<a href="#" class="fs-menu-toggle menu-toggle-light menu-toggle-sm" title="Toggle Menu">
+    <span class="hamburger">
+        <span></span>
+    </span>
+    <span class="text-after">Menu</span>
+</a>
+</pre>
+
+<div class="menu-button-examples-2 bg-light">
+
+    <a href="#" class="fs-menu-toggle menu-toggle-xl" title="Toggle Menu">
+        <span class="text-before">Menu</span>
+        <span class="hamburger">
+            <span></span>
+        </span>
+    </a>
+
+    <a href="#" class="fs-menu-toggle menu-toggle-lg" title="Toggle Menu">
+        <span class="text-before">Menu</span>
+        <span class="hamburger">
+            <span></span>
+        </span>
+    </a>
+
+    <a href="#" class="fs-menu-toggle menu-toggle-md" title="Toggle Menu">
+        <span class="text-before">Menu</span>
+        <span class="hamburger">
+            <span></span>
+        </span>
+    </a>
+
+    <a href="#" class="fs-menu-toggle menu-toggle-sm" title="Toggle Menu">
+        <span class="text-before">Menu</span>
+        <span class="hamburger">
+            <span></span>
+        </span>
+    </a>
+
+</div>
+
+<div class="menu-button-examples-2 bg-primary">
+
+    <a href="#" class="fs-menu-toggle menu-toggle-light menu-toggle-xl" title="Toggle Menu">
+        <span class="text-before">Menu</span>
+        <span class="hamburger">
+            <span></span>
+        </span>
+    </a>
+
+    <a href="#" class="fs-menu-toggle menu-toggle-light menu-toggle-lg" title="Toggle Menu">
+        <span class="text-before">Menu</span>
+        <span class="hamburger">
+            <span></span>
+        </span>
+    </a>
+
+    <a href="#" class="fs-menu-toggle menu-toggle-light menu-toggle-md" title="Toggle Menu">
+        <span class="text-before">Menu</span>
+        <span class="hamburger">
+            <span></span>
+        </span>
+    </a>
+
+    <a href="#" class="fs-menu-toggle menu-toggle-light menu-toggle-sm" title="Toggle Menu">
+        <span class="text-before">Menu</span>
+        <span class="hamburger">
+            <span></span>
+        </span>
+    </a>
+
+</div>
+
+<p class="small"><em>Click menu toggle buttons above to see sample animations.</em></p>
+
+<pre class="highlight html">
+<!-- Sizes sm, md, lg, and xl - For use on light background. -->
+
+<a href="#" class="fs-menu-toggle menu-toggle-xl" title="Toggle Menu">
+    <span class="text-before">Menu</span>
+    <span class="hamburger">
+        <span></span>
+    </span>
+</a>
+
+<a href="#" class="fs-menu-toggle menu-toggle-lg" title="Toggle Menu">
+    <span class="text-before">Menu</span>
+    <span class="hamburger">
+        <span></span>
+    </span>
+</a>
+
+<a href="#" class="fs-menu-toggle menu-toggle-md" title="Toggle Menu">
+    <span class="text-before">Menu</span>
+    <span class="hamburger">
+        <span></span>
+    </span>
+</a>
+
+<a href="#" class="fs-menu-toggle menu-toggle-sm" title="Toggle Menu">
+    <span class="text-before">Menu</span>
+    <span class="hamburger">
+        <span></span>
+    </span>
+</a>
+
+<!-- Sizes sm, md, lg, and xl - For use on dark background. -->
+
+<a href="#" class="fs-menu-toggle menu-toggle-light menu-toggle-xl" title="Toggle Menu">
+    <span class="text-before">Menu</span>
+    <span class="hamburger">
+        <span></span>
+    </span>
+</a>
+
+<a href="#" class="fs-menu-toggle menu-toggle-light menu-toggle-lg" title="Toggle Menu">
+    <span class="text-before">Menu</span>
+    <span class="hamburger">
+        <span></span>
+    </span>
+</a>
+
+<a href="#" class="fs-menu-toggle menu-toggle-light menu-toggle-md" title="Toggle Menu">
+    <span class="text-before">Menu</span>
+    <span class="hamburger">
+        <span></span>
+    </span>
+</a>
+
+<a href="#" class="fs-menu-toggle menu-toggle-light menu-toggle-sm" title="Toggle Menu">
+    <span class="text-before">Menu</span>
+    <span class="hamburger">
+        <span></span>
+    </span>
+</a>
+</pre>
+
+<h3 id="menu-toggle-js" class="heading-sm">JavaScript Required</h3>
+
+<p>In order for the menu button to actually change states and perform any kind of action, you'd need to use JavaScript. The following is the JavaScript used in the above examples, which utilizes jQuery. &mdash; You can see that by simply toggling the class <code>collapse</code> on and off of the <code>.fs-menu-toggle</code> button, that we can achieve the button's animation since it's done with CSS.</p>
+
+<pre class="highlight javascript">
+$('.fs-menu-toggle').on('click', function(event){
+
+    event.preventDefault();
+
+    var $el = $(this);
+
+    if ($el.hasClass('collapse')) {
+
+        $el.removeClass('collapse');
+
+        // Code to close your menu...
+
+    } else {
+
+        $el.addClass('collapse');
+
+        // Code to open your menu...
+
+    }
+
+});
+</pre>
+
+
+                            </article><!-- #main -->
+
+                            <footer>
+                                <p>&copy; <a href="http://frontstreet.io" title="Front-End Web Framework">Front Street</a> - An <a href="https://github.com/themeblvd/frontstreet" title="Open Source Front-End Web Framework" target="_blank">open source</a> Front-End Web Framework by <a href="http://themeblvd.com" title="WordPress Themes and Website Templates" target="_blank">Theme Blvd</a> and <a href="http://jasonbobich.com" title="Web Developer" target="_blank">Jason Bobich</a>.</p>
+                            </footer>
+
+                        </div><!-- .wrap -->
+                    </div><!-- .site-content -->
+
+                    <div class="site-sidebar primary">
+                        <div class="wrap">
+
+                            <!--
+                            <h4 class="heading-sm">About</h4>
+
+                            <ul>
+                                <li>
+                                    <a href="install.html" title="Installation">Installation</a>
+                                </li>
+                                <li>
+                                    <a href="customize.html" title="Customization">Customization</a>
+                                </li>
+                                <li>
+                                    <a href="plugins.html" title="Plugins">Plugins</a>
+                                </li>
+                                <li>
+                                    <a href="javascript.html" title="JavaScript">JavaScript</a>
+                                </li>
+                            </ul>
+                            -->
+
+                            <h4 class="heading-sm">Core</h4>
+
+                            <ul>
+                                <li>
+                                    <a href="buttons.html" title="Buttons">Buttons</a>
+                                </li>
+                            	<li>
+                                    <a href="colors.html" title="Colors">Colors</a>
+                                </li>
+                                <li>
+                                    <a href="forms.html" title="Forms">Forms</a>
+                                </li>
+                                <li>
+                                    <a href="grid.html" title="Grid">Grid</a>
+                                </li>
+                                <li>
+                                    <a href="lists.html" title="Lists">Lists</a>
+                                </li>
+                                <li>
+                                    <a href="media.html" title="Media">Media</a>
+                                </li>
+                                <li>
+                                    <a href="quotes.html" title="Quotes">Quotes</a>
+                                </li>
+                                <li>
+                                    <a href="tables.html" title="Tables">Tables</a>
+                                </li>
+                                <li>
+                                    <a href="type.html" title="Typography">Typography</a>
+                                </li>
+                                <li>
+                                    <a href="utilities.html" title="Utilities">Utilities</a>
+                                </li>
+                            </ul>
+
+                            <h4 class="heading-sm">Blocks</h4>
+
+                            <ul>
+                                <li>
+                                    <a href="alerts.html" title="Alerts">Alerts</a>
+                                </li>
+                                <li>
+                                    <a href="backgrounds.html" title="Backgrounds">Backgrounds</a>
+                                </li>
+                                <li>
+                                    <a href="breadcrumbs.html" title="Breadcrumbs">Breadcrumbs</a>
+                                </li>
+                            	<li class="active">
+                                    <a href="custom-buttons.html" title="Custom Buttons">Custom Buttons</a>
+                                </li>
+                                <li>
+                                    <a href="dividers.html" title="Dividers">Dividers</a>
+                                </li>
+                            	<li>
+                                    <a href="labels.html" title="Labels">Labels</a>
+                                </li>
+                                <li>
+                                    <a href="loader.html" title="Loader">Loader</a>
+                                </li>
+                                <li>
+                                    <a href="modal.html" title="Modals">Modals</a>
+                                </li>
+                                <li>
+                                    <a href="nav.html" title="Navigation">Navigation</a>
+                                </li>
+                                <li>
+                                    <a href="mobile-nav.html" title="Mobile Navigation">Nav Mobile</a>
+                                </li>
+                                <li>
+                                    <a href="progress.html" title="Progress Bars">Progress Bars</a>
+                                </li>
+                                <li>
+                                    <a href="sliders.html" title="Sliders">Sliders</a>
+                                </li>
+                                <li>
+                                    <a href="tabs.html" title="Tabs">Tabs</a>
+                                </li>
+                                <li>
+                                    <a href="testimonials.html" title="Testimonials">Testimonials</a>
+                                </li>
+                                <li>
+                                    <a href="toggles.html" title="Toggles">Toggles</a>
+                                </li>
+                                <li>
+                                    <a href="tooltips.html" title="Tooltips">Tooltips</a>
+                                </li>
+                                <li>
+                                    <a href="widgets.html" title="Widgets">Widgets</a>
+                                </li>
+                            </ul>
+
+                            <h4 class="heading-sm">Extras</h4>
+
+                            <ul>
+                                <li>
+                                    <a href="color-library.html" title="Color Library">Color Library</a>
+                                </li>
+                                <li>
+                                    <a href="helpers.html" title="Helpers">Helpers</a>
+                                </li>
+                            </ul>
+
+                            <a href="#" class="to-top primary">Back to Top</a>
+
+
+                        </div><!-- .wrap -->
+                    </div><!-- .site-sidebar -->
+
+                </div><!-- #main -->
+
+            </div><!-- #container -->
+        </div><!-- #wrapper -->
+
+        <script>
+        /**
+         * Optional configuration object that can adjust how
+         * Magnific Popup is configured.
+         */
+        var fsModal = {
+            animation: 'fade', // 'fade', 'slide' or 'none'
+            mobile: 0, // Image modals will work at all viewports.
+            mobileIframe: 768, // Iframe modals will only work when viewport >= 768.
+            mobileGallery: 0, // Gallery modals will work at all viewports.
+            error: 'The modal media could not be loaded.',
+            close: 'Close',
+            loading: 'Loading...',
+            counter: '%curr% of %total%',
+            next: 'Next',
+            previous: 'Previous'
+        };
+        </script>
+
+        <!--
+        Include scripts.
+
+        Ideally, you'd bundle all of your JavaScript with a tool like Webpack, but this
+        is meant to show you more clearly what scripts are used in this demo.
+        -->
+
+        <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/solid.js" integrity="sha384-Z7p3uC4xXkxbK7/4keZjny0hTCWPXWfXl/mJ36+pW7ffAGnXzO7P+iCZ0mZv5Zt0" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/brands.js" integrity="sha384-ZqDZAkGUHrXxm3bvcTCmQWz4lt7QGLxzlqauKOyLwg8U0wYcYPDIIVTbZZXjbfsM" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/fontawesome.js" integrity="sha384-juNb2Ils/YfoXkciRFz//Bi34FN+KKL2AN4R/COdBOMD9/sV/UsxI6++NqifNitM" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+        <script src="assets/frontstreet/js/frontstreet.min.js"></script>
+        <script src="assets/js/docs.bundle.js"></script>
+
+
+    </body>
+</html>
+
