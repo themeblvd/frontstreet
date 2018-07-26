@@ -5,7 +5,7 @@
         <meta charset="UTF-8" />
         <link rel="profile" href="http://gmpg.org/xfn/11" />
 
-        <title>Breadcrumbs - Front Street Frontend Framework</title>
+        <title>Labels - Front Street Frontend Framework</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -83,55 +83,49 @@
                             <article>
 
                                 <h1 class="heading-lg">
-                                    Breadcrumbs
+                                    Labels
                                     
                                 </h1>
 
 
-<p>The following is an example of how to format an unordered list with class <code>fs-breadcrumbs</code> added.</p>
+<p>Labels are inline elements you can mix in with your text. To create an inline label, add class <code>label-inline</code> to the soft-wrapping element of your label text.</p>
 
-<ul class="fs-breadcrumbs">
-    <li><a href="#" title="Home">Home</a></li>
-    <li><a href="#" title="Parent Page">Parent Page</a></li>
-    <li class="active"><span>Current Page</span></li>
-</ul>
+<p><span class="label-inline">Fun Fact</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
-<pre class="highlight html">
-<ul class="fs-breadcrumbs">
-    <li><a href="#" title="Home">Home</a></li>
-    <li><a href="#" title="Parent Page">Parent Page</a></li>
-    <li class="active"><span>Current Page</span></li>
-</ul>
+<pre class="highlight html soft-wrap">
+<span class="label-inline">Fun Fact</span>
 </pre>
 
-<p>If you'd like your <code>.fs-breadcrumbs</code> element to be contained within a block with background color, make sure to also add your <a href="colors.html" title="Color Classes" target="_blank">color class</a>, class <code>text-light</code> or <code>text-dark</code>, and class <code>has-bg</code>.</p>
+<p>You can use any contextual colors.</p>
 
-<ul class="fs-breadcrumbs has-bg primary text-light">
-    <li><a href="#" title="Home">Home</a></li>
-    <li><a href="#" title="Parent Page">Parent Page</a></li>
-    <li class="active"><span>Current Page</span></li>
-</ul>
+<p>
+    <span class="label-inline success">Success</span>
+    <span class="label-inline info">Information</span>
+    <span class="label-inline warning">Warning</span>
+    <span class="label-inline danger">Danger</span>
+</p>
 
-<pre class="highlight html">
-<ul class="fs-breadcrumbs has-bg primary text-light">
-    <li><a href="#" title="Home">Home</a></li>
-    <li><a href="#" title="Parent Page">Parent Page</a></li>
-    <li class="active"><span>Current Page</span></li>
-</ul>
+<pre class="highlight html soft-wrap">
+<span class="label-inline success">Success</span>
+<span class="label-inline info">Information</span>
+<span class="label-inline warning">Warning</span>
+<span class="label-inline danger">Danger</span>
 </pre>
 
-<ul class="fs-breadcrumbs has-bg bg-light text-dark">
-    <li><a href="#" title="Home">Home</a></li>
-    <li><a href="#" title="Parent Page">Parent Page</a></li>
-    <li class="active"><span>Current Page</span></li>
-</ul>
+<p>Or any of the <a href="colors.html" title="Color Classes" target="_blank">color classes</a> from the color library.</p>
 
-<pre class="highlight html">
-<ul class="fs-breadcrumbs has-bg bg-light text-dark">
-    <li><a href="#" title="Home">Home</a></li>
-    <li><a href="#" title="Parent Page">Parent Page</a></li>
-    <li class="active"><span>Current Page</span></li>
-</ul>
+<p>
+    <span class="label-inline jungle">Jungle</span>
+    <span class="label-inline royal">Royal</span>
+    <span class="label-inline crimson">Crimson</span>
+    <span class="label-inline asphalt">Asphault</span>
+</p>
+
+<pre class="highlight html soft-wrap">
+<span class="label-inline jungle">Jungle</span>
+<span class="label-inline royal">Royal</span>
+<span class="label-inline crimson">Crimson</span>
+<span class="label-inline asphalt">Asphault</span>
 </pre>
 
 
@@ -207,13 +201,13 @@
                                 <li>
                                     <a href="backgrounds.html" title="Backgrounds">Backgrounds</a>
                                 </li>
-                                <li class="active">
+                                <li>
                                     <a href="breadcrumbs.html" title="Breadcrumbs">Breadcrumbs</a>
                                 </li>
                                 <li>
                                     <a href="dividers.html" title="Dividers">Dividers</a>
                                 </li>
-                            	<li>
+                            	<li class="active">
                                     <a href="labels.html" title="Labels">Labels</a>
                                 </li>
                                 <li>

@@ -73,7 +73,7 @@ const searchIndex = [
   {
     title: 'Typography: Misc Elements',
     url: 'type.html#misc',
-    tags: ['abbreviations', 'address', 'labels', '<abbr>']
+    tags: ['abbreviations', 'address', '<abbr>']
   },
   {
     title: 'Typography: Code Elements',
@@ -574,6 +574,16 @@ const searchIndex = [
     title: 'Dividers',
     url: 'dividers.html',
     tags: ['<hr>', 'border']
+  },
+
+  //
+  // Blocks > Labels
+  //
+
+  {
+    title: 'Labels',
+    url: 'labels.html',
+    tags: ['label', 'inline', 'info']
   },
 
   //
