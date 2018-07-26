@@ -5,7 +5,7 @@
         <meta charset="UTF-8" />
         <link rel="profile" href="http://gmpg.org/xfn/11" />
 
-        <title>Typography - Front Street Frontend Framework</title>
+        <title>Divider - Front Street Frontend Framework</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -83,356 +83,190 @@
                             <article>
 
                                 <h1 class="heading-lg">
-                                    Typography
+                                    Divider
                                     
                                 </h1>
 
 
-<!-- HEADINGS -->
+<p>Below is an example of a default <code>&lt;hr&gt;</code>.</p>
+
+<hr>
+
+<pre class="highlight html">
+<hr>
+</pre>
+
+<p>To begin building on a divider with Front Street features, start by adding class <code>fs-divider</code> and a <a href="colors.html" title="Colors" target="_blank">color class</a>.</p>
+
+<hr class="fs-divider secondary">
+
+<pre class="highlight html">
+<hr class="fs-divider secondary">
+</pre>
+
+<h2 id="thickness">Thickness</h2>
+
+<p>To alter the thickness (i.e. height) of an <code>.fs-divider</code> element, add class <code>divider-thick</code>, <code>divider-thicker</code> or <code>divider-thickest</code>.</p>
+
+<hr class="fs-divider secondary">
+<hr class="fs-divider secondary divider-thick">
+<hr class="fs-divider secondary divider-thicker">
+<hr class="fs-divider secondary divider-thickest">
+
+<pre class="highlight html">
+<hr class="fs-divider secondary">
+<hr class="fs-divider secondary divider-thick">
+<hr class="fs-divider secondary divider-thicker">
+<hr class="fs-divider secondary divider-thickest">
+</pre>
+
+<div class="table-responsive">
+    <table class="table-bordered table-condensed">
+        <tr>
+            <th>Size</th>
+            <th>Element</th>
+            <th>Height</th>
+        </tr>
+        <tr>
+            <td>Default</td>
+            <td><code>.fs-divider</code></td>
+            <td>4px</td>
+        </tr>
+        <tr>
+            <td>Thick</td>
+            <td><code>.fs-divider.divider-thick</code></td>
+            <td>8px</td>
+        </tr>
+        <tr>
+            <td>Thicker</td>
+            <td><code>.fs-divider.divider-thicker</code></td>
+            <td>12px</td>
+        </tr>
+        <tr>
+            <td>Thickest</td>
+            <td><code>.fs-divider.divider-thickest</code></td>
+            <td>16px</td>
+        </tr>
+    </table>
+</div>
+
+<h2 id="sizes">Sizes</h2>
+
+<p>To alter the size (i.e. width) of an <code>.fs-divider</code> element, add class <code>divider-xs</code>, <code>divider-sm</code>, <code>divider-md</code> or <code>divider-lg</code>.</p>
+
+<hr class="fs-divider secondary divider-xs">
+<hr class="fs-divider secondary divider-sm">
+<hr class="fs-divider secondary divider-md">
+<hr class="fs-divider secondary divider-lg">
+<hr class="fs-divider secondary">
+
+<pre class="highlight html">
+<hr class="fs-divider secondary divider-xs">
+<hr class="fs-divider secondary divider-sm">
+<hr class="fs-divider secondary divider-md">
+<hr class="fs-divider secondary divider-lg">
+<hr class="fs-divider secondary">
+</pre>
+
+<div class="table-responsive">
+    <table class="table-bordered table-condensed">
+        <tr>
+            <th>Size</th>
+            <th>Element</th>
+            <th>Width</th>
+        </tr>
+        <tr>
+            <td>Extra Small</td>
+            <td><code>.fs-divider.divider-xs</code></td>
+            <td>75px</td>
+        </tr>
+        <tr>
+            <td>Small</td>
+            <td><code>.fs-divider.divider-sm</code></td>
+            <td>25%</td>
+        </tr>
+        <tr>
+            <td>Medium</td>
+            <td><code>.fs-divider.divider-md</code></td>
+            <td>50%</td>
+        </tr>
+        <tr>
+            <td>Large</td>
+            <td><code>.fs-divider.divider-lg</code></td>
+            <td>75%</td>
+        </tr>
+        <tr>
+            <td>Default</td>
+            <td><code>.fs-divider</code></td>
+            <td>100%</td>
+        </tr>
+    </table>
+</div>
+
+<h2 id="alignment">Alignment</h2>
+
+<p>When an <code>.fs-divider</code> element uses a size class from the previous section, it can also be given an alignment class &mdash; <code>divider-left</code>, <code>divider-right</code> or <code>divider-center</code>.</p>
+
+<hr class="fs-divider secondary divider-md divider-left">
+<hr class="fs-divider secondary divider-md divider-center">
+<hr class="fs-divider secondary divider-md divider-right">
+
+<pre class="highlight html">
+<hr class="fs-divider secondary divider-md divider-left">
+<hr class="fs-divider secondary divider-md divider-center">
+<hr class="fs-divider secondary divider-md divider-right">
+</pre>
 
 <h2 id="headings">Headings</h2>
 
-<h3 id="headings-standard">Standard Headings</h3>
-
-<h1>H1 Lorem ipsum dolor sit amet</h1>
-
-<p>Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui. Cras sed lacus tellus, in porttitor tortor. Vivamus auctor mattis nunc, quis mattis justo vulputate at. Nam rhoncus mollis convallis.</p>
-
-<h2>H2 Lorem ipsum dolor sit amet</h2>
-
-<p>Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui. Cras sed lacus tellus, in porttitor tortor. Vivamus auctor mattis nunc, quis mattis justo vulputate at. Nam rhoncus mollis convallis.</p>
-
-<h3>H3 Lorem ipsum dolor sit amet</h3>
-
-<p>Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui. Cras sed lacus tellus, in porttitor tortor. Vivamus auctor mattis nunc, quis mattis justo vulputate at. Nam rhoncus mollis convallis.</p>
-
-<h4>H4 Lorem ipsum dolor sit amet</h4>
-
-<p>Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui. Cras sed lacus tellus, in porttitor tortor. Vivamus auctor mattis nunc, quis mattis justo vulputate at. Nam rhoncus mollis convallis.</p>
-
-<h5>H5 Lorem ipsum dolor sit amet</h5>
-
-<p>Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui. Cras sed lacus tellus, in porttitor tortor. Vivamus auctor mattis nunc, quis mattis justo vulputate at. Nam rhoncus mollis convallis.</p>
-
-<h6>H6 Lorem ipsum dolor sit amet</h6>
-
-<p>Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui. Cras sed lacus tellus, in porttitor tortor. Vivamus auctor mattis nunc, quis mattis justo vulputate at. Nam rhoncus mollis convallis.</p>
-
-<pre class="highlight html">
-<h1>H1 Lorem ipsum dolor sit amet</h1>
-<h2>H2 Lorem ipsum dolor sit amet</h2>
-<h3>H3 Lorem ipsum dolor sit amet</h3>
-<h4>H4 Lorem ipsum dolor sit amet</h4>
-<h5>H5 Lorem ipsum dolor sit amet</h5>
-<h6>H6 Lorem ipsum dolor sit amet</h6>
-</pre>
-
-<h3 id="headings-classes">Heading Classes</h3>
-
-<p>When you want to match the font styling of a heading but cannot use the associated HTML element, you can use CSS classes <code>h1</code> through <code>h6</code>.</p>
-
-<p class="h1">H1 Lorem ipsum dolor sit amet</p>
-<p class="h2">H2 Lorem ipsum dolor sit amet</p>
-<p class="h3">H3 Lorem ipsum dolor sit amet</p>
-<p class="h4">H4 Lorem ipsum dolor sit amet</p>
-<p class="h5">H5 Lorem ipsum dolor sit amet</p>
-<p class="h6">H6 Lorem ipsum dolor sit amet</p>
-
-<pre class="highlight html">
-<p class="h1">H1 Lorem ipsum dolor sit amet</p>
-<p class="h2">H2 Lorem ipsum dolor sit amet</p>
-<p class="h3">H3 Lorem ipsum dolor sit amet</p>
-<p class="h4">H4 Lorem ipsum dolor sit amet</p>
-<p class="h5">H5 Lorem ipsum dolor sit amet</p>
-<p class="h6">H6 Lorem ipsum dolor sit amet</p>
-</pre>
-
-<h3 id="headings-subtitles">Headings With Subtitles</h3>
-
-<p>To add a subtitle to a heading, you can nest it within like <code>&lt;small class=&quot;text-muted&quot;&gt;My Subtitle&lt;/small&gt;</code>.</p>
+<p>And finally for fun, pairing dividers with headings can help a tendy effect. Really, there are just so many ways you could combine dividers with headings. Below is just a random asortment of examples.</p>
 
 <h1>
-  Lorem Ipsum Dolor
-  <small class="text-muted">Version 1.0.0</small>
+    Lorem Ipsum
+    <span class="fs-divider divider-thick divider-xs secondary"></span>
 </h1>
-
-<h2>
-  Lorem Ipsum Dolor
-  <small class="text-muted">Version 1.0.0</small>
-</h2>
-
-<h3>
-  Lorem Ipsum Dolor
-  <small class="text-muted">Version 1.0.0</small>
-</h3>
-
-<h4>
-  Lorem Ipsum Dolor
-  <small class="text-muted">Version 1.0.0</small>
-</h4>
-
-<h5>
-  Lorem Ipsum Dolor
-  <small class="text-muted">Version 1.0.0</small>
-</h5>
-
-<h6>
-  Lorem Ipsum Dolor
-  <small class="text-muted">Version 1.0.0</small>
-</h6>
 
 <pre class="highlight html">
 <h1>
-  Lorem Ipsum Dolor
-  <small class="text-muted">Version 1.0.0</small>
+    Lorem Ipsum
+    <span class="fs-divider divider-thick divider-xs secondary"></span>
 </h1>
+</pre>
 
 <h2>
-  Lorem Ipsum Dolor
-  <small class="text-muted">Version 1.0.0</small>
+    Lorem Ipsum
+    <span class="fs-divider divider-xs secondary"></span>
 </h2>
 
-<h3>
-  Lorem Ipsum Dolor
-  <small class="text-muted">Version 1.0.0</small>
-</h3>
-
-<h4>
-  Lorem Ipsum Dolor
-  <small class="text-muted">Version 1.0.0</small>
-</h4>
-
-<h5>
-  Lorem Ipsum Dolor
-  <small class="text-muted">Version 1.0.0</small>
-</h5>
-
-<h6>
-  Lorem Ipsum Dolor
-  <small class="text-muted">Version 1.0.0</small>
-</h6>
+<pre class="highlight html">
+<h2>
+    Lorem Ipsum
+    <span class="fs-divider divider-xs secondary"></span>
+</h2>
 </pre>
 
-<!-- HEADING UNDERLINE -->
-
-<h3 id="headings-underline">Headings With Underline</h3>
-
-<h1 class="heading-underline">H1 Lorem ipsum dolor sit amet</h1>
-
-<h2 class="heading-underline">H2 Lorem ipsum dolor sit amet</h2>
-
-<h3 class="heading-underline">H3 Lorem ipsum dolor sit amet</h3>
-
-<h4 class="heading-underline">H4 Lorem ipsum dolor sit amet</h4>
-
-<h5 class="heading-underline">H5 Lorem ipsum dolor sit amet</h5>
-
-<h6 class="heading-underline">H6 Lorem ipsum dolor sit amet</h6>
+<h1 class="heading-lg text-center">
+    Lorem Ipsum
+    <span class="fs-divider divider-center divider-thick divider-xs secondary"></span>
+</h1>
 
 <pre class="highlight html">
-<h1 class="heading-underline">H1 Lorem ipsum dolor sit amet</h1>
-<h2 class="heading-underline">H2 Lorem ipsum dolor sit amet</h2>
-<h3 class="heading-underline">H3 Lorem ipsum dolor sit amet</h3>
-<h4 class="heading-underline">H4 Lorem ipsum dolor sit amet</h4>
-<h5 class="heading-underline">H5 Lorem ipsum dolor sit amet</h5>
-<h6 class="heading-underline">H6 Lorem ipsum dolor sit amet</h6>
+<h1 class="heading-lg text-center">
+    Lorem Ipsum
+    <span class="fs-divider divider-center divider-thick divider-xs secondary"></span>
+</h1>
 </pre>
 
-<p>These can also be combined with <a href="utilities.html#text-align" title="Text Alignment Utilities" target="_blank">text alignment classes</a> &mdash; <code>text-left</code>, <code>text-center</code> and <code>text-right</code>.</p>
-
-<h4 class="heading-underline text-left">H4 Lorem ipsum dolor sit amet</h4>
-
-<h4 class="heading-underline text-center">H4 Lorem ipsum dolor sit amet</h4>
-
-<h4 class="heading-underline text-right">H4 Lorem ipsum dolor sit amet</h4>
+<h2 class="text-center">
+    Lorem Ipsum
+    <span class="fs-divider divider-center divider-xs secondary"></span>
+</h2>
 
 <pre class="highlight html">
-<h4 class="heading-underline text-left">H4 Lorem ipsum dolor sit amet</h4>
-<h4 class="heading-underline text-center">H4 Lorem ipsum dolor sit amet</h4>
-<h4 class="heading-underline text-right">H4 Lorem ipsum dolor sit amet</h4>
-</pre>
-
-<div class="alert info">
-    <p><strong>Note:</strong> Looking for something similar to heading underlines, but a little different? The <code>.heading-underline</code> element tends to look better in smaller areas like <a href="widget.html#headings-underline" title="Widget With Heading Underlines" target="_blank">with widgets</a>. But often with larger headings, a similar but different approach can be taken with <a href="divider.html#headings" title="Headings With Dividers" target="_blank">using dividers</a>.</p>
-</div>
-
-<h3 id="headings-larger">Larger Headings</h3>
-
-<p>Add the classes <code>heading-lg</code>, <code>heading-xl</code>, <code>heading-xxl</code> or <code>heading-xxxl</code> to any heading tag to make it visually larger. &mdash; For example, this can be useful for the title of a page or something else outside of the main content area.</p>
-
-<h1 class="heading-xxxl">Lorem Ipsum</h1>
-
-<h1 class="heading-xxl">Lorem Ipsum</h1>
-
-<h1 class="heading-xl">Lorem Ipsum</h1>
-
-<h1 class="heading-lg">Lorem Ipsum</h1>
-
-<pre class="highlight html">
-<h1 class="heading-xxxl">Lorem Ipsum</h1>
-<h1 class="heading-xxl">Lorem Ipsum</h1>
-<h1 class="heading-xl">Lorem Ipsum</h1>
-<h1 class="heading-lg">Lorem Ipsum</h1>
-</pre>
-
-<h3 id="headings-smaller">Smaller Headings</h3>
-
-<p>Add the classes <code>heading-sm</code>, <code>heading-xs</code>, <code>heading-xxs</code> or <code>heading-xxxs</code> to any heading tag to make it visually smaller. &mdash; For example, this can be useful for the title of a widget in your sidebar or something else outside of the main content area.</p>
-
-<h3 class="heading-sm">Lorem ipsum dolor sit amet</h3>
-
-<h3 class="heading-xs">Lorem ipsum dolor sit amet</h3>
-
-<h3 class="heading-xxs">Lorem ipsum dolor sit amet</h3>
-
-<h3 class="heading-xxxs">Lorem ipsum dolor sit amet</h3>
-
-<pre class="highlight html">
-<h3 class="heading-sm">Lorem ipsum dolor sit amet</h3>
-<h3 class="heading-xs">Lorem ipsum dolor sit amet</h3>
-<h3 class="heading-xxs">Lorem ipsum dolor sit amet</h3>
-<h3 class="heading-xxxs">Lorem ipsum dolor sit amet</h3>
-</pre>
-
-<!-- LEAD TEXT -->
-
-<h2 id="lead">Lead Text</h2>
-
-<p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Sed congue quam non ante pharetra id aliquam nunc elementum.</p>
-
-<pre class="highlight html soft-wrap">
-<p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Sed congue quam non ante pharetra id aliquam nunc elementum.</p>
-</pre>
-
-<!-- INLINE TEXT -->
-
-<h2 id="inline-text-elem">Inline Text Elements</h2>
-
-<p>You can use the mark tag to <mark>highlight</mark> text.</p>
-
-<p><del>This line of text is meant to be treated as deleted text.</del></p>
-
-<p><s>This line of text is meant to be treated as no longer accurate.</s></p>
-
-<p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
-
-<p><u>This line of text will render as underlined</u></p>
-
-<p><small>This line of text is meant to be treated as fine print.</small></p>
-
-<p><strong>This line rendered as bold text.</strong></p>
-
-<p><em>This line rendered as italicized text.</em></p>
-
-<pre class="highlight html">
-<p>You can use the mark tag to <mark>highlight</mark> text.</p>
-<p><del>This line of text is meant to be treated as deleted text.</del></p>
-<p><s>This line of text is meant to be treated as no longer accurate.</s></p>
-<p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
-<p><u>This line of text will render as underlined</u></p>
-<p><small>This line of text is meant to be treated as fine print.</small></p>
-<p><strong>This line rendered as bold text.</strong></p>
-<p><em>This line rendered as italicized text.</em></p>
-</pre>
-
-<!-- MISC -->
-
-<h2 id="misc">Misc Elements</h2>
-
-<h3 id="abbr">Abbreviations</h3>
-
-<p>Stylized implementation of HTML's <code>&lt;abbr&gt;</code> element for abbreviations and acronyms to show the expanded version on hover. Abbreviations have a default underline from Normalize.css and gain a help cursor to provide additional context on hover and to users of assistive technologies. For example &mdash;</p>
-
-<p>We love writing <abbr title="HyperText Markup Language">HTML</abbr>!</p>
-
-<pre class="highlight html">
-<p>We love writing <abbr title="HyperText Markup Language">HTML</abbr>!</p>
-</pre>
-
-<h3 id="address">Address</h3>
-
-<address>
-    <strong>Theme Blvd</strong><br>
-    123 Front Street, Suite 600<br>
-    Colorado Springs, CO 80906<br>
-    <abbr title="Phone">P:</abbr> (123) 456-7890
-</address>
-
-<address>
-    <strong>Jason Bobich</strong><br>
-    <a href="mailto:#first.last@example.com">first.last@example.com</a>
-</address>
-
-<pre class="highlight html">
-<address>
-    <strong>Theme Blvd</strong><br>
-    123 Front Street, Suite 600<br>
-    Colorado Springs, CO 80906<br>
-    <abbr title="Phone">P:</abbr> (123) 456-7890
-</address>
-
-<address>
-    <strong>Jason Bobich</strong><br>
-    <a href="mailto:#first.last@example.com">first.last@example.com</a>
-</address>
-</pre>
-
-<!-- CODE -->
-
-<h2 id="code-elements">Code</h2>
-
-<h3 id="code">Inline</h3>
-
-<p>Wrap inline snippets of code with <code>&lt;code&gt;</code> tag. Remember to escape the HTML angle brackets. For example &mdash;</p>
-
-<p>In HTML we use the <code>&lt;strong&gt;</code> tag to specify bold text.</p>
-
-<pre class="highlight html soft-wrap">
-<p>In HTML we use the <code>&amp;lt;strong&amp;gt;</code> tag to specify bold text.</p>
-</pre>
-
-<h3 id="pre">Pre</h3>
-
-<p>When writing a block of code with multiple lines, use the &lt;pre&gt; HTML tag. And again, remember to escape the HTML angle brackets.</p>
-
-<pre>
-&lt;p&gt;Here's an example of a code block using the pre tag.&lt;/p&gt;
-</pre>
-
-<pre class="highlight html soft-wrap">
-<pre><p>Here's an example of a code block using the pre tag.</p></pre>
-</pre>
-
-<h3 id="kbd">User Input</h3>
-
-<p>Use the <code>&lt;kbd&gt;</code> to indicate input that is typically entered via keyboard. For example &mdash;</p>
-
-<p>To switch directories, type <kbd>cd</kbd> followed by the name of the directory.<br>
-To edit settings, press <kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd></p>
-
-<pre class="highlight html soft-wrap">
-<p>To switch directories, type <kbd>cd</kbd> followed by the name of the directory.<br>
-To edit settings, press <kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd></p>
-</pre>
-
-<h3 id="var">Variables</h3>
-
-<p>For indicating variables use the <code>&lt;var&gt;</code> tag.</p>
-
-<p><var>y</var> = <var>m</var><var>x</var> + <var>b</var></p>
-
-<pre class="highlight html soft-wrap">
-<var>y</var> = <var>m</var><var>x</var> + <var>b</var>
-</pre>
-
-<h3 id="samp">Sample Output</h3>
-
-<p>For indicating sample output from a program use the <code>&lt;samp&gt;</code> tag. For example &mdash;</p>
-
-<p><samp>This text is meant to be treated as sample output from a computer program.</samp></p>
-
-<pre class="highlight html soft-wrap">
-<samp>This text is meant to be treated as sample output from a computer program.</samp>
+<h2 class="text-center">
+    Lorem Ipsum
+    <span class="fs-divider divider-center divider-xs secondary"></span>
+</h2>
 </pre>
 
 
@@ -494,7 +328,7 @@ To edit settings, press <kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd></p>
                                 <li>
                                     <a href="tables.html" title="Tables">Tables</a>
                                 </li>
-                                <li class="active">
+                                <li>
                                     <a href="type.html" title="Typography">Typography</a>
                                 </li>
                                 <li>
@@ -517,7 +351,7 @@ To edit settings, press <kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd></p>
                             	<li>
                                     <a href="button.html" title="Button">Button</a>
                                 </li>
-                                <li>
+                                <li class="active">
                                     <a href="divider.html" title="Divider">Divider</a>
                                 </li>
                             	<li>

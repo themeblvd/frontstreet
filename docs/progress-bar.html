@@ -5,7 +5,7 @@
         <meta charset="UTF-8" />
         <link rel="profile" href="http://gmpg.org/xfn/11" />
 
-        <title>Installation - Front Street Frontend Framework</title>
+        <title>Progress Bar - Front Street Frontend Framework</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -83,14 +83,102 @@
                             <article>
 
                                 <h1 class="heading-lg">
-                                    Installation
+                                    Progress Bar
                                     
                                 </h1>
 
 
-<p>@TODO</p>
+<p>Provide up-to-date feedback on the progress of an action with simple, modern progress bars... Or, just use them like all the cool kids do these days on their resumes and freelance websites.</p>
 
-<p>@TODO Section about including color library with ID "color-library".</p>
+<div class="fs-progress">
+
+    <span class="progress-label heading-sm">Web Design</span>
+    <span class="progress-value">25%</span>
+
+    <div class="progress">
+        <div class="progress-bar green" style="width: 25%;">
+            <span class="sr-only">25% Complete</span>
+        </div>
+    </div>
+
+</div>
+
+<div class="fs-progress">
+
+    <span class="progress-label heading-sm">Graphic Design</span>
+    <span class="progress-value">50%</span>
+
+    <div class="progress">
+        <div class="progress-bar pomegranate" style="width: 50%;">
+            <span class="sr-only">50% Complete</span>
+        </div>
+    </div>
+
+</div>
+
+<div class="fs-progress">
+
+    <span class="progress-label heading-sm">Print Design</span>
+    <span class="progress-value">75%</span>
+
+    <div class="progress">
+        <div class="progress-bar royal" style="width: 75%;">
+            <span class="sr-only">75% Complete</span>
+        </div>
+    </div>
+
+</div>
+
+<p>There are a few things to note about the markup below.</p>
+
+<ol>
+<li>First notice that we've added class <code>heading-sm</code> to the <code>.progress-label</code> element to give it that consistent small heading font styling (see <a href="type.html#headings-smaller" title="Typography Smaller Headings" title="_blank">Smaller Headings</a>).</li>
+<li>Next, take note that you must add a <a href="colors.html" title="Color Classes" target="_blank">color class</a> to the <code>.progress-bar</code> element.</li>
+<li>And lastly, make sure to also give your <code>.progress-bar</code> element an inline style width percentage like <code>style="width: 50%"</code>.</li>
+</ol>
+
+<pre class="highlight html">
+<div class="fs-progress">
+
+    <span class="progress-label heading-sm">Web Design</span>
+    <span class="progress-value">25%</span>
+
+    <div class="progress">
+        <div class="progress-bar green" style="width: 25%;">
+            <span class="sr-only">25% Complete</span>
+        </div>
+    </div>
+
+</div>
+</pre>
+
+<p>And if you just want a stand-alone progress bar with no fancy labels or anything, feel free to use the <code>.progress</code> element where you want.</p>
+
+<div class="progress">
+    <div class="progress-bar dark-blue" style="width: 25%;">
+        <span class="sr-only">25% Complete</span>
+    </div>
+</div>
+
+<div class="progress">
+    <div class="progress-bar dark-green" style="width: 50%;">
+        <span class="sr-only">50% Complete</span>
+    </div>
+</div>
+
+<div class="progress">
+    <div class="progress-bar teal" style="width: 75%;">
+        <span class="sr-only">75% Complete</span>
+    </div>
+</div>
+
+<pre class="highlight html">
+<div class="progress">
+    <div class="progress-bar dark-blue" style="width: 25%;">
+        <span class="sr-only">25% Complete</span>
+    </div>
+</div>
+</pre>
 
 
                             </article><!-- #main -->
@@ -109,7 +197,7 @@
                             <h4 class="heading-sm">About</h4>
 
                             <ul>
-                                <li class="active">
+                                <li>
                                     <a href="install.html" title="Installation">Installation</a>
                                 </li>
                                 <li>
@@ -192,7 +280,7 @@
                                 <li>
                                     <a href="modal.html" title="Modal">Modal</a>
                                 </li>
-                                <li>
+                                <li class="active">
                                     <a href="progress-bar.html" title="Progress Bar">Progress Bar</a>
                                 </li>
                                 <li>

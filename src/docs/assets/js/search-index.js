@@ -487,12 +487,12 @@ const searchIndex = [
   },
 
   //
-  // Blocks > Alerts
+  // Blocks > Alert
   //
 
   {
-    title: 'Alerts',
-    url: 'alerts.html',
+    title: 'Alert',
+    url: 'alert.html',
     tags: ['contextual', 'info', 'warning', 'danger', 'success', 'message']
   },
 
@@ -527,27 +527,27 @@ const searchIndex = [
 
   {
     title: 'Breadcrumbs',
-    url: 'breadcrumbs.html',
+    url: 'breadcrumb.html',
     tags: ['navigation', 'menu']
   },
 
   //
-  // Blocks > Custom Buttons
+  // Blocks > Button
   //
 
   {
-    title: 'Custom Buttons: Close Buttons',
-    url: 'custom-buttons.html#close-buttons',
+    title: 'Button: Close Buttons',
+    url: 'button.html#close-buttons',
     tags: ['vector', 'x']
   },
   {
-    title: 'Custom Buttons: Play Button',
-    url: 'custom-buttons.html#play-buttons',
+    title: 'Buttons: Play Button',
+    url: 'button.html#play-buttons',
     tags: ['vector', 'video', 'movie']
   },
   {
-    title: 'Custom Buttons: Menu Toggle Buttons',
-    url: 'custom-buttons.html#menu-buttons',
+    title: 'Buttons: Menu Toggle Buttons',
+    url: 'button.html#menu-buttons',
     tags: ['hamburger']
   },
 
@@ -556,8 +556,8 @@ const searchIndex = [
   //
 
   {
-    title: 'Dividers',
-    url: 'dividers.html',
+    title: 'Divider',
+    url: 'divider.html',
     tags: ['<hr>', 'border']
   },
 
@@ -566,8 +566,8 @@ const searchIndex = [
   //
 
   {
-    title: 'Labels',
-    url: 'labels.html',
+    title: 'Label',
+    url: 'label.html',
     tags: ['label', 'inline', 'info']
   },
 
@@ -586,32 +586,32 @@ const searchIndex = [
   //
 
   {
-    title: 'Modals',
+    title: 'Modal',
     url: 'modal.html',
     tags: ['lightbox', 'popup']
   },
   {
-    title: 'Modals: Content Modals',
+    title: 'Modal: Content Modals',
     url: 'modal.html#content-modals',
     tags: ['lightbox', 'popup', 'inline']
   },
   {
-    title: 'Modals: Image Modals',
+    title: 'Modal: Image Modals',
     url: 'modal.html#image-modals',
     tags: ['lightbox', 'popup', 'photo', 'picture']
   },
   {
-    title: 'Modals: Video Modals',
+    title: 'Modal: Video Modals',
     url: 'modal.html#iframe-modals',
     tags: ['lightbox', 'popup', 'iframe', 'youtube', 'vimeo']
   },
   {
-    title: 'Modals: Gallery Modals',
+    title: 'Modal: Gallery Modals',
     url: 'modal.html#gallery-modals',
     tags: ['lightbox', 'popup']
   },
   {
-    title: 'Modals: Search Modal',
+    title: 'Modal: Search Modal',
     url: 'modal.html#search-modal',
     tags: ['lightbox', 'popup']
   },
@@ -666,8 +666,8 @@ const searchIndex = [
   //
 
   {
-    title: 'Progress Bars',
-    url: 'progress.html',
+    title: 'Progress Bar',
+    url: 'progress-bar.html',
     tags: ['resume', 'status', 'feedback']
   },
 
@@ -676,28 +676,28 @@ const searchIndex = [
   //
 
   {
-    title: 'Sliders',
-    url: 'sliders.html',
+    title: 'Slider',
+    url: 'slider.html',
     tags: ['owl-carousel', 'slideshow', 'carousel', 'image', 'photo', 'picture']
   },
   {
-    title: 'Sliders: Slider Data Attributes',
-    url: 'sliders.html#data-atts',
+    title: 'Slider: Slider Data Attributes',
+    url: 'slider.html#data-atts',
     tags: ['slideshow', 'carousel', 'options', 'atts']
   },
   {
-    title: 'Sliders: Simple Slider',
-    url: 'sliders.html#simple-slider',
+    title: 'Slider: Simple Slider',
+    url: 'slider.html#simple-slider',
     tags: ['owl-carousel', 'slideshow', 'carousel', 'image', 'photo', 'picture']
   },
   {
-    title: 'Sliders: Gallery Slider',
-    url: 'sliders.html#gallery-slider',
+    title: 'Slider: Gallery Slider',
+    url: 'slider.html#gallery-slider',
     tags: ['owl-carousel', 'slideshow', 'carousel', 'image', 'photo', 'picture']
   },
   {
-    title: 'Sliders: Block Slider',
-    url: 'sliders.html#block-slider',
+    title: 'Slider: Block Slider',
+    url: 'slider.html#block-slider',
     tags: ['owl-carousel', 'slideshow', 'carousel', 'image', 'photo', 'picture']
   },
 
@@ -716,23 +716,23 @@ const searchIndex = [
   //
 
   {
-    title: 'Testimonials',
-    url: 'testimonials.html',
+    title: 'Testimonial',
+    url: 'testimonial.html',
     tags: ['quote', 'promote']
   },
   {
-    title: 'Testimonials: Small Testimonials',
-    url: 'testimonials.html#testimonial-sm',
+    title: 'Testimonial: Small Testimonials',
+    url: 'testimonial.html#testimonial-sm',
     tags: ['quote', 'promote']
   },
   {
-    title: 'Testimonials: Medium Testimonials',
-    url: 'testimonials.html#testimonial-md',
+    title: 'Testimonial: Medium Testimonials',
+    url: 'testimonial.html#testimonial-md',
     tags: ['quote', 'promote']
   },
   {
-    title: 'Testimonials: Large Testimonials',
-    url: 'testimonials.html#testimonial-lg',
+    title: 'Testimonial: Large Testimonials',
+    url: 'testimonial.html#testimonial-lg',
     tags: ['quote', 'promote', 'hero', 'sections']
   },
 
@@ -741,13 +741,13 @@ const searchIndex = [
   //
 
   {
-    title: 'Toggled Content',
-    url: 'toggles.html',
+    title: 'Toggle',
+    url: 'toggle.html',
     tags: ['toggles', 'tabs', 'accordion']
   },
   {
-    title: 'Toggled Content: Grouped Toggles',
-    url: 'toggles.html#toggle-group',
+    title: 'Toggle: Grouped Toggles',
+    url: 'toggle.html#toggle-group',
     tags: ['toggles', 'tabs', 'accordion']
   },
 
@@ -756,8 +756,8 @@ const searchIndex = [
   //
 
   {
-    title: 'Tooltips',
-    url: 'tooltips.html',
+    title: 'Tooltip',
+    url: 'tooltip.html',
     tags: ['label', 'help', 'title']
   },
 
@@ -766,28 +766,28 @@ const searchIndex = [
   //
 
   {
-    title: 'Widgets',
-    url: 'widgets.html',
+    title: 'Widget',
+    url: 'widget.html',
     tags: ['panel', 'card', 'box', 'aside']
   },
   {
-    title: 'Widgets: Default Widgets',
-    url: 'widgets.html#default',
+    title: 'Widget: Default Widgets',
+    url: 'widget.html#default',
     tags: ['panel', 'card', 'box', 'aside']
   },
   {
-    title: 'Widgets: Classic Panel',
-    url: 'widgets.html#panel-classic',
+    title: 'Widget: Classic Panel',
+    url: 'widget.html#panel-classic',
     tags: ['panel', 'card', 'box', 'aside']
   },
   {
-    title: 'Widgets: Color Panel',
-    url: 'widgets.html#panel-color',
+    title: 'Widget: Color Panel',
+    url: 'widget.html#panel-color',
     tags: ['panel', 'card', 'box', 'aside']
   },
   {
-    title: 'Widgets: Modern Panel',
-    url: 'widgets.html#panel-modern',
+    title: 'Widget: Modern Panel',
+    url: 'widget.html#panel-modern',
     tags: ['panel', 'card', 'box', 'aside']
   },
 

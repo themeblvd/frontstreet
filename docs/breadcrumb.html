@@ -5,7 +5,7 @@
         <meta charset="UTF-8" />
         <link rel="profile" href="http://gmpg.org/xfn/11" />
 
-        <title>Installation - Front Street Frontend Framework</title>
+        <title>Breadcrumb - Front Street Frontend Framework</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -83,14 +83,56 @@
                             <article>
 
                                 <h1 class="heading-lg">
-                                    Installation
+                                    Breadcrumb
                                     
                                 </h1>
 
 
-<p>@TODO</p>
+<p>The following is an example of how to format an unordered list with class <code>fs-breadcrumbs</code> added.</p>
 
-<p>@TODO Section about including color library with ID "color-library".</p>
+<ul class="fs-breadcrumbs">
+    <li><a href="#" title="Home">Home</a></li>
+    <li><a href="#" title="Parent Page">Parent Page</a></li>
+    <li class="active"><span>Current Page</span></li>
+</ul>
+
+<pre class="highlight html">
+<ul class="fs-breadcrumbs">
+    <li><a href="#" title="Home">Home</a></li>
+    <li><a href="#" title="Parent Page">Parent Page</a></li>
+    <li class="active"><span>Current Page</span></li>
+</ul>
+</pre>
+
+<p>If you'd like your <code>.fs-breadcrumbs</code> element to be contained within a block with background color, make sure to also add your <a href="colors.html" title="Color Classes" target="_blank">color class</a>, class <code>text-light</code> or <code>text-dark</code>, and class <code>has-bg</code>.</p>
+
+<ul class="fs-breadcrumbs has-bg primary text-light">
+    <li><a href="#" title="Home">Home</a></li>
+    <li><a href="#" title="Parent Page">Parent Page</a></li>
+    <li class="active"><span>Current Page</span></li>
+</ul>
+
+<pre class="highlight html">
+<ul class="fs-breadcrumbs has-bg primary text-light">
+    <li><a href="#" title="Home">Home</a></li>
+    <li><a href="#" title="Parent Page">Parent Page</a></li>
+    <li class="active"><span>Current Page</span></li>
+</ul>
+</pre>
+
+<ul class="fs-breadcrumbs has-bg bg-light text-dark">
+    <li><a href="#" title="Home">Home</a></li>
+    <li><a href="#" title="Parent Page">Parent Page</a></li>
+    <li class="active"><span>Current Page</span></li>
+</ul>
+
+<pre class="highlight html">
+<ul class="fs-breadcrumbs has-bg bg-light text-dark">
+    <li><a href="#" title="Home">Home</a></li>
+    <li><a href="#" title="Parent Page">Parent Page</a></li>
+    <li class="active"><span>Current Page</span></li>
+</ul>
+</pre>
 
 
                             </article><!-- #main -->
@@ -109,7 +151,7 @@
                             <h4 class="heading-sm">About</h4>
 
                             <ul>
-                                <li class="active">
+                                <li>
                                     <a href="install.html" title="Installation">Installation</a>
                                 </li>
                                 <li>
@@ -168,7 +210,7 @@
                                 <li>
                                     <a href="background.html" title="Background">Background</a>
                                 </li>
-                                <li>
+                                <li class="active">
                                     <a href="breadcrumb.html" title="Breadcrumb">Breadcrumb</a>
                                 </li>
                             	<li>
