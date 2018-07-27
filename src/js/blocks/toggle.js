@@ -9,7 +9,7 @@ import $ from 'jquery';
  * @author   Jason Bobich
  * @link     http://frontstreet.io
  * @since    1.0.0
- * @module   toggle.js
+ * @module   Toggle.js
  */
 class Toggle {
   /**
@@ -26,7 +26,7 @@ class Toggle {
     const settings = $.extend({}, this.defaults, options);
     const { open, close } = this;
 
-    var $group = null;
+    let $group = null;
 
     if ($toggle.parents('.toggle-group').length > 0) {
       $group = $toggle.closest('.toggle-group');

@@ -29,22 +29,24 @@ export default (function($) {
 
   $window.on('load', function() {
     $('.fs-simple-slider, .fs-gallery-slider, .fs-block-slider').each(function() {
-      var $wrap = $(this),
-        $slider = $wrap.find('.fs-slider'),
-        items = parseInt($wrap.data('items')) ? parseInt($wrap.data('items')) : 4,
-        speed = parseInt($wrap.data('speed')) ? parseInt($wrap.data('speed')) : 500,
-        autoplayTimeout = parseInt($wrap.data('autoplay')) ? parseInt($wrap.data('autoplay')) : 0,
-        margin = parseInt($wrap.data('margin')) ? parseInt($wrap.data('margin')) : 1,
-        autoplay = autoplayTimeout ? true : false,
-        pause = 'true' == $wrap.data('pause') || $wrap.data('pause') == '1' ? true : false,
-        loop = 'false' == $wrap.data('loop') || $wrap.data('loop') == '0' ? false : true,
-        animate = 'true' == $wrap.data('fade') || $wrap.data('fade') == '1' ? 'fadeOut' : false,
-        autoWidth = $wrap.hasClass('fs-gallery-slider') ? true : false,
-        center = $wrap.hasClass('fs-gallery-slider') ? true : false,
-        $nav = $wrap.find('.fs-slider-nav, .fs-slider-thumbs'),
-        $arrows = $wrap.find('.fs-slider-arrows'),
-        navCounter = 0,
-        timeout = null;
+      const $wrap = $(this);
+      const $slider = $wrap.find('.fs-slider');
+      const speed = parseInt($wrap.data('speed')) ? parseInt($wrap.data('speed')) : 500;
+      const autoplayTimeout = parseInt($wrap.data('autoplay'))
+        ? parseInt($wrap.data('autoplay'))
+        : 0;
+      const autoplay = autoplayTimeout ? true : false;
+      const pause = 'true' == $wrap.data('pause') || $wrap.data('pause') == '1' ? true : false;
+      const loop = 'false' == $wrap.data('loop') || $wrap.data('loop') == '0' ? false : true;
+      const animate = 'true' == $wrap.data('fade') || $wrap.data('fade') == '1' ? 'fadeOut' : false;
+      const autoWidth = $wrap.hasClass('fs-gallery-slider') ? true : false;
+      const center = $wrap.hasClass('fs-gallery-slider') ? true : false;
+      const $nav = $wrap.find('.fs-slider-nav, .fs-slider-thumbs');
+      const $arrows = $wrap.find('.fs-slider-arrows');
+
+      let items = parseInt($wrap.data('items')) ? parseInt($wrap.data('items')) : 4;
+      let margin = parseInt($wrap.data('margin')) ? parseInt($wrap.data('margin')) : 1;
+      let navCounter = 0;
 
       // Toggle "hovered" class on/off for any CSS hover effects.
       $wrap

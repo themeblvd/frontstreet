@@ -25,10 +25,10 @@ export default (function($) {
   const { $document } = dom;
 
   $document.ready(function($) {
-    var mainClass = 'fs-modal';
-    var removalDelay = 0;
+    let mainClass = 'fs-modal';
+    let removalDelay = 0;
 
-    var config = {
+    let config = {
       animation: 'fade',
       mobile: 0,
       mobileIframe: 768,
@@ -121,7 +121,7 @@ export default (function($) {
 
       $gallery.find(selector).each(function() {
         const $link = $(this);
-        var linkClass = '';
+        let linkClass = '';
 
         if ($link.hasClass('fs-content-modal-link')) {
           linkClass = 'mfp-inline';

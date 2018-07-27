@@ -11,7 +11,7 @@ import $ from 'jquery';
  * @author   Jason Bobich
  * @link     http://frontstreet.io
  * @since    1.0.0
- * @module   tooltip.js
+ * @module   Tooltip.js
  */
 class Tooltip {
   /**
@@ -105,7 +105,7 @@ class Tooltip {
   }
 
   enter(obj) {
-    var self = obj instanceof this.constructor ? obj : $(obj.currentTarget).data('fs.tooltip');
+    let self = obj instanceof this.constructor ? obj : $(obj.currentTarget).data('fs.tooltip');
 
     if (!self) {
       self = new this.constructor(obj.currentTarget, this.getDelegateSettings());
@@ -127,7 +127,7 @@ class Tooltip {
   }
 
   isInStateTrue() {
-    for (var key in this.inState) {
+    for (let key in this.inState) {
       if (this.inState[key]) {
         return true;
       }
@@ -137,7 +137,7 @@ class Tooltip {
   }
 
   leave(obj) {
-    var self = obj instanceof this.constructor ? obj : $(obj.currentTarget).data('fs.tooltip');
+    let self = obj instanceof this.constructor ? obj : $(obj.currentTarget).data('fs.tooltip');
 
     if (!self) {
       self = new this.constructor(obj.currentTarget, this.getDelegateSettings());
@@ -158,20 +158,20 @@ class Tooltip {
   }
 
   show() {
-    var e = $.Event('show.fs.tooltip');
+    let e = $.Event('show.fs.tooltip');
 
     if (this.hasContent() && this.enabled) {
       this.$element.trigger(e);
 
-      var inDom = $.contains(this.$element[0].ownerDocument.documentElement, this.$element[0]);
+      let inDom = $.contains(this.$element[0].ownerDocument.documentElement, this.$element[0]);
 
       if (e.isDefaultPrevented() || !inDom) {
         return;
       }
 
-      var that = this,
-        $tip = this.tip(),
-        tipId = this.getUID('tooltip');
+      let that = this;
+      let $tip = this.tip();
+      let tipId = this.getUID('tooltip');
 
       this.setContent();
       $tip.attr('id', tipId);
@@ -179,9 +179,9 @@ class Tooltip {
 
       $tip.addClass('fade');
 
-      var placement = this.settings.placement,
-        autoToken = /\s?auto?\s?/i,
-        autoPlace = autoToken.test(placement);
+      let placement = this.settings.placement;
+      let autoToken = /\s?auto?\s?/i;
+      let autoPlace = autoToken.test(placement);
 
       if (autoPlace) {
         placement = placement.replace(autoToken, '') || 'top';
@@ -201,13 +201,13 @@ class Tooltip {
 
       this.$element.trigger('inserted.fs.tooltip');
 
-      var pos = this.getPosition(),
-        actualWidth = $tip[0].offsetWidth,
-        actualHeight = $tip[0].offsetHeight;
+      let pos = this.getPosition();
+      let actualWidth = $tip[0].offsetWidth;
+      let actualHeight = $tip[0].offsetHeight;
 
       if (autoPlace) {
-        var orgPlacement = placement,
-          viewportDim = this.getPosition(this.$viewport);
+        let orgPlacement = placement;
+        let viewportDim = this.getPosition(this.$viewport);
 
         if ('bottom' == placement && pos.bottom + actualHeight > viewportDim.bottom) {
           placement = 'top';
@@ -218,12 +218,12 @@ class Tooltip {
         $tip.removeClass(orgPlacement).addClass(placement);
       }
 
-      var calculatedOffset = this.getCalculatedOffset(placement, pos, actualWidth, actualHeight);
+      let calculatedOffset = this.getCalculatedOffset(placement, pos, actualWidth, actualHeight);
 
       this.applyPlacement(calculatedOffset, placement);
 
-      var complete = function() {
-        var prevHoverState = that.hoverState;
+      let complete = function() {
+        let prevHoverState = that.hoverState;
 
         that.$element.trigger('shown.fs.tooltip');
         that.hoverState = null;
@@ -236,19 +236,19 @@ class Tooltip {
   }
 
   applyPlacement(offset, placement) {
-    var $tip = this.tip(),
-      width = $tip[0].offsetWidth,
-      height = $tip[0].offsetHeight,
-      marginTop = parseInt($tip.css('margin-top'), 10),
-      marginLeft = parseInt($tip.css('margin-left'), 10);
+    const $tip = this.tip();
+    const width = $tip[0].offsetWidth;
+    const height = $tip[0].offsetHeight;
+    const marginTop = parseInt($tip.css('margin-top'), 10);
+    const marginLeft = parseInt($tip.css('margin-left'), 10);
 
     offset.top += marginTop;
     offset.left += marginLeft;
 
     /*
-		 * $.fn.offset doesn't round pixel values; so we use
-		 * setOffset directly with our own function B-0.
-		 */
+     * $.fn.offset doesn't round pixel values; so we use
+     * setOffset directly with our own function B-0.
+     */
     $.offset.setOffset(
       $tip[0],
       $.extend(
@@ -268,11 +268,11 @@ class Tooltip {
     $tip.addClass('in');
 
     /*
-		 * Check to see if placing tip in new offset caused the
-		 * tip to resize itself.
-		 */
-    var actualWidth = $tip[0].offsetWidth,
-      actualHeight = $tip[0].offsetHeight;
+     * Check to see if placing tip in new offset caused the
+     * tip to resize itself.
+     */
+    const actualWidth = $tip[0].offsetWidth;
+    const actualHeight = $tip[0].offsetHeight;
 
     if ('top' == placement && actualHeight != height) {
       offset.top = offset.top + height - actualHeight;
@@ -280,18 +280,15 @@ class Tooltip {
   }
 
   setContent() {
-    var $tip = this.tip(),
-      title = this.getTitle();
-
-    $tip.find('.tooltip-inner')['text'](title);
-
+    const $tip = this.tip();
+    $tip.find('.tooltip-inner')['text'](this.getTitle());
     $tip.removeClass('fade in top bottom');
   }
 
   hide(callback) {
-    var that = this,
-      $tip = $(this.$tip),
-      event = $.Event('hide.fs.tooltip');
+    const that = this;
+    const $tip = $(this.$tip);
+    const event = $.Event('hide.fs.tooltip');
 
     function complete() {
       if ('in' != that.hoverState) {
@@ -329,9 +326,10 @@ class Tooltip {
       $element = this.$element;
     }
 
-    var el = $element[0],
-      isBody = el.tagName == 'BODY',
-      elRect = el.getBoundingClientRect();
+    const el = $element[0];
+    const isBody = el.tagName == 'BODY';
+
+    let elRect = el.getBoundingClientRect();
 
     if (elRect.width == null) {
       elRect = $.extend({}, elRect, {
@@ -340,20 +338,20 @@ class Tooltip {
       });
     }
 
-    var isSvg = window.SVGElement && el instanceof window.SVGElement,
-      elOffset = isBody ? { top: 0, left: 0 } : isSvg ? null : $element.offset(),
-      scroll = {
-        scroll: isBody
-          ? document.documentElement.scrollTop || document.body.scrollTop
-          : $element.scrollTop()
-      },
-      outerDims = isBody ? { width: $(window).width(), height: $(window).height() } : null;
+    const isSvg = window.SVGElement && el instanceof window.SVGElement;
+    const elOffset = isBody ? { top: 0, left: 0 } : isSvg ? null : $element.offset();
+    const scroll = {
+      scroll: isBody
+        ? document.documentElement.scrollTop || document.body.scrollTop
+        : $element.scrollTop()
+    };
+    const outerDims = isBody ? { width: $(window).width(), height: $(window).height() } : null;
 
     return $.extend({}, elRect, scroll, outerDims, elOffset);
   }
 
   getCalculatedOffset(placement, pos, actualWidth, actualHeight) {
-    var offset = {};
+    let offset = {};
 
     if ('bottom' == placement) {
       offset = {
@@ -371,11 +369,10 @@ class Tooltip {
   }
 
   getTitle() {
-    var title = this.settings.title;
+    let title = this.settings.title;
 
     if (!title) {
-      var $el = this.$element;
-      title = $el.attr('title');
+      title = this.$element.attr('title');
     }
 
     return title;
@@ -418,7 +415,7 @@ class Tooltip {
   }
 
   toggle(event) {
-    var self = this;
+    let self = this;
 
     if (event) {
       self = $(event.currentTarget).data('fs.tooltip');
@@ -447,7 +444,7 @@ class Tooltip {
   }
 
   destroy() {
-    var that = this;
+    const that = this;
 
     clearTimeout(this.timeout);
 

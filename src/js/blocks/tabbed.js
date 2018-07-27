@@ -10,7 +10,7 @@ import { dom } from '../utils';
  * @author   Jason Bobich
  * @link     http://frontstreet.io
  * @since    1.0.0
- * @module   tabbed.js
+ * @module   Tabbed.js
  */
 class Tabbed {
   /**
@@ -43,9 +43,9 @@ class Tabbed {
       settings.deepLink = true;
     }
 
-    // Setup accessiblity.
+    // Set up accessiblity.
     $tabs.find('.tab-pane').each(function() {
-      var $pane = $(this);
+      const $pane = $(this);
 
       if ($pane.hasClass('active')) {
         $pane.attr('aria-expanded', true);
@@ -136,7 +136,7 @@ class Tabbed {
    * @param {Object} $tabs The binded jQuery DOM element.
    */
   matchHeight($tabs) {
-    var tallest = 0;
+    let tallest = 0;
 
     $tabs.find('.tab-pane').each(function() {
       const $pane = $(this);
@@ -172,7 +172,7 @@ class Tabbed {
    * @param {Object} settings Block settings.
    */
   deepLink($tabs, settings) {
-    var hash = document.location.hash;
+    let hash = document.location.hash;
 
     if (hash && -1 != hash.indexOf('tab_')) {
       hash = hash.replace('tab_', '');

@@ -15,7 +15,7 @@ import { isMobile, dom } from '../utils';
  * @author   Jason Bobich
  * @link     http://frontstreet.io
  * @since    1.0.0
- * @module   background.js
+ * @module   Background.js
  */
 class Background {
   /**
@@ -71,7 +71,7 @@ class Background {
    * @param {Object} settings Current settings.
    */
   slider($slider, $section, settings) {
-    var { autoplay } = settings;
+    let { autoplay } = settings;
 
     if ($slider.data('autoplay') && $slider.data('autoplay') >= 1000) {
       autoplay = $slider.data('autoplay');
@@ -115,7 +115,7 @@ class Background {
     const { $window } = dom;
     const { parallaxCalc } = this;
     const $img = $figure.find('img, .img');
-    var parallax = null;
+    let parallax = null;
 
     /*
      * Will only calculate if all are true:
@@ -169,16 +169,15 @@ class Background {
    */
   parallaxCalc($figure, $img) {
     const { $window } = dom;
-
-    var imgHeight = $img.height(),
-      containerHeight = $figure.height() > 0 ? $figure.height() : 500,
-      parallaxDist = imgHeight - containerHeight,
-      bottom = $figure.offset().top + containerHeight,
-      top = $figure.offset().top,
-      scrollTop = $window.scrollTop(),
-      windowHeight = window.innerHeight, // Using `window`, NOT `$window`; we need a fresh calculation here.
-      windowBottom = scrollTop + windowHeight,
-      percentScrolled = (windowBottom - top) / (containerHeight + windowHeight);
+    const imgHeight = $img.height();
+    const containerHeight = $figure.height() > 0 ? $figure.height() : 500;
+    const parallaxDist = imgHeight - containerHeight;
+    const bottom = $figure.offset().top + containerHeight;
+    const top = $figure.offset().top;
+    const scrollTop = $window.scrollTop();
+    const windowHeight = window.innerHeight; // Using `window`, NOT `$window`; we need a fresh calculation here.
+    const windowBottom = scrollTop + windowHeight;
+    const percentScrolled = (windowBottom - top) / (containerHeight + windowHeight);
 
     if (bottom > scrollTop && top < scrollTop + windowHeight) {
       return Math.round(parallaxDist * percentScrolled);

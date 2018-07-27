@@ -16,7 +16,7 @@ import { dom, isMobile } from '../utils';
  * @author   Jason Bobich
  * @link     http://frontstreet.io
  * @since    1.0.0
- * @module   menu.js
+ * @module   Menu.js
  */
 class Menu {
   /**
@@ -121,8 +121,8 @@ class Menu {
     const { dropDownSelector } = this.settings;
     const { $body } = dom;
     const $flyout = $trigger.children(dropDownSelector);
-    var location = $trigger.offset();
-    var space = 200;
+    let location = $trigger.offset();
+    let space = 200;
 
     if ($body.hasClass('rtl')) {
       location = location['right'];
