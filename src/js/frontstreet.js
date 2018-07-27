@@ -1,121 +1,69 @@
 import $ from 'jquery';
-import { dom } from './utils';
-import Background from './blocks/background';
-import Menu from './blocks/menu';
-import MobileMenu from './blocks/mobile-menu';
-import Tabbed from './blocks/tabbed';
-import Toggle from './blocks/toggle';
-import Tooltip from './blocks/tooltip';
-import './blocks/modal';
-import './blocks/slider';
 
 /**
- * Add blocks to the jQuery namespace.
+ * Front Street API
  *
- * Note: This doesn't include blocks meant to
- * implement optional third-party plugins, Owl
- * Carousel and Magnific Popup.
+ * This class provides an API for managing which
+ * block types get added to the $.fn.frontstreet
+ * namespace of jQuery.
  *
- * @since 1.0.0
+ * @summary  Front Street API
  *
- * @param {string} block   Framework block ID.
- * @param {Object} options Options for block.
+ * @author   Jason Bobich
+ * @link     http://frontstreet.io
+ * @since    1.0.0
+ * @module   FrontStreet.js
  */
-$.fn.frontstreet = function(block, options) {
-  return this.each(function() {
-    switch (block) {
-      case 'background':
-        return new Background(this, options);
-      case 'mobile-menu':
-        return new MobileMenu(this, options);
-      case 'menu':
-        return new Menu(this, options);
-      case 'tabbed':
-        return new Tabbed(this, options);
-      case 'toggle':
-        return new Toggle(this, options);
-      case 'tooltip':
-        return new Tooltip(this, options);
-    }
-  });
-};
-
-const { $document, $window } = dom;
-
-$document.ready(function($) {
+class FrontStreet {
   /**
-   * Binds the default `menu` block.
+   * Class constructor.
    *
    * @since 1.0.0
    */
-  $('.fs-menu').frontstreet('menu');
+  constructor() {
+    this.blocks = {};
+    this.add = this.add.bind(this);
+    this.init = this.init.bind(this);
+  }
 
   /**
-   * Adds no-click functionaltiy to any link by
-   * adding class "no-click".
-   *
-   * @since 1.0.0
-   *
-   * @param {Event} event Event interface.
-   */
-  $('a.no-click').on('click', function(event) {
-    event.preventDefault();
-  });
-
-  /**
-   * Adds no-click functionaltiy to any link directly
-   * within an li with class `no-click`.
-   *
-   * Note: This is mainly here to accmodate interfaces
-   * like WordPress which allow building menus, but only
-   * allow adding CSS classes to the menu list items.
-   *
-   * @since 1.0.0
-   *
-   * @param {Event} event Event interface.
-   */
-  $('li.no-click')
-    .find('a:first')
-    .on('click', function(event) {
-      event.preventDefault();
-    });
-
-  /**
-   * Binds the default `tabs` block.
+   * Add a registered block type.
    *
    * @since 1.0.0
    */
-  $('.fs-tabbed').frontstreet('tabbed');
+  add(type, module) {
+    this.blocks[type] = module;
+  }
 
   /**
-   * Binds the default `toggle` block.
+   * Apply all registered block types to
+   * jQuery namespace.
    *
    * @since 1.0.0
    */
-  $('.fs-toggle').frontstreet('toggle');
+  init() {
+    const { blocks } = this;
 
-  /**
-   * Binds the default `tooltip` block.
-   *
-   * @since 1.0.0
-   */
-  $('.fs-tooltip-trigger').frontstreet('tooltip');
-});
+    /**
+     * Add blocks to the jQuery namespace.
+     *
+     * Note: This doesn't include blocks meant to
+     * implement optional third-party plugins, Owl
+     * Carousel and Magnific Popup.
+     *
+     * @since 1.0.0
+     *
+     * @param {string} block   Framework block ID.
+     * @param {Object} options Options for block.
+     */
+    $.fn.frontstreet = function(block, options) {
+      return this.each(function() {
+        if (blocks[block]) {
+          return new blocks[block](this, options);
+        }
+      });
+    };
+  }
+}
 
-$window.on('load', function() {
-  /**
-   * Self-invokes the background slider of the
-   * `background` block.
-   *
-   * @since 1.0.0
-   */
-  $('.fs-bg-slider').frontstreet('background', { type: 'slider' });
-
-  /**
-   * Self-invokes the parallax effect of the
-   * `background` block.
-   *
-   * @since 1.0.0
-   */
-  $('.fs-bg-parallax').frontstreet('background', { type: 'parallax' });
-});
+export default FrontStreet;
