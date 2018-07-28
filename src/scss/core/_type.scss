@@ -8,12 +8,12 @@
 
 body,
 html {
-  color: $fs-clr-text-base-fallback;
-  color: $fs-clr-text-base;
-  font-family: $fs-font-fam-base;
+  color: $fs-color-text-base-fallback;
+  color: $fs-color-text-base;
+  font-family: $fs-font-family-base;
   font-size: $fs-font-size-base;
   font-weight: $fs-font-weight-base;
-  line-height: $fs-font-lh-base;
+  line-height: $fs-line-height-base;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -25,10 +25,10 @@ html {
 }
 @if ($version == 'full') {
   .text-light {
-    color: rgba($fs-clr-text-inv-base, 0.8);
+    color: rgba($fs-color-text-inv-base, 0.8);
   }
   .text-dark {
-    color: $fs-clr-text-base;
+    color: $fs-color-text-base;
   }
 }
 
@@ -37,25 +37,25 @@ html {
 //
 
 a {
-  color: $fs-clr-link;
+  color: $fs-link-color;
   text-decoration: none;
 }
 a:hover,
 a:active,
 a:focus {
-  color: $fs-clr-link-hover;
+  color: $fs-link-color-hover;
 }
 @if ($version == 'full') {
   .text-light {
     @include fs-blend-links;
   }
   .text-dark a {
-    color: $fs-clr-link;
+    color: $fs-link-color;
   }
   .text-dark a:hover,
   .text-dark a:active,
   .text-dark a:focus {
-    color: $fs-clr-link-hover;
+    color: $fs-link-color-hover;
   }
 }
 
@@ -64,14 +64,14 @@ a:focus {
 //
 
 p {
-  margin: $fs-margin-paragraph;
+  margin: $fs-paragraph-margin;
   @include fs-margin-vert-flush;
 }
 .lead {
   @include fs-min-width(sm) {
-    font-size: $fs-font-size-lead;
-    line-height: $fs-font-lh-lead;
-    margin: $fs-margin-lead;
+    font-size: $fs-lead-font-size;
+    line-height: $fs-lead-line-height;
+    margin: $fs-lead-margin;
     @include fs-margin-vert-flush;
   }
 }
@@ -92,28 +92,28 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-weight: $fs-font-weight-heading;
-  font-family: $fs-font-fam-headings;
-  font-weight: $fs-font-weight-heading;
-  letter-spacing: $fs-font-ls-heading;
-  line-height: $fs-font-lh-heading;
-  margin: $fs-margin-heading;
-  text-transform: $fs-font-transform-heading;
+  font-weight: $fs-heading-font-weight;
+  font-family: $fs-heading-font-family;
+  font-weight: $fs-heading-font-weight;
+  letter-spacing: $fs-heading-letter-spacing;
+  line-height: $fs-heading-line-height;
+  margin: $fs-heading-margin;
+  text-transform: $fs-heading-text-transform;
 
   @include fs-margin-vert-flush;
 
   .fs-divider {
-    margin-top: $fs-margin-divider - 10px;
+    margin-top: $fs-divider-margin - 10px;
   }
 }
-@each $tag, $map in $fs-font-size-headings {
+@each $tag, $map in $fs-headings {
   #{$tag},
   .#{$tag} {
     font-size: map-get($map, base);
   }
 }
 @include fs-max-width(sm) {
-  @each $tag, $map in $fs-font-size-headings {
+  @each $tag, $map in $fs-headings {
     #{$tag},
     .#{$tag} {
       font-size: map-get($map, mobile);
@@ -139,10 +139,10 @@ h6,
 .h6 {
   small {
     display: block;
-    font-size: 0.45em;
-    letter-spacing: $fs-font-ls-subtitles;
+    font-size: $fs-heading-subtitle-font-size;
+    letter-spacing: $fs-heading-subtitle-letter-spacing;
     margin: 0.6em 0 0 0.1em;
-    text-transform: $fs-font-transform-subtitles;
+    text-transform: $fs-heading-subtitle-text-transform;
   }
 }
 h3,
@@ -154,7 +154,7 @@ h5,
 h6,
 .h6 {
   small {
-    font-size: $fs-font-size-subtitle-sm;
+    font-size: $fs-smaller-heading-subtitle-font-size;
   }
 }
 
@@ -166,21 +166,22 @@ h6,
 .heading-xl,
 .heading-xxl,
 .heading-xxxl {
-  color: $fs-clr-text-darken;
-  font-weight: $fs-font-weight-heading-lg;
-  letter-spacing: $fs-font-ls-heading-lg;
-  margin: $fs-margin-heading-lg;
-  text-transform: $fs-font-transform-heading-sm;
+  color: $fs-color-text-darken;
+  font-weight: $fs-large-heading-font-weight;
+  letter-spacing: $fs-large-heading-letter-spacing;
+  line-height: $fs-large-heading-line-height;
+  margin: $fs-large-heading-margin;
+  text-transform: $fs-heading-text-transform-lg;
 
   @include fs-margin-vert-flush;
 }
-@each $tag, $map in $fs-font-size-headings-bigger {
+@each $tag, $map in $fs-large-headings {
   .heading-#{$tag} {
     font-size: map-get($map, base);
   }
 }
 @include fs-max-width(sm) {
-  @each $tag, $map in $fs-font-size-headings-bigger {
+  @each $tag, $map in $fs-large-headings {
     .heading-#{$tag} {
       font-size: map-get($map, mobile);
     }
@@ -195,15 +196,16 @@ h6,
 .heading-xs,
 .heading-xxs,
 .heading-xxxs {
-  color: $fs-clr-text-darken;
-  font-weight: $fs-font-weight-heading-sm;
-  letter-spacing: $fs-font-ls-heading-sm;
-  margin: $fs-margin-heading-sm;
-  text-transform: $fs-font-transform-heading-sm;
+  color: $fs-color-text-darken;
+  font-weight: $fs-small-heading-font-weight;
+  letter-spacing: $fs-small-heading-letter-spacing;
+  line-height: $fs-small-heading-line-height;
+  margin: $fs-small-heading-margin;
+  text-transform: $fs-small-heading-text-transform;
 
   @include fs-margin-vert-flush;
 }
-@each $tag, $map in $fs-font-size-headings-smaller {
+@each $tag, $map in $fs-small-headings {
   .heading-#{$tag} {
     font-size: map-get($map, base);
   }
@@ -229,13 +231,13 @@ h6,
 //
 
 .heading-underline {
-  border-bottom: 2px solid $fs-clr-trans-lightest;
+  border-bottom: 2px solid $fs-color-trans-lightest;
   padding-bottom: 0.8em;
   position: relative;
 
   &:after {
     content: '';
-    background: fs-map-deep-get($fs-clr-branding, secondary, base);
+    background: fs-map-deep-get($fs-branding-colors, secondary, base);
     position: absolute;
     bottom: -$fs-heading-underline-h;
     @if ($direction == 'rtl') {
@@ -263,10 +265,10 @@ h6,
 }
 @if ($version == 'full') {
   .text-light .heading-underline {
-    border-bottom-color: rgba($fs-clr-darkest, 0.5);
+    border-bottom-color: rgba($fs-color-darkest, 0.5);
   }
   .text-dark .heading-underline {
-    border-bottom-color: $fs-clr-trans-lightest;
+    border-bottom-color: $fs-color-trans-lightest;
   }
 }
 
@@ -275,13 +277,13 @@ h6,
 //
 
 pre {
-  background-color: $fs-clr-bg-code;
+  background-color: $fs-code-bg-color;
   border: none;
   border-radius: 2px;
-  font-family: $fs-font-fam-code;
-  font-size: $fs-font-size-pre;
-  line-height: $fs-font-lh-base;
-  margin: $fs-margin-element;
+  font-family: $fs-font-family-code;
+  font-size: $fs-pre-font-size;
+  line-height: $fs-line-height-base;
+  margin: $fs-element-margin;
   max-width: 100%;
   overflow: auto;
   padding: 1em;
@@ -291,14 +293,14 @@ code,
 kbd,
 tt,
 var {
-  font-family: $fs-font-fam-code;
-  font-size: $fs-font-size-code;
+  font-family: $fs-font-family-code;
+  font-size: $fs-code-font-size;
   font-weight: $fs-font-weight-bold;
 }
 code {
-  background-color: $fs-clr-bg-code;
+  background-color: $fs-code-bg-color;
   border-radius: 1px;
-  color: $fs-clr-text-base;
+  color: $fs-color-text-base;
   font-size: 90%;
   padding: 0.125em 0.25em;
 }
@@ -308,11 +310,11 @@ pre code {
   padding: 0;
 }
 kbd {
-  background-color: $fs-clr-bg-kbd;
-  box-shadow: inset 0 -1px 0 rgba($fs-clr-black, 0.25);
+  background-color: $fs-kbd-bg-color;
+  box-shadow: inset 0 -1px 0 rgba($fs-color-black, 0.25);
   border-radius: 2px;
   font-size: 90%;
-  color: $fs-clr-text-inv-base;
+  color: $fs-color-text-inv-base;
   padding: 2px 4px;
 
   kbd {
@@ -326,15 +328,15 @@ kbd {
   .text-light {
     pre,
     code {
-      background-color: $fs-clr-bg-inv-code;
-      color: $fs-clr-text-inv-base;
+      background-color: $fs-code-bg-color-inv;
+      color: $fs-color-text-inv-base;
     }
   }
   .text-dark {
     pre,
     code {
-      background-color: $fs-clr-bg-code;
-      color: $fs-clr-text-base;
+      background-color: $fs-code-bg-color;
+      color: $fs-color-text-base;
     }
   }
 }
@@ -345,17 +347,17 @@ kbd {
 
 small,
 .small {
-  font-size: $fs-font-size-small;
+  font-size: $fs-small-elem-font-size;
 }
 big,
 .big {
-  font-size: $fs-font-size-big;
+  font-size: $fs-big-elem-font-size;
 }
 mark,
 .mark,
 ins,
 .ins {
-  background-color: $fs-clr-highlight;
+  background-color: $fs-color-bg-highlight;
   padding: 0.2em;
   text-decoration: none;
 }
@@ -366,25 +368,25 @@ i {
   font-style: italic;
 }
 address {
-  font-style: $fs-font-style-address;
-  line-height: $fs-font-lh-base;
-  margin: $fs-margin-element;
+  font-style: $fs-address-font-style;
+  line-height: $fs-line-height-base;
+  margin: $fs-element-margin;
   @include fs-margin-vert-flush;
 }
 abbr,
 acronym {
-  border-bottom: 1px dotted $fs-clr-border;
+  border-bottom: 1px dotted $fs-color-border;
   cursor: help;
   text-decoration: inherit;
 }
 @if ($version == 'full') {
   .text-light abbr,
   .text-light acronym {
-    border-color: $fs-clr-border-inv;
+    border-color: $fs-color-border-inv;
   }
   .text-dark abbr,
   .text-dark acronym {
-    border-color: $fs-clr-border;
+    border-color: $fs-color-border;
   }
 }
 
@@ -393,12 +395,12 @@ acronym {
 //
 
 blockquote {
-  color: $fs-clr-text-darken;
-  font-size: $fs-font-size-quote;
-  font-style: $fs-font-style-quote;
-  line-height: $fs-font-lh-quote;
-  margin: $fs-margin-quote;
-  text-transform: $fs-font-transform-quote;
+  color: $fs-color-text-darken;
+  font-size: $fs-quote-font-size;
+  font-style: $fs-quote-font-style;
+  line-height: $fs-quote-line-height;
+  margin: $fs-quote-margin;
+  text-transform: $fs-quote-text-transform;
 
   @include fs-margin-vert-flush;
 
@@ -406,7 +408,7 @@ blockquote {
   &.pull-left,
   &.alignright,
   &.pull-right {
-    margin: $fs-margin-quote;
+    margin: $fs-quote-margin;
     margin-top: $fs-spacing-element;
     margin-bottom: $fs-spacing-element;
   }
@@ -423,10 +425,10 @@ blockquote {
 }
 @if ($version == 'full') {
   .text-light blockquote {
-    color: $fs-clr-text-inv-darken;
+    color: $fs-color-text-inv-darken;
   }
   .text-dark blockquote {
-    color: $fs-clr-text-darken;
+    color: $fs-color-text-darken;
   }
 }
 blockquote.pull-left blockquote.alignleft {
@@ -445,8 +447,8 @@ blockquote {
   }
   cite,
   cite:before {
-    color: $fs-clr-text-lighten;
-    font-size: $fs-font-size-cite;
+    color: $fs-color-text-lighten;
+    font-size: $fs-cite-font-size;
     line-height: $fs-font-lh-cite;
   }
   cite:before {
@@ -456,10 +458,10 @@ blockquote {
 @if ($version == 'full') {
   .text-light blockquote cite,
   .text-light blockquote cite:before {
-    color: $fs-clr-text-inv-lighten;
+    color: $fs-color-text-inv-lighten;
   }
   .text-dark blockquote cite,
   .text-dark blockquote cite:before {
-    color: $fs-clr-text-lighten;
+    color: $fs-color-text-lighten;
   }
 }

@@ -8,16 +8,16 @@ hr,
   border-radius: $fs-divider-radius;
   display: block;
   height: $fs-divider-height;
-  margin: $fs-margin-divider 0;
+  margin: $fs-divider-margin 0;
 }
 hr:not(.fs-divider) {
-  background-color: $fs-clr-bg-hr;
+  background-color: $fs-hr-bg-color;
 }
 .text-light hr:not(.fs-divider) {
-  background: $fs-clr-bg-inv-hr;
+  background: $fs-hr-bg-color-inv;
 }
 .text-dark hr:not(.fs-divider) {
-  background: $fs-clr-bg-hr;
+  background: $fs-hr-bg-color;
 }
 
 //

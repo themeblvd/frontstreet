@@ -20,7 +20,7 @@ th {
 caption {
   padding-top: $fs-table-cell-padding;
   padding-bottom: $fs-table-cell-padding;
-  color: $fs-clr-text-lighten;
+  color: $fs-color-text-lighten;
 }
 
 //
@@ -30,13 +30,13 @@ caption {
 table {
   width: 100%;
   max-width: 100%;
-  margin: $fs-margin-table;
+  margin: $fs-table-margin;
   background-color: $fs-table-bg; // Reset for nesting within parents with `background-color`.
 
   @include fs-margin-vert-flush;
 
   th {
-    color: $fs-clr-text-darken;
+    color: $fs-color-text-darken;
     font-weight: $fs-font-weight-bold;
   }
   th,
@@ -53,7 +53,7 @@ table {
     border-top: (2 * $fs-table-border-width) solid $fs-table-border-color;
   }
   table {
-    background-color: $fs-clr-bg-body;
+    background-color: $fs-body-bg-color;
   }
 }
 
@@ -132,7 +132,7 @@ table {
 
 @include fs-table-row-variant(active, $fs-table-bg-active);
 
-@each $name, $map in $fs-clr-contextual {
+@each $name, $map in $fs-contextual-colors {
   @include fs-table-row-variant(#{$name}, map-get($map, base));
 }
 
@@ -144,14 +144,14 @@ table {
 //
 
 .table-inverse {
-  color: $fs-clr-text-inv-base;
+  color: $fs-color-text-inv-base;
   background-color: $fs-table-inv-bg;
 
   th,
   td,
   thead th {
     border-color: $fs-table-border-inv-color;
-    color: $fs-clr-text-inv-darken;
+    color: $fs-color-text-inv-darken;
   }
   &.table-bordered {
     border-color: $fs-table-border-inv-color;
@@ -167,7 +167,7 @@ table {
 
 .table-responsive {
   overflow-x: auto;
-  margin: $fs-margin-table;
+  margin: $fs-table-margin;
   min-height: 0.01%; // Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837)
 
   @include fs-max-width(sm) {

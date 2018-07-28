@@ -21,7 +21,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: $fs-modal-z-index-base + 2;
+    z-index: $fs-z-index-modal + 2;
   }
   &.mfp-wrap {
     -webkit-backface-visibility: hidden; // fixes webkit bug that can cause "false" scrollbar
@@ -31,7 +31,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: $fs-modal-z-index-base + 3;
+    z-index: $fs-z-index-modal + 3;
   }
   .mfp-container {
     text-align: center;
@@ -40,11 +40,11 @@
     height: 100%;
     left: 0;
     top: 0;
-    padding: 0 $fs-padding-modal-bg;
+    padding: 0 $fs-modal-bg-padding;
     box-sizing: border-box;
   }
   .mfp-container.mfp-inline-holder {
-    padding: $fs-padding-modal-bg;
+    padding: $fs-modal-bg-padding;
   }
 
   // Vertical centerer helper
@@ -77,7 +77,7 @@
       text-align: left;
     }
     vertical-align: middle;
-    z-index: $fs-modal-z-index-base + 5;
+    z-index: $fs-z-index-modal + 5;
   }
   .mfp-inline-holder,
   .mfp-ajax-holder {
@@ -215,7 +215,7 @@
     right: 8px;
     text-align: center;
     width: auto;
-    z-index: $fs-modal-z-index-base + 4;
+    z-index: $fs-z-index-modal + 4;
 
     a {
       color: $fs-modal-controls-text-color;
@@ -240,7 +240,7 @@
     &.mfp-arrow {
       overflow: visible;
       -webkit-appearance: none;
-      z-index: $fs-modal-z-index-base + 6;
+      z-index: $fs-z-index-modal + 6;
       touch-action: manipulation;
     }
     &::-moz-focus-inner {
@@ -263,7 +263,7 @@
   .mfp-counter {
     color: $fs-modal-caption-text-color;
     font-size: $fs-modal-caption-font-size;
-    line-height: $fs-font-lh-base;
+    line-height: $fs-line-height-base;
     position: absolute;
     top: $fs-modal-caption-spacing;
     @if ($direction == 'rtl') {
@@ -294,39 +294,39 @@
   }
   .mfp-arrow-left {
     @if ($direction == 'rtl') {
-      @include fs-background-chevron('right', $fs-clr-svg-inv);
+      @include fs-background-chevron('right', $fs-color-svg-inv);
       right: 10px;
 
       &:hover,
       &:focus {
-        @include fs-background-chevron('right', $fs-clr-svg-inv-hover);
+        @include fs-background-chevron('right', $fs-color-svg-inv-hover);
       }
     } @else {
-      @include fs-background-chevron('left', $fs-clr-svg-inv);
+      @include fs-background-chevron('left', $fs-color-svg-inv);
       left: 10px;
 
       &:hover,
       &:focus {
-        @include fs-background-chevron('left', $fs-clr-svg-inv-hover);
+        @include fs-background-chevron('left', $fs-color-svg-inv-hover);
       }
     }
   }
   .mfp-arrow-right {
     @if ($direction == 'rtl') {
-      @include fs-background-chevron('left', $fs-clr-svg-inv);
+      @include fs-background-chevron('left', $fs-color-svg-inv);
       left: 10px;
 
       &:hover,
       &:focus {
-        @include fs-background-chevron('left', $fs-clr-svg-inv-hover);
+        @include fs-background-chevron('left', $fs-color-svg-inv-hover);
       }
     } @else {
-      @include fs-background-chevron('right', $fs-clr-svg-inv);
+      @include fs-background-chevron('right', $fs-color-svg-inv);
       right: 10px;
 
       &:hover,
       &:focus {
-        @include fs-background-chevron('right', $fs-clr-svg-inv-hover);
+        @include fs-background-chevron('right', $fs-color-svg-inv-hover);
       }
     }
   }
@@ -393,7 +393,7 @@
       color: $fs-modal-caption-text-color;
       display: block;
       font-size: $fs-modal-caption-font-size;
-      line-height: $fs-font-lh-base;
+      line-height: $fs-line-height-base;
     }
     figure {
       margin: 0;
@@ -419,7 +419,7 @@
     } @else {
       padding-right: 36px; // leave some space for counter at right side
     }
-    line-height: $fs-font-lh-base;
+    line-height: $fs-line-height-base;
     text-align: if($direction == 'rtl', right, left);
     word-wrap: break-word;
   }
@@ -443,27 +443,27 @@
     }
     .mfp-arrow-left {
       @if ($direction == 'rtl') {
-        @include fs-background-chevron('right', $fs-clr-text-inv-base);
+        @include fs-background-chevron('right', $fs-color-text-inv-base);
         right: $fs-modal-arrow-btn-size / -3;
       } @else {
-        @include fs-background-chevron('left', $fs-clr-text-inv-base);
+        @include fs-background-chevron('left', $fs-color-text-inv-base);
         left: $fs-modal-arrow-btn-size / -3;
       }
     }
     .mfp-arrow-right {
       @if ($direction == 'rtl') {
-        @include fs-background-chevron('left', $fs-clr-text-inv-base);
+        @include fs-background-chevron('left', $fs-color-text-inv-base);
         left: $fs-modal-arrow-btn-size / -3;
       } @else {
-        @include fs-background-chevron('right', $fs-clr-text-inv-base);
+        @include fs-background-chevron('right', $fs-color-text-inv-base);
         right: $fs-modal-arrow-btn-size / -3;
       }
     }
     .mfp-container {
-      padding: 0 $fs-padding-modal-bg-mobile;
+      padding: 0 $fs-mobile-modal-bg-padding;
     }
     .mfp-container.mfp-inline-holder {
-      padding: $fs-padding-modal-bg;
+      padding: $fs-modal-bg-padding;
     }
   }
 }
@@ -474,11 +474,11 @@
 
 .fs-content-modal {
   background-clip: padding-box;
-  background-color: $fs-clr-bg-content;
+  background-color: $fs-color-bg-content;
   border: $fs-modal-content-border-width solid $fs-modal-content-border-color;
   display: none;
   font-size: fs-map-deep-get($fs-modal-sizes, xs, font-size);
-  margin: $fs-margin-modal-mobile;
+  margin: $fs-mobile-modal-margin;
   outline: 0; // Remove focus outline from opened modal
   width: 100%;
 
@@ -519,7 +519,7 @@
     @include fs-min-width('sm') {
       .fs-content-modal.modal-#{$size} {
         font-size: map-get($map, font-size);
-        margin: $fs-margin-modal;
+        margin: $fs-modal-margin;
         max-width: map-get($map, width);
 
         .modal-header {
@@ -559,22 +559,22 @@
     width: 4vh;
     height: 4vh;
 
-    @include fs-background-search($fs-clr-white);
+    @include fs-background-search($fs-color-white);
   }
   input[type='search'] {
     background: transparent;
-    color: $fs-clr-text-inv-base;
+    color: $fs-color-text-inv-base;
     font-size: 3.5vh;
     height: auto;
     line-height: 1;
     padding: 1em 1.5em 1em 3.2em;
 
     &:focus {
-      border-color: $fs-modal-search-border-clr;
+      border-color: $fs-modal-search-border-color;
       box-shadow: none;
     }
     &::placeholder {
-      color: $fs-clr-text-inv-placeholder;
+      color: $fs-color-text-inv-placeholder;
     }
   }
 }

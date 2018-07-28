@@ -4,8 +4,8 @@
 
 ul,
 ol {
-  margin: $fs-margin-list;
-  padding: if($direction == 'rtl', 0 $fs-padding-list 0 0, 0 0 0 $fs-padding-list);
+  margin: $fs-list-margin;
+  padding: if($direction == 'rtl', 0 $fs-list-padding 0 0, 0 0 0 $fs-list-padding);
   @include fs-margin-vert-flush;
 }
 ul {
@@ -27,7 +27,7 @@ dt {
   font-weight: $fs-font-weight-bold;
 }
 dd {
-  margin: $fs-margin-list;
+  margin: $fs-list-margin;
   margin-left: 1.5em;
   @include fs-margin-vert-flush;
 }
@@ -62,7 +62,7 @@ dd {
 //
 
 .list-icon.fa-ul li {
-  line-height: $fs-font-lh-base;
+  line-height: $fs-line-height-base;
 }
 .list-icon.fa-ul li > .fa-li {
   top: 50%;

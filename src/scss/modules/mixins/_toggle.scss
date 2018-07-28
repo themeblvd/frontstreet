@@ -14,25 +14,25 @@
 /// @param {String} $style - Style of scenario, `default` or `inverse`.
 ///
 @mixin toggle-variant($style: 'default') {
-  $border-clr: $fs-toggle-border-color;
-  $close-clr: $fs-clr-svg;
-  $close-hover-clr: $fs-clr-svg-hover;
+  $border-color: $fs-toggle-border-color;
+  $close-color: $fs-color-svg;
+  $close-hover-color: $fs-color-svg-hover;
 
   @if ($style == 'inverse') {
-    $border-clr: $fs-toggle-border-inv-color;
-    $close-clr: $fs-clr-svg-inv;
-    $close-hover-clr: $fs-clr-svg-inv-hover;
+    $border-color: $fs-toggle-border-inv-color;
+    $close-color: $fs-color-svg-inv;
+    $close-hover-color: $fs-color-svg-inv-hover;
   }
 
   .fs-toggle {
-    border-color: $border-clr;
+    border-color: $border-color;
 
     .toggle-title:after {
-      @include fs-background-close($close-clr);
+      @include fs-background-close($close-color);
     }
     .toggle-title:hover:after,
     .toggle-title:focus:after {
-      @include fs-background-close($close-hover-clr);
+      @include fs-background-close($close-hover-color);
     }
   }
 }

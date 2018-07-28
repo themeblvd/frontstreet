@@ -3,32 +3,32 @@
 // --------------------------------------------------
 
 .progress {
-  background-color: $fs-progress-bg;
-  border-radius: $fs-progress-radius;
+  background-color: $fs-progress-bar-bg;
+  border-radius: $fs-progress-bar-radius;
   display: flex;
-  margin: $fs-margin-progress;
+  margin: $fs-progress-margin;
   overflow: hidden; // Force rounded corners by cropping it.
   position: relative;
-  line-height: $fs-progress-height;
+  line-height: $fs-progress-bar-height;
   text-align: center;
 
   @include fs-margin-vert-flush;
 }
 .progress-bar {
-  height: $fs-progress-height;
-  line-height: $fs-progress-height;
+  height: $fs-progress-bar-height;
+  line-height: $fs-progress-bar-height;
 }
 .fs-progress {
-  font-size: $fs-font-size-progress;
-  margin: $fs-margin-progress;
-  padding-top: $fs-progress-label-spacing;
+  font-size: $fs-progress-bar-font-size;
+  margin: $fs-progress-margin;
+  padding-top: $fs-progress-bar-label-spacing;
   position: relative;
 
   @include fs-margin-vert-flush;
 
   .progress-label,
   .progress-value {
-    font-size: $fs-font-size-progress;
+    font-size: $fs-progress-bar-font-size;
     line-height: 1;
     position: absolute;
     top: 0;

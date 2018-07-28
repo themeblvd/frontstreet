@@ -68,11 +68,11 @@
         background: $fs-tabs-active-inv-bg;
 
         .menu-btn {
-          color: rgba($fs-clr-text-inv-darken, 0.8);
+          color: rgba($fs-color-text-inv-darken, 0.8);
 
           &:hover,
           &:focus {
-            color: $fs-clr-text-inv-darken;
+            color: $fs-color-text-inv-darken;
           }
         }
       }
@@ -106,11 +106,11 @@
         background: $fs-tabs-active-bg;
 
         .menu-btn {
-          color: $fs-clr-text-base;
+          color: $fs-color-text-base;
 
           &:hover,
           &:focus {
-            color: $fs-clr-text-darken;
+            color: $fs-color-text-darken;
           }
         }
       }
@@ -182,7 +182,7 @@
 @mixin nav-dropdown {
   ul,
   .fs-mega {
-    box-shadow: $fs-flyout-shadow;
+    box-shadow: $fs-dropdown-shadow;
     position: absolute;
   }
   ul li.menu-item-has-children > .menu-btn .sub-indicator {

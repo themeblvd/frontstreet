@@ -49,33 +49,33 @@
 .submenu-pills {
   // Level 2+
   ul {
-    font-size: $fs-font-size-dropdown;
+    font-size: $fs-dropdown-font-size;
     margin: 0;
     padding-left: 10px;
   }
   ul .menu-btn {
-    padding: 0.75em $fs-flyout-horz-spacing;
+    padding: 0.75em $fs-dropdown-horz-spacing;
   }
   &.text-dark ul .menu-btn {
-    color: $fs-clr-text-darken;
+    color: $fs-color-text-darken;
   }
   &.text-dark ul a.menu-btn {
-    color: $fs-clr-text-base;
+    color: $fs-color-text-base;
 
     &:hover,
     &:focus {
-      color: $fs-clr-text-darken;
+      color: $fs-color-text-darken;
     }
   }
   &.text-light ul .menu-btn {
-    color: $fs-clr-text-inv-darken;
+    color: $fs-color-text-inv-darken;
   }
   &.text-light ul a.menu-btn {
-    color: rgba($fs-clr-text-inv-darken, 0.8);
+    color: rgba($fs-color-text-inv-darken, 0.8);
 
     &:hover,
     &:focus {
-      color: $fs-clr-text-inv-darken;
+      color: $fs-color-text-inv-darken;
     }
   }
 
@@ -90,7 +90,7 @@
 //
 
 .sub-indicator {
-  @include fs-background-mini-chevron($fs-clr-text-base);
+  @include fs-background-mini-chevron($fs-color-text-base);
   background-size: 0.571428em 0.571428em;
   position: absolute;
   top: 50%;
@@ -104,7 +104,7 @@
   height: 0.571428em;
 }
 .text-light .sub-indicator {
-  @include fs-background-mini-chevron(rgba($fs-clr-text-inv-darken, 0.8));
+  @include fs-background-mini-chevron(rgba($fs-color-text-inv-darken, 0.8));
 }
 
 //
@@ -131,8 +131,8 @@
   // Flyout menu
   ul {
     max-width: 100%;
-    min-width: $fs-flyout-width;
-    padding: $fs-flyout-vert-spacing 0;
+    min-width: $fs-dropdown-width;
+    padding: $fs-dropdown-vert-spacing 0;
     position: static;
     top: 100%;
     @if ($direction == 'rtl') {
@@ -175,19 +175,19 @@
     }
   }
   ul.text-dark > li > .menu-btn {
-    color: $fs-clr-text-base;
+    color: $fs-color-text-base;
 
     &:hover,
     &:focus {
-      color: $fs-clr-text-darken;
+      color: $fs-color-text-darken;
     }
   }
   ul.text-light > li > .menu-btn {
-    color: rgba($fs-clr-text-inv-darken, 0.8);
+    color: rgba($fs-color-text-inv-darken, 0.8);
 
     &:hover,
     &:focus {
-      color: $fs-clr-text-inv-darken;
+      color: $fs-color-text-inv-darken;
     }
   }
 
@@ -265,43 +265,43 @@
 
   // Level 1
   > li > .menu-btn {
-    font-size: $fs-font-size-menu-bar-btn;
-    font-weight: $fs-font-weight-menu-bar-btn;
-    letter-spacing: $fs-font-ls-menu-bar-btn;
-    padding: fs-em(18px, $fs-font-size-menu-bar-btn) fs-em(20px, $fs-font-size-menu-bar-btn);
-    text-transform: $fs-font-transform-menu-bar-btn;
+    font-size: $fs-menu-bar-btn-font-size;
+    font-weight: $fs-menu-bar-btn-font-weight;
+    letter-spacing: $fs-menu-bar-btn-letter-spacing;
+    padding: fs-em(18px, $fs-menu-bar-btn-font-size) fs-em(20px, $fs-menu-bar-btn-font-size);
+    text-transform: $fs-menu-bar-btn-text-transform;
   }
   &.text-dark {
     > li > .menu-btn {
-      color: $fs-clr-text-darken;
+      color: $fs-color-text-darken;
 
       &:hover,
       &:focus {
-        background-color: rgba($fs-clr-light, 0.3);
+        background-color: rgba($fs-color-light, 0.3);
       }
     }
     > li.active,
     > li.current-menu-item,
     > li.current-menu-ancestor {
       > .menu-btn {
-        background-color: rgba($fs-clr-light, 0.3);
+        background-color: rgba($fs-color-light, 0.3);
       }
     }
   }
   &.text-light {
     > li > .menu-btn {
-      color: $fs-clr-text-inv-darken;
+      color: $fs-color-text-inv-darken;
 
       &:hover,
       &:focus {
-        background-color: rgba($fs-clr-black, 0.5);
+        background-color: rgba($fs-color-black, 0.5);
       }
     }
     > li.active,
     > li.current-menu-item,
     > li.current-menu-ancestor {
       > .menu-btn {
-        background-color: rgba($fs-clr-black, 0.5);
+        background-color: rgba($fs-color-black, 0.5);
       }
     }
   }
@@ -312,60 +312,60 @@
 //
 
 .submenu-bar {
-  padding: $fs-padding-submenu;
+  padding: $fs-submenu-padding;
 
   .menu-btn {
     border: none;
   }
   &.text-dark {
     .menu-btn {
-      color: rgba($fs-clr-text-darken, 0.8);
+      color: rgba($fs-color-text-darken, 0.8);
 
       &:hover,
       &:focus {
-        color: $fs-clr-text-darken;
+        color: $fs-color-text-darken;
       }
     }
     > li.active,
     > li.current-menu-item,
     > li.current-menu-ancestor {
       > .menu-btn {
-        background-color: rgba($fs-clr-light, 0.3);
-        color: $fs-clr-text-darken;
+        background-color: rgba($fs-color-light, 0.3);
+        color: $fs-color-text-darken;
       }
     }
   }
   &.text-light {
     .menu-btn {
-      color: rgba($fs-clr-text-inv-darken, 0.8);
+      color: rgba($fs-color-text-inv-darken, 0.8);
 
       &:hover,
       &:focus {
-        color: $fs-clr-text-inv-darken;
+        color: $fs-color-text-inv-darken;
       }
     }
     > li.active,
     > li.current-menu-item,
     > li.current-menu-ancestor {
       > .menu-btn {
-        background-color: rgba($fs-clr-black, 0.5);
-        color: $fs-clr-text-inv-darken;
+        background-color: rgba($fs-color-black, 0.5);
+        color: $fs-color-text-inv-darken;
       }
     }
   }
 
   // Level 1
   > li > .menu-btn {
-    font-weight: $fs-font-weight-submenu-btn;
-    font-size: $fs-font-size-submenu-btn;
-    letter-spacing: $fs-font-ls-submenu-btn;
-    padding: fs-em(10px, $fs-font-size-submenu-btn) fs-em(16px, $fs-font-size-submenu-btn);
-    text-transform: $fs-font-transform-submenu-btn;
+    font-weight: $fs-submenu-btn-font-weight;
+    font-size: $fs-submenu-btn-font-size;
+    letter-spacing: $fs-submenu-btn-letter-spacing;
+    padding: fs-em(10px, $fs-submenu-btn-font-size) fs-em(16px, $fs-submenu-btn-font-size);
+    text-transform: $fs-submenu-btn-text-transform;
   }
 
   // Level 2 flyouts
   &.fs-menu > li > ul {
-    margin-top: $fs-padding-submenu;
+    margin-top: $fs-submenu-padding;
   }
 }
 
@@ -392,8 +392,8 @@
     } @else {
       border-width: $fs-tabs-border-width $fs-tabs-border-width 0 0;
     }
-    padding: $fs-padding-tabs;
-    font-size: $fs-font-size-tabs;
+    padding: $fs-tabs-padding;
+    font-size: $fs-tabs-font-size;
     color: inherit;
 
     &:hover,
@@ -425,15 +425,15 @@
   // Level 2+
   ul {
     background: $fs-tabs-active-bg;
-    padding-top: $fs-flyout-vert-spacing;
-    padding-bottom: $fs-flyout-vert-spacing;
+    padding-top: $fs-dropdown-vert-spacing;
+    padding-bottom: $fs-dropdown-vert-spacing;
 
     .menu-btn {
-      color: $fs-clr-text-base;
+      color: $fs-color-text-base;
 
       &:hover,
       &:focus {
-        color: $fs-clr-text-darken;
+        color: $fs-color-text-darken;
       }
     }
   }
@@ -482,8 +482,8 @@
     border-style: solid;
     border-width: $fs-pills-border-width;
     color: inherit;
-    padding: $fs-padding-pills;
-    font-size: $fs-font-size-pills;
+    padding: $fs-pills-padding;
+    font-size: $fs-pills-font-size;
 
     &:hover,
     &:focus {
@@ -498,16 +498,16 @@
 
   // Level 2+
   ul {
-    padding: $fs-flyout-vert-spacing 10px;
+    padding: $fs-dropdown-vert-spacing 10px;
 
     .menu-btn {
-      color: $fs-clr-text-base;
+      color: $fs-color-text-base;
       padding-right: 10px;
       padding-left: 10px;
 
       &:hover,
       &:focus {
-        color: $fs-clr-text-darken;
+        color: $fs-color-text-darken;
       }
     }
   }

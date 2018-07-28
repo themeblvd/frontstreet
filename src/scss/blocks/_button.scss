@@ -54,7 +54,7 @@ $key-frame-offset: $gradient-width / 10;
 .fs-close {
   background-color: transparent;
   border: none;
-  @include fs-background-close($fs-clr-svg);
+  @include fs-background-close($fs-color-svg);
   background-size: (map-get($fs-btn-close, md) / 2) (map-get($fs-btn-close, md) / 2);
   display: inline-block;
   cursor: pointer;
@@ -68,17 +68,17 @@ $key-frame-offset: $gradient-width / 10;
   &:hover,
   &:focus {
     background-color: transparent; // Override default <button> styling.
-    @include fs-background-close($fs-clr-svg-hover);
+    @include fs-background-close($fs-color-svg-hover);
   }
 }
 .text-light .fs-close,
 .fs-close.close-light {
-  @include fs-background-close($fs-clr-svg-inv);
+  @include fs-background-close($fs-color-svg-inv);
   border: none;
 
   &:hover,
   &:focus {
-    @include fs-background-close($fs-clr-svg-inv-hover);
+    @include fs-background-close($fs-color-svg-inv-hover);
   }
 }
 @each $size, $val in $fs-btn-close {
@@ -112,7 +112,7 @@ button.close {
 .fs-play {
   background-color: transparent;
   border: none;
-  @include fs-background-play($fs-clr-svg);
+  @include fs-background-play($fs-color-svg);
   background-size: map-get($fs-btn-close, md) map-get($fs-btn-close, md);
   display: inline-block;
   cursor: pointer;
@@ -126,17 +126,17 @@ button.close {
   &:hover,
   &:focus {
     background-color: transparent; // Override default <button> styling.
-    @include fs-background-play($fs-clr-svg-hover);
+    @include fs-background-play($fs-color-svg-hover);
   }
 }
 .text-light .fs-play,
 .fs-play.play-light {
-  @include fs-background-play($fs-clr-svg-inv);
+  @include fs-background-play($fs-color-svg-inv);
   border: none;
 
   &:hover,
   &:focus {
-    @include fs-background-play($fs-clr-svg-inv-hover);
+    @include fs-background-play($fs-color-svg-inv-hover);
   }
 }
 
@@ -155,14 +155,14 @@ button.close {
 //
 
 .fs-menu-toggle {
-  color: $fs-clr-text-darken;
+  color: $fs-color-text-darken;
   display: inline-block;
   opacity: 0.7;
   padding: 9px 5px;
 
   &:hover,
   &:focus {
-    color: $fs-clr-text-darken;
+    color: $fs-color-text-darken;
     opacity: 1;
   }
 }
@@ -181,7 +181,7 @@ button.close {
   &:before,
   &:after,
   span {
-    background-color: $fs-clr-text-darken;
+    background-color: $fs-color-text-darken;
     border-radius: 1px;
     display: block;
     opacity: 1;
@@ -223,16 +223,16 @@ button.close {
 .text-light .fs-menu-toggle,
 .menu-toggle-light {
   border: none;
-  color: $fs-clr-text-inv-darken;
+  color: $fs-color-text-inv-darken;
 
   &:hover,
   &:focus {
-    color: $fs-clr-text-inv-darken;
+    color: $fs-color-text-inv-darken;
   }
   .hamburger:before,
   .hamburger:after,
   .hamburger span {
-    background-color: $fs-clr-text-inv-darken;
+    background-color: $fs-color-text-inv-darken;
   }
 }
 
@@ -246,7 +246,7 @@ button.close {
     display: block;
     float: left;
     font-size: 14px;
-    letter-spacing: $fs-font-ls-btn;
+    letter-spacing: $fs-btn-base-letter-spacing;
     line-height: 1;
     text-transform: uppercase;
   }

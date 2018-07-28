@@ -28,23 +28,23 @@
 
 @include fs-button-variant(
   'default',
-  $fs-clr-text-darken,
-  $fs-clr-bg-btn,
-  darken($fs-clr-bg-btn, 2%)
+  $fs-color-text-darken,
+  $fs-btn-bg-color,
+  darken($fs-btn-bg-color, 2%)
 );
 
 @include fs-button-variant(
   'light',
-  $fs-clr-text-darken,
-  darken($fs-clr-bg-light, 2%),
-  darken(darken($fs-clr-bg-light, 2%), 2%)
+  $fs-color-text-darken,
+  darken($fs-color-bg-light, 2%),
+  darken(darken($fs-color-bg-light, 2%), 2%)
 );
 
 //
 // Branding Colors
 //
 
-@each $clr, $map in $fs-clr-branding {
+@each $clr, $map in $fs-branding-colors {
   @include fs-button-variant($clr, map-get($map, contrast), map-get($map, base));
 }
 
@@ -52,7 +52,7 @@
 // Contextual Colors
 //
 
-@each $clr, $map in $fs-clr-contextual {
+@each $clr, $map in $fs-contextual-colors {
   @include fs-button-variant($clr, map-get($map, contrast), map-get($map, base));
 }
 
@@ -98,12 +98,12 @@ input[type='button'] {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  margin: $fs-margin-btn-group;
+  margin: $fs-btn-group-margin;
   padding: 0;
   @include fs-margin-vert-flush;
 
   > .btn {
-    margin: $fs-margin-btn-group-btn;
+    margin: $fs-btn-group-btn-margin;
   }
 }
 

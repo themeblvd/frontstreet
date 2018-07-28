@@ -25,7 +25,7 @@
 .lignright,
 .align-right,
 .pull-right {
-  margin: $fs-margin-figure;
+  margin: $fs-figure-margin;
 
   @include fs-margin-vert-flush;
   @include fs-aligncenter;

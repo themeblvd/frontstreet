@@ -5,7 +5,7 @@
 .fs-toggle {
   border-style: solid;
   border-width: $fs-toggle-border-width 0;
-  margin: $fs-margin-toggle;
+  margin: $fs-toggle-margin;
 
   .toggle-title {
     cursor: pointer;
@@ -75,7 +75,7 @@
 //
 
 .toggle-group {
-  margin: $fs-margin-toggle-group;
+  margin: $fs-toggle-group-margin;
 
   @include fs-margin-vert-flush;
 

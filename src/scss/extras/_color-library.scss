@@ -6,7 +6,7 @@
 // Backgrounds
 //
 
-@each $name, $map in $fs-clr-library {
+@each $name, $map in $fs-library-colors {
   @include fs-bg-variant('.#{$name}', map-get($map, base), map-get($map, contrast));
 }
 
@@ -14,7 +14,7 @@
 // Text
 //
 
-@each $name, $map in $fs-clr-library {
+@each $name, $map in $fs-library-colors {
   .text-#{$name} {
     color: map-get($map, base);
   }
@@ -24,6 +24,6 @@
 // Buttons
 //
 
-@each $clr, $map in $fs-clr-library {
+@each $clr, $map in $fs-library-colors {
   @include fs-button-variant($clr, map-get($map, contrast), map-get($map, base));
 }

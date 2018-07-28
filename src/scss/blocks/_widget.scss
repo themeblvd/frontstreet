@@ -3,15 +3,15 @@
 // --------------------------------------------------
 
 .widget {
-  background: $fs-clr-bg-content;
-  font-size: $fs-font-size-widget;
-  margin: $fs-margin-widget;
-  padding: $fs-padding-widget;
+  background: $fs-widget-bg-color;
+  font-size: $fs-widget-font-size;
+  margin: $fs-widget-margin;
+  padding: $fs-widget-padding;
 
   @include fs-margin-vert-flush;
 
   &.over-bg-content {
-    background: $fs-clr-bg-body;
+    background: $fs-body-bg-color;
   }
 }
 
@@ -39,11 +39,11 @@
 .panel-classic,
 .panel-color {
   .widget-title {
-    background: $fs-widget-classic-panel-title-bg-clr;
+    background: $fs-widget-classic-panel-title-bg-color;
     font-size: $fs-widget-panel-classic-title-size;
-    margin: -$fs-padding-widget;
+    margin: -$fs-widget-padding;
     margin-bottom: 24px;
-    padding: 24px $fs-padding-widget;
+    padding: 24px $fs-widget-padding;
 
     &.heading-sm,
     &.heading-xs,
@@ -63,7 +63,7 @@
 // for content area of widget, but avoid using !important.
 body .panel-classic {
   background-color: $fs-tab-content-bg;
-  color: $fs-clr-text-base;
+  color: $fs-color-text-base;
 }
 
 //
@@ -72,11 +72,11 @@ body .panel-classic {
 
 .panel-modern {
   .widget-title {
-    border-bottom: 2px solid $fs-clr-bg-body;
+    border-bottom: 2px solid $fs-body-bg-color;
     font-size: $fs-widget-panel-modern-title-size;
-    margin: -$fs-padding-widget;
+    margin: -$fs-widget-padding;
     margin-bottom: 20px;
-    padding: 20px $fs-padding-widget;
+    padding: 20px $fs-widget-padding;
 
     &.heading-sm,
     &.heading-xs,
@@ -87,7 +87,7 @@ body .panel-classic {
   }
   &.over-bg-content {
     .widget-title {
-      border-bottom-color: $fs-clr-bg-content;
+      border-bottom-color: $fs-widget-bg-color;
     }
   }
 }

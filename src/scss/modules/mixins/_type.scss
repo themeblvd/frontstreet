@@ -12,10 +12,10 @@
 /// @since 1.0.0
 ///
 @mixin fs-text-reset {
-  font-family: $fs-font-fam-base;
+  font-family: $fs-font-family-base;
   font-size: $fs-font-size-base;
   font-weight: $fs-font-weight-base;
-  line-height: $fs-font-lh-base;
+  line-height: $fs-line-height-base;
 }
 
 ///
@@ -26,19 +26,19 @@
 /// @param {String} $style - Style of scenario, `default` or `inverse`.
 ///
 @mixin fs-heading-variant($style: 'default') {
-  $clr: $fs-clr-text-darken;
+  $clr: $fs-color-text-darken;
 
   @if ($style == 'inverse') {
-    $clr: $fs-clr-text-inv-darken;
+    $clr: $fs-color-text-inv-darken;
   }
 
   $selector: 'h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6';
 
-  @each $tag, $map in $fs-font-size-headings-bigger {
+  @each $tag, $map in $fs-large-headings {
     $selector: '#{$selector}, .heading-#{$tag}';
   }
 
-  @each $tag, $map in $fs-font-size-headings-smaller {
+  @each $tag, $map in $fs-small-headings {
     $selector: '#{$selector}, .heading-#{$tag}';
   }
 
@@ -58,14 +58,14 @@
 @mixin fs-blend-links {
   a:not(.btn):not(.menu-btn) {
     color: inherit;
-    border-bottom: 1px solid rgba($fs-clr-text-inv-base, 0.8);
+    border-bottom: 1px solid rgba($fs-color-text-inv-base, 0.8);
     padding-bottom: 1px;
     text-decoration: none;
 
     &:hover,
     &:focus {
-      border-color: $fs-clr-text-inv-base;
-      color: $fs-clr-text-inv-base;
+      border-color: $fs-color-text-inv-base;
+      color: $fs-color-text-inv-base;
     }
   }
 }

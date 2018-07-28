@@ -7,7 +7,7 @@
 //
 
 form {
-  margin: $fs-margin-form;
+  margin: $fs-form-margin;
   @include fs-margin-vert-flush;
 }
 
@@ -17,7 +17,7 @@ form {
 
 fieldset {
   border: 0;
-  margin: $fs-margin-fieldset;
+  margin: $fs-fieldset-margin;
   padding: 0;
   // Chrome and Firefox set a `min-width: min-content;` on fieldsets,
   // so we reset that to ensure it behaves more like a standard block element.
@@ -32,11 +32,12 @@ fieldset {
 
 label,
 .label {
-  color: $fs-clr-text-darken;
+  color: $fs-color-text-darken;
   display: inline-block;
   font-weight: $fs-font-weight-bold;
-  font-size: $fs-font-size-field-label;
-  margin: $fs-margin-field-label;
+  font-size: $fs-field-label-font-size;
+  letter-spacing: $fs-field-label-letter-spacing;
+  margin: $fs-field-label-margin;
   max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
 
   label,
@@ -49,14 +50,14 @@ label,
 }
 legend,
 .legend {
-  color: $fs-clr-text-darken;
+  color: $fs-color-text-darken;
   display: block;
-  font-size: $fs-font-size-field-legend;
+  font-size: $fs-field-legend-font-size;
   font-weight: $fs-font-weight-bold;
   border: 0;
   padding: 0;
   line-height: inherit;
-  margin: $fs-margin-field-legend;
+  margin: $fs-field-legend-margin;
   width: 100%;
   @include fs-margin-vert-flush;
 }
@@ -64,13 +65,13 @@ legend,
   .text-light {
     label,
     legend {
-      color: $fs-clr-text-inv-darken;
+      color: $fs-color-text-inv-darken;
     }
   }
   .text-dark {
     label,
     legend {
-      color: $fs-clr-text-darken;
+      color: $fs-color-text-darken;
     }
   }
 }
@@ -82,7 +83,7 @@ legend,
 label,
 .label {
   .required {
-    color: fs-map-deep-get($fs-clr-contextual, danger, contrast);
+    color: fs-map-deep-get($fs-contextual-colors, danger, contrast);
 
     @if ($direction == 'rtl') {
       margin-right: 4px;
@@ -98,12 +99,12 @@ label,
 
 .help-text {
   display: block;
-  font-size: $fs-font-size-field-help;
-  margin: $fs-margin-field-help;
+  font-size: $fs-field-help-font-size;
+  margin: $fs-field-help-margin;
 
   @include fs-margin-vert-flush;
 
-  @each $name, $map in $fs-clr-contextual {
+  @each $name, $map in $fs-contextual-colors {
     &.#{$name} {
       background-color: transparent;
     }
@@ -116,23 +117,24 @@ label,
 
 @include fs-field-selector {
   -webkit-appearance: none;
-  background-color: $fs-clr-bg-field;
+  background-color: $fs-field-bg-color;
   border-radius: $fs-field-radius;
-  border: $fs-field-border-width solid $fs-clr-border;
-  color: $fs-clr-text-base;
+  border: $fs-field-border-width solid $fs-field-border-color;
+  color: $fs-color-text-base;
   display: block;
-  font-size: $fs-font-size-field;
+  font-size: $fs-field-base-font-size;
   height: $fs-field-base-height;
-  line-height: $fs-field-base-lh;
-  margin: $fs-margin-field;
-  padding: fs-padding-y($fs-field-base-height, $fs-field-base-lh, $fs-field-border-width)
+  line-height: $fs-field-base-line-height;
+  margin: $fs-field-margin;
+  padding: fs-padding-y($fs-field-base-height, $fs-field-base-line-height, $fs-field-border-width)
     $fs-field-base-padding;
   width: 100%;
 }
 @include fs-field-selector {
   &:focus {
-    border-color: $fs-clr-border-active;
-    box-shadow: 0 0 8px $fs-clr-trans-lightest;
+    background-color: $fs-field-bg-color-active;
+    border-color: $fs-field-border-color-active;
+    box-shadow: 0 0 8px $fs-color-trans-lightest;
     outline: 0;
   }
 }
@@ -142,27 +144,29 @@ label,
 @if ($version == 'full') {
   .text-light {
     @include fs-field-selector {
-      background-color: $fs-clr-bg-inv-field;
-      border-color: $fs-clr-border-inv;
-      color: $fs-clr-text-inv-base;
+      background-color: $fs-field-bg-color-inv;
+      border-color: $fs-field-border-color-inv;
+      color: $fs-color-text-inv-base;
     }
     @include fs-field-selector {
       &:focus {
-        border-color: $fs-clr-border-inv-active;
-        box-shadow: 0 0 8px rgba($fs-clr-black, 0.2);
+        background-color: $fs-field-bg-color-inv-active;
+        border-color: $fs-field-border-color-inv-active;
+        box-shadow: 0 0 8px rgba($fs-color-black, 0.2);
       }
     }
   }
   .text-dark {
     @include fs-field-selector {
-      background-color: $fs-clr-bg-field;
-      border-color: $fs-clr-border;
-      color: $fs-clr-text-base;
+      background-color: $fs-field-bg-color;
+      border-color: $fs-field-border-color;
+      color: $fs-color-text-base;
     }
     @include fs-field-selector {
       &:focus {
-        border-color: $fs-clr-border-active;
-        box-shadow: 0 0 8px $fs-clr-trans-lightest;
+        background-color: $fs-field-bg-color-active;
+        border-color: $fs-field-border-color-active;
+        box-shadow: 0 0 8px $fs-color-trans-lightest;
       }
     }
   }
@@ -174,7 +178,7 @@ label,
 
 textarea {
   height: initial;
-  line-height: $fs-field-base-lh;
+  line-height: $fs-field-base-line-height;
 }
 
 //
@@ -184,7 +188,7 @@ textarea {
 select {
   appearance: none;
   background-origin: content-box;
-  @include fs-background-triangle($fs-clr-svg);
+  @include fs-background-triangle($fs-color-svg);
   background-position: if($direction == 'rtl', left -0.25rem center, right -0.25rem center);
   background-size: 9px 6px;
 }
@@ -200,10 +204,10 @@ select[multiple] option {
 }
 @if ($version == 'full') {
   .text-light select {
-    @include fs-background-triangle($fs-clr-svg-inv);
+    @include fs-background-triangle($fs-color-svg-inv);
   }
   .text-dark select {
-    @include fs-background-triangle($fs-clr-svg);
+    @include fs-background-triangle($fs-color-svg);
   }
 }
 
@@ -249,7 +253,7 @@ input[type='checkbox'] {
 
   input[type='checkbox'],
   input[type='radio'] {
-    margin: $fs-margin-field-group;
+    margin: $fs-field-group-margin;
   }
 }
 .checkbox-group-inline,
@@ -286,11 +290,11 @@ input[type='file'] {
 //
 
 .field-group {
-  margin: $fs-margin-field;
+  margin: $fs-field-margin;
   @include fs-list-unstyled;
 
   > li {
-    margin: $fs-margin-field;
+    margin: $fs-field-margin;
     @include fs-margin-vert-flush;
   }
 }
@@ -316,8 +320,8 @@ input[type='file'] {
 
 .field-icon {
   display: block;
-  font-size: $fs-font-size-field;
-  margin: $fs-margin-field;
+  font-size: $fs-field-base-font-size;
+  margin: $fs-field-margin;
   position: relative;
   @include fs-margin-vert-flush;
 
@@ -354,20 +358,20 @@ input[type='file'] {
 input,
 textarea {
   &::placeholder {
-    color: $fs-clr-text-placeholder;
+    color: $fs-color-text-placeholder;
   }
 }
 @if ($version == 'full') {
   .text-light input,
   .text-light textarea {
     &::placeholder {
-      color: $fs-clr-text-inv-placeholder;
+      color: $fs-color-text-inv-placeholder;
     }
   }
   .text-dark input,
   .text-dark textarea {
     &::placeholder {
-      color: $fs-clr-text-placeholder;
+      color: $fs-color-text-placeholder;
     }
   }
 }

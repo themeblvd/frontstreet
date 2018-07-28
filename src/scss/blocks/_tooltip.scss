@@ -4,11 +4,11 @@
 
 .fs-tooltip {
   @include fs-text-reset;
-  font-size: $fs-font-size-tooltip;
+  font-size: $fs-tooltip-font-size;
   display: block;
   position: absolute;
   opacity: 0;
-  z-index: $fs-tooltip-z-index;
+  z-index: $fs-z-index-tooltip;
 
   &.in {
     opacity: $fs-tooltip-opacity;

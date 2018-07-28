@@ -3,7 +3,7 @@
 // --------------------------------------------------
 
 .fs-tabbed {
-  margin: $fs-margin-tabs;
+  margin: $fs-tabbed-margin;
 
   .tab-content {
     padding: 0 5px;
@@ -27,8 +27,8 @@
       border-style: solid;
       border-width: $fs-tab-content-border-width;
       margin-top: -$fs-tabs-border-width;
-      padding: $fs-padding-tab-content;
-      padding-top: $fs-padding-tab-content + 1;
+      padding: $fs-tab-content-padding;
+      padding-top: $fs-tab-content-padding + 1;
     }
   }
 

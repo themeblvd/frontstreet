@@ -3,7 +3,7 @@
 // --------------------------------------------------
 
 .fs-testimonial {
-  margin: $fs-margin-testimonial;
+  margin: $fs-testimonial-margin;
 
   @include fs-margin-vert-flush;
 
@@ -116,13 +116,13 @@
 
   &.testimonial-lg {
     .testimonial-text {
-      font-style: $fs-font-style-quote;
+      font-style: $fs-quote-font-style;
       padding: $fs-testimonial-lg-spacing;
     }
     @include fs-min-width(md) {
       .testimonial-text {
         font-size: $fs-testimonial-lg-font-size;
-        line-height: $fs-font-lh-quote;
+        line-height: $fs-quote-line-height;
       }
     }
     .testimonial-author {

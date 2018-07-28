@@ -6,9 +6,9 @@
 // Light/Dark Backgrounds
 //
 
-@include fs-bg-variant('.bg-light', $fs-clr-bg-light, $fs-clr-text-base);
+@include fs-bg-variant('.bg-light', $fs-color-bg-light, $fs-color-text-base);
 
-@include fs-bg-variant('.bg-dark', $fs-clr-bg-dark, $fs-clr-text-inv-base);
+@include fs-bg-variant('.bg-dark', $fs-color-bg-dark, $fs-color-text-inv-base);
 
 //
 // Borders

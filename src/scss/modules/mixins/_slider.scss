@@ -23,12 +23,12 @@
   z-index: $z-index;
 
   li {
-    background-color: rgba($fs-clr-black, 0.2);
-    border-color: rgba($fs-clr-white, 0.8);
+    background-color: rgba($fs-color-black, 0.2);
+    border-color: rgba($fs-color-white, 0.8);
     transform: none;
   }
   li.active {
-    background-color: $fs-clr-white;
+    background-color: $fs-color-white;
   }
 }
 
@@ -40,9 +40,9 @@
 ///
 @mixin fs-slider-nav-overlaid-dark {
   > li {
-    border-color: rgba($fs-clr-dark, 0.8);
+    border-color: rgba($fs-color-dark, 0.8);
   }
   > li.active {
-    background-color: $fs-clr-dark;
+    background-color: $fs-color-dark;
   }
 }

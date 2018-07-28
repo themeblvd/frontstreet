@@ -34,20 +34,20 @@
 /// @since 1.0.0
 ///
 @mixin fs-btn-styles {
-  background-color: $fs-clr-bg-btn;
+  background-color: $fs-btn-bg-color;
   border: $fs-btn-border-width solid transparent;
-  color: $fs-clr-text-darken;
+  color: $fs-color-text-darken;
   cursor: pointer;
   display: inline-block;
-  font-size: $fs-font-size-btn;
-  font-weight: $fs-font-weight-btn;
-  letter-spacing: $fs-font-ls-btn;
-  line-height: $fs-btn-base-lh;
+  font-size: $fs-btn-base-font-size;
+  font-weight: $fs-btn-font-weight;
+  letter-spacing: $fs-btn-base-letter-spacing;
+  line-height: $fs-btn-base-line-height;
   margin-bottom: 0; // For input.btn
-  padding: fs-padding-y($fs-btn-base-height, $fs-btn-base-lh, $fs-btn-border-width)
+  padding: fs-padding-y($fs-btn-base-height, $fs-btn-base-line-height, $fs-btn-border-width)
     $fs-btn-base-padding;
   text-align: center;
-  text-transform: $fs-font-transform-btn;
+  text-transform: $fs-btn-text-transform;
   touch-action: manipulation;
   transition: $fs-btn-transition;
   user-select: none;
@@ -62,8 +62,8 @@
   }
   &:hover,
   &:focus {
-    background-color: darken($fs-clr-bg-btn, 2%);
-    color: $fs-clr-text-base;
+    background-color: darken($fs-btn-bg-color, 2%);
+    color: $fs-color-text-base;
     text-decoration: none;
   }
   &:active,

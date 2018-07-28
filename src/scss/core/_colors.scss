@@ -6,7 +6,7 @@
 // Branding Background
 //
 
-@each $name, $map in $fs-clr-branding {
+@each $name, $map in $fs-branding-colors {
   @include fs-bg-variant('.#{$name}', map-get($map, base), map-get($map, contrast));
   @include fs-bg-variant(
     '.bg-#{$name}',
@@ -19,7 +19,7 @@
 // Branding Text
 //
 
-@each $name, $map in $fs-clr-branding {
+@each $name, $map in $fs-branding-colors {
   .text-#{$name} {
     color: map-get($map, base);
   }
@@ -29,7 +29,7 @@
 // Contextual Background
 //
 
-@each $name, $map in $fs-clr-contextual {
+@each $name, $map in $fs-contextual-colors {
   @include fs-bg-variant('.#{$name}', map-get($map, base), map-get($map, contrast));
 }
 
@@ -37,11 +37,11 @@
 // Contextual Text
 //
 
-@include fs-text-emphasis-variant('.text-muted', $fs-clr-text-lighten);
+@include fs-text-emphasis-variant('.text-muted', $fs-color-text-lighten);
 
-@include fs-text-emphasis-variant('.text-light .text-muted', $fs-clr-text-inv-lighten);
+@include fs-text-emphasis-variant('.text-light .text-muted', $fs-color-text-inv-lighten);
 
-@each $name, $map in $fs-clr-contextual {
+@each $name, $map in $fs-contextual-colors {
   @include fs-text-emphasis-variant(
     '.text-#{$name}',
     darken(adjust-hue(map-get($map, base), -10), 50%)

@@ -9,7 +9,7 @@
 .fs-embed {
   display: block;
   height: 0;
-  margin: $fs-margin-embed;
+  margin: $fs-embed-margin;
   padding: 0;
   padding-bottom: fs-ratio-to-percentage($fs-embed-default-ratio);
   position: relative;
@@ -53,10 +53,10 @@
     width: 100%;
   }
   .caption-text {
-    background: $fs-clr-bg-caption;
-    font-size: $fs-font-size-caption;
-    line-height: $fs-font-lh-caption;
-    padding: $fs-padding-caption;
+    background: $fs-caption-bg-color;
+    font-size: $fs-caption-font-size;
+    line-height: $fs-caption-line-height;
+    padding: $fs-caption-padding;
   }
   .fs-embed {
     margin: 0;
@@ -64,10 +64,10 @@
 }
 @if ($version == 'full') {
   .text-light .fs-caption .caption-text {
-    background: $fs-clr-bg-inv-caption;
+    background: $fs-caption-bg-color-inv;
   }
   .text-dark .fs-caption .caption-text {
-    background: $fs-clr-bg-caption;
+    background: $fs-caption-bg-color;
   }
 }
 
@@ -77,7 +77,7 @@
 
 .fs-thumb-link {
   display: inline-block;
-  margin: $fs-margin-thumb;
+  margin: $fs-thumb-link-margin;
   max-width: 100%; // Needed for IE 10-11
   outline: 0;
   position: relative;
@@ -89,9 +89,9 @@
   .far,
   .fal,
   .fab {
-    background: $fs-thumb-link-icon-bg-clr;
+    background: $fs-thumb-link-icon-bg-color;
     border-radius: $fs-thumb-link-icon-radius;
-    color: $fs-thumb-link-icon-clr;
+    color: $fs-thumb-link-icon-color;
     display: block;
     opacity: 0;
     position: absolute;
@@ -136,7 +136,7 @@
 //
 
 .fs-modal-gallery {
-  margin: $fs-margin-element;
+  margin: $fs-element-margin;
   @include fs-margin-vert-flush;
 }
 
@@ -172,11 +172,11 @@
     justify-content: center;
   }
   .gallery-caption {
-    background: $fs-clr-bg-caption;
-    font-size: $fs-font-size-caption-gallery;
+    background: $fs-caption-bg-color;
+    font-size: $fs-gallery-caption-font-size;
     font-weight: $fs-font-weight-base;
-    line-height: $fs-font-lh-caption;
-    padding: $fs-padding-caption-gallery;
+    line-height: $fs-caption-line-height;
+    padding: $fs-gallery-caption-padding;
     text-align: center;
   }
   .fs-thumb-link {
