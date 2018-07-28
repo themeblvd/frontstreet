@@ -409,8 +409,8 @@ blockquote {
   &.alignright,
   &.pull-right {
     margin: $fs-quote-margin;
-    margin-top: $fs-spacing-element;
-    margin-bottom: $fs-spacing-element;
+    margin-top: $fs-element-spacing;
+    margin-bottom: $fs-element-spacing;
   }
 }
 @include fs-max-width(sm) {

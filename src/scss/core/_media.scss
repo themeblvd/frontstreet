@@ -143,9 +143,9 @@
 .fs-gallery {
   display: flex;
   flex-wrap: wrap;
-  margin-top: ($fs-spacing-element - ($fs-gallery-gutters / 2));
+  margin-top: ($fs-element-spacing - ($fs-gallery-gutters / 2));
   margin-right: ($fs-gallery-gutters / -2);
-  margin-bottom: ($fs-spacing-element - ($fs-gallery-gutters / 2));
+  margin-bottom: ($fs-element-spacing - ($fs-gallery-gutters / 2));
   margin-left: ($fs-gallery-gutters / -2);
 
   .gallery-item {

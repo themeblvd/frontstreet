@@ -471,7 +471,7 @@
 //
 
 .submenu-pills {
-  margin: (-$fs-pills-spacing) (-$fs-pills-spacing) ($fs-spacing-element - 2) (-$fs-pills-spacing);
+  margin: (-$fs-pills-spacing) (-$fs-pills-spacing) ($fs-element-spacing - 2) (-$fs-pills-spacing);
 
   > li {
     padding: $fs-pills-spacing;

@@ -110,11 +110,11 @@ $fs-color-svg-inv: $fs-color-light !default;
 $fs-color-svg-inv-hover: $fs-color-white !default;
 
 //
-// Spacing
+// Element Spacing (general base)
 //
 
-$fs-spacing-element: 30px !default;
-$fs-element-margin: $fs-spacing-element 0 !default;
+$fs-element-spacing: 30px !default;
+$fs-element-margin: $fs-element-spacing 0 !default;
 
 //
 // Z-Index (top-level)
@@ -231,7 +231,7 @@ $fs-heading-font-family: $fs-font-family-base !default;
 $fs-heading-font-weight: $fs-font-weight-bold !default;
 $fs-heading-letter-spacing: 0 !default;
 $fs-heading-line-height: 1.2 !default;
-$fs-heading-margin: $fs-spacing-element 0 $fs-paragraph-spacing 0 !default;
+$fs-heading-margin: $fs-element-spacing 0 $fs-paragraph-spacing 0 !default;
 $fs-heading-text-transform: none !default;
 
 $fs-headings: (
@@ -363,7 +363,7 @@ $fs-address-font-style: normal !default;
 //
 
 $fs-column-gutters: 30px !default;
-$fs-column-margin: $fs-spacing-element !default;
+$fs-column-margin: $fs-element-spacing !default;
 
 //
 // Lists
@@ -388,7 +388,7 @@ $fs-field-bg-color-active: $fs-field-bg-color !default;
 $fs-field-bg-color-inv: transparent !default;
 $fs-field-bg-color-inv-active: $fs-field-bg-color-inv !default;
 
-$fs-field-margin: 0 0 ($fs-spacing-element / 2) 0 !default;
+$fs-field-margin: 0 0 ($fs-element-spacing / 2) 0 !default;
 
 $fs-field-base-font-size: $fs-font-size-sm !default;
 $fs-field-base-line-height: $fs-font-size-base !default;
@@ -448,11 +448,11 @@ $fs-field-sizes: (
 // Forms: Legends and Labels
 
 $fs-field-legend-font-size: $fs-font-size-base !default;
-$fs-field-legend-margin: 0 0 ($fs-spacing-element / 2) 0 !default;
+$fs-field-legend-margin: 0 0 ($fs-element-spacing / 2) 0 !default;
 
 $fs-field-label-font-size: $fs-field-base-font-size !default;
 $fs-field-label-letter-spacing: 1px !default;
-$fs-field-label-margin: 0 4px ($fs-spacing-element / 2) 4px !default;
+$fs-field-label-margin: 0 4px ($fs-element-spacing / 2) 4px !default;
 
 $fs-field-help-font-size: $fs-small-elem-font-size !default;
 $fs-field-help-margin: $fs-field-label-margin !default;
@@ -685,7 +685,7 @@ $fs-hr-bg-color: $fs-color-trans-lighter !default;
 $fs-hr-bg-color-inv: rgba($fs-color-bg-black, 0.8) !default;
 
 $fs-divider-height: 4px !default;
-$fs-divider-margin: $fs-spacing-element !default;
+$fs-divider-margin: $fs-element-spacing !default;
 $fs-divider-radius: 2px !default;
 
 $fs-divider-sizes: (
@@ -807,7 +807,7 @@ $fs-mobile-menu-bar-btn-text-transform: $fs-menu-bar-btn-text-transform !default
 
 // Modal: General
 
-$fs-modal-margin: $fs-spacing-element auto !default;
+$fs-modal-margin: $fs-element-spacing auto !default;
 $fs-modal-overlay-color: $fs-color-black !default;
 $fs-modal-overlay-opacity: 0.9 !default;
 $fs-modal-shadow: 0 0 20px rgba($fs-color-black, 0.4) !default;
