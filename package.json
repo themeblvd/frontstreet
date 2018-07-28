@@ -2,7 +2,7 @@
   "name": "frontstreet",
   "version": "1.0.0",
   "description": "Front-End Web Framework",
-  "main": "./dist/js/frontstreet.min.js",
+  "browser": "./dist/js/frontstreet.min.js",
   "directories": {
       "lib": "./src"
   },
