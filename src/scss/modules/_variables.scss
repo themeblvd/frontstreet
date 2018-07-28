@@ -116,6 +116,9 @@ $fs-color-svg-inv-hover: $fs-color-white !default;
 $fs-element-spacing: 30px !default;
 $fs-element-margin: $fs-element-spacing 0 !default;
 
+$fs-tight-element-spacing: 24px !default;
+$fs-tight-element-margin: 0 0 $fs-tight-element-spacing 0 !default;
+
 //
 // Z-Index (top-level)
 //
@@ -222,8 +225,8 @@ $fs-body-bg-color: $fs-color-lightest !default;
 
 // Typography: Paragraphs
 
-$fs-paragraph-spacing: 24px !default;
-$fs-paragraph-margin: 0 0 $fs-paragraph-spacing 0 !default;
+$fs-paragraph-spacing: $fs-tight-element-spacing !default;
+$fs-paragraph-margin: $fs-tight-element-margin !default;
 
 // Typography: Headings
 
@@ -231,7 +234,7 @@ $fs-heading-font-family: $fs-font-family-base !default;
 $fs-heading-font-weight: $fs-font-weight-bold !default;
 $fs-heading-letter-spacing: 0 !default;
 $fs-heading-line-height: 1.2 !default;
-$fs-heading-margin: $fs-element-spacing 0 $fs-paragraph-spacing 0 !default;
+$fs-heading-margin: $fs-element-spacing 0 $fs-tight-element-spacing 0 !default;
 $fs-heading-text-transform: none !default;
 
 $fs-headings: (
@@ -266,7 +269,7 @@ $fs-headings: (
 $fs-large-heading-font-weight: $fs-font-weight-bold !default;
 $fs-large-heading-letter-spacing: 1px !default;
 $fs-large-heading-line-height: $fs-heading-line-height !default;
-$fs-large-heading-margin: $fs-paragraph-margin !default;
+$fs-large-heading-margin: $fs-tight-element-margin !default;
 $fs-heading-text-transform-lg: uppercase !default;
 
 $fs-large-headings: (
@@ -293,7 +296,7 @@ $fs-large-headings: (
 $fs-small-heading-font-weight: $fs-font-weight-bold !default;
 $fs-small-heading-letter-spacing: 1px !default;
 $fs-small-heading-line-height: 1.4 !default;
-$fs-small-heading-margin: $fs-paragraph-margin !default;
+$fs-small-heading-margin: $fs-tight-element-margin !default;
 $fs-small-heading-text-transform: uppercase !default;
 
 $fs-small-headings: (
@@ -369,7 +372,7 @@ $fs-column-margin: $fs-element-spacing !default;
 // Lists
 //
 
-$fs-list-margin: $fs-paragraph-margin !default;
+$fs-list-margin: $fs-tight-element-margin !default;
 $fs-list-padding: 40px !default;
 
 //
@@ -531,14 +534,14 @@ $fs-btn-sizes: (
 // Buttons: Groups
 
 $fs-btn-group-btn-margin: 2px !default;
-$fs-btn-group-margin: $fs-paragraph-spacing (-$fs-btn-group-btn-margin) !default;
+$fs-btn-group-margin: $fs-tight-element-spacing (-$fs-btn-group-btn-margin) !default;
 $fs-pagination-margin: $fs-element-margin !default;
 
 //
 // Media
 //
 
-$fs-figure-margin: $fs-paragraph-margin !default;
+$fs-figure-margin: $fs-tight-element-margin !default;
 
 // Media: Captions
 
@@ -561,11 +564,11 @@ $fs-embed-ratios: (
   ultrawide: 21 9
 ) !default;
 
-$fs-embed-margin: $fs-paragraph-margin !default;
+$fs-embed-margin: $fs-tight-element-margin !default;
 
 // Media: Thumbnail Links
 
-$fs-thumb-link-margin: $fs-paragraph-margin !default;
+$fs-thumb-link-margin: $fs-tight-element-margin !default;
 
 $fs-thumb-link-icon-size: 20px !default;
 $fs-thumb-link-icon-w: $fs-thumb-link-icon-size * 4 !default;
