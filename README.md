@@ -86,4 +86,4 @@ $(document).ready(function() {
 });
 ```
 
-*Note: Front Street's JavaScript source files utilize ESM modules. So, for custom bundling, you'll need to make sure to use a bundling tool that supports this, like [Webpack](https://webpack.js.org/) or [Rollup](https://rollupjs.org/guide/en).*
+*Note: Front Street's JavaScript source files utilize ES modules (ESM). So, for custom bundling, you'll need to make sure to use a bundling tool that supports this, like [Webpack](https://webpack.js.org/) or [Rollup](https://rollupjs.org/guide/en).*
