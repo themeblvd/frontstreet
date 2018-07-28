@@ -28,7 +28,7 @@
   "bugs": {
     "url": "https://github.com/themeblvd/frontstreet/issues"
   },
-  "homepage": "https://frontstreet.io",
+  "homepage": "http://frontstreet.io",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
