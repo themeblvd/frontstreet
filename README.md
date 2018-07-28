@@ -63,7 +63,7 @@ npm install frontstreet --save-dev
 
 #### Full Default JavaScript Build
 
-If you're looking to just include the full Front Street distributed JavaScript into your bundle, that's the the NPM package's main file.
+If you're looking to just include the full Front Street distributed JavaScript into your bundle, that's the NPM package's main file.
 
 ```javascript
 import 'frontstreet';
