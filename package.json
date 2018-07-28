@@ -1,8 +1,11 @@
 {
   "name": "frontstreet",
   "version": "1.0.0",
-  "description": "Front Street Front-End Framework",
-  "main": "@TODO, see issue #16",
+  "description": "Front-End Web Framework",
+  "main": "./dist/js/frontstreet.min.js",
+  "directories": {
+      "lib": "./src"
+  },
   "scripts": {
     "start": "concurrently 'npm run server' 'npm run watch'",
     "server": "browser-sync start --server 'docs' --files *",
@@ -25,7 +28,7 @@
   "bugs": {
     "url": "https://github.com/themeblvd/frontstreet/issues"
   },
-  "homepage": "https://github.com/themeblvd/frontstreet",
+  "homepage": "https://frontstreet.io",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
