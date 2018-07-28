@@ -87,3 +87,9 @@ $(document).ready(function() {
 ```
 
 *Note: Front Street's JavaScript source files utilize ES modules (ESM). So, for custom bundling, you'll need to make sure to use a bundling tool that supports this, like [Webpack](https://webpack.js.org/) or [Rollup](https://rollupjs.org/guide/en).*
+
+And if you're looking to just include the full Front Street distributed JavaScript into your bundle, that's the the NPM package's main file.
+
+```javascript
+import 'frontstreet';
+```
