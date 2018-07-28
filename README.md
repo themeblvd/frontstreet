@@ -100,7 +100,7 @@ $(document).ready(function() {
 
 #### Custom CSS Build
 
-The previous example incorporated the styling by importing through the JavaScript. This is a common approach if you're using a tool like Webpack, where you'd have a loader set up to handle those files. But if you're working with Sass in some other way to compile out a custom build of the Front Street's CSS?
+The previous example incorporated the styling by importing through the JavaScript. This is a common approach if you're using a tool like Webpack, where you'd have a loader set up to handle those files. But what if you're working with Sass in some other way to compile out a custom build of the Front Street's CSS?
 
 The following is an example of implementing the full Front Street framework into a custom `.scss` file with customized variables.
 
@@ -121,7 +121,7 @@ $fs-branding-colors: (
 );
 
 // Include Framework
-import '~frontstreet/src/scss/frontstreet.scss';
+@import '~frontstreet/src/scss/frontstreet.scss';
 ```
 
 *Note: It's important to make sure your Sass variable overrides come before Front Street.*
@@ -133,8 +133,9 @@ The above example can be expanded to also build out a CSS file with only what yo
 // ...
 
 // Include Framework
-import '~frontstreet/src/scss/core/index';
-import '~frontstreet/src/scss/blocks/alert';
-import '~frontstreet/src/scss/blocks/breadcrumb';
+@import '~frontstreet/src/scss/modules/index'; // Important! All variables, mixins and functions.
+@import '~frontstreet/src/scss/core/index';
+@import '~frontstreet/src/scss/blocks/alert';
+@import '~frontstreet/src/scss/blocks/breadcrumb';
 // ...
 ```
