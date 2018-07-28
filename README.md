@@ -6,12 +6,13 @@
 
 ## Getting Started
 
-There are two basic ways to include Front Street in your project.
+There are few ways to include Front Street in your project.
 
-1. Include Front Street core only, for a lightweight base framework to build on.
-2. Include the full Front Street framework, including core styles and all blocks.
+1. Include pre-compiled Front Street core only, for a lightweight base framework to build on.
+2. Include the full, pre-compiled Front Street framework, including core styles and all blocks.
+3. Create a custom build with NPM to include.
 
-### Core Styles Only
+### Method 1: Core Styles Only
 
 1. Download the [latest release](https://github.com/themeblvd/frontstreet/releases/latest) with pre-built assets.
 2. Copy `/dist/css/frontstreet-core.min.css` to your project and include it within the `<head>` of your website.
@@ -20,7 +21,7 @@ There are two basic ways to include Front Street in your project.
 <link rel="stylesheet" href="/path/to/file/frontstreet-core.min.css" />
 ```
 
-### Full Framework
+### Method 2: Full Framework
 
 1. Download the [latest release](https://github.com/themeblvd/frontstreet/releases/latest) with pre-built assets.
 2. Copy `/dist/css/frontstreet.min.css` to your project and include it within the `<head>` of your website.
@@ -36,6 +37,8 @@ There are two basic ways to include Front Street in your project.
 <script src="/path/to/file/frontstreet.min.js"></script>
 ```
 
+*Note: We're aware that Front Street will be used often with WordPress. And so we're using an old version of jQuery in our testing and examples because that's what WordPress is bundling.*
+
 4. Optional step. If you plan to use the model and slider blocks, you'll need to include Magnific Popup and Owl Carousel. Also, if you're planning to use with Font Awesome, we suggest using the JavaScript version of Font Awesome 5. Below is an example that expands on the previous step, to incorporate all of this.
 
 ```html
@@ -50,4 +53,37 @@ There are two basic ways to include Front Street in your project.
 
 *Note: You don't need to include any CSS files for Magnific Popup or Owl Carousel; Front Street takes care of styling these, within its integration to provide a unique look to using these scripts.*
 
-*Note: We're aware that Front Street will be used often with WordPress. And so we're using an old version of jQuery in our testing and examples because that's what WordPress is bundling.*
+### Method 3: Custom Build With NPM
+
+In your project, install the NPM package.
+
+```
+npm install frontstreet --save-dev
+```
+
+And then using the Front Street API, you can include only the blocks you need. Here's an example:
+
+```javascript
+import $ from 'jquery';
+
+import FrontStreet from 'frontstreet/src/js/FrontStreet';
+import Background from 'frontstreet/src/js/blocks/Background';
+import Tooltip from 'frontstreet/src/js/blocks/Tooltip';
+
+import 'frontstreet/src/scss/core/_index.scss';
+import 'frontstreet/src/scss/blocks/_background.scss';
+import 'frontstreet/src/scss/blocks/_tooltip.scss';
+
+const frontstreet = new FrontStreet();
+
+frontstreet.add('background', Background);
+frontstreet.add('tooltip', Tooltip);
+frontstreet.init(); // Add blocks to "frontstreet" jQuery namespace.
+
+$(document).ready(function() {
+  $('.my-background').frontstreet('background');
+  $('.my-tooltip').frontstreet('tooltip');
+});
+```
+
+*Note: Front Street's JavaScript source files utilize ESM modules. So, for custom bundling, you'll need to make sure to use a bundling tool that supports this, like [Webpack](https://webpack.js.org/) or [Rollup](https://rollupjs.org/guide/en).*
