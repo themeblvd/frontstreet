@@ -2114,6 +2114,7 @@ h6 small,
   color: #333;
   font-weight: 700;
   letter-spacing: 1px;
+  line-height: 1.2;
   margin: 0 0 24px 0;
   text-transform: uppercase;
 }
@@ -2170,6 +2171,7 @@ h6 small,
   color: #333;
   font-weight: 700;
   letter-spacing: 1px;
+  line-height: 1.4;
   margin: 0 0 24px 0;
   text-transform: uppercase;
 }
@@ -2804,6 +2806,7 @@ label,
   display: inline-block;
   font-weight: 700;
   font-size: 14px;
+  letter-spacing: 1px;
   margin: 0 4px 15px 4px;
   max-width: 100%;
 }
@@ -2895,21 +2898,7 @@ label .required,
   background-color: transparent;
 }
 
-input[type=date],
-input[type=datetime-local],
-input[type=email],
-input[type=month],
-input[type=number],
-input[type=password],
-input[type=range],
-input[type=search],
-input[type=tel],
-input[type=text],
-input[type=time],
-input[type=url],
-input[type=week],
-textarea,
-select {
+input[type=date], input[type=datetime-local], input[type=email], input[type=month], input[type=number], input[type=password], input[type=range], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], textarea, select {
   -webkit-appearance: none;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 0;
@@ -2924,136 +2913,41 @@ select {
   width: 100%;
 }
 
-input[type=date]:focus,
-input[type=datetime-local]:focus,
-input[type=email]:focus,
-input[type=month]:focus,
-input[type=number]:focus,
-input[type=password]:focus,
-input[type=range]:focus,
-input[type=search]:focus,
-input[type=tel]:focus,
-input[type=text]:focus,
-input[type=time]:focus,
-input[type=url]:focus,
-input[type=week]:focus,
-textarea:focus,
-select:focus {
+input[type=date]:focus, input[type=datetime-local]:focus, input[type=email]:focus, input[type=month]:focus, input[type=number]:focus, input[type=password]:focus, input[type=range]:focus, input[type=search]:focus, input[type=tel]:focus, input[type=text]:focus, input[type=time]:focus, input[type=url]:focus, input[type=week]:focus, textarea:focus, select:focus {
+  background-color: rgba(255, 255, 255, 0.8);
   border-color: rgba(97, 97, 97, 0.4);
   box-shadow: 0 0 8px rgba(237, 237, 237, 0.4);
   outline: 0;
 }
 
-input[type=date]:first-child,
-input[type=datetime-local]:first-child,
-input[type=email]:first-child,
-input[type=month]:first-child,
-input[type=number]:first-child,
-input[type=password]:first-child,
-input[type=range]:first-child,
-input[type=search]:first-child,
-input[type=tel]:first-child,
-input[type=text]:first-child,
-input[type=time]:first-child,
-input[type=url]:first-child,
-input[type=week]:first-child,
-textarea:first-child,
-select:first-child {
+input[type=date]:first-child, input[type=datetime-local]:first-child, input[type=email]:first-child, input[type=month]:first-child, input[type=number]:first-child, input[type=password]:first-child, input[type=range]:first-child, input[type=search]:first-child, input[type=tel]:first-child, input[type=text]:first-child, input[type=time]:first-child, input[type=url]:first-child, input[type=week]:first-child, textarea:first-child, select:first-child {
   margin-top: 0;
 }
 
-input[type=date]:last-child,
-input[type=datetime-local]:last-child,
-input[type=email]:last-child,
-input[type=month]:last-child,
-input[type=number]:last-child,
-input[type=password]:last-child,
-input[type=range]:last-child,
-input[type=search]:last-child,
-input[type=tel]:last-child,
-input[type=text]:last-child,
-input[type=time]:last-child,
-input[type=url]:last-child,
-input[type=week]:last-child,
-textarea:last-child,
-select:last-child {
+input[type=date]:last-child, input[type=datetime-local]:last-child, input[type=email]:last-child, input[type=month]:last-child, input[type=number]:last-child, input[type=password]:last-child, input[type=range]:last-child, input[type=search]:last-child, input[type=tel]:last-child, input[type=text]:last-child, input[type=time]:last-child, input[type=url]:last-child, input[type=week]:last-child, textarea:last-child, select:last-child {
   margin-bottom: 0;
 }
 
-.text-light input[type=date],
-.text-light input[type=datetime-local],
-.text-light input[type=email],
-.text-light input[type=month],
-.text-light input[type=number],
-.text-light input[type=password],
-.text-light input[type=range],
-.text-light input[type=search],
-.text-light input[type=tel],
-.text-light input[type=text],
-.text-light input[type=time],
-.text-light input[type=url],
-.text-light input[type=week],
-.text-light textarea,
-.text-light select {
+.text-light input[type=date], .text-light input[type=datetime-local], .text-light input[type=email], .text-light input[type=month], .text-light input[type=number], .text-light input[type=password], .text-light input[type=range], .text-light input[type=search], .text-light input[type=tel], .text-light input[type=text], .text-light input[type=time], .text-light input[type=url], .text-light input[type=week], .text-light textarea, .text-light select {
   background-color: transparent;
-  border-color: #000;
+  border-color: rgba(176, 176, 176, 0.4);
   color: #fff;
 }
 
-.text-light input[type=date]:focus,
-.text-light input[type=datetime-local]:focus,
-.text-light input[type=email]:focus,
-.text-light input[type=month]:focus,
-.text-light input[type=number]:focus,
-.text-light input[type=password]:focus,
-.text-light input[type=range]:focus,
-.text-light input[type=search]:focus,
-.text-light input[type=tel]:focus,
-.text-light input[type=text]:focus,
-.text-light input[type=time]:focus,
-.text-light input[type=url]:focus,
-.text-light input[type=week]:focus,
-.text-light textarea:focus,
-.text-light select:focus {
-  border-color: #000;
+.text-light input[type=date]:focus, .text-light input[type=datetime-local]:focus, .text-light input[type=email]:focus, .text-light input[type=month]:focus, .text-light input[type=number]:focus, .text-light input[type=password]:focus, .text-light input[type=range]:focus, .text-light input[type=search]:focus, .text-light input[type=tel]:focus, .text-light input[type=text]:focus, .text-light input[type=time]:focus, .text-light input[type=url]:focus, .text-light input[type=week]:focus, .text-light textarea:focus, .text-light select:focus {
+  background-color: transparent;
+  border-color: rgba(97, 97, 97, 0.4);
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
-.text-dark input[type=date],
-.text-dark input[type=datetime-local],
-.text-dark input[type=email],
-.text-dark input[type=month],
-.text-dark input[type=number],
-.text-dark input[type=password],
-.text-dark input[type=range],
-.text-dark input[type=search],
-.text-dark input[type=tel],
-.text-dark input[type=text],
-.text-dark input[type=time],
-.text-dark input[type=url],
-.text-dark input[type=week],
-.text-dark textarea,
-.text-dark select {
+.text-dark input[type=date], .text-dark input[type=datetime-local], .text-dark input[type=email], .text-dark input[type=month], .text-dark input[type=number], .text-dark input[type=password], .text-dark input[type=range], .text-dark input[type=search], .text-dark input[type=tel], .text-dark input[type=text], .text-dark input[type=time], .text-dark input[type=url], .text-dark input[type=week], .text-dark textarea, .text-dark select {
   background-color: rgba(255, 255, 255, 0.8);
   border-color: rgba(176, 176, 176, 0.4);
   color: rgba(50, 50, 50, 0.7);
 }
 
-.text-dark input[type=date]:focus,
-.text-dark input[type=datetime-local]:focus,
-.text-dark input[type=email]:focus,
-.text-dark input[type=month]:focus,
-.text-dark input[type=number]:focus,
-.text-dark input[type=password]:focus,
-.text-dark input[type=range]:focus,
-.text-dark input[type=search]:focus,
-.text-dark input[type=tel]:focus,
-.text-dark input[type=text]:focus,
-.text-dark input[type=time]:focus,
-.text-dark input[type=url]:focus,
-.text-dark input[type=week]:focus,
-.text-dark textarea:focus,
-.text-dark select:focus {
+.text-dark input[type=date]:focus, .text-dark input[type=datetime-local]:focus, .text-dark input[type=email]:focus, .text-dark input[type=month]:focus, .text-dark input[type=number]:focus, .text-dark input[type=password]:focus, .text-dark input[type=range]:focus, .text-dark input[type=search]:focus, .text-dark input[type=tel]:focus, .text-dark input[type=text]:focus, .text-dark input[type=time]:focus, .text-dark input[type=url]:focus, .text-dark input[type=week]:focus, .text-dark textarea:focus, .text-dark select:focus {
+  background-color: rgba(255, 255, 255, 0.8);
   border-color: rgba(97, 97, 97, 0.4);
   box-shadow: 0 0 8px rgba(237, 237, 237, 0.4);
 }

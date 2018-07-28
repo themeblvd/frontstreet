@@ -349,7 +349,7 @@
 .dark-purple.over-bg-content,
 .dark-purple.panel-classic .widget-title,
 .dark-purple.panel-color .widget-title {
-  background-color: #5d3f6A;
+  background-color: #5d3f6a;
   border-color: #25192a;
   color: #fff;
 }
@@ -359,12 +359,12 @@
 }
 
 .testimonial-sm .dark-purple:before {
-  border-top-color: #5d3f6A;
+  border-top-color: #5d3f6a;
 }
 
 .testimonial-md .dark-purple:before {
-  border-right-color: #5d3f6A;
-  border-left-color: #5d3f6A;
+  border-right-color: #5d3f6a;
+  border-left-color: #5d3f6a;
 }
 
 .dark-purple h1,
@@ -377,7 +377,7 @@
 }
 
 .dark-purple.mobile-menu-bar ul {
-  background-color: #5d3f6A;
+  background-color: #5d3f6a;
 }
 
 .forest,
@@ -874,7 +874,7 @@
 .steel-blue.over-bg-content,
 .steel-blue.panel-classic .widget-title,
 .steel-blue.panel-color .widget-title {
-  background-color: #4b77Be;
+  background-color: #4b77be;
   border-color: #2b4978;
   color: #fff;
 }
@@ -884,12 +884,12 @@
 }
 
 .testimonial-sm .steel-blue:before {
-  border-top-color: #4b77Be;
+  border-top-color: #4b77be;
 }
 
 .testimonial-md .steel-blue:before {
-  border-right-color: #4b77Be;
-  border-left-color: #4b77Be;
+  border-right-color: #4b77be;
+  border-left-color: #4b77be;
 }
 
 .steel-blue h1,
@@ -902,7 +902,7 @@
 }
 
 .steel-blue.mobile-menu-bar ul {
-  background-color: #4b77Be;
+  background-color: #4b77be;
 }
 
 .teal,
@@ -979,7 +979,7 @@
 .yellow.over-bg-content,
 .yellow.panel-classic .widget-title,
 .yellow.panel-color .widget-title {
-  background-color: #ecc11B;
+  background-color: #ecc11b;
   border-color: #95790c;
   color: rgba(50, 50, 50, 0.7);
 }
@@ -989,16 +989,16 @@
 }
 
 .testimonial-sm .yellow:before {
-  border-top-color: #ecc11B;
+  border-top-color: #ecc11b;
 }
 
 .testimonial-md .yellow:before {
-  border-right-color: #ecc11B;
-  border-left-color: #ecc11B;
+  border-right-color: #ecc11b;
+  border-left-color: #ecc11b;
 }
 
 .yellow.mobile-menu-bar ul {
-  background-color: #ecc11B;
+  background-color: #ecc11b;
 }
 
 .wheat,
@@ -1103,7 +1103,7 @@
 }
 
 .text-dark-purple {
-  color: #5d3f6A;
+  color: #5d3f6a;
 }
 
 .text-forest {
@@ -1163,7 +1163,7 @@
 }
 
 .text-steel-blue {
-  color: #4b77Be;
+  color: #4b77be;
 }
 
 .text-teal {
@@ -1175,7 +1175,7 @@
 }
 
 .text-yellow {
-  color: #ecc11B;
+  color: #ecc11b;
 }
 
 .text-wheat {
@@ -1427,7 +1427,7 @@
 }
 
 .btn.btn-dark-purple, [type=submit].btn-dark-purple {
-  background-color: #5d3f6A;
+  background-color: #5d3f6a;
   color: #fff;
 }
 
@@ -1441,12 +1441,12 @@
 
 .btn.btn-dark-purple.btn-trans, [type=submit].btn-dark-purple.btn-trans {
   background-color: transparent;
-  border-color: #5d3f6A;
-  color: #5d3f6A;
+  border-color: #5d3f6a;
+  color: #5d3f6a;
 }
 
 .btn.btn-dark-purple.btn-trans:hover, .btn.btn-dark-purple.btn-trans:focus, [type=submit].btn-dark-purple.btn-trans:hover, [type=submit].btn-dark-purple.btn-trans:focus {
-  background-color: #5d3f6A;
+  background-color: #5d3f6a;
   color: #fff;
 }
 
@@ -1787,7 +1787,7 @@
 }
 
 .btn.btn-steel-blue, [type=submit].btn-steel-blue {
-  background-color: #4b77Be;
+  background-color: #4b77be;
   color: #fff;
 }
 
@@ -1801,12 +1801,12 @@
 
 .btn.btn-steel-blue.btn-trans, [type=submit].btn-steel-blue.btn-trans {
   background-color: transparent;
-  border-color: #4b77Be;
-  color: #4b77Be;
+  border-color: #4b77be;
+  color: #4b77be;
 }
 
 .btn.btn-steel-blue.btn-trans:hover, .btn.btn-steel-blue.btn-trans:focus, [type=submit].btn-steel-blue.btn-trans:hover, [type=submit].btn-steel-blue.btn-trans:focus {
-  background-color: #4b77Be;
+  background-color: #4b77be;
   color: #fff;
 }
 
@@ -1859,7 +1859,7 @@
 }
 
 .btn.btn-yellow, [type=submit].btn-yellow {
-  background-color: #ecc11B;
+  background-color: #ecc11b;
   color: rgba(50, 50, 50, 0.7);
 }
 
@@ -1873,12 +1873,12 @@
 
 .btn.btn-yellow.btn-trans, [type=submit].btn-yellow.btn-trans {
   background-color: transparent;
-  border-color: #ecc11B;
+  border-color: #ecc11b;
   color: rgba(50, 50, 50, 0.7);
 }
 
 .btn.btn-yellow.btn-trans:hover, .btn.btn-yellow.btn-trans:focus, [type=submit].btn-yellow.btn-trans:hover, [type=submit].btn-yellow.btn-trans:focus {
-  background-color: #ecc11B;
+  background-color: #ecc11b;
   color: rgba(50, 50, 50, 0.7);
 }
 
