@@ -61,7 +61,17 @@ In your project, install the NPM package.
 npm install frontstreet --save-dev
 ```
 
-And then using the Front Street API, you can include only the blocks you need. Here's an example:
+#### Full Default JavaScript Build
+
+If you're looking to just include the full Front Street distributed JavaScript into your bundle, that's the the NPM package's main file.
+
+```javascript
+import 'frontstreet';
+```
+
+#### Custom JavaScript Build
+
+Or, using the Front Street API, you can include only the blocks you need to build a custom version. Here's an example:
 
 ```javascript
 import $ from 'jquery';
@@ -88,8 +98,43 @@ $(document).ready(function() {
 
 *Note: Front Street's JavaScript source files utilize ES modules (ESM). So, for custom bundling, you'll need to make sure to use a bundling tool that supports this, like [Webpack](https://webpack.js.org/) or [Rollup](https://rollupjs.org/guide/en).*
 
-And if you're looking to just include the full Front Street distributed JavaScript into your bundle, that's the the NPM package's main file.
+#### Custom CSS Build
 
-```javascript
-import 'frontstreet';
+The previous example incorporated the styling by importing through the JavaScript. This is a common approach if you're using a tool like Webpack, where you'd have a loader set up to handle those files. But if you're working with Sass in some other way to compile out a custom build of the Front Street's CSS?
+
+The following is an example of implementing the full Front Street framework into a custom `.scss` file with customized variables.
+
+```scss
+// Variable Overrides
+$fs-font-family-base: "My Font";
+$fs-font-size-base: 18px;
+
+$fs-branding-colors: (
+  primary: (
+    base: #000,
+    contrast: #fff
+  ),
+  secondary: (
+    base: #000,
+    contrast: #fff
+  )
+);
+
+// Include Framework
+import '~frontstreet/src/scss/frontstreet.scss';
+```
+
+*Note: It's important to make sure your Sass variable overrides come before Front Street.*
+
+The above example can be expanded to also build out a CSS file with only what you need.
+
+```scss
+// Variable Overrides
+// ...
+
+// Include Framework
+import '~frontstreet/src/scss/core/index';
+import '~frontstreet/src/scss/blocks/alert';
+import '~frontstreet/src/scss/blocks/breadcrumb';
+// ...
 ```
