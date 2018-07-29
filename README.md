@@ -148,3 +148,19 @@ The above example can be modified to also build out a CSS file with only what yo
 ```
 
 *Note: In the sample code above, we're using the `~` to reference a package from `node_modules`. Check out [node-sass-tilde-importer](https://www.npmjs.com/package/node-sass-tilde-importer).*
+
+
+## Browser Support
+
+![Chrome](https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png) | ![Edge](https://raw.github.com/alrra/browser-logos/master/src/edge/edge_48x48.png) | ![IE](https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png)
+--- | --- | --- | --- | --- | --- |
+Latest ✔ | Latest ✔ | Latest ✔ | 11+ ✔ | 9.1+ ✔ | Latest ✔ |
+
+## Creator
+
+**Jason Bobich**
+
+* <http://jasonbobich.com>
+* <https://twitter.com/jasonbobich>
+* <http://themeblvd.com>
+* <http://wpjumpstart.com>
