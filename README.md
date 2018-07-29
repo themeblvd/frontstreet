@@ -14,11 +14,12 @@ There are few ways to include Front Street in your project.
 
 ### Method 1: Core Styles Only
 
-* Download the [latest release](https://github.com/themeblvd/frontstreet/releases/latest) with pre-built assets.
-* Copy `/dist/css/frontstreet-core.min.css` to your project and include it within the `<head>` of your website.
-	```html
-	<link rel="stylesheet" href="/path/to/file/frontstreet-core.min.css" />
-	```
+Download the [latest release](https://github.com/themeblvd/frontstreet/releases/latest) with pre-built assets.
+Copy `/dist/css/frontstreet-core.min.css` to your project and include it within the `<head>` of your website.
+
+```html
+<link rel="stylesheet" href="/path/to/file/frontstreet-core.min.css" />
+```
 
 ### Method 2: Full Framework
 
