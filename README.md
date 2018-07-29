@@ -133,8 +133,7 @@ The above example can be expanded to also build out a CSS file with only what yo
 // ...
 
 // Include Framework
-@import '~frontstreet/src/scss/modules/index'; // Important! All variables, mixins and functions.
-@import '~frontstreet/src/scss/core/index';
+@import '~frontstreet/src/scss/frontstreet-core.scss';
 @import '~frontstreet/src/scss/blocks/alert';
 @import '~frontstreet/src/scss/blocks/breadcrumb';
 // ...
