@@ -81,7 +81,7 @@ import FrontStreet from 'frontstreet/src/js/FrontStreet';
 import Background from 'frontstreet/src/js/blocks/Background';
 import Tooltip from 'frontstreet/src/js/blocks/Tooltip';
 
-import 'frontstreet/src/scss/core/_index.scss';
+import 'frontstreet/src/scss/frontstreet-core.scss';
 import 'frontstreet/src/scss/blocks/_background.scss';
 import 'frontstreet/src/scss/blocks/_tooltip.scss';
 
@@ -103,10 +103,9 @@ $(document).ready(function() {
 
 The previous example incorporated the styling by importing through the JavaScript. This is a common approach if you're using a tool like Webpack, where you'd have a loader set up to handle those files. But what if you're working with Sass in some other way to compile out a custom build of the Front Street's CSS?
 
-The following is an example of implementing the full Front Street framework into a custom `.scss` file with customized variables.
+Start by creating an `.scss` file for your custom variables, which can override any variables in Front Street.
 
 ```scss
-// Variable Overrides
 $fs-font-family-base: "My Font";
 $fs-font-size-base: 18px;
 
@@ -123,16 +122,23 @@ $fs-branding-colors: (
     contrast: #fff
   )
 );
+```
+
+And then the following is an example of implementing the full Front Street framework into a custom `.scss` file.
+
+```scss
+// Variable Overrides
+@import 'path/to/my-variables.scss';
 
 // Include Framework
 @import '~frontstreet/src/scss/frontstreet.scss';
 ```
 
-The above example can be expanded to also build out a CSS file with only what you need.
+The above example can be modified to also build out a CSS file with only what you need. Instead of including the entire framework, you can include the framework core and then add only the blocks you need.
 
 ```scss
 // Variable Overrides
-// ...
+@import 'path/to/my-variables.scss';
 
 // Include Framework
 @import '~frontstreet/src/scss/frontstreet-core.scss';
@@ -140,3 +146,5 @@ The above example can be expanded to also build out a CSS file with only what yo
 @import '~frontstreet/src/scss/blocks/breadcrumb';
 // ...
 ```
+
+*Note: In the sample code above, we're using the `~` to reference a package from `node_modules`. Check out [node-sass-tilde-importer](https://www.npmjs.com/package/node-sass-tilde-importer).*
