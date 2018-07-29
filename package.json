@@ -2,9 +2,12 @@
   "name": "frontstreet",
   "version": "1.0.0",
   "description": "Front-End Web Framework",
+  "keywords": ["css", "sass", "responsive", "front-end", "framework", "web", "flexbox", "grid", "front street", "themeblvd", "theme blvd", "jump start"],
+  "main": "./dist/js/frontstreet.min.js",
   "browser": "./dist/js/frontstreet.min.js",
+  "module": "./src/js/index.js",
   "directories": {
-      "lib": "./src"
+    "lib": "./src"
   },
   "scripts": {
     "start": "concurrently 'npm run server' 'npm run watch'",
@@ -23,7 +26,7 @@
     "type": "git",
     "url": "https://github.com/themeblvd/frontstreet.git"
   },
-  "author": "Theme Blvd",
+  "author": "Jason Bobich <info@themeblvd.com> (http://jasonbobich.com)",
   "license": "GPL-2.0+",
   "bugs": {
     "url": "https://github.com/themeblvd/frontstreet/issues"
