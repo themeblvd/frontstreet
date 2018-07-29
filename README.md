@@ -124,8 +124,6 @@ $fs-branding-colors: (
 @import '~frontstreet/src/scss/frontstreet.scss';
 ```
 
-*Note: It's important to make sure your Sass variable overrides come before Front Street.*
-
 The above example can be expanded to also build out a CSS file with only what you need.
 
 ```scss
