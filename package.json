@@ -1,8 +1,21 @@
 {
   "name": "frontstreet",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Front-End Web Framework",
-  "keywords": ["css", "sass", "responsive", "front-end", "framework", "web", "flexbox", "grid", "front street", "themeblvd", "theme blvd", "jump start"],
+  "keywords": [
+    "css",
+    "sass",
+    "responsive",
+    "front-end",
+    "framework",
+    "web",
+    "flexbox",
+    "grid",
+    "front street",
+    "themeblvd",
+    "theme blvd",
+    "jump start"
+  ],
   "main": "./dist/js/frontstreet.min.js",
   "browser": "./dist/js/frontstreet.min.js",
   "module": "./src/js/index.js",
