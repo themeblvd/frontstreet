@@ -27,7 +27,7 @@
     "url": "https://github.com/themeblvd/frontstreet.git"
   },
   "author": "Jason Bobich <info@themeblvd.com> (http://jasonbobich.com)",
-  "license": "GPL-2.0+",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/themeblvd/frontstreet/issues"
   },
