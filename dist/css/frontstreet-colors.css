@@ -26,6 +26,7 @@
   border-left-color: #34495e;
 }
 
+.asphalt p,
 .asphalt h1,
 .asphalt h2,
 .asphalt h3,
@@ -61,6 +62,7 @@
   border-left-color: #00437f;
 }
 
+.blue p,
 .blue h1,
 .blue h2,
 .blue h3,
@@ -96,6 +98,7 @@
   border-left-color: #000;
 }
 
+.black p,
 .black h1,
 .black h2,
 .black h3,
@@ -131,6 +134,7 @@
   border-left-color: #825a2c;
 }
 
+.brown p,
 .brown h1,
 .brown h2,
 .brown h3,
@@ -166,6 +170,7 @@
   border-left-color: #95a5a6;
 }
 
+.concrete p,
 .concrete h1,
 .concrete h2,
 .concrete h3,
@@ -227,6 +232,7 @@
   border-left-color: #c3272b;
 }
 
+.crimson p,
 .crimson h1,
 .crimson h2,
 .crimson h3,
@@ -262,6 +268,7 @@
   border-left-color: #153f5a;
 }
 
+.dark-blue p,
 .dark-blue h1,
 .dark-blue h2,
 .dark-blue h3,
@@ -297,6 +304,7 @@
   border-left-color: #572f05;
 }
 
+.dark-brown p,
 .dark-brown h1,
 .dark-brown h2,
 .dark-brown h3,
@@ -332,6 +340,7 @@
   border-left-color: #485a21;
 }
 
+.dark-green p,
 .dark-green h1,
 .dark-green h2,
 .dark-green h3,
@@ -367,6 +376,7 @@
   border-left-color: #5d3f6a;
 }
 
+.dark-purple p,
 .dark-purple h1,
 .dark-purple h2,
 .dark-purple h3,
@@ -402,6 +412,7 @@
   border-left-color: #006442;
 }
 
+.forest p,
 .forest h1,
 .forest h2,
 .forest h3,
@@ -437,6 +448,7 @@
   border-left-color: #26a65b;
 }
 
+.green p,
 .green h1,
 .green h2,
 .green h3,
@@ -472,6 +484,7 @@
   border-left-color: #36b3a8;
 }
 
+.jungle p,
 .jungle h1,
 .jungle h2,
 .jungle h3,
@@ -507,6 +520,7 @@
   border-left-color: #7b726c;
 }
 
+.mauve p,
 .mauve h1,
 .mauve h2,
 .mauve h3,
@@ -542,6 +556,7 @@
   border-left-color: #ff9624;
 }
 
+.orange p,
 .orange h1,
 .orange h2,
 .orange h3,
@@ -577,6 +592,7 @@
   border-left-color: #f47983;
 }
 
+.peach p,
 .peach h1,
 .peach h2,
 .peach h3,
@@ -612,6 +628,7 @@
   border-left-color: #bca89d;
 }
 
+.pearl p,
 .pearl h1,
 .pearl h2,
 .pearl h3,
@@ -647,6 +664,7 @@
   border-left-color: #de2e81;
 }
 
+.pink p,
 .pink h1,
 .pink h2,
 .pink h3,
@@ -682,6 +700,7 @@
   border-left-color: #e74c3c;
 }
 
+.pomegranate p,
 .pomegranate h1,
 .pomegranate h2,
 .pomegranate h3,
@@ -717,6 +736,7 @@
   border-left-color: #78498e;
 }
 
+.purple p,
 .purple h1,
 .purple h2,
 .purple h3,
@@ -752,6 +772,7 @@
   border-left-color: #8f1d21;
 }
 
+.red p,
 .red h1,
 .red h2,
 .red h3,
@@ -787,6 +808,7 @@
   border-left-color: #428bca;
 }
 
+.royal p,
 .royal h1,
 .royal h2,
 .royal h3,
@@ -822,6 +844,7 @@
   border-left-color: #7f8d9c;
 }
 
+.slate-grey p,
 .slate-grey h1,
 .slate-grey h2,
 .slate-grey h3,
@@ -857,6 +880,7 @@
   border-left-color: #bdc3c7;
 }
 
+.silver p,
 .silver h1,
 .silver h2,
 .silver h3,
@@ -892,6 +916,7 @@
   border-left-color: #4b77be;
 }
 
+.steel-blue p,
 .steel-blue h1,
 .steel-blue h2,
 .steel-blue h3,
@@ -927,6 +952,7 @@
   border-left-color: #008080;
 }
 
+.teal p,
 .teal h1,
 .teal h2,
 .teal h3,
@@ -962,6 +988,7 @@
   border-left-color: #36d7b7;
 }
 
+.turquoise p,
 .turquoise h1,
 .turquoise h2,
 .turquoise h3,
@@ -1023,6 +1050,7 @@
   border-left-color: #b4ad8b;
 }
 
+.wheat p,
 .wheat h1,
 .wheat h2,
 .wheat h3,

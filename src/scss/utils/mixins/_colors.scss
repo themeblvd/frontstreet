@@ -74,6 +74,7 @@
     border-left-color: $clr;
   }
   @if $text != null and $text != $fs-color-text-base {
+    #{$parent} p,
     #{$parent} h1,
     #{$parent} h2,
     #{$parent} h3,

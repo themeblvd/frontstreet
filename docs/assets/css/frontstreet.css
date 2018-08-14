@@ -51,6 +51,7 @@
   border-left-color: #1b1b1b;
 }
 
+.bg-dark p,
 .bg-dark h1,
 .bg-dark h2,
 .bg-dark h3,
@@ -469,6 +470,7 @@ img {
   border-left-color: #1b1b1b;
 }
 
+.primary p,
 .primary h1,
 .primary h2,
 .primary h3,
@@ -504,6 +506,7 @@ img {
   border-left-color: #1b1b1b;
 }
 
+.bg-primary p,
 .bg-primary h1,
 .bg-primary h2,
 .bg-primary h3,
@@ -539,6 +542,7 @@ img {
   border-left-color: #2ea3f2;
 }
 
+.secondary p,
 .secondary h1,
 .secondary h2,
 .secondary h3,
@@ -574,6 +578,7 @@ img {
   border-left-color: #2ea3f2;
 }
 
+.bg-secondary p,
 .bg-secondary h1,
 .bg-secondary h2,
 .bg-secondary h3,
@@ -617,6 +622,7 @@ img {
   border-left-color: #dff0d8;
 }
 
+.success p,
 .success h1,
 .success h2,
 .success h3,
@@ -652,6 +658,7 @@ img {
   border-left-color: #d9edf7;
 }
 
+.info p,
 .info h1,
 .info h2,
 .info h3,
@@ -687,6 +694,7 @@ img {
   border-left-color: #fcf8e3;
 }
 
+.warning p,
 .warning h1,
 .warning h2,
 .warning h3,
@@ -722,6 +730,7 @@ img {
   border-left-color: #f2dede;
 }
 
+.danger p,
 .danger h1,
 .danger h2,
 .danger h3,
@@ -4049,6 +4058,7 @@ input[type='button'].btn-block {
   border-left-color: #dff0d8;
 }
 
+.alert-success p,
 .alert-success h1,
 .alert-success h2,
 .alert-success h3,
@@ -4084,6 +4094,7 @@ input[type='button'].btn-block {
   border-left-color: #d9edf7;
 }
 
+.alert-info p,
 .alert-info h1,
 .alert-info h2,
 .alert-info h3,
@@ -4119,6 +4130,7 @@ input[type='button'].btn-block {
   border-left-color: #fcf8e3;
 }
 
+.alert-warning p,
 .alert-warning h1,
 .alert-warning h2,
 .alert-warning h3,
@@ -4154,6 +4166,7 @@ input[type='button'].btn-block {
   border-left-color: #f2dede;
 }
 
+.alert-danger p,
 .alert-danger h1,
 .alert-danger h2,
 .alert-danger h3,
