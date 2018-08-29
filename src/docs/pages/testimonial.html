@@ -14,7 +14,7 @@
 
     <div class="fs-testimonial testimonial-sm">
 
-        <div class="testimonial-text bg-light">
+        <div class="testimonial-text">
             <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
         </div>
 
@@ -35,7 +35,7 @@
 <pre class="highlight html">
 <div class="fs-testimonial testimonial-sm">
 
-    <div class="testimonial-text bg-light">
+    <div class="testimonial-text">
         <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
     </div>
 
@@ -58,7 +58,7 @@
 
     <div class="fs-testimonial testimonial-sm">
 
-        <blockquote class="testimonial-text bg-light">
+        <blockquote class="testimonial-text">
             <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
         </blockquote>
 
@@ -79,7 +79,7 @@
 <pre class="highlight html">
 <div class="fs-testimonial testimonial-sm">
 
-    <blockquote class="testimonial-text bg-light">
+    <blockquote class="testimonial-text">
         <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
     </blockquote>
 
@@ -96,106 +96,62 @@
 </div><!-- .fs-testimonial -->
 </pre>
 
-<p>You may have noticed the above testimonial has a light background because we added the class <code>bg-light</code> to the <code>.testimonial-text</code> element within. You must add a background color class, but it can be any of Front Street's <a href="colors.html" title="Background Colors" target="_blank">background color classes</a>.</p>
+<p>If you're looking to dynamically customize the color of a testimonial, here's an example. &mdash; This might be useful if you're dynamically outputting a testimonial from a CMS or something with user-selected colors.</p>
 
-<div class="row">
-    <div class="col col-md">
-        <div class="wrap">
+<div class="testimonial-examples">
 
-            <div class="fs-testimonial testimonial-sm">
-                <div class="testimonial-text primary">
-                    <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                </div>
-                <ul class="testimonial-author">
-                    <li class="author-image">
-                        <img src="assets/img/person-1.jpg">
-                    </li>
-                    <li class="author-info">
-                        <h5 class="author-name">Erik Allen</h5>
-                        <span class="author-tagline">Founder, <a href="">Pacific Revival</a></span>
-                    </li>
-                </ul>
-            </div><!-- .fs-testimonial -->
+    <div class="fs-testimonial testimonial-sm">
 
+        <div class="testimonial-text text-light" style="background-color: #006442">
+            <span class="arrow" style="border-top-color: #006442"></span>
+            <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
         </div>
-    </div>
-    <div class="col col-md">
-        <div class="wrap">
 
-            <div class="fs-testimonial testimonial-sm">
-                <div class="testimonial-text blue">
-                    <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                </div>
-                <ul class="testimonial-author">
-                    <li class="author-image">
-                        <img src="assets/img/person-1.jpg">
-                    </li>
-                    <li class="author-info">
-                        <h5 class="author-name">Erik Allen</h5>
-                        <span class="author-tagline">Founder, <a href="">Pacific Revival</a></span>
-                    </li>
-                </ul>
-            </div><!-- .fs-testimonial -->
+        <ul class="testimonial-author">
+            <li class="author-image">
+                <img src="assets/img/person-1.jpg">
+            </li>
+            <li class="author-info">
+                <h5 class="author-name">Erik Allen</h5>
+                <span class="author-tagline">Founder, <a href="">Pacific Revival</a></span>
+            </li>
+        </ul>
 
-        </div>
-    </div>
-</div>
+    </div><!-- .fs-testimonial -->
 
-<div class="row">
-    <div class="col col-md">
-        <div class="wrap">
-
-            <div class="fs-testimonial testimonial-sm">
-                <div class="testimonial-text forest">
-                    <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                </div>
-                <ul class="testimonial-author">
-                    <li class="author-image">
-                        <img src="assets/img/person-1.jpg">
-                    </li>
-                    <li class="author-info">
-                        <h5 class="author-name">Erik Allen</h5>
-                        <span class="author-tagline">Founder, <a href="">Pacific Revival</a></span>
-                    </li>
-                </ul>
-            </div><!-- .fs-testimonial -->
-
-        </div>
-    </div>
-    <div class="col col-md">
-        <div class="wrap">
-
-            <div class="fs-testimonial testimonial-sm">
-                <div class="testimonial-text pink">
-                    <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                </div>
-                <ul class="testimonial-author">
-                    <li class="author-image">
-                        <img src="assets/img/person-1.jpg">
-                    </li>
-                    <li class="author-info">
-                        <h5 class="author-name">Erik Allen</h5>
-                        <span class="author-tagline">Founder, <a href="">Pacific Revival</a></span>
-                    </li>
-                </ul>
-            </div><!-- .fs-testimonial -->
-
-        </div>
-    </div>
-</div>
+</div><!-- .testimonial-examples -->
 
 <pre class="highlight html">
 <div class="fs-testimonial testimonial-sm">
 
-    <div class="testimonial-text {color}">
-        ...
+    <div class="testimonial-text text-light" style="background-color: #006442">
+        <span class="arrow" style="border-top-color: #006442"></span>
+        <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
     </div>
 
     <ul class="testimonial-author">
-        ...
+        <li class="author-image">
+            <img src="assets/img/person-1.jpg">
+        </li>
+        <li class="author-info">
+            <h5 class="author-name">Erik Allen</h5>
+            <span class="author-tagline">Founder, <a href="">Pacific Revival</a></span>
+        </li>
     </ul>
 
 </div><!-- .fs-testimonial -->
+</pre>
+
+<p>And if you're looking for a quick CSS snippet to edit the background of all <code>sm</code> testimonials, here's an example.</p>
+
+<pre class="highlight css">
+.fs-testimonial.testimonial-sm .testimonial-text {
+    background-color: #000;
+    color: #fff;
+}
+.fs-testimonial.testimonial-sm .testimonial-text:before {
+    border-top-color: #000;
+}
 </pre>
 
 <!-- MEDIUM TESTIMONIALS -->
@@ -208,7 +164,7 @@
 
     <div class="fs-testimonial testimonial-md">
 
-        <div class="testimonial-text bg-light">
+        <div class="testimonial-text">
             <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim.</p>
         </div>
 
@@ -229,7 +185,7 @@
 <pre class="highlight html">
 <div class="fs-testimonial testimonial-md">
 
-    <div class="testimonial-text bg-light">
+    <div class="testimonial-text">
         <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim.</p>
     </div>
 
@@ -246,106 +202,62 @@
 </div><!-- .fs-testimonial -->
 </pre>
 
-<p>And just like with small testimonials, you can add any <a href="colors.html" title="Background Colors" target="_blank">background color class</a> to the <code>.testimonial-text</code> element of your medium testimonial.</p>
+<p>If you're looking to dynamically customize the color of a testimonial, here's an example. &mdash; This might be useful if you're dynamically outputting a testimonial from a CMS or something with user-selected colors.</p>
 
-<div class="row">
-    <div class="col col-md">
-        <div class="wrap">
+<div class="testimonial-examples">
 
-            <div class="fs-testimonial testimonial-md">
-                <div class="testimonial-text royal">
-                    <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim.</p>
-                </div>
-                <ul class="testimonial-author">
-                    <li class="author-image">
-                        <img src="assets/img/person-1.jpg">
-                    </li>
-                    <li class="author-info">
-                        <h5 class="author-name heading-sm">Erik Allen</h5>
-                        <span class="author-tagline">Founder, <a href="">Pacific Revival</a></span>
-                    </li>
-                </ul>
-            </div><!-- .fs-testimonial -->
+    <div class="fs-testimonial testimonial-md">
 
+        <div class="testimonial-text text-light" style="background-color: #006442">
+            <span class="arrow" style="border-right-color: #006442"></span>
+            <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
         </div>
-    </div>
-    <div class="col col-md">
-        <div class="wrap">
 
-            <div class="fs-testimonial testimonial-md">
-                <div class="testimonial-text orange">
-                    <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim.</p>
-                </div>
-                <ul class="testimonial-author">
-                    <li class="author-image">
-                        <img src="assets/img/person-1.jpg">
-                    </li>
-                    <li class="author-info">
-                        <h5 class="author-name heading-sm">Erik Allen</h5>
-                        <span class="author-tagline">Founder, <a href="">Pacific Revival</a></span>
-                    </li>
-                </ul>
-            </div><!-- .fs-testimonial -->
+        <ul class="testimonial-author">
+            <li class="author-image">
+                <img src="assets/img/person-1.jpg">
+            </li>
+            <li class="author-info">
+                <h5 class="author-name">Erik Allen</h5>
+                <span class="author-tagline">Founder, <a href="">Pacific Revival</a></span>
+            </li>
+        </ul>
 
-        </div>
-    </div>
-</div>
+    </div><!-- .fs-testimonial -->
 
-<div class="row">
-    <div class="col col-md">
-        <div class="wrap">
-
-            <div class="fs-testimonial testimonial-md">
-                <div class="testimonial-text slate-grey">
-                    <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim.</p>
-                </div>
-                <ul class="testimonial-author">
-                    <li class="author-image">
-                        <img src="assets/img/person-1.jpg">
-                    </li>
-                    <li class="author-info">
-                        <h5 class="author-name heading-sm">Erik Allen</h5>
-                        <span class="author-tagline">Founder, <a href="">Pacific Revival</a></span>
-                    </li>
-                </ul>
-            </div><!-- .fs-testimonial -->
-
-        </div>
-    </div>
-    <div class="col col-md">
-        <div class="wrap">
-
-            <div class="fs-testimonial testimonial-md">
-                <div class="testimonial-text jungle">
-                    <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim.</p>
-                </div>
-                <ul class="testimonial-author">
-                    <li class="author-image">
-                        <img src="assets/img/person-1.jpg">
-                    </li>
-                    <li class="author-info">
-                        <h5 class="author-name heading-sm">Erik Allen</h5>
-                        <span class="author-tagline">Founder, <a href="">Pacific Revival</a></span>
-                    </li>
-                </ul>
-            </div><!-- .fs-testimonial -->
-
-        </div>
-    </div>
-</div>
+</div><!-- .testimonial-examples -->
 
 <pre class="highlight html">
 <div class="fs-testimonial testimonial-md">
 
-    <div class="testimonial-text {color}">
-        ...
+    <div class="testimonial-text text-light" style="background-color: #006442">
+        <span class="arrow" style="border-right-color: #006442"></span>
+        <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
     </div>
 
     <ul class="testimonial-author">
-        ...
+        <li class="author-image">
+            <img src="assets/img/person-1.jpg">
+        </li>
+        <li class="author-info">
+            <h5 class="author-name">Erik Allen</h5>
+            <span class="author-tagline">Founder, <a href="">Pacific Revival</a></span>
+        </li>
     </ul>
 
 </div><!-- .fs-testimonial -->
+</pre>
+
+<p>And if you're looking for a quick CSS snippet to edit the background of all <code>sm</code> testimonials, here's an example.</p>
+
+<pre class="highlight css">
+.fs-testimonial.testimonial-md .testimonial-text {
+    background-color: #000;
+    color: #fff;
+}
+.fs-testimonial.testimonial-md .testimonial-text:before {
+    border-right-color: #000;
+}
 </pre>
 
 <!-- LARGE TESTIMONIALS -->
