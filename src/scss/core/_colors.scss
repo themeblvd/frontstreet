@@ -8,11 +8,6 @@
 
 @each $name, $map in $fs-branding-colors {
   @include fs-bg-variant('.#{$name}', map-get($map, base), map-get($map, contrast));
-  @include fs-bg-variant(
-    '.bg-#{$name}',
-    map-get($map, base),
-    map-get($map, contrast)
-  ); // Include .bg-* for Theme Blvd compat.
 }
 
 //

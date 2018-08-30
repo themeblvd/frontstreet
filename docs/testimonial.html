@@ -39,7 +39,7 @@
 
                 <header class="site-header">
 
-                    <div class="site-logo primary">
+                    <div class="site-logo secondary">
                         <a href="http://frontstreet.io" title="Front Street - Frontend CSS Framework">
                             <img src="assets/img/logo.png" srcset="assets/img/logo.png 1x, assets/img/logo@2x.png 2x">
                         </a>
@@ -182,66 +182,6 @@
 </div><!-- .fs-testimonial -->
 </pre>
 
-<p>If you're looking to dynamically customize the color of a testimonial, here's an example. &mdash; This might be useful if you're dynamically outputting a testimonial from a CMS or something with user-selected colors.</p>
-
-<p>In addition to adding the inline background color, we also use the <code>&lt;span class="arrow"&gt;&lt;/span&gt;</code> instead of relying on the default <code>:before</code> styling so that we can add inline styling to the little arrow for the color.</p>
-
-<div class="testimonial-examples">
-
-    <div class="fs-testimonial testimonial-sm">
-
-        <div class="testimonial-text text-light" style="background-color: #006442">
-            <span class="arrow" style="border-top-color: #006442"></span>
-            <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-        </div>
-
-        <ul class="testimonial-author">
-            <li class="author-image">
-                <img src="assets/img/person-1.jpg">
-            </li>
-            <li class="author-info">
-                <h5 class="author-name">Erik Allen</h5>
-                <span class="author-tagline">Founder, <a href="">Pacific Revival</a></span>
-            </li>
-        </ul>
-
-    </div><!-- .fs-testimonial -->
-
-</div><!-- .testimonial-examples -->
-
-<pre class="highlight html">
-<div class="fs-testimonial testimonial-sm">
-
-    <div class="testimonial-text text-light" style="background-color: #006442">
-        <span class="arrow" style="border-top-color: #006442"></span>
-        <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-    </div>
-
-    <ul class="testimonial-author">
-        <li class="author-image">
-            <img src="assets/img/person-1.jpg">
-        </li>
-        <li class="author-info">
-            <h5 class="author-name">Erik Allen</h5>
-            <span class="author-tagline">Founder, <a href="">Pacific Revival</a></span>
-        </li>
-    </ul>
-
-</div><!-- .fs-testimonial -->
-</pre>
-
-<p>And if you're looking for a quick CSS snippet to edit the background of all <code>sm</code> testimonials, here's an example.</p>
-
-<pre class="highlight css">
-.fs-testimonial.testimonial-sm .testimonial-text {
-    background-color: #000;
-    color: #fff;
-}
-.fs-testimonial.testimonial-sm .testimonial-text:before {
-    border-top-color: #000;
-}
-</pre>
-
 <!-- MEDIUM TESTIMONIALS -->
 
 <h2 id="testimonial-md">Medium Testimonials</h2>
@@ -290,9 +230,83 @@
 </div><!-- .fs-testimonial -->
 </pre>
 
-<p>If you're looking to dynamically customize the color of a testimonial, here's an example. &mdash; This might be useful if you're dynamically outputting a testimonial from a CMS or something with user-selected colors.</p>
+<!-- CUSTOM COLORS -->
+
+<h2 id="custom-colors">Custom Colors</h2>
+
+<p>Because small and medium testimonials have a background around the quoted text, you may want to customize the color.</p>
+
+<p>If you're using Sass, you can customize the variable <code>$fs-testimonial-bg-color</code>.</p>
+
+<pre class="highlight css">
+$fs-testimonial-bg-color: #000;
+</pre>
+
+<p>Or, if you're working with static CSS overrides, here's a snippet you can start with.</p>
+
+<pre class="highlight css">
+.fs-testimonial.testimonial-sm .testimonial-text,
+.fs-testimonial.testimonial-md .testimonial-text {
+    background-color: #000;
+    color: #fff;
+}
+.fs-testimonial.testimonial-sm .testimonial-text:before {
+    border-top-color: #000;
+}
+.fs-testimonial.testimonial-md .testimonial-text:before {
+    border-right-color: #000;
+}
+</pre>
+
+<p>If you're looking to dynamically customize the color of a testimonial, things get a little messier. &mdash; This might be useful if you're dynamically outputting a testimonial from a CMS or something with user-selected colors.</p>
 
 <p>In addition to adding the inline background color, we also use the <code>&lt;span class="arrow"&gt;&lt;/span&gt;</code> instead of relying on the default <code>:before</code> styling so that we can add inline styling to the little arrow for the color.</p>
+
+<p>Also note below the uses of the <code>text-light</code> class to easily invert the text for a darker background color.</p>
+
+<div class="testimonial-examples">
+
+    <div class="fs-testimonial testimonial-sm">
+
+        <div class="testimonial-text text-light" style="background-color: #006442">
+            <span class="arrow" style="border-top-color: #006442"></span>
+            <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+        </div>
+
+        <ul class="testimonial-author">
+            <li class="author-image">
+                <img src="assets/img/person-1.jpg">
+            </li>
+            <li class="author-info">
+                <h5 class="author-name">Erik Allen</h5>
+                <span class="author-tagline">Founder, <a href="">Pacific Revival</a></span>
+            </li>
+        </ul>
+
+    </div><!-- .fs-testimonial -->
+
+</div><!-- .testimonial-examples -->
+
+<pre class="highlight html">
+<div class="fs-testimonial testimonial-sm">
+
+    <div class="testimonial-text text-light" style="background-color: #006442">
+        <span class="arrow" style="border-top-color: #006442"></span>
+        <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+    </div>
+
+    <ul class="testimonial-author">
+        <li class="author-image">
+            <img src="assets/img/person-1.jpg">
+        </li>
+        <li class="author-info">
+            <h5 class="author-name">Erik Allen</h5>
+            <span class="author-tagline">Founder, <a href="">Pacific Revival</a></span>
+        </li>
+    </ul>
+
+</div><!-- .fs-testimonial -->
+</pre>
 
 <div class="testimonial-examples">
 
@@ -336,18 +350,6 @@
     </ul>
 
 </div><!-- .fs-testimonial -->
-</pre>
-
-<p>And if you're looking for a quick CSS snippet to edit the background of all <code>sm</code> testimonials, here's an example.</p>
-
-<pre class="highlight css">
-.fs-testimonial.testimonial-md .testimonial-text {
-    background-color: #000;
-    color: #fff;
-}
-.fs-testimonial.testimonial-md .testimonial-text:before {
-    border-right-color: #000;
-}
 </pre>
 
 <!-- LARGE TESTIMONIALS -->
@@ -398,9 +400,9 @@
 </div><!-- .fs-testimonial -->
 </pre>
 
-<p>Now by default, this may look a bit bare, but that's so you can place it within another section that you've drawn attention to with a background and spacing. For example, below we've moved the large testimonial into a section with some padding and a red background.</p>
+<p>Now by default, this may look a bit bare, but that's so you can place it within another section that you've drawn attention to with a background and spacing. For example, below we've moved the large testimonial into a section with some padding and a background color.</p>
 
-<div class="testimonial-lg-example red text-light">
+<div class="testimonial-lg-example primary text-light">
     <div class="fs-testimonial testimonial-lg">
 
         <div class="testimonial-text">
@@ -421,7 +423,7 @@
 </div>
 
 <pre class="highlight html">
-<div class="red text-light">
+<div class="primary text-light">
     <div class="fs-testimonial testimonial-lg">
         ...
     </div>
@@ -438,7 +440,7 @@
                         </div><!-- .wrap -->
                     </div><!-- .site-content -->
 
-                    <div class="site-sidebar primary">
+                    <div class="site-sidebar secondary">
                         <div class="wrap">
 
                             <!--
@@ -562,7 +564,7 @@
                                 </li>
                             </ul>
 
-                            <a href="#" class="to-top primary">Back to Top</a>
+                            <a href="#" class="to-top secondary">Back to Top</a>
 
 
                         </div><!-- .wrap -->

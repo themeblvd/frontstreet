@@ -183,11 +183,11 @@ $fs-transition-fade: opacity 0.2s linear !default;
 
 $fs-branding-colors: (
   primary: (
-    base: $fs-color-darker,
+    base: #2ea3f2,
     contrast: $fs-color-text-inv-base
   ),
   secondary: (
-    base: #2ea3f2,
+    base: $fs-color-darker,
     contrast: $fs-color-text-inv-base
   )
 ) !default;
