@@ -7137,7 +7137,7 @@ hr:not(.fs-divider) {
 }
 
 .fs-testimonial.testimonial-sm .testimonial-text:before,
-.fs-testimonial.testimonial-sm .testimonial-text .arrow {
+.fs-testimonial.testimonial-sm .testimonial-text .testimonial-arrow {
   content: '';
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
@@ -7181,7 +7181,7 @@ hr:not(.fs-divider) {
 }
 
 .fs-testimonial.testimonial-md .testimonial-text:before,
-.fs-testimonial.testimonial-md .testimonial-text .arrow {
+.fs-testimonial.testimonial-md .testimonial-text .testimonial-arrow {
   content: '';
   border-style: solid;
   border-width: 0 15px 15px 0;

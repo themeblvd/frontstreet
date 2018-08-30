@@ -34,7 +34,7 @@
       padding: $fs-testimonial-sm-spacing;
 
       &:before,
-      .arrow {
+      .testimonial-arrow {
         content: '';
         border-left: $fs-testimonial-sm-triangle solid transparent;
         border-right: $fs-testimonial-sm-triangle solid transparent;
@@ -81,7 +81,7 @@
       padding: $fs-testimonial-md-spacing;
 
       &:before,
-      .arrow {
+      .testimonial-arrow {
         content: '';
         border-style: solid;
 
