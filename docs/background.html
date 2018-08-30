@@ -88,7 +88,7 @@
                                 </h1>
 
 
-<p>Background sections can be useful for landing pages and other places you need content to really stand out.  And instead of just standard background images, these sections can include special background blocks included with Front Street like background <a href="#bg-shade" title="Background Shades">shading</a>, <a href="#bg-slider" title="Background Sliders">sliders</a>, and <a href="#bg-parallax" title="Background Parallax">parallax effects</a>.</p>
+<p>Background sections can be useful for landing pages and other places you need content to really stand out.  And instead of just standard background images, these sections can include special background blocks included with Front Street like background <a href="#bg-shade" title="Background Shades">shading</a>, and <a href="#bg-parallax" title="Background Parallax">parallax effects</a>.</p>
 
 <p>In order for the background blocks and your section's inner content to be all z-index'ed and positioned properly, we need to follow a basic markup structure. Your wrapping section element should have the class <code>fs-section</code>. And any content within should be wrapped in an element with class <code>fs-element</code>.</p>
 
@@ -116,11 +116,6 @@
             <th width="20%">Element</th>
             <th width="65%">Description</th>
             <th width="15%" class="text-center">Z-Index</th>
-        </tr>
-        <tr>
-            <td><code>.fs-bg-slider</code></td>
-            <td>Auto-rotating, slow-fading slider images.</td>
-            <td class="text-center">0</td>
         </tr>
         <tr>
             <td><code>.fs-bg-parallax</code></td>
@@ -270,122 +265,6 @@
         </tr>
     </table>
 </div>
-
-<h2 id="bg-slider">Background Slider</h2>
-
-<p>For a slow-fading, auto-rotating background slider, we can add the <code>.fs-bg-slider</code> block to our sections. The background slider will automatically stretch images to fill the <code>.fs-section</code>; this is really helpful when implementing a section that stretches full width of the browser window.</p>
-
-<p><span class="label-inline info">Important</span> This is completely separate functionality from our other <a href="slider.html" title="Sliders" target="_blank">slider blocks</a>, which are implmented with OwlCarousel.</p>
-
-<section class="fs-section bg-dark text-center">
-
-    <div class="fs-element">
-        <h1 class="heading-lg">Lorem Ipsum Dolor</h1>
-        <p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
-        <a href="#" class="btn btn-white btn-trans">Learn More</a>
-    </div>
-
-    <div class="fs-bg-slider">
-        <img src="assets/img/image-1.jpg" width="960">
-        <img src="assets/img/image-2.jpg" width="960">
-        <img src="assets/img/image-3.jpg" width="960">
-        <img src="assets/img/image-4.jpg" width="960">
-    </div>
-
-    <div class="fs-loader">
-        <span>Loading</span>
-    </div>
-
-</section>
-
-<pre class="highlight html">
-<section class="fs-section bg-dark text-center">
-
-    <div class="fs-element">
-        <!-- Any content to sit above background blocks. -->
-    </div>
-
-    <div class="fs-bg-slider">
-        <img src="image-1.jpg">
-        <img src="image-2.jpg">
-        <img src="image-3.jpg">
-        <img src="image-4.jpg">
-    </div>
-
-    <div class="fs-loader">
-        <span>Loading</span>
-    </div>
-
-</section>
-</pre>
-
-<p>You may have noticed that the above example is a little busy and our hero message is difficult to read. To fix that, we can pair our background slider with a <a href="#bg-shade" title="Background Shade">background shade</a>.</p>
-
-<section class="fs-section bg-dark text-center">
-
-    <div class="fs-element">
-        <h1 class="heading-lg">Lorem Ipsum Dolor</h1>
-        <p class="lead">Donec rutrum, est vel posuere congue, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, nec aliquet dui.</p>
-        <a href="#" class="btn btn-white btn-trans">Learn More</a>
-    </div>
-
-    <div class="fs-bg-slider">
-        <img src="assets/img/image-1.jpg" width="960">
-        <img src="assets/img/image-2.jpg" width="960">
-        <img src="assets/img/image-3.jpg" width="960">
-        <img src="assets/img/image-4.jpg" width="960">
-    </div>
-
-    <div class="fs-bg-shade shade-75 crimson"></div>
-
-    <div class="fs-loader">
-        <span>Loading</span>
-    </div>
-
-</section>
-
-<pre class="highlight html">
-<section class="fs-section bg-dark text-center">
-
-    <div class="fs-element">
-        <!-- Any content to sit above background blocks. -->
-    </div>
-
-    <div class="fs-bg-slider">
-        <img src="image-1.jpg">
-        <img src="image-2.jpg">
-        <img src="image-3.jpg">
-        <img src="image-4.jpg">
-    </div>
-
-    <div class="fs-bg-shade shade-75 crimson"></div>
-
-    <div class="fs-loader">
-        <span>Loading</span>
-    </div>
-
-</section>
-</pre>
-
-<p>By default, the background slider block will rotate images every four seconds (i.e. 4000ms). You can change that by passing a new millisecond value through a <code>data-autoplay</code> parameter. Keep in mind that this value must be <code>1000</code> or higher.</p>
-
-<pre class="highlight html">
-<section class="fs-section bg-dark text-center">
-
-    <div class="fs-element">
-        <!-- Any content to sit above background blocks. -->
-    </div>
-
-    <div class="fs-bg-slider" data-autoplay="2000">
-        <!-- Slider images. -->
-    </div>
-
-    <div class="fs-loader">
-        <span>Loading</span>
-    </div>
-
-</section>
-</pre>
 
 <h2 id="bg-parallax">Background Parallax</h2>
 

@@ -91,14 +91,6 @@ $document.ready(function($) {
 
 $window.on('load', function() {
   /**
-   * Self-invokes the background slider of the
-   * `background` block.
-   *
-   * @since 1.0.0
-   */
-  $('.fs-bg-slider').frontstreet('background', { type: 'slider' });
-
-  /**
    * Self-invokes the parallax effect of the
    * `background` block.
    *

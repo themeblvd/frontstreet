@@ -7,7 +7,6 @@
 //
 
 .fs-section,
-.has-bg-slider,
 .has-bg-parallax,
 .has-bg-video {
   overflow: hidden;
@@ -60,42 +59,6 @@
   }
   &.shade-95 {
     opacity: 0.95;
-  }
-}
-
-//
-// Background Sliders
-//
-
-.fs-bg-slider {
-  margin: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transition: opacity 0.25s ease-in-out;
-  z-index: $fs-bg-z-index-base;
-
-  &.in {
-    opacity: 1;
-  }
-  img {
-    max-width: none;
-    max-height: none;
-    min-width: 100%;
-    min-height: 100%;
-    // opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0);
-    transition: opacity 0.25s ease-in-out;
-
-    &.fade {
-      transition: opacity 1s ease-in-out;
-    }
   }
 }
 

@@ -3,12 +3,10 @@ import { isMobile, dom } from '../utils';
 
 /**
  * This file includes the functionality for section
- * parallax background image effects and background
- * sliders.
+ * parallax background image effects.
  *
- * By default all HTML elements with class `fs-bg-slider`
- * and `fs-bg-parallax` are automatically binded
- * with their respective effects.
+ * By default all HTML elements with class `fs-bg-parallax`
+ * are automatically binded with the parallax effect.
  *
  * @summary  Background Effects
  *
@@ -32,14 +30,11 @@ class Background {
     const settings = $.extend({}, this.defaults, options);
     const $section = $element.closest(settings.section);
 
-    this.slider = this.slider.bind(this);
     this.parallax = this.parallax.bind(this);
     this.parallaxCalc = this.parallaxCalc.bind(this);
 
     switch (settings.type) {
-      case 'slider':
-        this.slider($element, $section, settings);
-        break;
+      // case 'video': @TODO
       case 'parallax':
       default:
         this.parallax($element, $section, settings);
@@ -57,49 +52,8 @@ class Background {
     return {
       type: 'parallax',
       autoplay: 4000,
-      section: '.fs-section, .has-bg-slider, .has-bg-parallax, .has-bg-video'
+      section: '.fs-section, .has-bg-parallax, .has-bg-video'
     };
-  }
-
-  /**
-   * Setup a background slider.
-   *
-   * @since 1.0.0
-   *
-   * @param {Object} $element The background slider element.
-   * @param {Object} $section Section containing element.
-   * @param {Object} settings Current settings.
-   */
-  slider($slider, $section, settings) {
-    let { autoplay } = settings;
-
-    if ($slider.data('autoplay') && $slider.data('autoplay') >= 1000) {
-      autoplay = $slider.data('autoplay');
-    }
-
-    /*
-     * Reverse order of images so the top of stack
-     * will be the first image.
-     */
-    $slider.find('img').each(function() {
-      const $img = $(this);
-      $img.addClass('fade in');
-      $slider.prepend($img);
-    });
-
-    $slider.addClass('in');
-
-    $section.find('.fs-loader').fadeOut();
-
-    setInterval(function() {
-      const $lastImg = $slider.find('img:last-child');
-
-      $lastImg.removeClass('in');
-
-      setTimeout(function() {
-        $lastImg.prependTo($slider).addClass('in');
-      }, autoplay);
-    }, autoplay);
   }
 
   /**

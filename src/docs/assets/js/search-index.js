@@ -511,11 +511,6 @@ const searchIndex = [
     tags: ['sections', 'overlay', 'color', 'transparent', 'opacity', 'hero', 'jumbotron']
   },
   {
-    title: 'Backgrounds: Background Slider',
-    url: 'backgrounds.html#bg-slider',
-    tags: ['sections', 'slideshow', 'carousel', 'image', 'photo', 'picture', 'hero', 'jumbotron']
-  },
-  {
     title: 'Backgrounds: Background Parallax',
     url: 'backgrounds.html#bg-parallax',
     tags: ['sections', 'image', 'photo', 'picture', 'hero', 'jumbotron']
