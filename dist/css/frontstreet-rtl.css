@@ -7150,7 +7150,7 @@ hr:not(.fs-divider) {
   display: block;
   position: absolute;
   bottom: -5px;
-  left: 35px;
+  left: 36px;
   width: 0;
   height: 0;
 }
@@ -7159,10 +7159,11 @@ hr:not(.fs-divider) {
   align-items: center;
   display: flex;
   margin-top: 15px;
+  padding: 0 8px;
 }
 
-.fs-testimonial.testimonial-sm .testimonial-author .author-image {
-  padding: 0 15px;
+.fs-testimonial.testimonial-sm .testimonial-author > li {
+  padding: 0 8px;
 }
 
 .fs-testimonial.testimonial-sm .testimonial-author .author-image img {
