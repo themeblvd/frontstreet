@@ -16,6 +16,10 @@
 
     @include fs-list-unstyled;
 
+    li {
+      margin: 0;
+      padding: 0;
+    }
     .author-image img {
       border-radius: $fs-testimonial-img-radius;
       display: inline-block;

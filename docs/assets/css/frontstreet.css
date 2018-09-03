@@ -7124,6 +7124,11 @@ hr:not(.fs-divider) {
   padding-left: 0;
 }
 
+.fs-testimonial .testimonial-author li {
+  margin: 0;
+  padding: 0;
+}
+
 .fs-testimonial .testimonial-author .author-image img {
   border-radius: 100%;
   display: inline-block;
