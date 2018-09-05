@@ -596,7 +596,7 @@ $fs-quote-margin: 40px 30px !default;
 $fs-quote-text-transform: none !default;
 
 $fs-cite-font-size: $fs-font-size-xxs !default;
-$fs-font-lh-cite: 1.4 !default; // ...
+$fs-font-lh-cite: 1.4 !default;
 
 //
 // Tables
@@ -1025,8 +1025,11 @@ $fs-tooltip-max-width: 200px !default;
 $fs-tooltip-radius: 1px !default;
 $fs-tooltip-padding: 10px 14px !default;
 
-$fs-tooltip-bg: fs-map-deep-get($fs-branding-colors, secondary, base) !default;
-$fs-tooltip-text: fs-map-deep-get($fs-branding-colors, secondary, contrast) !default;
+$fs-tooltip-bg-color: fs-map-deep-get($fs-branding-colors, secondary, base) !default;
+$fs-tooltip-text-color: fs-map-deep-get($fs-branding-colors, secondary, contrast) !default;
+
+$fs-tooltip-trigger-border: 1px dotted darken($fs-color-border, 40%);
+$fs-tooltip-trigger-inv-border: 1px dotted $fs-color-border-inv;
 
 //
 // Widget

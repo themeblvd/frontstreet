@@ -2,66 +2,128 @@
 // Tooltips
 // --------------------------------------------------
 
-.fs-tooltip {
+//
+// Tooltip Trigger
+//
+
+// For better accessiblity, give an indication
+// that normally non-focusable elements are
+// now focusable.
+.fs-tooltip[tabindex] {
+  border-bottom: $fs-tooltip-trigger-border;
+}
+
+@if ($version == 'full') {
+  .text-light {
+    .fs-tooltip[tabindex] {
+      border: $fs-tooltip-trigger-inv-border;
+    }
+  }
+  .text-dark {
+    .fs-tooltip[tabindex] {
+      border: $fs-tooltip-trigger-border;
+    }
+  }
+}
+
+//
+// Tooltip Help
+//
+
+.fs-tooltip-help {
   @include fs-text-reset;
+  background-color: $fs-tooltip-bg-color;
+  border-radius: $fs-tooltip-radius;
+  color: $fs-tooltip-text-color;
+  display: none;
   font-size: $fs-tooltip-font-size;
-  display: block;
-  position: absolute;
+  max-width: $fs-tooltip-max-width;
   opacity: 0;
+  padding: $fs-tooltip-padding;
+  pointer-events: auto;
+  position: absolute;
+  text-align: center;
+  word-wrap: break-word;
   z-index: $fs-z-index-tooltip;
 
+  &.fade {
+    display: block;
+  }
   &.in {
     opacity: $fs-tooltip-opacity;
   }
-  &.top {
-    margin-top: -3px;
-    padding: $fs-tooltip-arrow-width 0;
-  }
-  &.bottom {
-    margin-top: 3px;
-    padding: $fs-tooltip-arrow-width 0;
-  }
-  .tooltip-inner {
-    background-color: $fs-tooltip-bg;
-    border-radius: $fs-tooltip-radius;
-    color: $fs-tooltip-text;
-    max-width: $fs-tooltip-max-width;
-    padding: $fs-tooltip-padding;
-    text-align: center;
-  }
   .tooltip-arrow {
+    content: '';
+    border-color: transparent;
+    border-style: solid;
     position: absolute;
     width: 0;
     height: 0;
-    border-color: transparent;
-    border-style: solid;
   }
-  &.top .tooltip-arrow {
-    bottom: 0;
-    left: 50%;
-    margin-left: -$fs-tooltip-arrow-width;
-    border-width: $fs-tooltip-arrow-width $fs-tooltip-arrow-width 0;
-    border-top-color: $fs-tooltip-bg;
+  &.top {
+    transform: translateY(-($fs-tooltip-arrow-width + 5px));
+
+    .tooltip-arrow {
+      border-width: $fs-tooltip-arrow-width $fs-tooltip-arrow-width 0;
+      border-top-color: $fs-tooltip-bg-color;
+      bottom: -$fs-tooltip-arrow-width;
+      left: 50%;
+      margin-left: -$fs-tooltip-arrow-width;
+    }
   }
-  &.right .tooltip-arrow {
-    top: 50%;
-    left: 0;
-    margin-top: -$fs-tooltip-arrow-width;
-    border-width: $fs-tooltip-arrow-width $fs-tooltip-arrow-width $fs-tooltip-arrow-width 0;
-    border-right-color: $fs-tooltip-bg;
+  &.bottom {
+    transform: translateY($fs-tooltip-arrow-width + 5px);
+
+    .tooltip-arrow {
+      border-width: 0 $fs-tooltip-arrow-width $fs-tooltip-arrow-width;
+      border-bottom-color: $fs-tooltip-bg-color;
+      top: -$fs-tooltip-arrow-width;
+      left: 50%;
+      margin-left: -$fs-tooltip-arrow-width;
+    }
   }
-  &.left .tooltip-arrow {
-    top: 50%;
-    right: 0;
-    margin-top: -$fs-tooltip-arrow-width;
-    border-width: $fs-tooltip-arrow-width 0 $fs-tooltip-arrow-width $fs-tooltip-arrow-width;
-    border-left-color: $fs-tooltip-bg;
+  &.left {
+    transform: translateX(-($fs-tooltip-arrow-width + 5px));
+
+    .tooltip-arrow {
+      border-width: $fs-tooltip-arrow-width 0 $fs-tooltip-arrow-width $fs-tooltip-arrow-width;
+      border-left-color: $fs-tooltip-bg-color;
+      top: 50%;
+      right: -$fs-tooltip-arrow-width;
+      margin-top: -$fs-tooltip-arrow-width;
+    }
   }
-  &.bottom .tooltip-arrow {
-    top: 0;
-    left: 50%;
-    margin-left: -$fs-tooltip-arrow-width;
-    border-width: 0 $fs-tooltip-arrow-width $fs-tooltip-arrow-width;
-    border-bottom-color: $fs-tooltip-bg;
+  &.right {
+    transform: translateX($fs-tooltip-arrow-width + 5px);
+
+    .tooltip-arrow {
+      border-width: $fs-tooltip-arrow-width $fs-tooltip-arrow-width $fs-tooltip-arrow-width 0;
+      border-right-color: $fs-tooltip-bg-color;
+      top: 50%;
+      left: -$fs-tooltip-arrow-width;
+      margin-top: -$fs-tooltip-arrow-width;
+    }
+  }
+  &.top.fit-right,
+  &.bottom.fit-right {
+    .tooltip-arrow {
+      left: initial;
+      right: 14px;
+    }
+  }
+  &.top.fit-left,
+  &.bottom.fit-left {
+    .tooltip-arrow {
+      left: 14px;
+    }
+  }
+}
+
+@if ($version == 'full') {
+  .fs-tooltip-help.text-light {
+    color: rgba($fs-color-text-inv-base, 0.8);
+  }
+  .fs-tooltip-help.text-dark {
+    color: $fs-color-text-base;
   }
 }

@@ -2,19 +2,25 @@
      "title": "Tooltip"
 })
 
-<p>Easily create tooltip helper text throughout your site, with this handly, little block. Our block started as a stripped down version of <a href="http://getbootstrap.com" title="Bootsrap" target="_blank">Bootstrap</a>'s Tooltips, which was originally inspired by <a href="https://github.com/jaz303/tipsy" title="Tipsy Tooltips" target="_blank">Tipsy</a>.</p>
+<p>With Front Street comes customizeable, accessible tooltips.
 
-<p>The required JavaScript is already implemented for you. To get a tooltip working you just need to create a trigger element with class <code>fs-tooltip-trigger</code>, which your tooltip will be attached to. The tooltip text will be pulled from the <code>title</code> attribute of the element.</p>
+<p>Donec rutrum, <a href="#" class="fs-tooltip" title="Tooltip Text">est vel posuere congue</a>, arcu mauris euismod libero, eget mattis est orci vitae nisi. Cras eget urna nunc, <span class="fs-tooltip" data-help="Tooltip Text">nec aliquet dui</span>. Cras sed lacus tellus, in porttitor tortor. Vivamus auctor mattis nunc, quis mattis justo vulputate at. Nam rhoncus mollis convallis.</p>
 
-<p><a href="#" title="Tooltip Text Here" class="fs-tooltip-trigger">Hover On Me!</a></p>
+<h2 id="usage">Basic Usage</h2>
+
+<p>When setting up a tooltip, you'll designate a trigger, which the user will hover on to display the tooltip help text. Give your trigger element the class <code>fs-tooltip</code>, and a tooltip help element will automatically be generated.</p>
 
 <pre class="highlight html">
-<a href="#" title="Tooltip Text Here" class="fs-tooltip-trigger">Hover On Me!</a>
+&lt;a href="#" class="fs-tooltip" title="Tooltip Text"&gt;est vel posuere congue&lt;/a&gt;
 </pre>
 
-<h2 class="heading-sm">Data Attributes</h2>
+<pre class="highlight html">
+&lt;span class="fs-tooltip" data-help="Tooltip Text"&gt;nec aliquet dui&lt;/span&gt;
+</pre>
 
-<p>Even though the JavaScript is setup for you with <code>.fs-tooltip-trigger</code> elements, we've included some optional <code>data-*</code> attributes you can add to customize some of the tooltip settings. To utilize them, just add them into your <code>.fs-tooltip-trigger</code> element.</p>
+<h3 class="heading-sm">Data Attributes</h3>
+
+<p>When configuring any individual tooltip trigger element, you can use the following data attributes to customize the generated tooltip help element.</p>
 
 <div class="table-responsive">
     <table class="table-bordered table-condensed table-grid-overview">
@@ -25,61 +31,143 @@
             <th width="23%">Description</th>
         </tr>
         <tr>
-            <td><code>data-container</code></td>
-            <td>String | False</td>
-            <td><code>false</code></td>
-            <td>Optional. Appends the tooltip to a specific element. By default tooltip will be appended to the original trigger element, but this can cause issues in more complicated layouts. For example, using <code>body</code> as the container can solve a lot of these problems.</td>
+            <td><code>data-help</code></td>
+            <td>String</td>
+            <td><em>None</em></td>
+            <td>Text to display in tooltip help element. &mdash; If this doesn't exist, the <code>title</code> attribute will be used.</td>
         </tr>
         <tr>
-            <td><code>data-placement</code></td>
+            <td><code>data-help-placement</code></td>
             <td>String</td>
             <td><code>top</code></td>
-            <td>Optional. Determines placement of tooltip, relative to the original trigger element. This can be <code>top</code> or <code>bottom</code>.</td>
+            <td>Optional. Determines placement of tooltip help element, relative to the original trigger element. This can be <code>top</code>, <code>right</code>, <code>bottom</code> or <code>left</code>.</td>
         </tr>
         <tr>
-            <td><code>data-title</code></td>
+            <td><code>data-help-color</code></td>
             <td>String</td>
             <td class="text-muted"><em>None</em></td>
-            <td>Optional. Text for tooltip. This is useful when don't want the tooltip to pull from a link's <code>title</code> attribute, or you're using an HTML element for the trigger which doesn't have a <code>title</code> attribute.</td>
+            <td>Optional. A custom color hex like <code>#000</code> for the generated tooltip help element. Useful for inserting dynamic user-selected colors from a CMS.</td>
+        </tr>
+        <tr>
+            <td><code>data-help-class</code></td>
+            <td>String</td>
+            <td class="text-muted"><em>None</em></td>
+            <td>Optional. A custom CSS class to get added to the generated tooltip help element. Useful if you plan to use a custom color for a group of tooltips, that you're styling with CSS.</td>
         </tr>
     </table>
 </div>
 
-<p>For example, let's say we want the tooltip to be positioned at the bottom of the trigger, instead of the top. Just add <code>data-placement="bottom"</code> to your trigger element.</p>
+<h3 class="heading-sm">Accessiblity</h3>
 
-<p><a href="#" title="Tooltip On Bottom" class="fs-tooltip-trigger" data-placement="bottom">Hover On Me!</a></p>
+<p>Because these tooltips have built with accessiblity as a crucial factor, here are some things to note.</p>
 
-<pre class="highlight html">
-<a href="#" title="Tooltip On Bottom" class="fs-tooltip-trigger" data-placement="bottom">Hover On Me!</a>
+<ul>
+    <li>A tooltip help element is attached to its trigger via <code>aria-describedby</code> with a uniquely generated ID, and given the aria role <code>tooltip</code>; this aids screen readers in associating the given trigger and help element.</li>
+    <li>A tooltip help element is displayed when its trigger is either hovered or focused on; this allows users to access the help text either by mouse or keyboard.</li>
+    <li>When a tooltip help element is accessed with focus (i.e. keyboard tabbing), it can be closed by losing focus (i.e. tabbing away) <em>or</em> pressing the <kbd>ESC</kbd> key on the keyboard.</li>
+    <li>If an trigger element isn't inherently focusable (like a <code>&lt;span&gt;</code> for example), it will become so; it will also receive a visual underline to denote that it can be interacted with.</li>
+    <li>If a trigger element pulls its help text from the <code>title</code> attribute, the <code>title</code> attribute will be removed; this will ensure screen readers don't read duplicate information. &mdash; However, if you've explicitly added both <code>title</code> and <code>data-help</code> attributes that are <em>different</em>, the <code>title</code> attribute will remain, in this case.</li>
+</ul>
+
+<h2 id="placement">Placement</h2>
+
+<p>By default tooltip help elements will appear above their triggers. However, using the <code>data-help-placement</code> attribute, you can select whether they appear <code>top</code>, <code>right</code>, <code>bottom</code> or <code>left</code>.</p>
+
+<p>Also note that, while it's not demonstrated here, if a tooltip help element is placed <code>top</code> or <code>bottom</code> and its trigger is close to the edge of the browser window, it will be shifted horizontally to fit.</p>
+
+<p><a href="#" class="fs-tooltip" title="Top" data-help-placement="top">Tooltip Top Example</a></p>
+
+<pre class="highlight html soft-wrap">
+&lt;a href="#" class="fs-tooltip" title="Top" data-help-placement="top"&gt;Tooltip Top Example&lt;/a&gt;
 </pre>
 
-<p>Or, let's say you don't want the tooltip taken from a <code>title</code> attribute; instead, you can use <code>data-title</code>.</p>
+<p><a href="#" class="fs-tooltip" title="Right" data-help-placement="right">Tooltip Right Example</a></p>
 
-<p><div class="fs-tooltip-trigger" data-title="Tooltip Text Here">Hover On Me!</div></p>
-
-<pre class="highlight html">
-<div class="fs-tooltip-trigger" data-title="Tooltip Text Here">Hover On Me!</div>
+<pre class="highlight html soft-wrap">
+&lt;a href="#" class="fs-tooltip" title="Right" data-help-placement="right"&gt;Tooltip Right Example&lt;/a&gt;
 </pre>
 
-<div class="alert info">
-    <p><strong>Note:</strong> The <code>data-title</code> attribute will always override the <code>title</code> attribute, if present. For example, maybe you want a link to have a certain title for SEO purposes, then you could use <code>data-title</code> to designate specifically the tooltip text.</p>
-</div>
+<p><a href="#" class="fs-tooltip" title="Bottom" data-help-placement="bottom">Tooltip Bottom Example</a></p>
 
-<h2 class="heading-sm">CSS Customization</h2>
+<pre class="highlight html soft-wrap">
+&lt;a href="#" class="fs-tooltip" title="Bottom" data-help-placement="bottom"&gt;Tooltip Bottom Example&lt;/a&gt;
+</pre>
 
-<p>The color of the tooltips cooresponds to the secondary color of the <a href="colors.html" title="Colors" target="_blank">branding colors</a>. If you're not compiling and adjusting Sass variables for your project, here's an example of how you can change the color of tooltips with basic CSS.</p>
+<p><a href="#" class="fs-tooltip" title="Left" data-help-placement="left">Tooltip Left Example</a></p>
+
+<pre class="highlight html soft-wrap">
+&lt;a href="#" class="fs-tooltip" title="Left" data-help-placement="left"&gt;Tooltip Left Example&lt;/a&gt;
+</pre>
+
+<h2 id="custom-colors">Custom Colors</h2>
+
+<p>The color of the tooltips cooresponds to the secondary color of the <a href="colors.html" title="Colors" target="_blank">branding colors</a>. If you're looking to customize the color of tooltips, below are some different methods.</p>
+
+<h3 class="heading-sm">Sass</h3>
+
+<p>If you're using Sass, you can customize the variable <code>$fs-testimonial-bg-color</code>.</p>
 
 <pre class="highlight css">
-.fs-tooltip .tooltip-inner {
+$fs-tooltip-bg-color: #000;
+</pre>
+
+<h3 class="heading-sm">Static CSS</h3>
+
+<p>Or, if you're working with static CSS overrides, here's a snippet you can start with.</p>
+
+<pre class="highlight css">
+.fs-tooltip-help {
     background-color: #000;
     color: #fff;
 }
-.fs-tooltip.top .tooltip-arrow {
+.fs-tooltip-help.top .tooltip-arrow {
     border-top-color: #000;
 }
-.fs-tooltip.bottom .tooltip-arrow {
+.fs-tooltip-help.bottom .tooltip-arrow {
     border-bottom-color: #000;
 }
+.fs-tooltip-help.left .tooltip-arrow {
+    border-left-color: #000;
+}
+.fs-tooltip-help.right .tooltip-arrow {
+    border-right-color: #000;
+}
+</pre>
+
+<h3 class="heading-sm">CSS Class</h3>
+
+<p>If you'd like to style preset classes of tooltip help elements, you can pass those classes in via the <code>data-help-class</code> attribute.</p>
+
+<pre class="highlight html soft-wrap">
+&lt;a href="#" class="fs-tooltip" title="Look! It's a red tooltip." data-help-class="red"&gt;Red Tooltip&lt;/a&gt;
+</pre>
+
+<pre class="highlight css">
+.fs-tooltip-help.red {
+    background-color: #c3272b;
+    color: #fff;
+}
+.fs-tooltip-help.red.top .tooltip-arrow {
+    border-top-color: #c3272b;
+}
+</pre>
+
+<h3 class="heading-sm">Data Attribute</h3>
+
+<p>If you're looking to dynamically color an individual tooltip instance, you can pass a hex value through the <code>data-help-color</code> attribute. &mdash; This can be useful if you're using a color only once or it came from a user-selected scenario, like from a CMS.</p>
+
+<p><a href="#" class="fs-tooltip" title="Look! It's a red tooltip." data-help-color="#c3272b">Custom Colored Tooltip Example</a></p>
+
+<pre class="highlight html soft-wrap">
+&lt;a href="#" class="fs-tooltip" title="Look! It's a red tooltip." data-help-color="#c3272b"&gt;Custom Colored Tooltip Example&lt;/a&gt;
+</pre>
+
+<p>And if you're using a light color, you can invert the text color by also adding the <code>text-dark</code> helper class.</p>
+
+<p><a href="#" class="fs-tooltip" title="Look! It's a grey tooltip." data-help-color="#f2f2f2" data-help-class="text-dark">Custom Colored Tooltip Example</a></p>
+
+<pre class="highlight html soft-wrap">
+&lt;a href="#" class="fs-tooltip" title="Look! It's a grey tooltip." data-help-color="#f2f2f2" data-help-class="text-dark"&gt;Custom Colored Tooltip Example&lt;/a&gt;
 </pre>
 
 @@include('../layout/footer.html', {

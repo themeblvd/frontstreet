@@ -47,3 +47,21 @@ export function isMobile(viewportCheck) {
 
   return false;
 }
+
+/**
+ * Generate a unqiue ID.
+ *
+ * @since 1.1.0
+ *
+ * @param {string} prefix Optional. String to prefix ID with.
+ * @return {string} Final HTML ID.
+ */
+export function uniqueID(prefix) {
+  const max = 1000000;
+
+  do {
+    prefix += ~~(Math.random() * max); // "~~" acts like a faster Math.floor() here
+  } while (document.getElementById(prefix));
+
+  return prefix;
+}
