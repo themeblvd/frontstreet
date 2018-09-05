@@ -375,7 +375,7 @@ address {
 }
 abbr,
 acronym {
-  border-bottom: 1px dotted $fs-color-border;
+  border-bottom: 1px dotted darken($fs-color-border, 40%);
   cursor: help;
   text-decoration: inherit;
 }
@@ -386,7 +386,7 @@ acronym {
   }
   .text-dark abbr,
   .text-dark acronym {
-    border-color: $fs-color-border;
+    border-color: darken($fs-color-border, 40%);
   }
 }
 
