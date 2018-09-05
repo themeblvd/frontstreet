@@ -27,6 +27,8 @@ const tooltips = (options, callback) => {
 
   /**
    * Set up each individiual tooltip.
+   *
+   * @param {Element} trigger Tooltip trigger element.
    */
   function setup(trigger) {
     const data = trigger.dataset;
@@ -116,7 +118,6 @@ const tooltips = (options, callback) => {
     let x = 0;
     let y = 0;
 
-    console.log(placement); // ...
     if (placement === 'top' || placement === 'bottom') {
       // Top and bottom placement.
       x = triggerElem.offsetLeft + 0.5 * triggerElem.offsetWidth - 0.5 * helpElem.offsetWidth;
