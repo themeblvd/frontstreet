@@ -87,7 +87,6 @@ const tooltips = (options, callback) => {
     trigger.addEventListener('keyup', function(event) {
       if (event.which === 27) {
         event.preventDefault();
-        // helpEvents.forEach((help) => hideHelp({target: help.elem}));
         hideHelp(event);
       }
     });
