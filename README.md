@@ -9,7 +9,7 @@
 There are few ways to include Front Street in your project.
 
 1. Include pre-compiled Front Street core only, for a lightweight base framework to build on.
-2. Include the full, pre-compiled Front Street framework, including core styles and all blocks.
+2. Include the full, pre-compiled Front Street framework, including core styles and all components.
 3. Create a custom build with NPM to include.
 
 ### Method 1: Core Styles Only
@@ -40,7 +40,7 @@ Copy `/dist/css/frontstreet.min.js` to your project and include at the bottom of
 
 *Note: We're aware that Front Street will be used often with WordPress. And so we're using an old version of jQuery in our testing and examples because that's what WordPress is bundling.*
 
-Optional step. If you plan to use the model and slider blocks, you'll need to include Magnific Popup and Owl Carousel. Also, if you're planning to use with Font Awesome, we suggest using the JavaScript version of Font Awesome 5. Below is an example that expands on the previous step, to incorporate all of this.
+Optional step. If you plan to use the model and slider components, you'll need to include Magnific Popup and Owl Carousel. Also, if you're planning to use with Font Awesome, we suggest using the JavaScript version of Font Awesome 5. Below is an example that expands on the previous step, to incorporate all of this.
 
 ```html
 <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/solid.js" integrity="sha384-Z7p3uC4xXkxbK7/4keZjny0hTCWPXWfXl/mJ36+pW7ffAGnXzO7P+iCZ0mZv5Zt0" crossorigin="anonymous"></script>
@@ -72,24 +72,24 @@ import 'frontstreet';
 
 #### Custom JavaScript Build
 
-Or, using the Front Street API, you can include only the blocks you need to build a custom version. Here's an example:
+Or, using the Front Street API, you can include only the components you need to build a custom version. Here's an example:
 
 ```javascript
 import $ from 'jquery';
 
 import FrontStreet from 'frontstreet/src/js/FrontStreet';
-import Background from 'frontstreet/src/js/blocks/Background';
-import Tooltip from 'frontstreet/src/js/blocks/Tooltip';
+import Background from 'frontstreet/src/js/components/Background';
+import Tooltip from 'frontstreet/src/js/components/Tooltip';
 
 import 'frontstreet/src/scss/frontstreet-core.scss';
-import 'frontstreet/src/scss/blocks/_background.scss';
-import 'frontstreet/src/scss/blocks/_tooltip.scss';
+import 'frontstreet/src/scss/components/_background.scss';
+import 'frontstreet/src/scss/components/_tooltip.scss';
 
 const frontstreet = new FrontStreet();
 
 frontstreet.add('background', Background);
 frontstreet.add('tooltip', Tooltip);
-frontstreet.init(); // Add blocks to "frontstreet" jQuery namespace.
+frontstreet.init(); // Add components to "frontstreet" jQuery namespace.
 
 $(document).ready(function() {
   $('.my-background').frontstreet('background');
@@ -134,7 +134,7 @@ And then the following is an example of implementing the full Front Street frame
 @import '~frontstreet/src/scss/frontstreet.scss';
 ```
 
-The above example can be modified to also build out a CSS file with only what you need. Instead of including the entire framework, you can include the framework core and then add only the blocks you need.
+The above example can be modified to also build out a CSS file with only what you need. Instead of including the entire framework, you can include the framework core and then add only the components you need.
 
 ```scss
 // Variable Overrides
@@ -142,8 +142,8 @@ The above example can be modified to also build out a CSS file with only what yo
 
 // Include Framework
 @import '~frontstreet/src/scss/frontstreet-core.scss';
-@import '~frontstreet/src/scss/blocks/alert';
-@import '~frontstreet/src/scss/blocks/breadcrumb';
+@import '~frontstreet/src/scss/components/alert';
+@import '~frontstreet/src/scss/components/breadcrumb';
 // ...
 ```
 

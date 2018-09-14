@@ -487,7 +487,7 @@ const searchIndex = [
   },
 
   //
-  // Blocks > Alert
+  // Components > Alert
   //
 
   {
@@ -497,7 +497,7 @@ const searchIndex = [
   },
 
   //
-  // Blocks > Backgrounds
+  // Components > Backgrounds
   //
 
   {
@@ -517,7 +517,7 @@ const searchIndex = [
   },
 
   //
-  // Blocks > Breadcrumbs
+  // Components > Breadcrumbs
   //
 
   {
@@ -527,7 +527,7 @@ const searchIndex = [
   },
 
   //
-  // Blocks > Button
+  // Components > Button
   //
 
   {
@@ -547,7 +547,7 @@ const searchIndex = [
   },
 
   //
-  // Blocks > Dividers
+  // Components > Dividers
   //
 
   {
@@ -557,7 +557,7 @@ const searchIndex = [
   },
 
   //
-  // Blocks > Labels
+  // Components > Labels
   //
 
   {
@@ -567,7 +567,7 @@ const searchIndex = [
   },
 
   //
-  // Blocks > Loader
+  // Components > Loader
   //
 
   {
@@ -577,7 +577,7 @@ const searchIndex = [
   },
 
   //
-  // Blocks > Modals
+  // Components > Modals
   //
 
   {
@@ -612,7 +612,7 @@ const searchIndex = [
   },
 
   //
-  // Blocks > Menu
+  // Components > Menu
   //
 
   {
@@ -647,7 +647,7 @@ const searchIndex = [
   },
 
   //
-  // Blocks > Mobile Menu
+  // Components > Mobile Menu
   //
 
   {
@@ -657,7 +657,7 @@ const searchIndex = [
   },
 
   //
-  // Blocks > Progress Bars
+  // Components > Progress Bars
   //
 
   {
@@ -667,7 +667,7 @@ const searchIndex = [
   },
 
   //
-  // Blocks > Sliders
+  // Components > Sliders
   //
 
   {
@@ -697,7 +697,7 @@ const searchIndex = [
   },
 
   //
-  // Blocks > Tabbed Content
+  // Components > Tabbed Content
   //
 
   {
@@ -707,7 +707,7 @@ const searchIndex = [
   },
 
   //
-  // Blocks > Testimonials
+  // Components > Testimonials
   //
 
   {
@@ -732,7 +732,7 @@ const searchIndex = [
   },
 
   //
-  // Blocks > Toggles
+  // Components > Toggles
   //
 
   {
@@ -747,7 +747,7 @@ const searchIndex = [
   },
 
   //
-  // Blocks > Tooltips
+  // Components > Tooltips
   //
 
   {
@@ -757,7 +757,7 @@ const searchIndex = [
   },
 
   //
-  // Blocks > Widgets
+  // Components > Widgets
   //
 
   {
