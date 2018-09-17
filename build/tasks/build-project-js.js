@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
-const webpackConfig = require('../../webpack.config');
 
 /**
  * Compile JavaScript for distributed project
@@ -15,9 +14,11 @@ const webpackConfig = require('../../webpack.config');
  * version for debugging.
  */
 function buildProjectJs(mode) {
+  const webpackConfig = require(`../webpack.project.${mode}`);
+
   return gulp
     .src('../src/js/frontstreet.js') // For Gulp reference only, actual entry file pulled from Webpack config.
-    .pipe(webpackStream(webpackConfig({ mode: `project.${mode}` }), webpack))
+    .pipe(webpackStream(webpackConfig, webpack))
     .pipe(gulp.dest('../dist'))
     .pipe(gulp.dest('../docs/assets'));
 }
