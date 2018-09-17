@@ -1,0 +1,23 @@
+////
+/// Mixins: Animations
+///
+/// @access public
+/// @group fs-mixins
+/// @author Jason Bobich
+////
+
+///
+/// Add fade animation to an element.
+///
+/// @since 1.1.0
+///
+@mixin fs-fade {
+  &.fade {
+    opacity: 0;
+    transition: $fs-transition-fade;
+
+    &.in {
+      opacity: 1;
+    }
+  }
+}

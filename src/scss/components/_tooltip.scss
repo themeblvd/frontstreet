@@ -10,6 +10,7 @@
 // that normally non-focusable elements are
 // now focusable.
 .fs-tooltip[tabindex] {
+  display: inline-block;
   border-bottom: $fs-tooltip-trigger-border;
 }
 
@@ -32,6 +33,7 @@
 
 .fs-tooltip-help {
   @include fs-text-reset;
+  @include fs-fade;
   background-color: $fs-tooltip-bg-color;
   border-radius: $fs-tooltip-radius;
   color: $fs-tooltip-text-color;
