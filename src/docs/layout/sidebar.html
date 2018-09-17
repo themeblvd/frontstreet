@@ -52,20 +52,37 @@
     </li>
 </ul>
 
-<h4 class="heading-sm">Components</h4>
+<h4 class="heading-sm">Elements</h4>
+
+<ul>
+    <li@@if (page == 'background') { class="active"}>
+        <a href="background.html" title="Background">Background</a>
+    </li>
+    <li@@if (page == 'button') { class="active"}>
+        <a href="button.html" title="Button">Button</a>
+    </li>
+    <li@@if (page == 'loader') { class="active"}>
+        <a href="loader.html" title="Loader">Loader</a>
+    </li>
+    <li@@if (page == 'mobile-menu') { class="active"}>
+        <a href="mobile-menu.html" title="Mobile Menu">Mobile Menu</a>
+    </li>
+    <li@@if (page == 'modal') { class="active"}>
+        <a href="modal.html" title="Modal">Modal</a>
+    </li>
+    <li@@if (page == 'tooltip') { class="active"}>
+        <a href="tooltip.html" title="Tooltip">Tooltip</a>
+    </li>
+</ul>
+
+<h4 class="heading-sm">Blocks</h4>
 
 <ul>
     <li@@if (page == 'alert') { class="active"}>
         <a href="alert.html" title="Alert">Alert</a>
     </li>
-    <li@@if (page == 'background') { class="active"}>
-        <a href="background.html" title="Background">Background</a>
-    </li>
     <li@@if (page == 'breadcrumb') { class="active"}>
         <a href="breadcrumb.html" title="Breadcrumb">Breadcrumb</a>
-    </li>
-	<li@@if (page == 'button') { class="active"}>
-        <a href="button.html" title="Button">Button</a>
     </li>
     <li@@if (page == 'divider') { class="active"}>
         <a href="divider.html" title="Divider">Divider</a>
@@ -73,17 +90,8 @@
 	<li@@if (page == 'label') { class="active"}>
         <a href="label.html" title="Label">Label</a>
     </li>
-    <li@@if (page == 'loader') { class="active"}>
-        <a href="loader.html" title="Loader">Loader</a>
-    </li>
     <li@@if (page == 'menu') { class="active"}>
         <a href="menu.html" title="Menu">Menu</a>
-    </li>
-    <li@@if (page == 'mobile-menu') { class="active"}>
-        <a href="mobile-menu.html" title="Mobile Menu">Mobile Menu</a>
-    </li>
-    <li@@if (page == 'modal') { class="active"}>
-        <a href="modal.html" title="Modal">Modal</a>
     </li>
     <li@@if (page == 'progress-bar') { class="active"}>
         <a href="progress-bar.html" title="Progress Bar">Progress Bar</a>
@@ -99,9 +107,6 @@
     </li>
     <li@@if (page == 'toggle') { class="active"}>
         <a href="toggle.html" title="Toggle">Toggle</a>
-    </li>
-    <li@@if (page == 'tooltip') { class="active"}>
-        <a href="tooltip.html" title="Tooltip">Tooltip</a>
     </li>
     <li@@if (page == 'widget') { class="active"}>
         <a href="widget.html" title="Widget">Widget</a>
