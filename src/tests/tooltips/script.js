@@ -1,4 +1,4 @@
-import tooltips from '../../js/modules/tooltips';
+import tooltips from '../../js/components/tooltips';
 
 tooltips({
   target: '.fs-tooltip',
