@@ -20,6 +20,7 @@
     "docs:js": "gulp --gulpfile ./build/gulpfile.js build-docs-js",
     "docs:html": "gulp --gulpfile ./build/gulpfile.js build-docs-html",
     "docs:img": "gulp --gulpfile ./build/gulpfile.js build-docs-img",
+    "tests": "gulp --gulpfile ./build/gulpfile.js build-tests",
     "clean": "gulp --gulpfile ./build/gulpfile.js clean"
   },
   "repository": {
@@ -35,6 +36,7 @@
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.24.6",
     "concurrently": "^3.6.0",
