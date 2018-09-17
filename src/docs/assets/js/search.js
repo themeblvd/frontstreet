@@ -80,8 +80,8 @@ searchField.addEventListener('keydown', function(event) {
     if (!selected) {
       selected = resultsList.querySelector('li:first-child');
     } else {
-      if (selected.nextSibling) {
-        selected = selected.nextSibling;
+      if (selected.nextElementSibling) {
+        selected = selected.nextElementSibling;
       } else {
         selected = resultsList.querySelector('li:first-child');
       }
@@ -90,8 +90,8 @@ searchField.addEventListener('keydown', function(event) {
     if (!selected) {
       selected = resultsList.querySelector('li:last-child');
     } else {
-      if (selected.previousSibling) {
-        selected = selected.previousSibling;
+      if (selected.previousElementSibling) {
+        selected = selected.previousElementSibling;
       } else {
         selected = resultsList.querySelector('li:last-child');
       }
