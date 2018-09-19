@@ -10,14 +10,18 @@ import { uniqueID } from '../utils';
  * @since    1.1.0
  * @module   tooltips.js
  */
-const tooltips = (options, callback) => {
-  if (!options.target) {
-    return;
-  }
+const tooltips = (settings, callback) => {
+  settings = {
+    target: '.fs-tooltip',
+    helpClass: 'fs-tooltip-help',
+    helpColor: '',
+    helpPlacement: 'top',
+    ...settings
+  };
 
   const helpElements = []; // Holds all built tooltip help elements.
 
-  document.querySelectorAll(options.target).forEach(function(trigger) {
+  document.querySelectorAll(settings.target).forEach(function(trigger) {
     setup(trigger);
   });
 
@@ -54,7 +58,7 @@ const tooltips = (options, callback) => {
 
     // Determine placement.
     if (!data.helpPlacement) {
-      data.helpPlacement = options.helpPlacement ? options.helpPlacement : 'top';
+      data.helpPlacement = settings.helpPlacement;
     }
 
     // Because we've removed the title attribute, we'll
@@ -185,15 +189,15 @@ const tooltips = (options, callback) => {
     const helpID = trigger.getAttribute('aria-describedby');
     const helpElem = document.createElement('span');
 
-    helpElem.classList.add('fs-tooltip-help', data.helpPlacement);
-
     if (data.helpClass) {
       helpElem.classList.add(data.helpClass);
     }
 
-    if (options.helpClass) {
-      helpElem.classList.add(options.helpClass);
+    if (settings.helpClass) {
+      helpElem.classList.add(settings.helpClass);
     }
+
+    helpElem.classList.add(data.helpPlacement);
 
     helpElem.setAttribute('id', helpID);
     helpElem.setAttribute('role', 'tooltip');
