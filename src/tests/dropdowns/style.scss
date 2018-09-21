@@ -1,0 +1,10 @@
+$version: 'element';
+$direction: 'ltr';
+
+@import '../../scss/utils/index';
+@import '../../scss/elements/dropdowns';
+@import '../../scss/blocks/menu';
+
+.wrapper {
+  padding-bottom: 250px;
+}
