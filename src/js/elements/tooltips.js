@@ -10,6 +10,25 @@ import { uniqueID } from '../utils';
  * @since    1.1.0
  * @module   tooltips.js
  */
+
+/**
+ * Tooltips.
+ *
+ * Note: For termiology throughout this function,
+ * a given tooltip is comprised of two parts:
+ *
+ *   1. Trigger: The link or element you provide
+ *   that triggers a tooltip.
+ *   2. Help: This is the actual, generated tooltip
+ *   box that displays when triggered.
+ *
+ * @param {Object}   settings               Element settings.
+ * @param {string}   settings.target        CSS selector for tooltip trigger elements.
+ * @param {number}   settings.helpClass     CSS class attached generated tooltip help box.
+ * @param {string}   settings.helpColor     Optional. Custom background color hex for generated tooltip help box.
+ * @param {string}   settings.helpPlacement Placement of tooltip, relative to trigger - `top`, `right`, `bottom` or `left`.
+ * @param {Function} callback               Callback function once element is set up.
+ */
 const tooltips = (settings, callback) => {
   settings = {
     target: '.fs-tooltip',

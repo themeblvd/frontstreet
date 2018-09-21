@@ -8,9 +8,20 @@
  * @since  1.1.0
  * @module dropdowns.js
  */
+
+/**
+ * Dropdowns.
+ *
+ * @param {Object}   settings                  Element settings.
+ * @param {string}   settings.target           CSS selector for top-level <ul> containing menu and dropdowns.
+ * @param {number}   settings.delay            Delay (in ms) between mouseleave and dropdown menu being hidden.
+ * @param {string}   settings.dropDownSelector CSS selector for inner dropdown menus.
+ * @param {string}   settings.labelDropdown    Aria label to denote a link triggers a submenu.
+ * @param {Function} callback                  Callback function once element is set up.
+ */
 const dropdowns = (settings, callback) => {
   settings = {
-    target: '.fs-menu-dropdowns',
+    target: '.fs-dropdowns',
     delay: 500,
     dropDownSelector: 'ul:not(.mega-sub-menu), .fs-mega',
     labelDropdown: 'Submenu',
