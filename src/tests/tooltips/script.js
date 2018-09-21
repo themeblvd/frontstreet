@@ -1,8 +1,3 @@
-import tooltips from '../../js/components/tooltips';
+import tooltips from '../../js/elements/tooltips';
 
-tooltips({
-  target: '.fs-tooltip',
-  helpClass: '',
-  helpColor: '',
-  helpPlacement: ''
-});
+tooltips({ target: '.fs-tooltip', helpClass: 'fs-tooltip-help' });
