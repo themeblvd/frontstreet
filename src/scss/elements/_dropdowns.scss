@@ -1,0 +1,141 @@
+// --------------------------------------------------
+// Dropdowns
+// --------------------------------------------------
+
+.fs-dropdowns {
+  box-sizing: border-box;
+  position: relative;
+
+  * {
+    box-sizing: border-box;
+  }
+  li,
+  .menu-btn {
+    position: relative;
+  }
+
+  // Dropdowns
+  ul {
+    @include fs-fade;
+    @include fs-list-unstyled;
+    max-width: 100%;
+    position: static;
+    top: 100%;
+    @if ($direction == 'rtl') {
+      right: 0;
+    } @else {
+      left: 0;
+    }
+    z-index: 999;
+  }
+  li > ul {
+    display: none;
+  }
+  li > ul.show {
+    display: block;
+  }
+  ul.reverse {
+    @if ($direction == 'rtl') {
+      left: 0;
+      right: initial;
+    } @else {
+      left: initial;
+      right: 0;
+    }
+  }
+  ul ul {
+    top: 0;
+    @if ($direction == 'rtl') {
+      right: 100%;
+    } @else {
+      left: 100%;
+    }
+  }
+  ul.reverse ul {
+    @if ($direction == 'rtl') {
+      left: 100%;
+      right: initial;
+    } @else {
+      left: inherit;
+      right: 100%;
+    }
+  }
+  ul.text-dark > li > .menu-btn {
+    color: $fs-color-text-base;
+
+    &:hover,
+    &:focus {
+      color: $fs-color-text-darken;
+    }
+  }
+  ul.text-light > li > .menu-btn {
+    color: rgba($fs-color-text-inv-darken, 0.8);
+
+    &:hover,
+    &:focus {
+      color: $fs-color-text-inv-darken;
+    }
+  }
+
+  // Display drop menus (no-js fallback)
+  &.no-js li:hover > ul {
+    display: block;
+  }
+
+  // Mega Menus
+  li.has-mega-menu {
+    position: static;
+  }
+  .fs-mega {
+    @include fs-fade;
+    display: none;
+    padding: 20px 0;
+    top: 100%;
+    @if ($direction == 'rtl') {
+      right: 0;
+    } @else {
+      left: 0;
+    }
+    width: 100%;
+    z-index: 999;
+  }
+  .fs-mega.show {
+    display: flex;
+  }
+  .fs-mega-section {
+    flex: 1;
+    margin-bottom: 20px;
+
+    ul {
+      display: block;
+      padding: 0;
+    }
+  }
+  .fs-mega-section:last-child {
+    margin-bottom: 0;
+  }
+  .mega-section-header {
+    display: block;
+    font-size: 1.1em;
+    font-weight: $fs-font-weight-bold;
+  }
+  .mega-section-header a {
+    background-color: transparent !important;
+    font-size: inherit !important;
+    display: inline !important;
+    padding: 0 !important;
+  }
+}
+.fs-dropdowns.menu-horz {
+  @include fs-dropdown;
+}
+@each $breakpoint in map-keys($fs-breakpoints) {
+  @if $breakpoint != xl {
+    // skip xl
+    @include fs-min-width($breakpoint) {
+      .fs-dropdowns.menu-horz-#{$breakpoint} {
+        @include fs-dropdown;
+      }
+    }
+  }
+}
