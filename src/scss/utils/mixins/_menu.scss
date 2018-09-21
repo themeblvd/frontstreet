@@ -1,5 +1,5 @@
 ////
-/// Mixins: Navigation
+/// Mixins: Menus
 ///
 /// @access public
 /// @group fs-mixins
@@ -11,7 +11,7 @@
 ///
 /// @since 1.0.0
 ///
-@mixin nav-horz {
+@mixin fs-menu-horz {
   display: flex;
   flex-wrap: wrap;
 }
@@ -21,7 +21,7 @@
 ///
 /// @since 1.0.0
 ///
-@mixin nav-tabs-horz {
+@mixin fs-menu-tabs-horz {
   > li > .menu-btn {
     border-bottom-width: $fs-tabs-border-width;
     margin-bottom: -$fs-tabs-border-width;
@@ -29,7 +29,8 @@
   > li.active > .menu-btn {
     border-bottom-color: transparent;
   }
-  &.fs-menu > li > ul {
+  &.fs-dropdowns > li > ul,
+  &.fs-dropdowns .fs-mega {
     border: none;
     margin-top: $fs-tabs-border-width;
   }
@@ -43,8 +44,8 @@
 ///
 /// @param {String} $style - Style of scenario, `default` or `inverse`.
 ///
-@mixin tabs-variant($style: 'default') {
-  .submenu-tabs {
+@mixin fs-tabs-variant($style: 'default') {
+  .fs-menu-tabs {
     @if ($style == 'inverse') {
       border-color: $fs-tabs-border-inv-color;
 
@@ -130,8 +131,9 @@
 ///
 /// @since 1.0.0
 ///
-@mixin nav-pills-horz {
-  &.fs-menu ul {
+@mixin fs-menu-pills-horz {
+  ul:not(.mega-sub-menu),
+  .fs-mega {
     background-color: $fs-pills-flyout-bg;
 
     @if ($direction == 'rtl') {
@@ -150,8 +152,8 @@
 ///
 /// @param {String} $style - Style of scenario, `default` or `inverse`.
 ///
-@mixin pills-variant($style: 'default') {
-  .submenu-pills {
+@mixin fs-pills-variant($style: 'default') {
+  .fs-menu-tabs {
     @if ($style == 'inverse') {
       > li > .menu-btn {
         border-color: $fs-pills-border-inv-color;
@@ -171,50 +173,5 @@
         }
       }
     }
-  }
-}
-
-///
-/// Dropdown menu styling.
-///
-/// @since 1.0.0
-///
-@mixin nav-dropdown {
-  ul,
-  .fs-mega {
-    box-shadow: $fs-dropdown-shadow;
-    position: absolute;
-  }
-  ul li.menu-item-has-children > .menu-btn .sub-indicator {
-    @if ($direction == 'rtl') {
-      transform: rotate(90deg) translate(-50%, 0);
-    } @else {
-      transform: rotate(270deg) translate(50%, 0);
-    }
-  }
-  ul.reverse li.menu-item-has-children > .menu-btn .sub-indicator {
-    @if ($direction == 'rtl') {
-      transform: rotate(270deg) translate(50%, 0);
-    } @else {
-      transform: rotate(90deg) translate(-50%, 0);
-    }
-  }
-  ul ul {
-    @include fs-list-unstyled;
-  }
-
-  // Mega Menu
-  .fs-mega {
-    padding: $fs-mega-menu-padding;
-
-    ul {
-      // display: block;
-      position: static;
-      box-shadow: none;
-    }
-  }
-  .fs-mega-section {
-    margin-bottom: 0;
-    padding: 0 10px;
   }
 }

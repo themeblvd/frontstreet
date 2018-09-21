@@ -1,21 +1,15 @@
 // --------------------------------------------------
-// Navigation
+// Menu
 // --------------------------------------------------
 
 //
 // General Properties
 //
 
-.menu-bar,
-.submenu-bar,
-.submenu-tabs,
-.submenu-pills {
+.fs-menu-bar,
+.fs-menu-tabs,
+.fs-menu-pills {
   @include fs-list-unstyled;
-  @include fs-clearfix;
-
-  ul {
-    @include fs-list-unstyled;
-  }
 }
 .menu-btn {
   display: block;
@@ -23,35 +17,61 @@
   position: relative;
   transition: $fs-btn-transition;
 }
-.menu-bar-horz,
-.submenu-horz {
-  @include nav-horz;
+.menu-horz {
+  @include fs-menu-horz;
+  @include fs-list-unstyled;
 }
 @each $breakpoint in map-keys($fs-breakpoints) {
   @if $breakpoint != xl {
     // skip xl
+    .menu-horz-#{$breakpoint} {
+      @include fs-list-unstyled;
+    }
     @include fs-min-width($breakpoint) {
-      .menu-bar-horz-#{$breakpoint},
-      .submenu-horz-#{$breakpoint} {
-        @include nav-horz;
+      .menu-horz-#{$breakpoint} {
+        @include fs-menu-horz;
       }
     }
   }
 }
 
 //
-// Sub-levels
+// Dropdowns / Sub-levels
+//
+// While the core dropdown styles are in _dropdowns.scss,
+// this section further styles dropdowns for the different
+// top-level menu present styles.
+//
+// Also, if sublevels are used without dropdowns, these
+// styles will be applied to staticly displayed submenus.
 //
 
-.menu-bar,
-.submenu-bar,
-.submenu-tabs,
-.submenu-pills {
+.fs-menu-bar,
+.fs-menu-tabs,
+.fs-menu-pills {
+  a {
+    text-decoration: none;
+  }
+  ul {
+    @include fs-list-unstyled;
+    min-width: $fs-dropdown-width;
+    padding: $fs-dropdown-vert-spacing 0;
+  }
+
+  // Drop indicator icons
+  li.menu-item-has-children > .menu-btn {
+    @if ($direction == 'rtl') {
+      padding-left: 2.25em;
+    } @else {
+      padding-right: 2.25em;
+    }
+  }
+
   // Level 2+
   ul {
     font-size: $fs-dropdown-font-size;
     margin: 0;
-    padding-left: 10px;
+    // padding-left: 10px;
   }
   ul .menu-btn {
     padding: 0.75em $fs-dropdown-horz-spacing;
@@ -84,173 +104,69 @@
     padding-left: 20px;
   }
 }
+.menu-horz {
+  &.fs-menu-bar,
+  &.fs-menu-tabs,
+  &.fs-menu-pills {
+    ul,
+    .fs-mega {
+      box-shadow: $fs-dropdown-shadow;
+    }
+    .fs-mega {
+      padding: $fs-mega-menu-padding;
 
-//
-// Sub-Indicator Icons
-//
-
-.sub-indicator {
-  @include fs-background-mini-chevron($fs-color-text-base);
-  background-size: 0.571428em 0.571428em;
-  position: absolute;
-  top: 50%;
-  @if ($direction == 'rtl') {
-    left: 1em;
-  } @else {
-    right: 1em;
-  }
-  transform: translate(0, -50%);
-  width: 0.571428em;
-  height: 0.571428em;
-}
-.text-light .sub-indicator {
-  @include fs-background-mini-chevron(rgba($fs-color-text-inv-darken, 0.8));
-}
-
-//
-// Dropdown Menus
-//
-
-.fs-menu {
-  position: relative;
-
-  li,
-  .menu-btn {
-    position: relative;
-  }
-
-  // Drop indicator icons
-  li.menu-item-has-children > .menu-btn {
-    @if ($direction == 'rtl') {
-      padding-left: 2.25em;
-    } @else {
-      padding-right: 2.25em;
+      ul {
+        box-shadow: none;
+      }
     }
   }
-
-  // Flyout menu
-  ul {
-    max-width: 100%;
-    min-width: $fs-dropdown-width;
-    padding: $fs-dropdown-vert-spacing 0;
-    position: static;
-    top: 100%;
-    @if ($direction == 'rtl') {
-      right: 0;
-    } @else {
-      left: 0;
-    }
-    z-index: 999;
-  }
-  li > ul {
-    display: none;
-  }
-  li > ul.show {
-    display: block;
-  }
-  ul.reverse {
-    @if ($direction == 'rtl') {
-      left: 0;
-      right: initial;
-    } @else {
-      left: initial;
-      right: 0;
-    }
-  }
-  ul ul {
-    top: 0;
-    @if ($direction == 'rtl') {
-      right: 100%;
-    } @else {
-      left: 100%;
-    }
-  }
-  ul.reverse ul {
-    @if ($direction == 'rtl') {
-      left: 100%;
-      right: initial;
-    } @else {
-      left: inherit;
-      right: 100%;
-    }
-  }
-  ul.text-dark > li > .menu-btn {
-    color: $fs-color-text-base;
-
-    &:hover,
-    &:focus {
-      color: $fs-color-text-darken;
-    }
-  }
-  ul.text-light > li > .menu-btn {
-    color: rgba($fs-color-text-inv-darken, 0.8);
-
-    &:hover,
-    &:focus {
-      color: $fs-color-text-inv-darken;
-    }
-  }
-
-  // Display drop menus (no-js fallback)
-  &.no-js li:hover > ul {
-    display: block;
-  }
-
-  // Mega Menus
-  li.has-mega-menu {
-    position: static;
-  }
-  .fs-mega {
-    display: none;
-    padding: 20px 0;
-    top: 100%;
-    @if ($direction == 'rtl') {
-      right: 0;
-    } @else {
-      left: 0;
-    }
-    width: 100%;
-    z-index: 999;
-  }
-  .fs-mega.show {
-    display: flex;
-  }
-  .fs-mega-section {
-    margin-bottom: 20px;
-
-    ul {
-      display: block;
-      padding: 0;
-    }
-  }
-  .fs-mega-section:last-child {
-    margin-bottom: 0;
-  }
-  .mega-section-header {
-    display: block;
-    font-size: 1.1em;
-    font-weight: $fs-font-weight-bold;
-  }
-  .mega-section-header a {
-    background-color: transparent !important;
-    font-size: inherit !important;
-    display: inline !important;
-    padding: 0 !important;
-  }
-}
-.fs-menu.menu-bar-horz,
-.fs-menu.submenu-horz {
-  @include nav-dropdown();
 }
 @each $breakpoint in map-keys($fs-breakpoints) {
   @if $breakpoint != xl {
     // skip xl
     @include fs-min-width($breakpoint) {
-      .fs-menu.menu-bar-horz-#{$breakpoint},
-      .fs-menu.submenu-horz-#{$breakpoint} {
-        @include nav-dropdown();
+      .fs-menu-bar.menu-horz-#{$breakpoint},
+      .fs-menu-tabs.menu-horz-#{$breakpoint},
+      .fs-menu-pills.menu-horz-#{$breakpoint} {
+        ul,
+        .fs-mega {
+          box-shadow: $fs-dropdown-shadow;
+        }
+        .fs-mega {
+          padding: $fs-mega-menu-padding;
+
+          ul {
+            box-shadow: none;
+          }
+        }
       }
     }
+  }
+}
+
+//
+// Sub-Indicator Icons
+//
+
+.fs-menu-bar,
+.fs-menu-tabs,
+.fs-menu-pills {
+  .sub-indicator {
+    @include fs-background-mini-chevron($fs-color-text-base);
+    background-size: 0.571428em 0.571428em;
+    position: absolute;
+    top: 50%;
+    @if ($direction == 'rtl') {
+      left: 1em;
+    } @else {
+      right: 1em;
+    }
+    transform: translate(0, -50%);
+    width: 0.571428em;
+    height: 0.571428em;
+  }
+  &.text-light .sub-indicator {
+    @include fs-background-mini-chevron(rgba($fs-color-text-inv-darken, 0.8));
   }
 }
 
@@ -258,7 +174,7 @@
 // Menu Bar
 //
 
-.menu-bar {
+.fs-menu-bar {
   .menu-btn {
     border: none;
   }
@@ -308,72 +224,10 @@
 }
 
 //
-// Submenu Bar
-//
-
-.submenu-bar {
-  padding: $fs-submenu-padding;
-
-  .menu-btn {
-    border: none;
-  }
-  &.text-dark {
-    .menu-btn {
-      color: rgba($fs-color-text-darken, 0.8);
-
-      &:hover,
-      &:focus {
-        color: $fs-color-text-darken;
-      }
-    }
-    > li.active,
-    > li.current-menu-item,
-    > li.current-menu-ancestor {
-      > .menu-btn {
-        background-color: rgba($fs-color-light, 0.3);
-        color: $fs-color-text-darken;
-      }
-    }
-  }
-  &.text-light {
-    .menu-btn {
-      color: rgba($fs-color-text-inv-darken, 0.8);
-
-      &:hover,
-      &:focus {
-        color: $fs-color-text-inv-darken;
-      }
-    }
-    > li.active,
-    > li.current-menu-item,
-    > li.current-menu-ancestor {
-      > .menu-btn {
-        background-color: rgba($fs-color-black, 0.5);
-        color: $fs-color-text-inv-darken;
-      }
-    }
-  }
-
-  // Level 1
-  > li > .menu-btn {
-    font-weight: $fs-submenu-btn-font-weight;
-    font-size: $fs-submenu-btn-font-size;
-    letter-spacing: $fs-submenu-btn-letter-spacing;
-    padding: fs-em(10px, $fs-submenu-btn-font-size) fs-em(16px, $fs-submenu-btn-font-size);
-    text-transform: $fs-submenu-btn-text-transform;
-  }
-
-  // Level 2 flyouts
-  &.fs-menu > li > ul {
-    margin-top: $fs-submenu-padding;
-  }
-}
-
-//
 // Tabs
 //
 
-.submenu-tabs {
+.fs-menu-tabs {
   border-color: $fs-tabs-border-color;
   border-style: solid;
 
@@ -418,17 +272,18 @@
   }
 
   // Horizontal
-  &.submenu-horz {
-    @include nav-tabs-horz;
+  &.menu-horz {
+    @include fs-menu-tabs-horz;
   }
 
   // Level 2+
-  ul {
+  ul:not(.mega-sub-menu),
+  .fs-mega {
     background: $fs-tabs-active-bg;
     padding-top: $fs-dropdown-vert-spacing;
     padding-bottom: $fs-dropdown-vert-spacing;
 
-    .menu-btn {
+    a.menu-btn {
       color: $fs-color-text-base;
 
       &:hover,
@@ -453,24 +308,24 @@
   @if $breakpoint != xl {
     // skip xl
     @include fs-min-width($breakpoint) {
-      .submenu-tabs.submenu-horz-#{$breakpoint} {
-        @include nav-tabs-horz;
+      .fs-menu-tabs.menu-horz-#{$breakpoint} {
+        @include fs-menu-tabs-horz;
       }
     }
   }
 }
 .text-light {
-  @include tabs-variant('inverse');
+  @include fs-tabs-variant('inverse');
 }
 .text-dark {
-  @include tabs-variant;
+  @include fs-tabs-variant;
 }
 
 //
 // Pills
 //
 
-.submenu-pills {
+.fs-menu-pills {
   margin: (-$fs-pills-spacing) (-$fs-pills-spacing) ($fs-element-spacing - 2) (-$fs-pills-spacing);
 
   > li {
@@ -492,18 +347,21 @@
   }
 
   // Horizontal
-  &.submenu-horz {
-    @include nav-pills-horz;
+  &.menu-horz {
+    @include fs-menu-pills-horz;
   }
 
   // Level 2+
-  ul {
+  ul:not(.mega-sub-menu),
+  .fs-mega {
     padding: $fs-dropdown-vert-spacing 10px;
 
     .menu-btn {
-      color: $fs-color-text-base;
       padding-right: 10px;
       padding-left: 10px;
+    }
+    a.menu-btn {
+      color: $fs-color-text-base;
 
       &:hover,
       &:focus {
@@ -516,19 +374,19 @@
   @if $breakpoint != xl {
     // skip xl
     @include fs-min-width($breakpoint) {
-      .submenu-pills.submenu-horz-#{$breakpoint} {
-        @include nav-pills-horz;
+      .fs-menu-pills.menu-horz-#{$breakpoint} {
+        @include fs-menu-pills-horz;
       }
     }
   }
 }
 .text-light {
-  @include pills-variant('inverse');
+  @include fs-pills-variant('inverse');
 }
 .text-dark {
-  @include pills-variant;
+  @include fs-pills-variant;
 }
-.submenu-pills {
+.fs-menu-pills {
   > li.active,
   > li.current-menu-item,
   > li.current-menu-ancestor {
