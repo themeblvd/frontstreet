@@ -46,3 +46,13 @@ export function uniqueID(prefix) {
 
   return prefix;
 }
+
+/**
+ * Check if this is an RTL website.
+ *
+ * Note: For RTL, make sure you have the
+ * class "rtl" on the website <body>.
+ */
+export function isRtl() {
+  return document.body.classList.contains('rtl');
+}

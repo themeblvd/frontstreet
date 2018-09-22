@@ -1,3 +1,5 @@
+import { isRtl } from '../utils';
+
 /**
  * Adds accessible menu dropdowns.
  *
@@ -92,7 +94,7 @@ const dropdowns = (settings, callback) => {
 
       // If the button doesn't have have a dropdown menu,
       // we'll simply make sure sibling list item dropdowns
-      // are hidden, when tabbed to.
+      // are hidden, when navigated to.
       if (!dropdowns.length) {
         button.addEventListener('focus', () => hideSiblings(button.parentNode));
         return; // Exit. Nothing more do to.
@@ -223,7 +225,7 @@ const dropdowns = (settings, callback) => {
       }
 
       const rect = listItem.getBoundingClientRect();
-      const location = document.body.classList.contains('rtl') ? rect.right : rect.left;
+      const location = isRtl() ? rect.right : rect.left;
 
       let space = dropdown.offsetWidth;
 
