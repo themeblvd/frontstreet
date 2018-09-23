@@ -1,5 +1,5 @@
 const gulp = require('gulp');
-const { components } = require('../utils');
+const { elements, blocks } = require('../utils');
 
 /**
  * Watch for changes to certain files and run
@@ -12,6 +12,8 @@ function watch() {
   gulp.watch('../src/docs/assets/js/*.js', ['build-docs-js']);
 
   // Tests
+  const components = [...elements, ...blocks];
+
   for (component of components) {
     gulp.watch(`../src/tests/${component}/index.html`, [`test-${component}-html`]);
     gulp.watch(`../src/tests/${component}/style.scss`, [`test-${component}-css`]);

@@ -3,7 +3,7 @@ const buildProjectJs = require('./tasks/build-project-js');
 const buildTestHtml = require('./tasks/build-test-html');
 const buildTestCss = require('./tasks/build-test-css');
 const buildTestJs = require('./tasks/build-test-js');
-const { docTasks, components } = require('./utils');
+const { docTasks, elements, blocks } = require('./utils');
 
 // Documentation Tasks
 
@@ -15,7 +15,9 @@ for (task of docTasks) {
 
 const testTasks = ['build-tests-css'];
 
-for (component of components) {
+const components = [...elements, ...blocks];
+
+for (let component of components) {
   testTasks.push(`test-${component}-html`, `test-${component}-css`, `test-${component}-js`);
   gulp.task(`test-${component}-html`, () => buildTestHtml(component));
   gulp.task(`test-${component}-css`, () => buildTestCss(component));

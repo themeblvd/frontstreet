@@ -1,8 +1,7 @@
 const docTasks = ['build-docs-html', 'build-docs-css', 'build-docs-js', 'build-docs-img'];
 
-const components = ['tooltips'];
+const elements = ['dropdowns', 'tooltips'];
 
-module.exports = {
-  docTasks,
-  components
-};
+const blocks = [];
+
+module.exports = { docTasks, elements, blocks };
