@@ -95,7 +95,7 @@ const tooltips = (settings, callback) => {
       trigger.nodeName !== 'TEXTAREA' &&
       trigger.nodeName !== 'SELECT'
     ) {
-      trigger.setAttribute('tabindex', '0');
+      trigger.setAttribute('tabindex', 0);
     }
 
     // Show/Hide the tooltip help element with mouse
