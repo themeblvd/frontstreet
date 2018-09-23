@@ -100,6 +100,12 @@ const dropdowns = (settings, callback) => {
         return; // Exit. Nothing more do to.
       }
 
+      // If the button isn't an <a> tag and it has dropdown,
+      // make sure it can be tabbed to.
+      if (button.nodeName !== 'A') {
+        button.setAttribute('tabindex', 0);
+      }
+
       const dropdown = dropdowns[0]; // Determine target dropdown.
 
       // Add CSS class for any special styling of items
@@ -134,9 +140,14 @@ const dropdowns = (settings, callback) => {
      * @param {Event} event
      */
     function show(event) {
-      const listItem = event.target.nodeName === 'A' ? event.target.parentNode : event.target;
+      const listItem = event.target.classList.contains('menu-btn')
+        ? event.target.parentNode
+        : event.target;
+
       const { dropDownSelector } = settings;
+
       const level = getLevel(listItem);
+
       const selectedChildren = Object.values(listItem.querySelectorAll(dropDownSelector));
 
       const dropdown = selectedChildren.find(function(child) {
@@ -268,7 +279,7 @@ const dropdowns = (settings, callback) => {
       const isMegaMenu = listItem.parentNode.classList.contains('mega-sub-menu');
 
       if (isMegaMenu) {
-        listItems['level-1'].querySelectorAll('a')[0].focus();
+        listItems['level-1'].querySelectorAll('.menu-btn')[0].focus();
         return hideSiblings(menu.querySelectorAll('li')[0]); // Grab any list item from top level.
       }
 
@@ -284,7 +295,7 @@ const dropdowns = (settings, callback) => {
         nodeName: 'LI'
       };
 
-      listItems[`level-${level - 1}`].querySelectorAll('a')[0].focus();
+      listItems[`level-${level - 1}`].querySelectorAll('.menu-btn')[0].focus();
 
       hide(fakeEvent);
     }
