@@ -153,7 +153,7 @@
 /// @param {String} $style - Style of scenario, `default` or `inverse`.
 ///
 @mixin fs-pills-variant($style: 'default') {
-  .fs-menu-tabs {
+  .fs-menu-pills {
     @if ($style == 'inverse') {
       > li > .menu-btn {
         border-color: $fs-pills-border-inv-color;

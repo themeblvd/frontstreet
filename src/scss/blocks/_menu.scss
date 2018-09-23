@@ -175,10 +175,6 @@
 //
 
 .fs-menu-bar {
-  .menu-btn {
-    border: none;
-  }
-
   // Level 1
   > li > .menu-btn {
     font-size: $fs-menu-bar-btn-font-size;
@@ -218,6 +214,25 @@
     > li.current-menu-ancestor {
       > .menu-btn {
         background-color: rgba($fs-color-black, 0.5);
+      }
+    }
+  }
+
+  // Level 2
+  ul {
+    padding: 0 10px;
+  }
+  &.menu-horz ul {
+    padding: 0;
+  }
+}
+
+@each $breakpoint in map-keys($fs-breakpoints) {
+  @if $breakpoint != xl {
+    // skip xl
+    @include fs-min-width($breakpoint) {
+      .fs-menu-bar.menu-horz-#{$breakpoint} ul {
+        padding: 0;
       }
     }
   }
