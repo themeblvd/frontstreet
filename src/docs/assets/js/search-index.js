@@ -618,32 +618,27 @@ const searchIndex = [
   {
     title: 'Menu',
     url: 'menu.html',
-    tags: ['menu', 'button', 'dropdown', 'flyout', 'mega']
-  },
-  {
-    title: 'Menu: Primary Menu',
-    url: 'menu.html#menu-bar',
-    tags: ['menu', 'button', 'mega', 'dropdown', 'flyout']
-  },
-  {
-    title: 'Menu: Secondary Menu',
-    url: 'menu.html#submenu',
-    tags: ['menu', 'button', 'mega', 'dropdown', 'flyout']
-  },
-  {
-    title: 'Menu: Tabs',
-    url: 'menu.html#submenu-tabs',
-    tags: ['menu', 'button', 'dropdown', 'flyout']
-  },
-  {
-    title: 'Menu: Pills',
-    url: 'menu.html#submenu-pills',
-    tags: ['menu', 'button', 'dropdown', 'flyout']
+    tags: ['menu', 'button', 'dropdown', 'flyout', 'mega', 'navigation']
   },
   {
     title: 'Menu: Responsiveness',
     url: 'menu.html#responsiveness',
     tags: ['menu', 'button', 'mobile']
+  },
+  {
+    title: 'Menu: Menu Bar',
+    url: 'menu.html#menu-bar',
+    tags: ['bar', 'menu style', 'button', 'mega', 'dropdown', 'flyout']
+  },
+  {
+    title: 'Menu: Pills',
+    url: 'menu.html#menu-pills',
+    tags: ['pills', 'menu style', 'button', 'dropdown', 'flyout']
+  },
+  {
+    title: 'Menu: Tabs',
+    url: 'menu.html#menu-tabs',
+    tags: ['tabs', 'menu style', 'menu', 'button', 'dropdown', 'flyout']
   },
 
   //
