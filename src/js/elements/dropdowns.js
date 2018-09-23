@@ -7,7 +7,7 @@ import { isRtl } from '../utils';
  *
  * @author Jason Bobich
  * @link   http://frontstreet.io
- * @since  1.1.0
+ * @since  2.0.0
  * @module dropdowns.js
  */
 
@@ -135,8 +135,6 @@ const dropdowns = (settings, callback) => {
     /**
      * Shows a dropdown menu.
      *
-     * @since 1.1.0
-     *
      * @param {Event} event
      */
     function show(event) {
@@ -182,8 +180,6 @@ const dropdowns = (settings, callback) => {
     /**
      * Hides a dropdown menu.
      *
-     * @since 1.1.0
-     *
      * @param {Event} event
      */
     function hide(event) {
@@ -225,8 +221,6 @@ const dropdowns = (settings, callback) => {
      * accomdate an RTL setup, or (2) fit within the viewport
      * when they approach the edge of the window.
      *
-     * @since 1.1.0
-     *
      * @param {Element} listItem
      * @param {Element} dropdown
      */
@@ -257,8 +251,6 @@ const dropdowns = (settings, callback) => {
      * Across all buttons, allow the ESC key to work
      * logically at different levels, hiding proper
      * dropdowns and changing focus to relevent links.
-     *
-     * @since 1.1.0
      *
      * @param {Event} event
      */
@@ -303,8 +295,6 @@ const dropdowns = (settings, callback) => {
     /**
      * Hide sibling dropdown menus.
      *
-     * @since 1.1.0
-     *
      * @param {Element}  listItem
      * @param {Function} callback
      */
@@ -333,8 +323,6 @@ const dropdowns = (settings, callback) => {
     /**
      * Determines the current level of the dropdown parent
      * item being triggered.
-     *
-     * @since 1.0.0
      *
      * @param {Element} listItem Parent list item dropdown belongs to.
      */

@@ -7,7 +7,7 @@ import { uniqueID } from '../utils';
  *
  * @author   Jason Bobich
  * @link     http://frontstreet.io
- * @since    1.1.0
+ * @since    2.0.0
  * @module   tooltips.js
  */
 

@@ -2,8 +2,6 @@
  * Checks if website is being loaded from a mobile
  * device.
  *
- * @since 1.0.0
- *
  * @param  {boolean} viewportCheck Whether to let viewport size help determine.
  * @return {boolean} Whether we're on a mobile device.
  */
@@ -31,8 +29,6 @@ export function isMobile(viewportCheck) {
 
 /**
  * Generate a unqiue ID.
- *
- * @since 1.1.0
  *
  * @param {string} prefix Optional. String to prefix ID with.
  * @return {string} Final HTML ID.
