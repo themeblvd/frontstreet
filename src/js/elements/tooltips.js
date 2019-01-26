@@ -51,7 +51,7 @@ const tooltips = (settings, callback) => {
   /**
    * Set up each individiual tooltip.
    *
-   * @param {Element} trigger Tooltip trigger element.
+   * @param {Node} trigger Tooltip trigger element.
    */
   function setup(trigger) {
     const data = trigger.dataset;
@@ -200,8 +200,8 @@ const tooltips = (settings, callback) => {
    * Build a tooltip help element, given
    * a trigger.
    *
-   * @param {Element} trigger DOM element which triggers a tooltip.
-   * @return {Element} Tooltip element.
+   * @param {Node} trigger DOM element which triggers a tooltip.
+   * @return {Node} Tooltip element.
    */
   function buildHelp(trigger) {
     const data = trigger.dataset;

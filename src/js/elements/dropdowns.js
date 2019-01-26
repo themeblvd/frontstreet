@@ -41,7 +41,7 @@ const dropdowns = (settings, callback) => {
   /**
    * Set up each individiual tooltip.
    *
-   * @param {Element} menu Menu element containing dropdowns.
+   * @param {Node} menu Menu element containing dropdowns.
    */
   function setup(menu) {
     const listItems = {}; // Keep track of active list items.
@@ -221,8 +221,8 @@ const dropdowns = (settings, callback) => {
      * accomdate an RTL setup, or (2) fit within the viewport
      * when they approach the edge of the window.
      *
-     * @param {Element} listItem
-     * @param {Element} dropdown
+     * @param {Node} listItem
+     * @param {Node} dropdown
      */
     function position(listItem, dropdown) {
       if (getLevel(listItem) !== 1) {
@@ -295,7 +295,7 @@ const dropdowns = (settings, callback) => {
     /**
      * Hide sibling dropdown menus.
      *
-     * @param {Element}  listItem
+     * @param {Node}     listItem
      * @param {Function} callback
      */
     function hideSiblings(listItem, callback) {
@@ -324,7 +324,7 @@ const dropdowns = (settings, callback) => {
      * Determines the current level of the dropdown parent
      * item being triggered.
      *
-     * @param {Element} listItem Parent list item dropdown belongs to.
+     * @param {Node} listItem Parent list item dropdown belongs to.
      */
     function getLevel(listItem) {
       if (listItem.classList.contains('level-3')) {
